@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Yaroslav Korets | Building Tomorrow Today</title>
-  <meta name="description" content="Yaroslav Korets — I take ideas that sound like the future and build them into systems that work today. Building from Los Angeles.">
+  <meta name="description" content="Yaroslav Korets — I take ideas that don't exist yet and turn them into systems that work today. Building from Los Angeles.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -25,92 +25,134 @@
   <style>
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
     :root {
-      --bg: #fafafa; --bg-card: #ffffff; --bg-alt: #f3f2f8;
-      --border: #e5e3ee; --border-light: #edebf5;
-      --purple: #7c5cfc; --purple-dark: #5b3fd9;
-      --purple-dim: rgba(124, 92, 252, 0.08); --purple-dim2: rgba(124, 92, 252, 0.15);
-      --lime: #9ae600; --lime-dark: #7cc200; --lime-dim: rgba(154, 230, 0, 0.1);
-      --text-primary: #1a1a2e; --text-secondary: #555566; --text-muted: #8888a0;
+      --bg: #fafaf8;
+      --bg-card: #ffffff;
+      --bg-alt: #f5f3ef;
+      --bg-dark: #1e1b4b;
+      --border: #e5e2da;
+      --border-light: #ece9e1;
+      --indigo: #4338ca;
+      --indigo-dark: #3730a3;
+      --indigo-dim: rgba(67, 56, 202, 0.07);
+      --indigo-dim2: rgba(67, 56, 202, 0.12);
+      --sand: #d4a574;
+      --sand-dark: #b8895c;
+      --sand-dim: rgba(212, 165, 116, 0.12);
+      --sand-light: #e8d5c0;
+      --text-primary: #1c1917;
+      --text-secondary: #57534e;
+      --text-muted: #a8a29e;
     }
     html { scroll-behavior: smooth; }
     body { font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif; color: var(--text-primary); background: var(--bg); line-height: 1.7; -webkit-font-smoothing: antialiased; }
-    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 50; background: rgba(250, 250, 250, 0.9); backdrop-filter: blur(16px); border-bottom: 1px solid var(--border-light); }
-    .nav-inner { max-width: 1100px; margin: 0 auto; padding: 1rem 1.5rem; display: flex; align-items: center; justify-content: space-between; }
-    .nav-logo { font-weight: 700; font-size: 1.2rem; color: var(--text-primary); text-decoration: none; }
-    .nav-links { list-style: none; display: flex; gap: 2rem; align-items: center; }
-    .nav-links a { color: var(--text-secondary); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: color 0.2s; }
-    .nav-links a:hover { color: var(--purple); }
-    .nav-cta { background: var(--purple); color: #fff !important; padding: 0.5rem 1.25rem; border-radius: 0.5rem; font-weight: 600; transition: background 0.2s; }
-    .nav-cta:hover { background: var(--purple-dark); }
-    .hero { max-width: 800px; margin: 0 auto; padding: 10rem 1.5rem 5rem; text-align: center; }
-    .hero-origin { display: inline-block; background: var(--purple-dim); color: var(--purple); padding: 0.35rem 1rem; border-radius: 2rem; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.03em; margin-bottom: 2rem; }
-    .hero h1 { font-size: clamp(2.2rem, 5vw, 3.4rem); line-height: 1.15; margin-bottom: 1.5rem; font-weight: 700; }
-    .accent { color: var(--purple); }
-    .tagline { font-size: 1.15rem; color: var(--text-secondary); max-width: 600px; margin: 0 auto 1.5rem; line-height: 1.6; }
-    .intro { font-size: 1rem; color: var(--text-secondary); max-width: 600px; margin: 0 auto 1rem; line-height: 1.7; }
-    .section { padding: 5rem 1.5rem; }
+
+    /* NAV */
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 50; background: rgba(250, 250, 248, 0.92); backdrop-filter: blur(16px); border-bottom: 1px solid var(--border-light); }
+    .nav-inner { max-width: 1100px; margin: 0 auto; padding: 0.85rem 1.5rem; display: flex; align-items: center; justify-content: space-between; }
+    .nav-logo { font-weight: 700; font-size: 1.15rem; color: var(--text-primary); text-decoration: none; letter-spacing: -0.02em; }
+    .nav-links { list-style: none; display: flex; gap: 1.75rem; align-items: center; }
+    .nav-links a { color: var(--text-secondary); text-decoration: none; font-size: 0.85rem; font-weight: 500; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--indigo); }
+    .nav-cta { background: var(--indigo); color: #fff !important; padding: 0.45rem 1.1rem; border-radius: 0.4rem; font-weight: 600; font-size: 0.85rem; transition: background 0.2s; }
+    .nav-cta:hover { background: var(--indigo-dark); }
+
+    /* HERO */
+    .hero { max-width: 760px; margin: 0 auto; padding: 9rem 1.5rem 4rem; text-align: center; }
+    .hero-origin { display: inline-block; background: var(--indigo-dim); color: var(--indigo); padding: 0.3rem 0.9rem; border-radius: 2rem; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.04em; margin-bottom: 1.75rem; }
+    .hero h1 { font-size: clamp(2rem, 4.5vw, 3rem); line-height: 1.15; margin-bottom: 1.25rem; font-weight: 700; letter-spacing: -0.02em; }
+    .accent { color: var(--indigo); }
+    .tagline { font-size: 1.1rem; color: var(--text-secondary); max-width: 560px; margin: 0 auto 1.25rem; line-height: 1.6; }
+    .intro { font-size: 0.95rem; color: var(--text-secondary); max-width: 560px; margin: 0 auto; line-height: 1.7; }
+
+    /* SECTIONS */
+    .section { padding: 4rem 1.5rem; }
     .section-alt { background: var(--bg-alt); }
-    .narrow { max-width: 700px; margin: 0 auto; }
+    .narrow { max-width: 680px; margin: 0 auto; }
     .container { max-width: 1100px; margin: 0 auto; }
-    .section-label { display: inline-block; color: var(--purple); font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 0.75rem; }
-    .section h2 { font-size: 1.8rem; margin-bottom: 1rem; }
-    .section p.lead { color: var(--text-secondary); font-size: 1.05rem; max-width: 600px; line-height: 1.7; }
-    .book-section { padding: 4rem 1.5rem; }
-    .book-section .narrow { text-align: center; }
-    .book-section h2 { margin-bottom: 0.5rem; }
-    .book-section p { color: var(--text-secondary); margin-bottom: 2rem; }
-    .connect-box { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-top: 2.5rem; max-width: 800px; margin-left: auto; margin-right: auto; }
-    .connect-left h3, .connect-right h3 { font-size: 1rem; margin-bottom: 1rem; }
-    .social-links { display: flex; flex-direction: column; gap: 0.5rem; }
-    .social-btn { display: inline-flex; align-items: center; gap: 0.6rem; padding: 0.5rem 1rem; border: 1px solid var(--border); border-radius: 0.5rem; color: var(--text-secondary); text-decoration: none; font-size: 0.85rem; font-weight: 500; transition: border-color 0.2s, color 0.2s, background 0.2s; background: var(--bg); }
-    .social-btn:hover { border-color: var(--purple); color: var(--purple); background: var(--purple-dim); }
-    .social-btn svg { flex-shrink: 0; }
-    .connect-right p { font-size: 0.95rem; margin-bottom: 1.25rem; }
-    .subscribe-form { display: flex; gap: 0.5rem; }
-    .subscribe-form input { flex: 1; padding: 0.7rem 1rem; border: 1px solid var(--border); border-radius: 0.5rem; font-family: inherit; font-size: 0.9rem; background: var(--bg); color: var(--text-primary); outline: none; transition: border-color 0.2s; }
-    .subscribe-form input:focus { border-color: var(--purple); }
-    .subscribe-form button { padding: 0.7rem 1.5rem; background: var(--purple); color: #fff; border: none; border-radius: 0.5rem; font-family: inherit; font-weight: 600; font-size: 0.9rem; cursor: pointer; transition: background 0.2s; }
-    .subscribe-form button:hover { background: var(--purple-dark); }
-    .subscribe-note { color: var(--text-muted); font-size: 0.8rem; margin-top: 0.75rem; }
-    .story-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 2.5rem; }
-    .story-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 1rem; padding: 2rem; transition: border-color 0.3s; }
-    .story-card:hover { border-color: var(--purple); }
-    .story-card h3 { color: var(--purple); margin-bottom: 0.75rem; }
-    .think-list { display: grid; gap: 1rem; margin-top: 2.5rem; }
-    .think-item { display: flex; align-items: flex-start; gap: 1.25rem; background: var(--bg-card); padding: 1.5rem; border-radius: 0.75rem; border: 1px solid var(--border); }
-    .think-num { color: var(--purple); font-weight: 700; font-size: 1.1rem; min-width: 2rem; }
-    .work-values { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem; margin: 2.5rem 0 2rem; }
-    .work-value { background: var(--bg-card); padding: 1.25rem; border-radius: 0.75rem; border: 1px solid var(--border); transition: border-color 0.2s; }
-    .work-value:hover { border-color: var(--purple); }
-    .work-value h3 { font-size: 0.95rem; margin-bottom: 0; }
-    .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 2.5rem; }
-    .project-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 1rem; padding: 2rem; transition: border-color 0.3s; display: flex; flex-direction: column; }
-    .project-card:hover { border-color: var(--purple); }
-    .project-card h3 { margin-bottom: 0.25rem; }
-    .project-sub { color: var(--purple); font-size: 0.85rem; font-weight: 600; margin-bottom: 0.75rem; }
-    .project-card p { color: var(--text-secondary); font-size: 0.95rem; flex-grow: 1; }
-    .project-link { display: inline-block; margin-top: 1rem; color: var(--purple); font-weight: 600; font-size: 0.85rem; text-decoration: none; }
+    .section-label { display: inline-block; color: var(--indigo); font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.14em; margin-bottom: 0.5rem; }
+    .section h2 { font-size: 1.6rem; margin-bottom: 0.75rem; letter-spacing: -0.01em; }
+    .section p.lead { color: var(--text-secondary); font-size: 0.95rem; max-width: 560px; line-height: 1.7; }
+
+    /* TIMELINE */
+    .timeline { margin-top: 2.5rem; position: relative; padding-left: 2rem; border-left: 2px solid var(--border); }
+    .timeline-item { position: relative; padding-bottom: 2.25rem; }
+    .timeline-item:last-child { padding-bottom: 0; }
+    .timeline-dot { position: absolute; left: -2.55rem; top: 0.35rem; width: 10px; height: 10px; border-radius: 50%; background: var(--indigo); border: 2px solid var(--bg-alt); }
+    .timeline-item.active .timeline-dot { background: var(--sand); box-shadow: 0 0 0 3px var(--sand-dim); }
+    .timeline-period { font-size: 0.75rem; font-weight: 700; color: var(--indigo); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.2rem; }
+    .timeline-title { font-size: 1.05rem; font-weight: 700; margin-bottom: 0.4rem; }
+    .timeline-text { font-size: 0.9rem; color: var(--text-secondary); line-height: 1.7; }
+
+    /* PHILOSOPHY */
+    .think-list { display: grid; gap: 0.75rem; margin-top: 2rem; }
+    .think-item { display: flex; align-items: flex-start; gap: 1rem; background: var(--bg-card); padding: 1.25rem 1.5rem; border-radius: 0.6rem; border: 1px solid var(--border); transition: border-color 0.2s; }
+    .think-item:hover { border-color: var(--indigo); }
+    .think-item:first-child { border-color: var(--sand); background: linear-gradient(135deg, rgba(212,165,116,0.05), rgba(67,56,202,0.03)); }
+    .think-num { color: var(--indigo); font-weight: 700; font-size: 0.95rem; min-width: 1.75rem; padding-top: 0.1rem; }
+    .think-item p { font-size: 0.92rem; line-height: 1.65; }
+
+    /* HOW I WORK */
+    .work-values { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 2rem 0 1.5rem; }
+    .work-value { background: var(--indigo-dim); color: var(--indigo); padding: 0.4rem 0.9rem; border-radius: 2rem; font-size: 0.8rem; font-weight: 600; }
+
+    /* PROJECTS */
+    .projects-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 2rem; }
+    .project-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 0.75rem; padding: 1.5rem; transition: border-color 0.3s; display: flex; flex-direction: column; }
+    .project-card:hover { border-color: var(--indigo); }
+    .project-card h3 { font-size: 0.95rem; margin-bottom: 0.15rem; }
+    .project-sub { color: var(--sand-dark); font-size: 0.78rem; font-weight: 600; margin-bottom: 0.6rem; }
+    .project-card p { color: var(--text-secondary); font-size: 0.85rem; line-height: 1.6; flex-grow: 1; }
+    .project-link { display: inline-block; margin-top: 0.75rem; color: var(--indigo); font-weight: 600; font-size: 0.8rem; text-decoration: none; }
     .project-link:hover { text-decoration: underline; }
-    .tags { display: flex; gap: 0.4rem; flex-wrap: wrap; margin-top: 1rem; }
-    .tag { background: var(--purple-dim); color: var(--purple); padding: 0.2rem 0.6rem; border-radius: 0.3rem; font-size: 0.75rem; font-weight: 600; }
-    .culture-block { margin-top: 2rem; color: var(--text-secondary); line-height: 1.8; font-size: 1.05rem; }
-    .quote { margin-top: 2rem; padding: 1.5rem 2rem; background: var(--purple-dim); border-left: 3px solid var(--purple); border-radius: 0 0.5rem 0.5rem 0; color: var(--text-primary); font-style: italic; }
-    .cta-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-top: 2.5rem; }
-    .cta-card { background: var(--bg-card); padding: 1.5rem; border-radius: 0.75rem; border: 1px solid var(--lime); transition: border-color 0.2s; }
-    .cta-card:hover { border-color: var(--lime-dark); }
-    .cta-card h3 { color: var(--purple); margin-bottom: 0.5rem; }
-    footer { padding: 3.5rem 1.5rem; border-top: 1px solid var(--border); text-align: center; }
-    footer .copy { color: var(--text-muted); font-size: 0.8rem; }
+    .tags { display: flex; gap: 0.3rem; flex-wrap: wrap; margin-top: 0.75rem; }
+    .tag { background: var(--indigo-dim); color: var(--indigo); padding: 0.15rem 0.5rem; border-radius: 0.25rem; font-size: 0.7rem; font-weight: 600; }
+
+    /* TOP CONTACT ZONE */
+    .contact-zone { background: var(--bg-alt); padding: 3.5rem 1.5rem; border-bottom: 1px solid var(--border); }
+    .contact-inner { max-width: 1100px; margin: 0 auto; }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; }
+    .contact-col h3 { font-size: 0.75rem; font-weight: 700; color: var(--indigo); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 1rem; }
+
+    /* Social links */
+    .social-links { display: flex; flex-direction: column; gap: 0.4rem; }
+    .social-btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.45rem 0.8rem; border: 1px solid var(--border); border-radius: 0.4rem; color: var(--text-secondary); text-decoration: none; font-size: 0.8rem; font-weight: 500; transition: all 0.2s; background: var(--bg-card); }
+    .social-btn:hover { border-color: var(--indigo); color: var(--indigo); }
+    .social-btn svg { flex-shrink: 0; }
+
+    /* Newsletter */
+    .subscribe-form { display: flex; gap: 0.4rem; }
+    .subscribe-form input { flex: 1; padding: 0.6rem 0.9rem; border: 1px solid var(--border); border-radius: 0.4rem; font-family: inherit; font-size: 0.85rem; background: var(--bg-card); color: var(--text-primary); outline: none; transition: border-color 0.2s; }
+    .subscribe-form input:focus { border-color: var(--indigo); }
+    .subscribe-form button { padding: 0.6rem 1.2rem; background: var(--indigo); color: #fff; border: none; border-radius: 0.4rem; font-family: inherit; font-weight: 600; font-size: 0.85rem; cursor: pointer; transition: background 0.2s; }
+    .subscribe-form button:hover { background: var(--indigo-dark); }
+    .subscribe-note { color: var(--text-muted); font-size: 0.75rem; margin-top: 0.6rem; }
+    .contact-col p.contact-text { color: var(--text-secondary); font-size: 0.85rem; line-height: 1.65; margin-bottom: 1rem; }
+
+    /* CTA section at bottom */
+    .cta-zone { background: var(--bg-dark); color: #fff; padding: 4rem 1.5rem; }
+    .cta-inner { max-width: 680px; margin: 0 auto; text-align: center; }
+    .cta-zone h2 { color: #fff; font-size: 1.6rem; margin-bottom: 0.75rem; }
+    .cta-zone p { color: rgba(255,255,255,0.6); font-size: 0.95rem; margin-bottom: 2rem; }
+    .culture-quote { color: var(--sand-light); font-style: italic; font-size: 0.9rem; line-height: 1.6; padding: 1.25rem 1.5rem; border-left: 2px solid var(--sand); text-align: left; max-width: 500px; margin: 0 auto; }
+
+    /* FOOTER */
+    footer { padding: 2rem 1.5rem; background: var(--bg-dark); border-top: 1px solid rgba(255,255,255,0.08); text-align: center; }
+    footer .copy { color: rgba(255,255,255,0.3); font-size: 0.75rem; }
+
+    /* MOBILE */
     .nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 0.5rem; }
-    .nav-toggle svg { width: 24px; height: 24px; stroke: var(--text-secondary); }
-    @media (max-width: 768px) {
+    .nav-toggle svg { width: 22px; height: 22px; stroke: var(--text-secondary); }
+    @media (max-width: 900px) {
+      .projects-grid { grid-template-columns: repeat(2, 1fr); }
+      .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
+    }
+    @media (max-width: 640px) {
       .nav-toggle { display: block; }
-      .nav-links { display: none; flex-direction: column; position: absolute; top: 4.5rem; left: 0; right: 0; background: var(--bg); border-bottom: 1px solid var(--border); padding: 1rem 1.5rem; gap: 1rem; }
+      .nav-links { display: none; flex-direction: column; position: absolute; top: 4rem; left: 0; right: 0; background: var(--bg); border-bottom: 1px solid var(--border); padding: 1rem 1.5rem; gap: 0.75rem; }
       .nav-links.open { display: flex; }
-      .story-grid { grid-template-columns: 1fr; }
-      .connect-box { grid-template-columns: 1fr; }
-      .hero { padding-top: 8rem; }
-      .subscribe-form { flex-direction: column; }
+      .projects-grid { grid-template-columns: 1fr; }
+      .hero { padding-top: 7rem; }
+      .subscribe-form-dark { flex-direction: column; }
     }
   </style>
 </head>
@@ -124,10 +166,9 @@
     </button>
     <ul class="nav-links">
       <li><a href="#story">Story</a></li>
-      <li><a href="#projects">Projects</a></li>
       <li><a href="#philosophy">How I Think</a></li>
-      <li><a href="#contact">Contact</a></li>
-      <li><a href="#book" class="nav-cta">Book a Call</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#connect" class="nav-cta">Get in Touch</a></li>
     </ul>
   </div>
 </nav>
@@ -135,42 +176,37 @@
 <section class="hero" id="about">
   <div class="hero-origin">Born in the USSR · Raised in Ukraine · Building from Los Angeles</div>
   <h1>Building <span class="accent">Tomorrow</span> Today</h1>
-  <p class="tagline">I take ideas that sound like the future and turn them into systems that work today.</p>
-  <p class="intro">I've built and sold a company, led teams of nearly 100 people, relocated my family across three countries during a war, and started over more than once. The pattern is always the same: find the bold idea, build the infrastructure, make it real.</p>
+  <p class="tagline">I take ideas that don't exist yet and turn them into systems that work today.</p>
+  <p class="intro">I've built and sold a company, led teams of nearly 100 people, moved my family across three countries through a war, and started over more than once. The pattern is always the same: find the raw idea, build the infrastructure, make it real.</p>
 </section>
 
-<section class="book-section" id="book">
-  <div class="narrow">
-    <h2>Book a Call</h2>
-    <p>Pick a time. Whether it's a quick intro or a real conversation about a project.</p>
-    <div id="cal-embed" style="width:100%;height:100%;overflow:scroll"></div>
-    <script>Cal("inline", { elementOrSelector: "#cal-embed", calLink: "korets", layout: "month_view", config: { theme: "light" } });</script>
-  </div>
-</section>
-
-<section class="section" id="connect">
-  <div class="narrow">
-    <div class="section-label">Connect</div>
-    <h2>Stay Connected</h2>
-    <div class="connect-box">
-      <div class="connect-left">
-        <h3>Follow & Subscribe</h3>
-        <div class="social-links">
-          <a href="https://www.linkedin.com/in/yaroslavkorets/" target="_blank" rel="noopener" class="social-btn"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"></path></svg> LinkedIn</a>
-          <a href="https://www.facebook.com/yaroslav.korets/" target="_blank" rel="noopener" class="social-btn"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"></path></svg> Facebook</a>
-          <a href="https://www.instagram.com/yarokorets/" target="_blank" rel="noopener" class="social-btn"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg> Instagram</a>
-          <a href="https://x.com/ykorets" target="_blank" rel="noopener" class="social-btn"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg> X</a>
-          <a href="mailto:yaroslav@korets.net" class="social-btn"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 7l-10 6L2 7"></path></svg> Email</a>
-        </div>
+<section class="contact-zone" id="connect">
+  <div class="contact-inner">
+    <div class="contact-grid">
+      <div class="contact-col">
+        <h3>Book a Call</h3>
+        <p class="contact-text">Pick a time. Whether it's a quick intro or a real conversation about a project.</p>
+        <div id="cal-embed" style="width:100%;min-height:480px;overflow:visible"></div>
+        <script>Cal("inline", { elementOrSelector: "#cal-embed", calLink: "korets", layout: "month_view", config: { theme: "light" } });</script>
       </div>
-      <div class="connect-right">
-        <h3>Newsletter</h3>
-        <p>I send updates no more than once a quarter. Systems, projects, things I'm building.</p>
-        <form class="subscribe-form" id="subscribe-form">
-          <input type="email" id="subscribe-email" placeholder="your@email.com" required>
-          <button type="submit" id="subscribe-btn">Subscribe</button>
-        </form>
-        <p class="subscribe-note">No spam. Unsubscribe anytime.</p>
+      <div class="contact-col">
+        <h3>Connect</h3>
+        <div class="social-links">
+          <a href="https://www.linkedin.com/in/yaroslavkorets/" target="_blank" rel="noopener" class="social-btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"/></svg> LinkedIn</a>
+          <a href="https://www.facebook.com/yaroslav.korets/" target="_blank" rel="noopener" class="social-btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"/></svg> Facebook</a>
+          <a href="https://www.instagram.com/yarokorets/" target="_blank" rel="noopener" class="social-btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg> Instagram</a>
+          <a href="https://x.com/ykorets" target="_blank" rel="noopener" class="social-btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg> X</a>
+          <a href="mailto:yaroslav@korets.net" class="social-btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 7l-10 6L2 7"/></svg> Email</a>
+        </div>
+        <div style="margin-top: 1.5rem;">
+          <h3>Newsletter</h3>
+          <p class="contact-text">Updates no more than once a quarter. Systems, projects, things I'm building.</p>
+          <form class="subscribe-form" id="subscribe-form">
+            <input type="email" id="subscribe-email" placeholder="your@email.com" required>
+            <button type="submit" id="subscribe-btn">Subscribe</button>
+          </form>
+          <p class="subscribe-note">No spam. Unsubscribe anytime.</p>
+        </div>
       </div>
     </div>
   </div>
@@ -181,37 +217,47 @@
     <div class="section-label">The Foundation</div>
     <h2>How it started</h2>
     <p class="lead">Same pattern every chapter: find something that doesn't exist yet, build the system, make it work.</p>
-    <div class="story-grid">
-      <div class="story-card">
-        <h3>Journalism & Politics · 2000-2008</h3>
-        <p>Started in Donetsk writing about culture. The 2004 Orange Revolution pulled me to Kyiv, where I became editor of the politics section. Spent a year inside the Verkhovna Rada as a press secretary — built the committee's first press office from scratch. That was enough to know: politics wasn't my game. I wanted to build things, not navigate them.</p>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-period">2000–2008</div>
+        <div class="timeline-title">Education & Early Career</div>
+        <div class="timeline-text">Started with 3 years of Computer Science at Donetsk National Technical University, then earned a Bachelor's in PR Management at Kyiv National University of Culture and Arts. In parallel — journalism in Donetsk, writing about culture. The 2004 Orange Revolution pulled me to Kyiv, where I became editor of the politics section. Spent a year inside the Verkhovna Rada as a press secretary — built the committee's first press office from scratch. That was enough to know: politics wasn't my game. I wanted to build things, not navigate them.</div>
       </div>
-      <div class="story-card">
-        <h3>Ebola Communications · 2008-2015</h3>
-        <p>Built a digital agency from zero. Just me, then my sister, then a team. Sold it to a major advertising holding before turning 30. No mentors, no MBA — books and work. After the deal, I led the merged company, Liquid7 Production — nearly 100 people, clients like Coca-Cola and McDonald's. Won the EFFIE Award in the final year. That felt like the right ending to the chapter.</p>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-period">2008–2015</div>
+        <div class="timeline-title">Ebola Communications</div>
+        <div class="timeline-text">Built a digital agency from zero. Just me, then my sister, then a team. Sold it to a major advertising holding before turning 30. No mentors, no MBA — books and work. After the deal, I led the merged company, Liquid7 Production — nearly 100 people, clients like Coca-Cola and McDonald's. Won the EFFIE Award in the final year. That felt like the right ending to the chapter.</div>
       </div>
-      <div class="story-card">
-        <h3>Exploration & Reinvention · 2015-2023</h3>
-        <p>Built a tech startup, ran a community space in Kyiv, took a VP role in real estate, then a C-level at an IT holding. Some worked, some didn't. Each stop taught me the same thing: I need to build my way, or I need to move on.</p>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-period">2015–2023</div>
+        <div class="timeline-title">Exploration & Reinvention</div>
+        <div class="timeline-text">Built a tech startup, ran a community space in Kyiv, took a VP role in real estate, then a C-level at an IT holding. Some worked, some didn't. Each stop taught me the same thing: I need to build my way, or I need to move on.</div>
       </div>
-      <div class="story-card">
-        <h3>KPI Creatives · 2023-Now</h3>
-        <p>Started in Los Angeles as a marketplace for video production. Turned into something bigger — a Creative Growth Partner that builds content systems for US businesses. The idea that didn't exist: content as infrastructure, not marketing. Now it's a working system.</p>
+      <div class="timeline-item active">
+        <div class="timeline-dot"></div>
+        <div class="timeline-period">2023–Now</div>
+        <div class="timeline-title">KPI Creatives</div>
+        <div class="timeline-text">Started in Los Angeles as a marketplace for video production. Turned into something bigger — a Creative Growth Partner that builds content systems for US businesses. The idea that didn't exist: content as infrastructure, not marketing. Now it's a working system.</div>
       </div>
-      <div class="story-card">
-        <h3>Burning Man · Since 2013</h3>
-        <p>My first burn in 2013 changed how I think about community. I founded the Ukrainian Burners Community, and today I run Kurenivka Camp — the biggest official Ukrainian camp at Burning Man. Built Blue Bull, a massive art car based on Maria Prymachenko's naive art, with 30+ artists. I DJ, throw BBQs, and bring people together. Same pattern: bold idea, real infrastructure, something that holds.</p>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-period">Since 2013</div>
+        <div class="timeline-title">Burning Man</div>
+        <div class="timeline-text">My first burn in 2013 changed how I think about community. I founded the Ukrainian Burners Community, and today I run Kurenivka Camp — the biggest official Ukrainian camp at Burning Man. Built Blue Bull, a massive art car based on Maria Prymachenko's naive art, with 30+ artists. I DJ, throw BBQs, and bring people together. Same pattern: raw idea, real infrastructure, something that holds.</div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="section section-alt" id="philosophy">
+<section class="section" id="philosophy">
   <div class="narrow">
     <div class="section-label">Philosophy</div>
     <h2>How I Think</h2>
     <div class="think-list">
-      <div class="think-item"><div class="think-num">01</div><p>I build infrastructure that brings the future into the present. Bold idea, working system, cultural meaning. Same pattern — whether it's a company, an art car, or a camp in the desert.</p></div>
+      <div class="think-item"><div class="think-num">01</div><p>Jim Collins called it the Hedgehog Concept — the intersection of what you're passionate about, what you can be the best at, and what drives your economics. Mine is this: I build infrastructure that brings the future into the present. A raw idea becomes a working system — operationally real, culturally meaningful, economically viable. Same pattern — whether it's a company, an art car, or a camp in the desert.</p></div>
       <div class="think-item"><div class="think-num">02</div><p>Content is infrastructure. You build it once, maintain it like a system, and let it compound. Not a campaign. A system.</p></div>
       <div class="think-item"><div class="think-num">03</div><p>If you can't be the decision-maker, don't take the job. I left a C-level role over this. The strategy I proposed was rejected. A year later, ChatGPT proved it right.</p></div>
       <div class="think-item"><div class="think-num">04</div><p>Small teams with the right tools beat large headcount. Teams matter more than ideas. Community matters more than teams. Nothing meaningful gets built alone.</p></div>
@@ -220,22 +266,22 @@
   </div>
 </section>
 
-<section class="section">
+<section class="section section-alt">
   <div class="narrow">
     <div class="section-label">Approach</div>
     <h2>How I Work</h2>
     <div class="work-values">
-      <div class="work-value"><h3>Build from scratch</h3></div>
-      <div class="work-value"><h3>Systems over chaos</h3></div>
-      <div class="work-value"><h3>Test under pressure</h3></div>
-      <div class="work-value"><h3>Trust over speed</h3></div>
-      <div class="work-value"><h3>Compound, don't campaign</h3></div>
+      <span class="work-value">Build from scratch</span>
+      <span class="work-value">Systems over chaos</span>
+      <span class="work-value">Test under pressure</span>
+      <span class="work-value">Trust over speed</span>
+      <span class="work-value">Compound, don't campaign</span>
     </div>
     <p class="lead">I work hands-on, but I build things that can run without me. I study how others solved similar problems, combine ideas from different fields. If the existing options don't work — I build my own.</p>
   </div>
 </section>
 
-<section class="section section-alt" id="projects">
+<section class="section" id="projects">
   <div class="container">
     <div class="section-label">Selected Works</div>
     <h2>Projects</h2>
@@ -245,95 +291,71 @@
         <h3>KPI Creatives</h3>
         <p class="project-sub">Content systems for growth</p>
         <p>Helps US businesses attract qualified inbound leads through content. Not random posting — structured systems that educate buyers and build trust over time.</p>
-        <a href="https://kpi-creatives.com" target="_blank" rel="noopener" class="project-link">kpi-creatives.com</a>
+        <a href="https://kpi-creatives.com" target="_blank" rel="noopener" class="project-link">kpi-creatives.com →</a>
         <div class="tags"><span class="tag">Content Systems</span><span class="tag">B2B</span><span class="tag">Inbound</span></div>
       </div>
       <div class="project-card">
         <h3>ADUscale</h3>
         <p class="project-sub">Decision support for building</p>
         <p>Helps California homeowners figure out whether building an ADU makes sense — before permits, before contractors, before spending serious money. Co-founded with Boris Goldenstein.</p>
-        <a href="https://aduscale.com" target="_blank" rel="noopener" class="project-link">aduscale.com</a>
+        <a href="https://aduscale.com" target="_blank" rel="noopener" class="project-link">aduscale.com →</a>
         <div class="tags"><span class="tag">Construction</span><span class="tag">Real Estate</span><span class="tag">AI</span></div>
       </div>
       <div class="project-card">
         <h3>DirectorMode.AI</h3>
         <p class="project-sub">Better video decisions</p>
         <p>AI that reviews video footage and flags what to fix before publishing. Better decisions early, not after the money is spent.</p>
-        <a href="https://directormode.ai" target="_blank" rel="noopener" class="project-link">directormode.ai</a>
+        <a href="https://directormode.ai" target="_blank" rel="noopener" class="project-link">directormode.ai →</a>
         <div class="tags"><span class="tag">AI</span><span class="tag">Video</span><span class="tag">SaaS</span></div>
       </div>
       <div class="project-card">
         <h3>Indiev</h3>
         <p class="project-sub">Production as a system</p>
         <p>Turns video production into something predictable. Clear scope, clear timelines, no chaos.</p>
-        <a href="https://indiev.org" target="_blank" rel="noopener" class="project-link">indiev.org</a>
+        <a href="https://indiev.org" target="_blank" rel="noopener" class="project-link">indiev.org →</a>
         <div class="tags"><span class="tag">Media</span><span class="tag">Infrastructure</span><span class="tag">Video</span></div>
       </div>
       <div class="project-card">
         <h3>Local Review Club</h3>
         <p class="project-sub">Honest reviews from real owners</p>
         <p>A private club where local businesses try each other's services and leave real reviews. No fakes, no bots. Just real people.</p>
-        <a href="https://localreviewclub.com" target="_blank" rel="noopener" class="project-link">localreviewclub.com</a>
+        <a href="https://localreviewclub.com" target="_blank" rel="noopener" class="project-link">localreviewclub.com →</a>
         <div class="tags"><span class="tag">Local Business</span><span class="tag">Reviews</span><span class="tag">Community</span></div>
       </div>
       <div class="project-card">
         <h3>Start Podcast</h3>
         <p class="project-sub">Podcast production infrastructure</p>
         <p>Podcast production as a system. Removes the friction from ongoing audio and video production.</p>
-        <a href="https://start-podcast.com" target="_blank" rel="noopener" class="project-link">start-podcast.com</a>
+        <a href="https://start-podcast.com" target="_blank" rel="noopener" class="project-link">start-podcast.com →</a>
         <div class="tags"><span class="tag">Podcast</span><span class="tag">Media</span><span class="tag">Systems</span></div>
       </div>
       <div class="project-card">
         <h3>Stretch-Tent.net</h3>
         <p class="project-sub">Flexible outdoor structures</p>
         <p>Stretch tents for real conditions: weather, terrain, time pressure. Solving physical problems, not decoration.</p>
-        <a href="https://stretch-tent.net" target="_blank" rel="noopener" class="project-link">stretch-tent.net</a>
+        <a href="https://stretch-tent.net" target="_blank" rel="noopener" class="project-link">stretch-tent.net →</a>
         <div class="tags"><span class="tag">Events</span><span class="tag">Infrastructure</span><span class="tag">Logistics</span></div>
       </div>
       <div class="project-card">
         <h3>Kurenivka Camp</h3>
         <p class="project-sub">Burning Man community</p>
         <p>The biggest official Ukrainian camp at Burning Man. Home of the Blue Bull art car, Hedgehog Temple, and a community that kept building through everything.</p>
-        <a href="https://kurenivka.ua" target="_blank" rel="noopener" class="project-link">kurenivka.ua</a>
+        <a href="https://kurenivka.ua" target="_blank" rel="noopener" class="project-link">kurenivka.ua →</a>
         <div class="tags"><span class="tag">Burning Man</span><span class="tag">Community</span><span class="tag">Culture</span></div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="section">
-  <div class="narrow">
-    <div class="section-label">Culture</div>
-    <h2>What Runs Through Everything</h2>
-    <div class="culture-block">
-      <p>I build companies, communities, and art projects with the same approach: find the right people, create a structure, give it meaning. Kurenivka Camp and Blue Bull aren't side projects — they're where I test ideas about teams and trust in real conditions, far from any office.</p>
-    </div>
-    <div class="quote">"Our signature dish is hospitality. Sometimes it's about food, sometimes about drinks, but most often it's about spirit."</div>
-  </div>
-</section>
-
-<section class="section section-alt">
-  <div class="narrow">
-    <div class="section-label">If This Fits</div>
+<section class="cta-zone">
+  <div class="cta-inner">
     <h2>I don't talk about the future. I build it.</h2>
-    <div class="cta-grid">
-      <div class="cta-card">
-        <h3>Build Systems</h3>
-        <p>For those who need infrastructure, not one-off projects.</p>
-      </div>
-      <div class="cta-card">
-        <h3>Value Clarity</h3>
-        <p>For those who want to understand what they're building before they build it.</p>
-      </div>
-      <div class="cta-card">
-        <h3>Think Long-term</h3>
-        <p>For those who know that trust compounds and shortcuts don't.</p>
-      </div>
-    </div>
+    <p>I build companies, communities, and art projects with the same approach: find the right people, create a structure, give it meaning.</p>
+    <div class="culture-quote">"We'll build our own theme park — with blackjack and hookers." — Bender, Futurama. Honestly, that's how I approach most things.</div>
   </div>
 </section>
 
-<footer id="contact">
+<footer>
   <p class="copy">&copy; 2026 Yaroslav Korets. Building Tomorrow Today.</p>
 </footer>
 
@@ -350,7 +372,7 @@ document.getElementById('subscribe-form').addEventListener('submit', async funct
     const WORKER_URL = 'https://korets-subscribe.korets.workers.dev';
     const res = await fetch(WORKER_URL, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ email }) });
     const data = await res.json();
-    if (data.success) { btn.textContent = 'Subscribed!'; btn.style.background = 'var(--lime)'; btn.style.color = 'var(--text-primary)'; input.disabled = true; }
+    if (data.success) { btn.textContent = 'Subscribed!'; btn.style.background = 'var(--sand-light)'; input.disabled = true; }
     else { btn.textContent = data.error || 'Error'; setTimeout(() => { btn.textContent = 'Subscribe'; btn.disabled = false; }, 3000); }
   } catch (err) { btn.textContent = 'Error'; setTimeout(() => { btn.textContent = 'Subscribe'; btn.disabled = false; }, 3000); }
 });
