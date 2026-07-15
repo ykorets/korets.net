@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Systems in Production — Yaroslav Korets</title>
+  <meta name="description" content="AI systems Yaroslav Korets designs, builds, and runs in production: autonomous agents, voice AI, self-hosted infrastructure, and data engines — plus productized offers built on these patterns.">
+  <meta name="robots" content="index, follow">
+  <link rel="alternate" type="application/rss+xml" title="Yaroslav Korets — Writing" href="https://korets.net/writing/feed.xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #fafafa;
+      --bg-card: #ffffff;
+      --bg-alt: #f3f2f8;
+      --border: #e5e3ee;
+      --border-light: #edebf5;
+      --purple: #7c5cfc;
+      --purple-dark: #5b3fd9;
+      --purple-dim: rgba(124, 92, 252, 0.08);
+      --purple-dim2: rgba(124, 92, 252, 0.15);
+      --lime: #9ae600;
+      --lime-dark: #7cc200;
+      --lime-dim: rgba(154, 230, 0, 0.1);
+      --text-primary: #1a1a2e;
+      --text-secondary: #555566;
+      --text-muted: #8888a0;
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: var(--text-primary); background: var(--bg);
+      line-height: 1.7; -webkit-font-smoothing: antialiased;
+    }
+
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 50;
+      background: rgba(250, 250, 250, 0.9); backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border); padding: 0 1.5rem;
+    }
+    .nav-inner {
+      max-width: 72rem; margin: 0 auto;
+      display: flex; justify-content: space-between; align-items: center; height: 4.5rem;
+    }
+    .nav-logo { font-weight: 700; font-size: 1.25rem; color: var(--purple); text-decoration: none; letter-spacing: -0.02em; }
+    .nav-links { display: flex; gap: 2rem; list-style: none; align-items: center; }
+    .nav-links a { color: var(--text-secondary); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--purple); }
+    .nav-cta { background: var(--purple); color: #fff !important; padding: 0.5rem 1.25rem; border-radius: 0.5rem; font-weight: 600; font-size: 0.85rem; transition: background 0.2s; }
+    .nav-cta:hover { background: var(--purple-dark); color: #fff !important; }
+
+    .hero { width: calc(100% - 3rem); padding: 10rem 0 4rem; max-width: 72rem; margin: 0 auto; }
+    .hero-badge {
+      display: inline-block; padding: 0.4rem 1rem; border-radius: 999px;
+      background: var(--purple-dim2); color: var(--purple-dark);
+      font-size: 0.8rem; font-weight: 600; letter-spacing: 0.02em; margin-bottom: 1.5rem;
+    }
+    .hero h1 { font-size: clamp(2.4rem, 5vw, 3.4rem); font-weight: 700; line-height: 1.1; letter-spacing: -0.03em; margin-bottom: 0.5rem; }
+    .hero h1 .accent { color: var(--purple); }
+    .hero .tagline { font-size: clamp(1.05rem, 2vw, 1.3rem); color: var(--text-primary); font-weight: 500; max-width: 42rem; line-height: 1.55; margin: 1.25rem 0; }
+    .hero .intro { font-size: 1.02rem; color: var(--text-secondary); max-width: 42rem; line-height: 1.75; }
+
+    .section { padding: 4.5rem 1.5rem; }
+    .section-alt { background: var(--bg-alt); border-top: 1px solid var(--border-light); border-bottom: 1px solid var(--border-light); }
+    .narrow { max-width: 72rem; margin: 0 auto; }
+    .narrow > .lead { max-width: 52rem; }
+    h2 { font-size: clamp(1.7rem, 3.5vw, 2.15rem); font-weight: 700; margin-bottom: 0.75rem; letter-spacing: -0.02em; }
+    h3 { font-size: 1.125rem; font-weight: 600; margin-bottom: 0.5rem; }
+    .section-label { text-transform: uppercase; letter-spacing: 0.15em; font-size: 0.75rem; font-weight: 600; color: var(--purple); margin-bottom: 0.75rem; }
+    p { color: var(--text-secondary); }
+    .lead { font-size: 1.05rem; margin-bottom: 0.5rem; }
+
+    /* CASE CARDS */
+    .ai-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-top: 2.5rem; }
+    .ai-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 1rem; padding: 1.75rem; border-top: 3px solid var(--purple); transition: border-color 0.3s, transform 0.3s; }
+    .ai-card:hover { border-color: var(--purple); transform: translateY(-2px); }
+    .ai-card h3 { font-size: 1.1rem; margin-bottom: 0.15rem; }
+    .ai-card .ai-sub { color: var(--purple); font-size: 0.85rem; font-weight: 500; margin-bottom: 0.75rem; }
+    .ai-card p { font-size: 0.92rem; }
+    .ai-card p + p { margin-top: 0.75rem; }
+    .ai-card .ai-angle { margin-top: 0.75rem; font-size: 0.85rem; color: var(--text-primary); font-weight: 500; }
+    .ai-card .ai-angle::before { content: '→ '; color: var(--lime-dark); font-weight: 700; }
+    .ai-full { grid-column: 1 / -1; }
+    .ai-full p, .ai-full .ai-angle { max-width: 56rem; }
+    .ai-card .ai-link { display: inline-block; margin-top: 0.9rem; color: var(--purple); font-weight: 600; font-size: 0.85rem; text-decoration: none; }
+    .ai-card .ai-link:hover { color: var(--purple-dark); }
+    .ai-card .ai-link::after { content: ' →'; }
+    .ai-card .ai-link + .ai-link { margin-left: 1rem; }
+
+    /* OFFERS */
+    .offer-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-top: 2.5rem; }
+    .offer { background: var(--bg-card); border: 1px solid var(--border); border-radius: 1rem; padding: 1.9rem 2rem; border-top: 3px solid var(--lime-dark); transition: border-color 0.3s, transform 0.3s; }
+    .offer:hover { border-color: var(--lime-dark); transform: translateY(-2px); }
+    .offer .offer-tag { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--lime-dark); font-weight: 700; margin-bottom: 0.4rem; }
+    .offer h3 { font-size: 1.2rem; margin-bottom: 0.4rem; }
+    .offer p { font-size: 0.93rem; }
+    .offer a { display: inline-block; margin-top: 1rem; color: var(--purple); font-weight: 600; font-size: 0.9rem; text-decoration: none; }
+    .offer a:hover { color: var(--purple-dark); }
+    .offer a::after { content: ' →'; }
+    .offer-full { grid-column: 1 / -1; border-top-color: var(--purple); }
+    .offer-full .offer-tag { color: var(--purple); }
+
+    .cta-band { margin-top: 2.5rem; padding: 2.25rem; background: linear-gradient(135deg, var(--purple-dim), var(--lime-dim)); border: 1px solid var(--border); border-radius: 1rem; text-align: center; }
+    .cta-band h3 { font-size: 1.3rem; margin-bottom: 0.5rem; }
+    .cta-band p { max-width: 34rem; margin: 0 auto 1.5rem; }
+    .btn-primary { display: inline-flex; align-items: center; gap: 0.6rem; background: var(--purple); color: #fff; text-decoration: none; padding: 0.75rem 1.5rem; border-radius: 0.5rem; font-weight: 600; font-size: 0.9rem; transition: background 0.2s; }
+    .btn-primary:hover { background: var(--purple-dark); }
+
+    footer { padding: 3rem 1.5rem; border-top: 1px solid var(--border); text-align: center; }
+    footer .copy { color: var(--text-muted); font-size: 0.8rem; }
+    footer a { color: var(--purple); text-decoration: none; }
+
+    .nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 0.5rem; }
+    .nav-toggle svg { width: 24px; height: 24px; stroke: var(--text-secondary); }
+
+    @media (max-width: 768px) {
+      .nav-toggle { display: block; }
+      .nav-links { display: none; flex-direction: column; position: absolute; top: 4.5rem; left: 0; right: 0; background: var(--bg); border-bottom: 1px solid var(--border); padding: 1rem 1.5rem; gap: 1rem; }
+      .nav-links.open { display: flex; }
+      .hero { padding-top: 7.5rem; }
+      .ai-grid, .offer-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">YK.</a>
+    <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+    </button>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/cv/">CV</a></li>
+      <li><a href="/writing/">Writing</a></li>
+      <li><a href="#systems">Systems</a></li>
+      <li><a href="#offers">Offers</a></li>
+      <li><a href="/#book" class="nav-cta">Book a call</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-badge">AI Systems in Production · Los Angeles</div>
+  <h1>Built. Shipped. <span class="accent">Running.</span></h1>
+  <p class="tagline">The models are built. The last mile isn't. I install AI into businesses that run on trucks, permits, and phone calls.</p>
+  <p class="intro">Everything on this page runs in production — agents doing real work with real money and real customers, not demos. I'm an operator, not a vendor: twenty years of P&amp;L ownership, and today I design, code, and self-host AI systems end to end. Most of it I architected and shipped myself; two products are built by developers under my direction.</p>
+</section>
+
+<!-- SYSTEMS -->
+<section class="section section-alt" id="systems">
+  <div class="narrow">
+    <div class="section-label">The Systems</div>
+    <h2>Nine systems, one operating principle</h2>
+    <p class="lead">AI does the persistence and the volume; humans approve what matters; everything is logged.</p>
+
+    <div class="ai-grid">
+      <div class="ai-card ai-full">
+        <h3>Internal AI operating system</h3>
+        <div class="ai-sub">Self-hosted · replaced Basecamp as our project manager</div>
+        <p>A Markdown-native workspace with Git as the source of truth, an in-browser editor with an AI coding agent pre-installed for every teammate, and a live operations dashboard — all behind a single MCP gateway (one Cloudflare Worker handling sign-in and SSO, routing internal AI tools like memory, SEO, PPC, and analytics, and audit-logging every tool call for cost attribution). The team works inside it daily.</p>
+        <div class="ai-angle">I redesigned project management itself around AI hand-offs — and replaced our SaaS PM tool with what I built.</div>
+      </div>
+
+      <div class="ai-card">
+        <h3>Hunter — autonomous PPC agent</h3>
+        <div class="ai-sub">Google Ads + Microsoft Ads · human-in-the-loop</div>
+        <p>An always-on agent that builds campaigns, monitors performance, defends against the platforms' auto-applied changes, and proposes fixes with one-tap approval over Telegram. CRM-grounded, governed by explicit written rules, every action logged.</p>
+        <div class="ai-angle">Replaces the day-to-day work of a PPC manager — with a human approval gate on every change.</div>
+        <a class="ai-link" href="https://kpicreatives.com/hunter">kpicreatives.com/hunter</a>
+      </div>
+
+      <div class="ai-card">
+        <h3>Oscar — YouTube ops agent</h3>
+        <div class="ai-sub">Self-hosted analytics + channel management</div>
+        <p>A self-hosted agent exposing dozens of tools across analytics, discovery/SEO, channel management, captions, and bulk reporting — multi-channel, queryable in plain language through an AI client.</p>
+        <div class="ai-angle">Replaces a stack of dashboards and manual reporting with one agent you can just ask.</div>
+        <a class="ai-link" href="https://kpicreatives.com/oscar">kpicreatives.com/oscar</a>
+      </div>
+
+      <div class="ai-card ai-full">
+        <h3>Marco — autonomous outbound agent</h3>
+        <div class="ai-sub">Infrastructure + signals + research + email/LinkedIn · human-in-the-loop</div>
+        <p>Marco builds the sending layer first: secondary domains, SPF/DKIM/DMARC, mailboxes, warm-up, placement tests, per-mailbox caps, and reputation monitoring. The same control plane is designed to scale from one mailbox to a thousand. No campaign launches until its senders clear the deliverability gates.</p>
+        <p>Then it finds the right moment, not just the right job title. Marco searches across commercial databases, LinkedIn, company sites, job boards, industry directories, and public or first-party data. It looks for signals such as leadership changes, hiring, funding, website intent, and new permits. It scores and deduplicates prospects, researches each company, then writes a short message in the sender's voice. Email and LinkedIn sequences run automatically; Marco triages replies every 15 minutes and flags positive intent in Telegram. Factual claims, pricing, and objections stay behind human approval.</p>
+        <div class="ai-angle">A human operator no longer has to choose between depth and volume. Signals decide who and when; research decides what to say; infrastructure makes sure it arrives. Every send and reply becomes data for the next campaign.</div>
+      </div>
+
+      <div class="ai-card ai-full">
+        <h3>Behind the Watt — AI with receipts</h3>
+        <div class="ai-sub">Open data + evidence pipeline · public records, LLM extraction, human approval</div>
+        <p>An open database tracking which behind-the-meter power projects at data centers are actually operating. Watchers monitor permits, filings, and public registries; the pipeline archives each source, uses AI to extract and cross-check claims, then holds publication for human approval. Every fact retains source-level provenance and is exposed through CSV, JSON, OpenAPI, and read-only MCP.</p>
+        <div class="ai-angle">AI handles the volume, but the model is never the source: every published claim stays inspectable.</div>
+        <a class="ai-link" href="https://behindthewatt.com">behindthewatt.com</a>
+        <a class="ai-link" href="https://github.com/ykorets/btw">GitHub source</a>
+      </div>
+
+      <div class="ai-card">
+        <h3>ADUscale — voice AI acquisition machine</h3>
+        <div class="ai-sub">Co-founder &amp; CEO · built the product solo</div>
+        <p>A marketplace for ADU construction: complete information architecture, programmatic pages, structured data — plus the full acquisition machine behind it: funnel, voice AI agent answering inbound calls (Vapi), CRM integration, and analytics. Business thesis to production, no handoffs.</p>
+        <div class="ai-angle">Positioning, funnel, voice agent, CRM, code, deploy — one person, working in production.</div>
+        <a class="ai-link" href="https://aduscale.com">aduscale.com</a>
+      </div>
+
+      <div class="ai-card">
+        <h3>SaaS → self-hosted migrations</h3>
+        <div class="ai-sub">FinOps by owning the infrastructure</div>
+        <p>Moved recurring vendor tools onto self-hosted open source I selected, deployed, and integrated: Frame.io → FreeFrame, DocuSign → Documenso, Attio/GoHighLevel → Twenty CRM, Calendly → Cal.com. I run the whole layer — Docker, reverse proxy, TLS, backups — plus invoicing automation wired into Mercury.</p>
+        <div class="ai-angle">Cuts recurring subscription spend and keeps the data in-house.</div>
+      </div>
+
+      <div class="ai-card">
+        <h3>InspectPilot</h3>
+        <div class="ai-sub">Construction compliance engine · built by a developer under my direction</div>
+        <p>A concierge agent for general contractors that files and schedules building inspections with LADBS — on top of a compliance engine scoring every contractor on how they actually perform: first-pass rates, violations, permit history. Runs on ~11 million data points covering every LA inspection over 13 years.</p>
+        <div class="ai-angle">11M public inspection records turned into a contractor-quality signal — trust backed by data, not reputation.</div>
+        <a class="ai-link" href="https://inspectpilot.ai">inspectpilot.ai</a>
+      </div>
+
+      <div class="ai-card">
+        <h3>DirectorMode.AI</h3>
+        <div class="ai-sub">Creative-director-as-a-service · product owner / technical direction</div>
+        <p>An AI that actually watches and listens to a video — footage, audio, pacing, hooks — and grades the edit against two rulebooks at once: the brand's and the mechanics of viral performance. A clear score, a director's note, and a timecoded fix list before you publish.</p>
+        <div class="ai-angle">Know whether a video will land with its audience — before you publish.</div>
+        <a class="ai-link" href="https://directormode.ai">directormode.ai</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OFFERS -->
+<section class="section" id="offers">
+  <div class="narrow">
+    <div class="section-label">Productized Offers</div>
+    <h2>The same patterns, installed into your business</h2>
+    <p class="lead">Two packaged installs built from the systems above — fixed fee, built on your stack, owned by you.</p>
+
+    <div class="offer-grid">
+      <div class="offer">
+        <div class="offer-tag">For general contractors</div>
+        <h3>SubPilot</h3>
+        <p>The AI sub dispatcher that lives in your phone: confirmations, rescheduling cascades, bid coverage with leveling, inspection corrections, and compliance paperwork — dispatched from your own number, with your approval on anything that matters.</p>
+        <a href="/subpilot/">korets.net/subpilot</a>
+      </div>
+      <div class="offer">
+        <div class="offer-tag">For home service contractors</div>
+        <h3>Revenue Recovery System</h3>
+        <p>Finds the revenue leaking out of an HVAC, plumbing, or electrical shop — unsold estimates, missed calls, a silent customer base — and installs the system that recovers it: AI follow-up, 24/7 front desk, database reactivation.</p>
+        <a href="/revenue-recovery/">korets.net/revenue-recovery</a>
+      </div>
+      <div class="offer offer-full">
+        <div class="offer-tag">For mid-market operators · property management, construction, multi-entity groups</div>
+        <h3>AI-First Twin</h3>
+        <p>Most established companies won't survive a frontal AI transformation — the org resists it, and it should. The move that works: build the AI-first twin of one core process as a sidecar. Small, separate, no threat to the team that runs today's business — until the twin proves out and grows into the main line. I design and build the twin, install the human approval gates, and hand your people the keys. Fixed scope, measured against the process it mirrors.</p>
+        <a href="/#book">Start the conversation</a>
+      </div>
+    </div>
+
+    <div class="cta-band">
+      <h3>Have a process that leaks time or margin?</h3>
+      <p>If it runs on phone calls, spreadsheets, and chasing people — it's a candidate for one of these patterns. Custom engagements start with a one-week audit of how the money actually flows.</p>
+      <a href="/#book" class="btn-primary">Book a call</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p class="copy">&copy; 2026 Yaroslav Korets &middot; <a href="/">korets.net</a> &middot; AI systems in production.</p>
+</footer>
+
+</body>
+</html>

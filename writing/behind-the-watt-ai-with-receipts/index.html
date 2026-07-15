@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Behind the Watt: AI With Receipts</title>
+    <meta name="description" content="Behind the Watt is an open evidence database that uses AI to extract claims from public records while preserving source-level provenance and human approval.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://korets.net/writing/behind-the-watt-ai-with-receipts/">
+    <link rel="alternate" type="application/rss+xml" title="Yaroslav Korets — Writing" href="https://korets.net/writing/feed.xml">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Behind the Watt: AI With Receipts">
+    <meta property="og:description" content="Behind the Watt is an open evidence database that uses AI to extract claims from public records while preserving source-level provenance and human approval.">
+    <meta property="og:url" content="https://korets.net/writing/behind-the-watt-ai-with-receipts/">
+    <meta property="og:image" content="https://korets.net/writing/built-shipped-running-social.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="Yaroslav Korets">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Behind the Watt: AI With Receipts">
+    <meta name="twitter:description" content="Behind the Watt is an open evidence database that uses AI to extract claims from public records while preserving source-level provenance and human approval.">
+    <meta name="twitter:image" content="https://korets.net/writing/built-shipped-running-social.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/writing/styles.css">
+    <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BlogPosting","@id":"https://korets.net/writing/behind-the-watt-ai-with-receipts/#article","headline":"Behind the Watt: How to Use AI Without Asking Anyone to Trust It","description":"Behind the Watt is an open evidence database that uses AI to extract claims from public records while preserving source-level provenance and human approval.","datePublished":"2026-07-13","dateModified":"2026-07-14","wordCount":420,"inLanguage":"en-US","image":"https://korets.net/writing/built-shipped-running-social.png","mainEntityOfPage":"https://korets.net/writing/behind-the-watt-ai-with-receipts/","author":{"@type":"Person","name":"Yaroslav Korets","url":"https://korets.net/cv/","jobTitle":"AI-native operator"},"isPartOf":{"@type":"CreativeWorkSeries","name":"Built. Shipped. Running.","url":"https://korets.net/writing/built-shipped-running/"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://korets.net"},{"@type":"ListItem","position":2,"name":"Writing","item":"https://korets.net/writing/"},{"@type":"ListItem","position":3,"name":"Built. Shipped. Running.","item":"https://korets.net/writing/built-shipped-running/"},{"@type":"ListItem","position":4,"name":"Behind the Watt: AI With Receipts","item":"https://korets.net/writing/behind-the-watt-ai-with-receipts/"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is Behind the Watt?","acceptedAnswer":{"@type":"Answer","text":"Behind the Watt is an open evidence database for behind-the-meter power at data centers. It separates reported projects from facilities that can be verified as operating."}},{"@type":"Question","name":"How much operating capacity is in the genesis dataset?","acceptedAnswer":{"@type":"Answer","text":"As of July 13, 2026, the genesis dataset contains three verified operating facilities totaling 1.03 GW."}},{"@type":"Question","name":"How is AI used without making the model the source?","acceptedAnswer":{"@type":"Answer","text":"AI extracts and cross-checks claims, but every published quote is tied to an archived source document and approved by a person."}},{"@type":"Question","name":"How can the data be accessed?","acceptedAnswer":{"@type":"Answer","text":"Behind the Watt publishes data under CC BY 4.0 through CSV, JSON, OpenAPI, and a read-only MCP interface."}}]}]}</script>
+    
+</head>
+<body>
+
+    <nav class="site-nav" aria-label="Main navigation">
+      <div class="nav-inner">
+        <a class="brand" href="/">YK.</a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" onclick="const links=document.getElementById('nav-links');const open=links.classList.toggle('open');this.setAttribute('aria-expanded',open)">Menu</button>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="/">Home</a></li><li><a href="/ai/">AI Systems</a></li><li><a href="/writing/" aria-current="page">Writing</a></li><li><a href="/cv/">CV</a></li>
+          <li><a class="nav-cta" href="/#book">Workflow audit</a></li>
+        </ul>
+      </div>
+    </nav>
+    
+<header class="article-header">
+  <div class="hero">
+    <div class="breadcrumbs"><a href="/">Home</a><span>/</span><a href="/writing/">Writing</a><span>/</span><a href="/writing/built-shipped-running/">Built. Shipped. Running.</a></div>
+    <div class="eyebrow">Field note 7 of 8 · Built. Shipped. Running.</div>
+    <h1>Behind the Watt: How to Use AI Without Asking Anyone to Trust It</h1>
+    <p class="hero-lead">A public inventory reports 143.3 GW of behind-the-meter gas projects for data centers. I started with a stricter question: what can I prove is operating?</p>
+    <div class="article-meta"><span>By Yaroslav Korets</span><span>July 13, 2026</span><span>7 min read</span></div>
+    <div class="receipt-band"><strong>Receipt:</strong> 3 facilities · 1.03 verified operating GW · 143.3 reported GW separate · source provenance</div>
+  </div>
+</header>
+<main>
+  <div class="article-layout">
+    <article class="article-body">
+      <section><h2 id="section-1">Reported capacity and operating capacity are different facts</h2>
+                <p>Behind the Watt is the open evidence database I built to track behind-the-meter power at data centers. Its genesis dataset begins with three verified operating facilities totaling 1.03 GW.</p>
+                <p>That is not a market total. It is the first set of facilities for which I can publish the receipts. A separate public inventory lists 143.3 GW of reported gas projects. I keep those numbers separate because announced, permitted, under construction, and operating are different states.</p>
+                <p>The database is a pet project, but the method is meant for any workflow where a claim has to survive contact with a source document.</p>
+                </section><section><h2 id="section-2">AI extracts the claim, then the system tries to disprove it</h2>
+                <p>The system watches public registries, archives original documents, and uses AI to extract claims. It does not publish the extraction as truth.</p>
+                <ol>
+                  <li>The quote must be found in the source document.</li>
+                  <li>The number must be relocated on the page where it appears.</li>
+                  <li>A second model cross-checks the claim.</li>
+                  <li>A human approves publication.</li>
+                </ol>
+                <p>This reverses the usual trust request. The reader does not have to believe the model. The reader can inspect the document and repeat the check.</p>
+                </section><section><h2 id="section-3">The most useful result came from aligning dates</h2>
+                <p>The sharpest result so far is a time-to-power value of minus seven months: one facility was operating before its air-permit application was filed.</p>
+                <p>The value is not an AI opinion. It is a relationship between dated source records. AI helped find and structure the claims, but the conclusion remains inspectable.</p>
+                <p>This is where AI becomes useful for finance, legal, analytics, and construction teams. The system can read volume, but the deliverable should expose the exact evidence behind a decision.</p>
+                </section><section><h2 id="section-4">Open formats make the method testable</h2>
+                <p>The data is available under CC BY 4.0 as CSV, JSON, OpenAPI, and read-only MCP. The point is not only to publish a number. It is to make the evidence usable by people and machines.</p>
+                <p>Behind the Watt has no funnel behind it. I built it to test the method in public and to keep my own AI claims honest.</p>
+                <blockquote>Use AI for the volume. Make the source do the persuading.</blockquote>
+                <p><a href="https://behindthewatt.com">Explore the open database at behindthewatt.com</a>.</p>
+                </section>
+    </article>
+    <aside class="article-aside" aria-label="In this field note">
+      <div class="aside-label">In this note</div>
+      <ol><li><a href="#section-1">Reported capacity and operating capacity are different facts</a></li><li><a href="#section-2">AI extracts the claim, then the system tries to disprove it</a></li><li><a href="#section-3">The most useful result came from aligning dates</a></li><li><a href="#section-4">Open formats make the method testable</a></li></ol>
+    </aside>
+  </div>
+  <section class="section-alt">
+    <div class="faq">
+      <div class="eyebrow">Direct answers</div>
+      <h2>Questions operators ask</h2>
+      <details><summary>What is Behind the Watt?</summary><p>Behind the Watt is an open evidence database for behind-the-meter power at data centers. It separates reported projects from facilities that can be verified as operating.</p></details><details><summary>How much operating capacity is in the genesis dataset?</summary><p>As of July 13, 2026, the genesis dataset contains three verified operating facilities totaling 1.03 GW.</p></details><details><summary>How is AI used without making the model the source?</summary><p>AI extracts and cross-checks claims, but every published quote is tied to an archived source document and approved by a person.</p></details><details><summary>How can the data be accessed?</summary><p>Behind the Watt publishes data under CC BY 4.0 through CSV, JSON, OpenAPI, and a read-only MCP interface.</p></details>
+    </div>
+  </section>
+  <nav class="series-nav" aria-label="Series navigation"><a href="/writing/ai-build-vs-buy-line/"><span>Previous field note</span><strong>AI Changed the Build-vs.-Buy Line</strong></a><a href="/writing/ai-operating-principle/"><span>Next field note</span><strong>The Operating Principle</strong></a></nav>
+  <section class="cta-band">
+    <div class="cta-inner">
+      <div class="eyebrow" style="color:var(--lime)">One workflow. One week.</div>
+      <h2>Find the operating process worth rebuilding first</h2>
+      <p>I map the inputs, handoffs, rework, approval points, and cost. You get a narrow AI sidecar with a measurable baseline, not a transformation deck.</p>
+      <a class="button button-primary" href="/#book">Book a workflow audit</a>
+    </div>
+  </section>
+</main>
+
+    <footer class="site-footer">
+      <p>&copy; 2026 Yaroslav Korets · <a href="/ai/">AI systems in production</a> · <a href="/writing/feed.xml">RSS</a></p>
+    </footer>
+    
+</body>
+</html>

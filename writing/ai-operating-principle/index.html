@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Operating Principle for AI Agents</title>
+    <meta name="description" content="A production pattern for AI systems: let software handle persistence and volume, keep consequential decisions with people, and log every action.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://korets.net/writing/ai-operating-principle/">
+    <link rel="alternate" type="application/rss+xml" title="Yaroslav Korets — Writing" href="https://korets.net/writing/feed.xml">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="The Operating Principle for AI Agents">
+    <meta property="og:description" content="A production pattern for AI systems: let software handle persistence and volume, keep consequential decisions with people, and log every action.">
+    <meta property="og:url" content="https://korets.net/writing/ai-operating-principle/">
+    <meta property="og:image" content="https://korets.net/writing/built-shipped-running-social.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="Yaroslav Korets">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="The Operating Principle for AI Agents">
+    <meta name="twitter:description" content="A production pattern for AI systems: let software handle persistence and volume, keep consequential decisions with people, and log every action.">
+    <meta name="twitter:image" content="https://korets.net/writing/built-shipped-running-social.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/writing/styles.css">
+    <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BlogPosting","@id":"https://korets.net/writing/ai-operating-principle/#article","headline":"The Operating Principle: Persistence, Human Approval, Audit Logs","description":"A production pattern for AI systems: let software handle persistence and volume, keep consequential decisions with people, and log every action.","datePublished":"2026-07-13","dateModified":"2026-07-14","wordCount":508,"inLanguage":"en-US","image":"https://korets.net/writing/built-shipped-running-social.png","mainEntityOfPage":"https://korets.net/writing/ai-operating-principle/","author":{"@type":"Person","name":"Yaroslav Korets","url":"https://korets.net/cv/","jobTitle":"AI-native operator"},"isPartOf":{"@type":"CreativeWorkSeries","name":"Built. Shipped. Running.","url":"https://korets.net/writing/built-shipped-running/"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://korets.net"},{"@type":"ListItem","position":2,"name":"Writing","item":"https://korets.net/writing/"},{"@type":"ListItem","position":3,"name":"Built. Shipped. Running.","item":"https://korets.net/writing/built-shipped-running/"},{"@type":"ListItem","position":4,"name":"The Operating Principle","item":"https://korets.net/writing/ai-operating-principle/"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What work should an AI agent handle first?","acceptedAnswer":{"@type":"Answer","text":"Start with recurring, high-volume work that follows explicit rules and produces a checkable output. Monitoring, extraction, comparison, drafting, and follow-up are common candidates."}},{"@type":"Question","name":"What should stay with a person?","acceptedAnswer":{"@type":"Answer","text":"Keep money, factual claims, promises, and irreversible actions behind a human approval gate until the system has earned a narrower operating scope."}},{"@type":"Question","name":"Why do employees resist AI transformation?","acceptedAnswer":{"@type":"Answer","text":"A replacement can threaten roles, add a second workflow, and arrive without proof. A sidecar twin reduces that risk by running beside the current process and measuring itself against it."}},{"@type":"Question","name":"What happens in a one-week workflow audit?","acceptedAnswer":{"@type":"Answer","text":"The audit maps inputs, handoffs, rework, approvals, failure modes, and cost for one process. The output is a narrow pilot candidate with a measurable baseline."}}]}]}</script>
+    
+</head>
+<body>
+
+    <nav class="site-nav" aria-label="Main navigation">
+      <div class="nav-inner">
+        <a class="brand" href="/">YK.</a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" onclick="const links=document.getElementById('nav-links');const open=links.classList.toggle('open');this.setAttribute('aria-expanded',open)">Menu</button>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="/">Home</a></li><li><a href="/ai/">AI Systems</a></li><li><a href="/writing/" aria-current="page">Writing</a></li><li><a href="/cv/">CV</a></li>
+          <li><a class="nav-cta" href="/#book">Workflow audit</a></li>
+        </ul>
+      </div>
+    </nav>
+    
+<header class="article-header">
+  <div class="hero">
+    <div class="breadcrumbs"><a href="/">Home</a><span>/</span><a href="/writing/">Writing</a><span>/</span><a href="/writing/built-shipped-running/">Built. Shipped. Running.</a></div>
+    <div class="eyebrow">Field note 8 of 8 · Built. Shipped. Running.</div>
+    <h1>The Operating Principle: Persistence, Human Approval, Audit Logs</h1>
+    <p class="hero-lead">Six production systems and one public pet project use the same pattern: AI does the persistence and volume, humans approve what matters, and everything is logged.</p>
+    <div class="article-meta"><span>By Yaroslav Korets</span><span>July 13, 2026</span><span>7 min read</span></div>
+    <div class="receipt-band"><strong>Receipt:</strong> Explicit rules · human approval gates · audit logs · source evidence</div>
+  </div>
+</header>
+<main>
+  <div class="article-layout">
+    <article class="article-body">
+      <section><h2 id="section-1">Give AI the work people fail because they get tired</h2>
+                <p>Persistence and volume are good machine jobs. Monitoring accounts, checking documents, following up, reconciling records, and relocating source quotes are not always hard. They are easy to do inconsistently when the queue never ends.</p>
+                <p>Marco monitors senders and replies. Hunter watches ad accounts. Oscar composes analytics tools. InspectPilot structures inspection records. Behind the Watt checks public documents.</p>
+                <p>The systems are different, but each begins by assigning repeatable work to software rather than assigning judgment to a model.</p>
+                </section><section><h2 id="section-2">Humans approve money, facts, promises, and irreversible actions</h2>
+                <p>A useful approval policy names the categories that require a person. In my systems, the common set is money, factual claims, promises to another party, and actions that are hard to reverse.</p>
+                <p>The gate is not a sign that the agent is unfinished. It is how the organization keeps authority aligned with accountability.</p>
+                <p>Over time, some narrow decisions may move inside explicit rules. But the system should earn that scope from a record of correct behavior, not receive it because a demo looked confident.</p>
+                </section><section><h2 id="section-3">Everything is logged because every system will be wrong</h2>
+                <p>The important question is not whether an AI system will make an error. It will. The question is whether the company can detect the error, reconstruct the decision, correct the rule, and measure the cost.</p>
+                <p>An audit log should preserve inputs, model output, tool calls, approval state, final action, and outcome. That record turns incidents into operating knowledge.</p>
+                <p>It also makes improvement possible. Without a log, the team debates anecdotes. With a log, it can see which rule failed and how often.</p>
+                </section><section><h2 id="section-4">Adoption works better when the new process starts as a twin</h2>
+                <p>Employees resist transformation programs for rational reasons. They already own a working process. A replacement threatens their role, adds training, and often asks them to carry two systems at once.</p>
+                <p>Build an AI-first twin of one core workflow as a sidecar. Let it prepare the same report, estimate, packet, or decision in parallel. Measure time, errors, review effort, and cost against the existing process. Keep a person at the gate.</p>
+                <p>The twin earns trust before it asks for adoption. When it performs, the team can decide which parts become the main line.</p>
+                </section><section><h2 id="section-5">Start with one week of workflow evidence</h2>
+                <p>If a process runs on spreadsheets, documents, phone calls, and chasing people, it may be a candidate. But the first step is not buying an agent.</p>
+                <p>Map one week of the real workflow: inputs, handoffs, rework, approval points, failure modes, and cost. Choose one measurable sidecar. Then build only enough system to prove whether the new path is better.</p>
+                <blockquote>AI does the persistence and the volume. Humans approve what matters. Everything is logged.</blockquote>
+                </section>
+    </article>
+    <aside class="article-aside" aria-label="In this field note">
+      <div class="aside-label">In this note</div>
+      <ol><li><a href="#section-1">Give AI the work people fail because they get tired</a></li><li><a href="#section-2">Humans approve money, facts, promises, and irreversible actions</a></li><li><a href="#section-3">Everything is logged because every system will be wrong</a></li><li><a href="#section-4">Adoption works better when the new process starts as a twin</a></li><li><a href="#section-5">Start with one week of workflow evidence</a></li></ol>
+    </aside>
+  </div>
+  <section class="section-alt">
+    <div class="faq">
+      <div class="eyebrow">Direct answers</div>
+      <h2>Questions operators ask</h2>
+      <details><summary>What work should an AI agent handle first?</summary><p>Start with recurring, high-volume work that follows explicit rules and produces a checkable output. Monitoring, extraction, comparison, drafting, and follow-up are common candidates.</p></details><details><summary>What should stay with a person?</summary><p>Keep money, factual claims, promises, and irreversible actions behind a human approval gate until the system has earned a narrower operating scope.</p></details><details><summary>Why do employees resist AI transformation?</summary><p>A replacement can threaten roles, add a second workflow, and arrive without proof. A sidecar twin reduces that risk by running beside the current process and measuring itself against it.</p></details><details><summary>What happens in a one-week workflow audit?</summary><p>The audit maps inputs, handoffs, rework, approvals, failure modes, and cost for one process. The output is a narrow pilot candidate with a measurable baseline.</p></details>
+    </div>
+  </section>
+  <nav class="series-nav" aria-label="Series navigation"><a href="/writing/behind-the-watt-ai-with-receipts/"><span>Previous field note</span><strong>Behind the Watt: AI With Receipts</strong></a><a href="/writing/built-shipped-running/"><span>Series overview</span><strong>Built. Shipped. Running.</strong></a></nav>
+  <section class="cta-band">
+    <div class="cta-inner">
+      <div class="eyebrow" style="color:var(--lime)">One workflow. One week.</div>
+      <h2>Find the operating process worth rebuilding first</h2>
+      <p>I map the inputs, handoffs, rework, approval points, and cost. You get a narrow AI sidecar with a measurable baseline, not a transformation deck.</p>
+      <a class="button button-primary" href="/#book">Book a workflow audit</a>
+    </div>
+  </section>
+</main>
+
+    <footer class="site-footer">
+      <p>&copy; 2026 Yaroslav Korets · <a href="/ai/">AI systems in production</a> · <a href="/writing/feed.xml">RSS</a></p>
+    </footer>
+    
+</body>
+</html>

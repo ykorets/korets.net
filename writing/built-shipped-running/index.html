@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Built. Shipped. Running. — 8 AI Systems Field Notes</title>
+    <meta name="description" content="An eight-part series by Yaroslav Korets on moving AI from demos into production systems with approval gates, audit logs, and source evidence.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://korets.net/writing/built-shipped-running/">
+    <link rel="alternate" type="application/rss+xml" title="Yaroslav Korets — Writing" href="https://korets.net/writing/feed.xml">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Built. Shipped. Running. — 8 AI Systems Field Notes">
+    <meta property="og:description" content="An eight-part series by Yaroslav Korets on moving AI from demos into production systems with approval gates, audit logs, and source evidence.">
+    <meta property="og:url" content="https://korets.net/writing/built-shipped-running/">
+    <meta property="og:image" content="https://korets.net/writing/built-shipped-running-social.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="Yaroslav Korets">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Built. Shipped. Running. — 8 AI Systems Field Notes">
+    <meta name="twitter:description" content="An eight-part series by Yaroslav Korets on moving AI from demos into production systems with approval gates, audit logs, and source evidence.">
+    <meta name="twitter:image" content="https://korets.net/writing/built-shipped-running-social.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/writing/styles.css">
+    <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"CollectionPage","name":"Built. Shipped. Running. — 8 AI Systems Field Notes","description":"An eight-part series by Yaroslav Korets on moving AI from demos into production systems with approval gates, audit logs, and source evidence.","url":"https://korets.net/writing/built-shipped-running/","author":{"@type":"Person","name":"Yaroslav Korets","url":"https://korets.net/cv/"},"hasPart":[{"@type":"BlogPosting","position":1,"headline":"The Operational Last Mile: Why AI Demos Die Before Production","url":"https://korets.net/writing/ai-operational-last-mile/"},{"@type":"BlogPosting","position":2,"headline":"Marco: Why an Outbound AI Agent Starts With Infrastructure","url":"https://korets.net/writing/marco-infrastructure-before-ai-copy/"},{"@type":"BlogPosting","position":3,"headline":"Hunter: AI Needs Rules, Approval Gates, and Logs","url":"https://korets.net/writing/hunter-rules-before-autonomy/"},{"@type":"BlogPosting","position":4,"headline":"Oscar: Why the Dashboard Is Becoming the Wrong Interface","url":"https://korets.net/writing/oscar-dashboard-wrong-interface/"},{"@type":"BlogPosting","position":5,"headline":"InspectPilot: Contractor Reputation vs. the Public Record","url":"https://korets.net/writing/inspectpilot-reputation-vs-record/"},{"@type":"BlogPosting","position":6,"headline":"AI Changed the Build-vs.-Buy Line","url":"https://korets.net/writing/ai-build-vs-buy-line/"},{"@type":"BlogPosting","position":7,"headline":"Behind the Watt: How to Use AI Without Asking Anyone to Trust It","url":"https://korets.net/writing/behind-the-watt-ai-with-receipts/"},{"@type":"BlogPosting","position":8,"headline":"The Operating Principle: Persistence, Human Approval, Audit Logs","url":"https://korets.net/writing/ai-operating-principle/"}]},{"@type":"ItemList","itemListOrder":"https://schema.org/ItemListOrderAscending","numberOfItems":8,"itemListElement":[{"@type":"ListItem","position":1,"url":"https://korets.net/writing/ai-operational-last-mile/","name":"The Operational Last Mile: Why AI Demos Die Before Production"},{"@type":"ListItem","position":2,"url":"https://korets.net/writing/marco-infrastructure-before-ai-copy/","name":"Marco: Why an Outbound AI Agent Starts With Infrastructure"},{"@type":"ListItem","position":3,"url":"https://korets.net/writing/hunter-rules-before-autonomy/","name":"Hunter: AI Needs Rules, Approval Gates, and Logs"},{"@type":"ListItem","position":4,"url":"https://korets.net/writing/oscar-dashboard-wrong-interface/","name":"Oscar: Why the Dashboard Is Becoming the Wrong Interface"},{"@type":"ListItem","position":5,"url":"https://korets.net/writing/inspectpilot-reputation-vs-record/","name":"InspectPilot: Contractor Reputation vs. the Public Record"},{"@type":"ListItem","position":6,"url":"https://korets.net/writing/ai-build-vs-buy-line/","name":"AI Changed the Build-vs.-Buy Line"},{"@type":"ListItem","position":7,"url":"https://korets.net/writing/behind-the-watt-ai-with-receipts/","name":"Behind the Watt: How to Use AI Without Asking Anyone to Trust It"},{"@type":"ListItem","position":8,"url":"https://korets.net/writing/ai-operating-principle/","name":"The Operating Principle: Persistence, Human Approval, Audit Logs"}]}]}</script>
+    
+</head>
+<body>
+
+    <nav class="site-nav" aria-label="Main navigation">
+      <div class="nav-inner">
+        <a class="brand" href="/">YK.</a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" onclick="const links=document.getElementById('nav-links');const open=links.classList.toggle('open');this.setAttribute('aria-expanded',open)">Menu</button>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="/">Home</a></li><li><a href="/ai/">AI Systems</a></li><li><a href="/writing/" aria-current="page">Writing</a></li><li><a href="/cv/">CV</a></li>
+          <li><a class="nav-cta" href="/#book">Workflow audit</a></li>
+        </ul>
+      </div>
+    </nav>
+    
+<main>
+  <header class="hero series-hero">
+    <div class="hero-copy">
+      <div class="eyebrow">Eight field notes · One operating principle</div>
+      <h1>Built. Shipped. <span style="color:var(--purple)">Running.</span></h1>
+      <p class="hero-lead">The models are built. The last mile is not. This series breaks down the systems I have running in production, what they replace, where humans stay in control, and the receipts behind the claims.</p>
+      <div class="receipt-band"><strong>Series receipt:</strong> 6 production systems · 1 public pet project · 8 field notes</div>
+    </div>
+  </header>
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">The operating principle</div>
+        <h2>Persistence and volume belong to software. Authority stays with people.</h2>
+        <p>Every system in the series uses explicit rules, a human gate for consequential actions, and a record that can be audited after the fact.</p>
+      </div>
+      <div class="series-proof">
+        <div class="proof-item"><strong>AI does the persistent work</strong><p>Monitoring, extraction, comparison, drafting, and follow-up at a volume people cannot sustain.</p></div>
+        <div class="proof-item"><strong>Humans approve what matters</strong><p>Money, facts, promises, strategy, and actions that are difficult to reverse.</p></div>
+        <div class="proof-item"><strong>Everything is logged</strong><p>Inputs, proposals, tool calls, approvals, final actions, outcomes, and operating cost.</p></div>
+      </div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container">
+      <div class="section-head"><div class="eyebrow">The complete series</div><h2>Eight ways to look at the operational last mile</h2></div>
+      <div class="post-grid">
+        <article class="post-card">
+          <div class="part">Part 1 of 8 · 6 min</div>
+          <h3>The Operational Last Mile</h3>
+          <p>A production AI system needs source data, validation, approval gates, and an audit trail built around how a product or service is delivered.</p>
+          <div class="receipt">Receipt: 6 production systems · 1 public pet project · 8 field notes</div>
+          <a class="card-link" href="/writing/ai-operational-last-mile/">Read field note →</a>
+        </article>
+        
+        <article class="post-card">
+          <div class="part">Part 2 of 8 · 6 min</div>
+          <h3>Marco: Infrastructure Before Copy</h3>
+          <p>Marco is an outbound AI agent that begins with sender health, deliverability gates, and signals before it writes a message.</p>
+          <div class="receipt">Receipt: SPF/DKIM/DMARC · placement tests · 15-minute reply triage · approval gates</div>
+          <a class="card-link" href="/writing/marco-infrastructure-before-ai-copy/">Read field note →</a>
+        </article>
+        
+        <article class="post-card">
+          <div class="part">Part 3 of 8 · 6 min</div>
+          <h3>Hunter: Rules Before Autonomy</h3>
+          <p>Hunter runs persistent PPC operations across Google and Microsoft Ads, but meaningful changes stay governed by written rules and human approval.</p>
+          <div class="receipt">Receipt: Google Ads + Microsoft Ads · CRM-grounded rules · Telegram approval · action logs</div>
+          <a class="card-link" href="/writing/hunter-rules-before-autonomy/">Read field note →</a>
+        </article>
+        
+        <article class="post-card">
+          <div class="part">Part 4 of 8 · 5 min</div>
+          <h3>Oscar: The Dashboard Is the Wrong Interface</h3>
+          <p>Oscar is a self-hosted YouTube operations agent that turns analytics, SEO, captions, and channel tools into a plain-language interface.</p>
+          <div class="receipt">Receipt: Self-hosted · multi-channel · dozens of tools · analytics, SEO, captions, reporting</div>
+          <a class="card-link" href="/writing/oscar-dashboard-wrong-interface/">Read field note →</a>
+        </article>
+        
+        <article class="post-card">
+          <div class="part">Part 5 of 8 · 6 min</div>
+          <h3>InspectPilot: Reputation vs. Record</h3>
+          <p>InspectPilot pairs inspection scheduling with a compliance engine built on roughly 11 million Los Angeles inspection records over 13 years.</p>
+          <div class="receipt">Receipt: ~11M public records · 13 years · LADBS inspections · first-pass and violation history</div>
+          <a class="card-link" href="/writing/inspectpilot-reputation-vs-record/">Read field note →</a>
+        </article>
+        
+        <article class="post-card">
+          <div class="part">Part 6 of 8 · 6 min</div>
+          <h3>AI Changed the Build-vs.-Buy Line</h3>
+          <p>A field note on replacing selected SaaS tools with self-hosted systems, where ownership saves money, and where it creates new operating costs.</p>
+          <div class="receipt">Receipt: 4 named migration paths · Git source of truth · one MCP gateway · tool-level cost logs</div>
+          <a class="card-link" href="/writing/ai-build-vs-buy-line/">Read field note →</a>
+        </article>
+        
+        <article class="post-card">
+          <div class="part">Part 7 of 8 · 7 min</div>
+          <h3>Behind the Watt: AI With Receipts</h3>
+          <p>Behind the Watt is an open evidence database that uses AI to extract claims from public records while preserving source-level provenance and human approval.</p>
+          <div class="receipt">Receipt: 3 facilities · 1.03 verified operating GW · 143.3 reported GW separate · source provenance</div>
+          <a class="card-link" href="/writing/behind-the-watt-ai-with-receipts/">Read field note →</a>
+        </article>
+        
+        <article class="post-card">
+          <div class="part">Part 8 of 8 · 7 min</div>
+          <h3>The Operating Principle</h3>
+          <p>A production pattern for AI systems: let software handle persistence and volume, keep consequential decisions with people, and log every action.</p>
+          <div class="receipt">Receipt: Explicit rules · human approval gates · audit logs · source evidence</div>
+          <a class="card-link" href="/writing/ai-operating-principle/">Read field note →</a>
+        </article>
+        </div>
+    </div>
+  </section>
+  <section class="cta-band">
+    <div class="cta-inner">
+      <div class="eyebrow" style="color:var(--lime)">From reading to a real workflow</div>
+      <h2>Start with one process, not an AI transformation</h2>
+      <p>A one-week audit maps the inputs, rework, approval points, and cost. The result is a narrow sidecar with a baseline your team can verify.</p>
+      <a class="button button-primary" href="/#book">Book a workflow audit</a>
+    </div>
+  </section>
+</main>
+
+    <footer class="site-footer">
+      <p>&copy; 2026 Yaroslav Korets · <a href="/ai/">AI systems in production</a> · <a href="/writing/feed.xml">RSS</a></p>
+    </footer>
+    
+</body>
+</html>

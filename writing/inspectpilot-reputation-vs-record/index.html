@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InspectPilot: Reputation vs. Public Record</title>
+    <meta name="description" content="InspectPilot pairs inspection scheduling with a compliance engine built on roughly 11 million Los Angeles inspection records over 13 years.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://korets.net/writing/inspectpilot-reputation-vs-record/">
+    <link rel="alternate" type="application/rss+xml" title="Yaroslav Korets — Writing" href="https://korets.net/writing/feed.xml">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="InspectPilot: Reputation vs. Public Record">
+    <meta property="og:description" content="InspectPilot pairs inspection scheduling with a compliance engine built on roughly 11 million Los Angeles inspection records over 13 years.">
+    <meta property="og:url" content="https://korets.net/writing/inspectpilot-reputation-vs-record/">
+    <meta property="og:image" content="https://korets.net/writing/built-shipped-running-social.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="Yaroslav Korets">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="InspectPilot: Reputation vs. Public Record">
+    <meta name="twitter:description" content="InspectPilot pairs inspection scheduling with a compliance engine built on roughly 11 million Los Angeles inspection records over 13 years.">
+    <meta name="twitter:image" content="https://korets.net/writing/built-shipped-running-social.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/writing/styles.css">
+    <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BlogPosting","@id":"https://korets.net/writing/inspectpilot-reputation-vs-record/#article","headline":"InspectPilot: Contractor Reputation vs. the Public Record","description":"InspectPilot pairs inspection scheduling with a compliance engine built on roughly 11 million Los Angeles inspection records over 13 years.","datePublished":"2026-07-13","dateModified":"2026-07-14","wordCount":407,"inLanguage":"en-US","image":"https://korets.net/writing/built-shipped-running-social.png","mainEntityOfPage":"https://korets.net/writing/inspectpilot-reputation-vs-record/","author":{"@type":"Person","name":"Yaroslav Korets","url":"https://korets.net/cv/","jobTitle":"AI-native operator"},"isPartOf":{"@type":"CreativeWorkSeries","name":"Built. Shipped. Running.","url":"https://korets.net/writing/built-shipped-running/"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://korets.net"},{"@type":"ListItem","position":2,"name":"Writing","item":"https://korets.net/writing/"},{"@type":"ListItem","position":3,"name":"Built. Shipped. Running.","item":"https://korets.net/writing/built-shipped-running/"},{"@type":"ListItem","position":4,"name":"InspectPilot: Reputation vs. Record","item":"https://korets.net/writing/inspectpilot-reputation-vs-record/"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does InspectPilot do?","acceptedAnswer":{"@type":"Answer","text":"InspectPilot files and schedules LADBS inspections, helps manage corrections and compliance paperwork, and provides contractor performance signals from public records."}},{"@type":"Question","name":"How much data does the system use?","acceptedAnswer":{"@type":"Answer","text":"The engine uses roughly 11 million Los Angeles inspection records covering 13 years."}},{"@type":"Question","name":"What contractor signals does it examine?","acceptedAnswer":{"@type":"Answer","text":"The system looks at first-pass rates, violations, and permit history. These signals support review; they do not replace context or human judgment."}},{"@type":"Question","name":"Why is this relevant to other data- and process-heavy industries?","acceptedAnswer":{"@type":"Answer","text":"The pattern is transferable: preserve the operational record, structure the outcomes, and use that history to improve the next decision."}}]}]}</script>
+    
+</head>
+<body>
+
+    <nav class="site-nav" aria-label="Main navigation">
+      <div class="nav-inner">
+        <a class="brand" href="/">YK.</a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" onclick="const links=document.getElementById('nav-links');const open=links.classList.toggle('open');this.setAttribute('aria-expanded',open)">Menu</button>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="/">Home</a></li><li><a href="/ai/">AI Systems</a></li><li><a href="/writing/" aria-current="page">Writing</a></li><li><a href="/cv/">CV</a></li>
+          <li><a class="nav-cta" href="/#book">Workflow audit</a></li>
+        </ul>
+      </div>
+    </nav>
+    
+<header class="article-header">
+  <div class="hero">
+    <div class="breadcrumbs"><a href="/">Home</a><span>/</span><a href="/writing/">Writing</a><span>/</span><a href="/writing/built-shipped-running/">Built. Shipped. Running.</a></div>
+    <div class="eyebrow">Field note 5 of 8 · Built. Shipped. Running.</div>
+    <h1>InspectPilot: Contractor Reputation vs. the Public Record</h1>
+    <p class="hero-lead">Scheduling solves today&#x27;s task. A structured performance record improves tomorrow&#x27;s contractor decision.</p>
+    <div class="article-meta"><span>By Yaroslav Korets</span><span>July 13, 2026</span><span>6 min read</span></div>
+    <div class="receipt-band"><strong>Receipt:</strong> ~11M public records · 13 years · LADBS inspections · first-pass and violation history</div>
+  </div>
+</header>
+<main>
+  <div class="article-layout">
+    <article class="article-body">
+      <section><h2 id="section-1">Two expensive problems share the same data</h2>
+                <p>General contractors lose time scheduling inspections, handling corrections, and keeping the paperwork trail complete. They also lose money when a subcontractor repeatedly fails work that has to be reopened.</p>
+                <p>InspectPilot handles both sides. On the surface, it is a concierge agent that files and schedules building inspections with the Los Angeles Department of Building and Safety. Underneath, it is a compliance engine that scores contractors on how they actually perform.</p>
+                <p>The same records used to move a permit forward can also improve the next hiring decision.</p>
+                </section><section><h2 id="section-2">The evidence base is roughly 11 million records</h2>
+                <p>The engine runs on roughly 11 million public inspection records covering every Los Angeles inspection over 13 years. It looks at first-pass rates, violations, and permit history.</p>
+                <p>That does not make the score a verdict. Different project types and scopes need context. But it replaces an uncheckable reputation claim with a record that can be inspected.</p>
+                <p>The useful AI work begins after the records are collected: matching entities, normalizing inconsistent names, connecting permits to contractors, and turning a large public archive into a reviewable signal.</p>
+                </section><section><h2 id="section-3">Document automation should improve the next decision</h2>
+                <p>Many AI projects stop after a document is created. InspectPilot uses the document trail as an operating dataset.</p>
+                <p>Inspection requests, corrections, permits, and outcomes are not just paperwork to finish. Together they form a history of who did what, where the process failed, and which contractor consistently got work through review.</p>
+                <p>Finance firms can use the same idea with reconciliations. Legal teams can use it with clause changes and review outcomes. Estimators can use it with bid revisions and change orders. The recurring document becomes evidence for the next decision.</p>
+                </section><section><h2 id="section-4">A checkable signal is stronger than a confident answer</h2>
+                <p>InspectPilot does not ask the user to trust a generated paragraph. It exposes the record behind the signal.</p>
+                <p>That matters because AI can make weak evidence sound certain. A reliable system should do the opposite: make uncertainty visible, preserve the source, and let a person inspect the path from record to recommendation.</p>
+                <blockquote>Reputation is what a contractor says. First-pass rate is what the public record says. One of those is checkable.</blockquote>
+                </section>
+    </article>
+    <aside class="article-aside" aria-label="In this field note">
+      <div class="aside-label">In this note</div>
+      <ol><li><a href="#section-1">Two expensive problems share the same data</a></li><li><a href="#section-2">The evidence base is roughly 11 million records</a></li><li><a href="#section-3">Document automation should improve the next decision</a></li><li><a href="#section-4">A checkable signal is stronger than a confident answer</a></li></ol>
+    </aside>
+  </div>
+  <section class="section-alt">
+    <div class="faq">
+      <div class="eyebrow">Direct answers</div>
+      <h2>Questions operators ask</h2>
+      <details><summary>What does InspectPilot do?</summary><p>InspectPilot files and schedules LADBS inspections, helps manage corrections and compliance paperwork, and provides contractor performance signals from public records.</p></details><details><summary>How much data does the system use?</summary><p>The engine uses roughly 11 million Los Angeles inspection records covering 13 years.</p></details><details><summary>What contractor signals does it examine?</summary><p>The system looks at first-pass rates, violations, and permit history. These signals support review; they do not replace context or human judgment.</p></details><details><summary>Why is this relevant to other data- and process-heavy industries?</summary><p>The pattern is transferable: preserve the operational record, structure the outcomes, and use that history to improve the next decision.</p></details>
+    </div>
+  </section>
+  <nav class="series-nav" aria-label="Series navigation"><a href="/writing/oscar-dashboard-wrong-interface/"><span>Previous field note</span><strong>Oscar: The Dashboard Is the Wrong Interface</strong></a><a href="/writing/ai-build-vs-buy-line/"><span>Next field note</span><strong>AI Changed the Build-vs.-Buy Line</strong></a></nav>
+  <section class="cta-band">
+    <div class="cta-inner">
+      <div class="eyebrow" style="color:var(--lime)">One workflow. One week.</div>
+      <h2>Find the operating process worth rebuilding first</h2>
+      <p>I map the inputs, handoffs, rework, approval points, and cost. You get a narrow AI sidecar with a measurable baseline, not a transformation deck.</p>
+      <a class="button button-primary" href="/#book">Book a workflow audit</a>
+    </div>
+  </section>
+</main>
+
+    <footer class="site-footer">
+      <p>&copy; 2026 Yaroslav Korets · <a href="/ai/">AI systems in production</a> · <a href="/writing/feed.xml">RSS</a></p>
+    </footer>
+    
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oscar: Why Dashboards Are the Wrong Interface</title>
+    <meta name="description" content="Oscar is a self-hosted YouTube operations agent that turns analytics, SEO, captions, and channel tools into a plain-language interface.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://korets.net/writing/oscar-dashboard-wrong-interface/">
+    <link rel="alternate" type="application/rss+xml" title="Yaroslav Korets — Writing" href="https://korets.net/writing/feed.xml">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Oscar: Why Dashboards Are the Wrong Interface">
+    <meta property="og:description" content="Oscar is a self-hosted YouTube operations agent that turns analytics, SEO, captions, and channel tools into a plain-language interface.">
+    <meta property="og:url" content="https://korets.net/writing/oscar-dashboard-wrong-interface/">
+    <meta property="og:image" content="https://korets.net/writing/built-shipped-running-social.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="Yaroslav Korets">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Oscar: Why Dashboards Are the Wrong Interface">
+    <meta name="twitter:description" content="Oscar is a self-hosted YouTube operations agent that turns analytics, SEO, captions, and channel tools into a plain-language interface.">
+    <meta name="twitter:image" content="https://korets.net/writing/built-shipped-running-social.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/writing/styles.css">
+    <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BlogPosting","@id":"https://korets.net/writing/oscar-dashboard-wrong-interface/#article","headline":"Oscar: Why the Dashboard Is Becoming the Wrong Interface","description":"Oscar is a self-hosted YouTube operations agent that turns analytics, SEO, captions, and channel tools into a plain-language interface.","datePublished":"2026-07-13","dateModified":"2026-07-14","wordCount":405,"inLanguage":"en-US","image":"https://korets.net/writing/built-shipped-running-social.png","mainEntityOfPage":"https://korets.net/writing/oscar-dashboard-wrong-interface/","author":{"@type":"Person","name":"Yaroslav Korets","url":"https://korets.net/cv/","jobTitle":"AI-native operator"},"isPartOf":{"@type":"CreativeWorkSeries","name":"Built. Shipped. Running.","url":"https://korets.net/writing/built-shipped-running/"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://korets.net"},{"@type":"ListItem","position":2,"name":"Writing","item":"https://korets.net/writing/"},{"@type":"ListItem","position":3,"name":"Built. Shipped. Running.","item":"https://korets.net/writing/built-shipped-running/"},{"@type":"ListItem","position":4,"name":"Oscar: The Dashboard Is the Wrong Interface","item":"https://korets.net/writing/oscar-dashboard-wrong-interface/"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is Oscar?","acceptedAnswer":{"@type":"Answer","text":"Oscar is a self-hosted YouTube operations agent that provides plain-language access to analytics, SEO, channel management, captions, and bulk reporting tools."}},{"@type":"Question","name":"Does an AI agent replace every dashboard?","acceptedAnswer":{"@type":"Answer","text":"No. Fixed dashboards remain useful for repeated controls and shared metrics. Agents are better for ad hoc questions, investigation, and follow-up."}},{"@type":"Question","name":"What must exist before a team can chat with its data?","acceptedAnswer":{"@type":"Answer","text":"The team needs clear source ownership, metric definitions, permissions, and stable tools or APIs. Natural language cannot repair an undefined data model."}},{"@type":"Question","name":"How is this useful outside YouTube?","acceptedAnswer":{"@type":"Answer","text":"The same interface pattern works for financial reporting, legal document review, estimating, and other workflows where people repeatedly combine data to answer new questions."}}]}]}</script>
+    
+</head>
+<body>
+
+    <nav class="site-nav" aria-label="Main navigation">
+      <div class="nav-inner">
+        <a class="brand" href="/">YK.</a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" onclick="const links=document.getElementById('nav-links');const open=links.classList.toggle('open');this.setAttribute('aria-expanded',open)">Menu</button>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="/">Home</a></li><li><a href="/ai/">AI Systems</a></li><li><a href="/writing/" aria-current="page">Writing</a></li><li><a href="/cv/">CV</a></li>
+          <li><a class="nav-cta" href="/#book">Workflow audit</a></li>
+        </ul>
+      </div>
+    </nav>
+    
+<header class="article-header">
+  <div class="hero">
+    <div class="breadcrumbs"><a href="/">Home</a><span>/</span><a href="/writing/">Writing</a><span>/</span><a href="/writing/built-shipped-running/">Built. Shipped. Running.</a></div>
+    <div class="eyebrow">Field note 4 of 8 · Built. Shipped. Running.</div>
+    <h1>Oscar: Why the Dashboard Is Becoming the Wrong Interface</h1>
+    <p class="hero-lead">A dashboard answers the question its designer predicted. An agent can answer the question the operator actually has.</p>
+    <div class="article-meta"><span>By Yaroslav Korets</span><span>July 13, 2026</span><span>5 min read</span></div>
+    <div class="receipt-band"><strong>Receipt:</strong> Self-hosted · multi-channel · dozens of tools · analytics, SEO, captions, reporting</div>
+  </div>
+</header>
+<main>
+  <div class="article-layout">
+    <article class="article-body">
+      <section><h2 id="section-1">I stopped opening YouTube Studio</h2>
+                <p>Oscar is my self-hosted YouTube operations agent. It exposes dozens of tools across analytics, discovery and SEO, channel management, captions, and bulk reporting.</p>
+                <p>Instead of navigating a stack of reports, I can ask how a channel performed over the last 90 days, which uploads are missing captions, or which topics are gaining search visibility. I can then ask a follow-up without rebuilding the report.</p>
+                <p>The interface changed from navigation to intent.</p>
+                </section><section><h2 id="section-2">Dashboards freeze yesterday&#x27;s questions</h2>
+                <p>A dashboard is a set of choices made in advance: which metrics matter, how they are grouped, and which filters the operator might need. That works for repeated monitoring. It breaks when the next question is not on the screen.</p>
+                <p>Data-heavy teams know this problem. They export data, combine spreadsheets, copy numbers into a report, and explain the exceptions in a separate memo. The dashboard did not remove the analysis. It only moved it downstream.</p>
+                <p>An agent can compose tools at the moment of the question. But that only works if the underlying tools and permissions are well defined.</p>
+                </section><section><h2 id="section-3">Natural language does not remove the data model</h2>
+                <p>Oscar still needs named data sources, stable tool contracts, channel permissions, and clear definitions for each metric. Plain language is the interface, not the database.</p>
+                <p>This is an important distinction for teams considering “chat with your data.” If the source systems disagree, the agent will surface the disagreement faster. It will not resolve ownership by itself.</p>
+                <p>The work is to define what each tool can read or change, then let the agent combine those capabilities without giving it more authority than the question requires.</p>
+                </section><section><h2 id="section-4">The next report can begin with a question</h2>
+                <p>For analytics companies, finance teams, and operators, the useful shift is not “replace every dashboard.” It is to stop treating every new question as a new reporting project.</p>
+                <p>Keep fixed dashboards for fixed controls. Use an agent for investigation, comparison, and follow-up. The two interfaces serve different jobs.</p>
+                <blockquote>A dashboard answers the question someone predicted. An agent answers the question you actually have.</blockquote>
+                </section>
+    </article>
+    <aside class="article-aside" aria-label="In this field note">
+      <div class="aside-label">In this note</div>
+      <ol><li><a href="#section-1">I stopped opening YouTube Studio</a></li><li><a href="#section-2">Dashboards freeze yesterday&#x27;s questions</a></li><li><a href="#section-3">Natural language does not remove the data model</a></li><li><a href="#section-4">The next report can begin with a question</a></li></ol>
+    </aside>
+  </div>
+  <section class="section-alt">
+    <div class="faq">
+      <div class="eyebrow">Direct answers</div>
+      <h2>Questions operators ask</h2>
+      <details><summary>What is Oscar?</summary><p>Oscar is a self-hosted YouTube operations agent that provides plain-language access to analytics, SEO, channel management, captions, and bulk reporting tools.</p></details><details><summary>Does an AI agent replace every dashboard?</summary><p>No. Fixed dashboards remain useful for repeated controls and shared metrics. Agents are better for ad hoc questions, investigation, and follow-up.</p></details><details><summary>What must exist before a team can chat with its data?</summary><p>The team needs clear source ownership, metric definitions, permissions, and stable tools or APIs. Natural language cannot repair an undefined data model.</p></details><details><summary>How is this useful outside YouTube?</summary><p>The same interface pattern works for financial reporting, legal document review, estimating, and other workflows where people repeatedly combine data to answer new questions.</p></details>
+    </div>
+  </section>
+  <nav class="series-nav" aria-label="Series navigation"><a href="/writing/hunter-rules-before-autonomy/"><span>Previous field note</span><strong>Hunter: Rules Before Autonomy</strong></a><a href="/writing/inspectpilot-reputation-vs-record/"><span>Next field note</span><strong>InspectPilot: Reputation vs. Record</strong></a></nav>
+  <section class="cta-band">
+    <div class="cta-inner">
+      <div class="eyebrow" style="color:var(--lime)">One workflow. One week.</div>
+      <h2>Find the operating process worth rebuilding first</h2>
+      <p>I map the inputs, handoffs, rework, approval points, and cost. You get a narrow AI sidecar with a measurable baseline, not a transformation deck.</p>
+      <a class="button button-primary" href="/#book">Book a workflow audit</a>
+    </div>
+  </section>
+</main>
+
+    <footer class="site-footer">
+      <p>&copy; 2026 Yaroslav Korets · <a href="/ai/">AI systems in production</a> · <a href="/writing/feed.xml">RSS</a></p>
+    </footer>
+    
+</body>
+</html>

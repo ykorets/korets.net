@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SubPilot — AI Sub Dispatcher for General Contractors | Yaroslav Korets</title>
+  <meta name="description" content="An AI dispatcher that runs your subcontractors from your own phone number — confirmations, scheduling, bid coverage, inspections, paperwork. Run more projects across more sites without adding a PM.">
+  <meta name="robots" content="index, follow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #fafafa;
+      --bg-card: #ffffff;
+      --bg-alt: #f3f2f8;
+      --border: #e5e3ee;
+      --border-light: #edebf5;
+      --purple: #7c5cfc;
+      --purple-dark: #5b3fd9;
+      --purple-dim: rgba(124, 92, 252, 0.08);
+      --purple-dim2: rgba(124, 92, 252, 0.15);
+      --lime: #9ae600;
+      --lime-dark: #7cc200;
+      --lime-dim: rgba(154, 230, 0, 0.1);
+      --text-primary: #1a1a2e;
+      --text-secondary: #555566;
+      --text-muted: #8888a0;
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: var(--text-primary); background: var(--bg);
+      line-height: 1.7; -webkit-font-smoothing: antialiased;
+    }
+
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 50;
+      background: rgba(250, 250, 250, 0.9); backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border); padding: 0 1.5rem;
+    }
+    .nav-inner {
+      max-width: 72rem; margin: 0 auto;
+      display: flex; justify-content: space-between; align-items: center; height: 4.5rem;
+    }
+    .nav-logo { font-weight: 700; font-size: 1.25rem; color: var(--purple); text-decoration: none; letter-spacing: -0.02em; }
+    .nav-links { display: flex; gap: 2rem; list-style: none; align-items: center; }
+    .nav-links a { color: var(--text-secondary); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--purple); }
+    .nav-cta { background: var(--purple); color: #fff !important; padding: 0.5rem 1.25rem; border-radius: 0.5rem; font-weight: 600; font-size: 0.85rem; transition: background 0.2s; }
+    .nav-cta:hover { background: var(--purple-dark); color: #fff !important; }
+
+    .hero { padding: 10rem 1.5rem 4rem; max-width: 52rem; margin: 0 auto; }
+    .hero-badge {
+      display: inline-block; padding: 0.4rem 1rem; border-radius: 999px;
+      background: var(--purple-dim2); color: var(--purple-dark);
+      font-size: 0.8rem; font-weight: 600; letter-spacing: 0.02em; margin-bottom: 1.5rem;
+    }
+    .hero h1 { font-size: clamp(2.4rem, 5vw, 3.6rem); font-weight: 700; line-height: 1.1; letter-spacing: -0.03em; margin-bottom: 0.5rem; }
+    .hero h1 .accent { color: var(--purple); }
+    .hero .role-line { font-size: 1.1rem; color: var(--purple-dark); font-weight: 600; margin-bottom: 1.5rem; }
+    .hero .tagline { font-size: clamp(1.05rem, 2vw, 1.3rem); color: var(--text-primary); font-weight: 500; max-width: 40rem; line-height: 1.55; margin-bottom: 1.25rem; }
+    .hero .intro { font-size: 1.02rem; color: var(--text-secondary); max-width: 42rem; line-height: 1.75; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.75rem; }
+    .btn-primary { display: inline-flex; align-items: center; gap: 0.6rem; background: var(--purple); color: #fff; text-decoration: none; padding: 0.75rem 1.5rem; border-radius: 0.5rem; font-weight: 600; font-size: 0.9rem; transition: background 0.2s; }
+    .btn-primary:hover { background: var(--purple-dark); }
+    .btn-ghost { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.75rem 1.5rem; border: 1px solid var(--border); border-radius: 0.5rem; color: var(--text-secondary); text-decoration: none; font-weight: 600; font-size: 0.9rem; background: var(--bg-card); transition: border-color 0.2s, color 0.2s; }
+    .btn-ghost:hover { border-color: var(--purple); color: var(--purple); }
+
+    .section { padding: 4.5rem 1.5rem; }
+    .section-alt { background: var(--bg-alt); border-top: 1px solid var(--border-light); border-bottom: 1px solid var(--border-light); }
+    .narrow { max-width: 52rem; margin: 0 auto; }
+    h2 { font-size: clamp(1.7rem, 3.5vw, 2.15rem); font-weight: 700; margin-bottom: 0.75rem; letter-spacing: -0.02em; }
+    h3 { font-size: 1.125rem; font-weight: 600; margin-bottom: 0.5rem; }
+    .section-label { text-transform: uppercase; letter-spacing: 0.15em; font-size: 0.75rem; font-weight: 600; color: var(--purple); margin-bottom: 0.75rem; }
+    p { color: var(--text-secondary); }
+    p + p { margin-top: 1rem; }
+    .lead { font-size: 1.05rem; margin-bottom: 0.5rem; }
+
+    /* PROBLEM */
+    .prob-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-top: 2.25rem; }
+    .prob { background: var(--bg-card); border: 1px solid var(--border); border-radius: 1rem; padding: 1.6rem 1.75rem; border-top: 3px solid var(--purple); }
+    .prob .prob-tag { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.14em; color: var(--purple); font-weight: 700; margin-bottom: 0.6rem; }
+    .prob .prob-num { font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 700; color: var(--text-primary); letter-spacing: -0.02em; line-height: 1.15; margin-bottom: 0.6rem; }
+    .prob .prob-num .hl { color: var(--purple-dark); }
+    .prob p { font-size: 0.9rem; margin: 0; }
+    .prob-pull { margin-top: 1.5rem; padding: 1.4rem 1.75rem; background: linear-gradient(135deg, var(--purple-dim), var(--lime-dim)); border: 1px solid var(--border); border-radius: 1rem; font-size: 1.02rem; font-weight: 500; color: var(--text-primary); }
+
+    /* LOOPS */
+    .mod-list { display: grid; gap: 1.25rem; margin-top: 2.5rem; }
+    .mod { background: var(--bg-card); border: 1px solid var(--border); border-left: 3px solid var(--purple); border-radius: 0 1rem 1rem 0; padding: 1.75rem 2rem; }
+    .mod .mod-tag { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--purple); font-weight: 700; margin-bottom: 0.4rem; }
+    .mod h3 { font-size: 1.15rem; margin-bottom: 0.4rem; }
+    .mod p { font-size: 0.93rem; margin: 0; }
+    .mod .mod-result { margin-top: 0.85rem; font-size: 0.88rem; color: var(--text-primary); font-weight: 500; }
+    .mod .mod-result::before { content: '→ '; color: var(--lime-dark); font-weight: 700; }
+
+    /* CALCULATOR */
+    .calc-box { margin-top: 2.25rem; background: var(--bg-card); border: 1px solid var(--border); border-radius: 1rem; padding: 2rem 2.25rem; }
+    .calc-inputs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+    .calc-inputs label { display: flex; flex-direction: column; gap: 0.4rem; font-size: 0.85rem; font-weight: 600; color: var(--text-primary); }
+    .calc-inputs .hint { font-weight: 400; color: var(--text-muted); font-size: 0.75rem; }
+    .calc-inputs input { padding: 0.6rem 0.8rem; border: 1px solid var(--border); border-radius: 0.5rem; font-family: inherit; font-size: 0.95rem; color: var(--text-primary); background: var(--bg); width: 100%; }
+    .calc-inputs input:focus { outline: none; border-color: var(--purple); }
+    .calc-assumption { margin-top: 1.75rem; padding: 1.1rem 1.4rem; background: var(--purple-dim); border-radius: 0.75rem; font-size: 0.9rem; color: var(--text-primary); }
+    .calc-assumption input[type=range] { width: 100%; margin-top: 0.6rem; accent-color: var(--purple); }
+    .calc-results { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.25rem; margin-top: 1.75rem; }
+    .calc-result { border: 1px solid var(--border); border-radius: 0.75rem; padding: 1.25rem 1.4rem; border-top: 3px solid var(--purple); }
+    .calc-result.calc-total { border-top-color: var(--lime-dark); background: var(--lime-dim); }
+    .calc-num { font-size: 1.7rem; font-weight: 700; color: var(--purple-dark); letter-spacing: -0.02em; }
+    .calc-total .calc-num { color: var(--text-primary); }
+    .calc-what { font-size: 0.85rem; font-weight: 600; color: var(--text-primary); margin: 0.25rem 0 0.5rem; }
+    .calc-formula { font-size: 0.72rem; color: var(--text-muted); line-height: 1.5; }
+    .calc-note { margin-top: 1.5rem; font-size: 0.8rem; color: var(--text-muted); }
+
+    /* HOW */
+    .diff-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-top: 2.25rem; }
+    .diff { background: var(--bg-card); border: 1px solid var(--border); border-radius: 0.9rem; padding: 1.6rem 1.75rem; border-top: 3px solid var(--lime-dark); }
+    .diff h3 { font-size: 1.02rem; margin-bottom: 0.5rem; }
+    .diff p { font-size: 0.9rem; margin: 0; }
+
+    /* STEPS */
+    .steps { display: grid; gap: 1rem; margin-top: 2.25rem; }
+    .step { display: grid; grid-template-columns: 3rem 1fr auto; gap: 1.25rem; align-items: start; background: var(--bg-card); border: 1px solid var(--border); border-radius: 0.9rem; padding: 1.5rem 1.75rem; }
+    .step .n { width: 2.25rem; height: 2.25rem; border-radius: 0.5rem; background: var(--purple-dim2); color: var(--purple-dark); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1rem; }
+    .step h3 { font-size: 1.05rem; margin-bottom: 0.3rem; }
+    .step p { font-size: 0.9rem; margin: 0; }
+    .step .price { font-weight: 700; color: var(--purple-dark); font-size: 0.95rem; white-space: nowrap; padding-top: 0.2rem; }
+
+    /* OPERATOR */
+    .operator { margin-top: 2.25rem; background: var(--bg-card); border: 1px solid var(--border); border-radius: 1rem; padding: 2rem 2.25rem; }
+    .operator h3 { font-size: 1.15rem; margin-bottom: 0.6rem; }
+    .operator p { font-size: 0.95rem; }
+    .operator .proof { display: grid; grid-template-columns: 1fr 1fr; gap: 0.85rem; margin-top: 1.4rem; }
+    .operator .proof-item { font-size: 0.88rem; color: var(--text-secondary); display: flex; gap: 0.6rem; align-items: flex-start; }
+    .operator .proof-item::before { content: '✓'; color: var(--lime-dark); font-weight: 700; flex-shrink: 0; }
+    .operator a { color: var(--purple); font-weight: 600; text-decoration: none; }
+    .operator a:hover { color: var(--purple-dark); }
+
+    .cta-band { margin-top: 2.5rem; padding: 2.25rem; background: linear-gradient(135deg, var(--purple-dim), var(--lime-dim)); border: 1px solid var(--border); border-radius: 1rem; text-align: center; }
+    .cta-band h3 { font-size: 1.3rem; margin-bottom: 0.5rem; }
+    .cta-band p { max-width: 34rem; margin: 0 auto 1.5rem; }
+
+    footer { padding: 3rem 1.5rem; border-top: 1px solid var(--border); text-align: center; }
+    footer .copy { color: var(--text-muted); font-size: 0.8rem; }
+    footer a { color: var(--purple); text-decoration: none; }
+
+    .nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 0.5rem; }
+    .nav-toggle svg { width: 24px; height: 24px; stroke: var(--text-secondary); }
+
+    @media (max-width: 768px) {
+      .nav-toggle { display: block; }
+      .nav-links { display: none; flex-direction: column; position: absolute; top: 4.5rem; left: 0; right: 0; background: var(--bg); border-bottom: 1px solid var(--border); padding: 1rem 1.5rem; gap: 1rem; }
+      .nav-links.open { display: flex; }
+      .hero { padding-top: 7.5rem; }
+      .diff-grid, .operator .proof, .prob-grid { grid-template-columns: 1fr; }
+      .calc-inputs, .calc-results { grid-template-columns: 1fr; }
+      .step { grid-template-columns: 3rem 1fr; }
+      .step .price { grid-column: 2; padding-top: 0; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">YK.</a>
+    <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+    </button>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="#problem">The Problem</a></li>
+      <li><a href="#calculator">Calculator</a></li>
+      <li><a href="#loops">What It Runs</a></li>
+      <li><a href="#how">How It Works</a></li>
+      <li><a href="#engage">Pricing</a></li>
+      <li><a href="/#book" class="nav-cta">Book a call</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-badge">For General Contractors · Remodeling · ADU · Multi-Site · Los Angeles</div>
+  <h1>Sub<span class="accent">Pilot</span></h1>
+  <div class="role-line">The AI sub dispatcher that lives in your phone</div>
+  <p class="tagline">Your contract price is fixed the day you sign. Your costs bill by the week. Every week a project runs past plan comes straight out of your margin &mdash; and your subs decide how long it runs. SubPilot runs your subs.</p>
+  <p class="intro">Confirmations, rescheduling cascades, bid coverage, inspection corrections, paperwork &mdash; dispatched and chased from your own phone number, inside the text threads your subs already answer. No app for them to download. iPhone or Android. Your approval on anything that matters.</p>
+  <div class="hero-actions">
+    <a href="/#book" class="btn-primary">Book a Dispatch Audit</a>
+    <a href="#loops" class="btn-ghost">See what it runs</a>
+  </div>
+</section>
+
+<!-- PROBLEM -->
+<section class="section section-alt" id="problem">
+  <div class="narrow">
+    <div class="section-label">The Problem</div>
+    <h2>The price is fixed. The schedule isn't. That gap is your margin.</h2>
+    <p class="lead">The previous trade slips — and you spend the evening re-calling the whole chain. That hand-run loop is where projects stretch. Stretch hits a fixed-price contract in four places:</p>
+
+    <div class="prob-grid">
+      <div class="prob">
+        <div class="prob-tag">Margin</div>
+        <div class="prob-num">Price: locked.<br>Costs: <span class="hl">weekly.</span></div>
+        <p>Supervision, dumpster, temp power, builder's risk — all billed by time. There's no change order for "the tile guy came a week late."</p>
+      </div>
+      <div class="prob">
+        <div class="prob-tag">Capacity</div>
+        <div class="prob-num">12 <span class="hl">→ 9</span> projects/yr</div>
+        <p>Same PM, same trucks, same marketing — cycles stretch from 12 to 15 weeks and a quarter of your annual gross profit is gone. Run it on your own numbers below.</p>
+      </div>
+      <div class="prob">
+        <div class="prob-tag">Cash</div>
+        <div class="prob-num">Draws slip. <span class="hl">Fridays don't.</span></div>
+        <p>Draws are tied to milestones; payroll is tied to Fridays. Stretch enough projects at once and you're financing your clients' remodels.</p>
+      </div>
+      <div class="prob">
+        <div class="prob-tag">Leads</div>
+        <div class="prob-num"><span class="hl">37%</span> of leads = referrals</div>
+        <p>NAHB survey. And the one-star reviews in your market are about delays and silence — not tile. On-time is your cheapest marketing.</p>
+      </div>
+    </div>
+
+    <div class="prob-pull">Finishing on time isn't operations. It's your sales engine, your margin, and your capacity — and it's decided in the sub threads on your phone.</div>
+  </div>
+</section>
+
+<!-- CALCULATOR -->
+<section class="section" id="calculator">
+  <div class="narrow">
+    <div class="section-label">Run Your Numbers</div>
+    <h2>What schedule slip costs you — in your numbers, not ours</h2>
+    <p class="lead">Nothing here is an industry average. Six inputs from your own books, formulas shown under every result.</p>
+
+    <div class="calc-box">
+      <div class="calc-inputs">
+        <label>Projects completed per year
+          <input type="number" id="c-projects" value="12" min="1" max="200">
+        </label>
+        <label>Average contract value, $
+          <input type="number" id="c-value" value="150000" min="10000" step="10000">
+        </label>
+        <label>Gross margin per project, %
+          <input type="number" id="c-margin" value="25" min="1" max="60">
+        </label>
+        <label>Planned build time, weeks
+          <input type="number" id="c-weeks" value="12" min="2" max="60">
+        </label>
+        <label>Typical overrun, weeks
+          <input type="number" id="c-slip" value="3" min="0" max="30">
+        </label>
+        <label>Your weekly site overhead, $ <span class="hint">super&nbsp;+ dumpster + temp facilities + insurance, per active job</span>
+          <input type="number" id="c-overhead" value="1200" min="0" step="100">
+        </label>
+      </div>
+
+      <div class="calc-assumption">
+        <label for="c-recover">Assume dispatch recovers <b><span id="c-recover-label">50%</span></b> of overrun weeks — your call, drag it:</label>
+        <input type="range" id="c-recover" min="10" max="90" value="50" step="10">
+      </div>
+
+      <div class="calc-results">
+        <div class="calc-result">
+          <div class="calc-num" id="r-overhead">—</div>
+          <div class="calc-what">Overhead burned by overrun, per year</div>
+          <div class="calc-formula" id="f-overhead"></div>
+        </div>
+        <div class="calc-result">
+          <div class="calc-num" id="r-capacity">—</div>
+          <div class="calc-what">Gross profit locked up in lost capacity, per year</div>
+          <div class="calc-formula" id="f-capacity"></div>
+        </div>
+        <div class="calc-result calc-total">
+          <div class="calc-num" id="r-total">—</div>
+          <div class="calc-what">On the table, per year — at your <span id="r-recover-echo">50%</span> recovery assumption</div>
+          <div class="calc-formula" id="f-total"></div>
+        </div>
+      </div>
+      <p class="calc-note">The math: overhead loss = overrun weeks × weekly overhead × projects. Capacity loss = extra projects your team would complete at planned cycle time × margin per project. The recovery slider scales both — we don't assume perfection, and neither should you.</p>
+    </div>
+  </div>
+</section>
+
+<!-- LOOPS -->
+<section class="section" id="loops">
+  <div class="narrow">
+    <div class="section-label">What It Runs</div>
+    <h2>Five dispatch loops, one agent</h2>
+    <p class="lead">Each loop is work you or your PM do by hand today. SubPilot runs them continuously, across every active project, and logs everything to one project record.</p>
+
+    <div class="mod-list">
+      <div class="mod">
+        <div class="mod-tag">Loop 1 · The daily grind</div>
+        <h3>Confirmations &amp; rescheduling</h3>
+        <p>Automatic sub confirmations at 14, 7, and 2 days before every mobilization — in the sub's own thread, in your voice. When a trade slips or an inspection fails, SubPilot recalculates the downstream chain and re-confirms every affected sub, escalating to you only the ones who hesitate.</p>
+        <div class="mod-result">No-show risk caught days early. A schedule slip becomes one approval tap, not an evening of phone calls.</div>
+      </div>
+      <div class="mod">
+        <div class="mod-tag">Loop 2 · The margin maker</div>
+        <h3>Bid desk with leveling</h3>
+        <p>Send a scope, get coverage: SubPilot invites, chases, and collects sub bids until you have three-plus per trade, then levels them apples-to-apples and flags exclusions and outliers. Three bids per trade is the industry's own rule of thumb — because a single bid is just one sub's Tuesday-morning number.</p>
+        <div class="mod-result">Real coverage on every trade, a level sheet instead of a gut call, and a paper trail that keeps every sub's pencil sharp — without your estimator burning hours on the phone.</div>
+      </div>
+      <div class="mod">
+        <div class="mod-tag">Loop 3 · The differentiator</div>
+        <h3>Inspection coordination</h3>
+        <p>SubPilot tracks permit and inspection state per project, notifies the right trade before the inspector arrives, and when a correction notice lands — parses it into tasks, assigns them to the responsible subs, and chases them to closure. Built on an engine holding 11 million LA inspection records.</p>
+        <div class="mod-result">Subs learn about corrections in minutes, not days. Fewer re-inspections, fewer idle days between trades.</div>
+      </div>
+      <div class="mod">
+        <div class="mod-tag">Loop 4 · The paper chase</div>
+        <h3>Documents &amp; compliance</h3>
+        <p>COIs, W9s, license status, lien waivers, change-order signatures — collected before they block a payment or a start date, tracked to expiration, chased without you thinking about it. Field changes agreed in a text get drafted into a signed CO before the work starts.</p>
+        <div class="mod-result">No expired COI surprises, no handshake change orders, no payment held up by a missing waiver.</div>
+      </div>
+      <div class="mod">
+        <div class="mod-tag">Loop 5 · The bench</div>
+        <h3>Sub sourcing &amp; vetting</h3>
+        <p>When your regular sub is booked, SubPilot pulls candidates from a database of 23,000+ licensed LA contractors — filtered by trade and zone, scored on their actual inspection record: first-pass rate, violations, active permits. Then onboards them: W9, COI, license check, first contact.</p>
+        <div class="mod-result">A vetted bench instead of a Facebook post — with the track record checked against public data, not promises.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW -->
+<section class="section section-alt" id="how">
+  <div class="narrow">
+    <div class="section-label">How It Works</div>
+    <h2>Your number. Your voice. Your approval.</h2>
+
+    <div class="diff-grid">
+      <div class="diff">
+        <h3>No app for your subs</h3>
+        <p>Subs get normal texts from the number they already have saved as you — SMS, iMessage, WhatsApp, or email, matched to what each sub actually answers. Nothing to download, nothing to log into. Works whether you carry an iPhone or Android.</p>
+      </div>
+      <div class="diff">
+        <h3>Approval gate on what matters</h3>
+        <p>Routine confirmations run on their own. Anything with money or commitment — a reschedule cascade, a bid award, a change order — comes to you as a one-tap approval. You stay the dispatcher; SubPilot does the dispatching.</p>
+      </div>
+      <div class="diff">
+        <h3>One project record</h3>
+        <p>Every thread, photo, decision, and document is logged against the project — so "as discussed" actually points to something. Works alongside Buildertrend, JobTread, or your spreadsheet; SubPilot doesn't ask you to switch systems.</p>
+      </div>
+      <div class="diff">
+        <h3>Built to scale sites, not headcount</h3>
+        <p>Ten projects or thirty, one location or five — the loops run the same. SubPilot is how you take the next tier of volume without the next PM salary, and without being the bottleneck yourself.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ENGAGEMENT -->
+<section class="section" id="engage">
+  <div class="narrow">
+    <div class="section-label">Engagement &amp; Pricing</div>
+    <h2>Start with an audit, not a contract</h2>
+
+    <div class="steps">
+      <div class="step">
+        <div class="n">1</div>
+        <div>
+          <h3>Dispatch Audit — 1 week</h3>
+          <p>I map your real operation: active projects, your sub bench and which channel each sub answers, where the threads break down, and what a slipped week actually costs you in your numbers. You keep the report either way — no obligation.</p>
+        </div>
+        <div class="price">Free<br><span style="font-weight:500;font-size:0.75rem;color:var(--text-muted)">2 audits/month</span></div>
+      </div>
+      <div class="step">
+        <div class="n">2</div>
+        <div>
+          <h3>Install — 4–6 weeks</h3>
+          <p>Fixed fee, scoped from the audit: start with Loops 1–2, add the rest as they prove out. Includes channel setup on your own number, sub-bench import, your templates in your voice, and training.</p>
+        </div>
+        <div class="price">$8–18K<br><span style="font-weight:500;font-size:0.75rem;color:var(--text-muted)">fixed, by scope</span></div>
+      </div>
+      <div class="step">
+        <div class="n">3</div>
+        <div>
+          <h3>Maintenance</h3>
+          <p>Hosting, monitoring, tuning, and a weekly one-screen dispatch digest to your phone: confirmations sent, slips caught, bids covered, documents chased. <b>You own the system. I answer for it.</b></p>
+        </div>
+        <div class="price">$400/mo</div>
+      </div>
+      <div class="step">
+        <div class="n">4</div>
+        <div>
+          <h3>Scale retainer — optional</h3>
+          <p>For GCs adding volume: new loops (AR &amp; retainage chase, punch-list automation, homeowner comms), multi-entity setups, quarterly ops reviews.</p>
+        </div>
+        <div class="price">$1.5–3K/mo</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OPERATOR -->
+<section class="section section-alt" id="operator">
+  <div class="narrow">
+    <div class="section-label">Who Builds It</div>
+    <h2>Built by an operator, not an agency</h2>
+
+    <div class="operator">
+      <h3>Yaroslav Korets &mdash; Los Angeles</h3>
+      <p>Twenty years as a founder and operator: a company built and sold, a ~100-person organization led with full P&amp;L ownership, VP of property management, and co-founder of an ADU construction marketplace. I design, build, and run AI systems end to end — every pattern in SubPilot is already running in production somewhere in my stack.</p>
+      <div class="proof">
+        <div class="proof-item">Construction data engine built on 11M LADBS inspection records (InspectPilot)</div>
+        <div class="proof-item">Voice AI agent answering real inbound construction leads in production (Vapi)</div>
+        <div class="proof-item">Autonomous ad agent managing live budgets with human approval gates</div>
+        <div class="proof-item">Self-hosted infrastructure end to end — your data stays yours</div>
+      </div>
+      <p style="margin-top:1.4rem">Full background: <a href="/cv/">korets.net/cv</a></p>
+    </div>
+
+    <div class="cta-band">
+      <h3>See what your dispatch is costing you</h3>
+      <p>One week, free — I take two audits a month. You get a map of where your projects leak days and margin, in your own numbers, and keep it even if we stop there.</p>
+      <a href="/#book" class="btn-primary">Book a Dispatch Audit</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p class="copy">&copy; 2026 Yaroslav Korets &middot; <a href="/">korets.net</a> &middot; SubPilot — the AI sub dispatcher for general contractors.</p>
+</footer>
+
+<script>
+(function () {
+  var $ = function (id) { return document.getElementById(id); };
+  var fmt = function (n) {
+    if (!isFinite(n)) return '—';
+    return '$' + Math.round(n).toLocaleString('en-US');
+  };
+
+  function calc() {
+    var N        = parseFloat($('c-projects').value) || 0;   // projects/year
+    var V        = parseFloat($('c-value').value)    || 0;   // avg contract $
+    var M        = (parseFloat($('c-margin').value)  || 0) / 100; // gross margin
+    var W        = parseFloat($('c-weeks').value)    || 1;   // planned weeks
+    var S        = parseFloat($('c-slip').value)     || 0;   // overrun weeks
+    var OH       = parseFloat($('c-overhead').value) || 0;   // weekly overhead $
+    var R        = (parseFloat($('c-recover').value) || 0) / 100; // recovery assumption
+
+    // 1. Overhead burned by overrun (full, before recovery)
+    var overheadLoss = S * OH * N;
+
+    // 2. Capacity: extra projects the same team completes at planned vs actual cycle
+    var actual = W + S;
+    var extraProjects = N * (actual / W) - N; // completions lost to longer cycles
+    var capacityLoss = extraProjects * V * M;
+
+    // Recovered portion (what's realistically on the table)
+    var total = (overheadLoss + capacityLoss) * R;
+
+    $('r-overhead').textContent = fmt(overheadLoss);
+    $('f-overhead').textContent = S + ' wks × ' + fmt(OH) + '/wk × ' + N + ' projects';
+
+    $('r-capacity').textContent = fmt(capacityLoss);
+    $('f-capacity').textContent = extraProjects.toFixed(1) + ' more completions at ' + W + '-wk cycles × ' + fmt(V * M) + ' margin each';
+
+    $('r-total').textContent = fmt(total);
+    $('f-total').textContent = '(' + fmt(overheadLoss) + ' + ' + fmt(capacityLoss) + ') × ' + Math.round(R * 100) + '%';
+
+    $('c-recover-label').textContent = Math.round(R * 100) + '%';
+    $('r-recover-echo').textContent = Math.round(R * 100) + '%';
+  }
+
+  ['c-projects','c-value','c-margin','c-weeks','c-slip','c-overhead','c-recover'].forEach(function (id) {
+    $(id).addEventListener('input', calc);
+  });
+  calc();
+})();
+</script>
+
+</body>
+</html>

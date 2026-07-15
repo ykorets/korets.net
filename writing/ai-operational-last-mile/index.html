@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI&#x27;s Operational Last Mile | Yaroslav Korets</title>
+    <meta name="description" content="A production AI system needs source data, validation, approval gates, and an audit trail built around how a product or service is delivered.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://korets.net/writing/ai-operational-last-mile/">
+    <link rel="alternate" type="application/rss+xml" title="Yaroslav Korets — Writing" href="https://korets.net/writing/feed.xml">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="AI&#x27;s Operational Last Mile | Yaroslav Korets">
+    <meta property="og:description" content="A production AI system needs source data, validation, approval gates, and an audit trail built around how a product or service is delivered.">
+    <meta property="og:url" content="https://korets.net/writing/ai-operational-last-mile/">
+    <meta property="og:image" content="https://korets.net/writing/built-shipped-running-social.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="Yaroslav Korets">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AI&#x27;s Operational Last Mile | Yaroslav Korets">
+    <meta name="twitter:description" content="A production AI system needs source data, validation, approval gates, and an audit trail built around how a product or service is delivered.">
+    <meta name="twitter:image" content="https://korets.net/writing/built-shipped-running-social.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/writing/styles.css">
+    <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BlogPosting","@id":"https://korets.net/writing/ai-operational-last-mile/#article","headline":"The Operational Last Mile: Why AI Demos Die Before Production","description":"A production AI system needs source data, validation, approval gates, and an audit trail built around how a product or service is delivered.","datePublished":"2026-07-13","dateModified":"2026-07-14","wordCount":564,"inLanguage":"en-US","image":"https://korets.net/writing/built-shipped-running-social.png","mainEntityOfPage":"https://korets.net/writing/ai-operational-last-mile/","author":{"@type":"Person","name":"Yaroslav Korets","url":"https://korets.net/cv/","jobTitle":"AI-native operator"},"isPartOf":{"@type":"CreativeWorkSeries","name":"Built. Shipped. Running.","url":"https://korets.net/writing/built-shipped-running/"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://korets.net"},{"@type":"ListItem","position":2,"name":"Writing","item":"https://korets.net/writing/"},{"@type":"ListItem","position":3,"name":"Built. Shipped. Running.","item":"https://korets.net/writing/built-shipped-running/"},{"@type":"ListItem","position":4,"name":"The Operational Last Mile","item":"https://korets.net/writing/ai-operational-last-mile/"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the operational last mile in AI?","acceptedAnswer":{"@type":"Answer","text":"It is the work required to move from a model output to a reliable business result: source access, validation, human approval, storage, handoff, and audit logs."}},{"@type":"Question","name":"Which workflows are good first candidates?","acceptedAnswer":{"@type":"Answer","text":"Start with a recurring, high-volume step or decision that has clear inputs and a checkable result. Estimates, reconciliations, bid comparisons, compliance packets, dispatch, and recurring reports are common examples."}},{"@type":"Question","name":"Why do AI pilots fail after a good demo?","acceptedAnswer":{"@type":"Answer","text":"The demo tests the model, but the company needs the full workflow. Missing ownership, unclear approval rules, poor source data, and employee resistance usually appear only after the pilot touches real work."}},{"@type":"Question","name":"How should a company start?","acceptedAnswer":{"@type":"Answer","text":"Choose one workflow, capture the current time and error baseline, build a sidecar version, and keep the existing process running until the new one proves itself."}}]}]}</script>
+    
+</head>
+<body>
+
+    <nav class="site-nav" aria-label="Main navigation">
+      <div class="nav-inner">
+        <a class="brand" href="/">YK.</a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" onclick="const links=document.getElementById('nav-links');const open=links.classList.toggle('open');this.setAttribute('aria-expanded',open)">Menu</button>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="/">Home</a></li><li><a href="/ai/">AI Systems</a></li><li><a href="/writing/" aria-current="page">Writing</a></li><li><a href="/cv/">CV</a></li>
+          <li><a class="nav-cta" href="/#book">Workflow audit</a></li>
+        </ul>
+      </div>
+    </nav>
+    
+<header class="article-header">
+  <div class="hero">
+    <div class="breadcrumbs"><a href="/">Home</a><span>/</span><a href="/writing/">Writing</a><span>/</span><a href="/writing/built-shipped-running/">Built. Shipped. Running.</a></div>
+    <div class="eyebrow">Field note 1 of 8 · Built. Shipped. Running.</div>
+    <h1>The Operational Last Mile: Why AI Demos Die Before Production</h1>
+    <p class="hero-lead">The model is rarely the bottleneck. The hard part is installing it inside a workflow where money, data, deadlines, and human judgment are attached.</p>
+    <div class="article-meta"><span>By Yaroslav Korets</span><span>July 13, 2026</span><span>6 min read</span></div>
+    <div class="receipt-band"><strong>Receipt:</strong> 6 production systems · 1 public pet project · 8 field notes</div>
+  </div>
+</header>
+<main>
+  <div class="article-layout">
+    <article class="article-body">
+      <section><h2 id="section-1">A model output is not a production system</h2>
+                <p>A model can draft a financial memo, summarize a contract, compare bids, turn field notes into an estimate, triage a ticket, or prepare a quote. That is useful. But it is still only one step in producing or delivering something.</p>
+                <p>The operational last mile is everything around the model: where the source data comes from, which version is current, what must be checked, who approves the result, where the result goes next, and what happens when the answer is wrong.</p>
+                <p>The output may be a document. But that document is often only one artifact inside a larger product or service workflow.</p>
+                <p>That is where most AI pilots stop. The demo proves that generation is possible. It does not prove that the company can rely on the output.</p>
+                </section><section><h2 id="section-2">Data- and process-heavy companies feel this gap first</h2>
+                <p>Accounting and finance teams prepare reports that must reconcile. Legal teams assemble packets where one missing clause matters. Construction companies produce estimates, bids, change orders, permits, and inspection records. Analysts combine data from systems that were never designed to agree.</p>
+                <p>In each case, the cost is not just the time spent writing. It is the cost of rework, delayed decisions, inconsistent versions, and errors that survive review.</p>
+                <p>The business outcome is a lower cost to produce and deliver the product or service, with fewer errors and less rework. A document may be one measurable artifact inside that workflow, not the product itself.</p>
+                <p>An AI system has to be designed around that full operating lifecycle, not around a blank chat window.</p>
+                </section><section><h2 id="section-3">The last mile has four jobs</h2>
+                <ol>
+                  <li><strong>Collect the right inputs.</strong> The system needs named sources, access rules, and a way to detect stale or missing data.</li>
+                  <li><strong>Produce a checkable draft.</strong> Claims should point back to their source. Calculations should be reproducible.</li>
+                  <li><strong>Route judgment to a person.</strong> Money, facts, promises, and irreversible actions stay behind an approval gate.</li>
+                  <li><strong>Record what happened.</strong> The company needs to know which sources were used, what the AI proposed, who approved it, and what the final cost was.</li>
+                </ol>
+                <p>That pattern appears in every system in this series. The tools change. The operating logic does not.</p>
+                </section><section><h2 id="section-4">Do not begin with a company-wide transformation</h2>
+                <p>Large transformation programs often create resistance before they create value. Employees hear that a new system will change their work, but they cannot see whether it will help or threaten them. The existing process still has to run, so the new one becomes extra work.</p>
+                <p>I prefer an AI-first twin of one workflow: a small sidecar that mirrors the existing process, produces the same deliverable, and measures itself against the current baseline. The team keeps control. The new system earns trust with receipts.</p>
+                <blockquote>The first useful question is not “Where can we use AI?” It is “Which recurring step in production or service delivery is expensive, slow, and easy to check?”</blockquote>
+                </section>
+    </article>
+    <aside class="article-aside" aria-label="In this field note">
+      <div class="aside-label">In this note</div>
+      <ol><li><a href="#section-1">A model output is not a production system</a></li><li><a href="#section-2">Data- and process-heavy companies feel this gap first</a></li><li><a href="#section-3">The last mile has four jobs</a></li><li><a href="#section-4">Do not begin with a company-wide transformation</a></li></ol>
+    </aside>
+  </div>
+  <section class="section-alt">
+    <div class="faq">
+      <div class="eyebrow">Direct answers</div>
+      <h2>Questions operators ask</h2>
+      <details><summary>What is the operational last mile in AI?</summary><p>It is the work required to move from a model output to a reliable business result: source access, validation, human approval, storage, handoff, and audit logs.</p></details><details><summary>Which workflows are good first candidates?</summary><p>Start with a recurring, high-volume step or decision that has clear inputs and a checkable result. Estimates, reconciliations, bid comparisons, compliance packets, dispatch, and recurring reports are common examples.</p></details><details><summary>Why do AI pilots fail after a good demo?</summary><p>The demo tests the model, but the company needs the full workflow. Missing ownership, unclear approval rules, poor source data, and employee resistance usually appear only after the pilot touches real work.</p></details><details><summary>How should a company start?</summary><p>Choose one workflow, capture the current time and error baseline, build a sidecar version, and keep the existing process running until the new one proves itself.</p></details>
+    </div>
+  </section>
+  <nav class="series-nav" aria-label="Series navigation"><div class="empty" aria-hidden="true"></div><a href="/writing/marco-infrastructure-before-ai-copy/"><span>Next field note</span><strong>Marco: Infrastructure Before Copy</strong></a></nav>
+  <section class="cta-band">
+    <div class="cta-inner">
+      <div class="eyebrow" style="color:var(--lime)">One workflow. One week.</div>
+      <h2>Find the operating process worth rebuilding first</h2>
+      <p>I map the inputs, handoffs, rework, approval points, and cost. You get a narrow AI sidecar with a measurable baseline, not a transformation deck.</p>
+      <a class="button button-primary" href="/#book">Book a workflow audit</a>
+    </div>
+  </section>
+</main>
+
+    <footer class="site-footer">
+      <p>&copy; 2026 Yaroslav Korets · <a href="/ai/">AI systems in production</a> · <a href="/writing/feed.xml">RSS</a></p>
+    </footer>
+    
+</body>
+</html>

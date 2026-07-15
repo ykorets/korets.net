@@ -1,0 +1,25 @@
+# Yaroslav Korets
+
+> AI-native operator building production systems with explicit rules, human approval gates, audit logs, and source evidence.
+
+## Core pages
+
+- [AI Systems in Production](https://korets.net/ai/): production systems, offers, and operating principles.
+- [Writing](https://korets.net/writing/): field notes on AI operations.
+- [Built. Shipped. Running.](https://korets.net/writing/built-shipped-running/): complete eight-part series.
+- [CV](https://korets.net/cv/): operator background and project experience.
+
+## Series articles
+
+- [The Operational Last Mile: Why AI Demos Die Before Production](https://korets.net/writing/ai-operational-last-mile/): A production AI system needs source data, validation, approval gates, and an audit trail built around how a product or service is delivered.
+- [Marco: Why an Outbound AI Agent Starts With Infrastructure](https://korets.net/writing/marco-infrastructure-before-ai-copy/): Marco is an outbound AI agent that begins with sender health, deliverability gates, and signals before it writes a message.
+- [Hunter: AI Needs Rules, Approval Gates, and Logs](https://korets.net/writing/hunter-rules-before-autonomy/): Hunter runs persistent PPC operations across Google and Microsoft Ads, but meaningful changes stay governed by written rules and human approval.
+- [Oscar: Why the Dashboard Is Becoming the Wrong Interface](https://korets.net/writing/oscar-dashboard-wrong-interface/): Oscar is a self-hosted YouTube operations agent that turns analytics, SEO, captions, and channel tools into a plain-language interface.
+- [InspectPilot: Contractor Reputation vs. the Public Record](https://korets.net/writing/inspectpilot-reputation-vs-record/): InspectPilot pairs inspection scheduling with a compliance engine built on roughly 11 million Los Angeles inspection records over 13 years.
+- [AI Changed the Build-vs.-Buy Line](https://korets.net/writing/ai-build-vs-buy-line/): A field note on replacing selected SaaS tools with self-hosted systems, where ownership saves money, and where it creates new operating costs.
+- [Behind the Watt: How to Use AI Without Asking Anyone to Trust It](https://korets.net/writing/behind-the-watt-ai-with-receipts/): Behind the Watt is an open evidence database that uses AI to extract claims from public records while preserving source-level provenance and human approval.
+- [The Operating Principle: Persistence, Human Approval, Audit Logs](https://korets.net/writing/ai-operating-principle/): A production pattern for AI systems: let software handle persistence and volume, keep consequential decisions with people, and log every action.
+
+## Public data project
+
+- [Behind the Watt](https://behindthewatt.com): open evidence database for behind-the-meter power at data centers.

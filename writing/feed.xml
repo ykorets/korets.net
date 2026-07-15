@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>Yaroslav Korets — Writing</title>
+    <link>https://korets.net/writing/</link>
+    <description>Field notes on AI systems in production.</description>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 14 Jul 2026 19:00:00 +0000</lastBuildDate>
+    <atom:link href="https://korets.net/writing/feed.xml" rel="self" type="application/rss+xml"/>
+    
+        <item>
+          <title>The Operational Last Mile: Why AI Demos Die Before Production</title>
+          <link>https://korets.net/writing/ai-operational-last-mile/</link>
+          <guid isPermaLink="true">https://korets.net/writing/ai-operational-last-mile/</guid>
+          <pubDate>Tue, 14 Jul 2026 19:00:00 +0000</pubDate>
+          <dc:creator>Yaroslav Korets</dc:creator>
+          <category>Built. Shipped. Running.</category>
+          <description>A production AI system needs source data, validation, approval gates, and an audit trail built around how a product or service is delivered.</description>
+        </item>
+        
+        <item>
+          <title>Marco: Why an Outbound AI Agent Starts With Infrastructure</title>
+          <link>https://korets.net/writing/marco-infrastructure-before-ai-copy/</link>
+          <guid isPermaLink="true">https://korets.net/writing/marco-infrastructure-before-ai-copy/</guid>
+          <pubDate>Tue, 14 Jul 2026 19:00:00 +0000</pubDate>
+          <dc:creator>Yaroslav Korets</dc:creator>
+          <category>Built. Shipped. Running.</category>
+          <description>Marco is an outbound AI agent that begins with sender health, deliverability gates, and signals before it writes a message.</description>
+        </item>
+        
+        <item>
+          <title>Hunter: AI Needs Rules, Approval Gates, and Logs</title>
+          <link>https://korets.net/writing/hunter-rules-before-autonomy/</link>
+          <guid isPermaLink="true">https://korets.net/writing/hunter-rules-before-autonomy/</guid>
+          <pubDate>Tue, 14 Jul 2026 19:00:00 +0000</pubDate>
+          <dc:creator>Yaroslav Korets</dc:creator>
+          <category>Built. Shipped. Running.</category>
+          <description>Hunter runs persistent PPC operations across Google and Microsoft Ads, but meaningful changes stay governed by written rules and human approval.</description>
+        </item>
+        
+        <item>
+          <title>Oscar: Why the Dashboard Is Becoming the Wrong Interface</title>
+          <link>https://korets.net/writing/oscar-dashboard-wrong-interface/</link>
+          <guid isPermaLink="true">https://korets.net/writing/oscar-dashboard-wrong-interface/</guid>
+          <pubDate>Tue, 14 Jul 2026 19:00:00 +0000</pubDate>
+          <dc:creator>Yaroslav Korets</dc:creator>
+          <category>Built. Shipped. Running.</category>
+          <description>Oscar is a self-hosted YouTube operations agent that turns analytics, SEO, captions, and channel tools into a plain-language interface.</description>
+        </item>
+        
+        <item>
+          <title>InspectPilot: Contractor Reputation vs. the Public Record</title>
+          <link>https://korets.net/writing/inspectpilot-reputation-vs-record/</link>
+          <guid isPermaLink="true">https://korets.net/writing/inspectpilot-reputation-vs-record/</guid>
+          <pubDate>Tue, 14 Jul 2026 19:00:00 +0000</pubDate>
+          <dc:creator>Yaroslav Korets</dc:creator>
+          <category>Built. Shipped. Running.</category>
+          <description>InspectPilot pairs inspection scheduling with a compliance engine built on roughly 11 million Los Angeles inspection records over 13 years.</description>
+        </item>
+        
+        <item>
+          <title>AI Changed the Build-vs.-Buy Line</title>
+          <link>https://korets.net/writing/ai-build-vs-buy-line/</link>
+          <guid isPermaLink="true">https://korets.net/writing/ai-build-vs-buy-line/</guid>
+          <pubDate>Tue, 14 Jul 2026 19:00:00 +0000</pubDate>
+          <dc:creator>Yaroslav Korets</dc:creator>
+          <category>Built. Shipped. Running.</category>
+          <description>A field note on replacing selected SaaS tools with self-hosted systems, where ownership saves money, and where it creates new operating costs.</description>
+        </item>
+        
+        <item>
+          <title>Behind the Watt: How to Use AI Without Asking Anyone to Trust It</title>
+          <link>https://korets.net/writing/behind-the-watt-ai-with-receipts/</link>
+          <guid isPermaLink="true">https://korets.net/writing/behind-the-watt-ai-with-receipts/</guid>
+          <pubDate>Tue, 14 Jul 2026 19:00:00 +0000</pubDate>
+          <dc:creator>Yaroslav Korets</dc:creator>
+          <category>Built. Shipped. Running.</category>
+          <description>Behind the Watt is an open evidence database that uses AI to extract claims from public records while preserving source-level provenance and human approval.</description>
+        </item>
+        
+        <item>
+          <title>The Operating Principle: Persistence, Human Approval, Audit Logs</title>
+          <link>https://korets.net/writing/ai-operating-principle/</link>
+          <guid isPermaLink="true">https://korets.net/writing/ai-operating-principle/</guid>
+          <pubDate>Tue, 14 Jul 2026 19:00:00 +0000</pubDate>
+          <dc:creator>Yaroslav Korets</dc:creator>
+          <category>Built. Shipped. Running.</category>
+          <description>A production pattern for AI systems: let software handle persistence and volume, keep consequential decisions with people, and log every action.</description>
+        </item>
+        
+  </channel>
+</rss>

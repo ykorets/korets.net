@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Changed the Build-vs.-Buy Line</title>
+    <meta name="description" content="A field note on replacing selected SaaS tools with self-hosted systems, where ownership saves money, and where it creates new operating costs.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://korets.net/writing/ai-build-vs-buy-line/">
+    <link rel="alternate" type="application/rss+xml" title="Yaroslav Korets — Writing" href="https://korets.net/writing/feed.xml">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="AI Changed the Build-vs.-Buy Line">
+    <meta property="og:description" content="A field note on replacing selected SaaS tools with self-hosted systems, where ownership saves money, and where it creates new operating costs.">
+    <meta property="og:url" content="https://korets.net/writing/ai-build-vs-buy-line/">
+    <meta property="og:image" content="https://korets.net/writing/built-shipped-running-social.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="Yaroslav Korets">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AI Changed the Build-vs.-Buy Line">
+    <meta name="twitter:description" content="A field note on replacing selected SaaS tools with self-hosted systems, where ownership saves money, and where it creates new operating costs.">
+    <meta name="twitter:image" content="https://korets.net/writing/built-shipped-running-social.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/writing/styles.css">
+    <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BlogPosting","@id":"https://korets.net/writing/ai-build-vs-buy-line/#article","headline":"AI Changed the Build-vs.-Buy Line","description":"A field note on replacing selected SaaS tools with self-hosted systems, where ownership saves money, and where it creates new operating costs.","datePublished":"2026-07-13","dateModified":"2026-07-14","wordCount":409,"inLanguage":"en-US","image":"https://korets.net/writing/built-shipped-running-social.png","mainEntityOfPage":"https://korets.net/writing/ai-build-vs-buy-line/","author":{"@type":"Person","name":"Yaroslav Korets","url":"https://korets.net/cv/","jobTitle":"AI-native operator"},"isPartOf":{"@type":"CreativeWorkSeries","name":"Built. Shipped. Running.","url":"https://korets.net/writing/built-shipped-running/"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://korets.net"},{"@type":"ListItem","position":2,"name":"Writing","item":"https://korets.net/writing/"},{"@type":"ListItem","position":3,"name":"Built. Shipped. Running.","item":"https://korets.net/writing/built-shipped-running/"},{"@type":"ListItem","position":4,"name":"AI Changed the Build-vs.-Buy Line","item":"https://korets.net/writing/ai-build-vs-buy-line/"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does self-hosted software eliminate software cost?","acceptedAnswer":{"@type":"Answer","text":"No. It replaces some license cost with infrastructure, maintenance, security, backup, and recovery work."}},{"@type":"Question","name":"When is self-hosting worth considering?","acceptedAnswer":{"@type":"Answer","text":"It is most useful when per-seat costs are high, data custody matters, the workflow is a competitive advantage, or existing products force the wrong process."}},{"@type":"Question","name":"What should most companies continue to buy?","acceptedAnswer":{"@type":"Answer","text":"Buy stable commodity capabilities when the product fits and ownership would not create strategic value. Do not rebuild software only because AI makes coding faster."}},{"@type":"Question","name":"What changed because of AI?","acceptedAnswer":{"@type":"Answer","text":"AI reduced the time needed to write integrations, internal interfaces, documentation, and custom glue. That makes ownership practical for a larger set of narrow workflows."}}]}]}</script>
+    
+</head>
+<body>
+
+    <nav class="site-nav" aria-label="Main navigation">
+      <div class="nav-inner">
+        <a class="brand" href="/">YK.</a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" onclick="const links=document.getElementById('nav-links');const open=links.classList.toggle('open');this.setAttribute('aria-expanded',open)">Menu</button>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="/">Home</a></li><li><a href="/ai/">AI Systems</a></li><li><a href="/writing/" aria-current="page">Writing</a></li><li><a href="/cv/">CV</a></li>
+          <li><a class="nav-cta" href="/#book">Workflow audit</a></li>
+        </ul>
+      </div>
+    </nav>
+    
+<header class="article-header">
+  <div class="hero">
+    <div class="breadcrumbs"><a href="/">Home</a><span>/</span><a href="/writing/">Writing</a><span>/</span><a href="/writing/built-shipped-running/">Built. Shipped. Running.</a></div>
+    <div class="eyebrow">Field note 6 of 8 · Built. Shipped. Running.</div>
+    <h1>AI Changed the Build-vs.-Buy Line</h1>
+    <p class="hero-lead">Ownership can buy back margin and keep data in-house. But self-hosted does not mean free.</p>
+    <div class="article-meta"><span>By Yaroslav Korets</span><span>July 13, 2026</span><span>6 min read</span></div>
+    <div class="receipt-band"><strong>Receipt:</strong> 4 named migration paths · Git source of truth · one MCP gateway · tool-level cost logs</div>
+  </div>
+</header>
+<main>
+  <div class="article-layout">
+    <article class="article-body">
+      <section><h2 id="section-1">I replaced six SaaS products with systems I run</h2>
+                <p>I replaced Basecamp, Frame.io, DocuSign, Attio, GoHighLevel, and Calendly with software I operate myself.</p>
+                <div class="comparison-table" role="region" aria-label="SaaS migration paths" tabindex="0">
+                  <table>
+                    <thead><tr><th>Previous tool</th><th>Current system</th><th>Primary reason</th></tr></thead>
+                    <tbody>
+                      <tr><td>Frame.io</td><td>FreeFrame</td><td>Own the workflow and storage layer</td></tr>
+                      <tr><td>DocuSign</td><td>Documenso</td><td>Control the signing infrastructure</td></tr>
+                      <tr><td>Attio / GoHighLevel</td><td>Twenty CRM</td><td>One self-hosted customer record</td></tr>
+                      <tr><td>Calendly</td><td>Cal.com</td><td>Control scheduling and integrations</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+                <p>Basecamp was replaced by a Markdown-native AI workspace with Git as the source of truth, an in-browser editor, and an AI coding agent for every teammate.</p>
+                </section><section><h2 id="section-2">AI reduced the cost of custom glue</h2>
+                <p>Companies historically bought SaaS because custom software required too much engineering time. AI has reduced the cost of writing integrations, adapting interfaces, documenting systems, and maintaining small internal tools.</p>
+                <p>That does not mean every product should be rebuilt. It means the old build-vs.-buy calculation is stale for workflows that are expensive per seat, hold sensitive data, or force the company into a process that does not fit.</p>
+                <p>The decision should be made workflow by workflow, with operating cost included.</p>
+                </section><section><h2 id="section-3">The license fee is only one line in the model</h2>
+                <p>Self-hosting moves work back inside the company. Someone must run Docker, reverse proxies, TLS, backups, monitoring, updates, and recovery. Integrations still fail. Storage still grows. Security still needs ownership.</p>
+                <p>For my internal operating system, one MCP gateway handles access, routes internal AI tools, and audit-logs every tool call for cost attribution. That control is valuable, but it also creates a system I am responsible for operating.</p>
+                <p>The honest comparison is total cost and strategic control, not subscription price versus zero.</p>
+                </section><section><h2 id="section-4">Own the workflows that make the business different</h2>
+                <p>Buy commodity capabilities when a reliable product fits. Own the layer that contains your operating logic, your sensitive data, or your margin advantage.</p>
+                <p>For a data- and process-heavy company, that may be the system that assembles estimates, reconciles accounts, manages precedent, prepares a lender package, or dispatches field work. The model is replaceable. The workflow and its history are the asset.</p>
+                <blockquote>AI moved the build-vs.-buy line. The useful question is not “Can we build it?” It is “Which layer is worth owning?”</blockquote>
+                </section>
+    </article>
+    <aside class="article-aside" aria-label="In this field note">
+      <div class="aside-label">In this note</div>
+      <ol><li><a href="#section-1">I replaced six SaaS products with systems I run</a></li><li><a href="#section-2">AI reduced the cost of custom glue</a></li><li><a href="#section-3">The license fee is only one line in the model</a></li><li><a href="#section-4">Own the workflows that make the business different</a></li></ol>
+    </aside>
+  </div>
+  <section class="section-alt">
+    <div class="faq">
+      <div class="eyebrow">Direct answers</div>
+      <h2>Questions operators ask</h2>
+      <details><summary>Does self-hosted software eliminate software cost?</summary><p>No. It replaces some license cost with infrastructure, maintenance, security, backup, and recovery work.</p></details><details><summary>When is self-hosting worth considering?</summary><p>It is most useful when per-seat costs are high, data custody matters, the workflow is a competitive advantage, or existing products force the wrong process.</p></details><details><summary>What should most companies continue to buy?</summary><p>Buy stable commodity capabilities when the product fits and ownership would not create strategic value. Do not rebuild software only because AI makes coding faster.</p></details><details><summary>What changed because of AI?</summary><p>AI reduced the time needed to write integrations, internal interfaces, documentation, and custom glue. That makes ownership practical for a larger set of narrow workflows.</p></details>
+    </div>
+  </section>
+  <nav class="series-nav" aria-label="Series navigation"><a href="/writing/inspectpilot-reputation-vs-record/"><span>Previous field note</span><strong>InspectPilot: Reputation vs. Record</strong></a><a href="/writing/behind-the-watt-ai-with-receipts/"><span>Next field note</span><strong>Behind the Watt: AI With Receipts</strong></a></nav>
+  <section class="cta-band">
+    <div class="cta-inner">
+      <div class="eyebrow" style="color:var(--lime)">One workflow. One week.</div>
+      <h2>Find the operating process worth rebuilding first</h2>
+      <p>I map the inputs, handoffs, rework, approval points, and cost. You get a narrow AI sidecar with a measurable baseline, not a transformation deck.</p>
+      <a class="button button-primary" href="/#book">Book a workflow audit</a>
+    </div>
+  </section>
+</main>
+
+    <footer class="site-footer">
+      <p>&copy; 2026 Yaroslav Korets · <a href="/ai/">AI systems in production</a> · <a href="/writing/feed.xml">RSS</a></p>
+    </footer>
+    
+</body>
+</html>

@@ -4,11 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Yaroslav Korets | Building Tomorrow Today</title>
-  <meta name="description" content="Yaroslav Korets — I take ideas that don't exist yet and turn them into systems that work today. Building from Los Angeles.">
+  <meta name="description" content="Yaroslav Korets — digitization, growth, and systems thinking. Building from Los Angeles.">
+  <link rel="alternate" type="application/rss+xml" title="Yaroslav Korets — Writing" href="https://korets.net/writing/feed.xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <!-- Google Analytics (GA4) -->
+  <!-- Google Analytics (GA4) — korets.net property ID: 392662768 -->
+  <!-- TODO: Replace G-YMZ2F20D4V with Measurement ID from GA4 → Admin → Data Streams -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-YMZ2F20D4V"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -24,358 +26,730 @@
   </script>
   <style>
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
     :root {
-      --bg: #fafaf8;
+      --bg: #fafafa;
       --bg-card: #ffffff;
-      --bg-alt: #f5f3ef;
-      --bg-dark: #1e1b4b;
-      --border: #e5e2da;
-      --border-light: #ece9e1;
-      --indigo: #4338ca;
-      --indigo-dark: #3730a3;
-      --indigo-dim: rgba(67, 56, 202, 0.07);
-      --indigo-dim2: rgba(67, 56, 202, 0.12);
-      --sand: #d4a574;
-      --sand-dark: #b8895c;
-      --sand-dim: rgba(212, 165, 116, 0.12);
-      --sand-light: #e8d5c0;
-      --text-primary: #1c1917;
-      --text-secondary: #57534e;
-      --text-muted: #a8a29e;
+      --bg-alt: #f3f2f8;
+      --border: #e5e3ee;
+      --border-light: #edebf5;
+      --purple: #7c5cfc;
+      --purple-dark: #5b3fd9;
+      --purple-dim: rgba(124, 92, 252, 0.08);
+      --purple-dim2: rgba(124, 92, 252, 0.15);
+      --lime: #9ae600;
+      --lime-dark: #7cc200;
+      --lime-dim: rgba(154, 230, 0, 0.1);
+      --text-primary: #1a1a2e;
+      --text-secondary: #555566;
+      --text-muted: #8888a0;
     }
+
     html { scroll-behavior: smooth; }
-    body { font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif; color: var(--text-primary); background: var(--bg); line-height: 1.7; -webkit-font-smoothing: antialiased; }
+
+    body {
+      font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: var(--text-primary);
+      background: var(--bg);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
 
     /* NAV */
-    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 50; background: rgba(250, 250, 248, 0.92); backdrop-filter: blur(16px); border-bottom: 1px solid var(--border-light); }
-    .nav-inner { max-width: 1100px; margin: 0 auto; padding: 0.85rem 1.5rem; display: flex; align-items: center; justify-content: space-between; }
-    .nav-logo { font-weight: 700; font-size: 1.15rem; color: var(--text-primary); text-decoration: none; letter-spacing: -0.02em; }
-    .nav-links { list-style: none; display: flex; gap: 1.75rem; align-items: center; }
-    .nav-links a { color: var(--text-secondary); text-decoration: none; font-size: 0.85rem; font-weight: 500; transition: color 0.2s; }
-    .nav-links a:hover { color: var(--indigo); }
-    .nav-cta { background: var(--indigo); color: #fff !important; padding: 0.45rem 1.1rem; border-radius: 0.4rem; font-weight: 600; font-size: 0.85rem; transition: background 0.2s; }
-    .nav-cta:hover { background: var(--indigo-dark); }
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 50;
+      background: rgba(250, 250, 250, 0.9);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 1.5rem;
+    }
+    .nav-inner {
+      max-width: 72rem; margin: 0 auto;
+      display: flex; justify-content: space-between; align-items: center;
+      height: 4.5rem;
+    }
+    .nav-logo {
+      font-weight: 700; font-size: 1.25rem; color: var(--purple);
+      text-decoration: none; letter-spacing: -0.02em;
+    }
+    .nav-links { display: flex; gap: 2rem; list-style: none; align-items: center; }
+    .nav-links a {
+      color: var(--text-secondary); text-decoration: none; font-size: 0.9rem; font-weight: 500;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--purple); }
+    .nav-cta {
+      background: var(--purple); color: #fff !important; padding: 0.5rem 1.25rem;
+      border-radius: 0.5rem; font-weight: 600; font-size: 0.85rem;
+      transition: background 0.2s;
+    }
+    .nav-cta:hover { background: var(--purple-dark); color: #fff !important; }
 
     /* HERO */
-    .hero { max-width: 760px; margin: 0 auto; padding: 9rem 1.5rem 4rem; text-align: center; }
-    .hero-origin { display: inline-block; background: var(--indigo-dim); color: var(--indigo); padding: 0.3rem 0.9rem; border-radius: 2rem; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.04em; margin-bottom: 1.75rem; }
-    .hero h1 { font-size: clamp(2rem, 4.5vw, 3rem); line-height: 1.15; margin-bottom: 1.25rem; font-weight: 700; letter-spacing: -0.02em; }
-    .accent { color: var(--indigo); }
-    .tagline { font-size: 1.1rem; color: var(--text-secondary); max-width: 560px; margin: 0 auto 1.25rem; line-height: 1.6; }
-    .intro { font-size: 0.95rem; color: var(--text-secondary); max-width: 560px; margin: 0 auto; line-height: 1.7; }
+    .hero {
+      width: calc(100% - 3rem);
+      padding: 11rem 0 5rem;
+      max-width: 72rem; margin: 0 auto;
+    }
+    .hero-origin {
+      display: inline-block; padding: 0.35rem 1rem;
+      border: 1px solid var(--border); border-radius: 999px;
+      color: var(--text-muted); font-size: 0.8rem; font-weight: 500;
+      margin-bottom: 2rem;
+      background: var(--bg-card);
+    }
+    .hero h1 {
+      font-size: clamp(2.5rem, 5.5vw, 4rem);
+      font-weight: 700; line-height: 1.1;
+      letter-spacing: -0.03em;
+      margin-bottom: 1.75rem;
+    }
+    .hero h1 .accent { color: var(--purple); }
+    .hero .tagline {
+      font-size: clamp(1.1rem, 2vw, 1.35rem);
+      color: var(--text-primary); font-weight: 500;
+      max-width: 36rem; line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+    .hero .intro {
+      font-size: 1.05rem;
+      color: var(--text-secondary); max-width: 40rem;
+      line-height: 1.8;
+    }
 
     /* SECTIONS */
-    .section { padding: 4rem 1.5rem; }
-    .section-alt { background: var(--bg-alt); }
-    .narrow { max-width: 680px; margin: 0 auto; }
-    .container { max-width: 1100px; margin: 0 auto; }
-    .section-label { display: inline-block; color: var(--indigo); font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.14em; margin-bottom: 0.5rem; }
-    .section h2 { font-size: 1.6rem; margin-bottom: 0.75rem; letter-spacing: -0.01em; }
-    .section p.lead { color: var(--text-secondary); font-size: 0.95rem; max-width: 560px; line-height: 1.7; }
+    .section { padding: 5.5rem 1.5rem; }
+    .section-alt { background: var(--bg-alt); border-top: 1px solid var(--border-light); border-bottom: 1px solid var(--border-light); }
+    .container { max-width: 72rem; margin: 0 auto; }
+    .narrow {
+      max-width: 48rem;
+      margin-left: max(0rem, calc((100% - 72rem) / 2));
+      margin-right: 0;
+    }
 
-    /* TIMELINE */
-    .timeline { margin-top: 2.5rem; position: relative; padding-left: 2rem; border-left: 2px solid var(--border); }
-    .timeline-item { position: relative; padding-bottom: 2.25rem; }
-    .timeline-item:last-child { padding-bottom: 0; }
-    .timeline-dot { position: absolute; left: -2.55rem; top: 0.35rem; width: 10px; height: 10px; border-radius: 50%; background: var(--indigo); border: 2px solid var(--bg-alt); }
-    .timeline-item.active .timeline-dot { background: var(--sand); box-shadow: 0 0 0 3px var(--sand-dim); }
-    .timeline-period { font-size: 0.75rem; font-weight: 700; color: var(--indigo); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.2rem; }
-    .timeline-title { font-size: 1.05rem; font-weight: 700; margin-bottom: 0.4rem; }
-    .timeline-text { font-size: 0.9rem; color: var(--text-secondary); line-height: 1.7; }
+    h2 {
+      font-size: clamp(1.75rem, 3.5vw, 2.25rem);
+      font-weight: 700; margin-bottom: 1rem;
+      letter-spacing: -0.02em; color: var(--text-primary);
+    }
+    h3 {
+      font-size: 1.125rem; font-weight: 600;
+      margin-bottom: 0.5rem; color: var(--text-primary);
+    }
+    .section-label {
+      text-transform: uppercase; letter-spacing: 0.15em;
+      font-size: 0.75rem; font-weight: 600; color: var(--purple);
+      margin-bottom: 0.75rem;
+    }
+    p { color: var(--text-secondary); }
+    p + p { margin-top: 1rem; }
 
-    /* PHILOSOPHY */
-    .think-list { display: grid; gap: 0.75rem; margin-top: 2rem; }
-    .think-item { display: flex; align-items: flex-start; gap: 1rem; background: var(--bg-card); padding: 1.25rem 1.5rem; border-radius: 0.6rem; border: 1px solid var(--border); transition: border-color 0.2s; }
-    .think-item:hover { border-color: var(--indigo); }
-    .think-item:first-child { border-color: var(--sand); background: linear-gradient(135deg, rgba(212,165,116,0.05), rgba(67,56,202,0.03)); }
-    .think-num { color: var(--indigo); font-weight: 700; font-size: 0.95rem; min-width: 1.75rem; padding-top: 0.1rem; }
-    .think-item p { font-size: 0.92rem; line-height: 1.65; }
+    /* BOOKING / CAL.COM — moved up */
+    .booking-section {
+      padding: 5.5rem 1.5rem;
+      background: var(--bg-alt);
+      border-top: 1px solid var(--border-light);
+      border-bottom: 1px solid var(--border-light);
+    }
+    .booking-header {
+      text-align: center; max-width: 36rem; margin: 0 auto 2.5rem;
+    }
+    .booking-header h2 { margin-bottom: 0.75rem; }
+    .booking-header p { font-size: 1.05rem; }
+    .cal-embed-wrapper {
+      max-width: 48rem; margin: 0 auto;
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: 1rem; overflow: hidden;
+      min-height: 500px;
+    }
+
+    /* STAY CONNECTED */
+    .connect-section {
+      padding: 4.5rem 1.5rem;
+    }
+    .connect-box {
+      max-width: 56rem; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
+      padding: 3rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 1rem;
+    }
+    .connect-left h3, .connect-right h3 { font-size: 1.2rem; margin-bottom: 1rem; }
+    .social-links { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.25rem; }
+    .social-btn {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      padding: 0.6rem 1.1rem;
+      border: 1px solid var(--border); border-radius: 0.5rem;
+      color: var(--text-secondary); text-decoration: none;
+      font-size: 0.85rem; font-weight: 500;
+      transition: border-color 0.2s, color 0.2s, background 0.2s;
+      background: var(--bg);
+    }
+    .social-btn:hover { border-color: var(--purple); color: var(--purple); background: var(--purple-dim); }
+    .social-btn svg { flex-shrink: 0; }
+    .connect-right p { font-size: 0.95rem; margin-bottom: 1.25rem; }
+    .subscribe-form { display: flex; gap: 0.5rem; }
+    .subscribe-form input {
+      flex: 1; padding: 0.7rem 1rem; border: 1px solid var(--border);
+      border-radius: 0.5rem; font-family: inherit; font-size: 0.9rem;
+      background: var(--bg); color: var(--text-primary);
+      outline: none; transition: border-color 0.2s;
+    }
+    .subscribe-form input:focus { border-color: var(--purple); }
+    .subscribe-form button {
+      padding: 0.7rem 1.5rem; background: var(--purple); color: #fff;
+      border: none; border-radius: 0.5rem; font-family: inherit;
+      font-weight: 600; font-size: 0.9rem; cursor: pointer;
+      transition: background 0.2s;
+    }
+    .subscribe-form button:hover { background: var(--purple-dark); }
+    .subscribe-note { color: var(--text-muted); font-size: 0.8rem; margin-top: 0.75rem; }
+
+    /* STORY CARDS */
+    .story-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 1.5rem; margin-top: 2.5rem;
+    }
+    .story-card {
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: 1rem; padding: 2rem;
+      transition: border-color 0.3s;
+    }
+    .story-card:hover { border-color: var(--purple); }
+    .story-card h3 { color: var(--purple); margin-bottom: 0.75rem; }
+
+    /* HOW I THINK */
+    .think-list {
+      display: grid; gap: 1rem; margin-top: 2.5rem;
+    }
+    .think-item {
+      display: flex; gap: 1.25rem; align-items: flex-start;
+      padding: 1.25rem 1.5rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+      transition: border-color 0.3s;
+    }
+    .think-item:hover { border-color: var(--purple); }
+    .think-num {
+      flex-shrink: 0;
+      width: 2.25rem; height: 2.25rem; border-radius: 0.5rem;
+      background: var(--purple-dim2); color: var(--purple);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.8rem; font-weight: 700;
+    }
+    .think-item p { margin: 0; color: var(--text-secondary); padding-top: 0.2rem; }
 
     /* HOW I WORK */
-    .work-values { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 2rem 0 1.5rem; }
-    .work-value { background: var(--indigo-dim); color: var(--indigo); padding: 0.4rem 0.9rem; border-radius: 2rem; font-size: 0.8rem; font-weight: 600; }
+    .work-values {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+      gap: 1.25rem; margin-top: 2.5rem;
+    }
+    .work-value {
+      padding: 1.5rem 1.75rem;
+      border-left: 3px solid var(--lime-dark);
+      background: var(--bg-card);
+      border-radius: 0 0.75rem 0.75rem 0;
+      border-top: 1px solid var(--border);
+      border-right: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .work-value h3 { font-size: 1rem; margin-bottom: 0; }
 
     /* PROJECTS */
-    .projects-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 2rem; }
-    .project-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 0.75rem; padding: 1.5rem; transition: border-color 0.3s; display: flex; flex-direction: column; }
-    .project-card:hover { border-color: var(--indigo); }
-    .project-card h3 { font-size: 0.95rem; margin-bottom: 0.15rem; }
-    .project-sub { color: var(--sand-dark); font-size: 0.78rem; font-weight: 600; margin-bottom: 0.6rem; }
-    .project-card p { color: var(--text-secondary); font-size: 0.85rem; line-height: 1.6; flex-grow: 1; }
-    .project-link { display: inline-block; margin-top: 0.75rem; color: var(--indigo); font-weight: 600; font-size: 0.8rem; text-decoration: none; }
-    .project-link:hover { text-decoration: underline; }
-    .tags { display: flex; gap: 0.3rem; flex-wrap: wrap; margin-top: 0.75rem; }
-    .tag { background: var(--indigo-dim); color: var(--indigo); padding: 0.15rem 0.5rem; border-radius: 0.25rem; font-size: 0.7rem; font-weight: 600; }
+    .projects-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+      gap: 1.25rem; margin-top: 2.5rem;
+    }
+    .project-card {
+      border: 1px solid var(--border); border-radius: 1rem;
+      padding: 2rem; background: var(--bg-card);
+      transition: border-color 0.3s, transform 0.3s;
+    }
+    .project-card:hover { border-color: var(--purple); transform: translateY(-2px); }
+    .project-card h3 { font-size: 1.2rem; margin-bottom: 0.25rem; }
+    .project-card .project-sub {
+      color: var(--purple); font-size: 0.9rem; margin-bottom: 1rem; font-weight: 500;
+    }
+    .project-card p { font-size: 0.95rem; }
+    .project-link {
+      display: inline-block; margin-top: 1.25rem;
+      color: var(--purple); font-weight: 600; font-size: 0.9rem;
+      text-decoration: none; transition: color 0.2s;
+    }
+    .project-link:hover { color: var(--purple-dark); }
+    .project-link::after { content: ' →'; }
+    .project-link + .project-link { margin-left: 1rem; }
+    .tags { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.75rem; }
+    .tag {
+      font-size: 0.7rem; font-weight: 600; padding: 0.3rem 0.75rem;
+      background: var(--purple-dim); color: var(--purple);
+      border-radius: 999px; letter-spacing: 0.03em;
+    }
 
-    /* TOP CONTACT ZONE */
-    .contact-zone { background: var(--bg-alt); padding: 3.5rem 1.5rem; border-bottom: 1px solid var(--border); }
-    .contact-inner { max-width: 1100px; margin: 0 auto; }
-    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; }
-    .contact-col h3 { font-size: 0.75rem; font-weight: 700; color: var(--indigo); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 1rem; }
+    /* CULTURE */
+    .culture-block {
+      background: linear-gradient(135deg, var(--purple-dim), var(--lime-dim));
+      border: 1px solid var(--border);
+      border-radius: 1rem; padding: 3rem;
+      margin-top: 2.5rem;
+    }
+    .quote {
+      font-size: 1.15rem; font-style: italic;
+      color: var(--text-primary); border-left: 3px solid var(--lime-dark);
+      padding-left: 1.5rem; margin: 2rem 0 0;
+    }
 
-    /* Social links */
-    .social-links { display: flex; flex-direction: column; gap: 0.4rem; }
-    .social-btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.45rem 0.8rem; border: 1px solid var(--border); border-radius: 0.4rem; color: var(--text-secondary); text-decoration: none; font-size: 0.8rem; font-weight: 500; transition: all 0.2s; background: var(--bg-card); }
-    .social-btn:hover { border-color: var(--indigo); color: var(--indigo); }
-    .social-btn svg { flex-shrink: 0; }
+    /* CTA */
+    .cta-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+      gap: 1.25rem; margin-top: 2.5rem;
+    }
+    .cta-card {
+      padding: 2rem; border: 1px solid var(--border);
+      border-radius: 1rem; background: var(--bg-card);
+      transition: border-color 0.3s;
+    }
+    .cta-card:hover { border-color: var(--lime-dark); }
+    .cta-card h3 { color: var(--purple); margin-bottom: 0.5rem; }
 
-    /* Newsletter */
-    .subscribe-form { display: flex; gap: 0.4rem; }
-    .subscribe-form input { flex: 1; padding: 0.6rem 0.9rem; border: 1px solid var(--border); border-radius: 0.4rem; font-family: inherit; font-size: 0.85rem; background: var(--bg-card); color: var(--text-primary); outline: none; transition: border-color 0.2s; }
-    .subscribe-form input:focus { border-color: var(--indigo); }
-    .subscribe-form button { padding: 0.6rem 1.2rem; background: var(--indigo); color: #fff; border: none; border-radius: 0.4rem; font-family: inherit; font-weight: 600; font-size: 0.85rem; cursor: pointer; transition: background 0.2s; }
-    .subscribe-form button:hover { background: var(--indigo-dark); }
-    .subscribe-note { color: var(--text-muted); font-size: 0.75rem; margin-top: 0.6rem; }
-    .contact-col p.contact-text { color: var(--text-secondary); font-size: 0.85rem; line-height: 1.65; margin-bottom: 1rem; }
+    /* RÉSUMÉ */
+    .resume-role {
+      display: inline-block; margin-bottom: 1rem;
+      padding: 0.4rem 1rem; border-radius: 999px;
+      background: var(--purple-dim2); color: var(--purple-dark);
+      font-size: 0.85rem; font-weight: 600; letter-spacing: 0.02em;
+    }
+    .resume-actions { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.75rem; }
+    .resume-download {
+      display: inline-flex; align-items: center; gap: 0.6rem;
+      background: var(--purple); color: #fff; text-decoration: none;
+      padding: 0.75rem 1.5rem; border-radius: 0.5rem;
+      font-weight: 600; font-size: 0.9rem; transition: background 0.2s;
+    }
+    .resume-download:hover { background: var(--purple-dark); }
+    .resume-download svg { flex-shrink: 0; }
+    .resume-ghost {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      padding: 0.75rem 1.5rem; border: 1px solid var(--border); border-radius: 0.5rem;
+      color: var(--text-secondary); text-decoration: none; font-weight: 600; font-size: 0.9rem;
+      background: var(--bg-card); transition: border-color 0.2s, color 0.2s;
+    }
+    .resume-ghost:hover { border-color: var(--purple); color: var(--purple); }
+    .resume-competencies {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-top: 2.5rem;
+    }
+    .resume-comp {
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: 0.9rem; padding: 1.6rem 1.75rem;
+      border-top: 3px solid var(--purple);
+      transition: border-color 0.3s;
+    }
+    .resume-comp:hover { border-color: var(--purple); }
+    .resume-comp h3 { font-size: 1.05rem; margin-bottom: 0.5rem; }
+    .resume-comp p { font-size: 0.92rem; margin: 0; }
+    .resume-exp { margin-top: 2.75rem; display: grid; gap: 0; }
+    .resume-job {
+      display: grid; grid-template-columns: 8rem 1fr; gap: 1.5rem;
+      padding: 1.5rem 0; border-top: 1px solid var(--border);
+    }
+    .resume-job:last-child { border-bottom: 1px solid var(--border); }
+    .resume-when { color: var(--purple); font-weight: 600; font-size: 0.85rem; padding-top: 0.15rem; }
+    .resume-job h3 { font-size: 1.05rem; margin-bottom: 0.35rem; }
+    .resume-job p { font-size: 0.92rem; margin: 0; }
+    .resume-meta {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-top: 2rem;
+    }
+    .resume-meta-card {
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: 0.9rem; padding: 1.4rem 1.6rem;
+    }
+    .resume-meta-card h3 { font-size: 0.95rem; margin-bottom: 0.4rem; color: var(--purple); }
+    .resume-meta-card p { font-size: 0.9rem; margin: 0; }
+    .resume-engage {
+      margin-top: 2rem; padding: 1.75rem 2rem;
+      background: linear-gradient(135deg, var(--purple-dim), var(--lime-dim));
+      border: 1px solid var(--border); border-radius: 1rem;
+    }
+    .resume-engage h3 { font-size: 1.05rem; margin-bottom: 0.5rem; }
+    .resume-engage p { color: var(--text-primary); margin: 0; }
 
-    /* CTA section at bottom */
-    .cta-zone { background: var(--bg-dark); color: #fff; padding: 4rem 1.5rem; }
-    .cta-inner { max-width: 680px; margin: 0 auto; text-align: center; }
-    .cta-zone h2 { color: #fff; font-size: 1.6rem; margin-bottom: 0.75rem; }
-    .cta-zone p { color: rgba(255,255,255,0.6); font-size: 0.95rem; margin-bottom: 2rem; }
-    .culture-quote { color: var(--sand-light); font-style: italic; font-size: 0.9rem; line-height: 1.6; padding: 1.25rem 1.5rem; border-left: 2px solid var(--sand); text-align: left; max-width: 500px; margin: 0 auto; }
+    @media (max-width: 768px) {
+      .resume-competencies { grid-template-columns: 1fr; }
+      .resume-meta { grid-template-columns: 1fr; }
+      .resume-job { grid-template-columns: 1fr; gap: 0.4rem; }
+    }
 
     /* FOOTER */
-    footer { padding: 2rem 1.5rem; background: var(--bg-dark); border-top: 1px solid rgba(255,255,255,0.08); text-align: center; }
-    footer .copy { color: rgba(255,255,255,0.3); font-size: 0.75rem; }
+    footer {
+      padding: 3.5rem 1.5rem;
+      border-top: 1px solid var(--border);
+      text-align: center;
+    }
+    footer .copy { color: var(--text-muted); font-size: 0.8rem; }
 
     /* MOBILE */
     .nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 0.5rem; }
-    .nav-toggle svg { width: 22px; height: 22px; stroke: var(--text-secondary); }
-    @media (max-width: 900px) {
-      .projects-grid { grid-template-columns: repeat(2, 1fr); }
-      .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
-    }
-    @media (max-width: 640px) {
+    .nav-toggle svg { width: 24px; height: 24px; stroke: var(--text-secondary); }
+
+    @media (max-width: 768px) {
       .nav-toggle { display: block; }
-      .nav-links { display: none; flex-direction: column; position: absolute; top: 4rem; left: 0; right: 0; background: var(--bg); border-bottom: 1px solid var(--border); padding: 1rem 1.5rem; gap: 0.75rem; }
+      .nav-links {
+        display: none; flex-direction: column;
+        position: absolute; top: 4.5rem; left: 0; right: 0;
+        background: var(--bg); border-bottom: 1px solid var(--border);
+        padding: 1rem 1.5rem; gap: 1rem;
+      }
       .nav-links.open { display: flex; }
-      .projects-grid { grid-template-columns: 1fr; }
-      .hero { padding-top: 7rem; }
-      .subscribe-form-dark { flex-direction: column; }
+      .story-grid { grid-template-columns: 1fr; }
+      .connect-box { grid-template-columns: 1fr; }
+      .hero { padding-top: 8rem; }
+      .subscribe-form { flex-direction: column; }
     }
   </style>
 </head>
 <body>
 
+<!-- NAV -->
 <nav>
   <div class="nav-inner">
     <a href="#" class="nav-logo">YK.</a>
     <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Menu">
-      <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"></path></svg>
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
     </button>
     <ul class="nav-links">
+      <li><a href="/cv">CV</a></li>
+      <li><a href="/ai/">AI Systems</a></li>
+      <li><a href="/writing/">Writing</a></li>
       <li><a href="#story">Story</a></li>
-      <li><a href="#philosophy">How I Think</a></li>
       <li><a href="#projects">Projects</a></li>
-      <li><a href="#connect" class="nav-cta">Get in Touch</a></li>
+      <li><a href="#philosophy">Philosophy</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="#book" class="nav-cta">Book a Call</a></li>
     </ul>
   </div>
 </nav>
 
-<section class="hero" id="about">
-  <div class="hero-origin">Born in the USSR · Raised in Ukraine · Building from Los Angeles</div>
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-origin">Born in the USSR &middot; Raised in Ukraine &middot; Building from Los Angeles</div>
   <h1>Building <span class="accent">Tomorrow</span> Today</h1>
-  <p class="tagline">I take ideas that don't exist yet and turn them into systems that work today.</p>
-  <p class="intro">I've built and sold a company, led teams of nearly 100 people, moved my family across three countries through a war, and started over more than once. The pattern is always the same: find the raw idea, build the infrastructure, make it real.</p>
+  <p class="tagline">I build things that are meant to work in real life — not just look good in presentations or decks.</p>
+  <p class="intro">Throughout my career I've been obsessed with digitization, transformation, acceleration, and growth of businesses — for my clients and for my own projects.</p>
+  <p class="intro">I believe the world is built for teamwork. Finding the right people, identifying their strengths, and placing them in systems where those strengths can thrive — that's one of the most important skills I bring. A great person doesn't always mean a great fit. A great employee on one project doesn't guarantee success on the next. The match matters.</p>
 </section>
 
-<section class="contact-zone" id="connect">
-  <div class="contact-inner">
-    <div class="contact-grid">
-      <div class="contact-col">
-        <h3>Book a Call</h3>
-        <p class="contact-text">Pick a time. Whether it's a quick intro or a real conversation about a project.</p>
-        <div id="cal-embed" style="width:100%;min-height:480px;overflow:visible"></div>
-        <script>Cal("inline", { elementOrSelector: "#cal-embed", calLink: "korets", layout: "month_view", config: { theme: "light" } });</script>
-      </div>
-      <div class="contact-col">
-        <h3>Connect</h3>
-        <div class="social-links">
-          <a href="https://www.linkedin.com/in/yaroslavkorets/" target="_blank" rel="noopener" class="social-btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"/></svg> LinkedIn</a>
-          <a href="https://www.facebook.com/yaroslav.korets/" target="_blank" rel="noopener" class="social-btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"/></svg> Facebook</a>
-          <a href="https://www.instagram.com/yarokorets/" target="_blank" rel="noopener" class="social-btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg> Instagram</a>
-          <a href="https://x.com/ykorets" target="_blank" rel="noopener" class="social-btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg> X</a>
-          <a href="mailto:yaroslav@korets.net" class="social-btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 7l-10 6L2 7"/></svg> Email</a>
-        </div>
-        <div style="margin-top: 1.5rem;">
-          <h3>Newsletter</h3>
-          <p class="contact-text">Updates no more than once a quarter. Systems, projects, things I'm building.</p>
-          <form class="subscribe-form" id="subscribe-form">
-            <input type="email" id="subscribe-email" placeholder="your@email.com" required>
-            <button type="submit" id="subscribe-btn">Subscribe</button>
-          </form>
-          <p class="subscribe-note">No spam. Unsubscribe anytime.</p>
-        </div>
-      </div>
+<!-- BOOK A CALL — Cal.com -->
+<section class="booking-section" id="book">
+  <div class="container">
+    <div class="booking-header">
+      <div class="section-label">Let's Talk</div>
+      <h2>Book a Call</h2>
+      <p>Pick a time that works for you. Whether it's a quick intro or a deeper conversation about a project — I'm happy to connect.</p>
+    </div>
+    <div class="cal-embed-wrapper">
+      <div id="cal-embed" style="width:100%;height:100%;overflow:auto;"></div>
+      <script>
+        Cal("inline", {
+          elementOrSelector: "#cal-embed",
+          calLink: "korets",
+          layout: "month_view",
+          config: { theme: "light" }
+        });
+      </script>
     </div>
   </div>
 </section>
 
-<section class="section section-alt" id="story">
+<!-- STAY CONNECTED -->
+<section class="connect-section" id="connect">
+  <div class="connect-box">
+    <div class="connect-left">
+      <div class="section-label">Stay Connected</div>
+      <h3>Follow &amp; Subscribe</h3>
+      <div class="social-links">
+        <a href="https://www.linkedin.com/in/yaroslavkorets/" target="_blank" rel="noopener" class="social-btn" aria-label="LinkedIn">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          LinkedIn
+        </a>
+        <a href="https://www.facebook.com/yaroslav.korets/" target="_blank" rel="noopener" class="social-btn" aria-label="Facebook">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          Facebook
+        </a>
+        <a href="https://www.instagram.com/yarokorets/" target="_blank" rel="noopener" class="social-btn" aria-label="Instagram">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678a6.162 6.162 0 100 12.324 6.162 6.162 0 100-12.324zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405a1.441 1.441 0 11-2.882 0 1.441 1.441 0 012.882 0z"/></svg>
+          Instagram
+        </a>
+        <a href="https://x.com/ykorets" target="_blank" rel="noopener" class="social-btn" aria-label="X">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          X
+        </a>
+        <a href="mailto:yaroslav@korets.net" class="social-btn" aria-label="Email">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 7l-10 7L2 7"/></svg>
+          Email
+        </a>
+      </div>
+    </div>
+    <div class="connect-right">
+      <h3>Newsletter</h3>
+      <p>I send updates no more than once a quarter — on systems, growth, and things I'm building.</p>
+      <form class="subscribe-form" id="subscribe-form">
+        <input type="email" id="subscribe-email" placeholder="your@email.com" required>
+        <button type="submit" id="subscribe-btn">Subscribe</button>
+      </form>
+      <p class="subscribe-note">No spam. Unsubscribe anytime.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CV TEASER -->
+<section class="section section-alt" id="resume">
+  <div class="narrow">
+    <div class="section-label">Work with me</div>
+    <span class="resume-role">Business Operations Optimizer · FinOps &amp; AI</span>
+    <h2>I make the numbers behind operations work</h2>
+    <p style="margin-top:1rem;">I come into a business, map how money and operations actually flow, and rebuild the parts that leak time or margin &mdash; then I ship the system myself. Twenty years as a founder and operator, now designing, coding, and self-hosting AI systems end to end. Available for project-based or fixed-term engagements.</p>
+    <div class="resume-actions">
+      <a href="/cv" class="resume-download">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+        View full CV &amp; 2026 AI experience
+      </a>
+      <a href="/yaroslav-korets-cv.pdf" class="resume-ghost" download>Download Résumé (PDF)</a>
+    </div>
+  </div>
+</section>
+
+<!-- THE FOUNDATION -->
+<section class="section" id="story">
   <div class="container">
     <div class="section-label">The Foundation</div>
     <h2>How it started</h2>
-    <p class="lead">Same pattern every chapter: find something that doesn't exist yet, build the system, make it work.</p>
-    <div class="timeline">
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-period">2000–2008</div>
-        <div class="timeline-title">Education & Early Career</div>
-        <div class="timeline-text">Started with 3 years of Computer Science at Donetsk National Technical University, then earned a Bachelor's in PR Management at Kyiv National University of Culture and Arts. In parallel — journalism in Donetsk, writing about culture. The 2004 Orange Revolution pulled me to Kyiv, where I became editor of the politics section. Spent a year inside the Verkhovna Rada as a press secretary — built the committee's first press office from scratch. That was enough to know: politics wasn't my game. I wanted to build things, not navigate them.</div>
+    <p class="narrow" style="margin-bottom:2rem;">My path has been shaped by three career chapters, each building on the last — and one life-changing experience that rewired how I think about community and creativity.</p>
+
+    <div class="story-grid narrow">
+      <div class="story-card">
+        <h3>Education &amp; Journalism</h3>
+        <p>I hold a Bachelor's degree in PR and Communications, with three years of Computer Science studies that gave me a strong technical foundation. Starting from my university years, I built a career in journalism — working as a cultural and political journalist, eventually becoming an editor in political coverage. I climbed that ladder fast, but after graduation I made a pivot: I left journalism and stepped into marketing.</p>
       </div>
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-period">2008–2015</div>
-        <div class="timeline-title">Ebola Communications</div>
-        <div class="timeline-text">Built a digital agency from zero. Just me, then my sister, then a team. Sold it to a major advertising holding before turning 30. No mentors, no MBA — books and work. After the deal, I led the merged company, Liquid7 Production — nearly 100 people, clients like Coca-Cola and McDonald's. Won the EFFIE Award in the final year. That felt like the right ending to the chapter.</div>
+      <div class="story-card">
+        <h3>Ebola Communications · 2008–2015</h3>
+        <p>I founded Ebola Communications, a digital agency, and spent seven years growing it from scratch. Eventually, I sold it to a major advertising holding — my first exit. I stayed on contract through the transition, then moved on to what came next.</p>
       </div>
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-period">2015–2023</div>
-        <div class="timeline-title">Exploration & Reinvention</div>
-        <div class="timeline-text">Built a tech startup, ran a community space in Kyiv, took a VP role in real estate, then a C-level at an IT holding. Some worked, some didn't. Each stop taught me the same thing: I need to build my way, or I need to move on.</div>
+      <div class="story-card">
+        <h3>Exploration &amp; Reinvention</h3>
+        <p>After the exit, I explored every direction — my own startups, consulting, corporate C-level roles at IT companies, and eventually real estate development, where I served as VP of Real Estate Development at a construction holding. I also tried events and experimented with various business models. That range of experience — from startups to corporate boards to construction sites — gave me a perspective that no single career track could.</p>
       </div>
-      <div class="timeline-item active">
-        <div class="timeline-dot"></div>
-        <div class="timeline-period">2023–Now</div>
-        <div class="timeline-title">KPI Creatives</div>
-        <div class="timeline-text">Started in Los Angeles as a marketplace for video production. Turned into something bigger — a Creative Growth Partner that builds content systems for US businesses. The idea that didn't exist: content as infrastructure, not marketing. Now it's a working system.</div>
+      <div class="story-card">
+        <h3>KPI Creatives · 2023–Now</h3>
+        <p>My current chapter began in Los Angeles with the founding of KPI Creatives — a Creative Growth Partner that builds content systems designed to drive growth by earning trust before the sale and delivering results after it. This is where everything I've learned comes together.</p>
       </div>
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-period">Since 2013</div>
-        <div class="timeline-title">Burning Man</div>
-        <div class="timeline-text">My first burn in 2013 changed how I think about community. I founded the Ukrainian Burners Community, and today I run Kurenivka Camp — the biggest official Ukrainian camp at Burning Man. Built Blue Bull, a massive art car based on Maria Prymachenko's naive art, with 30+ artists. I DJ, throw BBQs, and bring people together. Same pattern: raw idea, real infrastructure, something that holds.</div>
+      <div class="story-card">
+        <h3>Burning Man · Since 2013</h3>
+        <p>In 2013, I went to Burning Man for the first time — and it changed everything. I founded the Ukrainian Burners Community and Ukrainian Burners NGO in Ukraine, and today I serve as President of Ukrainian Burners Inc., a 501(c)(3) nonprofit in California. I run my own camp (Kurenivka Camp), founded the Blue Bull art car, and I'm a DJ who loves throwing BBQs. The outdoor life is part of my DNA, and this creative, communal energy runs through everything I build.</p>
       </div>
     </div>
   </div>
 </section>
 
-<section class="section" id="philosophy">
+<!-- HOW I THINK -->
+<section class="section section-alt" id="philosophy">
   <div class="narrow">
     <div class="section-label">Philosophy</div>
     <h2>How I Think</h2>
     <div class="think-list">
-      <div class="think-item"><div class="think-num">01</div><p>Jim Collins called it the Hedgehog Concept — the intersection of what you're passionate about, what you can be the best at, and what drives your economics. Mine is this: I build infrastructure that brings the future into the present. A raw idea becomes a working system — operationally real, culturally meaningful, economically viable. Same pattern — whether it's a company, an art car, or a camp in the desert.</p></div>
-      <div class="think-item"><div class="think-num">02</div><p>Content is infrastructure. You build it once, maintain it like a system, and let it compound. Not a campaign. A system.</p></div>
-      <div class="think-item"><div class="think-num">03</div><p>If you can't be the decision-maker, don't take the job. I left a C-level role over this. The strategy I proposed was rejected. A year later, ChatGPT proved it right.</p></div>
-      <div class="think-item"><div class="think-num">04</div><p>Small teams with the right tools beat large headcount. Teams matter more than ideas. Community matters more than teams. Nothing meaningful gets built alone.</p></div>
-      <div class="think-item"><div class="think-num">05</div><p>Your place of power is where your family is. War, relocation, starting over — none of it breaks you when your kids are next to you. I've tested this across three countries.</p></div>
+      <div class="think-item"><div class="think-num">01</div><p>Learning is a continuous, lifelong process. To stop learning is to stop living.</p></div>
+      <div class="think-item"><div class="think-num">02</div><p>I'm comfortable with new things and adapt quickly.</p></div>
+      <div class="think-item"><div class="think-num">03</div><p>I study how others solved similar problems, then combine ideas from different fields.</p></div>
+      <div class="think-item"><div class="think-num">04</div><p>I believe teams matter more than ideas, and community matters more than teams.</p></div>
+      <div class="think-item"><div class="think-num">05</div><p>Nothing meaningful is built alone.</p></div>
     </div>
   </div>
 </section>
 
-<section class="section section-alt">
+<!-- HOW I WORK -->
+<section class="section">
   <div class="narrow">
     <div class="section-label">Approach</div>
     <h2>How I Work</h2>
     <div class="work-values">
-      <span class="work-value">Build from scratch</span>
-      <span class="work-value">Systems over chaos</span>
-      <span class="work-value">Test under pressure</span>
-      <span class="work-value">Trust over speed</span>
-      <span class="work-value">Compound, don't campaign</span>
+      <div class="work-value"><h3>Clarity before action</h3></div>
+      <div class="work-value"><h3>Learning before assumptions</h3></div>
+      <div class="work-value"><h3>Systems over shortcuts</h3></div>
+      <div class="work-value"><h3>Trust over speed</h3></div>
+      <div class="work-value"><h3>Creativity &amp; new approaches</h3></div>
     </div>
-    <p class="lead">I work hands-on, but I build things that can run without me. I study how others solved similar problems, combine ideas from different fields. If the existing options don't work — I build my own.</p>
+    <p style="margin-top:2rem;">I work hands-on, but always build things that can work without me. I'm always searching for new ideas and new ways to solve problems — then I bring them into the systems I build.</p>
   </div>
 </section>
 
-<section class="section" id="projects">
+<!-- SELECTED WORKS -->
+<section class="section section-alt" id="projects">
   <div class="container">
     <div class="section-label">Selected Works</div>
-    <h2>Projects</h2>
-    <p class="lead">Each one started as an idea that didn't exist yet. Now each one is a working system.</p>
+    <h2>Systems, infrastructure, and tools built to solve real-world problems.</h2>
+
     <div class="projects-grid">
       <div class="project-card">
-        <h3>KPI Creatives</h3>
-        <p class="project-sub">Content systems for growth</p>
-        <p>Helps US businesses attract qualified inbound leads through content. Not random posting — structured systems that educate buyers and build trust over time.</p>
-        <a href="https://kpi-creatives.com" target="_blank" rel="noopener" class="project-link">kpi-creatives.com →</a>
-        <div class="tags"><span class="tag">Content Systems</span><span class="tag">B2B</span><span class="tag">Inbound</span></div>
+        <h3>Behind the Watt</h3>
+        <p class="project-sub">Open evidence for data-center power</p>
+        <p>Tracks which behind-the-meter power projects at data centers are actually operating, not merely announced. AI extracts and cross-checks claims from permits and public filings; every published fact stays tied to its source and passes human review.</p>
+        <a href="https://behindthewatt.com" target="_blank" rel="noopener" class="project-link">behindthewatt.com</a>
+        <a href="https://github.com/ykorets/btw" target="_blank" rel="noopener" class="project-link">GitHub</a>
+        <div class="tags"><span class="tag">AI</span><span class="tag">Open Data</span><span class="tag">Energy</span></div>
       </div>
+
       <div class="project-card">
         <h3>ADUscale</h3>
         <p class="project-sub">Decision support for building</p>
-        <p>Helps California homeowners figure out whether building an ADU makes sense — before permits, before contractors, before spending serious money. Co-founded with Boris Goldenstein.</p>
-        <a href="https://aduscale.com" target="_blank" rel="noopener" class="project-link">aduscale.com →</a>
-        <div class="tags"><span class="tag">Construction</span><span class="tag">Real Estate</span><span class="tag">AI</span></div>
+        <p>Helps homeowners and small investors understand whether building makes sense at all. Before permits. Before contractors. Before spending serious money. Sometimes the right answer is "yes." Sometimes it's "not now." Sometimes it's "don't build."</p>
+        <a href="https://aduscale.com" target="_blank" rel="noopener" class="project-link">aduscale.com</a>
+        <div class="tags"><span class="tag">Construction</span><span class="tag">Real Estate</span><span class="tag">Analytics</span></div>
       </div>
+
+      <div class="project-card">
+        <h3>InspectPilot</h3>
+        <p class="project-sub">LADBS inspection operations for contractors</p>
+        <p>Handles the admin between inspections: scheduling, result tracking, correction alerts, and resubmission. Behind it is a compliance engine built on roughly 11 million Los Angeles inspection records spanning 13 years.</p>
+        <a href="https://inspectpilot.ai" target="_blank" rel="noopener" class="project-link">inspectpilot.ai</a>
+        <div class="tags"><span class="tag">Construction</span><span class="tag">AI</span><span class="tag">Compliance</span></div>
+      </div>
+
+      <div class="project-card">
+        <h3>KPI Creatives</h3>
+        <p class="project-sub">Content systems for inbound demand</p>
+        <p>Helps businesses attract qualified inbound leads through content. Not by posting randomly, but by building content systems that educate buyers, build trust over time, and turn attention into demand.</p>
+        <a href="https://kpi-creatives.com" target="_blank" rel="noopener" class="project-link">kpi-creatives.com</a>
+        <div class="tags"><span class="tag">Marketing</span><span class="tag">Systems</span><span class="tag">Inbound</span></div>
+      </div>
+
+      <div class="project-card">
+        <h3>Local Review Club</h3>
+        <p class="project-sub">Honest reviews from real business owners</p>
+        <p>A private club where local businesses try each other's services and leave genuine Google and Yelp reviews. No fakes. No bots. No AI-written text. Just real people supporting real businesses.</p>
+        <a href="https://localreviewclub.com" target="_blank" rel="noopener" class="project-link">localreviewclub.com</a>
+        <div class="tags"><span class="tag">Local Business</span><span class="tag">Reviews</span><span class="tag">Community</span></div>
+      </div>
+
       <div class="project-card">
         <h3>DirectorMode.AI</h3>
         <p class="project-sub">Better video decisions</p>
-        <p>AI that reviews video footage and flags what to fix before publishing. Better decisions early, not after the money is spent.</p>
-        <a href="https://directormode.ai" target="_blank" rel="noopener" class="project-link">directormode.ai →</a>
+        <p>A simple tool that reviews video and explains what can be improved before publishing. It helps creators make better decisions early.</p>
+        <a href="https://directormode.ai" target="_blank" rel="noopener" class="project-link">directormode.ai</a>
         <div class="tags"><span class="tag">AI</span><span class="tag">Video</span><span class="tag">SaaS</span></div>
       </div>
+
       <div class="project-card">
         <h3>Indiev</h3>
-        <p class="project-sub">Production as a system</p>
-        <p>Turns video production into something predictable. Clear scope, clear timelines, no chaos.</p>
-        <a href="https://indiev.org" target="_blank" rel="noopener" class="project-link">indiev.org →</a>
+        <p class="project-sub">Production as infrastructure</p>
+        <p>Turns video production into a predictable system. Clear scope. Clear timelines. No chaos. Designed to remove friction from ongoing content production.</p>
+        <a href="https://indiev.org" target="_blank" rel="noopener" class="project-link">indiev.org</a>
         <div class="tags"><span class="tag">Media</span><span class="tag">Infrastructure</span><span class="tag">Video</span></div>
       </div>
-      <div class="project-card">
-        <h3>Local Review Club</h3>
-        <p class="project-sub">Honest reviews from real owners</p>
-        <p>A private club where local businesses try each other's services and leave real reviews. No fakes, no bots. Just real people.</p>
-        <a href="https://localreviewclub.com" target="_blank" rel="noopener" class="project-link">localreviewclub.com →</a>
-        <div class="tags"><span class="tag">Local Business</span><span class="tag">Reviews</span><span class="tag">Community</span></div>
-      </div>
+
       <div class="project-card">
         <h3>Start Podcast</h3>
         <p class="project-sub">Podcast production infrastructure</p>
-        <p>Podcast production as a system. Removes the friction from ongoing audio and video production.</p>
-        <a href="https://start-podcast.com" target="_blank" rel="noopener" class="project-link">start-podcast.com →</a>
+        <p>Turns podcast production into a predictable system. Scalable audio/video infrastructure for creators. Removes friction from ongoing podcast production.</p>
+        <a href="https://start-podcast.com" target="_blank" rel="noopener" class="project-link">start-podcast.com</a>
         <div class="tags"><span class="tag">Podcast</span><span class="tag">Media</span><span class="tag">Systems</span></div>
       </div>
+
       <div class="project-card">
         <h3>Stretch-Tent.net</h3>
-        <p class="project-sub">Flexible outdoor structures</p>
-        <p>Stretch tents for real conditions: weather, terrain, time pressure. Solving physical problems, not decoration.</p>
-        <a href="https://stretch-tent.net" target="_blank" rel="noopener" class="project-link">stretch-tent.net →</a>
+        <p class="project-sub">Flexible outdoor infrastructure</p>
+        <p>Stretch tents are adaptable structures for real-world conditions: weather, terrain, time pressure. This project is about solving physical problems, not decoration.</p>
+        <a href="https://stretch-tent.net" target="_blank" rel="noopener" class="project-link">stretch-tent.net</a>
         <div class="tags"><span class="tag">Events</span><span class="tag">Infrastructure</span><span class="tag">Logistics</span></div>
       </div>
+
       <div class="project-card">
         <h3>Kurenivka Camp</h3>
-        <p class="project-sub">Burning Man community</p>
-        <p>The biggest official Ukrainian camp at Burning Man. Home of the Blue Bull art car, Hedgehog Temple, and a community that kept building through everything.</p>
-        <a href="https://kurenivka.ua" target="_blank" rel="noopener" class="project-link">kurenivka.ua →</a>
+        <p class="project-sub">Burning Man theme camp &amp; community</p>
+        <p>A Burning Man theme camp rooted in Ukrainian culture and community spirit. Built on the principles of radical self-expression, gifting, and communal effort.</p>
+        <a href="https://kurenivka.ua" target="_blank" rel="noopener" class="project-link">kurenivka.ua</a>
         <div class="tags"><span class="tag">Burning Man</span><span class="tag">Community</span><span class="tag">Culture</span></div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="cta-zone">
-  <div class="cta-inner">
-    <h2>I don't talk about the future. I build it.</h2>
-    <p>I build companies, communities, and art projects with the same approach: find the right people, create a structure, give it meaning.</p>
-    <div class="culture-quote">"We'll build our own theme park — with blackjack and hookers." — Bender, Futurama. Honestly, that's how I approach most things.</div>
+<!-- CULTURE -->
+<section class="section">
+  <div class="narrow">
+    <div class="section-label">Culture &amp; Community</div>
+    <h2>Testing systems under pressure</h2>
+    <div class="culture-block">
+      <p>I'm the founder and lead of Kurenivka Camp and the Blue Bull art car at Burning Man. I work with Ukrainian Burners Inc. (non-profit).</p>
+      <p>These are live tests of leadership, trust, logistics, and teamwork under pressure.</p>
+      <blockquote class="quote">"I believe teams matter more than ideas, and community matters more than teams. Nothing meaningful is built alone."</blockquote>
+    </div>
   </div>
 </section>
 
-<footer>
+<!-- IF THIS RESONATES -->
+<section class="section section-alt">
+  <div class="narrow">
+    <div class="section-label">If this resonates</div>
+    <div class="cta-grid">
+      <div class="cta-card">
+        <h3>Build Systems</h3>
+        <p>For those who build complex or real-world systems.</p>
+      </div>
+      <div class="cta-card">
+        <h3>Value Clarity</h3>
+        <p>For those who prioritize understanding over hype.</p>
+      </div>
+      <div class="cta-card">
+        <h3>Think Long-term</h3>
+        <p>For those interested in sustainable, lasting impact.</p>
+      </div>
+    </div>
+    <p style="margin-top:2.5rem; text-align:center;">I don't talk much about the future. I build things that already work. If this way of thinking feels right — welcome.</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer id="contact">
   <p class="copy">&copy; 2026 Yaroslav Korets. Building Tomorrow Today.</p>
 </footer>
 
+<!-- Newsletter subscription handler -->
 <script>
-document.getElementById('subscribe-form').addEventListener('submit', async function(e) {
-  e.preventDefault();
-  const btn = document.getElementById('subscribe-btn');
-  const input = document.getElementById('subscribe-email');
-  const email = input.value.trim();
-  if (!email) return;
-  btn.textContent = 'Sending...';
-  btn.disabled = true;
-  try {
-    const WORKER_URL = 'https://korets-subscribe.korets.workers.dev';
-    const res = await fetch(WORKER_URL, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ email }) });
-    const data = await res.json();
-    if (data.success) { btn.textContent = 'Subscribed!'; btn.style.background = 'var(--sand-light)'; input.disabled = true; }
-    else { btn.textContent = data.error || 'Error'; setTimeout(() => { btn.textContent = 'Subscribe'; btn.disabled = false; }, 3000); }
-  } catch (err) { btn.textContent = 'Error'; setTimeout(() => { btn.textContent = 'Subscribe'; btn.disabled = false; }, 3000); }
-});
+  document.getElementById('subscribe-form').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const btn = document.getElementById('subscribe-btn');
+    const input = document.getElementById('subscribe-email');
+    const email = input.value.trim();
+    if (!email) return;
+
+    btn.textContent = 'Sending...';
+    btn.disabled = true;
+
+    try {
+      // TODO: Replace with your deployed Worker URL, e.g. https://korets-subscribe.<your-subdomain>.workers.dev
+      const WORKER_URL = 'https://korets-subscribe.korets.workers.dev';
+      const res = await fetch(WORKER_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email })
+      });
+      const data = await res.json();
+      if (data.success) {
+        btn.textContent = 'Subscribed!';
+        btn.style.background = 'var(--lime)';
+        btn.style.color = 'var(--text-primary)';
+        input.disabled = true;
+      } else {
+        btn.textContent = data.error || 'Error';
+        setTimeout(() => { btn.textContent = 'Subscribe'; btn.disabled = false; }, 3000);
+      }
+    } catch (err) {
+      btn.textContent = 'Error';
+      setTimeout(() => { btn.textContent = 'Subscribe'; btn.disabled = false; }, 3000);
+    }
+  });
 </script>
 
 </body>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marco: Infrastructure Before AI Copy</title>
+    <meta name="description" content="Marco is an outbound AI agent that begins with sender health, deliverability gates, and signals before it writes a message.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://korets.net/writing/marco-infrastructure-before-ai-copy/">
+    <link rel="alternate" type="application/rss+xml" title="Yaroslav Korets — Writing" href="https://korets.net/writing/feed.xml">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Marco: Infrastructure Before AI Copy">
+    <meta property="og:description" content="Marco is an outbound AI agent that begins with sender health, deliverability gates, and signals before it writes a message.">
+    <meta property="og:url" content="https://korets.net/writing/marco-infrastructure-before-ai-copy/">
+    <meta property="og:image" content="https://korets.net/writing/built-shipped-running-social.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="Yaroslav Korets">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Marco: Infrastructure Before AI Copy">
+    <meta name="twitter:description" content="Marco is an outbound AI agent that begins with sender health, deliverability gates, and signals before it writes a message.">
+    <meta name="twitter:image" content="https://korets.net/writing/built-shipped-running-social.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/writing/styles.css">
+    <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BlogPosting","@id":"https://korets.net/writing/marco-infrastructure-before-ai-copy/#article","headline":"Marco: Why an Outbound AI Agent Starts With Infrastructure","description":"Marco is an outbound AI agent that begins with sender health, deliverability gates, and signals before it writes a message.","datePublished":"2026-07-13","dateModified":"2026-07-14","wordCount":431,"inLanguage":"en-US","image":"https://korets.net/writing/built-shipped-running-social.png","mainEntityOfPage":"https://korets.net/writing/marco-infrastructure-before-ai-copy/","author":{"@type":"Person","name":"Yaroslav Korets","url":"https://korets.net/cv/","jobTitle":"AI-native operator"},"isPartOf":{"@type":"CreativeWorkSeries","name":"Built. Shipped. Running.","url":"https://korets.net/writing/built-shipped-running/"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://korets.net"},{"@type":"ListItem","position":2,"name":"Writing","item":"https://korets.net/writing/"},{"@type":"ListItem","position":3,"name":"Built. Shipped. Running.","item":"https://korets.net/writing/built-shipped-running/"},{"@type":"ListItem","position":4,"name":"Marco: Infrastructure Before Copy","item":"https://korets.net/writing/marco-infrastructure-before-ai-copy/"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does Marco do?","acceptedAnswer":{"@type":"Answer","text":"Marco builds and monitors outbound infrastructure, finds prospects based on timing signals, researches each company, drafts outreach, runs sequences, and triages replies."}},{"@type":"Question","name":"Why does an AI outbound agent need deliverability infrastructure?","acceptedAnswer":{"@type":"Answer","text":"The system cannot create a business outcome if messages do not reach the inbox. Sender authentication, warm-up, placement testing, caps, and reputation monitoring are operating requirements."}},{"@type":"Question","name":"What stays behind human approval?","acceptedAnswer":{"@type":"Answer","text":"Factual claims, pricing, objections, and other statements that can create a commitment stay behind a human gate."}},{"@type":"Question","name":"What can document teams learn from Marco?","acceptedAnswer":{"@type":"Answer","text":"Start with sources and controls, not generation. A reliable document pipeline needs the same sequence: valid inputs, explicit rules, a review gate, and a record of the final action."}}]}]}</script>
+    
+</head>
+<body>
+
+    <nav class="site-nav" aria-label="Main navigation">
+      <div class="nav-inner">
+        <a class="brand" href="/">YK.</a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" onclick="const links=document.getElementById('nav-links');const open=links.classList.toggle('open');this.setAttribute('aria-expanded',open)">Menu</button>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="/">Home</a></li><li><a href="/ai/">AI Systems</a></li><li><a href="/writing/" aria-current="page">Writing</a></li><li><a href="/cv/">CV</a></li>
+          <li><a class="nav-cta" href="/#book">Workflow audit</a></li>
+        </ul>
+      </div>
+    </nav>
+    
+<header class="article-header">
+  <div class="hero">
+    <div class="breadcrumbs"><a href="/">Home</a><span>/</span><a href="/writing/">Writing</a><span>/</span><a href="/writing/built-shipped-running/">Built. Shipped. Running.</a></div>
+    <div class="eyebrow">Field note 2 of 8 · Built. Shipped. Running.</div>
+    <h1>Marco: Why an Outbound AI Agent Starts With Infrastructure</h1>
+    <p class="hero-lead">Everyone builds the AI that writes the email. Marco starts with the layer that decides whether the message should exist and whether it can arrive.</p>
+    <div class="article-meta"><span>By Yaroslav Korets</span><span>July 13, 2026</span><span>6 min read</span></div>
+    <div class="receipt-band"><strong>Receipt:</strong> SPF/DKIM/DMARC · placement tests · 15-minute reply triage · approval gates</div>
+  </div>
+</header>
+<main>
+  <div class="article-layout">
+    <article class="article-body">
+      <section><h2 id="section-1">Generation is the last step, not the first</h2>
+                <p>Marco is my autonomous outbound agent. The visible feature is personalized copy, but copy is one of the last things the system produces.</p>
+                <p>Marco first builds and monitors the sending layer: secondary domains, SPF, DKIM, DMARC, mailboxes, warm-up, placement tests, per-mailbox caps, and reputation checks. No campaign launches until the senders clear those gates.</p>
+                <p>A strong message that lands in spam is a failed system. An accurate document that reads the wrong source is the same kind of failure. In both cases, the generated text is not the product. The controlled pipeline around it is.</p>
+                </section><section><h2 id="section-2">Signals decide who and when</h2>
+                <p>Most outbound systems start with a list of titles. Marco looks for a change in the company: leadership moves, hiring, funding, website intent, new permits, or another event that creates a reason to talk now.</p>
+                <p>It collects prospects from commercial databases, LinkedIn, company sites, job boards, industry directories, and public or first-party data. It scores and deduplicates them before research begins.</p>
+                <p>That sequencing matters. Research is expensive. Personalization is wasted when the target is wrong or the timing is weak. Marco spends depth only after a signal earns it.</p>
+                </section><section><h2 id="section-3">Research decides what the system is allowed to say</h2>
+                <p>Marco researches the company, writes a short message in the sender's voice, and runs email and LinkedIn sequences. Every 15 minutes it triages replies and flags positive intent in Telegram.</p>
+                <p>But factual claims, pricing, and objections stay behind human approval. The system can do persistent work at volume. It does not get authority to invent facts or commit the business.</p>
+                <p>This is the same control pattern I use for document workflows. Separate extraction from interpretation. Separate a draft from an approved result. Make the boundary explicit.</p>
+                </section><section><h2 id="section-4">The control plane is the real product</h2>
+                <p>The agent is the part people screenshot. The control plane is what makes it safe to operate: sender health, source provenance, written rules, approval states, and an event log.</p>
+                <p>Without that layer, autonomy becomes faster drift. With it, a human operator no longer has to choose between depth and volume.</p>
+                <blockquote>Signals decide who and when. Research decides what to say. Infrastructure decides whether any of it arrives.</blockquote>
+                </section>
+    </article>
+    <aside class="article-aside" aria-label="In this field note">
+      <div class="aside-label">In this note</div>
+      <ol><li><a href="#section-1">Generation is the last step, not the first</a></li><li><a href="#section-2">Signals decide who and when</a></li><li><a href="#section-3">Research decides what the system is allowed to say</a></li><li><a href="#section-4">The control plane is the real product</a></li></ol>
+    </aside>
+  </div>
+  <section class="section-alt">
+    <div class="faq">
+      <div class="eyebrow">Direct answers</div>
+      <h2>Questions operators ask</h2>
+      <details><summary>What does Marco do?</summary><p>Marco builds and monitors outbound infrastructure, finds prospects based on timing signals, researches each company, drafts outreach, runs sequences, and triages replies.</p></details><details><summary>Why does an AI outbound agent need deliverability infrastructure?</summary><p>The system cannot create a business outcome if messages do not reach the inbox. Sender authentication, warm-up, placement testing, caps, and reputation monitoring are operating requirements.</p></details><details><summary>What stays behind human approval?</summary><p>Factual claims, pricing, objections, and other statements that can create a commitment stay behind a human gate.</p></details><details><summary>What can document teams learn from Marco?</summary><p>Start with sources and controls, not generation. A reliable document pipeline needs the same sequence: valid inputs, explicit rules, a review gate, and a record of the final action.</p></details>
+    </div>
+  </section>
+  <nav class="series-nav" aria-label="Series navigation"><a href="/writing/ai-operational-last-mile/"><span>Previous field note</span><strong>The Operational Last Mile</strong></a><a href="/writing/hunter-rules-before-autonomy/"><span>Next field note</span><strong>Hunter: Rules Before Autonomy</strong></a></nav>
+  <section class="cta-band">
+    <div class="cta-inner">
+      <div class="eyebrow" style="color:var(--lime)">One workflow. One week.</div>
+      <h2>Find the operating process worth rebuilding first</h2>
+      <p>I map the inputs, handoffs, rework, approval points, and cost. You get a narrow AI sidecar with a measurable baseline, not a transformation deck.</p>
+      <a class="button button-primary" href="/#book">Book a workflow audit</a>
+    </div>
+  </section>
+</main>
+
+    <footer class="site-footer">
+      <p>&copy; 2026 Yaroslav Korets · <a href="/ai/">AI systems in production</a> · <a href="/writing/feed.xml">RSS</a></p>
+    </footer>
+    
+</body>
+</html>
