@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Black Ink Tax — 30-Day Operations Pilot | Yaroslav Korets</title>
+  <meta name="description" content="A paid 30-day pilot to reduce repeated manual handoffs between client communication, IRS transcripts, Canopy, and TaxSlayer—without replacing the firm's professional systems.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://korets.net/blackink/">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://korets.net/blackink/">
+  <meta property="og:title" content="Black Ink Tax — 30-Day Operations Pilot">
+  <meta property="og:description" content="Test whether one recurring tax process can become faster and more reliable in 30 days. Canopy and TaxSlayer stay in place; Black Ink's professionals retain final tax judgment.">
+  <meta name="twitter:card" content="summary">
+  <meta name="theme-color" content="#5b3fd9">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YMZ2F20D4V"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-YMZ2F20D4V');
+  </script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #fafafa;
+      --card: #fff;
+      --alt: #f3f2f8;
+      --dark: #171528;
+      --border: #e5e3ee;
+      --purple: #7c5cfc;
+      --purple-dark: #5b3fd9;
+      --purple-deep: #35226e;
+      --purple-soft: rgba(124,92,252,.09);
+      --lime: #9ae600;
+      --lime-dark: #4f7e00;
+      --lime-soft: rgba(154,230,0,.12);
+      --text: #1a1a2e;
+      --secondary: #555566;
+      --muted: #747482;
+      --shadow: 0 18px 50px rgba(38,30,82,.08);
+    }
+    html { scroll-behavior: smooth; scroll-padding-top: 5.25rem; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+    body.nav-open { overflow: hidden; }
+    a { color: inherit; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    :focus-visible { outline: 3px solid rgba(124,92,252,.35); outline-offset: 3px; }
+    .skip-link {
+      position: fixed; top: .75rem; left: .75rem; z-index: 100;
+      transform: translateY(-160%); padding: .55rem .85rem; border: 1px solid var(--purple);
+      border-radius: .55rem; background: var(--card); color: var(--purple-dark); font-weight: 700;
+    }
+    .skip-link:focus { transform: translateY(0); }
+    nav {
+      position: fixed; inset: 0 0 auto; z-index: 50; padding: 0 1.5rem;
+      border-bottom: 1px solid var(--border); background: rgba(250,250,250,.93); backdrop-filter: blur(16px);
+    }
+    .nav-inner { max-width: 72rem; height: 4.5rem; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
+    .nav-logo { color: var(--purple); font-size: 1.25rem; font-weight: 700; letter-spacing: -.02em; text-decoration: none; }
+    .nav-links { display: flex; align-items: center; gap: 1.35rem; list-style: none; }
+    .nav-links a { color: var(--secondary); font-size: .84rem; font-weight: 600; text-decoration: none; }
+    .nav-links a:hover { color: var(--purple-dark); }
+    .nav-links .nav-cta { padding: .55rem 1rem; border-radius: .55rem; background: var(--purple-dark); color: #fff; }
+    .nav-links .nav-cta:hover { background: var(--purple-deep); color: #fff; }
+    .nav-toggle {
+      display: none; width: 2.65rem; height: 2.65rem; border: 1px solid var(--border);
+      border-radius: .6rem; background: var(--card); cursor: pointer; align-items: center; justify-content: center; flex-direction: column; gap: 4px;
+    }
+    .nav-toggle span { width: 18px; height: 2px; border-radius: 9px; background: var(--secondary); transition: .2s; }
+    .nav-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+    .nav-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+    .nav-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+
+    .hero { position: relative; overflow: hidden; padding: 9.5rem 1.5rem 5rem; border-bottom: 1px solid var(--border); }
+    .hero::before {
+      content: ''; position: absolute; width: 34rem; height: 34rem; top: -12rem; right: -9rem; border-radius: 50%;
+      background: radial-gradient(circle, rgba(124,92,252,.15), rgba(124,92,252,0)); pointer-events: none;
+    }
+    .hero-inner { position: relative; z-index: 1; max-width: 72rem; margin: 0 auto; display: grid; grid-template-columns: minmax(0,1.35fr) minmax(17rem,.65fr); gap: 3.5rem; align-items: center; }
+    .badge {
+      display: inline-flex; align-items: center; gap: .5rem; margin-bottom: 1.3rem; padding: .4rem .85rem;
+      border: 1px solid rgba(124,92,252,.22); border-radius: 999px; background: var(--purple-soft);
+      color: var(--purple-dark); font-size: .76rem; font-weight: 700; letter-spacing: .02em;
+    }
+    .badge::before { content: ''; width: .45rem; height: .45rem; border-radius: 50%; background: var(--lime-dark); box-shadow: 0 0 0 4px var(--lime-soft); }
+    h1 { max-width: 50rem; margin-bottom: 1.35rem; font-size: clamp(2.45rem,5.4vw,4.25rem); line-height: 1.06; letter-spacing: -.045em; }
+    h1 .accent { color: var(--purple); }
+    .tagline { max-width: 47rem; color: var(--text); font-size: clamp(1.08rem,2vw,1.26rem); font-weight: 500; line-height: 1.55; }
+    .hero .intro { max-width: 45rem; margin-top: 1rem; color: var(--secondary); font-size: 1rem; }
+    .actions { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 1.65rem; }
+    .btn-primary, .btn-secondary {
+      display: inline-flex; align-items: center; justify-content: center; gap: .5rem; min-height: 2.95rem;
+      padding: .72rem 1.3rem; border: 1px solid; border-radius: .58rem; font-size: .89rem; font-weight: 700; text-decoration: none; transition: .2s;
+    }
+    .btn-primary { border-color: var(--purple-dark); background: var(--purple-dark); color: #fff; }
+    .btn-primary:hover { transform: translateY(-1px); border-color: var(--purple-deep); background: var(--purple-deep); }
+    .btn-secondary { border-color: var(--border); background: var(--card); color: var(--secondary); }
+    .btn-secondary:hover { transform: translateY(-1px); border-color: var(--purple); color: var(--purple-dark); }
+    .microcopy { margin-top: .75rem; color: var(--muted); font-size: .78rem; line-height: 1.55; }
+    .microcopy a { color: var(--purple-dark); font-weight: 700; text-underline-offset: .14em; }
+    .hero-card { padding: 1.55rem; border: 1px solid var(--border); border-radius: 1rem; background: rgba(255,255,255,.87); box-shadow: var(--shadow); }
+    .eyebrow { margin-bottom: .65rem; color: var(--purple-dark); font-size: .71rem; font-weight: 700; letter-spacing: .13em; text-transform: uppercase; }
+    .hero-card h2 { margin-bottom: 1rem; font-size: 1.22rem; letter-spacing: -.02em; }
+    .plain-list { display: grid; gap: .75rem; list-style: none; }
+    .plain-list li { display: grid; grid-template-columns: 1.6rem 1fr; gap: .65rem; color: var(--secondary); font-size: .86rem; line-height: 1.5; }
+    .number { width: 1.6rem; height: 1.6rem; display: grid; place-items: center; border-radius: .42rem; background: var(--lime-soft); color: var(--lime-dark); font-size: .72rem; font-weight: 700; }
+    .hero-card-note { margin-top: 1.15rem; padding-top: 1rem; border-top: 1px solid var(--border); color: var(--purple-dark); font-size: .81rem; font-weight: 700; }
+    .proof-strip { padding: 1.15rem 1.5rem; border-bottom: 1px solid var(--border); background: var(--card); }
+    .proof-inner { max-width: 72rem; margin: 0 auto; display: grid; grid-template-columns: repeat(3,1fr); }
+    .proof-item { display: flex; align-items: center; justify-content: center; gap: .5rem; padding: .2rem .8rem; color: var(--secondary); font-size: .84rem; font-weight: 600; text-align: center; }
+    .proof-item + .proof-item { border-left: 1px solid var(--border); }
+    .dot { width: .42rem; height: .42rem; flex: 0 0 auto; border-radius: 50%; background: var(--lime-dark); }
+
+    .section { padding: 5rem 1.5rem; }
+    .section-alt { border-block: 1px solid var(--border); background: var(--alt); }
+    .container { max-width: 72rem; margin: 0 auto; }
+    .narrow { max-width: 55rem; margin: 0 auto; }
+    .section-head { max-width: 50rem; margin-bottom: 2.25rem; }
+    .section-head.center { margin-inline: auto; text-align: center; }
+    .section-label { margin-bottom: .6rem; color: var(--purple-dark); font-size: .71rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
+    h2 { margin-bottom: .8rem; font-size: clamp(1.85rem,3.7vw,2.65rem); line-height: 1.16; letter-spacing: -.035em; }
+    h3 { font-size: 1.08rem; line-height: 1.35; }
+    p { color: var(--secondary); }
+    p + p { margin-top: .9rem; }
+    .lead { color: var(--secondary); font-size: 1.04rem; line-height: 1.72; }
+    .card-grid { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 1rem; }
+    .card { min-width: 0; padding: 1.35rem; border: 1px solid var(--border); border-radius: .85rem; background: var(--card); }
+    .card .index { display: block; margin-bottom: .75rem; color: var(--purple); font-size: .7rem; font-weight: 700; letter-spacing: .11em; text-transform: uppercase; }
+    .card h3 { margin-bottom: .5rem; }
+    .card p { font-size: .87rem; line-height: 1.62; }
+    .before-after { display: grid; grid-template-columns: 1fr auto 1fr; gap: 1rem; align-items: stretch; }
+    .state-card { padding: 1.5rem; border: 1px solid var(--border); border-radius: .9rem; background: var(--card); }
+    .state-card.after { border-color: rgba(124,92,252,.38); box-shadow: var(--shadow); }
+    .state-card h3 { margin-bottom: .65rem; }
+    .state-card ul { display: grid; gap: .55rem; padding-left: 1.05rem; color: var(--secondary); font-size: .9rem; }
+    .state-arrow { display: grid; place-items: center; color: var(--purple); font-size: 1.5rem; font-weight: 700; }
+    .definition {
+      margin-top: 1.4rem; padding: 1.15rem 1.3rem; border-left: 4px solid var(--purple);
+      border-radius: .25rem .75rem .75rem .25rem; background: var(--purple-soft); color: var(--secondary); font-size: .91rem;
+    }
+    .definition strong { color: var(--text); }
+    .case-grid { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: .8rem; }
+    .case-step { position: relative; min-width: 0; padding: 1.25rem; border: 1px solid var(--border); border-radius: .85rem; background: var(--card); }
+    .case-step:not(:last-child)::after { content: '→'; position: absolute; top: 50%; right: -.72rem; z-index: 2; width: 1.4rem; height: 1.4rem; display: grid; place-items: center; transform: translateY(-50%); border: 1px solid var(--border); border-radius: 50%; background: var(--bg); color: var(--purple-dark); font-size: .72rem; }
+    .case-step span { display: block; margin-bottom: .55rem; color: var(--purple); font-size: .69rem; font-weight: 700; letter-spacing: .11em; text-transform: uppercase; }
+    .case-step h3 { margin-bottom: .4rem; }
+    .case-step p { font-size: .84rem; line-height: 1.58; }
+    .outcome-line { margin-top: 1rem; padding: 1rem 1.2rem; border-radius: .75rem; background: var(--dark); color: #fff; font-size: .9rem; text-align: center; }
+    .outcome-line strong { color: var(--lime); }
+
+    .output-card { display: flex; flex-direction: column; }
+    .output-card .owner-gets { margin-top: auto; padding-top: .8rem; color: var(--purple-dark); font-size: .78rem; font-weight: 700; }
+    .measure-layout { display: grid; grid-template-columns: .85fr 1.15fr; gap: 1.2rem; align-items: start; }
+    .scorecard, .measure-card { min-width: 0; padding: 1.45rem; border: 1px solid var(--border); border-radius: .9rem; background: var(--card); }
+    .scorecard h3, .measure-card h3 { margin-bottom: .7rem; }
+    .metric-list { display: grid; gap: .65rem; list-style: none; }
+    .metric-list li { padding-bottom: .65rem; border-bottom: 1px solid var(--border); color: var(--secondary); font-size: .87rem; }
+    .metric-list li:last-child { padding-bottom: 0; border-bottom: 0; }
+    .metric-list strong { display: block; color: var(--text); }
+    .confidence-row { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: .6rem; margin-top: 1rem; }
+    .confidence { min-width: 0; padding: .72rem; border: 1px solid var(--border); border-radius: .65rem; background: var(--bg); color: var(--secondary); font-size: .76rem; text-align: center; overflow-wrap: anywhere; }
+    .confidence strong { display: block; color: var(--text); font-size: .8rem; }
+    .measure-note { margin-top: 1rem; color: var(--muted); font-size: .78rem; }
+
+    details.tool { margin-top: 1.2rem; border: 1px solid var(--border); border-radius: .9rem; background: var(--card); box-shadow: var(--shadow); }
+    details.tool > summary { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 1.15rem 1.3rem; cursor: pointer; color: var(--purple-dark); font-weight: 700; list-style: none; }
+    details.tool > summary::-webkit-details-marker { display: none; }
+    details.tool > summary::after { content: '+'; font-size: 1.35rem; line-height: 1; }
+    details.tool[open] > summary::after { content: '−'; }
+    .tool-body { padding: 0 1.3rem 1.3rem; border-top: 1px solid var(--border); }
+    .calc-intro { padding-top: 1rem; font-size: .83rem; }
+    .calc-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 1rem; margin-top: 1rem; }
+    .calc-panel { min-width: 0; padding: 1.1rem; border-radius: .75rem; background: var(--alt); }
+    .calc-panel h3 { margin-bottom: .25rem; }
+    .calc-panel > p { margin-bottom: .85rem; font-size: .76rem; }
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: .75rem; }
+    .field { min-width: 0; }
+    .field label { display: block; margin-bottom: .3rem; color: var(--secondary); font-size: .72rem; font-weight: 600; }
+    .field input { width: 100%; min-width: 0; padding: .65rem .7rem; border: 1px solid var(--border); border-radius: .52rem; background: var(--card); color: var(--text); font: inherit; font-size: .86rem; }
+    .field input:focus { border-color: var(--purple); outline: 3px solid rgba(124,92,252,.12); }
+    .calc-results { display: grid; grid-template-columns: 1fr 1fr; gap: .65rem; }
+    .calc-result { min-width: 0; padding: .85rem; border: 1px solid var(--border); border-radius: .65rem; background: var(--card); }
+    .calc-result span { display: block; color: var(--muted); font-size: .69rem; line-height: 1.35; }
+    .calc-result strong { display: block; margin-top: .28rem; color: var(--purple-dark); font-size: 1.06rem; overflow-wrap: anywhere; }
+    .calc-result.lime strong { color: var(--lime-dark); }
+    .calc-rule { margin-top: .75rem; padding: .8rem; border-radius: .6rem; background: var(--lime-soft); color: var(--secondary); font-size: .74rem; }
+
+    .safety-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1rem; }
+    .safety-card { padding: 1.4rem; border: 1px solid var(--border); border-radius: .85rem; background: var(--card); }
+    .safety-card h3 { margin-bottom: .45rem; }
+    .safety-card p { font-size: .87rem; }
+    .team-box { display: grid; grid-template-columns: .75fr 1.25fr; gap: 1.3rem; margin-top: 1.2rem; padding: 1.35rem; border-radius: .9rem; background: var(--dark); color: #fff; }
+    .team-box h3 { color: #fff; }
+    .team-box p { color: rgba(255,255,255,.72); font-size: .84rem; }
+    .team-box ul { display: grid; grid-template-columns: 1fr 1fr; gap: .6rem 1rem; padding-left: 1.1rem; color: rgba(255,255,255,.79); font-size: .82rem; }
+
+    .commercial-intro { max-width: 52rem; }
+    .commercial-grid { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: .85rem; margin-top: 1.4rem; }
+    .commercial-card { min-width: 0; padding: 1.25rem; border: 1px solid rgba(124,92,252,.22); border-radius: .8rem; background: var(--card); }
+    .commercial-card span { display: block; margin-bottom: .55rem; color: var(--purple); font-size: .68rem; font-weight: 700; letter-spacing: .11em; text-transform: uppercase; }
+    .commercial-card h3 { margin-bottom: .4rem; }
+    .commercial-card p { font-size: .82rem; line-height: 1.58; }
+    .commercial-rule { margin-top: 1rem; padding: 1rem 1.15rem; border-radius: .75rem; background: var(--purple-soft); color: var(--secondary); font-size: .84rem; }
+    .commercial-rule strong { color: var(--text); }
+
+    .credibility { display: grid; grid-template-columns: .8fr 1.2fr; gap: 1.5rem; padding: 1.6rem; border: 1px solid var(--border); border-radius: 1rem; background: var(--card); box-shadow: var(--shadow); }
+    .credibility h2 { font-size: clamp(1.55rem,3vw,2.1rem); }
+    .cred-list { display: grid; gap: .85rem; list-style: none; }
+    .cred-list li { padding-bottom: .85rem; border-bottom: 1px solid var(--border); color: var(--secondary); font-size: .86rem; }
+    .cred-list li:last-child { padding-bottom: 0; border-bottom: 0; }
+    .cred-list strong { color: var(--text); }
+    .cred-list a { color: var(--purple-dark); font-weight: 700; text-underline-offset: .14em; }
+
+    .how-list { display: grid; gap: .75rem; }
+    .how-list details { border: 1px solid var(--border); border-radius: .8rem; background: var(--card); }
+    .how-list summary { display: flex; justify-content: space-between; gap: 1rem; padding: 1rem 1.15rem; cursor: pointer; color: var(--text); font-weight: 700; list-style: none; }
+    .how-list summary::-webkit-details-marker { display: none; }
+    .how-list summary::after { content: '+'; color: var(--purple); font-size: 1.25rem; }
+    .how-list details[open] summary::after { content: '−'; }
+    .how-body { padding: 0 1.15rem 1.15rem; border-top: 1px solid var(--border); }
+    .how-body > p:first-child { padding-top: .85rem; }
+    .how-body p, .how-body li { font-size: .85rem; }
+    .how-body ul { display: grid; gap: .4rem; margin-top: .7rem; padding-left: 1.1rem; color: var(--secondary); }
+    .architecture { margin-top: 1rem; padding: 1rem; border: 1px solid var(--border); border-radius: .75rem; background: var(--alt); }
+    .arch-row { display: grid; grid-template-columns: repeat(4,1fr); gap: .55rem; }
+    .arch-node { min-width: 0; padding: .7rem; border: 1px solid var(--border); border-radius: .55rem; background: var(--card); color: var(--secondary); font-size: .72rem; text-align: center; overflow-wrap: anywhere; }
+    .arch-node.core { grid-column: 1 / -1; border-color: var(--purple); background: var(--purple-soft); color: var(--purple-deep); font-weight: 700; }
+    .arch-arrow { padding: .35rem 0; color: var(--purple); font-weight: 700; text-align: center; }
+    .arch-caption { margin-top: .7rem; color: var(--muted); font-size: .72rem; }
+    .later-strip { display: grid; grid-template-columns: repeat(3,1fr); gap: .75rem; margin-top: 1.2rem; }
+    .later-item { padding: 1rem; border: 1px solid var(--border); border-radius: .7rem; background: var(--alt); }
+    .later-item strong { display: block; margin-bottom: .3rem; font-size: .88rem; }
+    .later-item p { font-size: .78rem; }
+
+    .faq-list { display: grid; gap: .65rem; }
+    .faq-list details { border: 1px solid var(--border); border-radius: .75rem; background: var(--card); }
+    .faq-list summary { display: flex; justify-content: space-between; gap: 1rem; padding: .95rem 1.05rem; cursor: pointer; font-weight: 700; list-style: none; }
+    .faq-list summary::-webkit-details-marker { display: none; }
+    .faq-list summary::after { content: '+'; color: var(--purple); font-size: 1.2rem; }
+    .faq-list details[open] summary::after { content: '−'; }
+    .faq-list p { padding: 0 1.05rem 1rem; border-top: 1px solid var(--border); font-size: .86rem; }
+    .faq-list details[open] p { padding-top: .75rem; }
+    .operator { display: grid; grid-template-columns: 1.2fr .8fr; gap: 1.4rem; padding: 1.55rem; border: 1px solid var(--border); border-radius: .95rem; background: var(--card); }
+    .operator h3 { margin-bottom: .5rem; font-size: 1.25rem; }
+    .operator p, .operator li { font-size: .85rem; }
+    .operator ul { display: grid; gap: .45rem; padding-left: 1rem; color: var(--secondary); }
+    .operator a { display: inline-block; margin-top: .75rem; color: var(--purple-dark); font-size: .84rem; font-weight: 700; text-underline-offset: .15em; }
+
+    .final-cta { padding: 0 1.5rem 5rem; }
+    .cta-panel { position: relative; overflow: hidden; max-width: 72rem; margin: 0 auto; padding: 3rem; border-radius: 1.15rem; background: var(--dark); color: #fff; }
+    .cta-panel::after { content: ''; position: absolute; width: 20rem; height: 20rem; right: -6rem; bottom: -10rem; border-radius: 50%; background: radial-gradient(circle,rgba(154,230,0,.18),rgba(154,230,0,0)); }
+    .cta-content { position: relative; z-index: 1; max-width: 48rem; }
+    .cta-panel .section-label { color: var(--lime); }
+    .cta-panel h2 { color: #fff; }
+    .cta-panel p { color: rgba(255,255,255,.72); }
+    footer { padding: 2rem 1.5rem; border-top: 1px solid var(--border); }
+    .footer-inner { max-width: 72rem; margin: 0 auto; display: flex; justify-content: space-between; gap: 1rem; color: var(--muted); font-size: .75rem; }
+
+    @media (max-width: 960px) {
+      .hero-inner, .measure-layout, .credibility { grid-template-columns: 1fr; }
+      .hero-card { max-width: 42rem; }
+      .card-grid, .commercial-grid { grid-template-columns: 1fr 1fr; }
+      .case-grid { grid-template-columns: 1fr 1fr; }
+      .case-step:not(:last-child)::after { display: none; }
+      .calc-grid { grid-template-columns: 1fr; }
+      .team-box { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 768px) {
+      .nav-toggle { display: flex; }
+      .nav-links {
+        display: none; position: fixed; inset: 4.5rem 0 auto; max-height: calc(100dvh - 4.5rem); overflow-y: auto;
+        padding: 1rem 1.5rem 1.5rem; border-bottom: 1px solid var(--border); background: var(--bg); flex-direction: column; align-items: stretch; gap: .25rem;
+      }
+      .nav-links.open { display: flex; }
+      .nav-links a { display: block; padding: .75rem; border-radius: .5rem; }
+      .nav-links .nav-cta { margin-top: .35rem; text-align: center; }
+      .hero { padding-top: 8rem; }
+      .hero-inner { gap: 2rem; }
+      .proof-inner { grid-template-columns: 1fr; gap: .5rem; }
+      .proof-item + .proof-item { border-left: 0; }
+      .section { padding: 4.25rem 1.25rem; }
+      .before-after { grid-template-columns: 1fr; }
+      .state-arrow { transform: rotate(90deg); }
+      .safety-grid, .later-strip { grid-template-columns: 1fr; }
+      .confidence-row { grid-template-columns: repeat(2,minmax(0,1fr)); }
+      .operator { grid-template-columns: 1fr; }
+      .cta-panel { padding: 2.2rem 1.4rem; }
+      .footer-inner { flex-direction: column; }
+    }
+    @media (max-width: 520px) {
+      .hero { padding-inline: 1.15rem; }
+      .actions { flex-direction: column; }
+      .actions a { width: 100%; }
+      .card-grid, .commercial-grid, .case-grid, .form-grid, .calc-results, .team-box ul { grid-template-columns: 1fr; }
+      .case-step:not(:last-child)::after { display: block; content: '↓'; top: auto; right: auto; bottom: -.72rem; left: 50%; transform: translateX(-50%); }
+      .arch-row { grid-template-columns: 1fr 1fr; }
+      .arch-node.core { grid-column: 1 / -1; }
+      .final-cta { padding-inline: 1.15rem; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <nav aria-label="Primary navigation">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo" aria-label="Yaroslav Korets home">YK.</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Open menu"><span></span><span></span><span></span></button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#change">What changes</a></li>
+        <li><a href="#day-30">Day 30</a></li>
+        <li><a href="#measure">Proof</a></li>
+        <li><a href="#commercial">Compensation</a></li>
+        <li><a href="/#book" class="nav-cta" data-cta="nav">Plan the pilot</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main id="main">
+    <header class="hero">
+      <div class="hero-inner">
+        <div>
+          <div class="badge">A paid 30-day working pilot for Black Ink Tax</div>
+          <h1>Reduce repeated manual handoffs between client messages, IRS transcripts, Canopy, and <span class="accent">TaxSlayer.</span></h1>
+          <p class="tagline">We build one reliable client tax record and test a new path for one repeated source of staff work on a small group of cases.</p>
+          <p class="intro">Canopy and TaxSlayer stay. Black Ink's professionals keep final tax judgment and filing. By Day 30, Black Ink receives a tested path or documented fix, hold, or stop decision—with evidence.</p>
+          <div class="actions">
+            <a href="/#book" class="btn-primary" data-cta="hero">Plan my 30-day pilot <span aria-hidden="true">→</span></a>
+            <a href="#day-30" class="btn-secondary">See what Black Ink receives <span aria-hidden="true">↓</span></a>
+          </div>
+          <p class="microcopy">No taxpayer data is needed for the first conversation. Bring the owner and one operations lead. <a href="#commercial">The implementation is paid; compensation is designed together.</a></p>
+        </div>
+        <aside class="hero-card" aria-label="What Day 30 answers">
+          <div class="eyebrow">What Day 30 answers</div>
+          <h2>Is this worth expanding?</h2>
+          <ol class="plain-list">
+            <li><span class="number">1</span><span>Did one recurring process become shorter and more reliable?</span></li>
+            <li><span class="number">2</span><span>What staff handling, follow-up, and rework actually changed?</span></li>
+            <li><span class="number">3</span><span>What does it cost to process one case the designated reviewer can use?</span></li>
+            <li><span class="number">4</span><span>Can freed staff time defer incremental labor or support more profitable work?</span></li>
+          </ol>
+          <div class="hero-card-note">Continue only when reviewer usability and business value support it.</div>
+        </aside>
+      </div>
+    </header>
+
+    <div class="proof-strip" aria-label="Pilot principles">
+      <div class="proof-inner">
+        <div class="proof-item"><span class="dot"></span>Systems stay</div>
+        <div class="proof-item"><span class="dot"></span>Professional approval stays</div>
+        <div class="proof-item"><span class="dot"></span>No borrowed savings promise</div>
+      </div>
+    </div>
+
+    <section class="section" id="change">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-label">What changes in daily work</div>
+          <h2>Clients keep their preferred channel. The firm gains one place to see the case.</h2>
+          <p class="lead">A client may call one employee, text another, email a shared inbox, and upload a document later. Today, the story can live in several places and in one person's memory. The new layer returns those fragments—and each next question—to one client-and-tax-year record.</p>
+        </div>
+        <div class="before-after">
+          <article class="state-card">
+            <div class="eyebrow">Today</div>
+            <h3>People reconstruct the work</h3>
+            <ul>
+              <li>Messages and attachments must be identified and routed.</li>
+              <li>Transcript values are read from a document and typed again.</li>
+              <li>Staff search for what arrived, what changed, and what is still missing.</li>
+              <li>Progress depends on the person who knows the client history.</li>
+            </ul>
+          </article>
+          <div class="state-arrow" aria-hidden="true">→</div>
+          <article class="state-card after">
+            <div class="eyebrow">After the first working path</div>
+            <h3>The system carries the context</h3>
+            <ul>
+              <li>In-scope items are matched to the right client, entity, year, and case.</li>
+              <li>Each material, in-scope number shows where it came from.</li>
+              <li>Missing and conflicting facts create a visible next action.</li>
+              <li>The team sees the same status; any fallback to the old process is recorded.</li>
+            </ul>
+          </article>
+        </div>
+        <div class="definition"><strong>What we are building:</strong> a private, firm-owned shared client tax record. It stores material answers and numbers from client documents, IRS transcripts, prior returns, and professional decisions. The original document remains the evidence; searchable values can be compared and reused without retyping.</div>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="case">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-label">One Black Ink case · four steps</div>
+          <h2>From scattered evidence to a package the reviewer can act on.</h2>
+          <p class="lead">This is an example, not a promise that transcript work must be first. We choose the first process together using volume, friction, professional risk, available access, and the business case.</p>
+        </div>
+        <div class="case-grid">
+          <article class="case-step"><span>01 · Arrive</span><h3>Information comes in normally</h3><p>Email, text, call notes, secure upload, Canopy documents, prior returns, and available IRS evidence enter the same case history. Clients do not have to adopt one rigid intake form.</p></article>
+          <article class="case-step"><span>02 · Structure</span><h3>Documents become usable facts</h3><p>The system matches the client, entity, and year. Transcript and tax-document values become searchable fields linked back to the exact source—not another PDF someone must reread.</p></article>
+          <article class="case-step"><span>03 · Compare</span><h3>Gaps become specific actions</h3><p>Prior-year facts, client answers, documents, and IRS evidence are compared. A missing or conflicting item becomes a focused question, an item held for staff review, or a professional decision.</p></article>
+          <article class="case-step"><span>04 · Review</span><h3>The professional sees what matters</h3><p>In this example, Black Ink receives a TaxSlayer preparation worksheet with source links and a separate list of missing, conflicting, changed, and reviewer-decision items.</p></article>
+        </div>
+        <div class="outcome-line"><strong>The selling point is not “another workflow.”</strong> It is one required path whose time, corrections, exceptions, and actual use can be measured. It expands only if the test supports it.</div>
+      </div>
+    </section>
+
+    <section class="section" id="day-30">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-label">What Black Ink owns on Day 30</div>
+          <h2>Four owner-visible outputs—not a dashboard and a promise.</h2>
+          <p class="lead">The month ends with something the team can run, something the owner can inspect, and evidence for the next investment decision. A weak result can still prevent the wrong expansion.</p>
+        </div>
+        <div class="card-grid">
+          <article class="card output-card"><span class="index">Owner output 01</span><h3>One working shared tax record</h3><p>An agreed group of cases has structured client answers, document and transcript facts, sources, missing items, review decisions, and captured activity history in one firm-owned place.</p><div class="owner-gets">You can see the case without reconstructing it.</div></article>
+          <article class="card output-card"><span class="index">Owner output 02</span><h3>One operating path the team can test</h3><p>A small agreed team tests required stages, assignments, approvals, and items needing attention. Any fallback or work completed outside the path is recorded with a reason.</p><div class="owner-gets">The process begins moving from personal memory into the system.</div></article>
+          <article class="card output-card"><span class="index">Owner output 03</span><h3>One honest before-and-after</h3><p>We report only what the evidence supports: staff time, repeated client requests, turnaround, reviewer corrections, recurring cost, and how consistently the team used the path. Measured, sampled, estimated, and unavailable figures stay separate.</p><div class="owner-gets">You know what improved and what remains unknown.</div></article>
+          <article class="card output-card"><span class="index">Owner output 04</span><h3>One documented decision</h3><p>The owner receives a go, fix, hold, or stop recommendation; the economics behind it; remaining manual controls and risks; and the jointly selected next process or return type if expansion is justified.</p><div class="owner-gets">The next check follows evidence, not enthusiasm.</div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="measure">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-label">How we measure the effect</div>
+          <h2>The scorecard uses Black Ink's evidence—not an industry percentage.</h2>
+          <p class="lead">Not every historical delay, mistake, or hidden staff action can be measured. We identify which signals exist, which work can be sampled, which figures are staff estimates, and which questions remain unanswered. The confidence stays visible.</p>
+        </div>
+        <div class="measure-layout">
+          <article class="scorecard">
+            <div class="eyebrow">Owner scorecard</div>
+            <h3>What we try to establish</h3>
+            <ul class="metric-list">
+              <li><strong>Staff time by role</strong>Administrative, preparer, and reviewer hours are not treated as interchangeable.</li>
+              <li><strong>Flow and rework</strong>Turnaround, missing-item loops, corrections, fallbacks, and repeat handling where observable.</li>
+              <li><strong>Professional acceptance</strong>Whether the designated Black Ink reviewer can use the output, what had to change, and why.</li>
+              <li><strong>Known operating cost</strong>Human review, support, software, providers, and exceptions—not just model usage.</li>
+              <li><strong>Owner use of freed time</strong>Incremental hiring deferred, more work accepted, higher-value service delivered, faster turnaround, or room for deadline spikes.</li>
+            </ul>
+          </article>
+          <article class="measure-card">
+            <div class="eyebrow">Evidence labels</div>
+            <h3>No false precision</h3>
+            <p>Every material number carries a simple confidence label. A sampled estimate can guide a decision, but it is never presented as a directly measured fact.</p>
+            <div class="confidence-row">
+              <div class="confidence"><strong>Measured</strong>Reliable event or timed observation</div>
+              <div class="confidence"><strong>Sampled</strong>Representative cases or work sessions</div>
+              <div class="confidence"><strong>Estimated</strong>Named staff judgment or proxy</div>
+              <div class="confidence"><strong>Unavailable</strong>Not supportable yet</div>
+            </div>
+            <p class="measure-note">Expansion requires output the designated reviewer marks usable, no observed decline in agreed critical checks within the test group, a known recurring cost, and a credible use for freed staff time. The same hour cannot be counted twice.</p>
+          </article>
+        </div>
+
+        <details class="tool">
+          <summary>Optional: estimate freed staff time with Black Ink's own numbers</summary>
+          <div class="tool-body">
+            <p class="calc-intro">This scenario remains blank until a baseline or pilot-verified reduction is entered. It is not a forecast. Use the role that actually limits throughput.</p>
+            <div class="calc-grid">
+              <section class="calc-panel" aria-labelledby="capacity-input-title">
+                <h3 id="capacity-input-title">Enter assumptions</h3>
+                <p>Replace every illustrative input with firm data.</p>
+                <div class="form-grid">
+                  <div class="field"><label for="cap-volume">Cases in this process / year</label><input id="cap-volume" type="number" min="0" step="50" value="1500"></div>
+                  <div class="field"><label for="cap-minutes">Current staff minutes / case</label><input id="cap-minutes" type="number" min="1" step="5" value="150"></div>
+                  <div class="field"><label for="cap-reduction">Measured or sampled time reduction (%)</label><input id="cap-reduction" type="number" min="0" max="90" step="1" placeholder="Enter after baseline"></div>
+                  <div class="field"><label for="cap-seat-hours">Productive hours / seasonal staff member</label><input id="cap-seat-hours" type="number" min="1" step="20" value="420"></div>
+                  <div class="field"><label for="cap-use">Freed time used for added work (%)</label><input id="cap-use" type="number" min="0" max="100" step="5" value="50"></div>
+                  <div class="field"><label for="cap-contribution">Contribution / additional case (USD)</label><input id="cap-contribution" type="number" min="0" step="25" value="350"></div>
+                </div>
+              </section>
+              <section class="calc-panel" aria-labelledby="capacity-output-title">
+                <h3 id="capacity-output-title">What those assumptions imply</h3>
+                <p>Capacity becomes value only when the firm has a credible use for it.</p>
+                <div class="calc-results" aria-live="polite">
+                  <div class="calc-result"><span>Staff hours returned</span><strong id="out-hours">—</strong></div>
+                  <div class="calc-result"><span>Seasonal workload equivalent</span><strong id="out-seats">—</strong></div>
+                  <div class="calc-result"><span>Additional whole cases</span><strong id="out-cases">—</strong></div>
+                  <div class="calc-result lime"><span>Potential contribution from added work</span><strong id="out-cap-contribution">—</strong></div>
+                </div>
+                <div class="calc-rule"><strong>No layoff assumption.</strong> Existing salary does not disappear when a task gets faster. Value is counted only when freed time changes an actual owner outcome.</div>
+              </section>
+            </div>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <section class="section" id="safety">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-label">Why the first step is safe</div>
+          <h2>Automation prepares and checks. Black Ink's professionals decide.</h2>
+          <p class="lead">The pilot does not replace professional judgment or file without human approval. It narrows the work, shows evidence and flagged items, and keeps a manual fallback while the new path earns trust.</p>
+        </div>
+        <div class="safety-grid">
+          <article class="safety-card"><div class="eyebrow">Professional control</div><h3>Official tax work stays where it belongs</h3><p>Black Ink continues to use TaxSlayer for official calculation and e-file. The firm confirms which diagnostic and signature steps remain there. A designated professional resolves issues that could affect the return.</p></article>
+          <article class="safety-card"><div class="eyebrow">Independent checks</div><h3>The preparation path does not grade itself</h3><p>For the selected process, a separate checker confirms that important numbers have source support, totals agree, values go to the intended fields, and unusual differences remain visible.</p></article>
+          <article class="safety-card"><div class="eyebrow">Controlled release</div><h3>Small group, visible failures, reversible change</h3><p>Historical cases come first where practical. Live work stays limited, each flagged item has an owner, actions performed by the new layer are logged, and the team retains a tested fallback.</p></article>
+        </div>
+        <div class="team-box">
+          <div><h3>What the Black Ink team contributes</h3><p>This is not a months-long software replacement. It does require access to real operating context and timely professional decisions.</p></div>
+          <ul>
+            <li>An owner or operating sponsor</li>
+            <li>One designated tax reviewer</li>
+            <li>Representative historical cases</li>
+            <li>Approved Canopy and TaxSlayer access</li>
+            <li>Short process-mapping sessions</li>
+            <li>Prompt exception and acceptance decisions</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="commercial">
+      <div class="container">
+        <div class="commercial-intro">
+          <div class="section-label">Compensation without a project blocker</div>
+          <h2>Paid work. Flexible structure. One clear agreement before Day 1.</h2>
+          <p class="lead">The implementation is not free, but a universal public price would be misleading before we select the process, volume, access, success criteria, and support. We can reduce upfront cash pressure when the business case is credible.</p>
+        </div>
+        <div class="commercial-grid">
+          <article class="commercial-card"><span>Option 01</span><h3>Time and materials</h3><p>Pay for the agreed implementation effort and external costs, with a written scope, reporting cadence, and spending boundary.</p></article>
+          <article class="commercial-card"><span>Option 02</span><h3>Fixed or deferred</h3><p>Agree a known implementation obligation and pay it at milestones or through dated installments. Less cash upfront does not mean an undefined bill later.</p></article>
+          <article class="commercial-card"><span>Option 03</span><h3>Per reviewer-usable return</h3><p>Recover an agreed implementation balance or ongoing charge through a defined fee for each case Black Ink's designated reviewer marks usable.</p></article>
+          <article class="commercial-card"><span>Option 04</span><h3>Verified labor savings</h3><p>Link a bounded portion to operating labor value the firm can independently verify. The baseline, evidence, deductions, minimum, maximum, and end date are agreed first.</p></article>
+        </div>
+        <div class="commercial-rule"><strong>We choose one primary structure—or one fully specified hybrid—before work begins.</strong> Before kickoff, both sides document the formula, included support, outside costs, billing dates, minimum, maximum, stop conditions, expiration, and how ongoing cost will be calculated. No opaque revenue share and no retroactive pricing.</div>
+      </div>
+    </section>
+
+    <section class="section" id="credibility">
+      <div class="container credibility">
+        <div>
+          <div class="section-label">Comparable evidence</div>
+          <h2>Comparable cases show the pattern is possible—not what Black Ink will achieve.</h2>
+          <p>Published cases describe source-backed preparation with professional review. None proves this complete Black Ink path, a TaxSlayer connection, transcript automation, or a specific savings percentage in advance.</p>
+        </div>
+        <ul class="cred-list">
+          <li><strong>Current / Thrive:</strong> the organization reports that its 2026 pilot processed 7,000 1040/1041 returns and saved about one-third of preparation time. The time-study design, full operating cost, and downstream tax outcomes were not published. <a href="https://openai.com/index/building-self-improving-tax-agents-with-codex/" target="_blank" rel="noopener noreferrer">Read the OpenAI account</a>.</li>
+          <li><strong>Accrual / Armanino:</strong> a vendor-authored release describes early production use involving preparation, review, existing tax-engine integration, and human support. It shows that this operating pattern exists—not what Black Ink will achieve. <a href="https://www.businesswire.com/news/home/20260205968515/en/Accrual-Launches-with-%2475-Million-to-Bring-AI-Native-Automation-to-Accounting" target="_blank" rel="noopener noreferrer">Read the release</a>.</li>
+          <li><strong>Research review:</strong> 70+ public implementation records showed recurring design patterns. Many came from the same vendors, and successful deployments are overrepresented; they provide pilot hypotheses, not independent proof.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="how">
+      <div class="narrow">
+        <div class="section-head">
+          <div class="section-label">How it works</div>
+          <h2>The details are available without making the owner read them first.</h2>
+          <p class="lead">Expand a section for the implementation details behind the result.</p>
+        </div>
+        <div class="how-list">
+          <details>
+            <summary>How the firm-owned shared client tax record works</summary>
+            <div class="how-body">
+              <p>Each record is organized around the correct taxpayer or entity, tax year, engagement, case, and permitted use. It stores a history of what arrived and changed; structured tax facts; links to original evidence; confidence; versions; missing items; review state; assignments; and the professional's final decision.</p>
+              <ul>
+                <li>Original documents remain immutable evidence; extracted values are separate, versioned working facts.</li>
+                <li>A correction never overwrites history. The system records the old value, new value, source, reason, reviewer, and time.</li>
+                <li>Canopy remains the practice system Black Ink chooses to keep; the shared record owns the cross-system operating context required for the selected path.</li>
+              </ul>
+            </div>
+          </details>
+          <details>
+            <summary>How client channels, IRS evidence, Canopy, and TaxSlayer connect</summary>
+            <div class="how-body">
+              <p>The design limits dependence on one provider. We use a supported connection where available, controlled file exchange where appropriate, and a source-backed preparation workspace when TaxSlayer does not expose a suitable interface. Any screen automation requires permission, testing, and explicit human confirmation.</p>
+              <figure class="architecture" aria-label="Two-way client communication and external systems connect through a firm-owned shared client tax record">
+                <div class="arch-row">
+                  <div class="arch-node">Email</div><div class="arch-node">Text</div><div class="arch-node">Calls</div><div class="arch-node">Secure upload</div>
+                </div>
+                <div class="arch-arrow" aria-hidden="true">↕ two-way communication ↕</div>
+                <div class="arch-row"><div class="arch-node core">Firm-owned shared client tax record · facts · sources · case state · decisions · measurement</div></div>
+                <div class="arch-arrow" aria-hidden="true">↕ controlled connections ↕</div>
+                <div class="arch-row">
+                  <div class="arch-node">Canopy<br>practice management</div><div class="arch-node">IRS evidence<br>authorized source</div><div class="arch-node">TaxSlayer<br>calculation &amp; e-file</div><div class="arch-node">Billing systems<br>money &amp; ledger</div>
+                </div>
+                <figcaption class="arch-caption">The Core owns reusable working data and case state. External systems retain their professional, access, filing, payment, and ledger roles. Replacing one still requires field mapping, testing, and process changes, but the firm-owned working record should not start from zero.</figcaption>
+              </figure>
+            </div>
+          </details>
+          <details>
+            <summary>How independent quality control and safe improvement work</summary>
+            <div class="how-body">
+              <p>The preparation path and the control path are separated where practical. Controls check source coverage, duplicate or missing items, totals, mappings, unusual variances, reconciliation results, and changes between prepared and final work. TaxSlayer remains the official calculation engine; no claim is made that this layer independently recomputes every return.</p>
+              <p>A professional correction becomes a traceable evaluation case—not automatic training data. The team classifies the cause, creates a bounded fix, reruns the affected case plus earlier cases that could break, releases to a limited group, monitors the result, and keeps a rollback path. The system does not retrain, deploy, or approve itself.</p>
+            </div>
+          </details>
+          <details>
+            <summary>How selection, measurement, security, and release rules are governed</summary>
+            <div class="how-body">
+              <p>Days 1–5 establish the minimum shared record and observe the strongest available signals across agreed candidate processes. Black Ink and the implementation team then select the first path using volume, repeatability, friction, professional risk, reviewer capacity, system access, evidence quality, and economic value.</p>
+              <ul>
+                <li>Measured, sampled, estimated, and unavailable evidence remain separate in the decision record.</li>
+                <li>Access is least-privilege; credentials, taxpayer evidence, audit history, retention, incident response, and manual fallback are defined before live use.</li>
+                <li>New return types and connections move through limited cohorts, professional approval, known operating cost, release history, and rollback.</li>
+              </ul>
+            </div>
+          </details>
+        </div>
+        <div class="later-strip" aria-label="Possible later horizons">
+          <article class="later-item"><strong>Two-way client operations</strong><p>Expand the shared history across email, text, calls, secure upload, reminders, and targeted questions.</p></article>
+          <article class="later-item"><strong>Client service growth</strong><p>Create a professional-approved queue for relevant additional services and track delivery capacity and collected contribution.</p></article>
+          <article class="later-item"><strong>Billing and collections</strong><p>Connect completion milestones with authoritative invoice, payment, refund-transfer, and ledger state.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="faq">
+      <div class="narrow">
+        <div class="section-head">
+          <div class="section-label">Five practical questions</div>
+          <h2>What an owner needs to know before saying yes.</h2>
+        </div>
+        <div class="faq-list">
+          <details><summary>What changes, and what stays in Canopy and TaxSlayer?</summary><p>Black Ink gains one shared record and one tested path. Canopy remains the practice-management and document system the firm chooses to keep. TaxSlayer remains the official calculation and e-file system. The pilot aims to reduce selected handoffs around those systems; it does not replace them.</p></details>
+          <details><summary>How do we choose the first process or return type?</summary><p>We do not force transcript work or any return type in advance. The first days establish the minimum shared record and compare agreed candidate bottlenecks. Black Ink and the implementation team select one path using volume, repeatability, friction, professional risk, reviewer bandwidth, system access, evidence quality, and owner economics.</p></details>
+          <details><summary>What if Canopy, TaxSlayer, or the IRS does not provide the connection we want?</summary><p>The first result does not depend on pretending an interface exists. We can begin with historical documents, controlled imports or exports, and a source-linked workspace arranged around TaxSlayer's screens. A deeper connection is added only when supported, approved, and tested. The Day 30 record states what remains manual.</p></details>
+          <details><summary>How are taxpayer data, professional judgment, and errors protected?</summary><p>Black Ink's professionals control material tax decisions and filing. Access is limited, important facts retain their sources and history, independent checks surface exceptions, and live release is limited and reversible. Exact security, retention, authorization, incident, and fallback controls are agreed before production taxpayer data is used.</p></details>
+          <details><summary>What if the result is weak—and does value require layoffs?</summary><p>A weak result leads to a documented fix, hold, or stop decision, not a larger rollout. Existing salary is not labeled cash savings merely because a task is faster. Value appears only when capacity defers planned incremental labor, supports additional accepted work, enables a profitable service, improves turnaround, or creates a deliberate operating buffer.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="operator">
+          <div><div class="section-label">The operator</div><h3>Designed by someone who has owned the P&amp;L and still builds the system.</h3><p>I map the economics, design how work moves through the firm, build the first tested path, and remain accountable through reviewer sign-off and the owner decision.</p><a href="/ai/">See the systems I have built and run →</a></div>
+          <ul><li>Twenty years of operating and P&amp;L ownership</li><li>Production AI, workflow, data, and integration systems</li><li>Human approval and auditability by design</li><li>Measured result before platform expansion</li></ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="final-cta">
+      <div class="cta-panel">
+        <div class="cta-content">
+          <div class="section-label">Start with one owner outcome</div>
+          <h2>Choose the first bottleneck. Define the evidence. Agree the compensation. Start.</h2>
+          <p>Bring the owner, one operations lead, the candidate processes, approximate volume, current staff roles, and where work appears to slow down. We will define the first measurable result, Black Ink's participation, the acceptance gate, and a compensation structure that does not make cash timing the blocker.</p>
+          <div class="actions">
+            <a href="/#book" class="btn-primary" data-cta="final">Plan my 30-day pilot <span aria-hidden="true">→</span></a>
+            <a href="/cdn-cgi/l/email-protection#a4ddc5d6cbd7c8c5d2e4cfcbd6c1d0d78acac1d09bd7d1c6cec1c7d099e6c8c5c7cf819694edcacf819694979489e0c5dd819694f4cdc8cbd0" class="btn-secondary" data-cta="email">Email Yaroslav</a>
+          </div>
+          <p class="microcopy" style="color:rgba(255,255,255,.5)">The first conversation is not the pilot. No taxpayer data is required.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner"><span>&copy; 2026 Yaroslav Korets · <a href="/">korets.net</a></span><span>Working result · Honest measurement · Professional control</span></div>
+  </footer>
+
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    const toggle = document.querySelector('.nav-toggle');
+    const links = document.querySelector('.nav-links');
+    function closeMenu() {
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.setAttribute('aria-label', 'Open menu');
+      links.classList.remove('open');
+      document.body.classList.remove('nav-open');
+    }
+    toggle.addEventListener('click', () => {
+      const isOpen = toggle.getAttribute('aria-expanded') === 'true';
+      toggle.setAttribute('aria-expanded', String(!isOpen));
+      toggle.setAttribute('aria-label', isOpen ? 'Open menu' : 'Close menu');
+      links.classList.toggle('open', !isOpen);
+      document.body.classList.toggle('nav-open', !isOpen);
+    });
+    links.querySelectorAll('a').forEach((link) => link.addEventListener('click', closeMenu));
+    window.addEventListener('resize', () => { if (window.innerWidth > 768) closeMenu(); });
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true') { closeMenu(); toggle.focus(); }
+    });
+
+    const modelInputs = Array.from(document.querySelectorAll('.calc-panel input'));
+    const number = (id) => Math.max(0, Number(document.getElementById(id).value) || 0);
+    const whole = new Intl.NumberFormat('en-US', { maximumFractionDigits: 0 });
+    const money = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 });
+    const outputs = ['out-hours', 'out-seats', 'out-cases', 'out-cap-contribution'];
+    function resetOutputs() { outputs.forEach((id) => { document.getElementById(id).textContent = '—'; }); }
+    function updateBusinessCase() {
+      const reductionInput = document.getElementById('cap-reduction');
+      if (reductionInput.value.trim() === '' || !Number.isFinite(Number(reductionInput.value))) { resetOutputs(); return; }
+      const volume = number('cap-volume');
+      const currentMinutes = number('cap-minutes');
+      const reduction = Math.min(90, number('cap-reduction')) / 100;
+      const seatHours = Math.max(1, number('cap-seat-hours'));
+      const growthAllocation = Math.min(100, number('cap-use')) / 100;
+      const caseContribution = number('cap-contribution');
+      const releasedHours = volume * currentMinutes * reduction / 60;
+      const postMinutes = Math.max(1, currentMinutes * (1 - reduction));
+      const addedCases = Math.floor(releasedHours * growthAllocation * 60 / postMinutes);
+      document.getElementById('out-hours').textContent = whole.format(releasedHours);
+      document.getElementById('out-seats').textContent = `${(releasedHours / seatHours).toFixed(1)} workloads`;
+      document.getElementById('out-cases').textContent = whole.format(addedCases);
+      document.getElementById('out-cap-contribution').textContent = money.format(addedCases * caseContribution);
+    }
+    modelInputs.forEach((input) => input.addEventListener('input', updateBusinessCase));
+    updateBusinessCase();
+    document.querySelectorAll('[data-cta]').forEach((link) => {
+      link.addEventListener('click', () => {
+        if (typeof gtag === 'function') gtag('event', 'tax_ops_cta_click', { location: link.dataset.cta });
+      });
+    });
+  </script>
+</body>
+</html>

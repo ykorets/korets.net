@@ -1,0 +1,5 @@
+const CACHE='andy-meeting-v1';const FILES=['/andy/','/andy/manifest.webmanifest'];
+self.addEventListener('install',e=>{self.skipWaiting()});
+self.addEventListener('activate',e=>e.waitUntil(self.clients.claim()));
+self.addEventListener('message',e=>{if(e.data?.type==='SAVE_OFFLINE')e.waitUntil(caches.open(CACHE).then(c=>c.addAll(FILES)).then(()=>e.ports[0]?.postMessage({ok:true})).catch(()=>e.ports[0]?.postMessage({ok:false})))});
+self.addEventListener('fetch',e=>{const u=new URL(e.request.url);if(e.request.method!=='GET'||u.origin!==self.location.origin||!u.pathname.startsWith('/andy/'))return;e.respondWith(fetch(e.request).catch(async()=>{const c=await caches.open(CACHE);const r=await c.match(e.request);return r||(e.request.mode==='navigate'?await c.match('/andy/'):null)||Response.error()}))});

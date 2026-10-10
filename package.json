@@ -1,0 +1,11 @@
+{
+  "name": "korets-net",
+  "private": true,
+  "scripts": {
+    "build": "python3 scripts/build_site.py",
+    "verify:live": "python3 scripts/verify_live.py https://korets.net"
+  },
+  "devDependencies": {
+    "wrangler": "4.105.0"
+  }
+}

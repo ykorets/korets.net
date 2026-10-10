@@ -5,6 +5,7 @@
 ## Core pages
 
 - [AI Systems in Production](https://korets.net/ai/): production systems, offers, and operating principles.
+- [Black Ink Tax Operations Pilot](https://korets.net/blackink/): paid 30-day pilot to reduce manual work around client communication, IRS transcripts, Canopy, and TaxSlayer.
 - [Writing](https://korets.net/writing/): field notes on AI operations.
 - [Built. Shipped. Running.](https://korets.net/writing/built-shipped-running/): complete eight-part series.
 - [CV](https://korets.net/cv/): operator background and project experience.
