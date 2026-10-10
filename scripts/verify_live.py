@@ -1,6 +1,6 @@
 """Verify the deployed commit and representative existing routes without submitting forms."""
 from pathlib import Path
-import concurrent.futures, json, re, sys, time, urllib.request
+import concurrent.futures, json, re, subprocess, sys, time
 ROOT = Path(__file__).resolve().parents[1]
 BASE = sys.argv[1].rstrip('/')
 
@@ -16,22 +16,26 @@ def normalize(data):
     return s.strip()
 
 def fetch(path):
-    req = urllib.request.Request(BASE + '/' + path + '?release=' + expected['commit'], headers={'Cache-Control':'no-cache'})
-    with urllib.request.urlopen(req, timeout=30) as r:
-        assert r.status == 200, path
-        return r.read()
+    # Use curl's standard HTTP client: Cloudflare rejects Python urllib's default
+    # client signature with 403/1010 even for these public, unauthenticated files.
+    return subprocess.check_output([
+        'curl', '--fail', '--silent', '--show-error', '--location',
+        '--max-time', '30', '--header', 'Cache-Control: no-cache',
+        BASE + '/' + path + '?release=' + expected['commit'],
+    ])
 
 expected = json.loads((ROOT / 'dist/release.json').read_text())
+last_error = 'Published commit differs from expected commit'
 for attempt in range(12):
     try:
         actual = json.loads(fetch('release.json'))
         if actual == expected:
             break
-    except Exception:
-        pass
+    except Exception as exc:
+        last_error = str(exc)
     time.sleep(5)
 else:
-    raise SystemExit('Expected release has not reached the requested hostname')
+    raise SystemExit('Cannot verify expected release: ' + last_error)
 
 paths = ['index.html','cpa/index.html','andy/index.html','andy/sw.js',
          'blackincdashboard/index.html','blackink/index.html','growthcontroldemo/index.html',
