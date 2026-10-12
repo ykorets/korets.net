@@ -1,5 +1,21 @@
 (function(root){
-const defaults={capital:1500000,tranches:true,stake:50,years:8,rev:550000,price:1,entry:25,target:45,ramp:12,churn:8,growth:12,cac:25,hq:20000,hqGrowth:10,deals:4,down1:30,down2:30,bank:40,creditMonth:25,bankRate:15,sellerRate:6,term:5,reserve:6,close:5,multiple:8,div:30,divStart:5,raise:0,raiseMonth:24,post:10000000};
+const defaults={capital:1500000,tranches:true,clientRevenue:12000,scaleDeals:0,hqPerFirm:0,stake:50,years:8,rev:550000,price:1,entry:25,target:45,ramp:12,churn:8,growth:12,cac:25,hq:20000,hqGrowth:10,deals:4,down1:30,down2:30,bank:40,creditMonth:25,bankRate:15,sellerRate:6,term:5,reserve:6,close:5,multiple:8,div:30,divStart:5,raise:0,raiseMonth:24,post:10000000};
+// Scenario values are editable hypotheses, not market forecasts or agreed terms.
+const presets={
+ down:{name:'Pessimistic',changes:{target:35,churn:14,growth:8,ramp:24,multiple:6,hq:25000,bankRate:18,deals:2,creditMonth:37,hqPerFirm:500}},
+ base:{name:'Base',changes:{}},
+ up:{name:'Optimistic',changes:{target:50,churn:6,growth:15,ramp:9,multiple:10,deals:6,scaleDeals:12,hqPerFirm:500,div:15}},
+ unicorn:{name:'Unicorn',changes:{years:10,deals:4,scaleDeals:30,hqPerFirm:1000,growth:18,churn:6,target:45,multiple:12,div:0,raise:5000000,post:25000000,raiseMonth:25}}
+};
+function scenario(key){if(!presets[key])throw new Error('Unknown scenario');return {...defaults,...presets[key].changes};}
+function scaleSummary(p,r){
+ const value=x=>Math.max(0,Math.max(0,x.ebitda)*p.multiple-x.debt+x.cash);
+ const hit=r.returnsAvailable?r.rows.find(x=>value(x)>=1e9):null;
+ const averageFee=p.clientRevenue||12000,margin=r.end.revenue>0?r.end.ebitda/r.end.revenue:0;
+ const requiredEbitda=Math.max(0,(1e9+r.end.debt-r.end.cash)/p.multiple);
+ const requiredRevenue=margin>0?requiredEbitda/margin:null;
+ return {clients:Math.ceil(r.end.revenue/averageFee),firstBillion:hit?.month??null,hit,requiredEbitda,requiredRevenue,requiredClients:requiredRevenue===null?null:Math.ceil(requiredRevenue/averageFee),requiredFirms:requiredRevenue===null||!r.end.firms?null:Math.ceil(requiredRevenue/(r.end.revenue/r.end.firms)),peakDebt:Math.max(...r.rows.map(x=>x.debt)),laterCapital:r.rows.reduce((s,x)=>s+x.equityIn-x.seedIn,0)};
+}
 const payment=(p,r,n)=>r===0?p/n:p*r/(1-(1+r)**(-n));
 function irr(flows){if(!flows.some(x=>x>0))return null;const npv=r=>flows.reduce((s,v,i)=>s+v/(1+r)**(i/12),0);let lo=-.9999,hi=1;while(npv(hi)>0&&hi<1e6)hi=hi*2+1;if(npv(lo)*npv(hi)>0)return null;for(let i=0;i<150;i++){const mid=(lo+hi)/2;if(npv(mid)>0)lo=mid;else hi=mid;}return (lo+hi)/2;}
 // Loan proceeds pay the seller directly. The cash ledger therefore deducts only
@@ -27,13 +43,15 @@ function run(p,options={}){
    if(g.earned!==null&&g.paid===null&&mo>=g.earned+1+(options.delay||0)){cash+=g.amount;equityIn+=g.amount;seedIn+=g.amount;fundedCapital+=g.amount;flows[mo]-=g.amount;g.paid=mo;}
   }
   if(p.raise>0&&mo===p.raiseMonth){cash+=p.raise;equityIn+=p.raise;/* Allocation is drawn from the pre-reserved pool; seed participation stays fixed. */}
-  const overhead=p.hq*(1+p.hqGrowth/100)**yr,price=p.rev*p.price;
+  const capacity=mo<=24?p.deals:(p.scaleDeals||p.deals);
+  let overhead=p.hq*(1+p.hqGrowth/100)**yr+firms.length*(p.hqPerFirm||0);const price=p.rev*p.price;
   const creditMonth=Math.max(25,p.creditMonth),down=mo>=creditMonth?p.down2/100:p.down1/100,bank=mo>=creditMonth?Math.min(p.bank/100,1-down):0,seller=1-down-bank,cost=price*(down+p.close/100);
   let downPayment=0,closingCosts=0,bankDraw=0,sellerDraw=0,purchasePrice=0,newFirms=0;
-  if(mo>=3&&mo-last>=12/p.deals&&yearDeals<p.deals&&(options.unconstrained||cash>=cost+overhead*p.reserve)){
+  const monthSlots=capacity<=12?(mo-last>=Math.ceil(12/capacity)?1:0):Math.floor((mo%12||12)*capacity/12)-Math.floor(((mo%12||12)-1)*capacity/12);
+  for(let slot=0;mo>=3&&slot<monthSlots&&yearDeals<capacity&&(options.unconstrained||cash>=cost+(overhead+(p.hqPerFirm||0))*p.reserve);slot++){
    const loan=(amount,rate)=>({balance:amount,rate:rate/1200,pmt:payment(amount,rate/1200,p.term*12)});
    firms.push({rev:p.rev,age:0,loans:[loan(price*bank,p.bankRate),loan(price*seller,p.sellerRate)]});
-   downPayment=price*down;closingCosts=price*p.close/100;bankDraw=price*bank;sellerDraw=price*seller;purchasePrice=price;newFirms=1;
+   downPayment+=price*down;closingCosts+=price*p.close/100;bankDraw+=price*bank;sellerDraw+=price*seller;purchasePrice+=price;newFirms++;overhead+=(p.hqPerFirm||0);
    cash-=cost;last=mo;yearDeals++;
   }
   const postAcquisitionCash=cash;
@@ -85,5 +103,5 @@ function vested(month,third,duration,mode){
  if(mode==='after')return Math.max(0,Math.min(1,(month-third)/duration));
  return month<Math.max(12,third)?0:Math.min(1,month/duration);
 }
-root.CPA={defaults,run,launch,irr,payment,ownership,vested};if(typeof module!=='undefined')module.exports=root.CPA;
+root.CPA={defaults,presets,scenario,scaleSummary,run,launch,irr,payment,ownership,vested};if(typeof module!=='undefined')module.exports=root.CPA;
 })(typeof window!=='undefined'?window:globalThis);

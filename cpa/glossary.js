@@ -1,6 +1,11 @@
 /* One shared glossary for static copy, live results and financing controls. */
 (() => {
  const definitions = [
+  [['Unicorn'], 'Here: a private-company planning scenario reaching at least $1 billion of shareholder equity value. Calculated as enterprise value minus debt plus cash. This is an illustrative valuation, not an observed fundraising price or guaranteed outcome.'],
+  [['Annual revenue per client'], 'Assumed annual fees per client. Estimated active client equivalents = annualized revenue divided by this amount. It changes the estimated count, not the revenue engine; client mix, duplicate accounts and fee inflation are not modeled.'],
+  [['Estimated active clients','Est. clients','client equivalents'], 'An estimate from annualized revenue divided by assumed annual revenue per client, rounded up. Not a verified count of unique client accounts.'],
+  [['Extra monthly overhead per acquired firm'], 'Incremental central support and management costs per acquired firm per month, added to the fixed platform overhead from the acquisition month. Practice operating costs are already deducted in practice EBITDA.'],
+  [['Acquisitions per year'], 'Annual purchase capacity, constrained by cash and an overhead reserve. A separate capacity applies from month25. Above12 per year, multiple acquisitions may close in one month.'],
   [['Future capital reserve','Unused reserve'], 'Unallocated share of the fixed 100% planning basis, reserved for later capital. Initial reserve = 100% minus founder 30% minus the seed allocation assumption. New investors consume this reserve without changing existing planned allocations. This is not an issued shareholder stake or an automatic legal protection.'],
   [['valuation including full reserve','Valuation incl. full reserve','Round valuation incl. full reserve'], 'Assumed company equity valuation on a planning basis that includes the entire reserved allocation after the investment. New allocation from reserve = capital invested divided by this valuation. This special planning basis must be agreed; it is not a statement of currently issued shares.'],
   [['vesting','vested'], 'The schedule on which a founder earns the right to retain an agreed share grant. It does not protect its percentage from dilution. Unvested-share treatment and departure terms require an agreement.'],
