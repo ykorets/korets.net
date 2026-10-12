@@ -11,9 +11,11 @@ for(const p of scenarios){const plan=launch(p);
  assert.equal(plan.fundedSchedule.failed,null);assert.equal(plan.fundedSchedule.end.firms,plan.plannedFirms);
  assert.ok(plan.fundedSchedule.rows.every(r=>r.cash+1e-5>=r.reserve&&r.postAcquisitionCash+1e-5>=r.reserve));
 }
-const x=launch({...defaults,capital:1000000});assert.equal(x.upfront.end.firms,4);assert.equal(x.needed,1489863);near(x.upfront.end.cash,287665.5065744351);assert.deepEqual(x.staged.gates.map(g=>g.paid),[4,12]);assert.deepEqual(x.delayed.gates.map(g=>g.paid),[7,15]);assert.ok(x.delayed.minCash<x.staged.minCash);
+const x=launch({...defaults,capital:1000000});assert.equal(x.upfront.end.firms,2);assert.equal(x.needed,2191228);near(x.upfront.end.cash,367977.021133999);assert.deepEqual(x.staged.gates.map(g=>g.paid),[null,null]);assert.equal(x.staged.end.firms,0);assert.ok(x.staged.failed!==null);
 const unmet=launch({...defaults,entry:10,target:20});assert.ok(unmet.staged.gates.some(g=>g.paid===null));
 const bank=run({...defaults,capital:10000000,creditMonth:1});assert.ok(bank.rows.filter(r=>r.month<=24).every(r=>r.bankDraw===0));assert.ok(bank.rows.some(r=>r.month>=25&&r.bankDraw>0));
 console.log('Launch cash conservation, funding sources, debt reconciliation, 24-month bank exclusion, prior-month KPI gates, delay stress, unfunded gates and full-pace capital requirement passed.');
 
-const base=launch(defaults);assert.equal(base.staged.end.firms,8);near(base.staged.end.cash,196962.250373579);assert.deepEqual(base.staged.gates.map(g=>g.paid),[4,15]);assert.deepEqual(base.delayed.gates.map(g=>g.paid),[7,18]);assert.equal(base.delayed.end.firms,7);
+const base=launch(defaults);assert.equal(base.staged.end.firms,5);near(base.staged.end.cash,175430.3518739929);assert.deepEqual(base.staged.gates.map(g=>g.paid),[4,12]);assert.deepEqual(base.delayed.gates.map(g=>g.paid),[7,15]);assert.equal(base.delayed.end.firms,4);
+
+const first=base.staged.rows.find(r=>r.newFirms);near(first.downPayment,275000);near(first.sellerDraw,275000);near(first.closingCosts,27500);near(first.downPayment+first.closingCosts,302500);assert.equal(first.bankDraw,0);

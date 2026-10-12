@@ -1,5 +1,5 @@
 (function(root){
-const defaults={capital:1500000,tranches:true,clientRevenue:5000,scaleDeals:0,hqPerFirm:0,stake:50,years:8,rev:550000,price:1,entry:25,target:45,ramp:12,churn:8,growth:12,cac:25,hq:20000,hqGrowth:10,deals:4,down1:30,down2:30,bank:40,creditMonth:25,bankRate:15,sellerRate:6,term:5,reserve:6,close:5,multiple:8,div:30,divStart:5,raise:0,raiseMonth:24,post:10000000};
+const defaults={capital:1500000,tranches:true,clientRevenue:5000,scaleDeals:0,hqPerFirm:0,stake:50,years:8,rev:550000,price:1,entry:25,target:45,ramp:12,churn:8,growth:12,cac:25,hq:20000,hqGrowth:10,deals:4,down1:50,down2:20,bank:30,creditMonth:25,bankRate:15,sellerRate:6,term:5,reserve:6,close:5,multiple:8,div:30,divStart:5,raise:0,raiseMonth:24,post:10000000};
 // Scenario values are editable hypotheses, not market forecasts or agreed terms.
 const presets={
  down:{name:'Pessimistic',changes:{target:35,churn:14,growth:8,ramp:24,multiple:6,hq:25000,bankRate:18,deals:2,creditMonth:37,hqPerFirm:500}},
