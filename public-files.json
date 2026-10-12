@@ -141,5 +141,8 @@
   "writing/marco-infrastructure-before-ai-copy/index.html",
   "writing/oscar-dashboard-wrong-interface/index.html",
   "writing/styles.css",
-  "yaroslav-korets-cv.pdf"
+  "yaroslav-korets-cv.pdf",
+  "cpa/glossary.js",
+  "cpa/launch.js",
+  "cpa/launch-checks.cjs"
 ]
