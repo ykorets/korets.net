@@ -1,5 +1,5 @@
 (function(root){
-const defaults={capital:1500000,tranches:true,clientRevenue:12000,scaleDeals:0,hqPerFirm:0,stake:50,years:8,rev:550000,price:1,entry:25,target:45,ramp:12,churn:8,growth:12,cac:25,hq:20000,hqGrowth:10,deals:4,down1:30,down2:30,bank:40,creditMonth:25,bankRate:15,sellerRate:6,term:5,reserve:6,close:5,multiple:8,div:30,divStart:5,raise:0,raiseMonth:24,post:10000000};
+const defaults={capital:1500000,tranches:true,clientRevenue:5000,scaleDeals:0,hqPerFirm:0,stake:50,years:8,rev:550000,price:1,entry:25,target:45,ramp:12,churn:8,growth:12,cac:25,hq:20000,hqGrowth:10,deals:4,down1:30,down2:30,bank:40,creditMonth:25,bankRate:15,sellerRate:6,term:5,reserve:6,close:5,multiple:8,div:30,divStart:5,raise:0,raiseMonth:24,post:10000000};
 // Scenario values are editable hypotheses, not market forecasts or agreed terms.
 const presets={
  down:{name:'Pessimistic',changes:{target:35,churn:14,growth:8,ramp:24,multiple:6,hq:25000,bankRate:18,deals:2,creditMonth:37,hqPerFirm:500}},
@@ -11,7 +11,7 @@ function scenario(key){if(!presets[key])throw new Error('Unknown scenario');retu
 function scaleSummary(p,r){
  const value=x=>Math.max(0,Math.max(0,x.ebitda)*p.multiple-x.debt+x.cash);
  const hit=r.returnsAvailable?r.rows.find(x=>value(x)>=1e9):null;
- const averageFee=p.clientRevenue||12000,margin=r.end.revenue>0?r.end.ebitda/r.end.revenue:0;
+ const averageFee=p.clientRevenue||5000,margin=r.end.revenue>0?r.end.ebitda/r.end.revenue:0;
  const requiredEbitda=Math.max(0,(1e9+r.end.debt-r.end.cash)/p.multiple);
  const requiredRevenue=margin>0?requiredEbitda/margin:null;
  return {clients:Math.ceil(r.end.revenue/averageFee),firstBillion:hit?.month??null,hit,requiredEbitda,requiredRevenue,requiredClients:requiredRevenue===null?null:Math.ceil(requiredRevenue/averageFee),requiredFirms:requiredRevenue===null||!r.end.firms?null:Math.ceil(requiredRevenue/(r.end.revenue/r.end.firms)),peakDebt:Math.max(...r.rows.map(x=>x.debt)),laterCapital:r.rows.reduce((s,x)=>s+x.equityIn-x.seedIn,0)};

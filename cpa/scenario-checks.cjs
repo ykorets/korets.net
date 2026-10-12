@@ -11,8 +11,10 @@ const p=C.scenario('unicorn'),r=C.run(p),s=C.scaleSummary(p,r);assert.equal(r.fa
 assert.ok(r.rows[111].ebitda*p.multiple-r.rows[111].debt+r.rows[111].cash<1e9);assert.ok(s.hit.ebitda*p.multiple-s.hit.debt+s.hit.cash>=1e9);
 assert.equal(s.laterCapital,5000000);near(100*p.raise/p.post,20);
 near(s.requiredEbitda*p.multiple-r.end.debt+r.end.cash,1e9);
-const higherFee=C.run({...p,clientRevenue:24000});near(higherFee.equity,r.equity);assert.equal(C.scaleSummary({...p,clientRevenue:24000},higherFee).clients,Math.ceil(r.end.revenue/24000));
+const baseFeeOnly=C.run({...p,clientRevenue:3600});near(baseFeeOnly.equity,r.equity);assert.equal(C.scaleSummary({...p,clientRevenue:3600},baseFeeOnly).clients,Math.ceil(r.end.revenue/3600));
 const down=C.run(C.scenario('down'));assert.equal(down.failed,26);assert.equal(C.scaleSummary(C.scenario('down'),down).firstBillion,null);
 const zeroReserve=C.ownership(50,[{amount:p.raise,post:p.post}]);assert.equal(zeroReserve.rows.at(-1).reserve,0);
 const partial=C.scenario('base');partial.years=99;assert.equal(C.scenario('base').years,8);
 console.log('All four presets: cash conservation, multi-deal monthly scheduling, capacity limits, scale overhead, client estimates, first $1B equity crossing, valuation sensitivity and fixed reserve funding passed.');
+
+assert.equal(C.defaults.clientRevenue,5000);assert.equal(Math.ceil(C.defaults.rev/C.defaults.clientRevenue),110);assert.equal(s.clients,44732);assert.equal(Math.ceil(s.hit.revenue/p.clientRevenue),39819);
