@@ -5,6 +5,7 @@ function irr(flows){if(!flows.some(x=>x>0))return null;const npv=r=>flows.reduce
 // Loan proceeds pay the seller directly. The cash ledger therefore deducts only
 // the buyer's equity contribution and closing costs, never the full price twice.
 function run(p,options={}){
+ ownership(p.stake,p.raise>0?[{amount:p.raise,post:p.post}]:[]);
  const H=Math.round(p.years*12),firms=[],rows=[],flows=Array(H+1).fill(0);
  const useTranches=options.tranches??p.tranches??false;
  const initial=useTranches?p.capital*.4:p.capital;
@@ -25,7 +26,7 @@ function run(p,options={}){
    if(g.earned===null&&previous&&(i===0||gates[i-1].paid!==null)&&previous.firms>=g.firms&&previous.firmEbitda*12>=previous.revenue*g.margin/100&&previous.firmEbitda>=previous.service*g.coverage)g.earned=mo-1;
    if(g.earned!==null&&g.paid===null&&mo>=g.earned+1+(options.delay||0)){cash+=g.amount;equityIn+=g.amount;seedIn+=g.amount;fundedCapital+=g.amount;flows[mo]-=g.amount;g.paid=mo;}
   }
-  if(p.raise>0&&mo===p.raiseMonth){cash+=p.raise;equityIn+=p.raise;stake*=1-p.raise/p.post;}
+  if(p.raise>0&&mo===p.raiseMonth){cash+=p.raise;equityIn+=p.raise;/* Allocation is drawn from the pre-reserved pool; seed participation stays fixed. */}
   const overhead=p.hq*(1+p.hqGrowth/100)**yr,price=p.rev*p.price;
   const creditMonth=Math.max(25,p.creditMonth),down=mo>=creditMonth?p.down2/100:p.down1/100,bank=mo>=creditMonth?Math.min(p.bank/100,1-down):0,seller=1-down-bank,cost=price*(down+p.close/100);
   let downPayment=0,closingCosts=0,bankDraw=0,sellerDraw=0,purchasePrice=0,newFirms=0;
@@ -68,10 +69,16 @@ function launch(p){
  const fundedSchedule=run({...q,capital:needed},{tranches:false});
  return {upfront,staged,delayed,needed,fundedSchedule,plannedFirms:schedule.end.firms};
 }
-function ownership(seedPercent,rounds,target=30){
- let founder=100-seedPercent,seed=seedPercent,newInvestors=0;const rows=[{founder,seed,newInvestors}];
- for(const {amount,post} of rounds){if(amount<0||post<=amount)throw new Error('Post-money valuation must exceed capital raised.');const dilution=amount/post;founder*=1-dilution;seed*=1-dilution;newInvestors=newInvestors*(1-dilution)+100*dilution;rows.push({founder,seed,newInvestors});}
- return {rows,capacity:100*(1-target/(100-seedPercent)),target};
+function ownership(seedPercent,rounds,founder=30){
+ if(!Number.isFinite(seedPercent)||seedPercent<0||seedPercent+founder>100)throw new Error('Founder and seed allocations cannot exceed 100%.');
+ const capacity=100-founder-seedPercent;let remaining=capacity,newInvestors=0;const rows=[{founder,seed:seedPercent,newInvestors,reserve:remaining}];
+ for(const {amount,post} of rounds){
+  if(!Number.isFinite(amount)||!Number.isFinite(post)||amount<0||post<=0||amount>=post)throw new Error('Round valuation must exceed capital raised.');
+  const allocation=100*amount/post;
+  if(allocation>remaining+1e-8)throw new Error(`Round needs ${allocation.toFixed(1)}% but only ${remaining.toFixed(1)}% is reserved. Change the amount or valuation, or renegotiate the allocation; no automatic dilution is applied.`);
+  remaining=Math.max(0,remaining-allocation);newInvestors+=allocation;rows.push({founder,seed:seedPercent,newInvestors,reserve:remaining});
+ }
+ return {rows,capacity,founder};
 }
 function vested(month,third,duration,mode){
  if(third===null)return 0;

@@ -1,6 +1,8 @@
 /* One shared glossary for static copy, live results and financing controls. */
 (() => {
  const definitions = [
+  [['Future capital reserve','Unused reserve'], 'Unallocated share of the fixed 100% planning basis, reserved for later capital. Initial reserve = 100% minus founder 30% minus the seed allocation assumption. New investors consume this reserve without changing existing planned allocations. This is not an issued shareholder stake or an automatic legal protection.'],
+  [['valuation including full reserve','Valuation incl. full reserve','Round valuation incl. full reserve'], 'Assumed company equity valuation on a planning basis that includes the entire reserved allocation after the investment. New allocation from reserve = capital invested divided by this valuation. This special planning basis must be agreed; it is not a statement of currently issued shares.'],
   [['vesting','vested'], 'The schedule on which a founder earns the right to retain an agreed share grant. It does not protect its percentage from dilution. Unvested-share treatment and departure terms require an agreement.'],
   [['cliff'], 'A minimum service period before any of a share grant vests. This draft uses 12 months for the schedule that credits service from launch.'],
   [['dilution'], 'A reduction in an existing shareholder’s percentage when new shares are issued. In a priced round, the new investor share is investment divided by post-money valuation.'],
@@ -52,7 +54,7 @@
   [['Pre-seed'], 'The initial equity investment used to launch the acquisition platform. The main investor model assumes $1.5 million committed in milestone tranches: $600,000 at launch and two conditional $450,000 drawdowns. Ownership is a separate modeling assumption.'],
   [['post-money','post-money valuation'], 'The equity valuation immediately after a new investment. New investor ownership = investment ÷ post-money valuation; existing owners are diluted accordingly.'],
   [['pre-money'], 'Equity valuation immediately before new investment: post-money valuation minus new capital.'],
-  [['Additional equity','Equity received','Starting equity'], 'Investor capital contributed in exchange for ownership; it is funding, not revenue. A later optional round dilutes the original investor. Proposed KPI tranches are drawdowns of one committed seed round.'],
+  [['Additional equity','Equity received','Starting equity'], 'Investor capital contributed in exchange for ownership; it is funding, not revenue. A later optional round draws an allocation from the future capital reserve; the seed participation stays fixed on that planning basis. Proposed KPI tranches are drawdowns of one committed seed round.'],
   [['dilution','dilutes'], 'A reduction in an existing investor’s percentage ownership when new shares are issued to another investor.'],
   [['tranche','tranches','drawdowns'], 'A portion of committed funding paid separately. In the launch illustration, later portions are released only after the stated KPI is met. Undrawn commitments are not available cash.'],
   [['working capital'], 'Operating funds tied up in items such as receivables and payables. Changes in working capital can consume cash even when a business reports a profit; this model excludes those changes.'],
