@@ -1,8 +1,8 @@
 (function(root){
-const defaults={capital:1500000,tranches:true,clientRevenue:5000,scaleDeals:0,hqPerFirm:0,years:8,rev:550000,price:1,entry:25,target:45,ramp:12,churn:8,growth:12,cac:25,hq:25000,hqAfter:25000,hqGrowth:10,deals:4,down1:50,down2:20,bank:30,creditMonth:25,bankRate:15,sellerRate:6,term:5,reserve:6,close:5,multiple:8,div:30,divStart:5,raise:0,raiseMonth:24};
+const defaults={capital:1500000,tranches:true,clientRevenue:5000,scaleDeals:0,hqPerFirm:0,years:8,rev:550000,price:1,entry:25,target:45,ramp:12,churn:8,growth:12,cac:25,hq:25000,hqAfter:25000,hqChangeMonth:25,hqGrowth:10,deals:4,down1:50,down2:20,bank:30,creditMonth:25,bankRate:15,sellerRate:6,term:5,reserve:6,close:5,multiple:8,div:30,divStart:5,raise:0,raiseMonth:24};
 // Scenario values are editable hypotheses, not market forecasts or agreed terms.
 const presets={
- down:{name:'Pessimistic',changes:{target:35,churn:10,growth:8,ramp:24,multiple:6,hqAfter:15000,bankRate:18,deals:2,creditMonth:37,hqPerFirm:500}},
+ down:{name:'Pessimistic',changes:{target:35,churn:10,growth:8,ramp:24,multiple:6,hqAfter:15000,hqChangeMonth:20,bankRate:18,deals:2,creditMonth:37,hqPerFirm:500}},
  base:{name:'Base',changes:{}},
  up:{name:'Optimistic',changes:{target:50,churn:6,growth:15,ramp:9,multiple:10,deals:6,scaleDeals:12,hqPerFirm:500,div:15}},
  unicorn:{name:'Unicorn',changes:{years:10,deals:4,scaleDeals:30,hqPerFirm:1000,growth:18,churn:6,target:45,multiple:12,div:0,raise:5000000,raiseMonth:25}}
@@ -16,8 +16,12 @@ function scaleSummary(p,r){
  const requiredRevenue=margin>0?requiredEbitda/margin:null;
  return {clients:Math.ceil(r.end.revenue/averageFee),firstBillion:hit?.month??null,hit,requiredEbitda,requiredRevenue,requiredClients:requiredRevenue===null?null:Math.ceil(requiredRevenue/averageFee),requiredFirms:requiredRevenue===null||!r.end.firms?null:Math.ceil(requiredRevenue/(r.end.revenue/r.end.firms)),peakDebt:Math.max(...r.rows.map(x=>x.debt)),laterCapital:r.rows.reduce((s,x)=>s+x.equityIn-x.seedIn,0)};
 }
-// The first 24 months use an all-in central budget. Practice expenses remain in practice EBITDA.
-function overhead(p,month,firms){return month<=24?p.hq:(p.hqAfter??p.hq)*(1+p.hqGrowth/100)**Math.floor((month-25)/12)+firms*(p.hqPerFirm||0);}
+// Base-budget timing is scenario-specific. Per-firm costs start M25; annual growth starts M37.
+// Practice expenses remain in practice EBITDA.
+function overhead(p,month,firms){
+ const base=month<(p.hqChangeMonth??25)?p.hq:(p.hqAfter??p.hq);
+ return base*(1+p.hqGrowth/100)**Math.max(0,Math.floor((month-25)/12))+(month<=24?0:firms*(p.hqPerFirm||0));
+}
 const payment=(p,r,n)=>r===0?p/n:p*r/(1-(1+r)**(-n));
 function irr(flows){if(!flows.some(x=>x>0))return null;const npv=r=>flows.reduce((s,v,i)=>s+v/(1+r)**(i/12),0);let lo=-.9999,hi=1;while(npv(hi)>0&&hi<1e6)hi=hi*2+1;if(npv(lo)*npv(hi)>0)return null;for(let i=0;i<150;i++){const mid=(lo+hi)/2;if(npv(mid)>0)lo=mid;else hi=mid;}return (lo+hi)/2;}
 // Loan proceeds pay the seller directly. The cash ledger therefore deducts only
