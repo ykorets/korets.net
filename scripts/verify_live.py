@@ -42,9 +42,21 @@ paths = ['index.html','cpa/index.html','cpa/model.js','cpa/app.js','cpa/scenario
          'sanctuary/index.html','ai/index.html','cv/index.html','robots.txt','sitemap.xml']
 def check(path):
     expected_data = (ROOT / 'dist' / path).read_bytes()
-    actual_data = fetch(path)
-    assert (normalize(actual_data) == normalize(expected_data) if path.endswith('.html') else actual_data == expected_data), f'Content mismatch: {path}'
-    return path
+    # A new release manifest may reach an edge before every asset does.
+    # Require exact parity, but allow the deployment to finish propagating.
+    last_error = f'Content mismatch: {path}'
+    for attempt in range(12):
+        try:
+            actual_data = fetch(path)
+            matches = (normalize(actual_data) == normalize(expected_data)
+                       if path.endswith('.html') else actual_data == expected_data)
+            if matches:
+                return path
+        except Exception as exc:
+            last_error = f'{path}: {exc}'
+        if attempt < 11:
+            time.sleep(5)
+    raise AssertionError(last_error)
 with concurrent.futures.ThreadPoolExecutor(max_workers=4) as pool:
     for path in pool.map(check, paths):
         print('PASS', path)
