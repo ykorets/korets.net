@@ -1,6 +1,16 @@
 /* One shared glossary for static copy, live results and financing controls. */
 (() => {
  const definitions = [
+  [['AICPA'], 'American Institute of Certified Public Accountants, a professional association. Survey findings describe the participants and the stated reference year.'],
+  [['CBP'], 'County Business Patterns: a US Census Bureau dataset counting employer establishments, employment and payroll. An establishment is a location, not necessarily a separate firm.'],
+  [['CFO'], 'Chief Financial Officer. CFO advisory provides financial planning and decision support beyond routine bookkeeping.'],
+  [['AI'], 'Artificial intelligence: software used here to assist accounting tasks. Task-level time savings do not automatically equal company-wide cost savings.'],
+  [['CAS'], 'Client Advisory Services: recurring outsourced accounting, controller and business advisory services. Scope and client mix vary by firm.'],
+  [['SDE'], 'Seller’s Discretionary Earnings: owner-oriented earnings with specified add-backs, often including one owner’s compensation. Unlike normalized platform EBITDA, it may not deduct the market cost of replacing that owner.'],
+  [['NAICS'], 'North American Industry Classification System. Code 5412 covers accounting, tax preparation, bookkeeping and payroll; 541211 is the CPA-office subset.'],
+  [['FTE'], 'Full-time equivalent: a unit of staffing capacity. Professional capacity estimates do not include all administrative employees.'],
+  [['earn-outs'], 'Contingent acquisition payments tied to agreed future performance. The current calculator uses fixed seller loans and does not simulate earn-outs.'],
+  [['attest'], 'Professional assurance work on financial information, subject to licensing and independence requirements. It is distinct from ordinary bookkeeping.'],
   [['Unicorn'], 'Here: a private-company planning scenario reaching at least $1 billion of shareholder equity value. Calculated as enterprise value minus debt plus cash. This is an illustrative valuation, not an observed fundraising price or guaranteed outcome.'],
   [['Annual revenue per client'], 'Assumed annual fees per client. Estimated active client equivalents = annualized revenue divided by this amount. It changes the estimated count, not the revenue engine; client mix, duplicate accounts and fee inflation are not modeled.'],
   [['Estimated active clients','Est. clients','client equivalents'], 'An estimate from annualized revenue divided by assumed annual revenue per client, rounded up. Not a verified count of unique client accounts.'],

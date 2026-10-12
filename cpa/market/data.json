@@ -1,0 +1,145 @@
+{
+  "verified": "2026-10-12",
+  "employers": [
+    {
+      "dataset": "2022 Economic Census EC2254BASIC",
+      "geography": "United States",
+      "naics": "5412",
+      "employer_firms": 120889,
+      "employer_establishments": 136861,
+      "revenue_usd": 208847722000
+    },
+    {
+      "dataset": "2022 Economic Census EC2254BASIC",
+      "geography": "United States",
+      "naics": "541211",
+      "employer_firms": 49807,
+      "employer_establishments": 54409,
+      "revenue_usd": 144729301000
+    },
+    {
+      "dataset": "2022 Economic Census EC2254BASIC",
+      "geography": "California",
+      "naics": "5412",
+      "employer_firms": 17067,
+      "employer_establishments": 18582,
+      "revenue_usd": 30859336000
+    },
+    {
+      "dataset": "2022 Economic Census EC2254BASIC",
+      "geography": "California",
+      "naics": "541211",
+      "employer_firms": 6850,
+      "employer_establishments": 7414,
+      "revenue_usd": 19230613000
+    }
+  ],
+  "nonemployers": {
+    "us": [
+      {
+        "ST": "00",
+        "NAICS": "5412",
+        "LFO": "-",
+        "RCPTOT_SIZE": "001",
+        "ESTAB_F": "",
+        "ESTAB": "396812",
+        "RCPTOT_N_F": "G",
+        "RCPTOT_F": "",
+        "RCPTOT": "13702563"
+      },
+      {
+        "ST": "00",
+        "NAICS": "541211",
+        "LFO": "-",
+        "RCPTOT_SIZE": "001",
+        "ESTAB_F": "",
+        "ESTAB": "33853",
+        "RCPTOT_N_F": "G",
+        "RCPTOT_F": "",
+        "RCPTOT": "2480882"
+      }
+    ],
+    "st": [
+      {
+        "ST": "06",
+        "NAICS": "5412",
+        "LFO": "-",
+        "ESTAB_F": "",
+        "ESTAB": "54965",
+        "RCPTOT_N_F": "G",
+        "RCPTOT_F": "",
+        "RCPTOT": "2253355"
+      },
+      {
+        "ST": "06",
+        "NAICS": "541211",
+        "LFO": "-",
+        "ESTAB_F": "",
+        "ESTAB": "4061",
+        "RCPTOT_N_F": "G",
+        "RCPTOT_F": "",
+        "RCPTOT": "363118"
+      }
+    ]
+  },
+  "cbp": {
+    "cbp-us": [
+      {
+        "naics": "5412//",
+        "lfo": "-",
+        "emp": "1297995",
+        "est": "137069",
+        "n<5": "95534",
+        "n5_9": "23330",
+        "n10_19": "10233",
+        "n20_49": "4853",
+        "n50_99": "1609"
+      },
+      {
+        "naics": "541211",
+        "lfo": "-",
+        "emp": "604209",
+        "est": "55052",
+        "n<5": "35650",
+        "n5_9": "10334",
+        "n10_19": "5089",
+        "n20_49": "2386",
+        "n50_99": "807"
+      }
+    ],
+    "cbp-st": [
+      {
+        "fipstate": "06",
+        "naics": "5412//",
+        "lfo": "-",
+        "emp": "168466",
+        "est": "18655",
+        "n<5": "13408",
+        "n5_9": "3137",
+        "n10_19": "1218",
+        "n20_49": "538",
+        "n50_99": "184"
+      },
+      {
+        "fipstate": "06",
+        "naics": "541211",
+        "lfo": "-",
+        "emp": "70116",
+        "est": "7542",
+        "n<5": "5189",
+        "n5_9": "1321",
+        "n10_19": "585",
+        "n20_49": "256",
+        "n50_99": "102"
+      }
+    ]
+  },
+  "sources": {
+    "economic": "https://www2.census.gov/programs-surveys/economic-census/data/2022/sector54/EC2254BASIC.zip",
+    "cbp_us": "https://www2.census.gov/programs-surveys/cbp/datasets/2023/cbp23us.zip",
+    "cbp_ca": "https://www2.census.gov/programs-surveys/cbp/datasets/2023/cbp23st.zip",
+    "nes_us": "https://www2.census.gov/programs-surveys/nonemployer-statistics/datasets/2023/historical-datasets/nonemp23us.zip",
+    "nes_ca": "https://www2.census.gov/programs-surveys/nonemployer-statistics/datasets/2023/historical-datasets/nonemp23st.zip"
+  },
+  "methodology": "Economic Census: TAXSTAT=00, NAICS2022=5412 or 541211, GEO_ID=0100000US or 0400000US06. RCPTOT is in thousands of USD, converted to dollars above. CBP: lfo=-, fipstate=06 for California; n-prefixed fields count establishments by paid employment size. NES: LFO=-, RCPTOT_SIZE=001 at national level, ST=06 for California; NES RCPTOT remains in original thousands of USD. Employer firm counts, establishment counts and nonemployer businesses are different units; years are not combined."
+}

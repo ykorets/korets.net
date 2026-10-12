@@ -37,7 +37,7 @@ for attempt in range(12):
 else:
     raise SystemExit('Cannot verify expected release: ' + last_error)
 
-paths = ['index.html','cpa/index.html','andy/index.html','andy/sw.js',
+paths = ['index.html','cpa/index.html','cpa/market/index.html','cpa/market/app.js','cpa/market/style.css','cpa/market/data.json','andy/index.html','andy/sw.js',
          'blackincdashboard/index.html','blackink/index.html','growthcontroldemo/index.html',
          'sanctuary/index.html','ai/index.html','cv/index.html','robots.txt','sitemap.xml']
 def check(path):

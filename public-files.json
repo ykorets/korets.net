@@ -147,5 +147,9 @@
   "cpa/launch-checks.cjs",
   "cpa/ownership.js",
   "cpa/scenarios.js",
-  "cpa/scenario-checks.cjs"
+  "cpa/scenario-checks.cjs",
+  "cpa/market/index.html",
+  "cpa/market/style.css",
+  "cpa/market/app.js",
+  "cpa/market/data.json"
 ]
