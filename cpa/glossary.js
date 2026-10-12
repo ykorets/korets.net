@@ -69,7 +69,7 @@
  function show(button){clearTimeout(timer);if(active&&active!==button)active.removeAttribute('aria-describedby');active=button;tooltip.textContent=terms.get(button.dataset.term);tooltip.hidden=false;button.setAttribute('aria-describedby',tooltip.id);position();}
  function later(){clearTimeout(timer);timer=setTimeout(close,180);}
  function annotate(root){
-  const walker=document.createTreeWalker(root,NodeFilter.SHOW_TEXT,{acceptNode(node){return !node.parentElement||node.parentElement.closest('script,style,svg,button,a,summary,select,option,textarea,h1,footer,.tag,.financial-tooltip,.financial-term')?NodeFilter.FILTER_REJECT:NodeFilter.FILTER_ACCEPT;}}),nodes=[];
+  const walker=document.createTreeWalker(root,NodeFilter.SHOW_TEXT,{acceptNode(node){return !node.parentElement||node.parentElement.closest('script,style,svg,button,a,summary,select,option,textarea,label,h1,footer,.tag,.financial-tooltip,.financial-term')?NodeFilter.FILTER_REJECT:NodeFilter.FILTER_ACCEPT;}}),nodes=[];
   while(walker.nextNode())nodes.push(walker.currentNode);
   for(const node of nodes){const text=node.nodeValue;matcher.lastIndex=0;const matches=[...text.matchAll(matcher)];if(!matches.length)continue;const frag=document.createDocumentFragment();let end=0;
    for(const match of matches){frag.append(text.slice(end,match.index));const button=document.createElement('button');button.type='button';button.className='financial-term';button.dataset.term=match[0].toLowerCase();button.textContent=match[0];button.setAttribute('aria-label','Explain '+match[0]);frag.append(button);end=match.index+match[0].length;}
