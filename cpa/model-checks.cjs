@@ -16,7 +16,7 @@ assert.ok(funded.equity>0);
 const afterHorizon=run({...defaults,raise:5000000,raiseMonth:121});assert.equal(afterHorizon.investorReturnsAvailable,true);assert.equal(afterHorizon.total,r.total);
 assert.equal(run({...defaults,stake:10,post:1}).total,r.total); // Retired deal-term inputs cannot alter the illustration.
 const failure=run({...defaults,hq:80000});assert.notEqual(failure.failed,null);assert.equal(failure.exit,0);assert.equal(failure.irr,null);
-assert.equal(run({...defaults,capital:1000000,tranches:false,target:35,churn:14,growth:8,ramp:24,multiple:6,hq:25000,bankRate:18,deals:2}).failed,25);
+assert.equal(run({...defaults,capital:1000000,tranches:false,target:35,churn:14,growth:8,ramp:24,multiple:6,hq:25000,bankRate:18,deals:2}).failed,29);
 assert.equal(run(defaults).total,r.total);
 for(const changes of [{term:2},{term:10},{bankRate:0,sellerRate:0},{div:100},{growth:0,churn:30},{down1:100,down2:100},{years:2}]){
  const out=run({...defaults,...changes});for(const row of out.rows)for(const value of Object.values(row))assert.ok(Number.isFinite(value));assert.ok(out.rows.every(x=>x.debt>=0));

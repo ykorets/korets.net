@@ -1,8 +1,8 @@
 (function(root){
-const defaults={capital:1500000,tranches:true,clientRevenue:5000,scaleDeals:0,hqPerFirm:0,years:8,rev:550000,price:1,entry:25,target:45,ramp:12,churn:8,growth:12,cac:25,hq:20000,hqGrowth:10,deals:4,down1:50,down2:20,bank:30,creditMonth:25,bankRate:15,sellerRate:6,term:5,reserve:6,close:5,multiple:8,div:30,divStart:5,raise:0,raiseMonth:24};
+const defaults={capital:1500000,tranches:true,clientRevenue:5000,scaleDeals:0,hqPerFirm:0,years:8,rev:550000,price:1,entry:25,target:45,ramp:12,churn:8,growth:12,cac:25,hq:25000,hqAfter:25000,hqGrowth:10,deals:4,down1:50,down2:20,bank:30,creditMonth:25,bankRate:15,sellerRate:6,term:5,reserve:6,close:5,multiple:8,div:30,divStart:5,raise:0,raiseMonth:24};
 // Scenario values are editable hypotheses, not market forecasts or agreed terms.
 const presets={
- down:{name:'Pessimistic',changes:{target:35,churn:10,growth:8,ramp:24,multiple:6,hq:15000,bankRate:18,deals:2,creditMonth:37,hqPerFirm:500}},
+ down:{name:'Pessimistic',changes:{target:35,churn:10,growth:8,ramp:24,multiple:6,hqAfter:15000,bankRate:18,deals:2,creditMonth:37,hqPerFirm:500}},
  base:{name:'Base',changes:{}},
  up:{name:'Optimistic',changes:{target:50,churn:6,growth:15,ramp:9,multiple:10,deals:6,scaleDeals:12,hqPerFirm:500,div:15}},
  unicorn:{name:'Unicorn',changes:{years:10,deals:4,scaleDeals:30,hqPerFirm:1000,growth:18,churn:6,target:45,multiple:12,div:0,raise:5000000,raiseMonth:25}}
@@ -16,6 +16,8 @@ function scaleSummary(p,r){
  const requiredRevenue=margin>0?requiredEbitda/margin:null;
  return {clients:Math.ceil(r.end.revenue/averageFee),firstBillion:hit?.month??null,hit,requiredEbitda,requiredRevenue,requiredClients:requiredRevenue===null?null:Math.ceil(requiredRevenue/averageFee),requiredFirms:requiredRevenue===null||!r.end.firms?null:Math.ceil(requiredRevenue/(r.end.revenue/r.end.firms)),peakDebt:Math.max(...r.rows.map(x=>x.debt)),laterCapital:r.rows.reduce((s,x)=>s+x.equityIn-x.seedIn,0)};
 }
+// The first 24 months use an all-in central budget. Practice expenses remain in practice EBITDA.
+function overhead(p,month,firms){return month<=24?p.hq:(p.hqAfter??p.hq)*(1+p.hqGrowth/100)**Math.floor((month-25)/12)+firms*(p.hqPerFirm||0);}
 const payment=(p,r,n)=>r===0?p/n:p*r/(1-(1+r)**(-n));
 function irr(flows){if(!flows.some(x=>x>0))return null;const npv=r=>flows.reduce((s,v,i)=>s+v/(1+r)**(i/12),0);let lo=-.9999,hi=1;while(npv(hi)>0&&hi<1e6)hi=hi*2+1;if(npv(lo)*npv(hi)>0)return null;for(let i=0;i<150;i++){const mid=(lo+hi)/2;if(npv(mid)>0)lo=mid;else hi=mid;}return (lo+hi)/2;}
 // Loan proceeds pay the seller directly. The cash ledger therefore deducts only
@@ -43,14 +45,14 @@ function run(p,options={}){
   }
   if(p.raise>0&&mo===p.raiseMonth){cash+=p.raise;equityIn+=p.raise;/* Funding affects business cash; future investor terms are outside this model. */}
   const capacity=mo<=24?p.deals:(p.scaleDeals||p.deals);
-  let overhead=p.hq*(1+p.hqGrowth/100)**yr+firms.length*(p.hqPerFirm||0);const price=p.rev*p.price;
+  const perFirm=mo<=24?0:(p.hqPerFirm||0);let overheadCost=overhead(p,mo,firms.length);const price=p.rev*p.price;
   const creditMonth=Math.max(25,p.creditMonth),down=mo>=creditMonth?p.down2/100:p.down1/100,bank=mo>=creditMonth?Math.min(p.bank/100,1-down):0,seller=1-down-bank,cost=price*(down+p.close/100);
   let downPayment=0,closingCosts=0,bankDraw=0,sellerDraw=0,purchasePrice=0,newFirms=0;
   const monthSlots=capacity<=12?(mo-last>=Math.ceil(12/capacity)?1:0):Math.floor((mo%12||12)*capacity/12)-Math.floor(((mo%12||12)-1)*capacity/12);
-  for(let slot=0;mo>=3&&slot<monthSlots&&yearDeals<capacity&&(options.unconstrained||cash>=cost+(overhead+(p.hqPerFirm||0))*p.reserve);slot++){
+  for(let slot=0;mo>=3&&slot<monthSlots&&yearDeals<capacity&&(options.unconstrained||cash>=cost+(overheadCost+perFirm)*p.reserve);slot++){
    const loan=(amount,rate)=>({balance:amount,rate:rate/1200,pmt:payment(amount,rate/1200,p.term*12)});
    firms.push({rev:p.rev,age:0,loans:[loan(price*bank,p.bankRate),loan(price*seller,p.sellerRate)]});
-   downPayment+=price*down;closingCosts+=price*p.close/100;bankDraw+=price*bank;sellerDraw+=price*seller;purchasePrice+=price;newFirms++;overhead+=(p.hqPerFirm||0);
+   downPayment+=price*down;closingCosts+=price*p.close/100;bankDraw+=price*bank;sellerDraw+=price*seller;purchasePrice+=price;newFirms++;overheadCost+=perFirm;
    cash-=cost;last=mo;yearDeals++;
   }
   const postAcquisitionCash=cash;
@@ -62,12 +64,12 @@ function run(p,options={}){
    for(const loan of f.loans)if(loan.balance>0){const interest=loan.balance*loan.rate,pay=Math.min(loan.pmt,loan.balance+interest);service+=pay;interestPaid+=interest;principalPaid+=pay-interest;loan.balance=Math.max(0,loan.balance+interest-pay);}
    f.age++;
   }
-  const firmEbitda=ebitda/12,operatingSurplus=firmEbitda-acquisition-overhead;
+  const firmEbitda=ebitda/12,operatingSurplus=firmEbitda-acquisition-overheadCost;
   cash+=operatingSurplus-service;
   let distribution=0;
-  if(fundedCapital>=p.capital-1e-6&&cash>=0&&mo%12===0&&mo>=p.divStart*12){distribution=Math.max(0,cash-overhead*p.reserve)*p.div/100;cash-=distribution;const investor=distribution*stake;dividends+=investor;flows[mo]+=investor;}
+  if(fundedCapital>=p.capital-1e-6&&cash>=0&&mo%12===0&&mo>=p.divStart*12){distribution=Math.max(0,cash-overheadCost*p.reserve)*p.div/100;cash-=distribution;const investor=distribution*stake;dividends+=investor;flows[mo]+=investor;}
   minCash=Math.min(cash,minCash);
-  rows.push({month:mo,cash,openingCash,postAcquisitionCash,equityIn,seedIn,newFirms,downPayment,closingCosts,purchasePrice,bankDraw,sellerDraw,firms:firms.length,revenue,firmRevenue:revenue/12,firmEbitda,firmOperatingCosts:revenue/12-firmEbitda,overhead,cac:acquisition,service,interestPaid,principalPaid,operatingSurplus,ebitda:ebitda-overhead*12-acquisition*12,debt:firms.reduce((s,f)=>s+f.loans.reduce((s,l)=>s+l.balance,0),0),distribution,reserve:overhead*p.reserve});
+  rows.push({month:mo,cash,openingCash,postAcquisitionCash,equityIn,seedIn,newFirms,downPayment,closingCosts,purchasePrice,bankDraw,sellerDraw,firms:firms.length,revenue,firmRevenue:revenue/12,firmEbitda,firmOperatingCosts:revenue/12-firmEbitda,overhead:overheadCost,cac:acquisition,service,interestPaid,principalPaid,operatingSurplus,ebitda:ebitda-overheadCost*12-acquisition*12,debt:firms.reduce((s,f)=>s+f.loans.reduce((s,l)=>s+l.balance,0),0),distribution,reserve:overheadCost*p.reserve});
   if(cash<0&&!options.unconstrained){failed=mo;break;}
  }
  const fundingComplete=fundedCapital>=p.capital-1e-6,returnsAvailable=failed===null&&fundingComplete;
@@ -87,5 +89,5 @@ function launch(p){
  const fundedSchedule=run({...q,capital:needed},{tranches:false});
  return {upfront,staged,delayed,needed,fundedSchedule,plannedFirms:schedule.end.firms};
 }
-root.CPA={defaults,presets,scenario,scaleSummary,run,launch,irr,payment};if(typeof module!=='undefined')module.exports=root.CPA;
+root.CPA={defaults,presets,scenario,scaleSummary,run,launch,irr,payment,overhead};if(typeof module!=='undefined')module.exports=root.CPA;
 })(typeof window!=='undefined'?window:globalThis);
