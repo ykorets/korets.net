@@ -14,3 +14,6 @@ header{align-items:center;gap:20px;flex-wrap:wrap}.site-nav{display:flex;gap:6px
 @media(max-width:650px){.launch-summary strong{font-size:21px}.launch-modes button{flex:1 1 130px}.legend{flex-wrap:wrap}.boxhead{flex-wrap:wrap}.label>span{min-width:0}input[type=number]{flex-shrink:0}}
 
 .launch-budget{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:24px 0 8px;font-size:13px}.launch-budget input{width:130px}.launch-budget button{font-size:12px}.launch-budget label{font-weight:600}
+
+/* Keep overview tables inside their scroll containers on small screens. */
+.overview-page .page-grid>.box{min-width:0}

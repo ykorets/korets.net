@@ -1,6 +1,8 @@
 (() => {
  const usMarket=208847722000,usCPA=144729301000,caMarket=30859336000,caCPA=19230613000;
  const num=x=>Math.round(x).toLocaleString('en-US'), money=x=>(x<0?'−':'')+'$'+(Math.abs(x)/1e6).toFixed(2)+'M',pct=x=>x>0&&x<.0001?'<0.01%':(100*x).toFixed(2)+'%';
+ const baseParams=CPA.scenario('base'),baseResult=CPA.run(baseParams);
+ document.getElementById('market-base-summary').innerHTML=`<strong>Our working case:</strong> ${baseResult.rows[23].firms} acquisitions in the first 24 months, then capacity for up to ${baseParams.scaleDeals||baseParams.deals} purchases per year. At year ${baseParams.years}: ${baseResult.end.firms} practices, about ${num(Math.ceil(baseResult.end.revenue/baseParams.clientRevenue))} client equivalents and ${money(baseResult.end.revenue)} annualized revenue. That is ${(100*baseResult.end.revenue/usMarket).toFixed(3)}% of the 2022 US market benchmark — a scale comparison, not a forecast of future market share. <a href="/cpa/overview/#working-plan">See the operating trajectory →</a>`;
  const scenario=document.getElementById('market-scenario'),fee=document.getElementById('market-fee'),productivity=document.getElementById('market-productivity');
  function render(){
   const p=CPA.scenario(scenario.value),r=CPA.run(p),s=CPA.scaleSummary(p,r),annualFee=Number(fee.value),feesPerProfessional=Number(productivity.value),revenue=r.end.revenue;

@@ -1,0 +1,6 @@
+(() => {
+ const p=CPA.scenario('base'),r=CPA.run(p),money=x=>'$'+(x/1e6).toFixed(2)+'M',num=x=>Math.round(x).toLocaleString('en-US');
+ const table=(name,headers,rows)=>`<div class="scroll" tabindex="0" aria-label="${name}"><table><thead><tr>${headers.map(h=>`<th scope="col">${h}</th>`).join('')}</tr></thead><tbody>${rows.map(row=>`<tr>${row.map((v,i)=>i?`<td>${v}</td>`:`<th scope="row">${v}</th>`).join('')}</tr>`).join('')}</tbody></table></div>`;
+ document.getElementById('working-plan-results').innerHTML=table('Base operating trajectory',['Year end','Firms','Est. clients','Annualized revenue','Annualized platform EBITDA','Debt outstanding','Cash balance'],[2,3,5,8].map(y=>{const x=r.rows[y*12-1];return[y,x.firms,num(Math.ceil(x.revenue/p.clientRevenue)),money(x.revenue),money(x.ebitda),money(x.debt),money(x.cash)];}));
+ document.getElementById('working-pace-results').innerHTML=table('Year eight acquisition pace comparison',['Capacity from year 3','Firms at year 8','Annualized revenue','Annualized platform EBITDA','Equity value at 8×'],[2,3,4].map(n=>{const x=CPA.run({...p,scaleDeals:n});return[n+' purchases / year',x.end.firms,money(x.end.revenue),money(x.end.ebitda),x.returnsAvailable?money(x.equity):'Unavailable'];}));
+})();

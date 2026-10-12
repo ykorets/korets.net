@@ -151,5 +151,6 @@
   "cpa/market/index.html",
   "cpa/market/style.css",
   "cpa/market/app.js",
-  "cpa/market/data.json"
+  "cpa/market/data.json",
+  "cpa/overview/plan.js"
 ]
