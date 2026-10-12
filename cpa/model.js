@@ -1,11 +1,11 @@
 (function(root){
-const defaults={capital:1500000,tranches:true,clientRevenue:5000,scaleDeals:0,hqPerFirm:0,stake:50,years:8,rev:550000,price:1,entry:25,target:45,ramp:12,churn:8,growth:12,cac:25,hq:20000,hqGrowth:10,deals:4,down1:50,down2:20,bank:30,creditMonth:25,bankRate:15,sellerRate:6,term:5,reserve:6,close:5,multiple:8,div:30,divStart:5,raise:0,raiseMonth:24,post:10000000};
+const defaults={capital:1500000,tranches:true,clientRevenue:5000,scaleDeals:0,hqPerFirm:0,years:8,rev:550000,price:1,entry:25,target:45,ramp:12,churn:8,growth:12,cac:25,hq:20000,hqGrowth:10,deals:4,down1:50,down2:20,bank:30,creditMonth:25,bankRate:15,sellerRate:6,term:5,reserve:6,close:5,multiple:8,div:30,divStart:5,raise:0,raiseMonth:24};
 // Scenario values are editable hypotheses, not market forecasts or agreed terms.
 const presets={
- down:{name:'Pessimistic',changes:{target:35,churn:14,growth:8,ramp:24,multiple:6,hq:25000,bankRate:18,deals:2,creditMonth:37,hqPerFirm:500}},
+ down:{name:'Pessimistic',changes:{target:35,churn:10,growth:8,ramp:24,multiple:6,hq:15000,bankRate:18,deals:2,creditMonth:37,hqPerFirm:500}},
  base:{name:'Base',changes:{}},
  up:{name:'Optimistic',changes:{target:50,churn:6,growth:15,ramp:9,multiple:10,deals:6,scaleDeals:12,hqPerFirm:500,div:15}},
- unicorn:{name:'Unicorn',changes:{years:10,deals:4,scaleDeals:30,hqPerFirm:1000,growth:18,churn:6,target:45,multiple:12,div:0,raise:5000000,post:25000000,raiseMonth:25}}
+ unicorn:{name:'Unicorn',changes:{years:10,deals:4,scaleDeals:30,hqPerFirm:1000,growth:18,churn:6,target:45,multiple:12,div:0,raise:5000000,raiseMonth:25}}
 };
 function scenario(key){if(!presets[key])throw new Error('Unknown scenario');return {...defaults,...presets[key].changes};}
 function scaleSummary(p,r){
@@ -21,13 +21,12 @@ function irr(flows){if(!flows.some(x=>x>0))return null;const npv=r=>flows.reduce
 // Loan proceeds pay the seller directly. The cash ledger therefore deducts only
 // the buyer's equity contribution and closing costs, never the full price twice.
 function run(p,options={}){
- ownership(p.stake,p.raise>0?[{amount:p.raise,post:p.post}]:[]);
  const H=Math.round(p.years*12),firms=[],rows=[],flows=Array(H+1).fill(0);
  const useTranches=options.tranches??p.tranches??false;
  const initial=useTranches?p.capital*.4:p.capital;
  flows[0]=-initial;
  let fundedCapital=initial;
- let cash=initial,stake=p.stake/100,dividends=0,minCash=cash,failed=null,last=-99,yearDeals=0,yr=0;
+ let cash=initial,stake=.5,dividends=0,minCash=cash,failed=null,last=-99,yearDeals=0,yr=0;
  const gates=useTranches?[
   {amount:p.capital*.3,firms:1,margin:0,coverage:1.25,earned:null,paid:null},
   {amount:p.capital*.3,firms:2,margin:35,coverage:1.25,earned:null,paid:null}
@@ -42,7 +41,7 @@ function run(p,options={}){
    if(g.earned===null&&previous&&(i===0||gates[i-1].paid!==null)&&previous.firms>=g.firms&&previous.firmEbitda*12>=previous.revenue*g.margin/100&&previous.firmEbitda>=previous.service*g.coverage)g.earned=mo-1;
    if(g.earned!==null&&g.paid===null&&mo>=g.earned+1+(options.delay||0)){cash+=g.amount;equityIn+=g.amount;seedIn+=g.amount;fundedCapital+=g.amount;flows[mo]-=g.amount;g.paid=mo;}
   }
-  if(p.raise>0&&mo===p.raiseMonth){cash+=p.raise;equityIn+=p.raise;/* Allocation is drawn from the pre-reserved pool; seed participation stays fixed. */}
+  if(p.raise>0&&mo===p.raiseMonth){cash+=p.raise;equityIn+=p.raise;/* Funding affects business cash; future investor terms are outside this model. */}
   const capacity=mo<=24?p.deals:(p.scaleDeals||p.deals);
   let overhead=p.hq*(1+p.hqGrowth/100)**yr+firms.length*(p.hqPerFirm||0);const price=p.rev*p.price;
   const creditMonth=Math.max(25,p.creditMonth),down=mo>=creditMonth?p.down2/100:p.down1/100,bank=mo>=creditMonth?Math.min(p.bank/100,1-down):0,seller=1-down-bank,cost=price*(down+p.close/100);
@@ -72,8 +71,9 @@ function run(p,options={}){
   if(cash<0&&!options.unconstrained){failed=mo;break;}
  }
  const fundingComplete=fundedCapital>=p.capital-1e-6,returnsAvailable=failed===null&&fundingComplete;
- const end=rows.at(-1),ev=Math.max(0,end.ebitda)*p.multiple,equity=Math.max(0,ev-end.debt+end.cash),exit=returnsAvailable?equity*stake:0;flows[H]+=exit;const total=dividends+exit;
- return {rows,failed,minCash,stake,dividends,ev,equity,exit,total,profit:returnsAvailable?total-fundedCapital:null,moic:returnsAvailable?total/fundedCapital:null,irr:returnsAvailable?irr(flows):null,end,initial,gates,fundedCapital,fundingComplete,returnsAvailable,flows};
+ const laterCapital=rows.reduce((sum,row)=>sum+row.equityIn-row.seedIn,0),investorReturnsAvailable=returnsAvailable&&laterCapital===0;
+ const end=rows.at(-1),ev=Math.max(0,end.ebitda)*p.multiple,equity=Math.max(0,ev-end.debt+end.cash),exit=investorReturnsAvailable?equity*stake:0;flows[H]+=exit;const total=dividends+exit;
+ return {rows,failed,minCash,stake,dividends:laterCapital?null:dividends,ev,equity,exit:laterCapital?null:exit,total:investorReturnsAvailable?total:null,profit:investorReturnsAvailable?total-fundedCapital:null,moic:investorReturnsAvailable?total/fundedCapital:null,irr:investorReturnsAvailable?irr(flows):null,end,initial,gates,fundedCapital,fundingComplete,returnsAvailable,investorReturnsAvailable,laterCapital,flows:laterCapital?null:flows};
 }
 function launch(p){
  // The launch comparison retains operating assumptions but excludes an exit,
@@ -87,21 +87,5 @@ function launch(p){
  const fundedSchedule=run({...q,capital:needed},{tranches:false});
  return {upfront,staged,delayed,needed,fundedSchedule,plannedFirms:schedule.end.firms};
 }
-function ownership(seedPercent,rounds,founder=30){
- if(!Number.isFinite(seedPercent)||seedPercent<0||seedPercent+founder>100)throw new Error('Founder and seed allocations cannot exceed 100%.');
- const capacity=100-founder-seedPercent;let remaining=capacity,newInvestors=0;const rows=[{founder,seed:seedPercent,newInvestors,reserve:remaining}];
- for(const {amount,post} of rounds){
-  if(!Number.isFinite(amount)||!Number.isFinite(post)||amount<0||post<=0||amount>=post)throw new Error('Round valuation must exceed capital raised.');
-  const allocation=100*amount/post;
-  if(allocation>remaining+1e-8)throw new Error(`Round needs ${allocation.toFixed(1)}% but only ${remaining.toFixed(1)}% is reserved. Change the amount or valuation, or renegotiate the allocation; no automatic dilution is applied.`);
-  remaining=Math.max(0,remaining-allocation);newInvestors+=allocation;rows.push({founder,seed:seedPercent,newInvestors,reserve:remaining});
- }
- return {rows,capacity,founder};
-}
-function vested(month,third,duration,mode){
- if(third===null)return 0;
- if(mode==='after')return Math.max(0,Math.min(1,(month-third)/duration));
- return month<Math.max(12,third)?0:Math.min(1,month/duration);
-}
-root.CPA={defaults,presets,scenario,scaleSummary,run,launch,irr,payment,ownership,vested};if(typeof module!=='undefined')module.exports=root.CPA;
+root.CPA={defaults,presets,scenario,scaleSummary,run,launch,irr,payment};if(typeof module!=='undefined')module.exports=root.CPA;
 })(typeof window!=='undefined'?window:globalThis);

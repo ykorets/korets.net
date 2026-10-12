@@ -145,7 +145,6 @@
   "cpa/glossary.js",
   "cpa/launch.js",
   "cpa/launch-checks.cjs",
-  "cpa/ownership.js",
   "cpa/scenarios.js",
   "cpa/scenario-checks.cjs",
   "cpa/market/index.html",
