@@ -1,6 +1,10 @@
 /* One shared glossary for static copy, live results and financing controls. */
 (() => {
  const definitions = [
+  [['vesting','vested'], 'The schedule on which a founder earns the right to retain an agreed share grant. It does not protect its percentage from dilution. Unvested-share treatment and departure terms require an agreement.'],
+  [['cliff'], 'A minimum service period before any of a share grant vests. This draft uses 12 months for the schedule that credits service from launch.'],
+  [['dilution'], 'A reduction in an existing shareholder’s percentage when new shares are issued. In a priced round, the new investor share is investment divided by post-money valuation.'],
+  [['Cap table'], 'Capitalization table: a breakdown of company ownership. This simplified model includes founder and investors only; options and seller equity would also affect ownership.'],
   [['CPA'], 'Certified Public Accountant. A licensed accounting professional; this model acquires accounting practices.'],
   [['rollup'], 'Acquiring several businesses and combining them under a shared ownership and operating platform.'],
   [['KPI'], 'Key Performance Indicator. A measurable condition used here to decide when a proposed funding tranche can be released.'],
@@ -15,7 +19,7 @@
   [['Investor proceeds','Total investor receipts','Investor receipts'], 'Money received by the investor: distributions during ownership plus the investor’s share of sale proceeds at exit. The final-year table includes both. This is not company revenue or net income.'],
   [['Investor distributions','Cumulative investor distributions','Platform distribution','distribution','distributions'], 'Payments from available company cash to shareholders. The model distributes a selected share of cash above the overhead reserve at eligible year ends; the investor receives their ownership share. Cumulative distributions add all earlier payments.'],
   [['Investor exit proceeds','Investor exit share'], 'The investor’s ownership share of exit equity value: enterprise value minus outstanding debt plus remaining cash, floored at zero.'],
-  [['Investment gain (pre-tax)','Net profit'], 'For the investment shown here: total investor receipts minus the original investment. This is a pre-tax investment gain, not the acquired businesses’ accounting net income.'],
+  [['Investment gain (pre-tax)','Net profit'], 'For the investment shown here: total investor receipts minus the seed capital actually funded. This is a pre-tax investment gain, not the acquired businesses’ accounting net income.'],
   [['Enterprise value'], 'Value of the operating business before deducting debt and adding cash. Here: non-negative annualized platform EBITDA × the exit EBITDA multiple.'],
   [['Exit equity','Equity value','net equity'], 'Value attributable to shareholders at exit: enterprise value − outstanding acquisition debt + closing cash balance, floored at zero in this model.'],
   [['Exit EBITDA multiple','exit multiple'], 'The assumed enterprise value divided by annualized platform EBITDA at exit. For example, 8× means enterprise value is eight times that EBITDA run rate.'],
@@ -45,7 +49,7 @@
   [['surplus cash'], 'Cash above the modeled platform overhead reserve. Eligible year-end distributions use a selected percentage of that excess.'],
   [['Operating surplus'], 'Practice EBITDA less platform overhead and customer acquisition costs for the period, before principal and interest payments. Taxes, capital expenditure and working-capital changes are not included.'],
   [['Bank financing starts','Bank financing','Bank funding','Bank share of purchase price','Bank borrowing'], 'Assumed bank funding of new acquisitions. Unavailable in months 1–24; month 25 is the earliest allowed start, not a committed credit facility. Existing seller loans are not refinanced automatically.'],
-  [['Pre-seed'], 'The initial equity investment used to launch the acquisition platform. The main investor model assumes $1 million paid at launch for 50% ownership.'],
+  [['Pre-seed'], 'The initial equity investment used to launch the acquisition platform. The main investor model assumes $1.5 million committed in milestone tranches: $600,000 at launch and two conditional $450,000 drawdowns. Ownership is a separate modeling assumption.'],
   [['post-money','post-money valuation'], 'The equity valuation immediately after a new investment. New investor ownership = investment ÷ post-money valuation; existing owners are diluted accordingly.'],
   [['pre-money'], 'Equity valuation immediately before new investment: post-money valuation minus new capital.'],
   [['Additional equity','Equity received','Starting equity'], 'Investor capital contributed in exchange for ownership; it is funding, not revenue. A later optional round dilutes the original investor. Proposed KPI tranches are drawdowns of one committed seed round.'],

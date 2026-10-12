@@ -144,5 +144,6 @@
   "yaroslav-korets-cv.pdf",
   "cpa/glossary.js",
   "cpa/launch.js",
-  "cpa/launch-checks.cjs"
+  "cpa/launch-checks.cjs",
+  "cpa/ownership.js"
 ]
