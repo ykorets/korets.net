@@ -144,6 +144,7 @@
       "limits": "Windows start in 2020. Not a count of completed sales or a current forecast."
     }
   ],
+  "researchContextUrl": "https://korets.net/cpa/data/research-context.json",
   "sources": [
     {
       "url": "https://www2.census.gov/programs-surveys/economic-census/data/2022/sector54/EC2254BASIC.zip",
@@ -208,8 +209,12 @@
       "checked": "2026-10-12",
       "usedOn": [
         "/cpa/market/",
-        "/cpa/references/"
-      ]
+        "/cpa/references/",
+        "/cpa/data/"
+      ],
+      "reviewStatus": "source_content_reviewed",
+      "evidenceType": "transaction_announcement",
+      "researchId": "cbiz-marcum"
     },
     {
       "url": "https://ascendtogether.com/news/strengthening-the-mountain-west-another-strategic-integration-for-the-ascend-platform",
@@ -240,8 +245,12 @@
       "label": "BizBuySell transaction benchmarks",
       "checked": "2026-10-12",
       "usedOn": [
-        "/cpa/market/"
-      ]
+        "/cpa/market/",
+        "/cpa/data/"
+      ],
+      "reviewStatus": "source_content_reviewed",
+      "evidenceType": "marketplace_transaction_sample",
+      "researchId": "bizbuysell"
     },
     {
       "url": "https://accountingpracticesales.com/buyers/info/financing",
@@ -256,16 +265,24 @@
       "label": "Survey release and methodology",
       "checked": "2026-10-12",
       "usedOn": [
-        "/cpa/market/"
-      ]
+        "/cpa/market/",
+        "/cpa/data/"
+      ],
+      "reviewStatus": "source_content_reviewed",
+      "evidenceType": "self_selected_survey",
+      "researchId": "cas-survey"
     },
     {
       "url": "https://www.current.co/news/building-the-firm-of-the-future-currents-growth-story-highlighted-by-reuters",
       "label": "Current’s acquisition description",
       "checked": "2026-10-12",
       "usedOn": [
-        "/cpa/references/"
-      ]
+        "/cpa/references/",
+        "/cpa/data/"
+      ],
+      "reviewStatus": "source_content_reviewed",
+      "evidenceType": "company_disclosure",
+      "researchId": "current-control"
     },
     {
       "url": "https://www.businesswire.com/news/home/20240502417024/en/",
@@ -280,8 +297,12 @@
       "label": "Current on local-level rollover equity",
       "checked": "2026-10-12",
       "usedOn": [
-        "/cpa/references/"
-      ]
+        "/cpa/references/",
+        "/cpa/data/"
+      ],
+      "reviewStatus": "source_content_reviewed",
+      "evidenceType": "management_interview_summary",
+      "researchId": "current-rollover"
     },
     {
       "url": "https://www.accountingtoday.com/video/pe-summit-2024/reinventing-the-ledger-the-private-equity-playbook-for-modern-accounting-firms",
@@ -296,16 +317,24 @@
       "label": "June 2026 rebrand and operating disclosure",
       "checked": "2026-10-12",
       "usedOn": [
-        "/cpa/references/"
-      ]
+        "/cpa/references/",
+        "/cpa/data/"
+      ],
+      "reviewStatus": "source_content_reviewed",
+      "evidenceType": "company_disclosure",
+      "researchId": "current-scale"
     },
     {
       "url": "https://www.current.co/",
       "label": "Current homepage",
       "checked": "2026-10-12",
       "usedOn": [
-        "/cpa/references/"
-      ]
+        "/cpa/references/",
+        "/cpa/data/"
+      ],
+      "reviewStatus": "source_content_reviewed",
+      "evidenceType": "company_website_snapshot",
+      "researchId": "current-home"
     },
     {
       "url": "https://whbl.com/2025/06/04/thrive-backed-accounting-firm-crete-to-spend-500-million-in-ai-roll-up/",
@@ -336,32 +365,48 @@
       "label": "Ascend announcement, March 15, 2024",
       "checked": "2026-10-12",
       "usedOn": [
-        "/cpa/references/"
-      ]
+        "/cpa/references/",
+        "/cpa/data/"
+      ],
+      "reviewStatus": "source_content_reviewed",
+      "evidenceType": "transaction_announcement",
+      "researchId": "ascend-levitzacks"
     },
     {
       "url": "https://www.ascendtogether.com/news/ascend-expands-into-midwest-with-investment-in-goering-amp-granatino-cpas",
       "label": "Ascend announcement, October 3, 2023",
       "checked": "2026-10-12",
       "usedOn": [
-        "/cpa/references/"
-      ]
+        "/cpa/references/",
+        "/cpa/data/"
+      ],
+      "reviewStatus": "source_content_reviewed",
+      "evidenceType": "transaction_announcement",
+      "researchId": "ascend-gg"
     },
     {
       "url": "https://ir.cbiz.com/node/23576/html",
       "label": "CBIZ 2025 Form 10-K/A, regulation and Note 1",
       "checked": "2026-10-12",
       "usedOn": [
-        "/cpa/references/"
-      ]
+        "/cpa/references/",
+        "/cpa/data/"
+      ],
+      "reviewStatus": "source_content_reviewed",
+      "evidenceType": "public_company_filing",
+      "researchId": "cbiz-filing"
     },
     {
       "url": "https://bakertilly.com/news/baker-tilly-and-moss-adams-to-combine",
       "label": "Baker Tilly announcement and entity disclosure",
       "checked": "2026-10-12",
       "usedOn": [
-        "/cpa/references/"
-      ]
+        "/cpa/references/",
+        "/cpa/data/"
+      ],
+      "reviewStatus": "source_content_reviewed",
+      "evidenceType": "transaction_announcement",
+      "researchId": "baker-moss"
     },
     {
       "url": "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=BPC&sectionNum=5079.",
@@ -369,6 +414,1319 @@
       "checked": "2026-10-12",
       "usedOn": [
         "/cpa/references/"
+      ]
+    },
+    {
+      "url": "https://sequoiacap.com/article/services-the-new-software/",
+      "label": "Services: The New Software",
+      "usedOn": [
+        "/cpa/data/"
+      ],
+      "checked": "2026-10-12",
+      "reviewStatus": "source_content_reviewed",
+      "evidenceType": "investor_thesis",
+      "researchId": "sequoia-services"
+    },
+    {
+      "url": "https://sequoiacap.com/article/partnering-with-rillet-the-financial-erp-for-the-ai-age/",
+      "label": "Partnering with Rillet: The Financial ERP for the AI Age",
+      "usedOn": [
+        "/cpa/data/"
+      ],
+      "checked": "2026-10-12",
+      "reviewStatus": "source_content_reviewed",
+      "evidenceType": "investment_announcement",
+      "researchId": "sequoia-rillet"
+    },
+    {
+      "url": "https://sequoiacap.com/article/partnering-with-pennylane/",
+      "label": "Partnering with Pennylane",
+      "usedOn": [
+        "/cpa/data/"
+      ],
+      "checked": "2026-10-12",
+      "reviewStatus": "source_content_reviewed",
+      "evidenceType": "investment_announcement",
+      "researchId": "sequoia-pennylane"
+    },
+    {
+      "url": "https://www.generalcatalyst.com/stories/the-future-of-services",
+      "label": "The Future of Services",
+      "usedOn": [
+        "/cpa/data/"
+      ],
+      "checked": "2026-10-12",
+      "reviewStatus": "source_content_reviewed",
+      "evidenceType": "investor_thesis",
+      "researchId": "gc-services"
+    },
+    {
+      "url": "https://www.bvp.com/atlas/owning-the-outcome-bessemer-s-ai-native-services-evaluation-framework",
+      "label": "Owning the outcome: AI-Native Services evaluation framework",
+      "usedOn": [
+        "/cpa/data/"
+      ],
+      "checked": "2026-10-12",
+      "reviewStatus": "source_content_reviewed",
+      "evidenceType": "investor_framework",
+      "researchId": "bessemer-services"
+    },
+    {
+      "url": "https://a16z.com/newsletter/the-rise-of-vertical-ai-in-accounting/",
+      "label": "The Rise of Vertical AI in Accounting",
+      "usedOn": [
+        "/cpa/data/"
+      ],
+      "checked": "2026-10-12",
+      "reviewStatus": "source_content_reviewed",
+      "evidenceType": "investor_thesis",
+      "researchId": "a16z-accounting"
+    },
+    {
+      "url": "https://www.generalcatalyst.com/stories/our-investment-in-accrual",
+      "label": "Our Investment in Accrual",
+      "usedOn": [
+        "/cpa/data/"
+      ],
+      "checked": "2026-10-12",
+      "reviewStatus": "source_content_reviewed",
+      "evidenceType": "investment_announcement",
+      "researchId": "gc-accrual"
+    },
+    {
+      "url": "https://openai.com/index/building-self-improving-tax-agents-with-codex/",
+      "label": "Tax AI at Current / Thrive",
+      "usedOn": [
+        "/cpa/data/"
+      ],
+      "checked": "2026-10-12",
+      "reviewStatus": "source_content_reviewed",
+      "evidenceType": "vendor_engineering_case",
+      "researchId": "openai-current"
+    },
+    {
+      "url": "https://accrual.com/insights/armanino-leading-ai-adoption-in-tax",
+      "label": "Armanino: leading AI adoption in tax",
+      "usedOn": [
+        "/cpa/data/"
+      ],
+      "checked": "2026-10-12",
+      "reviewStatus": "source_content_reviewed",
+      "evidenceType": "vendor_customer_case",
+      "researchId": "armanino-accrual"
+    },
+    {
+      "url": "https://www.lido.app/blog/smoker-cpa-case-study",
+      "label": "Smoker CPA: document extraction",
+      "usedOn": [
+        "/cpa/data/"
+      ],
+      "checked": "2026-10-12",
+      "reviewStatus": "source_content_reviewed",
+      "evidenceType": "vendor_customer_case",
+      "researchId": "smoker-lido"
+    },
+    {
+      "url": "https://digits.com/case-studies/elev8-cfo/",
+      "label": "Elev8 CFO: bookkeeping to advisory capacity",
+      "usedOn": [
+        "/cpa/data/"
+      ],
+      "checked": "2026-10-12",
+      "reviewStatus": "source_content_reviewed",
+      "evidenceType": "vendor_customer_case",
+      "researchId": "elev8-digits"
+    },
+    {
+      "url": "https://www.vic.ai/resources/case-studies/countsy-case-study",
+      "label": "Countsy: invoice processing with Vic.ai",
+      "usedOn": [
+        "/cpa/data/"
+      ],
+      "checked": "2026-10-12",
+      "reviewStatus": "source_content_reviewed",
+      "evidenceType": "vendor_customer_case",
+      "researchId": "countsy-vic"
+    },
+    {
+      "url": "https://www.salesforce.com/customer-stories/1800-accountant/",
+      "label": "1-800Accountant: service automation and forecast labels",
+      "usedOn": [
+        "/cpa/data/"
+      ],
+      "checked": "2026-10-12",
+      "reviewStatus": "source_content_reviewed",
+      "evidenceType": "vendor_customer_case",
+      "researchId": "salesforce-1800"
+    },
+    {
+      "url": "https://gsbpreserve.stanford.edu/view/4261/human-ai-in-accounting-early-evidence-from-the-field",
+      "label": "Human + AI in Accounting: Early Evidence from the Field",
+      "usedOn": [
+        "/cpa/data/"
+      ],
+      "checked": "2026-10-12",
+      "reviewStatus": "source_content_reviewed",
+      "evidenceType": "academic_working_paper",
+      "researchId": "academic-accounting"
+    },
+    {
+      "url": "https://www.thomsonreuters.com/en/press-releases/2025/june/the-ai-adoption-reality-check-firms-with-ai-strategies-are-twice-as-likely-to-see-ai-driven-revenue-growth-those-without-risk-falling-behind",
+      "label": "Future of Professionals 2025",
+      "usedOn": [
+        "/cpa/data/"
+      ],
+      "checked": "2026-10-12",
+      "reviewStatus": "source_content_reviewed",
+      "evidenceType": "industry_survey",
+      "researchId": "tr-future"
+    },
+    {
+      "url": "https://www.businesswire.com/news/home/20260602293257/en/Crete-Professionals-Alliance-Rebrands-as-Current-to-Equip-Independent-Accounting-Firms-to-Compete-at-Enterprise-Scale",
+      "label": "Current / Crete Professionals Alliance + Thrive Holdings — production-use pilot tax agents для 1040/1041",
+      "checked": null,
+      "archiveDate": "2026-08-17",
+      "reviewStatus": "archived_research_not_reverified",
+      "usedOn": [
+        "/cpa/data/"
+      ]
+    },
+    {
+      "url": "https://www.forbes.com/sites/annatong/2026/06/02/thrive-holdings-to-bet-1-billion-on-ai-powered-accounting-roll-up/",
+      "label": "Current / Crete Professionals Alliance + Thrive Holdings — production-use pilot tax agents для 1040/1041",
+      "checked": null,
+      "archiveDate": "2026-08-17",
+      "reviewStatus": "archived_research_not_reverified",
+      "usedOn": [
+        "/cpa/data/"
+      ]
+    },
+    {
+      "url": "https://tax.thomsonreuters.com/blog/how-sureprep-revolutionized-this-cpa-firm/",
+      "label": "Madsen O’Meara — SurePrep 1040SCAN, SPbinder и UltraTax",
+      "checked": null,
+      "archiveDate": "2026-08-17",
+      "reviewStatus": "archived_research_not_reverified",
+      "usedOn": [
+        "/cpa/data/"
+      ]
+    },
+    {
+      "url": "https://www.gruntworx.com/resources/case-studies-testimonials.php",
+      "label": "Tracy Cook CPA и Dawkins & Murray — GruntWorx ORGANIZE/POPULATE",
+      "checked": null,
+      "archiveDate": "2026-08-17",
+      "reviewStatus": "archived_research_not_reverified",
+      "usedOn": [
+        "/cpa/data/"
+      ]
+    },
+    {
+      "url": "https://www.gruntworx.com/assets/case-studies/cs-joe-larocque.pdf",
+      "label": "Lighthouse Tax Advisors — GruntWorx",
+      "checked": null,
+      "archiveDate": "2026-08-17",
+      "reviewStatus": "archived_research_not_reverified",
+      "usedOn": [
+        "/cpa/data/"
+      ]
+    },
+    {
+      "url": "https://accrual.com/security",
+      "label": "Armanino + Accrual — AI-native individual tax preparation",
+      "checked": null,
+      "archiveDate": "2026-08-17",
+      "reviewStatus": "archived_research_not_reverified",
+      "usedOn": [
+        "/cpa/data/"
+      ]
+    },
+    {
+      "url": "https://www.businesswire.com/news/home/20260218366886/en/Armanino-and-Accrual-Enter-Strategic-Partnership-to-Redefine-Accounting-with-AI-Driven-Insights-and-Transformational-Client-Outcomes",
+      "label": "Armanino + Accrual — AI-native individual tax preparation",
+      "checked": null,
+      "archiveDate": "2026-08-17",
+      "reviewStatus": "archived_research_not_reverified",
+      "usedOn": [
+        "/cpa/data/"
+      ]
+    },
+    {
+      "url": "https://tax.thomsonreuters.com/en/insights/case-studies/small-firm-big-leverage-sam-brown-cpa-inc-scales-advisory-and-streamlines-audits-with-ai",
+      "label": "Sam Brown CPA, Inc. — CoCounsel для небольшой фирмы",
+      "checked": null,
+      "archiveDate": "2026-08-17",
+      "reviewStatus": "archived_research_not_reverified",
+      "usedOn": [
+        "/cpa/data/"
+      ]
+    },
+    {
+      "url": "https://tax.thomsonreuters.com/en/insights/case-studies/from-hours-to-minutes-how-cocounsel-reimagined-tax-workflow-efficiency-at-copeland-buhl",
+      "label": "Copeland Buhl — массовое использование CoCounsel в tax workflow",
+      "checked": null,
+      "archiveDate": "2026-08-17",
+      "reviewStatus": "archived_research_not_reverified",
+      "usedOn": [
+        "/cpa/data/"
+      ]
+    },
+    {
+      "url": "https://tax.thomsonreuters.com/en/insights/case-studies/elevating-audit-and-advisory-work-with-cocounsel-tax-and-audit",
+      "label": "Harris, Hardy & Johnstone — board minutes, contracts, leases и trial balance",
+      "checked": null,
+      "archiveDate": "2026-08-17",
+      "reviewStatus": "archived_research_not_reverified",
+      "usedOn": [
+        "/cpa/data/"
+      ]
+    },
+    {
+      "url": "https://tax.thomsonreuters.com/en/insights/case-studies/transforming-audit-and-accounting-efficiency",
+      "label": "Sensiba — technical research и key-term extraction",
+      "checked": null,
+      "archiveDate": "2026-08-17",
+      "reviewStatus": "archived_research_not_reverified",
+      "usedOn": [
+        "/cpa/data/"
+      ]
+    },
+    {
+      "url": "https://www.bluej.com/case-study/bartlett-pringle-wolf",
+      "label": "Bartlett, Pringle & Wolf — Blue J в California tax practice",
+      "checked": null,
+      "archiveDate": "2026-08-17",
+      "reviewStatus": "archived_research_not_reverified",
+      "usedOn": [
+        "/cpa/data/"
+      ]
+    },
+    {
+      "url": "https://www.bluej.com/uk/case-study/larson-gross-advisors",
+      "label": "Larson Gross Advisors — Blue J rollout на 75 пользователей",
+      "checked": null,
+      "archiveDate": "2026-08-17",
+      "reviewStatus": "archived_research_not_reverified",
+      "usedOn": [
+        "/cpa/data/"
+      ]
+    },
+    {
+      "url": "https://www.bluej.com/case-study/r2-advisors",
+      "label": "R2 Advisors — tax scenario modeling и сохранённые client outcomes",
+      "checked": null,
+      "archiveDate": "2026-08-17",
+      "reviewStatus": "archived_research_not_reverified",
+      "usedOn": [
+        "/cpa/data/"
+      ]
+    },
+    {
+      "url": "https://tax.thomsonreuters.com/en/insights/case-studies/thomson-reuters-cocounsel-at-plante-moran",
+      "label": "Plante Moran — CoCounsel research и internal templates",
+      "checked": null,
+      "archiveDate": "2026-08-17",
+      "reviewStatus": "archived_research_not_reverified",
+      "usedOn": [
+        "/cpa/data/"
+      ]
+    },
+    {
+      "url": "https://www.thomsonreuters.com/en-us/help/cocounsel/tax-audit-accounting/security/security-info-cocounsel-tax-audit-accounting",
+      "label": "Plante Moran — CoCounsel research и internal templates",
+      "checked": null,
+      "archiveDate": "2026-08-17",
+      "reviewStatus": "archived_research_not_reverified",
+      "usedOn": [
+        "/cpa/data/"
+      ]
+    },
+    {
+      "url": "https://www.bluej.com/ca/case-study/mckonly-asbury",
+      "label": "McKonly & Asbury — Blue J rollout на 34 tax professionals",
+      "checked": null,
+      "archiveDate": "2026-08-17",
+      "reviewStatus": "archived_research_not_reverified",
+      "usedOn": [
+        "/cpa/data/"
+      ]
+    },
+    {
+      "url": "https://www.bluej.com/ca/case-study/cck-strategies",
+      "label": "CCK Strategies — full-tax-season Blue J pilot",
+      "checked": null,
+      "archiveDate": "2026-08-17",
+      "reviewStatus": "archived_research_not_reverified",
+      "usedOn": [
+        "/cpa/data/"
+      ]
+    },
+    {
+      "url": "https://www.grantthornton.com/insights/case-studies/audit/2025/ai-simplifies-search-of-filings-minutes",
+      "label": "Grant Thornton US — AI/NLP review filings и board minutes",
+      "checked": null,
+      "archiveDate": "2026-08-17",
+      "reviewStatus": "archived_research_not_reverified",
+      "usedOn": [
+        "/cpa/data/"
+      ]
+    },
+    {
+      "url": "https://www.journalofaccountancy.com/issues/2025/jun/real-life-ways-accountants-are-using-ai/",
+      "label": "Eventus Advisory Group — custom RAG на архиве technical accounting memos",
+      "checked": null,
+      "archiveDate": "2026-08-17",
+      "reviewStatus": "archived_research_not_reverified",
+      "usedOn": [
+        "/cpa/data/"
+      ]
+    },
+    {
+      "url": "https://www.cpa.com/blog/2024/07/01/generative-ai-maturing-theoretical-practical-use",
+      "label": "Yogi CPA — GenAI как набор малых повседневных workflows",
+      "checked": null,
+      "archiveDate": "2026-08-17",
+      "reviewStatus": "archived_research_not_reverified",
+      "usedOn": [
+        "/cpa/data/"
+      ]
+    },
+    {
+      "url": "https://www.cpa.com/sites/cpa/files/2024-04/The_Rise_of_Gen_AI.pdf",
+      "label": "Yogi CPA — GenAI как набор малых повседневных workflows",
+      "checked": null,
+      "archiveDate": "2026-08-17",
+      "reviewStatus": "archived_research_not_reverified",
+      "usedOn": [
+        "/cpa/data/"
+      ]
+    },
+    {
+      "url": "https://digits.com/case-studies/adept-accounting/",
+      "label": "Adept Accounting Principles — трёхлетний cleanup за два дня",
+      "checked": null,
+      "archiveDate": "2026-08-17",
+      "reviewStatus": "archived_research_not_reverified",
+      "usedOn": [
+        "/cpa/data/"
+      ]
+    },
+    {
+      "url": "https://digits.com/case-studies/how-tfma-llc-improved-workflow-efficiency-by-70-with-digits/",
+      "label": "TFMA LLC — cleanup и recurring bookkeeping",
+      "checked": null,
+      "archiveDate": "2026-08-17",
+      "reviewStatus": "archived_research_not_reverified",
+      "usedOn": [
+        "/cpa/data/"
+      ]
+    },
+    {
+      "url": "https://digits.com/case-studies/mana-accounting-advisory-saving-hours-with-ai-powered-accounting/",
+      "label": "Mana Accounting & Advisory — cleanup, onboarding и reporting",
+      "checked": null,
+      "archiveDate": "2026-08-17",
+      "reviewStatus": "archived_research_not_reverified",
+      "usedOn": [
+        "/cpa/data/"
+      ]
+    },
+    {
+      "url": "https://digits.com/case-studies/eiduk-tax-and-Wealth/",
+      "label": "Eiduk Tax & Wealth — более быстрый QBO onboarding",
+      "checked": null,
+      "archiveDate": "2026-08-17",
+      "reviewStatus": "archived_research_not_reverified",
+      "usedOn": [
+        "/cpa/data/"
+      ]
+    },
+    {
+      "url": "https://digits.com/case-studies/how-steve-tonkin-company-is-building-a-future-ready-accounting-firm-with-digits/",
+      "label": "Steve Tonkin & Company — staged rollout Digits",
+      "checked": null,
+      "archiveDate": "2026-08-17",
+      "reviewStatus": "archived_research_not_reverified",
+      "usedOn": [
+        "/cpa/data/"
+      ]
+    },
+    {
+      "url": "https://www.truewind.ai/blog/customer-spotlight-how-hhl-uses-truewind-to-improve-accounting",
+      "label": "HHL Advisors — Truewind для transaction categorization",
+      "checked": null,
+      "archiveDate": "2026-08-17",
+      "reviewStatus": "archived_research_not_reverified",
+      "usedOn": [
+        "/cpa/data/"
+      ]
+    },
+    {
+      "url": "https://digits.com/case-studies/booksmarts-tax-and-accounting/",
+      "label": "BookSmarts Tax & Accounting — year-round books через Digits",
+      "checked": null,
+      "archiveDate": "2026-08-17",
+      "reviewStatus": "archived_research_not_reverified",
+      "usedOn": [
+        "/cpa/data/"
+      ]
+    },
+    {
+      "url": "https://www.docyt.com/article/jmkeehn-scaled-ai-automation-without-expanding-headcount/",
+      "label": "J M Keehn Accounting — Docyt Accountant Copilot",
+      "checked": null,
+      "archiveDate": "2026-08-17",
+      "reviewStatus": "archived_research_not_reverified",
+      "usedOn": [
+        "/cpa/data/"
+      ]
+    },
+    {
+      "url": "https://synder.com/success-stories/decimal/",
+      "label": "Decimal — Synder для ecommerce/payment reconciliation",
+      "checked": null,
+      "archiveDate": "2026-08-17",
+      "reviewStatus": "archived_research_not_reverified",
+      "usedOn": [
+        "/cpa/data/"
+      ]
+    },
+    {
+      "url": "https://doublehq.com/customer-stories/dental-accounting-group-unifies-their-systems-and-streamlines-monthly-work-with-keeper/",
+      "label": "Dental Accounting Group — Keeper/Double после merger",
+      "checked": null,
+      "archiveDate": "2026-08-17",
+      "reviewStatus": "archived_research_not_reverified",
+      "usedOn": [
+        "/cpa/data/"
+      ]
+    },
+    {
+      "url": "https://openai.com/index/basis/",
+      "label": "Basis и Wiss — multi-agent accounting workflow",
+      "checked": null,
+      "archiveDate": "2026-08-17",
+      "reviewStatus": "archived_research_not_reverified",
+      "usedOn": [
+        "/cpa/data/"
+      ]
+    },
+    {
+      "url": "https://www.getbasis.ai/",
+      "label": "Basis и Wiss — multi-agent accounting workflow",
+      "checked": null,
+      "archiveDate": "2026-08-17",
+      "reviewStatus": "archived_research_not_reverified",
+      "usedOn": [
+        "/cpa/data/"
+      ]
+    },
+    {
+      "url": "https://wiss.com/wiss-announces-strategic-partnership-with-accounting-ai-platform-basis/",
+      "label": "Basis и Wiss — multi-agent accounting workflow",
+      "checked": null,
+      "archiveDate": "2026-08-17",
+      "reviewStatus": "archived_research_not_reverified",
+      "usedOn": [
+        "/cpa/data/"
+      ]
+    },
+    {
+      "url": "https://www.merge.dev/case-studies/basis",
+      "label": "Basis и Wiss — multi-agent accounting workflow",
+      "checked": null,
+      "archiveDate": "2026-08-17",
+      "reviewStatus": "archived_research_not_reverified",
+      "usedOn": [
+        "/cpa/data/"
+      ]
+    },
+    {
+      "url": "https://www.botkeeper.com/kaufman-rossin-chooses-botkeeper-to-enhance-advisory-services-grows-clients-base-by-33-and-increases-realization-by-40-in-a-single-year",
+      "label": "Kaufman Rossin — CAS growth, realization и avoided FTE",
+      "checked": null,
+      "archiveDate": "2026-08-17",
+      "reviewStatus": "archived_research_not_reverified",
+      "usedOn": [
+        "/cpa/data/"
+      ]
+    },
+    {
+      "url": "https://www.botkeeper.com/christopher-a.-lee-cpa-saves-40k-and-gets-back-240-hours-per-year-with-botkeeper",
+      "label": "Christopher A. Lee CPA — write-up time и avoided hire",
+      "checked": null,
+      "archiveDate": "2026-08-17",
+      "reviewStatus": "archived_research_not_reverified",
+      "usedOn": [
+        "/cpa/data/"
+      ]
+    },
+    {
+      "url": "https://www.botkeeper.com/j-a-rodriguez-cpa-saves-840-hours-in-write-up-work-and-grew-client-base-by-25-with-botkeeper",
+      "label": "J.A. Rodriguez CPA — Rapid Write-Up и рост client base",
+      "checked": null,
+      "archiveDate": "2026-08-17",
+      "reviewStatus": "archived_research_not_reverified",
+      "usedOn": [
+        "/cpa/data/"
+      ]
+    },
+    {
+      "url": "https://www.botkeeper.com/en/tm2accountingsolutions",
+      "label": "TM2 Accounting Solutions — categorization, deposits и revenue capacity",
+      "checked": null,
+      "archiveDate": "2026-08-17",
+      "reviewStatus": "archived_research_not_reverified",
+      "usedOn": [
+        "/cpa/data/"
+      ]
+    },
+    {
+      "url": "https://www.botkeeper.com/jhr-on-track-to-double-client-base-with-botkeeper",
+      "label": "JHR / Vinance — сокращение времени и план удвоения clients",
+      "checked": null,
+      "archiveDate": "2026-08-17",
+      "reviewStatus": "archived_research_not_reverified",
+      "usedOn": [
+        "/cpa/data/"
+      ]
+    },
+    {
+      "url": "https://www.botkeeper.com/withum-saves-280-hours-per-month-with-botkeeper",
+      "label": "Withum — 62 clients и 280 часов в месяц",
+      "checked": null,
+      "archiveDate": "2026-08-17",
+      "reviewStatus": "archived_research_not_reverified",
+      "usedOn": [
+        "/cpa/data/"
+      ]
+    },
+    {
+      "url": "https://www.botkeeper.com/steirman-cpas-saves-60-hours-per-month-on-their-first-40-clients-with-botkeeper",
+      "label": "Steirman CPAs — bank reconciliation и month-end close",
+      "checked": null,
+      "archiveDate": "2026-08-17",
+      "reviewStatus": "archived_research_not_reverified",
+      "usedOn": [
+        "/cpa/data/"
+      ]
+    },
+    {
+      "url": "https://www.botkeeper.com/botkeeper-case-studies",
+      "label": "Verity CPAs — небольшой client cohort",
+      "checked": null,
+      "archiveDate": "2026-08-17",
+      "reviewStatus": "archived_research_not_reverified",
+      "usedOn": [
+        "/cpa/data/"
+      ]
+    },
+    {
+      "url": "https://www.botkeeper.com/woltman-group-reduces-their-bookkeeping-hours-by-50-with-botkeeper",
+      "label": "Woltman Group / Brady Martz — on-time close на 40 clients",
+      "checked": null,
+      "archiveDate": "2026-08-17",
+      "reviewStatus": "archived_research_not_reverified",
+      "usedOn": [
+        "/cpa/data/"
+      ]
+    },
+    {
+      "url": "https://www.botkeeper.com/club-capital-has-doubled-its-client-base-and-increased-revenue-by-150",
+      "label": "Club Capital — portfolio 300 → 600 и CFO service line",
+      "checked": null,
+      "archiveDate": "2026-08-17",
+      "reviewStatus": "archived_research_not_reverified",
+      "usedOn": [
+        "/cpa/data/"
+      ]
+    },
+    {
+      "url": "https://www.botkeeper.com/dsjcpa-saves-92-bookkeeping-hours-each-week-with-botkeeper",
+      "label": "DSJCPA — weekly capacity claim",
+      "checked": null,
+      "archiveDate": "2026-08-17",
+      "reviewStatus": "archived_research_not_reverified",
+      "usedOn": [
+        "/cpa/data/"
+      ]
+    },
+    {
+      "url": "https://www.botkeeper.com/saville-case-study",
+      "label": "Saville CPAs & Advisors — long-horizon CAS growth",
+      "checked": null,
+      "archiveDate": "2026-08-17",
+      "reviewStatus": "archived_research_not_reverified",
+      "usedOn": [
+        "/cpa/data/"
+      ]
+    },
+    {
+      "url": "https://www.vic.ai/resources/case-studies/accountor-northwest-chooses-vic-ai-to-augment-their-erp-for-efficiency-gains-in-invoice-processing",
+      "label": "Accountor Northwest — Vic.ai на 200,000+ invoices",
+      "checked": null,
+      "archiveDate": "2026-08-17",
+      "reviewStatus": "archived_research_not_reverified",
+      "usedOn": [
+        "/cpa/data/"
+      ]
+    },
+    {
+      "url": "https://www.vic.ai/resources/case-studies/accounting-and-tax-advisory-firm-leverages-vic-ai-to-process-invoices-faster-than-bill-com",
+      "label": "Anonymous Top US accounting and advisory firm — Vic.ai против BILL workflow",
+      "checked": null,
+      "archiveDate": "2026-08-17",
+      "reviewStatus": "archived_research_not_reverified",
+      "usedOn": [
+        "/cpa/data/"
+      ]
+    },
+    {
+      "url": "https://info.dext.com/hubfs/Harvest%20Accounting%20Case%20Study.pdf",
+      "label": "Harvest Accounting — Dext receipt/invoice capture",
+      "checked": null,
+      "archiveDate": "2026-08-17",
+      "reviewStatus": "archived_research_not_reverified",
+      "usedOn": [
+        "/cpa/data/"
+      ]
+    },
+    {
+      "url": "https://www.bill.com/case-study/rubino-co",
+      "label": "BILL и Rubino — adjacent AP automation, а не изолированный AI case",
+      "checked": null,
+      "archiveDate": "2026-08-17",
+      "reviewStatus": "archived_research_not_reverified",
+      "usedOn": [
+        "/cpa/data/"
+      ]
+    },
+    {
+      "url": "https://dext.com/ca/blog/single/mazars-and-dext-prepare-a-strategic-approach-to-global-efficiency",
+      "label": "Mazars North America — Dext как standardized capture layer",
+      "checked": null,
+      "archiveDate": "2026-08-17",
+      "reviewStatus": "archived_research_not_reverified",
+      "usedOn": [
+        "/cpa/data/"
+      ]
+    },
+    {
+      "url": "https://cdn2.hubspot.net/hubfs/4808453/Ignite_Spot_Accounting_Services_Vic.ai_Case_Study.pdf",
+      "label": "Ignite Spot Accounting Services — Vic.ai для сложных invoices",
+      "checked": null,
+      "archiveDate": "2026-08-17",
+      "reviewStatus": "archived_research_not_reverified",
+      "usedOn": [
+        "/cpa/data/"
+      ]
+    },
+    {
+      "url": "https://www.mindbridge.ai/resources/case-studies/cherry-bekaert-llp-case-study/",
+      "label": "Cherry Bekaert — MindBridge full-population risk analytics",
+      "checked": null,
+      "archiveDate": "2026-08-17",
+      "reviewStatus": "archived_research_not_reverified",
+      "usedOn": [
+        "/cpa/data/"
+      ]
+    },
+    {
+      "url": "https://www.mindbridge.ai/docs/resources/customer-stories/2022-CherryBekaert/MindBridge_Cherry_Bekaert_Case_Study_Digital_02232023.pdf",
+      "label": "Cherry Bekaert — MindBridge full-population risk analytics",
+      "checked": null,
+      "archiveDate": "2026-08-17",
+      "reviewStatus": "archived_research_not_reverified",
+      "usedOn": [
+        "/cpa/data/"
+      ]
+    },
+    {
+      "url": "https://www.mindbridge.ai/blog/ai-in-audit-and-advisory-pinion-case-study/",
+      "label": "Pinion — first-year review engagement с MindBridge",
+      "checked": null,
+      "archiveDate": "2026-08-17",
+      "reviewStatus": "archived_research_not_reverified",
+      "usedOn": [
+        "/cpa/data/"
+      ]
+    },
+    {
+      "url": "https://www.mindbridge.ai/wp-content/uploads/2020/10/MindBridge-AiAuditor-CaseStudy-DoerenMayhew.pdf",
+      "label": "Doeren Mayhew — risk detection и меньше open items",
+      "checked": null,
+      "archiveDate": "2026-08-17",
+      "reviewStatus": "archived_research_not_reverified",
+      "usedOn": [
+        "/cpa/data/"
+      ]
+    },
+    {
+      "url": "https://www.datasnipper.com/jp/customer-stories/isler-cpa",
+      "label": "Isler CPA — DataSnipper в financial-statement procedures",
+      "checked": null,
+      "archiveDate": "2026-08-17",
+      "reviewStatus": "archived_research_not_reverified",
+      "usedOn": [
+        "/cpa/data/"
+      ]
+    },
+    {
+      "url": "https://www.schellman.com/about-us",
+      "label": "Schellman — custom GPTs для control testing и policies",
+      "checked": null,
+      "archiveDate": "2026-08-17",
+      "reviewStatus": "archived_research_not_reverified",
+      "usedOn": [
+        "/cpa/data/"
+      ]
+    },
+    {
+      "url": "https://www.anthropic.com/customers/armanino",
+      "label": "Armanino — Claude для audit document rejection messages",
+      "checked": null,
+      "archiveDate": "2026-08-17",
+      "reviewStatus": "archived_research_not_reverified",
+      "usedOn": [
+        "/cpa/data/"
+      ]
+    },
+    {
+      "url": "https://europeantech.news/making-the-use-case-for-ai-in-accounting/",
+      "label": "Armanino — Claude для audit document rejection messages",
+      "checked": null,
+      "archiveDate": "2026-08-17",
+      "reviewStatus": "archived_research_not_reverified",
+      "usedOn": [
+        "/cpa/data/"
+      ]
+    },
+    {
+      "url": "https://tax.thomsonreuters.com/en/insights/case-studies/three-nonprofit-focused-firms-modernize-audits-with-thomson-reuters-audit-intelligence-and-cocounsel",
+      "label": "The Forde Firm — CoCounsel Audit / Audit Intelligence",
+      "checked": null,
+      "archiveDate": "2026-08-17",
+      "reviewStatus": "archived_research_not_reverified",
+      "usedOn": [
+        "/cpa/data/"
+      ]
+    },
+    {
+      "url": "https://tax.thomsonreuters.com/en/insights/case-studies/modernizing-nonprofit-and-government-audits-with-cocounsel-audit",
+      "label": "Robert St. Pierre CPA — long-document analysis",
+      "checked": null,
+      "archiveDate": "2026-08-17",
+      "reviewStatus": "archived_research_not_reverified",
+      "usedOn": [
+        "/cpa/data/"
+      ]
+    },
+    {
+      "url": "https://www.deloitte.com/us/en/about/press-room/deloitte-launches-innovative-dartbot-internal-chatbot.html",
+      "label": "Deloitte US Audit & Assurance — DARTbot",
+      "checked": null,
+      "archiveDate": "2026-08-17",
+      "reviewStatus": "archived_research_not_reverified",
+      "usedOn": [
+        "/cpa/data/"
+      ]
+    },
+    {
+      "url": "https://www.cfodive.com/news/deloitte-brings-genai-internal-audit-accounting-professionals/699354/",
+      "label": "Deloitte US Audit & Assurance — DARTbot",
+      "checked": null,
+      "archiveDate": "2026-08-17",
+      "reviewStatus": "archived_research_not_reverified",
+      "usedOn": [
+        "/cpa/data/"
+      ]
+    },
+    {
+      "url": "https://dart.deloitte.com/USDART/home/help/dart-help-1/introducing-dartbot-generative-ai-powered-accounting",
+      "label": "Deloitte US Audit & Assurance — DARTbot",
+      "checked": null,
+      "archiveDate": "2026-08-17",
+      "reviewStatus": "archived_research_not_reverified",
+      "usedOn": [
+        "/cpa/data/"
+      ]
+    },
+    {
+      "url": "https://kpmg.com/us/en/media/news/kpmg-audit-chat-new-capabilities-2024.html",
+      "label": "KPMG US — Audit Chat",
+      "checked": null,
+      "archiveDate": "2026-08-17",
+      "reviewStatus": "archived_research_not_reverified",
+      "usedOn": [
+        "/cpa/data/"
+      ]
+    },
+    {
+      "url": "https://kpmg.com/us/en/articles/2024/ai-enabled-human-powered.html",
+      "label": "KPMG US — Audit Chat",
+      "checked": null,
+      "archiveDate": "2026-08-17",
+      "reviewStatus": "archived_research_not_reverified",
+      "usedOn": [
+        "/cpa/data/"
+      ]
+    },
+    {
+      "url": "https://rsmus.com/newsroom/2024/rsm-teams-with-additive-to-enhance-tax-service-capabilities-using-generative-ai.html",
+      "label": "RSM US — Additive для K-1/K-3 и Ask Luca для assurance knowledge",
+      "checked": null,
+      "archiveDate": "2026-08-17",
+      "reviewStatus": "archived_research_not_reverified",
+      "usedOn": [
+        "/cpa/data/"
+      ]
+    },
+    {
+      "url": "https://rsmus.com/newsroom/2026/rsm-launches-ask-luca.html",
+      "label": "RSM US — Additive для K-1/K-3 и Ask Luca для assurance knowledge",
+      "checked": null,
+      "archiveDate": "2026-08-17",
+      "reviewStatus": "archived_research_not_reverified",
+      "usedOn": [
+        "/cpa/data/"
+      ]
+    },
+    {
+      "url": "https://www.journalofaccountancy.com/issues/2026/aug/real-life-ways-small-firms-use-ai/",
+      "label": "Agate CPA — AI-built lead qualification workflow",
+      "checked": null,
+      "archiveDate": "2026-08-17",
+      "reviewStatus": "archived_research_not_reverified",
+      "usedOn": [
+        "/cpa/data/"
+      ]
+    },
+    {
+      "url": "https://karbonhq.com/resources/ai-data-accounting-firm-karbon-gusto/",
+      "label": "Good Measure — Karbon/Gusto data, Claude и internal dashboard",
+      "checked": null,
+      "archiveDate": "2026-08-17",
+      "reviewStatus": "archived_research_not_reverified",
+      "usedOn": [
+        "/cpa/data/"
+      ]
+    },
+    {
+      "url": "https://www.bdo.com/insights/press-releases/bdo-usa-unveils-comprehensive-artificial-intelligence-strategy-fusing-practical-innovation",
+      "label": "BDO USA — Chat BDO",
+      "checked": null,
+      "archiveDate": "2026-08-17",
+      "reviewStatus": "archived_research_not_reverified",
+      "usedOn": [
+        "/cpa/data/"
+      ]
+    },
+    {
+      "url": "https://www.techtarget.com/searchenterpriseai/feature/GenAI-in-accounting-Chat-BDOs-journey-from-pilot-to-production",
+      "label": "BDO USA — Chat BDO",
+      "checked": null,
+      "archiveDate": "2026-08-17",
+      "reviewStatus": "archived_research_not_reverified",
+      "usedOn": [
+        "/cpa/data/"
+      ]
+    },
+    {
+      "url": "https://www.microsoft.com/en/customers/story/1763806297989579042-bdo-dynamics-365-project-operations-professional-services-en-united-states",
+      "label": "BDO USA Tax — Tax UserVerse",
+      "checked": null,
+      "archiveDate": "2026-08-17",
+      "reviewStatus": "archived_research_not_reverified",
+      "usedOn": [
+        "/cpa/data/"
+      ]
+    },
+    {
+      "url": "https://www.bdo.com/about/innovation",
+      "label": "BDO USA Tax — Tax UserVerse",
+      "checked": null,
+      "archiveDate": "2026-08-17",
+      "reviewStatus": "archived_research_not_reverified",
+      "usedOn": [
+        "/cpa/data/"
+      ]
+    },
+    {
+      "url": "https://insidepublicaccounting.com/2024/07/01/perspectives-from-the-profession-bdos-tax-practice-leverages-ai-to-boost-efficiency-quality/",
+      "label": "BDO USA Tax — Tax UserVerse",
+      "checked": null,
+      "archiveDate": "2026-08-17",
+      "reviewStatus": "archived_research_not_reverified",
+      "usedOn": [
+        "/cpa/data/"
+      ]
+    },
+    {
+      "url": "https://www.microsoft.com/en/customers/story/1778147923888814642-pwc-azure-ai-document-intelligence-professional-services-en-united-states",
+      "label": "PwC US — ChatPwC",
+      "checked": null,
+      "archiveDate": "2026-08-17",
+      "reviewStatus": "archived_research_not_reverified",
+      "usedOn": [
+        "/cpa/data/"
+      ]
+    },
+    {
+      "url": "https://www.pwc.com/us/en/tech-effect/ai-analytics/generative-ai-impact-on-business.html",
+      "label": "PwC US — ChatPwC",
+      "checked": null,
+      "archiveDate": "2026-08-17",
+      "reviewStatus": "archived_research_not_reverified",
+      "usedOn": [
+        "/cpa/data/"
+      ]
+    },
+    {
+      "url": "https://www.pwc.com/us/en/about-us/newsroom/press-releases/chatpwc-empowers-workforce-transformation.html",
+      "label": "PwC US — ChatPwC",
+      "checked": null,
+      "archiveDate": "2026-08-17",
+      "reviewStatus": "archived_research_not_reverified",
+      "usedOn": [
+        "/cpa/data/"
+      ]
+    },
+    {
+      "url": "https://finance.yahoo.com/news/pwc-become-openai-largest-enterprise-090044189.html",
+      "label": "PwC US — ChatPwC",
+      "checked": null,
+      "archiveDate": "2026-08-17",
+      "reviewStatus": "archived_research_not_reverified",
+      "usedOn": [
+        "/cpa/data/"
+      ]
+    },
+    {
+      "url": "https://www.microsoft.com/en/customers/story/26160-pwc-microsoft-365-enterprise",
+      "label": "PwC — Microsoft 365 Copilot at enterprise scale",
+      "checked": null,
+      "archiveDate": "2026-08-17",
+      "reviewStatus": "archived_research_not_reverified",
+      "usedOn": [
+        "/cpa/data/"
+      ]
+    },
+    {
+      "url": "https://www.pwc.com/us/en/library/case-studies/pwc-microsoft-copilot-enterprise-ai.html",
+      "label": "PwC — Microsoft 365 Copilot at enterprise scale",
+      "checked": null,
+      "archiveDate": "2026-08-17",
+      "reviewStatus": "archived_research_not_reverified",
+      "usedOn": [
+        "/cpa/data/"
+      ]
+    },
+    {
+      "url": "https://www.prnewswire.com/news-releases/marcum-launches-askmarcumai-powered-by-microsoft-azure-openai-service-to-enhance-employee-productivity-and-efficiency-302003742.html",
+      "label": "Marcum — AskMarcum.ai",
+      "checked": null,
+      "archiveDate": "2026-08-17",
+      "reviewStatus": "archived_research_not_reverified",
+      "usedOn": [
+        "/cpa/data/"
+      ]
+    },
+    {
+      "url": "https://www.askmarcum.ai/wp-content/uploads/sites/13/PeterScavuzzo-AccountingToday-04162024.pdf",
+      "label": "Marcum — AskMarcum.ai",
+      "checked": null,
+      "archiveDate": "2026-08-17",
+      "reviewStatus": "archived_research_not_reverified",
+      "usedOn": [
+        "/cpa/data/"
+      ]
+    },
+    {
+      "url": "https://www.microsoft.com/en/customers/story/26531-bpm-microsoft-365-copilot",
+      "label": "BPM LLP — secure GPT, Copilot и tax agents",
+      "checked": null,
+      "archiveDate": "2026-08-17",
+      "reviewStatus": "archived_research_not_reverified",
+      "usedOn": [
+        "/cpa/data/"
+      ]
+    },
+    {
+      "url": "https://www.valoremreply.com/resources/work/2025/mw/from-50-to-1300-users-bpm-m365-copilot-journey/",
+      "label": "BPM LLP — secure GPT, Copilot и tax agents",
+      "checked": null,
+      "archiveDate": "2026-08-17",
+      "reviewStatus": "archived_research_not_reverified",
+      "usedOn": [
+        "/cpa/data/"
+      ]
+    },
+    {
+      "url": "https://www.ey.com/en_us/insights/emerging-technologies/learn-how-leaders-deployed-generative-ai-for-employees",
+      "label": "EY — EYQ, global rollout с US participation",
+      "checked": null,
+      "archiveDate": "2026-08-17",
+      "reviewStatus": "archived_research_not_reverified",
+      "usedOn": [
+        "/cpa/data/"
+      ]
+    },
+    {
+      "url": "https://www.ey.com/en_gl/insights/ai/how-ey-is-unlocking-the-next-iteration-of-genai-advancement-with-eyq",
+      "label": "EY — EYQ, global rollout с US participation",
+      "checked": null,
+      "archiveDate": "2026-08-17",
+      "reviewStatus": "archived_research_not_reverified",
+      "usedOn": [
+        "/cpa/data/"
+      ]
+    },
+    {
+      "url": "https://www.computerworld.com/article/3560355/how-ernst-youngs-ai-platform-is-radically-reshaping-operations.html",
+      "label": "EY — EYQ, global rollout с US participation",
+      "checked": null,
+      "archiveDate": "2026-08-17",
+      "reviewStatus": "archived_research_not_reverified",
+      "usedOn": [
+        "/cpa/data/"
+      ]
+    },
+    {
+      "url": "https://dext.com/uk/blog/single/how-lucent-advisory-saves-over-100-hours-per-month-with-dext-prepare",
+      "label": "Lucent Advisory — Dext Prepare",
+      "checked": null,
+      "archiveDate": "2026-08-17",
+      "reviewStatus": "archived_research_not_reverified",
+      "usedOn": [
+        "/cpa/data/"
+      ]
+    },
+    {
+      "url": "https://www.datasnipper.com/resources/rsm-cayman",
+      "label": "RSM Cayman — DataSnipper",
+      "checked": null,
+      "archiveDate": "2026-08-17",
+      "reviewStatus": "archived_research_not_reverified",
+      "usedOn": [
+        "/cpa/data/"
+      ]
+    },
+    {
+      "url": "https://www.caseware.com/resources/success-stories/hlb-mann-judd-perth/",
+      "label": "HLB Mann Judd Perth — Caseware Validate",
+      "checked": null,
+      "archiveDate": "2026-08-17",
+      "reviewStatus": "archived_research_not_reverified",
+      "usedOn": [
+        "/cpa/data/"
+      ]
+    },
+    {
+      "url": "https://www.caseware.com/resources/success-stories/uk-firm-reduces-financial-statement-review-times-with-caseware-validate/",
+      "label": "MHA UK — Caseware Validate",
+      "checked": null,
+      "archiveDate": "2026-08-17",
+      "reviewStatus": "archived_research_not_reverified",
+      "usedOn": [
+        "/cpa/data/"
+      ]
+    },
+    {
+      "url": "https://www.uipath.com/resources/automation-case-studies/mha-boosts-tax-returns-with-intelligent-automation",
+      "label": "MHA UK — UiPath + FD Intelligence для tax returns",
+      "checked": null,
+      "archiveDate": "2026-08-17",
+      "reviewStatus": "archived_research_not_reverified",
+      "usedOn": [
+        "/cpa/data/"
+      ]
+    },
+    {
+      "url": "https://www.microsoft.com/en/customers/story/22433-bdo-colombia-microsoft-copilot-studio",
+      "label": "BDO Colombia — Copilot Studio assistant",
+      "checked": null,
+      "archiveDate": "2026-08-17",
+      "reviewStatus": "archived_research_not_reverified",
+      "usedOn": [
+        "/cpa/data/"
+      ]
+    },
+    {
+      "url": "https://www.systemology.com/smart-business-solutions-case-study/",
+      "label": "SMART Business Solutions — Power Automate + Copilot",
+      "checked": null,
+      "archiveDate": "2026-08-17",
+      "reviewStatus": "archived_research_not_reverified",
+      "usedOn": [
+        "/cpa/data/"
+      ]
+    },
+    {
+      "url": "https://www.wolterskluwer.com/en/expert-insights/streamlining-tax-workflows-with-cch-axcess-tax-apis",
+      "label": "Grassi — CCH Axcess Tax APIs/macros",
+      "checked": null,
+      "archiveDate": "2026-08-17",
+      "reviewStatus": "archived_research_not_reverified",
+      "usedOn": [
+        "/cpa/data/"
+      ]
+    },
+    {
+      "url": "https://taxdome.com/blog/blueridge-tax-accounting-on-taxdome-client-retention-went-up-to-90-youre-making-things-so-easy-for-me-and-my-team",
+      "label": "BlueRidge Tax Accounting — TaxDome workflow/portal",
+      "checked": null,
+      "archiveDate": "2026-08-17",
+      "reviewStatus": "archived_research_not_reverified",
+      "usedOn": [
+        "/cpa/data/"
+      ]
+    },
+    {
+      "url": "https://approvalmax.com/customer-stories/le-controleur-case-study",
+      "label": "Le Contrôleur — ApprovalMax",
+      "checked": null,
+      "archiveDate": "2026-08-17",
+      "reviewStatus": "archived_research_not_reverified",
+      "usedOn": [
+        "/cpa/data/"
+      ]
+    },
+    {
+      "url": "https://www.getcanopy.com/resources/customer-stories/how-parish-cpas-business-advisors-save-120-hours-per-employee-with-canopy/",
+      "label": "Parish CPAs — Canopy",
+      "checked": null,
+      "archiveDate": "2026-08-17",
+      "reviewStatus": "archived_research_not_reverified",
+      "usedOn": [
+        "/cpa/data/"
+      ]
+    },
+    {
+      "url": "https://karbonhq.com/customer-stories/cent-accounting/",
+      "label": "CENTaccounting — Karbon",
+      "checked": null,
+      "archiveDate": "2026-08-17",
+      "reviewStatus": "archived_research_not_reverified",
+      "usedOn": [
+        "/cpa/data/"
+      ]
+    },
+    {
+      "url": "https://quickbooks.intuit.com/global/ai-agents/accounting",
+      "label": "Intuit QuickBooks Accounting AI — aggregate, не firm case",
+      "checked": null,
+      "archiveDate": "2026-08-17",
+      "reviewStatus": "archived_research_not_reverified",
+      "usedOn": [
+        "/cpa/data/"
+      ]
+    },
+    {
+      "url": "https://www.pwc.com/us/en/library/case-studies/business-services-transformation-pwc.html",
+      "label": "PwC historical business-services automation",
+      "checked": null,
+      "archiveDate": "2026-08-17",
+      "reviewStatus": "archived_research_not_reverified",
+      "usedOn": [
+        "/cpa/data/"
+      ]
+    },
+    {
+      "url": "https://www.numeric.io/cases/awardco-x-numeric",
+      "label": "Awardco",
+      "checked": null,
+      "archiveDate": "2026-08-17",
+      "reviewStatus": "archived_research_not_reverified",
+      "usedOn": [
+        "/cpa/data/"
+      ]
+    },
+    {
+      "url": "https://www.numeric.io/cases/brex-x-numeric",
+      "label": "Brex",
+      "checked": null,
+      "archiveDate": "2026-08-17",
+      "reviewStatus": "archived_research_not_reverified",
+      "usedOn": [
+        "/cpa/data/"
+      ]
+    },
+    {
+      "url": "https://www.numeric.io/cases/numeric-x-posit",
+      "label": "Posit",
+      "checked": null,
+      "archiveDate": "2026-08-17",
+      "reviewStatus": "archived_research_not_reverified",
+      "usedOn": [
+        "/cpa/data/"
+      ]
+    },
+    {
+      "url": "https://www.numeric.io/cases/numeric-x-goat",
+      "label": "GOAT",
+      "checked": null,
+      "archiveDate": "2026-08-17",
+      "reviewStatus": "archived_research_not_reverified",
+      "usedOn": [
+        "/cpa/data/"
+      ]
+    },
+    {
+      "url": "https://www.numeric.io/cases/numeric-x-hadrian",
+      "label": "Hadrian",
+      "checked": null,
+      "archiveDate": "2026-08-17",
+      "reviewStatus": "archived_research_not_reverified",
+      "usedOn": [
+        "/cpa/data/"
+      ]
+    },
+    {
+      "url": "https://www.numeric.io/cases/numeric-x-public-com",
+      "label": "Public.com",
+      "checked": null,
+      "archiveDate": "2026-08-17",
+      "reviewStatus": "archived_research_not_reverified",
+      "usedOn": [
+        "/cpa/data/"
+      ]
+    },
+    {
+      "url": "https://ramp.com/customers/first-tee",
+      "label": "First Tee",
+      "checked": null,
+      "archiveDate": "2026-08-17",
+      "reviewStatus": "archived_research_not_reverified",
+      "usedOn": [
+        "/cpa/data/"
+      ]
+    },
+    {
+      "url": "https://ramp.com/customers/causal/",
+      "label": "Causal + Kruze",
+      "checked": null,
+      "archiveDate": "2026-08-17",
+      "reviewStatus": "archived_research_not_reverified",
+      "usedOn": [
+        "/cpa/data/"
+      ]
+    },
+    {
+      "url": "https://korets.net/cv/",
+      "label": "Yaroslav Korets — public biography",
+      "checked": "2026-10-12",
+      "reviewStatus": "founder_public_biography",
+      "usedOn": [
+        "/cpa/data/"
+      ]
+    },
+    {
+      "url": "https://korets.net/tax-operations/",
+      "label": "Published tax-company pilot scope",
+      "checked": "2026-10-12",
+      "reviewStatus": "scope_not_results",
+      "usedOn": [
+        "/cpa/data/"
       ]
     }
   ]

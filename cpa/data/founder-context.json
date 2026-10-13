@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 1,
+  "updated": "2026-10-12",
+  "name": "Yaroslav Korets",
+  "nameRussian": "Ярослав Корец",
+  "role": "Founder / proposed operating and technology lead, Accounting Growth Partners",
+  "summary": "An operator-builder combining business ownership and P&L experience, post-acquisition leadership, multi-company operations and hands-on AI implementation. The current tax-company pilot is the bridge from adjacent experience to accounting-specific operating evidence.",
+  "verificationPolicy": "Biographical statements are attributed to the founder’s public CV, not independently verified employment, financial or credential records. Strategic relevance is AGP analysis.",
+  "facts": [
+    {
+      "id": "agency-exit",
+      "fact": "Founded and sold a digital agency, then led the merged organization of approximately 100 people with P&L responsibility.",
+      "period": "2008–2015",
+      "source": "https://korets.net/cv/",
+      "status": "founder_public_biography",
+      "relevance": "Experience on the seller side of a transaction and in post-acquisition leadership; relevant to owner discussions, integration and operating accountability.",
+      "boundary": "The sale price, realized investor return and audited operating results are not disclosed."
+    },
+    {
+      "id": "holding-operations",
+      "fact": "COO of Govital, an IT holding described in the public biography as having more than 400 people.",
+      "period": "2023–2024",
+      "source": "https://korets.net/cv/",
+      "status": "founder_public_biography",
+      "relevance": "Experience coordinating operations across a larger organization; relevant to common services, local leadership and management reporting.",
+      "boundary": "Does not independently establish the ability to integrate 18 accounting acquisitions per year."
+    },
+    {
+      "id": "property-operations",
+      "fact": "Led a property-management business within a real-estate developer holding.",
+      "period": "2021–2023",
+      "source": "https://korets.net/cv/",
+      "status": "founder_public_biography",
+      "relevance": "Recurring service operations, budgets, suppliers and asset-level economics are adjacent to running a portfolio of local practices.",
+      "boundary": "Adjacent operating experience, not tax or audit credentials."
+    },
+    {
+      "id": "hands-on-ai",
+      "fact": "Builds and operates AI, workflow and data systems, including Hunter, Oscar and an internal AI workspace; also directs a small development team.",
+      "period": "Current public portfolio, reviewed October 2026",
+      "source": "https://korets.net/cv/",
+      "status": "founder_public_biography_and_portfolio",
+      "relevance": "The operator can translate process and financial requirements into integrations and working software; useful for the shared accounting platform.",
+      "boundary": "Portfolio descriptions are self-published; no audited productivity or revenue claim is inferred."
+    },
+    {
+      "id": "growth-systems",
+      "fact": "Co-founder of KPI Creatives since 2024; built the product and acquisition systems for ADUscale, which is described as paused in July 2026.",
+      "period": "2024–2026",
+      "source": "https://korets.net/cv/",
+      "status": "founder_public_biography",
+      "relevance": "Practical exposure to customer acquisition, CRM and operating analytics can support local-firm growth and measurement.",
+      "boundary": "ADUscale is not presented as an active success or completed exit; construction-market results do not prove accounting CAC."
+    }
+  ],
+  "pilot": {
+    "status": "in_progress_founder_reported",
+    "statusAsOf": "2026-10-12",
+    "statusSource": "Founder update supplied for publication in AGP materials, October 12, 2026",
+    "publicDescription": "We are currently working on an operations pilot for a tax company. The pilot is intended to test the proposed operating approach in a real firm before broader replication.",
+    "publicScopeUrl": "https://korets.net/tax-operations/",
+    "scopeSourceStatus": "Published 30-day pilot proposal; describes intended deliverables, not completed outcomes. Current activity is confirmed separately by the founder.",
+    "scope": [
+      "Create a shared client-and-tax-year record with source-linked facts and case status.",
+      "Select one repeated operational bottleneck with the firm and test a bounded workflow.",
+      "Keep existing practice and tax software; professionals retain tax judgment and filing.",
+      "Track time by role, turnaround, rework, reviewer acceptance, adoption and recurring delivery cost."
+    ],
+    "results": {
+      "completedCases": null,
+      "baselineStaffMinutes": null,
+      "afterStaffMinutes": null,
+      "qualityChange": null,
+      "realizedSavingsUsd": null,
+      "incrementalRevenueUsd": null,
+      "ebitdaUpliftUsd": null
+    },
+    "commercialTerms": "Not disclosed in this packet; no paid invoice, agreed price or acquisition commitment is inferred.",
+    "nextEvidence": [
+      "Agreed cohort, scope and baseline with measurement confidence.",
+      "Before/after time including reviewer effort, exceptions and fallback work.",
+      "Professional acceptance and downstream quality for the selected process.",
+      "Full recurring cost and a documented use for freed capacity.",
+      "A go, fix, hold or stop decision and the conditions for repeating the deployment."
+    ],
+    "economicRule": "Count verified cost removed or incremental contribution from accepted additional work, subtract added technology/support/review costs, and avoid counting the same freed hour twice. Capacity alone is not cash savings.",
+    "privacy": "Only the public scope and founder-authorized status are included. No taxpayer data, private client records or contracts."
+  },
+  "diligenceStillNeeded": [
+    "References supporting the disclosed leadership and acquisition-integration experience.",
+    "Accounting-specific operating results from the current pilot.",
+    "Named local professional leaders and deal-execution capability for the acquisition plan.",
+    "Evidence that the workflow can transfer to a second firm without disproportionate customization."
+  ],
+  "notClaimed": [
+    "A completed CPA roll-up or realized AGP investment return.",
+    "A professional accounting license or authority inferred from business experience.",
+    "Proven 40–80% practice margins or a guaranteed 9× exit multiple."
+  ]
+}

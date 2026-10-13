@@ -42,7 +42,7 @@ paths = ['cpa/references/index.html','cpa/data/index.html','cpa/data/model-bundl
          'sanctuary/index.html','ai/index.html','cv/index.html','robots.txt','sitemap.xml']
 paths += [name for name in json.loads((ROOT / 'public-files.json').read_text())
           if name.startswith('cpa/data/') and name not in paths]
-paths += ['cpa/structures.js','cpa/venture.js']
+paths += ['cpa/structures.js','cpa/venture.js','llms.txt']
 def check(path):
     expected_data = (ROOT / 'dist' / path).read_bytes()
     # A new release manifest may reach an edge before every asset does.

@@ -12,3 +12,19 @@ for(const [id,s] of Object.entries(b.scenarios)){
 console.log('Public exports reproduce all five scenarios; monthly cash, purchase funding and debt reconcile.');
 
 assert.deepEqual(b.ventureAnalysis,C.ventureAnalysis());assert.equal(Object.keys(b.scenarios).length,5);
+
+// Verify the evidence graph and the downloadable packet agree, including explicit unknown pilot results.
+const context=require('../cpa/data/research-context.json');
+assert.deepEqual(b.researchContext,context);
+const ids=new Set(context.library.records.map(x=>x.id));assert.equal(ids.size,context.library.records.length);
+const caseIds=new Set(context.implementations.records.map(x=>x.id));assert.equal(caseIds.size,context.implementations.records.length);
+assert.equal(context.counts.implementationRecords,context.implementations.records.length);
+for(const r of context.library.records){assert.ok(r.url.startsWith('https://'));assert.ok(r.findings.length);assert.ok(r.limitations.length);assert.equal(r.endorsesAGP,false);}
+for(const r of context.implementations.records){assert.ok(r.sourceUrls.length,r.id);if(r.freshReviewId)assert.ok(ids.has(r.freshReviewId),r.id);assert.ok(r.limitations,r.id);}
+for(const a of context.evidenceMap.assumptions)for(const id of a.researchIds)assert.ok(ids.has(id),id);
+for(const a of context.evidenceMap.reconciliations)for(const id of a.researchIds)assert.ok(ids.has(id),id);
+for(const p of context.provenance){const file=require('node:path').basename(p.url);assert.equal(p.sha256,crypto.createHash('sha256').update(fs.readFileSync(require.resolve('../cpa/data/'+file))).digest('hex'));}
+assert.ok(Object.values(context.founder.pilot.results).every(x=>x===null));
+assert.equal(context.implementations.records.find(x=>x.id==='impl-10-8').reviewStatus,'superseded_by_fresh_review');
+assert.equal(context.library.records.find(x=>x.id==='salesforce-1800').metrics[0].status,'projected');
+console.log('Research packet, source graph, component hashes, archive overrides and unknown pilot outcomes verified.');

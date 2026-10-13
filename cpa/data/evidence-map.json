@@ -1,0 +1,234 @@
+{
+  "schemaVersion": 1,
+  "updated": "2026-10-12",
+  "purpose": "Connect the public evidence to the exact model assumptions it can and cannot support. Empty source IDs mean no supporting measured benchmark in this packet, not proof that no evidence exists anywhere.",
+  "assumptions": [
+    {
+      "id": "service-demand",
+      "assumption": "Recurring bookkeeping, tax and advisory demand",
+      "evidenceStatus": "directional_evidence",
+      "researchIds": [
+        "cas-survey",
+        "sequoia-pennylane"
+      ],
+      "validationNeeded": [
+        "Service mix and current client cohorts of actual targets."
+      ],
+      "interpretationLimit": "Broad market revenue is not the revenue available to AGP."
+    },
+    {
+      "id": "entry-price",
+      "assumption": "Launch 1× revenue; later 1.25× revenue",
+      "evidenceStatus": "partially_supported_range_not_validated",
+      "researchIds": [
+        "bizbuysell",
+        "cbiz-marcum"
+      ],
+      "validationNeeded": [
+        "Comparable completed $0.55M and $2M revenue-firm deals; replacement compensation; quality of earnings."
+      ],
+      "interpretationLimit": "Small-practice SDE and national-platform EBITDA multiples are not interchangeable."
+    },
+    {
+      "id": "seller-financing",
+      "assumption": "50% seller note; bank funding only from month 25",
+      "evidenceStatus": "planning_assumption",
+      "researchIds": [],
+      "validationNeeded": [
+        "Seller indications, note priority, guarantees and bank term sheets."
+      ],
+      "interpretationLimit": "No case in this packet establishes these terms for AGP."
+    },
+    {
+      "id": "margin",
+      "assumption": "25% entry; 40% later / 45% launch integrated margin",
+      "evidenceStatus": "unvalidated_model_input",
+      "researchIds": [
+        "openai-current",
+        "armanino-accrual",
+        "academic-accounting"
+      ],
+      "validationNeeded": [
+        "Target P&Ls and replacement salaries; pilot costs, labor mix and monetized capacity."
+      ],
+      "interpretationLimit": "Task-time savings do not establish practice or group EBITDA."
+    },
+    {
+      "id": "ai-upside",
+      "assumption": "60–80% mature practice EBITDA margin",
+      "evidenceStatus": "unverified_long_term_hypothesis",
+      "researchIds": [
+        "bessemer-services",
+        "gc-services"
+      ],
+      "validationNeeded": [
+        "Sustained comparable unit economics including human review, software, sales, insurance and quality."
+      ],
+      "interpretationLimit": "No reviewed source proves 80% accounting-practice EBITDA."
+    },
+    {
+      "id": "growth",
+      "assumption": "12% gross new revenue less 8% churn in Base/Venture",
+      "evidenceStatus": "unvalidated_model_input",
+      "researchIds": [
+        "cas-survey",
+        "a16z-accounting"
+      ],
+      "validationNeeded": [
+        "Client cohort retention, price changes, new-client CAC and delivery capacity."
+      ],
+      "interpretationLimit": "Do not apply survey growth or acquired revenue as organic growth."
+    },
+    {
+      "id": "acquisition-capacity",
+      "assumption": "Venture up to 18 purchases a year after month 24",
+      "evidenceStatus": "capacity_assumption",
+      "researchIds": [
+        "current-control",
+        "ascend-gg"
+      ],
+      "validationNeeded": [
+        "Qualified targets, conversion, deal cycle, diligence staffing and simultaneous integration capacity."
+      ],
+      "interpretationLimit": "Capacity ceiling is not committed closings; network snapshots cannot establish a repeatable pace."
+    },
+    {
+      "id": "valuation",
+      "assumption": "Venture terminal 9× platform EBITDA",
+      "evidenceStatus": "valuation_assumption",
+      "researchIds": [],
+      "validationNeeded": [
+        "Comparable platform transactions or public valuations adjusted for growth, mix, debt, size and ownership."
+      ],
+      "interpretationLimit": "Changing the multiple changes valuation only; $1B is model group equity, not a funding event."
+    },
+    {
+      "id": "partner-retention",
+      "assumption": "Prefer continuing local partners with negotiated equity",
+      "evidenceStatus": "documented_structural_precedent",
+      "researchIds": [
+        "current-rollover",
+        "current-scale",
+        "baker-moss"
+      ],
+      "validationNeeded": [
+        "Target-specific purchased shares, governance, salary, distributions and future buyouts."
+      ],
+      "interpretationLimit": "Current engine uses full ownership; minority claims need a separate model."
+    },
+    {
+      "id": "founder-execution",
+      "assumption": "Operator-builder with tax-company pilot",
+      "evidenceStatus": "founder_reported_and_adjacent_experience",
+      "researchIds": [],
+      "validationNeeded": [
+        "Pilot outcomes, operating references and repeatability across firms."
+      ],
+      "interpretationLimit": "Biography and a pilot in progress are not realized roll-up returns."
+    }
+  ],
+  "reconciliations": [
+    {
+      "id": "current-counts",
+      "researchIds": [
+        "current-control",
+        "current-scale",
+        "current-home"
+      ],
+      "issue": "20+, almost 30 and 54 firms are different dated/perimeter observations.",
+      "resolution": "Keep each snapshot; do not calculate acquisition cadence from them."
+    },
+    {
+      "id": "cas-growth",
+      "researchIds": [
+        "a16z-accounting",
+        "cas-survey"
+      ],
+      "issue": "The investor newsletter cites 30% growth; the original survey release reports 17% median for 2023.",
+      "resolution": "Use the survey definition and year for numerical benchmarking."
+    },
+    {
+      "id": "accuracy",
+      "researchIds": [
+        "current-scale",
+        "openai-current"
+      ],
+      "issue": "Different accuracy headlines and completion thresholds are reported.",
+      "resolution": "Do not present either as all-return correctness or eliminate professional review."
+    },
+    {
+      "id": "countsy-time",
+      "researchIds": [
+        "countsy-vic"
+      ],
+      "issue": "84% time reduction is not established by the accompanying 4–5 minute to under-two-minute figures.",
+      "resolution": "Retain the underlying times and flag the baseline discrepancy."
+    },
+    {
+      "id": "salesforce-target",
+      "researchIds": [
+        "salesforce-1800"
+      ],
+      "issue": "The archive treated 70% autonomous resolution as achieved; the reviewed source uses future tense.",
+      "resolution": "Fresh review takes precedence; 70% is a target in this packet."
+    },
+    {
+      "id": "academic-version",
+      "researchIds": [
+        "academic-accounting"
+      ],
+      "issue": "The 2025 working-paper repository and prior notes on the 2026 journal version contain different client-support effect summaries.",
+      "resolution": "Retain the version and population; omit a pooled client-support estimate pending journal-text verification."
+    }
+  ],
+  "pilotScorecard": [
+    {
+      "metric": "cohort",
+      "unit": "cases",
+      "measurementRule": "Record tax year, return/process type and complexity; keep comparable before/after populations.",
+      "value": null
+    },
+    {
+      "metric": "touch_time",
+      "unit": "minutes/case by role",
+      "measurementRule": "Include preparation, professional review, rework, exceptions and fallback; distinguish sampled from instrumented time.",
+      "value": null
+    },
+    {
+      "metric": "cycle_time",
+      "unit": "elapsed hours/case",
+      "measurementRule": "Measure from a defined start to reviewer-usable output; separate waiting from staff effort.",
+      "value": null
+    },
+    {
+      "metric": "quality",
+      "unit": "corrections/case and material-error rate",
+      "measurementRule": "Define denominator and materiality before comparing; include downstream outcomes when observable.",
+      "value": null
+    },
+    {
+      "metric": "adoption",
+      "unit": "percent eligible cases",
+      "measurementRule": "Count work using the path and why eligible cases bypass it.",
+      "value": null
+    },
+    {
+      "metric": "recurring_cost",
+      "unit": "USD/month and USD/case",
+      "measurementRule": "Include software, model usage, external support and incremental internal review.",
+      "value": null
+    },
+    {
+      "metric": "realized_economic_effect",
+      "unit": "USD/period",
+      "measurementRule": "Verified removed cost plus incremental contribution, less incremental delivery costs; no double-counted hours.",
+      "value": null
+    }
+  ],
+  "researchLimitations": [
+    "Selected success stories and vendor clusters are not independent trials.",
+    "The catalog is a research universe, not a meta-analysis; do not average its savings percentages.",
+    "No source listed here implies endorsement of AGP or a commitment to invest.",
+    "Raw publisher articles and proprietary survey microdata are not included; follow original URLs for full context."
+  ]
+}

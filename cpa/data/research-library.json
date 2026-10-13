@@ -1,0 +1,817 @@
+{
+  "schemaVersion": 1,
+  "updated": "2026-10-12",
+  "scope": "Public investor theses, platform transactions, operating cases and research. Authored evidence notes, not reproduced third-party articles.",
+  "datePolicy": "A null publication date means not established from reviewed content. reviewed is the research-check date, not the publication or measurement date.",
+  "records": [
+    {
+      "id": "sequoia-services",
+      "category": "investor_thesis",
+      "title": "Services: The New Software",
+      "publisher": "Sequoia Capital",
+      "url": "https://sequoiacap.com/article/services-the-new-software/",
+      "published": "2026-03-05",
+      "reviewed": "2026-10-12",
+      "reviewStatus": "source_content_reviewed",
+      "evidenceType": "investor_thesis",
+      "findings": [
+        "Julien Bek argues that AI providers can sell completed work and address service budgets rather than only software budgets.",
+        "Already-outsourced, repeatable work is presented as an entry point; professional judgment remains a distinct capability.",
+        "The article places US outsourced accounting/audit at $50–80B and tax advisory at $30–35B in an illustrative opportunity map."
+      ],
+      "agpRelevance": "Supports an outcome-based service proposition and acquiring existing customer relationships. It does not prescribe acquisition financing or AGP pricing.",
+      "limitations": [
+        "Investor perspective, not a causal study or investment commitment.",
+        "Opportunity-map categories and methodology differ from Census NAICS revenue; do not add them or substitute them for the Census extract.",
+        "Retirement and labor-shortage headlines in the essay are not used as acquisition inventory or current statistical forecasts."
+      ],
+      "metrics": [
+        {
+          "label": "Illustrative outsourced accounting/audit market",
+          "value": [
+            50,
+            80
+          ],
+          "unit": "USD billions",
+          "population": "US outsourced accounting and audit",
+          "period": "article estimate",
+          "status": "source_reported"
+        },
+        {
+          "label": "Illustrative tax advisory market",
+          "value": [
+            30,
+            35
+          ],
+          "unit": "USD billions",
+          "population": "tax advisory opportunity-map category; geographic scope not separately specified",
+          "period": "article estimate",
+          "status": "source_reported"
+        }
+      ],
+      "endorsesAGP": false
+    },
+    {
+      "id": "sequoia-rillet",
+      "category": "investor_thesis",
+      "title": "Partnering with Rillet: The Financial ERP for the AI Age",
+      "publisher": "Sequoia Capital",
+      "url": "https://sequoiacap.com/article/partnering-with-rillet-the-financial-erp-for-the-ai-age/",
+      "published": "2025-05-28",
+      "reviewed": "2026-10-12",
+      "reviewStatus": "source_content_reviewed",
+      "evidenceType": "investment_announcement",
+      "findings": [
+        "Sequoia describes its Series A investment in an AI-native general ledger and ERP.",
+        "The product thesis includes multi-entity accounting, automated reconciliation and faster financial close."
+      ],
+      "agpRelevance": "A reference for reusable accounting infrastructure and integrations, and also a potential competing supplier.",
+      "limitations": [
+        "Software investment, not an accounting-firm acquisition.",
+        "A zero-day close and highly automated finance function are ambitions; they do not establish AGP staffing ratios, margins or valuation."
+      ],
+      "metrics": [],
+      "endorsesAGP": false
+    },
+    {
+      "id": "sequoia-pennylane",
+      "category": "investor_thesis",
+      "title": "Partnering with Pennylane",
+      "publisher": "Sequoia Capital",
+      "url": "https://sequoiacap.com/article/partnering-with-pennylane/",
+      "published": "2021-06-07",
+      "reviewed": "2026-10-12",
+      "reviewStatus": "source_content_reviewed",
+      "evidenceType": "investment_announcement",
+      "findings": [
+        "The investment thesis centers on a shared financial platform for European SMEs and their accountants.",
+        "Automatic data collection and accountant-client collaboration are intended to free professionals for advisory work."
+      ],
+      "agpRelevance": "Supports shared client data and the accountant as a continuing trusted relationship, rather than technology alone.",
+      "limitations": [
+        "European software-platform example; not US acquisition economics or a disclosed AI margin study."
+      ],
+      "metrics": [],
+      "endorsesAGP": false
+    },
+    {
+      "id": "gc-services",
+      "category": "investor_thesis",
+      "title": "The Future of Services",
+      "publisher": "General Catalyst",
+      "url": "https://www.generalcatalyst.com/stories/the-future-of-services",
+      "published": "2025-08-28",
+      "reviewed": "2026-10-12",
+      "reviewStatus": "source_content_reviewed",
+      "evidenceType": "investor_thesis",
+      "findings": [
+        "General Catalyst describes combining applied AI, ownership of service businesses and strategic acquisitions.",
+        "Its playbook emphasizes expanded customer capabilities and revenue alongside cost reduction.",
+        "It describes portfolio ambitions of 10–20% growth and 30–40% margins, with growth including organic capability expansion and acquisitions."
+      ],
+      "agpRelevance": "Closest investor-level reference for the proposed operating roll-up. Helps distinguish buying integration capability from supplying acquisition cash alone.",
+      "limitations": [
+        "Portfolio ambitions and selected examples, not a representative realized-return dataset.",
+        "Margin definition is not standardized to AGP platform EBITDA; acquisition growth is not organic growth.",
+        "Does not validate 80% EBITDA margins or AGP’s 9× exit assumption."
+      ],
+      "metrics": [],
+      "endorsesAGP": false
+    },
+    {
+      "id": "bessemer-services",
+      "category": "investor_thesis",
+      "title": "Owning the outcome: AI-Native Services evaluation framework",
+      "publisher": "Bessemer Venture Partners",
+      "url": "https://www.bvp.com/atlas/owning-the-outcome-bessemer-s-ai-native-services-evaluation-framework",
+      "published": null,
+      "reviewed": "2026-10-12",
+      "reviewStatus": "source_content_reviewed",
+      "evidenceType": "investor_framework",
+      "findings": [
+        "The framework evaluates market structure and demand, delivery economics, and defensibility.",
+        "It asks whether a provider can retain AI cost savings instead of losing them through price competition, and whether customers have reasons to remain."
+      ],
+      "agpRelevance": "A diligence framework for retention, pricing power, repeatable delivery and the value of local relationships.",
+      "limitations": [
+        "Investor judgment rather than measured accounting-firm performance.",
+        "Agent capability alone does not establish a durable high-margin business. Publication date was not available in reviewed content."
+      ],
+      "metrics": [],
+      "endorsesAGP": false
+    },
+    {
+      "id": "a16z-accounting",
+      "category": "investor_thesis",
+      "title": "The Rise of Vertical AI in Accounting",
+      "publisher": "Andreessen Horowitz",
+      "url": "https://a16z.com/newsletter/the-rise-of-vertical-ai-in-accounting/",
+      "published": "2025-01-30",
+      "reviewed": "2026-10-12",
+      "reviewStatus": "source_content_reviewed",
+      "evidenceType": "investor_thesis",
+      "findings": [
+        "CAS creates recurring advisory relationships, but accounting workflows require industry-specific integrations and highly accurate outputs.",
+        "The authors report many pilots and fewer fully deployed relationships, favoring a focused initial vertical to build trust."
+      ],
+      "agpRelevance": "Supports selecting one repeatable workflow and client niche before expanding across different firms.",
+      "limitations": [
+        "Investor interviews and portfolio perspective; not an industry census.",
+        "Its 30% CAS growth statement differs from the CPA.com release’s 17% median for 2023; use the original survey definition instead of mixing the figures."
+      ],
+      "metrics": [],
+      "endorsesAGP": false
+    },
+    {
+      "id": "gc-accrual",
+      "category": "investor_thesis",
+      "title": "Our Investment in Accrual",
+      "publisher": "General Catalyst",
+      "url": "https://www.generalcatalyst.com/stories/our-investment-in-accrual",
+      "published": "2026-02-05",
+      "reviewed": "2026-10-12",
+      "reviewStatus": "source_content_reviewed",
+      "evidenceType": "investment_announcement",
+      "findings": [
+        "Accrual connects document ingestion, structured financial data, draft workpapers and CPA review.",
+        "The investor reports six hours saved on simple returns and up to 85% less preparation time on complex cases among early pilots."
+      ],
+      "agpRelevance": "An adjacent product pattern for source-backed preparation and reviewer capacity.",
+      "limitations": [
+        "Investor-reported selected pilots; sample, baseline and full cost are not disclosed.",
+        "Do not blend these claims with the separate Armanino season case or interpret the maximum as an average."
+      ],
+      "metrics": [],
+      "endorsesAGP": false
+    },
+    {
+      "id": "current-control",
+      "category": "platform_case",
+      "title": "Current: majority ownership with local operators",
+      "publisher": "Current",
+      "url": "https://www.current.co/news/building-the-firm-of-the-future-currents-growth-story-highlighted-by-reuters",
+      "published": null,
+      "reviewed": "2026-10-12",
+      "reviewStatus": "source_content_reviewed",
+      "evidenceType": "company_disclosure",
+      "findings": [
+        "Current states that it acquires majority stakes while supplying recruiting, administration and technology.",
+        "The historical page reports more than $300M revenue, 20+ partnerships, 900 team members and 17 offices."
+      ],
+      "agpRelevance": "Supports acquiring control while retaining an accountable local operator.",
+      "limitations": [
+        "Historical snapshot, not current scale.",
+        "Purchased percentages, per-firm price, seller-note share and partner distribution rights are not disclosed."
+      ],
+      "metrics": [],
+      "endorsesAGP": false
+    },
+    {
+      "id": "current-rollover",
+      "category": "platform_case",
+      "title": "Current: local-level rollover equity",
+      "publisher": "Current",
+      "url": "https://www.current.co/news/the-power-of-local-level-rollover-equity",
+      "published": null,
+      "reviewed": "2026-10-12",
+      "reviewStatus": "source_content_reviewed",
+      "evidenceType": "management_interview_summary",
+      "findings": [
+        "Current describes retained equity at local-firm level and central support for administration, compliance and technology.",
+        "An example grew from $20M to $45M revenue in under three years through organic growth and acquisitions."
+      ],
+      "agpRelevance": "Reference for continuing-partner incentives and individually negotiated local equity.",
+      "limitations": [
+        "Revenue growth is not EBITDA growth or partner cash distributions.",
+        "The example combines acquired and organic revenue; it does not demonstrate fivefold operating profit.",
+        "No standard retained percentage, valuation formula or buyout terms are disclosed."
+      ],
+      "metrics": [],
+      "endorsesAGP": false
+    },
+    {
+      "id": "current-scale",
+      "category": "platform_case",
+      "title": "Current rebrand and operating disclosure",
+      "publisher": "Current",
+      "url": "https://www.current.co/news/crete-professionals-alliance-rebrands-as-current",
+      "published": "2026-06-02",
+      "reviewed": "2026-10-12",
+      "reviewStatus": "source_content_reviewed",
+      "evidenceType": "company_disclosure",
+      "findings": [
+        "The rebrand announcement reports almost 30 firms, more than 2,000 employees and over $500M annual revenue.",
+        "Partner firms retain local branding, leadership and an equity interest.",
+        "It reports a 7,000-return Tax AI pilot and 31% average preparation-time savings."
+      ],
+      "agpRelevance": "Evidence that an accounting platform can reach substantial scale while keeping local leadership.",
+      "limitations": [
+        "Company-reported; revenue scope and run-rate convention are not fully reconciled.",
+        "Its accuracy headline differs from the OpenAI technical account; neither is a final-return correctness guarantee.",
+        "Pilot savings do not establish firm-wide EBITDA uplift."
+      ],
+      "metrics": [
+        {
+          "label": "Annual revenue lower bound",
+          "value": 500000000,
+          "unit": "USD/year",
+          "population": "Current network at rebrand",
+          "period": "June 2026",
+          "status": "company_reported_greater_than"
+        },
+        {
+          "label": "Tax preparation time reduction",
+          "value": 31,
+          "unit": "percent",
+          "population": "participating tax pilot firms",
+          "period": "2026 filing season for 2025 tax year",
+          "status": "source_reported"
+        }
+      ],
+      "endorsesAGP": false
+    },
+    {
+      "id": "current-home",
+      "category": "platform_case",
+      "title": "Current network snapshot",
+      "publisher": "Current",
+      "url": "https://www.current.co/",
+      "published": null,
+      "reviewed": "2026-10-12",
+      "reviewStatus": "source_content_reviewed",
+      "evidenceType": "company_website_snapshot",
+      "findings": [
+        "The reviewed homepage displays 54 firms, 2.5K+ employees, 39 states and four countries."
+      ],
+      "agpRelevance": "A dated scale observation, useful alongside the announcement timeline.",
+      "limitations": [
+        "Do not infer acquisition cadence from different website and press-release counts; reporting perimeter and dates differ.",
+        "Client count and consolidated profitability are not supplied."
+      ],
+      "metrics": [
+        {
+          "label": "Displayed firms",
+          "value": 54,
+          "unit": "firms",
+          "population": "homepage network",
+          "period": "accessed 2026-10-12",
+          "status": "source_reported"
+        }
+      ],
+      "endorsesAGP": false
+    },
+    {
+      "id": "ascend-levitzacks",
+      "category": "platform_case",
+      "title": "Ascend / LevitZacks",
+      "publisher": "Ascend",
+      "url": "https://www.ascendtogether.com/news/ascend-adds-levitzacks-to-growth-platform",
+      "published": "2024-03-15",
+      "reviewed": "2026-10-12",
+      "reviewStatus": "source_content_reviewed",
+      "evidenceType": "transaction_announcement",
+      "findings": [
+        "Nine partners and 51 staff joined the platform in a transaction effective March 1, 2024.",
+        "LevitZacks Corporation provides non-attest services; the independently owned licensed LevitZacks CPAs, LLP provides attest work."
+      ],
+      "agpRelevance": "California reference for separating purchased tax/advisory operations from regulated engagements.",
+      "limitations": [
+        "Transaction terms, price and ownership percentages are undisclosed.",
+        "This larger-firm example does not establish small-practice economics or approve AGP’s legal documents."
+      ],
+      "metrics": [],
+      "endorsesAGP": false
+    },
+    {
+      "id": "ascend-gg",
+      "category": "platform_case",
+      "title": "Ascend / Goering & Granatino",
+      "publisher": "Ascend",
+      "url": "https://www.ascendtogether.com/news/ascend-expands-into-midwest-with-investment-in-goering-amp-granatino-cpas",
+      "published": "2023-10-03",
+      "reviewed": "2026-10-12",
+      "reviewStatus": "source_content_reviewed",
+      "evidenceType": "transaction_announcement",
+      "findings": [
+        "The transaction added 40 professionals and was effective October 1, 2023.",
+        "GG Advisors LLC provides non-attest services; Goering & Granatino, P.A. remains the independent attest firm, with continuing local leadership."
+      ],
+      "agpRelevance": "Reference for leadership continuity and shared operating support.",
+      "limitations": [
+        "Price, purchased ownership and rollover percentages are undisclosed.",
+        "Leadership continuity alone does not prove retained local equity."
+      ],
+      "metrics": [],
+      "endorsesAGP": false
+    },
+    {
+      "id": "cbiz-marcum",
+      "category": "platform_case",
+      "title": "CBIZ completes Marcum acquisition",
+      "publisher": "CBIZ",
+      "url": "https://cbiz.gcs-web.com/news-releases/news-release-details/cbiz-completes-acquisition-marcum",
+      "published": "2024-11-01",
+      "reviewed": "2026-10-12",
+      "reviewStatus": "source_content_reviewed",
+      "evidenceType": "transaction_announcement",
+      "findings": [
+        "CBIZ bought the non-attest business; CBIZ CPAs separately bought the attest business.",
+        "The announcement describes approximately $2.3B cash-and-stock transaction value and $2.8B expected combined annualized revenue."
+      ],
+      "agpRelevance": "A large-scale transaction and entity-structure reference.",
+      "limitations": [
+        "Announcement value is not a verified small-firm EBITDA multiple.",
+        "Combined acquirer revenue is not acquired-target revenue; dividing these figures does not produce a purchase multiple."
+      ],
+      "metrics": [
+        {
+          "label": "Headline transaction value",
+          "value": 2300000000,
+          "unit": "USD",
+          "population": "announced cash-and-stock transaction",
+          "period": "closing November 2024",
+          "status": "source_reported"
+        },
+        {
+          "label": "Expected combined annualized revenue",
+          "value": 2800000000,
+          "unit": "USD/year",
+          "population": "combined CBIZ",
+          "period": "closing expectation",
+          "status": "forward_looking"
+        }
+      ],
+      "endorsesAGP": false
+    },
+    {
+      "id": "cbiz-filing",
+      "category": "platform_case",
+      "title": "CBIZ 2025 Form 10-K/A: administrative services",
+      "publisher": "CBIZ",
+      "url": "https://ir.cbiz.com/node/23576/html",
+      "published": null,
+      "reviewed": "2026-10-12",
+      "reviewStatus": "source_content_reviewed",
+      "evidenceType": "public_company_filing",
+      "findings": [
+        "For 2025, CBIZ records $651.2M revenue from administrative service agreements with four independent CPA firms.",
+        "Services include personnel, systems and office infrastructure.",
+        "The filing identifies VIE/primary-beneficiary treatment but excludes the CPA entities’ operations and balances as immaterial."
+      ],
+      "agpRelevance": "Demonstrates service-contract revenue and why legal ownership, consolidation and investor cash require separate analysis.",
+      "limitations": [
+        "Administrative fees are revenue, not profit or a universal royalty.",
+        "Internal charges between consolidated AGP subsidiaries must be eliminated.",
+        "A services agreement does not automatically grant professional control."
+      ],
+      "metrics": [
+        {
+          "label": "Administrative-service revenue",
+          "value": 651200000,
+          "unit": "USD/year",
+          "population": "four independent licensed CPA firms",
+          "period": "FY2025",
+          "status": "source_reported"
+        }
+      ],
+      "endorsesAGP": false
+    },
+    {
+      "id": "baker-moss",
+      "category": "platform_case",
+      "title": "Baker Tilly / Moss Adams combination announcement",
+      "publisher": "Baker Tilly",
+      "url": "https://bakertilly.com/news/baker-tilly-and-moss-adams-to-combine",
+      "published": "2025-04-21",
+      "reviewed": "2026-10-12",
+      "reviewStatus": "source_content_reviewed",
+      "evidenceType": "transaction_announcement",
+      "findings": [
+        "The announced combination separates licensed audit operations from advisory, tax and other services.",
+        "Principals hold equity in the advisory partnership alongside Hellman & Friedman and Valeas."
+      ],
+      "agpRelevance": "Later-stage reference for professional leadership participating alongside institutional capital.",
+      "limitations": [
+        "This source is an announcement, not closing evidence.",
+        "It does not disclose purchase price, partner allocations or the precise cash/equity structure.",
+        "International network revenue must not be treated as US combined-entity revenue."
+      ],
+      "metrics": [],
+      "endorsesAGP": false
+    },
+    {
+      "id": "openai-current",
+      "category": "implementation",
+      "title": "Tax AI at Current / Thrive",
+      "publisher": "OpenAI and Thrive technical staff",
+      "url": "https://openai.com/index/building-self-improving-tax-agents-with-codex/",
+      "published": "2026-05-27",
+      "reviewed": "2026-10-12",
+      "reviewStatus": "source_content_reviewed",
+      "evidenceType": "vendor_engineering_case",
+      "findings": [
+        "The participating-firm pilot processed 7,000 individual and trust returns (1040/1041).",
+        "Source files become structured fields and tax-engine drafts for practitioner review. Corrections feed categorized failures, evaluation sets and tested engineering changes.",
+        "The authors report approximately one-third less preparation time and about 50% higher throughput."
+      ],
+      "agpRelevance": "Closest technical reference for a source-backed preparation workflow and an improvement loop supervised by tax professionals.",
+      "limitations": [
+        "Bounded pilot, not all-network or multi-year performance.",
+        "Time-study method, full costs and downstream tax outcomes are incomplete.",
+        "Accuracy thresholds describe draft field completion, not autonomous filing or final-return correctness."
+      ],
+      "metrics": [
+        {
+          "label": "Pilot returns",
+          "value": 7000,
+          "unit": "returns",
+          "population": "participating firms; forms 1040 and 1041",
+          "period": "2026 tax season",
+          "status": "source_reported"
+        },
+        {
+          "label": "Reported throughput increase",
+          "value": 50,
+          "unit": "percent approximate",
+          "population": "participating pilot workflow",
+          "period": "2026 tax season",
+          "status": "source_reported"
+        }
+      ],
+      "endorsesAGP": false
+    },
+    {
+      "id": "armanino-accrual",
+      "category": "implementation",
+      "title": "Armanino: leading AI adoption in tax",
+      "publisher": "Accrual",
+      "url": "https://accrual.com/insights/armanino-leading-ai-adoption-in-tax",
+      "published": null,
+      "reviewed": "2026-10-12",
+      "reviewStatus": "source_content_reviewed",
+      "evidenceType": "vendor_customer_case",
+      "findings": [
+        "The case covers the 2026 tax season, thousands of individual returns and six offices, with source-linked preparation integrated into CCH Axcess.",
+        "It reports a 15-minute median to draft and up to 60% fewer preparation hours on complex returns.",
+        "Reported portal acceptance is 74%; 91% of accepting clients uploaded documents."
+      ],
+      "agpRelevance": "Reference for preparation, professional review, rollout support and adoption measurement.",
+      "limitations": [
+        "Vendor-authored; no independent comparison group or complete downstream quality data.",
+        "A complex-return maximum is not an all-return average, and draft time is not completed-return time.",
+        "No general AGP or TaxSlayer integration result follows."
+      ],
+      "metrics": [
+        {
+          "label": "Median draft time",
+          "value": 15,
+          "unit": "minutes",
+          "population": "tax drafts in published case",
+          "period": "2026 season",
+          "status": "source_reported"
+        },
+        {
+          "label": "Maximum preparation-time reduction",
+          "value": 60,
+          "unit": "percent up to",
+          "population": "complex-return subset",
+          "period": "2026 season",
+          "status": "reported_maximum"
+        }
+      ],
+      "endorsesAGP": false
+    },
+    {
+      "id": "smoker-lido",
+      "category": "implementation",
+      "title": "Smoker CPA: document extraction",
+      "publisher": "Lido",
+      "url": "https://www.lido.app/blog/smoker-cpa-case-study",
+      "published": "2026-04-07",
+      "reviewed": "2026-10-12",
+      "reviewStatus": "source_content_reviewed",
+      "evidenceType": "vendor_customer_case",
+      "findings": [
+        "The vendor reports extraction falling from two hours to seven minutes per engagement, including upload, review and export.",
+        "The described practice has 600+ clients and uses extraction configured for 11 document types; people verify values before preparation."
+      ],
+      "agpRelevance": "Narrow document-processing benchmark and a candidate pilot pattern.",
+      "limitations": [
+        "Vendor-reported outcome without an independent test set, full cost or downstream tax-error data.",
+        "Practice client count is not necessarily the measured cohort. Extraction time is not total preparation time."
+      ],
+      "metrics": [
+        {
+          "label": "Extraction before",
+          "value": 120,
+          "unit": "minutes/engagement",
+          "population": "reported document workflow",
+          "period": "case",
+          "status": "source_reported"
+        },
+        {
+          "label": "Extraction after",
+          "value": 7,
+          "unit": "minutes/engagement",
+          "population": "reported document workflow",
+          "period": "case",
+          "status": "source_reported"
+        }
+      ],
+      "endorsesAGP": false
+    },
+    {
+      "id": "elev8-digits",
+      "category": "implementation",
+      "title": "Elev8 CFO: bookkeeping to advisory capacity",
+      "publisher": "Digits",
+      "url": "https://digits.com/case-studies/elev8-cfo/",
+      "published": null,
+      "reviewed": "2026-10-12",
+      "reviewStatus": "source_content_reviewed",
+      "evidenceType": "vendor_customer_case",
+      "findings": [
+        "The case reports 27 migrated clients and monthly close moving from 18 to five days.",
+        "Monthly bookkeeping effort is reported at roughly 108 hours before and 20 after; freed capacity supports review and advisory work."
+      ],
+      "agpRelevance": "A small-practice reference for converting repeatable processing into capacity.",
+      "limitations": [
+        "Vendor-selected case; technology, process redesign and reporting changes are combined.",
+        "No complete cost or comparable close-quality dataset; hours are not automatically payroll savings."
+      ],
+      "metrics": [],
+      "endorsesAGP": false
+    },
+    {
+      "id": "countsy-vic",
+      "category": "implementation",
+      "title": "Countsy: invoice processing with Vic.ai",
+      "publisher": "Vic.ai",
+      "url": "https://www.vic.ai/resources/case-studies/countsy-case-study",
+      "published": null,
+      "reviewed": "2026-10-12",
+      "reviewStatus": "source_content_reviewed",
+      "evidenceType": "vendor_customer_case",
+      "findings": [
+        "The case describes about 36,000 invoices a year, 78% on Autopilot and processing under two minutes per invoice.",
+        "Accountants handle review and exceptions around integrations with finance systems."
+      ],
+      "agpRelevance": "AP workflow reference for document coding, exception handling and measuring automation coverage.",
+      "limitations": [
+        "The page also claims 84% faster processing, but its 4–5-minute to under-two-minute figures do not establish that exact percentage; baseline definitions need reconciliation.",
+        "Coding accuracy, no-touch rate and final payment correctness are different metrics. Full costs are not disclosed."
+      ],
+      "metrics": [],
+      "endorsesAGP": false
+    },
+    {
+      "id": "salesforce-1800",
+      "category": "implementation",
+      "title": "1-800Accountant: service automation and forecast labels",
+      "publisher": "Salesforce",
+      "url": "https://www.salesforce.com/customer-stories/1800-accountant/",
+      "published": null,
+      "reviewed": "2026-10-12",
+      "reviewStatus": "source_content_reviewed",
+      "evidenceType": "vendor_customer_case",
+      "findings": [
+        "The reviewed version describes more than 1,000 engagements in the first 24 hours after launch.",
+        "Its 70% inquiry-resolution figure is phrased as a future outcome; 40% growth for 2025 is also projected."
+      ],
+      "agpRelevance": "Reference for routing repeat client inquiries while preserving specialist work.",
+      "limitations": [
+        "Supersedes the archive note that described 70% as achieved.",
+        "Engagement volume is not successful resolution or customer satisfaction. Forecasts must not populate realized ROI."
+      ],
+      "metrics": [
+        {
+          "label": "Inquiry resolution ambition",
+          "value": 70,
+          "unit": "percent",
+          "population": "inquiries",
+          "period": "source future tense",
+          "status": "projected"
+        },
+        {
+          "label": "Initial engagements",
+          "value": 1000,
+          "unit": "engagements greater than",
+          "population": "initial launch activity",
+          "period": "first 24 hours",
+          "status": "source_reported"
+        }
+      ],
+      "endorsesAGP": false
+    },
+    {
+      "id": "academic-accounting",
+      "category": "research",
+      "title": "Human + AI in Accounting: Early Evidence from the Field",
+      "publisher": "Jung Ho Choi and Chloe L. Xie / Stanford GSB repository",
+      "url": "https://gsbpreserve.stanford.edu/view/4261/human-ai-in-accounting-early-evidence-from-the-field",
+      "published": "2025-05-07",
+      "reviewed": "2026-10-12",
+      "reviewStatus": "source_content_reviewed",
+      "evidenceType": "academic_working_paper",
+      "findings": [
+        "The repository version separates a survey of 277 accountants from field data on 79 client companies.",
+        "Reported associations include an 8.5% reallocation of time, 12% greater ledger granularity and a 7.5-day earlier monthly close.",
+        "The design also includes a framed classification experiment on human interaction with AI suggestions."
+      ],
+      "agpRelevance": "Stronger measurement context than testimonials, with a rationale for human review and confidence-aware exceptions.",
+      "limitations": [
+        "The accessed version is a working paper; field adoption is not randomly assigned.",
+        "The 2026 journal DOI could not be fetched during this review; do not silently mix its estimates with this version.",
+        "Survey respondents, client companies and transactions are different populations; bookkeeping findings do not establish tax-preparation ROI."
+      ],
+      "metrics": [],
+      "endorsesAGP": false
+    },
+    {
+      "id": "tr-future",
+      "category": "research",
+      "title": "Future of Professionals 2025",
+      "publisher": "Thomson Reuters",
+      "url": "https://www.thomsonreuters.com/en/press-releases/2025/june/the-ai-adoption-reality-check-firms-with-ai-strategies-are-twice-as-likely-to-see-ai-driven-revenue-growth-those-without-risk-falling-behind",
+      "published": "2025-06-26",
+      "reviewed": "2026-10-12",
+      "reviewStatus": "source_content_reviewed",
+      "evidenceType": "industry_survey",
+      "findings": [
+        "The online survey covered 2,275 professionals globally across several professions in February–March 2025.",
+        "Respondents anticipated five hours saved weekly from AI within the following year."
+      ],
+      "agpRelevance": "Evidence of adoption expectations and the value of an explicit implementation strategy.",
+      "limitations": [
+        "Predicted hours and monetized time value are not observed cash savings.",
+        "Multi-profession global sample cannot represent US small accounting firms by itself.",
+        "Strategy/benefit correlations do not prove causal effects."
+      ],
+      "metrics": [
+        {
+          "label": "Survey respondents",
+          "value": 2275,
+          "unit": "people",
+          "population": "global multi-profession sample",
+          "period": "February–March 2025",
+          "status": "source_reported"
+        },
+        {
+          "label": "Expected weekly time saving",
+          "value": 5,
+          "unit": "hours/week",
+          "population": "professionals using AI",
+          "period": "following year",
+          "status": "respondent_expectation"
+        }
+      ],
+      "endorsesAGP": false
+    },
+    {
+      "id": "cas-survey",
+      "category": "market",
+      "title": "2024 CAS Benchmark Survey: 2023 operating results",
+      "publisher": "AICPA / CPA.com",
+      "url": "https://www.cpa.com/news/aicpa-and-cpacom-benchmark-survey-client-advisory-services-cas-practices-report-17-growth",
+      "published": "2024-12-09",
+      "reviewed": "2026-10-12",
+      "reviewStatus": "source_content_reviewed",
+      "evidenceType": "self_selected_survey",
+      "findings": [
+        "The release covers 206 participating CAS practices and 2023 results.",
+        "Median growth was 17%; median net client fees per professional were $156,250; 10% primarily used hourly billing."
+      ],
+      "agpRelevance": "Context for recurring advisory services, pricing and capacity; not an automatic staffing formula.",
+      "limitations": [
+        "Self-selected CAS sample, not all US accounting firms.",
+        "Fees per professional differ from revenue per all employees and do not establish AGP’s client fee."
+      ],
+      "metrics": [
+        {
+          "label": "Median growth",
+          "value": 17,
+          "unit": "percent/year",
+          "population": "responding CAS practices",
+          "period": "2023",
+          "status": "source_reported"
+        },
+        {
+          "label": "Median net client fees per professional",
+          "value": 156250,
+          "unit": "USD/professional/year",
+          "population": "responding CAS practices",
+          "period": "2023",
+          "status": "source_reported"
+        }
+      ],
+      "endorsesAGP": false
+    },
+    {
+      "id": "bizbuysell",
+      "category": "market",
+      "title": "Accounting and tax practice sold-business benchmarks",
+      "publisher": "BizBuySell",
+      "url": "https://www.bizbuysell.com/learning-center/valuation-benchmarks/accounting-cpa-tax-practice/",
+      "published": null,
+      "reviewed": "2026-10-12",
+      "reviewStatus": "source_content_reviewed",
+      "evidenceType": "marketplace_transaction_sample",
+      "findings": [
+        "For reported 2021–2025 sales, the median revenue multiple is 1.02× with quartiles 0.92× and 1.17×.",
+        "Median SDE multiple is 2.04×, with quartiles 1.61× and 2.66×; 2025 median sale price is $500,000."
+      ],
+      "agpRelevance": "Small-practice entry-price context, closer to launch firms than national-platform transactions.",
+      "limitations": [
+        "Selected marketplace sample; asking prices and sale prices are distinct.",
+        "SDE includes owner economics and is not EBITDA after replacement-manager compensation.",
+        "Does not establish 50% seller financing, $2M-firm pricing or a 9× platform EBITDA exit."
+      ],
+      "metrics": [
+        {
+          "label": "Median sold revenue multiple",
+          "value": 1.02,
+          "unit": "multiple",
+          "population": "reported sold accounting/tax practices",
+          "period": "2021–2025",
+          "status": "source_reported"
+        },
+        {
+          "label": "Revenue multiple quartiles",
+          "value": [
+            0.92,
+            1.17
+          ],
+          "unit": "multiple",
+          "population": "same sample",
+          "period": "2021–2025",
+          "status": "source_reported"
+        },
+        {
+          "label": "Median 2025 sale price",
+          "value": 500000,
+          "unit": "USD",
+          "population": "reported sold practices",
+          "period": "2025",
+          "status": "source_reported"
+        }
+      ],
+      "endorsesAGP": false
+    }
+  ],
+  "accessLimits": [
+    {
+      "url": "https://onlinelibrary.wiley.com/doi/10.1111/1475-679x.70052",
+      "reviewed": "2026-10-12",
+      "status": "fetch_timed_out",
+      "alternative": "academic-accounting",
+      "instruction": "Use the versioned working-paper record; do not claim the journal text was reviewed."
+    },
+    {
+      "url": "https://www.businesswire.com/news/home/20260205968515/en/Accrual-Launches-with-%2475-Million-to-Bring-AI-Native-Automation-to-Accounting",
+      "reviewed": "2026-10-12",
+      "status": "fetch_returned_not_found",
+      "alternative": "armanino-accrual",
+      "instruction": "Use the direct Accrual case and GC investment announcement instead."
+    }
+  ]
+}

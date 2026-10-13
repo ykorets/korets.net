@@ -165,5 +165,11 @@
   "cpa/data/up-monthly.csv",
   "cpa/venture.js",
   "cpa/data/venture-monthly.csv",
-  "cpa/data/venture-analysis.json"
+  "cpa/data/venture-analysis.json",
+  "cpa/data/research-library.json",
+  "cpa/data/implementation-catalog.json",
+  "cpa/data/founder-context.json",
+  "cpa/data/evidence-map.json",
+  "cpa/data/research-context.json",
+  "cpa/data/research-notes.md"
 ]
