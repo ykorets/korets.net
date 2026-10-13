@@ -28,7 +28,7 @@
 
 ## Accounting Growth Partners — model and evidence
 
-- [Data & model](https://korets.net/cpa/data/): public research context, founder background and tax-company pilot status.
+- [Data & model](https://korets.net/cpa/data/): public research context, founder background and Black Inc Tax Services pilot status.
 - [Complete model bundle](https://korets.net/cpa/data/model-bundle.json): five scenarios, monthly cash flows, model source, market data and embedded research context.
 - [Research context](https://korets.net/cpa/data/research-context.json): reviewed investor theses and platform cases, archived implementation references, evidence-to-assumption map and founder context.
 - [Analysis guide](https://korets.net/cpa/data/agent-guide.md): units, evidence labels, version conflicts and suggested analysis prompt. Pilot outcomes remain unavailable; investment assumptions are not verified operating results.

@@ -18,7 +18,7 @@ Use [model-bundle.json](https://korets.net/cpa/data/model-bundle.json) for the c
 
 
 
-An operator-builder combining business ownership and P&L experience, post-acquisition leadership, multi-company operations and hands-on AI implementation. The current tax-company pilot is the bridge from adjacent experience to accounting-specific operating evidence.
+An operator-builder combining business ownership and P&L experience, post-acquisition leadership, multi-company operations and hands-on AI implementation. The current Black Inc Tax Services pilot is the bridge from adjacent experience to accounting-specific operating evidence.
 
 
 
@@ -86,9 +86,11 @@ Boundary: ADUscale is not presented as an active success or completed exit; cons
 
 
 
-### Tax-company pilot
+### Black Inc Tax Services pilot
 
-We are currently working on an operations pilot for a tax company. The pilot is intended to test the proposed operating approach in a real firm before broader replication.
+Company: [Black Inc Tax Services](https://blackinctax.com/)
+
+We are currently working on an operations pilot for Black Inc Tax Services. The pilot is intended to test the proposed operating approach in a real firm before broader replication.
 
 Status: in_progress_founder_reported; Founder update supplied for publication in AGP materials, October 12, 2026.
 

@@ -4,7 +4,7 @@
   "name": "Yaroslav Korets",
   "nameRussian": "Ярослав Корец",
   "role": "Founder / proposed operating and technology lead, Accounting Growth Partners",
-  "summary": "An operator-builder combining business ownership and P&L experience, post-acquisition leadership, multi-company operations and hands-on AI implementation. The current tax-company pilot is the bridge from adjacent experience to accounting-specific operating evidence.",
+  "summary": "An operator-builder combining business ownership and P&L experience, post-acquisition leadership, multi-company operations and hands-on AI implementation. The current Black Inc Tax Services pilot is the bridge from adjacent experience to accounting-specific operating evidence.",
   "verificationPolicy": "Biographical statements are attributed to the founder’s public CV, not independently verified employment, financial or credential records. Strategic relevance is AGP analysis.",
   "facts": [
     {
@@ -57,7 +57,7 @@
     "status": "in_progress_founder_reported",
     "statusAsOf": "2026-10-12",
     "statusSource": "Founder update supplied for publication in AGP materials, October 12, 2026",
-    "publicDescription": "We are currently working on an operations pilot for a tax company. The pilot is intended to test the proposed operating approach in a real firm before broader replication.",
+    "publicDescription": "We are currently working on an operations pilot for Black Inc Tax Services. The pilot is intended to test the proposed operating approach in a real firm before broader replication.",
     "publicScopeUrl": "https://korets.net/tax-operations/",
     "scopeSourceStatus": "Published 30-day pilot proposal; describes intended deliverables, not completed outcomes. Current activity is confirmed separately by the founder.",
     "scope": [
@@ -84,7 +84,13 @@
       "A go, fix, hold or stop decision and the conditions for repeating the deployment."
     ],
     "economicRule": "Count verified cost removed or incremental contribution from accepted additional work, subtract added technology/support/review costs, and avoid counting the same freed hour twice. Capacity alone is not cash savings.",
-    "privacy": "Only the public scope and founder-authorized status are included. No taxpayer data, private client records or contracts."
+    "privacy": "Only the public scope and founder-authorized status are included. No taxpayer data, private client records or contracts.",
+    "company": {
+      "name": "Black Inc Tax Services",
+      "website": "https://blackinctax.com/",
+      "identitySource": "Company website; pilot relationship explicitly identified by the founder",
+      "websiteChecked": "2026-10-12"
+    }
   },
   "diligenceStillNeeded": [
     "References supporting the disclosed leadership and acquisition-integration experience.",

@@ -57,7 +57,7 @@
       {
         "key": "founder",
         "url": "https://korets.net/cpa/data/founder-context.json",
-        "sha256": "c95e1304786ef851fd7a3add9d994795cf5045f3569ac31541721defbf374ba5"
+        "sha256": "df120a2001ca776d4d09da72ff6204eaf4f02cebf5988e77f6f4f3fde899a869"
       }
     ],
     "library": {
@@ -2991,7 +2991,7 @@
       "name": "Yaroslav Korets",
       "nameRussian": "Ярослав Корец",
       "role": "Founder / proposed operating and technology lead, Accounting Growth Partners",
-      "summary": "An operator-builder combining business ownership and P&L experience, post-acquisition leadership, multi-company operations and hands-on AI implementation. The current tax-company pilot is the bridge from adjacent experience to accounting-specific operating evidence.",
+      "summary": "An operator-builder combining business ownership and P&L experience, post-acquisition leadership, multi-company operations and hands-on AI implementation. The current Black Inc Tax Services pilot is the bridge from adjacent experience to accounting-specific operating evidence.",
       "verificationPolicy": "Biographical statements are attributed to the founder’s public CV, not independently verified employment, financial or credential records. Strategic relevance is AGP analysis.",
       "facts": [
         {
@@ -3044,7 +3044,7 @@
         "status": "in_progress_founder_reported",
         "statusAsOf": "2026-10-12",
         "statusSource": "Founder update supplied for publication in AGP materials, October 12, 2026",
-        "publicDescription": "We are currently working on an operations pilot for a tax company. The pilot is intended to test the proposed operating approach in a real firm before broader replication.",
+        "publicDescription": "We are currently working on an operations pilot for Black Inc Tax Services. The pilot is intended to test the proposed operating approach in a real firm before broader replication.",
         "publicScopeUrl": "https://korets.net/tax-operations/",
         "scopeSourceStatus": "Published 30-day pilot proposal; describes intended deliverables, not completed outcomes. Current activity is confirmed separately by the founder.",
         "scope": [
@@ -3071,7 +3071,13 @@
           "A go, fix, hold or stop decision and the conditions for repeating the deployment."
         ],
         "economicRule": "Count verified cost removed or incremental contribution from accepted additional work, subtract added technology/support/review costs, and avoid counting the same freed hour twice. Capacity alone is not cash savings.",
-        "privacy": "Only the public scope and founder-authorized status are included. No taxpayer data, private client records or contracts."
+        "privacy": "Only the public scope and founder-authorized status are included. No taxpayer data, private client records or contracts.",
+        "company": {
+          "name": "Black Inc Tax Services",
+          "website": "https://blackinctax.com/",
+          "identitySource": "Company website; pilot relationship explicitly identified by the founder",
+          "websiteChecked": "2026-10-12"
+        }
       },
       "diligenceStillNeeded": [
         "References supporting the disclosed leadership and acquisition-integration experience.",
@@ -24333,6 +24339,15 @@
       "label": "Published tax-company pilot scope",
       "checked": "2026-10-12",
       "reviewStatus": "scope_not_results",
+      "usedOn": [
+        "/cpa/data/"
+      ]
+    },
+    {
+      "url": "https://blackinctax.com/",
+      "label": "Black Inc Tax Services",
+      "checked": "2026-10-12",
+      "reviewStatus": "company_identity_reviewed_pilot_relationship_founder_confirmed",
       "usedOn": [
         "/cpa/data/"
       ]

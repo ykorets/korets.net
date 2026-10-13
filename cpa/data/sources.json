@@ -1728,6 +1728,15 @@
       "usedOn": [
         "/cpa/data/"
       ]
+    },
+    {
+      "url": "https://blackinctax.com/",
+      "label": "Black Inc Tax Services",
+      "checked": "2026-10-12",
+      "reviewStatus": "company_identity_reviewed_pilot_relationship_founder_confirmed",
+      "usedOn": [
+        "/cpa/data/"
+      ]
     }
   ]
 }

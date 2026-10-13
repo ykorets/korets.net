@@ -49,6 +49,7 @@ for(const r of researchContext.library.records){const prior=sources.get(r.url)||
 for(const r of researchContext.implementations.records)for(const url of r.sourceUrls){if(!sources.has(url))sources.set(url,{url,label:r.title,checked:null,archiveDate:r.archiveDate,reviewStatus:'archived_research_not_reverified',usedOn:['/cpa/data/']});}
 sources.set('https://korets.net/cv/',{url:'https://korets.net/cv/',label:'Yaroslav Korets — public biography',checked:researchContext.updated,reviewStatus:'founder_public_biography',usedOn:['/cpa/data/']});
 sources.set('https://korets.net/tax-operations/',{url:'https://korets.net/tax-operations/',label:'Published tax-company pilot scope',checked:researchContext.updated,reviewStatus:'scope_not_results',usedOn:['/cpa/data/']});
+sources.set(researchContext.founder.pilot.company.website,{url:researchContext.founder.pilot.company.website,label:researchContext.founder.pilot.company.name,checked:researchContext.founder.pilot.company.websiteChecked,reviewStatus:'company_identity_reviewed_pilot_relationship_founder_confirmed',usedOn:['/cpa/data/']});
 const bundle={meta,limitations,researchContext,dictionary,scenarios,ventureAnalysis,market,referenceFacts,targetProfile,sources:[...sources.values()],modelSource:source};
 const write=(file,data)=>fs.writeFileSync(path.join(out,file),JSON.stringify(data,null,2)+'\n');
 write('venture-analysis.json',{meta,limitations,analysis:ventureAnalysis});
