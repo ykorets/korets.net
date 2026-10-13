@@ -3,6 +3,8 @@ from pathlib import Path
 import json, shutil, hashlib, subprocess
 
 ROOT = Path(__file__).resolve().parents[1]
+subprocess.run(['node', 'scripts/export_cpa_data.cjs'], cwd=ROOT, check=True)
+subprocess.run(['node', 'scripts/check_cpa_exports.cjs'], cwd=ROOT, check=True)
 paths = json.loads((ROOT / 'public-files.json').read_text())
 assert len(paths) == len(set(paths)), 'Duplicate public path'
 out = ROOT / 'dist'

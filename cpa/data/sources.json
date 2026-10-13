@@ -1,0 +1,375 @@
+{
+  "meta": {
+    "schemaVersion": 1,
+    "project": "Accounting Growth Partners",
+    "nameStatus": "Working project name",
+    "researchChecked": "2026-10-12",
+    "currency": "USD",
+    "frequency": "monthly",
+    "modelUrl": "https://korets.net/cpa/model.js",
+    "modelSha256": "81a1f3bdbf4118bfff2ada511ec94ec599a8d5032fa73141b363340667536975",
+    "releaseUrl": "https://korets.net/release.json",
+    "basis": "Illustrative full-ownership acquisition model. Retained seller equity is a proposed deal option, not implemented in calculations."
+  },
+  "referenceFacts": [
+    {
+      "id": "current-june-2026",
+      "type": "company disclosure",
+      "asOf": "2026-06-02",
+      "facts": {
+        "firms": "almost 30",
+        "employees": "over 2000",
+        "annualRevenueUsd": "over 500000000",
+        "taxPilotReturns": 7000,
+        "taxPreparationTimeSavingsPercent": 31
+      },
+      "source": "https://www.current.co/news/crete-professionals-alliance-rebrands-as-current",
+      "limits": "Self-reported scale and task-level savings; not audited EBITDA uplift or a purchase-price benchmark."
+    },
+    {
+      "id": "current-live-homepage",
+      "type": "company disclosure",
+      "asOf": "2026-10-12",
+      "facts": {
+        "firms": 54,
+        "employees": "2500+",
+        "states": 39,
+        "countries": 4
+      },
+      "source": "https://www.current.co/",
+      "limits": "Firm-count perimeter not reconciled with June release. Do not infer acquisition pace."
+    },
+    {
+      "id": "current-budget-2025",
+      "type": "reported management plan",
+      "asOf": "2025-06-04",
+      "facts": {
+        "plannedAcquisitionSpendUsd": "over 500000000",
+        "periodYears": 2
+      },
+      "source": "https://whbl.com/2025/06/04/thrive-backed-accounting-firm-crete-to-spend-500-million-in-ai-roll-up/",
+      "limits": "Planned program spend, not completed investment, enterprise valuation or per-firm price."
+    },
+    {
+      "id": "levitzacks",
+      "type": "transaction announcement",
+      "asOf": "2024-03-15",
+      "effective": "2024-03-01",
+      "facts": {
+        "partners": 9,
+        "staff": 51,
+        "purchasePrice": null
+      },
+      "source": "https://www.ascendtogether.com/news/ascend-adds-levitzacks-to-growth-platform",
+      "limits": "Price and full partner ownership terms undisclosed."
+    },
+    {
+      "id": "gg-advisors",
+      "type": "transaction announcement",
+      "asOf": "2023-10-03",
+      "effective": "2023-10-01",
+      "facts": {
+        "professionals": 40,
+        "purchasePrice": null
+      },
+      "source": "https://www.ascendtogether.com/news/ascend-expands-into-midwest-with-investment-in-goering-amp-granatino-cpas",
+      "limits": "Price and exact ownership percentages undisclosed."
+    },
+    {
+      "id": "cbiz-marcum-closing",
+      "type": "transaction announcement",
+      "asOf": "2024-11-01",
+      "facts": {
+        "headlineCashStockTransactionValueUsd": 2300000000,
+        "expectedCombinedAnnualizedRevenueUsd": 2800000000
+      },
+      "source": "https://cbiz.gcs-web.com/news-releases/news-release-details/cbiz-completes-acquisition-marcum",
+      "limits": "Approximate announcement values, not a small-practice multiple. Non-attest and attest businesses had separate purchasers."
+    },
+    {
+      "id": "cbiz-asa",
+      "type": "public-company filing",
+      "referenceYear": 2025,
+      "facts": {
+        "asaFeesUsd": 651200000,
+        "independentCpaFirms": 4
+      },
+      "source": "https://ir.cbiz.com/node/23576/html",
+      "limits": "Service revenue, not profit or a standard royalty rate."
+    },
+    {
+      "id": "small-practice-sales",
+      "type": "marketplace reported completed sales",
+      "referencePeriod": "2021–2025",
+      "facts": {
+        "medianRevenueMultiple": 1.02,
+        "interquartileRevenueMultiple": [
+          0.92,
+          1.17
+        ],
+        "medianSdeMultiple": 2.04,
+        "interquartileSdeMultiple": [
+          1.61,
+          2.66
+        ],
+        "medianSalePrice2025Usd": 500000,
+        "averageRevenueMultiple2025": 1.11
+      },
+      "source": "https://www.bizbuysell.com/learning-center/valuation-benchmarks/accounting-cpa-tax-practice/",
+      "limits": "Selected marketplace sample. SDE differs from EBITDA after replacement compensation."
+    },
+    {
+      "id": "cas-survey",
+      "type": "self-selected practice survey",
+      "referenceYear": 2023,
+      "publishedYear": 2024,
+      "facts": {
+        "respondingPractices": 206,
+        "medianGrowthPercent": 17,
+        "medianNetClientFeesPerProfessionalUsd": 156250,
+        "primarilyHourlyBillingPercent": 10
+      },
+      "source": "https://www.cpa.com/news/aicpa-and-cpacom-benchmark-survey-client-advisory-services-cas-practices-report-17-growth",
+      "limits": "CAS respondent sample, not the whole CPA market or a validated staffing plan for AGP."
+    },
+    {
+      "id": "succession-survey",
+      "type": "historical respondent intentions",
+      "referenceYear": 2020,
+      "facts": {
+        "soleSoloRetireWithinFiveYearsPercent": 44,
+        "soleSoloRetireSixToTenYearsPercent": 31
+      },
+      "source": "https://www.aicpa-cima.com/professional-insights/article/5-steps-to-a-great-succession-transition",
+      "limits": "Windows start in 2020. Not a count of completed sales or a current forecast."
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://www2.census.gov/programs-surveys/economic-census/data/2022/sector54/EC2254BASIC.zip",
+      "label": "US Census, 2022 Economic Census, NAICS 5412",
+      "checked": "2026-10-12",
+      "usedOn": [
+        "/cpa/market/"
+      ]
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=BPC&sectionNum=5051.",
+      "label": "§5051",
+      "checked": "2026-10-12",
+      "usedOn": [
+        "/cpa/market/"
+      ]
+    },
+    {
+      "url": "https://dca.ca.gov/cba/consumers/attest-authority.shtml",
+      "label": "California Board of Accountancy",
+      "checked": "2026-10-12",
+      "usedOn": [
+        "/cpa/market/"
+      ]
+    },
+    {
+      "url": "https://www.aicpa-cima.com/professional-insights/video/what-is-the-difference-among-a-compilation-review-and-audit",
+      "label": "AICPA: audit, review and compilation",
+      "checked": "2026-10-12",
+      "usedOn": [
+        "/cpa/market/"
+      ]
+    },
+    {
+      "url": "https://www2.census.gov/programs-surveys/cbp/datasets/2023/",
+      "label": "Census 2023 County Business Patterns",
+      "checked": "2026-10-12",
+      "usedOn": [
+        "/cpa/market/"
+      ]
+    },
+    {
+      "url": "https://www.census.gov/data/datasets/2023/econ/nonemployer-statistics/2023-ns.html",
+      "label": "Census 2023 Nonemployer Statistics",
+      "checked": "2026-10-12",
+      "usedOn": [
+        "/cpa/market/"
+      ]
+    },
+    {
+      "url": "https://cbiz.gcs-web.com/news-releases/news-release-details/cbiz-acquire-marcum",
+      "label": "CBIZ announcement",
+      "checked": "2026-10-12",
+      "usedOn": [
+        "/cpa/market/",
+        "/cpa/references/"
+      ]
+    },
+    {
+      "url": "https://cbiz.gcs-web.com/news-releases/news-release-details/cbiz-completes-acquisition-marcum",
+      "label": "Closing release",
+      "checked": "2026-10-12",
+      "usedOn": [
+        "/cpa/market/",
+        "/cpa/references/"
+      ]
+    },
+    {
+      "url": "https://ascendtogether.com/news/strengthening-the-mountain-west-another-strategic-integration-for-the-ascend-platform",
+      "label": "Ascend",
+      "checked": "2026-10-12",
+      "usedOn": [
+        "/cpa/market/"
+      ]
+    },
+    {
+      "url": "https://current.co/news/crete-professionals-alliance-rebrands-as-current",
+      "label": "Current",
+      "checked": "2026-10-12",
+      "usedOn": [
+        "/cpa/market/"
+      ]
+    },
+    {
+      "url": "https://www.aicpa-cima.com/professional-insights/article/5-steps-to-a-great-succession-transition",
+      "label": "AICPA: succession survey context and dates",
+      "checked": "2026-10-12",
+      "usedOn": [
+        "/cpa/market/"
+      ]
+    },
+    {
+      "url": "https://www.bizbuysell.com/learning-center/valuation-benchmarks/accounting-cpa-tax-practice/",
+      "label": "BizBuySell transaction benchmarks",
+      "checked": "2026-10-12",
+      "usedOn": [
+        "/cpa/market/"
+      ]
+    },
+    {
+      "url": "https://accountingpracticesales.com/buyers/info/financing",
+      "label": "APS financing guide",
+      "checked": "2026-10-12",
+      "usedOn": [
+        "/cpa/market/"
+      ]
+    },
+    {
+      "url": "https://www.cpa.com/news/aicpa-and-cpacom-benchmark-survey-client-advisory-services-cas-practices-report-17-growth",
+      "label": "Survey release and methodology",
+      "checked": "2026-10-12",
+      "usedOn": [
+        "/cpa/market/"
+      ]
+    },
+    {
+      "url": "https://www.current.co/news/building-the-firm-of-the-future-currents-growth-story-highlighted-by-reuters",
+      "label": "Current’s acquisition description",
+      "checked": "2026-10-12",
+      "usedOn": [
+        "/cpa/references/"
+      ]
+    },
+    {
+      "url": "https://www.businesswire.com/news/home/20240502417024/en/",
+      "label": "May 2024 capital announcement",
+      "checked": "2026-10-12",
+      "usedOn": [
+        "/cpa/references/"
+      ]
+    },
+    {
+      "url": "https://www.current.co/news/the-power-of-local-level-rollover-equity",
+      "label": "Current on local-level rollover equity",
+      "checked": "2026-10-12",
+      "usedOn": [
+        "/cpa/references/"
+      ]
+    },
+    {
+      "url": "https://www.accountingtoday.com/video/pe-summit-2024/reinventing-the-ledger-the-private-equity-playbook-for-modern-accounting-firms",
+      "label": "Crete leadership interview, December 2024",
+      "checked": "2026-10-12",
+      "usedOn": [
+        "/cpa/references/"
+      ]
+    },
+    {
+      "url": "https://www.current.co/news/crete-professionals-alliance-rebrands-as-current",
+      "label": "June 2026 rebrand and operating disclosure",
+      "checked": "2026-10-12",
+      "usedOn": [
+        "/cpa/references/"
+      ]
+    },
+    {
+      "url": "https://www.current.co/",
+      "label": "Current homepage",
+      "checked": "2026-10-12",
+      "usedOn": [
+        "/cpa/references/"
+      ]
+    },
+    {
+      "url": "https://whbl.com/2025/06/04/thrive-backed-accounting-firm-crete-to-spend-500-million-in-ai-roll-up/",
+      "label": "Reuters report, syndicated full text",
+      "checked": "2026-10-12",
+      "usedOn": [
+        "/cpa/references/"
+      ]
+    },
+    {
+      "url": "https://www.current.co/partner-firms/larson-gross",
+      "label": "Legal-entity disclosure",
+      "checked": "2026-10-12",
+      "usedOn": [
+        "/cpa/references/"
+      ]
+    },
+    {
+      "url": "https://www.current.co/partner-firms/levy-erlanger-company",
+      "label": "Legal-entity disclosure",
+      "checked": "2026-10-12",
+      "usedOn": [
+        "/cpa/references/"
+      ]
+    },
+    {
+      "url": "https://www.ascendtogether.com/news/ascend-adds-levitzacks-to-growth-platform",
+      "label": "Ascend announcement, March 15, 2024",
+      "checked": "2026-10-12",
+      "usedOn": [
+        "/cpa/references/"
+      ]
+    },
+    {
+      "url": "https://www.ascendtogether.com/news/ascend-expands-into-midwest-with-investment-in-goering-amp-granatino-cpas",
+      "label": "Ascend announcement, October 3, 2023",
+      "checked": "2026-10-12",
+      "usedOn": [
+        "/cpa/references/"
+      ]
+    },
+    {
+      "url": "https://ir.cbiz.com/node/23576/html",
+      "label": "CBIZ 2025 Form 10-K/A, regulation and Note 1",
+      "checked": "2026-10-12",
+      "usedOn": [
+        "/cpa/references/"
+      ]
+    },
+    {
+      "url": "https://bakertilly.com/news/baker-tilly-and-moss-adams-to-combine",
+      "label": "Baker Tilly announcement and entity disclosure",
+      "checked": "2026-10-12",
+      "usedOn": [
+        "/cpa/references/"
+      ]
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=BPC&sectionNum=5079.",
+      "label": "§5079",
+      "checked": "2026-10-12",
+      "usedOn": [
+        "/cpa/references/"
+      ]
+    }
+  ]
+}

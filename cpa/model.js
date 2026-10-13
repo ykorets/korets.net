@@ -1,11 +1,11 @@
 (function(root){
-const defaults={capital:1500000,tranches:true,clientRevenue:5000,scaleDeals:0,hqPerFirm:0,years:8,rev:550000,price:1,entry:25,target:45,ramp:12,churn:8,growth:12,cac:25,hq:25000,hqAfter:25000,hqChangeMonth:25,hqGrowth:10,deals:4,down1:50,down2:20,bank:30,creditMonth:25,bankRate:15,sellerRate:6,term:5,reserve:6,close:5,multiple:8,div:30,divStart:5,raise:0,raiseMonth:24};
+const defaults={capital:1500000,tranches:true,clientRevenue:5000,scaleDeals:0,hqPerFirm:0,years:10,rev:550000,revAfter:0,price:1,priceAfter:0,entry:25,target:45,targetAfter:0,ramp:12,churn:8,growth:12,cac:25,hq:25000,hqAfter:25000,hqChangeMonth:25,hqGrowth:10,deals:4,down1:50,down2:20,bank:30,creditMonth:25,bankRate:15,sellerRate:6,term:5,reserve:6,close:5,multiple:8,div:30,divStart:5,raise:0,raiseMonth:24};
 // Scenario values are editable hypotheses, not market forecasts or agreed terms.
 const presets={
  down:{name:'Pessimistic',changes:{target:35,churn:10,growth:8,ramp:24,multiple:6,hqAfter:15000,hqChangeMonth:20,bankRate:18,deals:2,creditMonth:37,hqPerFirm:500}},
- base:{name:'Base',changes:{}},
- up:{name:'Optimistic',changes:{target:50,churn:6,growth:15,ramp:9,multiple:10,deals:6,scaleDeals:12,hqPerFirm:500,div:15}},
- unicorn:{name:'Unicorn',changes:{years:10,deals:4,scaleDeals:30,hqPerFirm:1000,growth:18,churn:6,target:45,multiple:12,div:0,raise:5000000,raiseMonth:25}}
+ base:{name:'Base',changes:{scaleDeals:6,revAfter:2000000,priceAfter:1.25,targetAfter:40,hqPerFirm:1000,div:0,raise:2500000,raiseMonth:25}},
+ up:{name:'Optimistic',changes:{target:50,targetAfter:45,churn:6,growth:15,ramp:9,multiple:10,deals:6,scaleDeals:6,revAfter:2000000,priceAfter:1.25,hqPerFirm:1000,div:0,raise:5000000,raiseMonth:25}},
+ unicorn:{name:'Unicorn',changes:{years:10,deals:4,scaleDeals:12,revAfter:2000000,priceAfter:1.25,targetAfter:45,hqPerFirm:1000,growth:18,churn:6,target:45,multiple:12,div:0,raise:5000000,raiseMonth:25}}
 };
 function scenario(key){if(!presets[key])throw new Error('Unknown scenario');return {...defaults,...presets[key].changes};}
 function scaleSummary(p,r){
@@ -49,13 +49,16 @@ function run(p,options={}){
   }
   if(p.raise>0&&mo===p.raiseMonth){cash+=p.raise;equityIn+=p.raise;/* Funding affects business cash; future investor terms are outside this model. */}
   const capacity=mo<=24?p.deals:(p.scaleDeals||p.deals);
-  const perFirm=mo<=24?0:(p.hqPerFirm||0);let overheadCost=overhead(p,mo,firms.length);const price=p.rev*p.price;
+  const perFirm=mo<=24?0:(p.hqPerFirm||0);let overheadCost=overhead(p,mo,firms.length);
+  // Later acquisitions use an explicit blended entry size and price. Existing
+  // cohorts keep their own revenue and target margin; they are never resized.
+  const buyRev=mo<=24?p.rev:(p.revAfter||p.rev),price=buyRev*(mo<=24?p.price:(p.priceAfter||p.price));
   const creditMonth=Math.max(25,p.creditMonth),down=mo>=creditMonth?p.down2/100:p.down1/100,bank=mo>=creditMonth?Math.min(p.bank/100,1-down):0,seller=1-down-bank,cost=price*(down+p.close/100);
   let downPayment=0,closingCosts=0,bankDraw=0,sellerDraw=0,purchasePrice=0,newFirms=0;
   const monthSlots=capacity<=12?(mo-last>=Math.ceil(12/capacity)?1:0):Math.floor((mo%12||12)*capacity/12)-Math.floor(((mo%12||12)-1)*capacity/12);
   for(let slot=0;mo>=3&&slot<monthSlots&&yearDeals<capacity&&(options.unconstrained||cash>=cost+(overheadCost+perFirm)*p.reserve);slot++){
    const loan=(amount,rate)=>({balance:amount,rate:rate/1200,pmt:payment(amount,rate/1200,p.term*12)});
-   firms.push({rev:p.rev,age:0,loans:[loan(price*bank,p.bankRate),loan(price*seller,p.sellerRate)]});
+   firms.push({rev:buyRev,target:mo<=24?p.target:(p.targetAfter||p.target),age:0,loans:[loan(price*bank,p.bankRate),loan(price*seller,p.sellerRate)]});
    downPayment+=price*down;closingCosts+=price*p.close/100;bankDraw+=price*bank;sellerDraw+=price*seller;purchasePrice+=price;newFirms++;overheadCost+=perFirm;
    cash-=cost;last=mo;yearDeals++;
   }
@@ -63,7 +66,7 @@ function run(p,options={}){
   let ebitda=0,revenue=0,service=0,acquisition=0,interestPaid=0,principalPaid=0;
   for(const f of firms){
    if(f.age>0)f.rev*=1+(p.growth-p.churn)/1200;
-   const margin=(p.entry+(p.target-p.entry)*Math.min(f.age/p.ramp,1))/100;
+   const margin=(p.entry+(f.target-p.entry)*Math.min(f.age/p.ramp,1))/100;
    ebitda+=f.rev*margin;revenue+=f.rev;acquisition+=f.rev*p.growth/1200*p.cac/100;
    for(const loan of f.loans)if(loan.balance>0){const interest=loan.balance*loan.rate,pay=Math.min(loan.pmt,loan.balance+interest);service+=pay;interestPaid+=interest;principalPaid+=pay-interest;loan.balance=Math.max(0,loan.balance+interest-pay);}
    f.age++;

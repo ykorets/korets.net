@@ -151,5 +151,16 @@
   "cpa/market/style.css",
   "cpa/market/app.js",
   "cpa/market/data.json",
-  "cpa/overview/plan.js"
+  "cpa/overview/plan.js",
+  "cpa/references/index.html",
+  "cpa/data/agent-guide.md",
+  "cpa/data/assumptions.json",
+  "cpa/data/base-monthly.csv",
+  "cpa/data/down-monthly.csv",
+  "cpa/data/index.html",
+  "cpa/data/model-bundle.json",
+  "cpa/data/results.json",
+  "cpa/data/sources.json",
+  "cpa/data/unicorn-monthly.csv",
+  "cpa/data/up-monthly.csv"
 ]

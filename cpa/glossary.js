@@ -1,6 +1,21 @@
 /* One shared glossary for static copy, live results and financing controls. */
 (() => {
  const definitions = [
+  [['AGP'], 'Accounting Growth Partners, the working name of this proposed accounting-firm investment platform.'],
+  [['blended'], 'A weighted average across different acquisition sizes. Here, weights are shares of deal count, not shares of revenue. Actual deal timing and cash needs may differ.'],
+  [['rollover equity','retained equity'], 'Ownership a seller keeps invested after an acquisition. It participates in future results and is separate from a seller note, which is debt. Percentages and rights are negotiated per deal.'],
+  [['non-attest'], 'Services outside attest engagements, such as ordinary bookkeeping, tax and business advisory. This is not a blanket exemption from licensing, tax-preparer or firm-name rules; compilation needs separate review.'],
+  [['AUP'], 'Agreed-upon procedures: a professional engagement reporting factual findings from specified procedures, without an overall audit opinion or assurance conclusion.'],
+  [['compilation'], 'Financial statements accompanied by a compilation report, without assurance. In California this is not an attest engagement, but it is a CPA professional service.'],
+  [['ASA','ASAs'], 'Administrative Service Agreement: a contract for actual support services such as systems, facilities or personnel. Fees and professional responsibilities depend on the contract.'],
+  [['P&L','profit-and-loss'], 'Profit and loss statement: revenue less expenses over a period. Accounting profit is different from cash in the bank.'],
+  [['LLC'], 'Limited Liability Company, a legal entity form. The name alone does not establish permission to provide regulated CPA services.'],
+  [['LLP'], 'Limited Liability Partnership, a partnership legal form. Ownership and professional licensing must be checked separately.'],
+  [['PLLC'], 'Professional Limited Liability Company, a professional-entity form available under relevant state law.'],
+  [['LP'], 'Limited Partnership, a legal entity form with general and limited partners.'],
+  [['gross revenue retention'], 'Revenue retained from the same opening client cohort, excluding new clients and expansion. Define price changes consistently before comparing firms.'],
+  [['distributable profit'], 'The profit or cash pool actually eligible for owner distributions after the relevant costs, debt obligations, tax, reserves and reinvestment decisions. Not interchangeable with EBITDA.'],
+
   [['AICPA'], 'American Institute of Certified Public Accountants, a professional association. Survey findings describe the participants and the stated reference year.'],
   [['CBP'], 'County Business Patterns: a US Census Bureau dataset counting employer establishments, employment and payroll. An establishment is a location, not necessarily a separate firm.'],
   [['CFO'], 'Chief Financial Officer. CFO advisory provides financial planning and decision support beyond routine bookkeeping.'],
@@ -10,7 +25,7 @@
   [['NAICS'], 'North American Industry Classification System. Code 5412 covers accounting, tax preparation, bookkeeping and payroll; 541211 is the CPA-office subset.'],
   [['FTE'], 'Full-time equivalent: a unit of staffing capacity. Professional capacity estimates do not include all administrative employees.'],
   [['earn-outs'], 'Contingent acquisition payments tied to agreed future performance. The current calculator uses fixed seller loans and does not simulate earn-outs.'],
-  [['attest'], 'Professional assurance work on financial information, subject to licensing and independence requirements. It is distinct from ordinary bookkeeping.'],
+  [['attest'], 'Professional engagements subject to applicable licensing and independence rules, including audit, review and agreed-upon procedures. Not every attest engagement provides an assurance conclusion. Compilation has separate treatment in California.'],
   [['Unicorn'], 'Here: a private-company planning scenario reaching at least $1 billion of shareholder equity value. Calculated as enterprise value minus debt plus cash. This is an illustrative valuation, not an observed fundraising price or guaranteed outcome.'],
   [['Annual revenue per client'], 'Assumed annual fees per client. Estimated active client equivalents = annualized revenue divided by this amount. It changes the estimated count, not the revenue engine; client mix, duplicate accounts and fee inflation are not modeled.'],
   [['Estimated active clients','Est. clients','client equivalents'], 'An estimate from annualized revenue divided by assumed annual revenue per client, rounded up. Not a verified count of unique client accounts.'],

@@ -1,0 +1,432 @@
+{
+  "meta": {
+    "schemaVersion": 1,
+    "project": "Accounting Growth Partners",
+    "nameStatus": "Working project name",
+    "researchChecked": "2026-10-12",
+    "currency": "USD",
+    "frequency": "monthly",
+    "modelUrl": "https://korets.net/cpa/model.js",
+    "modelSha256": "81a1f3bdbf4118bfff2ada511ec94ec599a8d5032fa73141b363340667536975",
+    "releaseUrl": "https://korets.net/release.json",
+    "basis": "Illustrative full-ownership acquisition model. Retained seller equity is a proposed deal option, not implemented in calculations."
+  },
+  "limitations": [
+    "Inputs are planning assumptions, not verified target-company performance or committed financing.",
+    "Revenue and EBITDA in monthly rows are annualized month-end run rates. firmRevenue and firmEbitda are monthly amounts. Sum monthly amounts for earned-period totals.",
+    "Later acquisition sizes use a count-weighted average, not a distribution of actual deal sizes; large-ticket cash timing may differ.",
+    "Income taxes, capital expenditure, working-capital changes, transaction taxes and exit fees are excluded. EBITDA is not net income or distributable cash.",
+    "All presets use 10 years; this is a planning/terminal-value horizon, not a fund term or required sale.",
+    "Retained seller equity, minority distributions and local partner buyouts are not modeled. Do not apply full-ownership returns to a partial-ownership deal.",
+    "Seed-investor returns use illustrative 50% participation only when there is no later equity funding. With a later round they are null, not zero or unchanged.",
+    "Cash failure stops the simulation. Valuation and investor return availability flags must be respected.",
+    "Client equivalents are annualized revenue divided by an assumed $5,000 annual fee, rounded up; not a count of verified or deduplicated clients.",
+    "Historical market datasets have different units and years; do not add firm, establishment and nonemployer counts.",
+    "Per-firm margin improvement, organic growth, future bank access and acquisition throughput require evidence. Platform service-fee economics are not modeled separately."
+  ],
+  "dictionary": {
+    "inputs": {
+      "capital": {
+        "unit": "USD",
+        "meaning": "Total seed commitment; paid through gates if tranches=true"
+      },
+      "tranches": {
+        "unit": "boolean",
+        "meaning": "40% initially, then two 30% milestone draws"
+      },
+      "clientRevenue": {
+        "unit": "USD/year",
+        "meaning": "Assumed fee per client equivalent"
+      },
+      "scaleDeals": {
+        "unit": "firms/year",
+        "meaning": "Capacity from month 25; zero uses deals"
+      },
+      "hqPerFirm": {
+        "unit": "USD/month/firm",
+        "meaning": "Additional central cost per acquired firm from month 25"
+      },
+      "years": {
+        "unit": "years",
+        "meaning": "Planning horizon"
+      },
+      "rev": {
+        "unit": "USD/year",
+        "meaning": "Entry annual revenue of launch acquisitions"
+      },
+      "revAfter": {
+        "unit": "USD/year",
+        "meaning": "Blended entry revenue of acquisitions from month 25; zero means same as rev"
+      },
+      "priceAfter": {
+        "unit": "multiple",
+        "meaning": "Purchase price / revenue for new acquisitions from month 25; zero uses price"
+      },
+      "targetAfter": {
+        "unit": "percent",
+        "meaning": "Integrated margin of new acquisitions from month 25; zero uses target"
+      },
+      "price": {
+        "unit": "multiple",
+        "meaning": "Purchase price divided by entry revenue"
+      },
+      "entry": {
+        "unit": "percent",
+        "meaning": "Entry practice EBITDA margin"
+      },
+      "target": {
+        "unit": "percent",
+        "meaning": "Integrated practice EBITDA margin"
+      },
+      "ramp": {
+        "unit": "months",
+        "meaning": "Linear improvement from entry to target margin"
+      },
+      "churn": {
+        "unit": "percent/year",
+        "meaning": "Annual revenue loss rate"
+      },
+      "growth": {
+        "unit": "percent/year",
+        "meaning": "Annual gross new revenue rate; net monthly change=(growth-churn)/1200"
+      },
+      "cac": {
+        "unit": "percent",
+        "meaning": "Acquisition-marketing expense as a share of gross new revenue"
+      },
+      "hq": {
+        "unit": "USD/month",
+        "meaning": "Initial central base overhead"
+      },
+      "hqAfter": {
+        "unit": "USD/month",
+        "meaning": "Later central base overhead"
+      },
+      "hqChangeMonth": {
+        "unit": "month",
+        "meaning": "Month later base overhead begins"
+      },
+      "hqGrowth": {
+        "unit": "percent/year",
+        "meaning": "Annual base overhead increase from month 37"
+      },
+      "deals": {
+        "unit": "firms/year",
+        "meaning": "Acquisition capacity in first 24 months; cash can reduce purchases"
+      },
+      "down1": {
+        "unit": "percent of price",
+        "meaning": "Buyer cash before bank access"
+      },
+      "down2": {
+        "unit": "percent of price",
+        "meaning": "Buyer cash after bank access"
+      },
+      "bank": {
+        "unit": "percent of price",
+        "meaning": "Bank share once available; seller finances residual"
+      },
+      "creditMonth": {
+        "unit": "month",
+        "meaning": "Bank availability, always at least month 25"
+      },
+      "bankRate": {
+        "unit": "percent/year",
+        "meaning": "Bank loan nominal interest"
+      },
+      "sellerRate": {
+        "unit": "percent/year",
+        "meaning": "Seller-note nominal interest"
+      },
+      "term": {
+        "unit": "years",
+        "meaning": "Monthly loan amortization term"
+      },
+      "reserve": {
+        "unit": "months",
+        "meaning": "Central overhead cash reserve used by acquisition gate"
+      },
+      "close": {
+        "unit": "percent of price",
+        "meaning": "Closing costs paid separately from price"
+      },
+      "multiple": {
+        "unit": "multiple",
+        "meaning": "Terminal enterprise value / platform EBITDA"
+      },
+      "div": {
+        "unit": "percent",
+        "meaning": "Annual share of cash above reserve distributed after divStart"
+      },
+      "divStart": {
+        "unit": "year",
+        "meaning": "First distribution year"
+      },
+      "raise": {
+        "unit": "USD",
+        "meaning": "Assumed later equity funding"
+      },
+      "raiseMonth": {
+        "unit": "month",
+        "meaning": "Arrival of later equity funding"
+      }
+    },
+    "monthly": {
+      "month": "Simulation month (1-based)",
+      "cash": "Closing cash balance, USD",
+      "openingCash": "Cash before monthly funding and operations, USD",
+      "postAcquisitionCash": "Cash after funding and purchase outlays, before operations, USD",
+      "equityIn": "Seed plus later equity funding received in month, USD",
+      "seedIn": "Seed tranche received in month, USD",
+      "newFirms": "Purchases closed in month",
+      "downPayment": "Buyer contribution to purchase prices in month, USD",
+      "closingCosts": "Purchase closing costs in month, USD",
+      "purchasePrice": "Total purchase price of new firms, USD",
+      "bankDraw": "Bank debt funded directly toward purchases, USD",
+      "sellerDraw": "New seller-note principal, USD",
+      "firms": "Cumulative firms purchased",
+      "revenue": "Annualized month-end firm revenue, USD/year",
+      "firmRevenue": "Combined firm revenue earned this month, USD",
+      "firmEbitda": "Combined practice EBITDA this month, before central overhead and CAC, USD",
+      "firmOperatingCosts": "Practice operating costs this month, USD",
+      "overhead": "Central overhead this month, USD",
+      "cac": "Gross-new-revenue acquisition cost this month, USD",
+      "service": "Acquisition debt principal + interest paid this month, USD",
+      "interestPaid": "Acquisition loan interest paid this month, USD",
+      "principalPaid": "Acquisition loan principal repaid this month, USD",
+      "operatingSurplus": "Monthly firm EBITDA minus central overhead and CAC, before debt/tax, USD",
+      "ebitda": "Annualized month-end platform EBITDA, after central overhead and CAC, USD/year",
+      "debt": "Closing acquisition debt balance, USD",
+      "distribution": "Total company distribution this month before seed share, USD",
+      "reserve": "Required central-overhead cash reserve, USD"
+    },
+    "annual": {
+      "cashAfterDebt": "Platform EBITDA earned minus debt principal and interest, before taxes/capex/working capital/new acquisitions/distributions, USD",
+      "year": "Year number",
+      "firms": "Firms at year end",
+      "revenueEarned": "Sum of monthly firmRevenue, USD",
+      "platformEbitdaEarned": "Sum of monthly operatingSurplus, USD",
+      "annualizedRevenue": "Year-end revenue run rate, USD/year",
+      "annualizedPlatformEbitda": "Year-end platform EBITDA run rate, USD/year",
+      "cash": "Year-end cash, USD",
+      "debt": "Year-end debt, USD",
+      "acquisitions": "Purchases during year",
+      "capitalReceived": "Seed and later equity received during year, USD",
+      "distributions": "Company cash distributions during year, USD"
+    },
+    "summary": {
+      "investorIrr": "Annualized decimal rate, e.g. 0.15 = 15%; null when unavailable",
+      "investorMoic": "Total seed investor receipts / actual seed funding; null when unavailable",
+      "firstBillionMonth": "First modeled equity value >= USD 1 billion, subject to funding; null means not reached",
+      "enterpriseValue": "Annualized ending platform EBITDA, floored at zero, times multiple",
+      "equityValue": "Enterprise value minus debt plus cash, floored at zero",
+      "clientEquivalents": "Ceiling of annualized revenue / clientRevenue"
+    }
+  },
+  "targetProfile": {
+    "status": "Proposed screening preferences; not observed market metrics or binding terms",
+    "revenueRangeUsd": [
+      300000,
+      1000000
+    ],
+    "revenueAnchorUsd": 550000,
+    "laterRevenueRangeUsd": [
+      500000,
+      3500000
+    ],
+    "laterBlendedRevenueUsd": 2000000,
+    "illustrativeLaterMix": [
+      {
+        "entryRevenueUsd": 500000,
+        "shareOfDealCount": 0.25
+      },
+      {
+        "entryRevenueUsd": 2000000,
+        "shareOfDealCount": 0.5
+      },
+      {
+        "entryRevenueUsd": 3500000,
+        "shareOfDealCount": 0.25
+      }
+    ],
+    "preferredGeography": "California; other US states eligible",
+    "preferredServices": [
+      "bookkeeping",
+      "business tax",
+      "payroll support",
+      "management reporting",
+      "outsourced CFO"
+    ],
+    "owner": "Growth-minded continuing operator; age is not a filter",
+    "retainedSellerEquity": "Preferred where agreed; no fixed percentage; not in calculator",
+    "proposedRecurringContractedRevenueMinimumPercent": 60,
+    "proposedGrossRevenueRetentionMinimumPercent": 90,
+    "proposedSingleClientRevenueMaximumPercent": 10
+  },
+  "scenarios": {
+    "down": {
+      "name": "Pessimistic",
+      "inputs": {
+        "capital": 1500000,
+        "tranches": true,
+        "clientRevenue": 5000,
+        "scaleDeals": 0,
+        "hqPerFirm": 500,
+        "years": 10,
+        "rev": 550000,
+        "revAfter": 0,
+        "price": 1,
+        "priceAfter": 0,
+        "entry": 25,
+        "target": 35,
+        "targetAfter": 0,
+        "ramp": 24,
+        "churn": 10,
+        "growth": 8,
+        "cac": 25,
+        "hq": 25000,
+        "hqAfter": 15000,
+        "hqChangeMonth": 20,
+        "hqGrowth": 10,
+        "deals": 2,
+        "down1": 50,
+        "down2": 20,
+        "bank": 30,
+        "creditMonth": 37,
+        "bankRate": 18,
+        "sellerRate": 6,
+        "term": 5,
+        "reserve": 6,
+        "close": 5,
+        "multiple": 6,
+        "div": 30,
+        "divStart": 5,
+        "raise": 0,
+        "raiseMonth": 24
+      }
+    },
+    "base": {
+      "name": "Base",
+      "inputs": {
+        "capital": 1500000,
+        "tranches": true,
+        "clientRevenue": 5000,
+        "scaleDeals": 6,
+        "hqPerFirm": 1000,
+        "years": 10,
+        "rev": 550000,
+        "revAfter": 2000000,
+        "price": 1,
+        "priceAfter": 1.25,
+        "entry": 25,
+        "target": 45,
+        "targetAfter": 40,
+        "ramp": 12,
+        "churn": 8,
+        "growth": 12,
+        "cac": 25,
+        "hq": 25000,
+        "hqAfter": 25000,
+        "hqChangeMonth": 25,
+        "hqGrowth": 10,
+        "deals": 4,
+        "down1": 50,
+        "down2": 20,
+        "bank": 30,
+        "creditMonth": 25,
+        "bankRate": 15,
+        "sellerRate": 6,
+        "term": 5,
+        "reserve": 6,
+        "close": 5,
+        "multiple": 8,
+        "div": 0,
+        "divStart": 5,
+        "raise": 2500000,
+        "raiseMonth": 25
+      }
+    },
+    "up": {
+      "name": "Optimistic",
+      "inputs": {
+        "capital": 1500000,
+        "tranches": true,
+        "clientRevenue": 5000,
+        "scaleDeals": 6,
+        "hqPerFirm": 1000,
+        "years": 10,
+        "rev": 550000,
+        "revAfter": 2000000,
+        "price": 1,
+        "priceAfter": 1.25,
+        "entry": 25,
+        "target": 50,
+        "targetAfter": 45,
+        "ramp": 9,
+        "churn": 6,
+        "growth": 15,
+        "cac": 25,
+        "hq": 25000,
+        "hqAfter": 25000,
+        "hqChangeMonth": 25,
+        "hqGrowth": 10,
+        "deals": 6,
+        "down1": 50,
+        "down2": 20,
+        "bank": 30,
+        "creditMonth": 25,
+        "bankRate": 15,
+        "sellerRate": 6,
+        "term": 5,
+        "reserve": 6,
+        "close": 5,
+        "multiple": 10,
+        "div": 0,
+        "divStart": 5,
+        "raise": 5000000,
+        "raiseMonth": 25
+      }
+    },
+    "unicorn": {
+      "name": "Unicorn",
+      "inputs": {
+        "capital": 1500000,
+        "tranches": true,
+        "clientRevenue": 5000,
+        "scaleDeals": 12,
+        "hqPerFirm": 1000,
+        "years": 10,
+        "rev": 550000,
+        "revAfter": 2000000,
+        "price": 1,
+        "priceAfter": 1.25,
+        "entry": 25,
+        "target": 45,
+        "targetAfter": 45,
+        "ramp": 12,
+        "churn": 6,
+        "growth": 18,
+        "cac": 25,
+        "hq": 25000,
+        "hqAfter": 25000,
+        "hqChangeMonth": 25,
+        "hqGrowth": 10,
+        "deals": 4,
+        "down1": 50,
+        "down2": 20,
+        "bank": 30,
+        "creditMonth": 25,
+        "bankRate": 15,
+        "sellerRate": 6,
+        "term": 5,
+        "reserve": 6,
+        "close": 5,
+        "multiple": 12,
+        "div": 0,
+        "divStart": 5,
+        "raise": 5000000,
+        "raiseMonth": 25
+      }
+    }
+  }
+}

@@ -7,18 +7,18 @@ for(const key of Object.keys(C.presets)){
  if(r.returnsAvailable){near(r.equity,Math.max(0,r.ev-r.end.debt+r.end.cash));near(r.stake,.5);}
  for(let year=0;year<p.years;year++){const bought=r.rows.filter(x=>x.month>year*12&&x.month<=(year+1)*12).reduce((sum,x)=>sum+x.newFirms,0);assert.ok(bought<=(year<2?p.deals:p.scaleDeals||p.deals));}
 }
-const p=C.scenario('unicorn'),r=C.run(p),s=C.scaleSummary(p,r);assert.equal(r.failed,null);assert.ok(r.returnsAvailable);assert.equal(r.end.firms,244);assert.equal(s.firstBillion,113);assert.ok(r.rows.some(x=>x.newFirms>1));assert.ok(r.equity>=1e9);assert.ok(r.end.ebitda*8-r.end.debt+r.end.cash<1e9);
-assert.ok(r.rows[111].ebitda*p.multiple-r.rows[111].debt+r.rows[111].cash<1e9);assert.ok(s.hit.ebitda*p.multiple-s.hit.debt+s.hit.cash>=1e9);
+const p=C.scenario('unicorn'),r=C.run(p),s=C.scaleSummary(p,r);assert.equal(r.failed,null);assert.ok(r.returnsAvailable);assert.equal(r.end.firms,89);assert.equal(s.firstBillion,106);const multi=C.run({...p,scaleDeals:30});assert.ok(multi.rows.some(x=>x.newFirms>1));assert.ok(r.equity>=1e9);assert.ok(r.end.ebitda*8-r.end.debt+r.end.cash<1e9);
+assert.ok(r.rows[104].ebitda*p.multiple-r.rows[104].debt+r.rows[104].cash<1e9);assert.ok(s.hit.ebitda*p.multiple-s.hit.debt+s.hit.cash>=1e9);
 assert.equal(s.laterCapital,5000000);assert.equal(r.investorReturnsAvailable,false);assert.equal(r.total,null);assert.equal(r.moic,null);assert.equal(r.irr,null);
 near(s.requiredEbitda*p.multiple-r.end.debt+r.end.cash,1e9);
 const baseFeeOnly=C.run({...p,clientRevenue:3600});near(baseFeeOnly.equity,r.equity);assert.equal(C.scaleSummary({...p,clientRevenue:3600},baseFeeOnly).clients,Math.ceil(r.end.revenue/3600));
-const down=C.run(C.scenario('down'));assert.equal(down.failed,null);assert.equal(down.rows.length,96);assert.equal(down.fundingComplete,true);assert.equal(down.investorReturnsAvailable,true);assert.equal(down.end.firms,10);assert.ok(down.rows.every(x=>x.cash>0));assert.ok(down.minCash>100000);near(down.moic,2.0882824946512653);
+const down=C.run(C.scenario('down'));assert.equal(down.failed,null);assert.equal(down.rows.length,120);assert.equal(down.fundingComplete,true);assert.equal(down.investorReturnsAvailable,true);assert.equal(down.end.firms,14);assert.ok(down.rows.every(x=>x.cash>0));assert.ok(down.minCash>100000);near(down.moic,3.2944582624108225);
 const severe=C.run({...C.scenario('down'),hqAfter:25000});assert.equal(severe.failed,72);assert.equal(severe.investorReturnsAvailable,false);
 assert.equal(C.scaleSummary(C.scenario('down'),down).firstBillion,null);
-const partial=C.scenario('base');partial.years=99;assert.equal(C.scenario('base').years,8);
+const partial=C.scenario('base');partial.years=99;assert.equal(C.scenario('base').years,10);
 console.log('All four presets: cash conservation, multi-deal monthly scheduling, capacity limits, scale overhead, client estimates, first $1B equity crossing, valuation sensitivity and growth-capital funding passed.');
 
-assert.equal(C.defaults.clientRevenue,5000);assert.equal(Math.ceil(C.defaults.rev/C.defaults.clientRevenue),110);assert.equal(s.clients,45260);assert.equal(Math.ceil(s.hit.revenue/p.clientRevenue),40312);
+assert.equal(C.defaults.clientRevenue,5000);assert.equal(Math.ceil(C.defaults.rev/C.defaults.clientRevenue),110);assert.equal(s.clients,55586);assert.equal(Math.ceil(s.hit.revenue/p.clientRevenue),43157);
 
 // Every preset keeps seller debt at 50% and observes the two funding phases.
 for(const key of Object.keys(C.presets)){
@@ -39,3 +39,15 @@ const laterCut=C.run({...dp,hqChangeMonth:25});
 near(down.rows[23].cash-laterCut.rows[23].cash,50000);
 assert.equal(down.rows[23].firms,laterCut.rows[23].firms);
 assert.deepEqual(down.rows.filter(x=>x.cash<x.reserve).map(x=>x.month),[19]);
+
+for(const key of Object.keys(C.presets)){const p=C.scenario(key),r=C.run(p);assert.equal(p.years,10);assert.equal(r.rows.length,120);assert.equal(r.rows.at(-1).month,120);}
+
+const growthBase=C.run(C.scenario('base'));assert.equal(growthBase.end.firms,43);near(growthBase.end.revenue,92992541.25976785);near(growthBase.laterCapital,2500000);assert.equal(growthBase.investorReturnsAvailable,false);assert.equal(growthBase.rows[23].firms,4);assert.equal(growthBase.rows.filter(x=>x.distribution>0).length,0);
+
+// A new cohort size does not rewrite existing firms or change launch financing.
+const bp=C.scenario('base'),br=C.run(bp),old=C.run({...C.defaults,years:10});
+assert.deepEqual(br.rows.slice(0,24),old.rows.slice(0,24));
+for(const row of br.rows.filter(x=>x.newFirms)){near(row.purchasePrice/row.newFirms,row.month<=24?550000:2500000);}
+const held={...bp,deals:1,scaleDeals:1,capital:10000000,tranches:false};
+const a=C.run({...held,years:2}),b=C.run({...held,years:2,revAfter:4000000,targetAfter:25,priceAfter:2});assert.deepEqual(a.rows,b.rows);
+near(br.end.ebitda,32403774.63701281);assert.ok(br.rows.slice(-12).reduce((s,x)=>s+x.operatingSurplus-x.service,0)>0);

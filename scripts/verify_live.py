@@ -37,9 +37,12 @@ for attempt in range(12):
 else:
     raise SystemExit('Cannot verify expected release: ' + last_error)
 
-paths = ['index.html','cpa/index.html','cpa/model.js','cpa/app.js','cpa/scenarios.js','cpa/glossary.js','cpa/audit/index.html','cpa/structures/index.html','cpa/overview/index.html','cpa/overview/plan.js','cpa/market/index.html','cpa/market/app.js','cpa/market/style.css','cpa/market/data.json','andy/index.html','andy/sw.js',
+paths = ['cpa/references/index.html','cpa/data/index.html','cpa/data/model-bundle.json','cpa/shared.css','index.html','cpa/index.html','cpa/model.js','cpa/app.js','cpa/scenarios.js','cpa/glossary.js','cpa/audit/index.html','cpa/structures/index.html','cpa/overview/index.html','cpa/overview/plan.js','cpa/market/index.html','cpa/market/app.js','cpa/market/style.css','cpa/market/data.json','andy/index.html','andy/sw.js',
          'blackincdashboard/index.html','blackink/index.html','growthcontroldemo/index.html',
          'sanctuary/index.html','ai/index.html','cv/index.html','robots.txt','sitemap.xml']
+paths += [name for name in json.loads((ROOT / 'public-files.json').read_text())
+          if name.startswith('cpa/data/') and name not in paths]
+paths += ['cpa/structures.js']
 def check(path):
     expected_data = (ROOT / 'dist' / path).read_bytes()
     # A new release manifest may reach an edge before every asset does.
