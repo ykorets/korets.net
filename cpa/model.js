@@ -4,6 +4,7 @@ const defaults={capital:1500000,tranches:true,clientRevenue:5000,scaleDeals:0,hq
 const presets={
  down:{name:'Pessimistic',changes:{target:35,churn:10,growth:8,ramp:24,multiple:6,hqAfter:15000,hqChangeMonth:20,bankRate:18,deals:2,creditMonth:37,hqPerFirm:500}},
  base:{name:'Base',changes:{scaleDeals:6,revAfter:2000000,priceAfter:1.25,targetAfter:40,hqPerFirm:1000,div:0,raise:2500000,raiseMonth:25}},
+ venture:{name:'Venture',changes:{scaleDeals:18,revAfter:2000000,priceAfter:1.25,targetAfter:40,hqAfter:100000,hqPerFirm:2500,div:0,raise:25000000,raiseMonth:25}},
  up:{name:'Optimistic',changes:{target:50,targetAfter:45,churn:6,growth:15,ramp:9,multiple:10,deals:6,scaleDeals:6,revAfter:2000000,priceAfter:1.25,hqPerFirm:1000,div:0,raise:5000000,raiseMonth:25}},
  unicorn:{name:'Unicorn',changes:{years:10,deals:4,scaleDeals:12,revAfter:2000000,priceAfter:1.25,targetAfter:45,hqPerFirm:1000,growth:18,churn:6,target:45,multiple:12,div:0,raise:5000000,raiseMonth:25}}
 };
@@ -96,5 +97,17 @@ function launch(p){
  const fundedSchedule=run({...q,capital:needed},{tranches:false});
  return {upfront,staged,delayed,needed,fundedSchedule,plannedFirms:schedule.end.firms};
 }
-root.CPA={defaults,presets,scenario,scaleSummary,run,launch,irr,payment,overhead};if(typeof module!=='undefined')module.exports=root.CPA;
+
+// Fixed-preset decision support: the selected calculator can be edited separately.
+function ventureAnalysis(){
+ const base=scenario('base'),venture=scenario('venture');
+ const variants=[['base','Base',base],['capital-only','More capital, Base capacity',{...base,raise:25000000}],['venture','Venture',venture],['capital-15','Venture with $15M round',{...venture,raise:15000000}],['capital-40','Venture with $40M round',{...venture,raise:40000000}],['price-stress','Purchase price 1.50×',{...venture,priceAfter:1.5}],['margin-stress','Later margin 35%',{...venture,targetAfter:35}],['bank-delay','Bank starts month 37',{...venture,creditMonth:37}]];
+ const paths=variants.map(([id,name,inputs])=>{const r=run(inputs),scale=scaleSummary(inputs,r),y5=r.rows[59],last=r.rows.slice(-12);return {id,name,inputs,firms:r.end.firms,revenue:r.end.revenue,ebitda:r.end.ebitda,equity:r.returnsAvailable?r.equity:null,equityFunded:r.fundedCapital+r.laterCapital,year5Revenue:y5?.revenue??null,year5Ebitda:y5?.ebitda??null,year5Firms:y5?.firms??null,debt:r.end.debt,cash:r.end.cash,peakDebt:scale.peakDebt,failedMonth:r.failed,firstBillionMonth:scale.firstBillion,year10CashAfterDebt:last.reduce((n,x)=>n+x.operatingSurplus-x.service,0)};});
+ const r=run(venture),rows=r.rows.slice(24,48),sum=k=>rows.reduce((n,x)=>n+x[k],0);
+ const capitalBridge={months:[25,48],openingCash:r.rows[23].cash,equityReceived:sum('equityIn'),acquisitions:sum('newFirms'),buyerPurchaseCash:sum('downPayment'),closingCosts:sum('closingCosts'),centralCostsIncludedInEbitda:sum('overhead'),cashAfterDebt:sum('operatingSurplus')-sum('service'),closingCash:rows.at(-1).cash,bankDraw:sum('bankDraw'),sellerDraw:sum('sellerDraw')};
+ // Static mature-portfolio illustration, not an adoption schedule or funded forecast.
+ const matureMarginSensitivity=[40,60,80].map(margin=>({practiceMargin:margin,revenueHeldFixed:r.end.revenue,platformEbitda:r.end.revenue*margin/100-r.end.overhead*12-r.end.cac*12,practiceCostPerClient:venture.clientRevenue*(1-margin/100)}));
+ return {basis:'Fixed preset comparisons. USD; revenue/EBITDA are annualized year-end rates. Not investor returns.',paths,capitalBridge,matureMarginSensitivity,aiBasis:'All firms fully mature at the stated margin; revenue and central/CAC costs held fixed. No adoption date, additional cash generation or terminal valuation is forecast. 80% is an unverified long-term hypothesis.'};
+}
+root.CPA={defaults,presets,scenario,scaleSummary,run,launch,ventureAnalysis,irr,payment,overhead};if(typeof module!=='undefined')module.exports=root.CPA;
 })(typeof window!=='undefined'?window:globalThis);

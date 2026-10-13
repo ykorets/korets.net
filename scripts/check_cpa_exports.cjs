@@ -9,4 +9,6 @@ for(const [id,s] of Object.entries(b.scenarios)){
  const lines=fs.readFileSync(require.resolve('../cpa/data/'+id+'-monthly.csv'),'utf8').trim().split('\n');assert.equal(lines.length,121);assert.equal(lines[0].split(',').length,Object.keys(b.dictionary.monthly).length);
  if(s.summary.laterCapital>0){assert.equal(s.summary.investorMoic,null);assert.equal(s.illustrativeSeedInvestorMonthlyCashFlows,null);}
 }
-console.log('Public exports reproduce all four scenarios; monthly cash, purchase funding and debt reconcile.');
+console.log('Public exports reproduce all five scenarios; monthly cash, purchase funding and debt reconcile.');
+
+assert.deepEqual(b.ventureAnalysis,C.ventureAnalysis());assert.equal(Object.keys(b.scenarios).length,5);

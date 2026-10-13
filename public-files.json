@@ -162,5 +162,8 @@
   "cpa/data/results.json",
   "cpa/data/sources.json",
   "cpa/data/unicorn-monthly.csv",
-  "cpa/data/up-monthly.csv"
+  "cpa/data/up-monthly.csv",
+  "cpa/venture.js",
+  "cpa/data/venture-monthly.csv",
+  "cpa/data/venture-analysis.json"
 ]

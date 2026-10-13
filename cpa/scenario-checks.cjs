@@ -16,7 +16,7 @@ const down=C.run(C.scenario('down'));assert.equal(down.failed,null);assert.equal
 const severe=C.run({...C.scenario('down'),hqAfter:25000});assert.equal(severe.failed,72);assert.equal(severe.investorReturnsAvailable,false);
 assert.equal(C.scaleSummary(C.scenario('down'),down).firstBillion,null);
 const partial=C.scenario('base');partial.years=99;assert.equal(C.scenario('base').years,10);
-console.log('All four presets: cash conservation, multi-deal monthly scheduling, capacity limits, scale overhead, client estimates, first $1B equity crossing, valuation sensitivity and growth-capital funding passed.');
+console.log('All five presets: cash conservation, multi-deal monthly scheduling, capacity limits, scale overhead, client estimates, first $1B equity crossing, valuation sensitivity and growth-capital funding passed.');
 
 assert.equal(C.defaults.clientRevenue,5000);assert.equal(Math.ceil(C.defaults.rev/C.defaults.clientRevenue),110);assert.equal(s.clients,55586);assert.equal(Math.ceil(s.hit.revenue/p.clientRevenue),43157);
 
@@ -51,3 +51,13 @@ for(const row of br.rows.filter(x=>x.newFirms)){near(row.purchasePrice/row.newFi
 const held={...bp,deals:1,scaleDeals:1,capital:10000000,tranches:false};
 const a=C.run({...held,years:2}),b=C.run({...held,years:2,revAfter:4000000,targetAfter:25,priceAfter:2});assert.deepEqual(a.rows,b.rows);
 near(br.end.ebitda,32403774.63701281);assert.ok(br.rows.slice(-12).reduce((s,x)=>s+x.operatingSurplus-x.service,0)>0);
+
+// Venture buys integration capacity; it must not rewrite launch, organic growth or margins.
+const vp=C.scenario('venture'),vr=C.run(vp),va=C.ventureAnalysis();
+assert.deepEqual(vr.rows.slice(0,24),br.rows.slice(0,24));
+for(const k of ['growth','churn','targetAfter','multiple','revAfter','priceAfter'])assert.equal(vp[k],bp[k]);
+assert.equal(vr.rows[24].equityIn,25000000);assert.equal(vr.laterCapital,25000000);assert.equal(vr.investorReturnsAvailable,false);assert.equal(vr.end.firms,145);near(vr.end.revenue,334370992.4211697);near(vr.end.ebitda,114151923.03530635);
+const bridge=va.capitalBridge;near(bridge.openingCash+bridge.equityReceived+bridge.cashAfterDebt-bridge.buyerPurchaseCash-bridge.closingCosts,bridge.closingCash);assert.equal(bridge.acquisitions,36);
+for(const x of va.matureMarginSensitivity){near(x.platformEbitda,vr.end.revenue*x.practiceMargin/100-vr.end.overhead*12-vr.end.cac*12);assert.equal(x.revenueHeldFixed,vr.end.revenue);}near(va.matureMarginSensitivity[2].practiceCostPerClient,1000);
+assert.equal(va.paths.find(x=>x.id==='capital-only').inputs.scaleDeals,6);
+console.log('Venture launch preservation, explicit capital, earned cash bridge and static AI sensitivity passed.');

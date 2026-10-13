@@ -4,7 +4,7 @@ This is a working investment illustration, not operating data from acquired firm
 
 ## Start here
 
-Download https://korets.net/cpa/data/model-bundle.json . It contains the model inputs, four scenarios, monthly and annual results, field definitions, Census extract, a source catalog, reference facts, limitations and the JavaScript model source. No login or API key is required. Alternatively use the separate files linked at https://korets.net/cpa/data/ .
+Download https://korets.net/cpa/data/model-bundle.json . It contains the model inputs, five scenarios, monthly and annual results, field definitions, Census extract, a source catalog, reference facts, limitations and the JavaScript model source. No login or API key is required. Alternatively use the separate files linked at https://korets.net/cpa/data/ .
 
 The bundle records the SHA-256 of the exact model source used. https://korets.net/release.json identifies the published site commit. Exports are generated from the same engine as the website, not a separate spreadsheet.
 
@@ -35,4 +35,10 @@ All acquisition criteria and model inputs are assumptions unless identified as s
 
 ## Suggested analysis request
 
-“Analyze the Accounting Growth Partners model bundle. Separate sourced facts from assumptions. Reproduce the Base scenario, reconcile monthly cash and financing, and explain annual earned revenue versus year-end run rate. Compare all four scenarios. Stress debt availability, seller financing, margins, retention, central costs and acquisition capacity. Identify how retained local seller equity would change the buyer's cash and terminal value. List missing inputs before estimating that effect. Do not invent financing terms or recommend an investment solely from the illustrative returns. Cite source URLs and identify the model hash used.”
+“Analyze the Accounting Growth Partners model bundle. Separate sourced facts from assumptions. Reproduce the Base scenario, reconcile monthly cash and financing, and explain annual earned revenue versus year-end run rate. Compare all five scenarios. Stress debt availability, seller financing, margins, retention, central costs and acquisition capacity. Identify how retained local seller equity would change the buyer's cash and terminal value. List missing inputs before estimating that effect. Do not invent financing terms or recommend an investment solely from the illustrative returns. Cite source URLs and identify the model hash used.”
+
+## Venture and AI sensitivity
+
+The Venture preset keeps the first 24 months identical to Base and assumes $25M of growth equity in month 25, capacity of 18 purchases per year, a $100K monthly central base and $2,500 per firm from month 25. Base growth, purchase pricing and 40% later margins remain unchanged. `venture-analysis.json` compares capital alone, $15M/$25M/$40M rounds and downside sensitivities. Its capital bridge reconciles months 25–48; central costs are already deducted in cash after debt and must not be subtracted twice.
+
+The 60–80% practice EBITDA margin illustration is a static, fully mature portfolio sensitivity with fixed revenue, central overhead and CAC. It is not an adoption forecast, valuation, cash-flow simulation or default operating assumption. It does not establish that 80% is achievable; at $5K/client it leaves only $1K per client for all practice costs.
