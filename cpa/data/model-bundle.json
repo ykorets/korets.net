@@ -7,7 +7,7 @@
     "currency": "USD",
     "frequency": "monthly",
     "modelUrl": "https://korets.net/cpa/model.js",
-    "modelSha256": "897f0c2b70a06dcfa7a33e088746e7178dbd68b71a82c1b47586886520e796b1",
+    "modelSha256": "ca8231b9da8fc31402fa5f3710e564a94b375506ad0292effb1ea06d6be4c0c3",
     "releaseUrl": "https://korets.net/release.json",
     "basis": "Illustrative full-ownership acquisition model. Retained seller equity is a proposed deal option, not implemented in calculations."
   },
@@ -7788,7 +7788,7 @@
         "term": 5,
         "reserve": 6,
         "close": 5,
-        "multiple": 8,
+        "multiple": 9,
         "div": 0,
         "divStart": 5,
         "raise": 25000000,
@@ -7806,13 +7806,13 @@
         "laterCapital": 25000000,
         "failedMonth": null,
         "valuationAvailable": true,
-        "enterpriseValue": 913215384.2824508,
-        "equityValue": 930850535.5023793,
+        "enterpriseValue": 1027367307.3177571,
+        "equityValue": 1045002458.5376856,
         "investorReturnsAvailable": false,
         "investorTotalReceipts": null,
         "investorMoic": null,
         "investorIrr": null,
-        "firstBillionMonth": null
+        "firstBillionMonth": 118
       },
       "seedFundingGates": [
         {
@@ -19017,7 +19017,7 @@
           "term": 5,
           "reserve": 6,
           "close": 5,
-          "multiple": 8,
+          "multiple": 9,
           "div": 0,
           "divStart": 5,
           "raise": 25000000,
@@ -19026,7 +19026,7 @@
         "firms": 145,
         "revenue": 334370992.4211697,
         "ebitda": 114151923.03530635,
-        "equity": 930850535.5023793,
+        "equity": 1045002458.5376856,
         "equityFunded": 26500000,
         "year5Revenue": 111044021.73235203,
         "year5Ebitda": 35832990.94052212,
@@ -19035,7 +19035,7 @@
         "cash": 113590751.99641117,
         "peakDebt": 95955600.7764827,
         "failedMonth": null,
-        "firstBillionMonth": null,
+        "firstBillionMonth": 118,
         "year10CashAfterDebt": 61808945.855876766
       },
       {
@@ -19073,7 +19073,7 @@
           "term": 5,
           "reserve": 6,
           "close": 5,
-          "multiple": 8,
+          "multiple": 9,
           "div": 0,
           "divStart": 5,
           "raise": 15000000,
@@ -19082,7 +19082,7 @@
         "firms": 120,
         "revenue": 271948479.83580995,
         "ebitda": 91805593.37872328,
-        "equity": 712103698.0604314,
+        "equity": 803909291.4391546,
         "equityFunded": 16500000,
         "year5Revenue": 73515213.2607964,
         "year5Ebitda": 23477064.70943415,
@@ -19129,7 +19129,7 @@
           "term": 5,
           "reserve": 6,
           "close": 5,
-          "multiple": 8,
+          "multiple": 9,
           "div": 0,
           "divStart": 5,
           "raise": 40000000,
@@ -19138,7 +19138,7 @@
         "firms": 148,
         "revenue": 341746002.1434619,
         "ebitda": 116790676.63255444,
-        "equity": 969504271.1535342,
+        "equity": 1086294947.7860887,
         "equityFunded": 41500000,
         "year5Revenue": 117084177.5844508,
         "year5Ebitda": 37223499.1316999,
@@ -19147,7 +19147,7 @@
         "cash": 131134458.8695814,
         "peakDebt": 95955600.7764827,
         "failedMonth": null,
-        "firstBillionMonth": null,
+        "firstBillionMonth": 116,
         "year10CashAfterDebt": 63264158.43541419
       },
       {
@@ -19185,7 +19185,7 @@
           "term": 5,
           "reserve": 6,
           "close": 5,
-          "multiple": 8,
+          "multiple": 9,
           "div": 0,
           "divStart": 5,
           "raise": 25000000,
@@ -19194,7 +19194,7 @@
         "firms": 103,
         "revenue": 233184735.7944332,
         "ebitda": 77973008.0834139,
-        "equity": 564085051.1622416,
+        "equity": 642058059.2456555,
         "equityFunded": 26500000,
         "year5Revenue": 75965584.77975047,
         "year5Ebitda": 24813113.79058583,
@@ -19241,7 +19241,7 @@
           "term": 5,
           "reserve": 6,
           "close": 5,
-          "multiple": 8,
+          "multiple": 9,
           "div": 0,
           "divStart": 5,
           "raise": 25000000,
@@ -19250,7 +19250,7 @@
         "firms": 122,
         "revenue": 279178764.3410652,
         "ebitda": 81632706.92562833,
-        "equity": 617870406.6762412,
+        "equity": 699503113.6018695,
         "equityFunded": 26500000,
         "year5Revenue": 94713819.69221777,
         "year5Ebitda": 26981593.318742584,
@@ -19297,7 +19297,7 @@
           "term": 5,
           "reserve": 6,
           "close": 5,
-          "multiple": 8,
+          "multiple": 9,
           "div": 0,
           "divStart": 5,
           "raise": 25000000,
@@ -19306,7 +19306,7 @@
         "firms": 137,
         "revenue": 313546788.6638634,
         "ebitda": 106686967.64510301,
-        "equity": 859719849.2227999,
+        "equity": 966406816.8679029,
         "equityFunded": 26500000,
         "year5Revenue": 93988934.22381683,
         "year5Ebitda": 29415656.119499296,
@@ -19335,6 +19335,22 @@
       "bankDraw": 27000000,
       "sellerDraw": 45000000
     },
+    "valuationSensitivity": [
+      {
+        "multiple": 8,
+        "enterpriseValue": 913215384.2824508,
+        "debt": 95955600.7764827,
+        "cash": 113590751.99641117,
+        "equityValue": 930850535.5023793
+      },
+      {
+        "multiple": 9,
+        "enterpriseValue": 1027367307.3177571,
+        "debt": 95955600.7764827,
+        "cash": 113590751.99641117,
+        "equityValue": 1045002458.5376856
+      }
+    ],
     "matureMarginSensitivity": [
       {
         "practiceMargin": 40,
@@ -19903,5 +19919,5 @@
       ]
     }
   ],
-  "modelSource": "(function(root){\nconst defaults={capital:1500000,tranches:true,clientRevenue:5000,scaleDeals:0,hqPerFirm:0,years:10,rev:550000,revAfter:0,price:1,priceAfter:0,entry:25,target:45,targetAfter:0,ramp:12,churn:8,growth:12,cac:25,hq:25000,hqAfter:25000,hqChangeMonth:25,hqGrowth:10,deals:4,down1:50,down2:20,bank:30,creditMonth:25,bankRate:15,sellerRate:6,term:5,reserve:6,close:5,multiple:8,div:30,divStart:5,raise:0,raiseMonth:24};\n// Scenario values are editable hypotheses, not market forecasts or agreed terms.\nconst presets={\n down:{name:'Pessimistic',changes:{target:35,churn:10,growth:8,ramp:24,multiple:6,hqAfter:15000,hqChangeMonth:20,bankRate:18,deals:2,creditMonth:37,hqPerFirm:500}},\n base:{name:'Base',changes:{scaleDeals:6,revAfter:2000000,priceAfter:1.25,targetAfter:40,hqPerFirm:1000,div:0,raise:2500000,raiseMonth:25}},\n venture:{name:'Venture',changes:{scaleDeals:18,revAfter:2000000,priceAfter:1.25,targetAfter:40,hqAfter:100000,hqPerFirm:2500,div:0,raise:25000000,raiseMonth:25}},\n up:{name:'Optimistic',changes:{target:50,targetAfter:45,churn:6,growth:15,ramp:9,multiple:10,deals:6,scaleDeals:6,revAfter:2000000,priceAfter:1.25,hqPerFirm:1000,div:0,raise:5000000,raiseMonth:25}},\n unicorn:{name:'Unicorn',changes:{years:10,deals:4,scaleDeals:12,revAfter:2000000,priceAfter:1.25,targetAfter:45,hqPerFirm:1000,growth:18,churn:6,target:45,multiple:12,div:0,raise:5000000,raiseMonth:25}}\n};\nfunction scenario(key){if(!presets[key])throw new Error('Unknown scenario');return {...defaults,...presets[key].changes};}\nfunction scaleSummary(p,r){\n const value=x=>Math.max(0,Math.max(0,x.ebitda)*p.multiple-x.debt+x.cash);\n const hit=r.returnsAvailable?r.rows.find(x=>value(x)>=1e9):null;\n const averageFee=p.clientRevenue||5000,margin=r.end.revenue>0?r.end.ebitda/r.end.revenue:0;\n const requiredEbitda=Math.max(0,(1e9+r.end.debt-r.end.cash)/p.multiple);\n const requiredRevenue=margin>0?requiredEbitda/margin:null;\n return {clients:Math.ceil(r.end.revenue/averageFee),firstBillion:hit?.month??null,hit,requiredEbitda,requiredRevenue,requiredClients:requiredRevenue===null?null:Math.ceil(requiredRevenue/averageFee),requiredFirms:requiredRevenue===null||!r.end.firms?null:Math.ceil(requiredRevenue/(r.end.revenue/r.end.firms)),peakDebt:Math.max(...r.rows.map(x=>x.debt)),laterCapital:r.rows.reduce((s,x)=>s+x.equityIn-x.seedIn,0)};\n}\n// Base-budget timing is scenario-specific. Per-firm costs start M25; annual growth starts M37.\n// Practice expenses remain in practice EBITDA.\nfunction overhead(p,month,firms){\n const base=month<(p.hqChangeMonth??25)?p.hq:(p.hqAfter??p.hq);\n return base*(1+p.hqGrowth/100)**Math.max(0,Math.floor((month-25)/12))+(month<=24?0:firms*(p.hqPerFirm||0));\n}\nconst payment=(p,r,n)=>r===0?p/n:p*r/(1-(1+r)**(-n));\nfunction irr(flows){if(!flows.some(x=>x>0))return null;const npv=r=>flows.reduce((s,v,i)=>s+v/(1+r)**(i/12),0);let lo=-.9999,hi=1;while(npv(hi)>0&&hi<1e6)hi=hi*2+1;if(npv(lo)*npv(hi)>0)return null;for(let i=0;i<150;i++){const mid=(lo+hi)/2;if(npv(mid)>0)lo=mid;else hi=mid;}return (lo+hi)/2;}\n// Loan proceeds pay the seller directly. The cash ledger therefore deducts only\n// the buyer's equity contribution and closing costs, never the full price twice.\nfunction run(p,options={}){\n const H=Math.round(p.years*12),firms=[],rows=[],flows=Array(H+1).fill(0);\n const useTranches=options.tranches??p.tranches??false;\n const initial=useTranches?p.capital*.4:p.capital;\n flows[0]=-initial;\n let fundedCapital=initial;\n let cash=initial,stake=.5,dividends=0,minCash=cash,failed=null,last=-99,yearDeals=0,yr=0;\n const gates=useTranches?[\n  {amount:p.capital*.3,firms:1,margin:0,coverage:1.25,earned:null,paid:null},\n  {amount:p.capital*.3,firms:2,margin:35,coverage:1.25,earned:null,paid:null}\n ]:[];\n for(let mo=1;mo<=H;mo++){\n  if(Math.floor((mo-1)/12)!==yr){yr=Math.floor((mo-1)/12);yearDeals=0;}\n  const openingCash=cash;let equityIn=0,seedIn=0;\n  const previous=rows.at(-1);\n  for(let i=0;i<gates.length;i++){\n   const g=gates[i];\n   // KPI uses a completed month's results, never the acquisition it would fund.\n   if(g.earned===null&&previous&&(i===0||gates[i-1].paid!==null)&&previous.firms>=g.firms&&previous.firmEbitda*12>=previous.revenue*g.margin/100&&previous.firmEbitda>=previous.service*g.coverage)g.earned=mo-1;\n   if(g.earned!==null&&g.paid===null&&mo>=g.earned+1+(options.delay||0)){cash+=g.amount;equityIn+=g.amount;seedIn+=g.amount;fundedCapital+=g.amount;flows[mo]-=g.amount;g.paid=mo;}\n  }\n  if(p.raise>0&&mo===p.raiseMonth){cash+=p.raise;equityIn+=p.raise;/* Funding affects business cash; future investor terms are outside this model. */}\n  const capacity=mo<=24?p.deals:(p.scaleDeals||p.deals);\n  const perFirm=mo<=24?0:(p.hqPerFirm||0);let overheadCost=overhead(p,mo,firms.length);\n  // Later acquisitions use an explicit blended entry size and price. Existing\n  // cohorts keep their own revenue and target margin; they are never resized.\n  const buyRev=mo<=24?p.rev:(p.revAfter||p.rev),price=buyRev*(mo<=24?p.price:(p.priceAfter||p.price));\n  const creditMonth=Math.max(25,p.creditMonth),down=mo>=creditMonth?p.down2/100:p.down1/100,bank=mo>=creditMonth?Math.min(p.bank/100,1-down):0,seller=1-down-bank,cost=price*(down+p.close/100);\n  let downPayment=0,closingCosts=0,bankDraw=0,sellerDraw=0,purchasePrice=0,newFirms=0;\n  const monthSlots=capacity<=12?(mo-last>=Math.ceil(12/capacity)?1:0):Math.floor((mo%12||12)*capacity/12)-Math.floor(((mo%12||12)-1)*capacity/12);\n  for(let slot=0;mo>=3&&slot<monthSlots&&yearDeals<capacity&&(options.unconstrained||cash>=cost+(overheadCost+perFirm)*p.reserve);slot++){\n   const loan=(amount,rate)=>({balance:amount,rate:rate/1200,pmt:payment(amount,rate/1200,p.term*12)});\n   firms.push({rev:buyRev,target:mo<=24?p.target:(p.targetAfter||p.target),age:0,loans:[loan(price*bank,p.bankRate),loan(price*seller,p.sellerRate)]});\n   downPayment+=price*down;closingCosts+=price*p.close/100;bankDraw+=price*bank;sellerDraw+=price*seller;purchasePrice+=price;newFirms++;overheadCost+=perFirm;\n   cash-=cost;last=mo;yearDeals++;\n  }\n  const postAcquisitionCash=cash;\n  let ebitda=0,revenue=0,service=0,acquisition=0,interestPaid=0,principalPaid=0;\n  for(const f of firms){\n   if(f.age>0)f.rev*=1+(p.growth-p.churn)/1200;\n   const margin=(p.entry+(f.target-p.entry)*Math.min(f.age/p.ramp,1))/100;\n   ebitda+=f.rev*margin;revenue+=f.rev;acquisition+=f.rev*p.growth/1200*p.cac/100;\n   for(const loan of f.loans)if(loan.balance>0){const interest=loan.balance*loan.rate,pay=Math.min(loan.pmt,loan.balance+interest);service+=pay;interestPaid+=interest;principalPaid+=pay-interest;loan.balance=Math.max(0,loan.balance+interest-pay);}\n   f.age++;\n  }\n  const firmEbitda=ebitda/12,operatingSurplus=firmEbitda-acquisition-overheadCost;\n  cash+=operatingSurplus-service;\n  let distribution=0;\n  if(fundedCapital>=p.capital-1e-6&&cash>=0&&mo%12===0&&mo>=p.divStart*12){distribution=Math.max(0,cash-overheadCost*p.reserve)*p.div/100;cash-=distribution;const investor=distribution*stake;dividends+=investor;flows[mo]+=investor;}\n  minCash=Math.min(cash,minCash);\n  rows.push({month:mo,cash,openingCash,postAcquisitionCash,equityIn,seedIn,newFirms,downPayment,closingCosts,purchasePrice,bankDraw,sellerDraw,firms:firms.length,revenue,firmRevenue:revenue/12,firmEbitda,firmOperatingCosts:revenue/12-firmEbitda,overhead:overheadCost,cac:acquisition,service,interestPaid,principalPaid,operatingSurplus,ebitda:ebitda-overheadCost*12-acquisition*12,debt:firms.reduce((s,f)=>s+f.loans.reduce((s,l)=>s+l.balance,0),0),distribution,reserve:overheadCost*p.reserve});\n  if(cash<0&&!options.unconstrained){failed=mo;break;}\n }\n const fundingComplete=fundedCapital>=p.capital-1e-6,returnsAvailable=failed===null&&fundingComplete;\n const laterCapital=rows.reduce((sum,row)=>sum+row.equityIn-row.seedIn,0),investorReturnsAvailable=returnsAvailable&&laterCapital===0;\n const end=rows.at(-1),ev=Math.max(0,end.ebitda)*p.multiple,equity=Math.max(0,ev-end.debt+end.cash),exit=investorReturnsAvailable?equity*stake:0;flows[H]+=exit;const total=dividends+exit;\n return {rows,failed,minCash,stake,dividends:laterCapital?null:dividends,ev,equity,exit:laterCapital?null:exit,total:investorReturnsAvailable?total:null,profit:investorReturnsAvailable?total-fundedCapital:null,moic:investorReturnsAvailable?total/fundedCapital:null,irr:investorReturnsAvailable?irr(flows):null,end,initial,gates,fundedCapital,fundingComplete,returnsAvailable,investorReturnsAvailable,laterCapital,flows:laterCapital?null:flows};\n}\nfunction launch(p){\n // The launch comparison retains operating assumptions but excludes an exit,\n // investor distributions and later third-party equity; committed seed uses the selected budget.\n const q={...p,years:2,div:0,raise:0,creditMonth:Math.max(25,p.creditMonth)};\n const upfront=run(q,{tranches:false}),staged=run(q,{tranches:true}),delayed=run(q,{tranches:true,delay:3});\n // Financing need for the full capacity schedule: fixed acquisitions independent\n // of available cash, with the reserve maintained at closing AND month end.\n const schedule=run({...q,capital:0},{unconstrained:true,tranches:false});\n const needed=Math.ceil(Math.max(0,...schedule.rows.flatMap(r=>[r.reserve-r.cash,r.reserve-r.postAcquisitionCash])));\n const fundedSchedule=run({...q,capital:needed},{tranches:false});\n return {upfront,staged,delayed,needed,fundedSchedule,plannedFirms:schedule.end.firms};\n}\n\n// Fixed-preset decision support: the selected calculator can be edited separately.\nfunction ventureAnalysis(){\n const base=scenario('base'),venture=scenario('venture');\n const variants=[['base','Base',base],['capital-only','More capital, Base capacity',{...base,raise:25000000}],['venture','Venture',venture],['capital-15','Venture with $15M round',{...venture,raise:15000000}],['capital-40','Venture with $40M round',{...venture,raise:40000000}],['price-stress','Purchase price 1.50×',{...venture,priceAfter:1.5}],['margin-stress','Later margin 35%',{...venture,targetAfter:35}],['bank-delay','Bank starts month 37',{...venture,creditMonth:37}]];\n const paths=variants.map(([id,name,inputs])=>{const r=run(inputs),scale=scaleSummary(inputs,r),y5=r.rows[59],last=r.rows.slice(-12);return {id,name,inputs,firms:r.end.firms,revenue:r.end.revenue,ebitda:r.end.ebitda,equity:r.returnsAvailable?r.equity:null,equityFunded:r.fundedCapital+r.laterCapital,year5Revenue:y5?.revenue??null,year5Ebitda:y5?.ebitda??null,year5Firms:y5?.firms??null,debt:r.end.debt,cash:r.end.cash,peakDebt:scale.peakDebt,failedMonth:r.failed,firstBillionMonth:scale.firstBillion,year10CashAfterDebt:last.reduce((n,x)=>n+x.operatingSurplus-x.service,0)};});\n const r=run(venture),rows=r.rows.slice(24,48),sum=k=>rows.reduce((n,x)=>n+x[k],0);\n const capitalBridge={months:[25,48],openingCash:r.rows[23].cash,equityReceived:sum('equityIn'),acquisitions:sum('newFirms'),buyerPurchaseCash:sum('downPayment'),closingCosts:sum('closingCosts'),centralCostsIncludedInEbitda:sum('overhead'),cashAfterDebt:sum('operatingSurplus')-sum('service'),closingCash:rows.at(-1).cash,bankDraw:sum('bankDraw'),sellerDraw:sum('sellerDraw')};\n // Static mature-portfolio illustration, not an adoption schedule or funded forecast.\n const matureMarginSensitivity=[40,60,80].map(margin=>({practiceMargin:margin,revenueHeldFixed:r.end.revenue,platformEbitda:r.end.revenue*margin/100-r.end.overhead*12-r.end.cac*12,practiceCostPerClient:venture.clientRevenue*(1-margin/100)}));\n return {basis:'Fixed preset comparisons. USD; revenue/EBITDA are annualized year-end rates. Not investor returns.',paths,capitalBridge,matureMarginSensitivity,aiBasis:'All firms fully mature at the stated margin; revenue and central/CAC costs held fixed. No adoption date, additional cash generation or terminal valuation is forecast. 80% is an unverified long-term hypothesis.'};\n}\nroot.CPA={defaults,presets,scenario,scaleSummary,run,launch,ventureAnalysis,irr,payment,overhead};if(typeof module!=='undefined')module.exports=root.CPA;\n})(typeof window!=='undefined'?window:globalThis);\n"
+  "modelSource": "(function(root){\nconst defaults={capital:1500000,tranches:true,clientRevenue:5000,scaleDeals:0,hqPerFirm:0,years:10,rev:550000,revAfter:0,price:1,priceAfter:0,entry:25,target:45,targetAfter:0,ramp:12,churn:8,growth:12,cac:25,hq:25000,hqAfter:25000,hqChangeMonth:25,hqGrowth:10,deals:4,down1:50,down2:20,bank:30,creditMonth:25,bankRate:15,sellerRate:6,term:5,reserve:6,close:5,multiple:8,div:30,divStart:5,raise:0,raiseMonth:24};\n// Scenario values are editable hypotheses, not market forecasts or agreed terms.\nconst presets={\n down:{name:'Pessimistic',changes:{target:35,churn:10,growth:8,ramp:24,multiple:6,hqAfter:15000,hqChangeMonth:20,bankRate:18,deals:2,creditMonth:37,hqPerFirm:500}},\n base:{name:'Base',changes:{scaleDeals:6,revAfter:2000000,priceAfter:1.25,targetAfter:40,hqPerFirm:1000,div:0,raise:2500000,raiseMonth:25}},\n venture:{name:'Venture',changes:{multiple:9,scaleDeals:18,revAfter:2000000,priceAfter:1.25,targetAfter:40,hqAfter:100000,hqPerFirm:2500,div:0,raise:25000000,raiseMonth:25}},\n up:{name:'Optimistic',changes:{target:50,targetAfter:45,churn:6,growth:15,ramp:9,multiple:10,deals:6,scaleDeals:6,revAfter:2000000,priceAfter:1.25,hqPerFirm:1000,div:0,raise:5000000,raiseMonth:25}},\n unicorn:{name:'Unicorn',changes:{years:10,deals:4,scaleDeals:12,revAfter:2000000,priceAfter:1.25,targetAfter:45,hqPerFirm:1000,growth:18,churn:6,target:45,multiple:12,div:0,raise:5000000,raiseMonth:25}}\n};\nfunction scenario(key){if(!presets[key])throw new Error('Unknown scenario');return {...defaults,...presets[key].changes};}\nfunction scaleSummary(p,r){\n const value=x=>Math.max(0,Math.max(0,x.ebitda)*p.multiple-x.debt+x.cash);\n const hit=r.returnsAvailable?r.rows.find(x=>value(x)>=1e9):null;\n const averageFee=p.clientRevenue||5000,margin=r.end.revenue>0?r.end.ebitda/r.end.revenue:0;\n const requiredEbitda=Math.max(0,(1e9+r.end.debt-r.end.cash)/p.multiple);\n const requiredRevenue=margin>0?requiredEbitda/margin:null;\n return {clients:Math.ceil(r.end.revenue/averageFee),firstBillion:hit?.month??null,hit,requiredEbitda,requiredRevenue,requiredClients:requiredRevenue===null?null:Math.ceil(requiredRevenue/averageFee),requiredFirms:requiredRevenue===null||!r.end.firms?null:Math.ceil(requiredRevenue/(r.end.revenue/r.end.firms)),peakDebt:Math.max(...r.rows.map(x=>x.debt)),laterCapital:r.rows.reduce((s,x)=>s+x.equityIn-x.seedIn,0)};\n}\n// Base-budget timing is scenario-specific. Per-firm costs start M25; annual growth starts M37.\n// Practice expenses remain in practice EBITDA.\nfunction overhead(p,month,firms){\n const base=month<(p.hqChangeMonth??25)?p.hq:(p.hqAfter??p.hq);\n return base*(1+p.hqGrowth/100)**Math.max(0,Math.floor((month-25)/12))+(month<=24?0:firms*(p.hqPerFirm||0));\n}\nconst payment=(p,r,n)=>r===0?p/n:p*r/(1-(1+r)**(-n));\nfunction irr(flows){if(!flows.some(x=>x>0))return null;const npv=r=>flows.reduce((s,v,i)=>s+v/(1+r)**(i/12),0);let lo=-.9999,hi=1;while(npv(hi)>0&&hi<1e6)hi=hi*2+1;if(npv(lo)*npv(hi)>0)return null;for(let i=0;i<150;i++){const mid=(lo+hi)/2;if(npv(mid)>0)lo=mid;else hi=mid;}return (lo+hi)/2;}\n// Loan proceeds pay the seller directly. The cash ledger therefore deducts only\n// the buyer's equity contribution and closing costs, never the full price twice.\nfunction run(p,options={}){\n const H=Math.round(p.years*12),firms=[],rows=[],flows=Array(H+1).fill(0);\n const useTranches=options.tranches??p.tranches??false;\n const initial=useTranches?p.capital*.4:p.capital;\n flows[0]=-initial;\n let fundedCapital=initial;\n let cash=initial,stake=.5,dividends=0,minCash=cash,failed=null,last=-99,yearDeals=0,yr=0;\n const gates=useTranches?[\n  {amount:p.capital*.3,firms:1,margin:0,coverage:1.25,earned:null,paid:null},\n  {amount:p.capital*.3,firms:2,margin:35,coverage:1.25,earned:null,paid:null}\n ]:[];\n for(let mo=1;mo<=H;mo++){\n  if(Math.floor((mo-1)/12)!==yr){yr=Math.floor((mo-1)/12);yearDeals=0;}\n  const openingCash=cash;let equityIn=0,seedIn=0;\n  const previous=rows.at(-1);\n  for(let i=0;i<gates.length;i++){\n   const g=gates[i];\n   // KPI uses a completed month's results, never the acquisition it would fund.\n   if(g.earned===null&&previous&&(i===0||gates[i-1].paid!==null)&&previous.firms>=g.firms&&previous.firmEbitda*12>=previous.revenue*g.margin/100&&previous.firmEbitda>=previous.service*g.coverage)g.earned=mo-1;\n   if(g.earned!==null&&g.paid===null&&mo>=g.earned+1+(options.delay||0)){cash+=g.amount;equityIn+=g.amount;seedIn+=g.amount;fundedCapital+=g.amount;flows[mo]-=g.amount;g.paid=mo;}\n  }\n  if(p.raise>0&&mo===p.raiseMonth){cash+=p.raise;equityIn+=p.raise;/* Funding affects business cash; future investor terms are outside this model. */}\n  const capacity=mo<=24?p.deals:(p.scaleDeals||p.deals);\n  const perFirm=mo<=24?0:(p.hqPerFirm||0);let overheadCost=overhead(p,mo,firms.length);\n  // Later acquisitions use an explicit blended entry size and price. Existing\n  // cohorts keep their own revenue and target margin; they are never resized.\n  const buyRev=mo<=24?p.rev:(p.revAfter||p.rev),price=buyRev*(mo<=24?p.price:(p.priceAfter||p.price));\n  const creditMonth=Math.max(25,p.creditMonth),down=mo>=creditMonth?p.down2/100:p.down1/100,bank=mo>=creditMonth?Math.min(p.bank/100,1-down):0,seller=1-down-bank,cost=price*(down+p.close/100);\n  let downPayment=0,closingCosts=0,bankDraw=0,sellerDraw=0,purchasePrice=0,newFirms=0;\n  const monthSlots=capacity<=12?(mo-last>=Math.ceil(12/capacity)?1:0):Math.floor((mo%12||12)*capacity/12)-Math.floor(((mo%12||12)-1)*capacity/12);\n  for(let slot=0;mo>=3&&slot<monthSlots&&yearDeals<capacity&&(options.unconstrained||cash>=cost+(overheadCost+perFirm)*p.reserve);slot++){\n   const loan=(amount,rate)=>({balance:amount,rate:rate/1200,pmt:payment(amount,rate/1200,p.term*12)});\n   firms.push({rev:buyRev,target:mo<=24?p.target:(p.targetAfter||p.target),age:0,loans:[loan(price*bank,p.bankRate),loan(price*seller,p.sellerRate)]});\n   downPayment+=price*down;closingCosts+=price*p.close/100;bankDraw+=price*bank;sellerDraw+=price*seller;purchasePrice+=price;newFirms++;overheadCost+=perFirm;\n   cash-=cost;last=mo;yearDeals++;\n  }\n  const postAcquisitionCash=cash;\n  let ebitda=0,revenue=0,service=0,acquisition=0,interestPaid=0,principalPaid=0;\n  for(const f of firms){\n   if(f.age>0)f.rev*=1+(p.growth-p.churn)/1200;\n   const margin=(p.entry+(f.target-p.entry)*Math.min(f.age/p.ramp,1))/100;\n   ebitda+=f.rev*margin;revenue+=f.rev;acquisition+=f.rev*p.growth/1200*p.cac/100;\n   for(const loan of f.loans)if(loan.balance>0){const interest=loan.balance*loan.rate,pay=Math.min(loan.pmt,loan.balance+interest);service+=pay;interestPaid+=interest;principalPaid+=pay-interest;loan.balance=Math.max(0,loan.balance+interest-pay);}\n   f.age++;\n  }\n  const firmEbitda=ebitda/12,operatingSurplus=firmEbitda-acquisition-overheadCost;\n  cash+=operatingSurplus-service;\n  let distribution=0;\n  if(fundedCapital>=p.capital-1e-6&&cash>=0&&mo%12===0&&mo>=p.divStart*12){distribution=Math.max(0,cash-overheadCost*p.reserve)*p.div/100;cash-=distribution;const investor=distribution*stake;dividends+=investor;flows[mo]+=investor;}\n  minCash=Math.min(cash,minCash);\n  rows.push({month:mo,cash,openingCash,postAcquisitionCash,equityIn,seedIn,newFirms,downPayment,closingCosts,purchasePrice,bankDraw,sellerDraw,firms:firms.length,revenue,firmRevenue:revenue/12,firmEbitda,firmOperatingCosts:revenue/12-firmEbitda,overhead:overheadCost,cac:acquisition,service,interestPaid,principalPaid,operatingSurplus,ebitda:ebitda-overheadCost*12-acquisition*12,debt:firms.reduce((s,f)=>s+f.loans.reduce((s,l)=>s+l.balance,0),0),distribution,reserve:overheadCost*p.reserve});\n  if(cash<0&&!options.unconstrained){failed=mo;break;}\n }\n const fundingComplete=fundedCapital>=p.capital-1e-6,returnsAvailable=failed===null&&fundingComplete;\n const laterCapital=rows.reduce((sum,row)=>sum+row.equityIn-row.seedIn,0),investorReturnsAvailable=returnsAvailable&&laterCapital===0;\n const end=rows.at(-1),ev=Math.max(0,end.ebitda)*p.multiple,equity=Math.max(0,ev-end.debt+end.cash),exit=investorReturnsAvailable?equity*stake:0;flows[H]+=exit;const total=dividends+exit;\n return {rows,failed,minCash,stake,dividends:laterCapital?null:dividends,ev,equity,exit:laterCapital?null:exit,total:investorReturnsAvailable?total:null,profit:investorReturnsAvailable?total-fundedCapital:null,moic:investorReturnsAvailable?total/fundedCapital:null,irr:investorReturnsAvailable?irr(flows):null,end,initial,gates,fundedCapital,fundingComplete,returnsAvailable,investorReturnsAvailable,laterCapital,flows:laterCapital?null:flows};\n}\nfunction launch(p){\n // The launch comparison retains operating assumptions but excludes an exit,\n // investor distributions and later third-party equity; committed seed uses the selected budget.\n const q={...p,years:2,div:0,raise:0,creditMonth:Math.max(25,p.creditMonth)};\n const upfront=run(q,{tranches:false}),staged=run(q,{tranches:true}),delayed=run(q,{tranches:true,delay:3});\n // Financing need for the full capacity schedule: fixed acquisitions independent\n // of available cash, with the reserve maintained at closing AND month end.\n const schedule=run({...q,capital:0},{unconstrained:true,tranches:false});\n const needed=Math.ceil(Math.max(0,...schedule.rows.flatMap(r=>[r.reserve-r.cash,r.reserve-r.postAcquisitionCash])));\n const fundedSchedule=run({...q,capital:needed},{tranches:false});\n return {upfront,staged,delayed,needed,fundedSchedule,plannedFirms:schedule.end.firms};\n}\n\n// Fixed-preset decision support: the selected calculator can be edited separately.\nfunction ventureAnalysis(){\n const base=scenario('base'),venture=scenario('venture');\n const variants=[['base','Base',base],['capital-only','More capital, Base capacity',{...base,raise:25000000}],['venture','Venture',venture],['capital-15','Venture with $15M round',{...venture,raise:15000000}],['capital-40','Venture with $40M round',{...venture,raise:40000000}],['price-stress','Purchase price 1.50×',{...venture,priceAfter:1.5}],['margin-stress','Later margin 35%',{...venture,targetAfter:35}],['bank-delay','Bank starts month 37',{...venture,creditMonth:37}]];\n const paths=variants.map(([id,name,inputs])=>{const r=run(inputs),scale=scaleSummary(inputs,r),y5=r.rows[59],last=r.rows.slice(-12);return {id,name,inputs,firms:r.end.firms,revenue:r.end.revenue,ebitda:r.end.ebitda,equity:r.returnsAvailable?r.equity:null,equityFunded:r.fundedCapital+r.laterCapital,year5Revenue:y5?.revenue??null,year5Ebitda:y5?.ebitda??null,year5Firms:y5?.firms??null,debt:r.end.debt,cash:r.end.cash,peakDebt:scale.peakDebt,failedMonth:r.failed,firstBillionMonth:scale.firstBillion,year10CashAfterDebt:last.reduce((n,x)=>n+x.operatingSurplus-x.service,0)};});\n const r=run(venture),rows=r.rows.slice(24,48),sum=k=>rows.reduce((n,x)=>n+x[k],0);\n const capitalBridge={months:[25,48],openingCash:r.rows[23].cash,equityReceived:sum('equityIn'),acquisitions:sum('newFirms'),buyerPurchaseCash:sum('downPayment'),closingCosts:sum('closingCosts'),centralCostsIncludedInEbitda:sum('overhead'),cashAfterDebt:sum('operatingSurplus')-sum('service'),closingCash:rows.at(-1).cash,bankDraw:sum('bankDraw'),sellerDraw:sum('sellerDraw')};\n const valuationSensitivity=[8,9].map(multiple=>({multiple,enterpriseValue:Math.max(0,r.end.ebitda)*multiple,debt:r.end.debt,cash:r.end.cash,equityValue:Math.max(0,Math.max(0,r.end.ebitda)*multiple-r.end.debt+r.end.cash)}));\n // Static mature-portfolio illustration, not an adoption schedule or funded forecast.\n const matureMarginSensitivity=[40,60,80].map(margin=>({practiceMargin:margin,revenueHeldFixed:r.end.revenue,platformEbitda:r.end.revenue*margin/100-r.end.overhead*12-r.end.cac*12,practiceCostPerClient:venture.clientRevenue*(1-margin/100)}));\n return {basis:'Fixed preset comparisons. USD; revenue/EBITDA are annualized year-end rates. Not investor returns.',paths,capitalBridge,valuationSensitivity,matureMarginSensitivity,aiBasis:'All firms fully mature at the stated margin; revenue and central/CAC costs held fixed. No adoption date, additional cash generation or terminal valuation is forecast. 80% is an unverified long-term hypothesis.'};\n}\nroot.CPA={defaults,presets,scenario,scaleSummary,run,launch,ventureAnalysis,irr,payment,overhead};if(typeof module!=='undefined')module.exports=root.CPA;\n})(typeof window!=='undefined'?window:globalThis);\n"
 }

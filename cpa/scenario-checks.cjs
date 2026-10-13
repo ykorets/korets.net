@@ -55,9 +55,16 @@ near(br.end.ebitda,32403774.63701281);assert.ok(br.rows.slice(-12).reduce((s,x)=
 // Venture buys integration capacity; it must not rewrite launch, organic growth or margins.
 const vp=C.scenario('venture'),vr=C.run(vp),va=C.ventureAnalysis();
 assert.deepEqual(vr.rows.slice(0,24),br.rows.slice(0,24));
-for(const k of ['growth','churn','targetAfter','multiple','revAfter','priceAfter'])assert.equal(vp[k],bp[k]);
+for(const k of ['growth','churn','targetAfter','revAfter','priceAfter'])assert.equal(vp[k],bp[k]);
 assert.equal(vr.rows[24].equityIn,25000000);assert.equal(vr.laterCapital,25000000);assert.equal(vr.investorReturnsAvailable,false);assert.equal(vr.end.firms,145);near(vr.end.revenue,334370992.4211697);near(vr.end.ebitda,114151923.03530635);
 const bridge=va.capitalBridge;near(bridge.openingCash+bridge.equityReceived+bridge.cashAfterDebt-bridge.buyerPurchaseCash-bridge.closingCosts,bridge.closingCash);assert.equal(bridge.acquisitions,36);
 for(const x of va.matureMarginSensitivity){near(x.platformEbitda,vr.end.revenue*x.practiceMargin/100-vr.end.overhead*12-vr.end.cac*12);assert.equal(x.revenueHeldFixed,vr.end.revenue);}near(va.matureMarginSensitivity[2].practiceCostPerClient,1000);
 assert.equal(va.paths.find(x=>x.id==='capital-only').inputs.scaleDeals,6);
 console.log('Venture launch preservation, explicit capital, earned cash bridge and static AI sensitivity passed.');
+
+// Exit valuation must not change operating cash flows or the acquisition path.
+assert.equal(vp.multiple,9);assert.equal(bp.multiple,8);
+const vr8=C.run({...vp,multiple:8}),vs=C.scaleSummary(vp,vr);assert.deepEqual(vr.rows,vr8.rows);near(vr.equity-vr8.equity,vr.end.ebitda);
+assert.ok(vs.firstBillion);const prior=vr.rows[vs.firstBillion-2];assert.ok(prior.ebitda*9-prior.debt+prior.cash<1e9);assert.ok(vs.hit.ebitda*9-vs.hit.debt+vs.hit.cash>=1e9);
+for(const x of va.valuationSensitivity){near(x.enterpriseValue,vr.end.ebitda*x.multiple);near(x.equityValue,x.enterpriseValue-x.debt+x.cash);near(x.equityValue,x.multiple===9?vr.equity:vr8.equity);}
+console.log('Venture 9× equity bridge, 8× comparison, unchanged operations and first $1B month passed.');

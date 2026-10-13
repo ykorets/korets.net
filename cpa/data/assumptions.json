@@ -7,7 +7,7 @@
     "currency": "USD",
     "frequency": "monthly",
     "modelUrl": "https://korets.net/cpa/model.js",
-    "modelSha256": "897f0c2b70a06dcfa7a33e088746e7178dbd68b71a82c1b47586886520e796b1",
+    "modelSha256": "ca8231b9da8fc31402fa5f3710e564a94b375506ad0292effb1ea06d6be4c0c3",
     "releaseUrl": "https://korets.net/release.json",
     "basis": "Illustrative full-ownership acquisition model. Retained seller equity is a proposed deal option, not implemented in calculations."
   },
@@ -380,7 +380,7 @@
         "term": 5,
         "reserve": 6,
         "close": 5,
-        "multiple": 8,
+        "multiple": 9,
         "div": 0,
         "divStart": 5,
         "raise": 25000000,
