@@ -22887,6 +22887,70 @@
       "researchId": "cas-survey"
     },
     {
+      "url": "https://help.collective.com/hc/en-us/articles/45849121243411-LLC-Membership-Tier-Overview-FAQ",
+      "label": "Official membership scope and LLC / S Corp comparison",
+      "checked": "2026-10-14",
+      "usedOn": [
+        "/cpa/references/"
+      ]
+    },
+    {
+      "url": "https://help.collective.com/hc/en-us/articles/36243438617107-Setting-up-Collective-Invoicing",
+      "label": "Official invoicing workflow and setup",
+      "checked": "2026-10-14",
+      "usedOn": [
+        "/cpa/references/"
+      ]
+    },
+    {
+      "url": "https://www.collective.com/",
+      "label": "Collective company and product",
+      "checked": "2026-10-14",
+      "usedOn": [
+        "/cpa/references/"
+      ]
+    },
+    {
+      "url": "https://www.multiplierholdings.com/",
+      "label": "Official platform and portfolio",
+      "checked": "2026-10-14",
+      "usedOn": [
+        "/cpa/references/"
+      ]
+    },
+    {
+      "url": "https://lsvp.com/company/multiplier/",
+      "label": "Lightspeed's acquisition and technology description",
+      "checked": "2026-10-14",
+      "usedOn": [
+        "/cpa/references/"
+      ]
+    },
+    {
+      "url": "https://citrinetax.com/",
+      "label": "Citrine's official service and engagement description",
+      "checked": "2026-10-14",
+      "usedOn": [
+        "/cpa/references/"
+      ]
+    },
+    {
+      "url": "https://modusalliance.com/company/",
+      "label": "Official company, mission and leadership",
+      "checked": "2026-10-14",
+      "usedOn": [
+        "/cpa/references/"
+      ]
+    },
+    {
+      "url": "https://modusalliance.com/",
+      "label": "Official audit offering, network and technology",
+      "checked": "2026-10-14",
+      "usedOn": [
+        "/cpa/references/"
+      ]
+    },
+    {
       "url": "https://www.current.co/news/building-the-firm-of-the-future-currents-growth-story-highlighted-by-reuters",
       "label": "Current’s acquisition description",
       "checked": "2026-10-12",
