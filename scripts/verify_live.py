@@ -1,6 +1,7 @@
 """Verify the deployed commit and representative existing routes without submitting forms."""
 from pathlib import Path
 import concurrent.futures, json, re, subprocess, sys, time
+from robots_parity import robots_match
 ROOT = Path(__file__).resolve().parents[1]
 BASE = sys.argv[1].rstrip('/')
 
@@ -51,8 +52,11 @@ def check(path):
     for attempt in range(12):
         try:
             actual_data = fetch(path)
-            matches = (normalize(actual_data) == normalize(expected_data)
-                       if path.endswith('.html') else actual_data == expected_data)
+            if path == 'robots.txt':
+                matches = robots_match(actual_data, expected_data)
+            else:
+                matches = (normalize(actual_data) == normalize(expected_data)
+                           if path.endswith('.html') else actual_data == expected_data)
             if matches:
                 return path
         except Exception as exc:
