@@ -27,6 +27,8 @@ jobs:
           node cpa/model-checks.cjs
           node cpa/launch-checks.cjs
           node cpa/scenario-checks.cjs
+      - name: Verify strict origin and Cloudflare robots parity
+        run: python3 -m unittest discover -s scripts -p 'test_robots_parity.py'
       - run: python3 scripts/build_site.py
   deploy:
     if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'

@@ -13,6 +13,7 @@ esac
 node cpa/model-checks.cjs
 node cpa/launch-checks.cjs
 node cpa/scenario-checks.cjs
+python3 -m unittest discover -s scripts -p 'test_robots_parity.py'
 python3 scripts/build_site.py
 if [ "$mode" = full ]; then
   : # Quick already includes the complete source validation for this site.
