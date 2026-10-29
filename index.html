@@ -3,8 +3,43 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Yaroslav Korets | Building Tomorrow Today</title>
-  <meta name="description" content="Yaroslav Korets — digitization, growth, and systems thinking. Building from Los Angeles.">
+  <title>Yaro Korets | AI for Profitable Growth</title>
+  <meta name="description" content="I help business owners improve margins with AI across marketing, sales, financial administration and operations. Founder of Growth Control. Based in Los Angeles.">
+  <link rel="canonical" href="https://korets.net/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Yaro Korets">
+  <meta property="og:title" content="Yaro Korets | AI for Profitable Growth">
+  <meta property="og:description" content="Practical AI implementation across marketing, sales, finance and operations. Founder of Growth Control and CTO &amp; Co-Founder of Stretch Tent.">
+  <meta property="og:url" content="https://korets.net/">
+  <meta name="twitter:card" content="summary">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": "https://korets.net/#person",
+        "name": "Yaroslav Korets",
+        "alternateName": "Yaro Korets",
+        "url": "https://korets.net/",
+        "description": "AI implementation for profitable growth across marketing, sales, financial administration and operations. Founder of Growth Control and CTO & Co-Founder of Stretch Tent.",
+        "sameAs": ["https://www.linkedin.com/in/yaroslavkorets/"],
+        "worksFor": [
+          {"@type": "Organization", "name": "Growth Control", "url": "https://growthcontrol.app/"},
+          {"@type": "Organization", "name": "Stretch Tent", "url": "https://www.stretch-tent.net/"}
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://korets.net/#website",
+        "name": "Yaro Korets",
+        "url": "https://korets.net/",
+        "about": {"@id": "https://korets.net/#person"},
+        "inLanguage": "en"
+      }
+    ]
+  }
+  </script>
   <link rel="alternate" type="application/rss+xml" title="Yaroslav Korets — Writing" href="https://korets.net/writing/feed.xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -45,7 +80,7 @@
       --text-muted: #8888a0;
     }
 
-    html { scroll-behavior: smooth; }
+    html { scroll-behavior: smooth; scroll-padding-top: 6rem; }
 
     body {
       font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -116,6 +151,13 @@
       color: var(--text-secondary); max-width: 40rem;
       line-height: 1.8;
     }
+    .hero-roles { margin-top: 1.5rem; font-size: 0.9rem; color: var(--text-secondary); }
+    .hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 1.25rem; margin-top: 2rem; }
+    .hero-secondary { color: var(--purple-dark); font-weight: 500; text-underline-offset: 0.2em; }
+    .work-faq { margin-top: 1.75rem; }
+    .work-faq details { padding: 1rem 0; border-top: 1px solid var(--border); }
+    .work-faq summary { cursor: pointer; font-weight: 500; color: var(--text-primary); }
+    .work-faq p { margin-top: 0.75rem; }
 
     /* SECTIONS */
     .section { padding: 5.5rem 1.5rem; }
@@ -260,7 +302,7 @@
 
     /* PROJECTS */
     .projects-grid {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(min(20rem, 100%), 1fr));
       gap: 1.25rem; margin-top: 2.5rem;
     }
     .project-card {
@@ -418,16 +460,15 @@
 <nav>
   <div class="nav-inner">
     <a href="#" class="nav-logo">YK.</a>
-    <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Menu">
+    <button class="nav-toggle" onclick="this.setAttribute('aria-expanded', document.querySelector('.nav-links').classList.toggle('open'))" aria-label="Menu" aria-expanded="false" aria-controls="primary-navigation">
       <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
     </button>
-    <ul class="nav-links">
-      <li><a href="/cv">CV</a></li>
-      <li><a href="/ai/">AI Systems</a></li>
+    <ul class="nav-links" id="primary-navigation" onclick="if (event.target.closest('a')) { this.classList.remove('open'); document.querySelector('.nav-toggle').setAttribute('aria-expanded', 'false'); }">
+      <li><a href="#resume">Work with me</a></li>
+      <li><a href="#projects">Growth Control</a></li>
+      <li><a href="/ai/">AI Projects</a></li>
       <li><a href="/writing/">Writing</a></li>
       <li><a href="#story">Story</a></li>
-      <li><a href="#projects">My Businesses</a></li>
-      <li><a href="#philosophy">Philosophy</a></li>
       <li><a href="#contact">Contact</a></li>
       <li><a href="#book" class="nav-cta">Book a Call</a></li>
     </ul>
@@ -436,11 +477,70 @@
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-origin">Born in the USSR &middot; Raised in Ukraine &middot; Building from Los Angeles</div>
-  <h1>Building <span class="accent">Tomorrow</span> Today</h1>
-  <p class="tagline">I build things that are meant to work in real life — not just look good in presentations or decks.</p>
-  <p class="intro">Throughout my career I've been obsessed with digitization, transformation, acceleration, and growth of businesses — for my clients and for my own projects.</p>
-  <p class="intro">I believe the world is built for teamwork. Finding the right people, identifying their strengths, and placing them in systems where those strengths can thrive — that's one of the most important skills I bring. A great person doesn't always mean a great fit. A great employee on one project doesn't guarantee success on the next. The match matters.</p>
+  <div class="hero-origin">Yaro Korets &middot; AI implementation &middot; Los Angeles</div>
+  <h1>AI for <span class="accent">profitable growth.</span></h1>
+  <p class="tagline">I help business owners use AI to improve margins.</p>
+  <p class="intro">My work covers marketing, sales, financial administration and everyday operations. I connect the processes, tools and data, then implement a system your team can use.</p>
+  <p class="hero-roles">Founder, Growth Control &middot; CTO &amp; Co-Founder, Stretch Tent</p>
+  <div class="hero-actions">
+    <a href="https://growthcontrol.app/" class="resume-download">Explore Growth Control</a>
+    <a href="#book" class="hero-secondary">Discuss your operation</a>
+  </div>
+</section>
+
+<!-- CV TEASER -->
+<section class="section section-alt" id="resume">
+  <div class="narrow">
+    <div class="section-label">Work with me</div>
+    <span class="resume-role">Marketing · Sales · Finance · Operations</span>
+    <h2>Start with the business case.</h2>
+    <p style="margin-top:1rem;">We identify a process that affects profit, establish its current cost and performance, and agree what should improve. I build and implement the system, then assess the result against that starting point.</p>
+    <p>That could mean better conversion, lower operating costs or the capacity to handle more business. I work hands-on, from understanding the process to implementation.</p>
+    <div class="work-faq">
+      <details>
+        <summary>Where does Growth Control fit?</summary>
+        <p>Growth Control is my product for connected marketing and sales. It is a practical entry point for AI implementation. Financial administration and other operating processes are scoped around your business.</p>
+      </details>
+      <details>
+        <summary>How do we choose the first process?</summary>
+        <p>We look at its effect on revenue or cost, the data available and what it would take to implement. We agree how to measure the result before building.</p>
+      </details>
+    </div>
+    <div class="resume-actions">
+      <a href="/cv" class="resume-download">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+        Experience &amp; projects
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- MY BUSINESSES -->
+<section class="section section-alt" id="projects">
+  <div class="container">
+    <div class="section-label">My Businesses</div>
+    <h2>The product and the business behind it.</h2>
+
+    <div class="projects-grid">
+      <div class="project-card">
+        <h3>Growth Control</h3>
+        <p class="project-sub">Founder &middot; Marketing and sales</p>
+        <p>My product connects advertising, customer inquiries, CRM, calls, quotes and follow-up. It gives your team one connected sales process, configured around your business.</p>
+        <a href="https://growthcontrol.app/" target="_blank" rel="noopener" class="project-link">See how Growth Control works</a>
+        <div class="tags"><span class="tag">AI</span><span class="tag">Marketing</span><span class="tag">Sales</span></div>
+      </div>
+
+      <div class="project-card">
+        <h3>Stretch Tent</h3>
+        <p class="project-sub">CTO &amp; Co-Founder &middot; Since June 2018</p>
+        <p>Our tent rental and sales business in Southern California. We built and tested Growth Control in our own operation. That experience informs both the product and my implementation work.</p>
+        <a href="https://www.stretch-tent.net/" target="_blank" rel="noopener" class="project-link">stretch-tent.net</a>
+        <a href="https://growthcontrol.app/case-studies/stretch-tent/" target="_blank" rel="noopener" class="project-link">Implementation story</a>
+        <div class="tags"><span class="tag">Tent Rentals</span><span class="tag">Southern California</span><span class="tag">Worldwide Sales</span></div>
+      </div>
+    </div>
+
+  </div>
 </section>
 
 <!-- BOOK A CALL — Cal.com -->
@@ -448,8 +548,8 @@
   <div class="container">
     <div class="booking-header">
       <div class="section-label">Let's Talk</div>
-      <h2>Book a Call</h2>
-      <p>Pick a time that works for you. Whether it's a quick intro or a deeper conversation about a project — I'm happy to connect.</p>
+      <h2>Find the right starting point.</h2>
+      <p>Bring a process you want to improve. We’ll discuss its business impact, the tools you already use and a useful first step.</p>
     </div>
     <div class="cal-embed-wrapper">
       <div id="cal-embed" style="width:100%;height:100%;overflow:auto;"></div>
@@ -465,69 +565,12 @@
   </div>
 </section>
 
-<!-- STAY CONNECTED -->
-<section class="connect-section" id="connect">
-  <div class="connect-box">
-    <div class="connect-left">
-      <div class="section-label">Stay Connected</div>
-      <h3>Follow &amp; Subscribe</h3>
-      <div class="social-links">
-        <a href="https://www.linkedin.com/in/yaroslavkorets/" target="_blank" rel="noopener" class="social-btn" aria-label="LinkedIn">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-          LinkedIn
-        </a>
-        <a href="https://www.facebook.com/yaroslav.korets/" target="_blank" rel="noopener" class="social-btn" aria-label="Facebook">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-          Facebook
-        </a>
-        <a href="https://www.instagram.com/yarokorets/" target="_blank" rel="noopener" class="social-btn" aria-label="Instagram">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678a6.162 6.162 0 100 12.324 6.162 6.162 0 100-12.324zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405a1.441 1.441 0 11-2.882 0 1.441 1.441 0 012.882 0z"/></svg>
-          Instagram
-        </a>
-        <a href="https://x.com/ykorets" target="_blank" rel="noopener" class="social-btn" aria-label="X">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-          X
-        </a>
-        <a href="mailto:yaroslav@korets.net" class="social-btn" aria-label="Email">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 7l-10 7L2 7"/></svg>
-          Email
-        </a>
-      </div>
-    </div>
-    <div class="connect-right">
-      <h3>Newsletter</h3>
-      <p>I send updates no more than once a quarter — on systems, growth, and things I'm building.</p>
-      <form class="subscribe-form" id="subscribe-form">
-        <input type="email" id="subscribe-email" placeholder="your@email.com" required>
-        <button type="submit" id="subscribe-btn">Subscribe</button>
-      </form>
-      <p class="subscribe-note">No spam. Unsubscribe anytime.</p>
-    </div>
-  </div>
-</section>
-
-<!-- CV TEASER -->
-<section class="section section-alt" id="resume">
-  <div class="narrow">
-    <div class="section-label">Work with me</div>
-    <span class="resume-role">Marketing &amp; Sales Automation · FinOps · AI</span>
-    <h2>I turn marketing and sales into connected systems</h2>
-    <p style="margin-top:1rem;">I connect marketing, CRM, and sales workflows &mdash; from the first inquiry to follow-ups and reporting. I use AI and automation to reduce manual work, and FinOps to bring clarity to software and cloud costs. Twenty years as a founder and operator, with hands-on delivery from strategy to deployment. Available for project-based or fixed-term engagements.</p>
-    <div class="resume-actions">
-      <a href="/cv" class="resume-download">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-        View full CV &amp; 2026 AI experience
-      </a>
-    </div>
-  </div>
-</section>
-
 <!-- THE FOUNDATION -->
 <section class="section" id="story">
   <div class="container">
     <div class="section-label">The Foundation</div>
     <h2>How it started</h2>
-    <p class="narrow" style="margin-bottom:2rem;">My path has been shaped by three career chapters, each building on the last — and one life-changing experience that rewired how I think about community and creativity.</p>
+    <p class="narrow" style="margin-bottom:2rem;">Born in the USSR, raised in Ukraine, now building from Los Angeles. My work has taken me from journalism and a digital agency to technology, real estate and my own products.</p>
 
     <div class="story-grid narrow">
       <div class="story-card">
@@ -544,7 +587,7 @@
       </div>
       <div class="story-card">
         <h3>KPI Creatives · 2023–2026</h3>
-        <p>My current chapter began in Los Angeles with the founding of KPI Creatives — a Creative Growth Partner that builds content systems designed to drive growth by earning trust before the sale and delivering results after it. This is where everything I've learned comes together.</p>
+        <p>Co-founded and ran a small, profitable video production and content marketing business. Closed in October 2026 to focus on Growth Control.</p>
       </div>
       <div class="story-card">
         <h3>Burning Man · Since 2013</h3>
@@ -585,31 +628,10 @@
   </div>
 </section>
 
-<!-- MY BUSINESSES -->
-<section class="section section-alt" id="projects">
+<!-- PERSONAL PROJECTS -->
+<section class="section" id="personal-projects">
   <div class="container">
-    <div class="section-label">My Businesses</div>
-    <h2>Systems, infrastructure, and tools built to solve real-world problems.</h2>
-
-    <div class="projects-grid">
-      <div class="project-card">
-        <h3>Growth Control</h3>
-        <p class="project-sub">AI-powered marketing and sales systems</p>
-        <p>Connects AI agents, CRM, business phone, and revenue data into one marketing and sales system. Built around each business's sales process, with automated next steps and a control center for decisions.</p>
-        <a href="https://growthcontrol.app" target="_blank" rel="noopener" class="project-link">growthcontrol.app</a>
-        <div class="tags"><span class="tag">AI</span><span class="tag">Marketing</span><span class="tag">Sales</span></div>
-      </div>
-
-      <div class="project-card">
-        <h3>Stretch Tent</h3>
-        <p class="project-sub">Stretch tent rentals &amp; sales</p>
-        <p>Stretch tent rentals in Southern California and sales worldwide.</p>
-        <a href="https://stretch-tent.net" target="_blank" rel="noopener" class="project-link">stretch-tent.net</a>
-        <div class="tags"><span class="tag">Tent Rentals</span><span class="tag">Southern California</span><span class="tag">Worldwide Sales</span></div>
-      </div>
-    </div>
-
-    <h2 style="margin-top:4rem;">Pet Projects &amp; Hobbies</h2>
+    <h2>Pet Projects &amp; Hobbies</h2>
     <div class="projects-grid">
       <div class="project-card">
         <h3>Kurenivka Camp</h3>
@@ -662,14 +684,58 @@
         <p>For those interested in sustainable, lasting impact.</p>
       </div>
     </div>
-    <p style="margin-top:2.5rem; text-align:center;">I don't talk much about the future. I build things that already work. If this way of thinking feels right — welcome.</p>
+    <div class="hero-actions">
+      <a href="https://growthcontrol.app/" class="resume-download">Explore Growth Control</a>
+      <a href="#book" class="hero-secondary">Discuss your operation</a>
+    </div>
+  </div>
+</section>
+
+<!-- STAY CONNECTED -->
+<section class="connect-section" id="connect">
+  <div class="connect-box">
+    <div class="connect-left">
+      <div class="section-label">Stay Connected</div>
+      <h3>Follow &amp; Subscribe</h3>
+      <div class="social-links">
+        <a href="https://www.linkedin.com/in/yaroslavkorets/" target="_blank" rel="noopener" class="social-btn" aria-label="LinkedIn">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          LinkedIn
+        </a>
+        <a href="https://www.facebook.com/yaroslav.korets/" target="_blank" rel="noopener" class="social-btn" aria-label="Facebook">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          Facebook
+        </a>
+        <a href="https://www.instagram.com/yarokorets/" target="_blank" rel="noopener" class="social-btn" aria-label="Instagram">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678a6.162 6.162 0 100 12.324 6.162 6.162 0 100-12.324zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405a1.441 1.441 0 11-2.882 0 1.441 1.441 0 012.882 0z"/></svg>
+          Instagram
+        </a>
+        <a href="https://x.com/ykorets" target="_blank" rel="noopener" class="social-btn" aria-label="X">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          X
+        </a>
+        <a href="mailto:yaroslav@korets.net" class="social-btn" aria-label="Email">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 7l-10 7L2 7"/></svg>
+          Email
+        </a>
+      </div>
+    </div>
+    <div class="connect-right">
+      <h3>Newsletter</h3>
+      <p>I send updates no more than once a quarter — on systems, growth, and things I'm building.</p>
+      <form class="subscribe-form" id="subscribe-form">
+        <input type="email" id="subscribe-email" placeholder="your@email.com" required>
+        <button type="submit" id="subscribe-btn">Subscribe</button>
+      </form>
+      <p class="subscribe-note">No spam. Unsubscribe anytime.</p>
+    </div>
   </div>
 </section>
 
 <!-- FOOTER -->
 <footer id="contact">
-  <a href="/yaroslav-korets-cv.pdf" class="resume-ghost" download>Download Résumé (PDF)</a>
-  <p class="copy">&copy; 2026 Yaroslav Korets. Building Tomorrow Today.</p>
+  <a href="/cv/" class="resume-ghost">Experience &amp; projects</a>
+  <p class="copy">&copy; 2026 Yaroslav Korets. AI for profitable growth.</p>
 </footer>
 
 <!-- Newsletter subscription handler -->

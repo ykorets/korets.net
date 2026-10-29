@@ -3,9 +3,30 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Yaroslav Korets — Business Operations Optimizer (FinOps) &amp; AI-Native Operator</title>
-  <meta name="description" content="Yaroslav Korets — Business Operations Optimizer (FinOps). Founder and operator who architects and ships AI systems himself, and directs a small dev team. Available for project-based or fixed-term engagements.">
+  <title>Yaro Korets | AI for Profitable Growth — Experience</title>
+  <meta name="description" content="AI implementation for profitable growth. Founder of Growth Control and CTO &amp; Co-Founder of Stretch Tent, working across marketing, sales, finance and operations.">
   <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://korets.net/cv/">
+  <meta property="og:type" content="profile">
+  <meta property="og:url" content="https://korets.net/cv/">
+  <meta property="og:title" content="Yaro Korets | AI for Profitable Growth — Experience">
+  <meta property="og:description" content="AI implementation for profitable growth. Founder of Growth Control and CTO &amp; Co-Founder of Stretch Tent, working across marketing, sales, finance and operations.">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Yaro Korets | AI for Profitable Growth — Experience">
+  <meta name="twitter:description" content="AI implementation for profitable growth. Founder of Growth Control and CTO &amp; Co-Founder of Stretch Tent, working across marketing, sales, finance and operations.">
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "@id": "https://korets.net/#person",
+      "name": "Yaroslav Korets",
+      "alternateName": "Yaro Korets",
+      "url": "https://korets.net/",
+      "sameAs": ["https://www.linkedin.com/in/yaroslavkorets/"],
+      "jobTitle": "Founder, Growth Control; CTO & Co-Founder, Stretch Tent",
+      "knowsAbout": ["AI implementation", "Business operations", "Marketing and sales automation"]
+    }
+  </script>
   <link rel="alternate" type="application/rss+xml" title="Yaroslav Korets — Writing" href="https://korets.net/writing/feed.xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -31,7 +52,7 @@
       --text-muted: #8888a0;
     }
 
-    html { scroll-behavior: smooth; }
+    html { scroll-behavior: smooth; scroll-padding-top: 6rem; }
     body {
       font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
       color: var(--text-primary); background: var(--bg);
@@ -169,10 +190,10 @@
 <nav>
   <div class="nav-inner">
     <a href="/" class="nav-logo">YK.</a>
-    <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Menu">
+    <button class="nav-toggle" onclick="this.setAttribute('aria-expanded', document.querySelector('.nav-links').classList.toggle('open'))" aria-label="Menu" aria-expanded="false" aria-controls="primary-navigation">
       <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
     </button>
-    <ul class="nav-links">
+    <ul class="nav-links" id="primary-navigation" onclick="if (event.target.closest('a')) { this.classList.remove('open'); document.querySelector('.nav-toggle').setAttribute('aria-expanded', 'false'); }">
       <li><a href="/">Home</a></li>
       <li><a href="/writing/">Writing</a></li>
       <li><a href="#ai">2026 AI Experience</a></li>
@@ -180,23 +201,20 @@
       <li><a href="#property">Property Ops</a></li>
       <li><a href="#experience">Experience</a></li>
       <li><a href="#engage">Engagement</a></li>
-      <li><a href="/yaroslav-korets-cv.pdf" class="nav-cta" download>Résumé PDF</a></li>
+      <li><a href="https://growthcontrol.app/" class="nav-cta">Growth Control</a></li>
     </ul>
   </div>
 </nav>
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-badge">AI-Native Operator · Los Angeles</div>
-  <h1>Business Operations <span class="accent">Optimizer</span></h1>
-  <div class="role-line">FinOps · Systems · AI</div>
-  <p class="tagline">I come into a business, map how money and operations actually flow, and rebuild the parts that leak time or margin &mdash; then I ship the system myself.</p>
-  <p class="intro">Twenty years as a founder and operator: a company built and sold, a ~100-person organization led, property management, and a portfolio of ventures. Today I design, code, and self-host AI systems end to end &mdash; and direct a small dev team where scale needs it.</p>
+  <div class="hero-badge">Founder &amp; Operator · Los Angeles</div>
+  <h1>Yaro <span class="accent">Korets</span></h1>
+  <div class="role-line">AI implementation for profitable growth</div>
+  <p class="tagline">I help business owners use AI to improve margins and grow profitably.</p>
+  <p class="intro">Founder of Growth Control and CTO &amp; Co-Founder of Stretch Tent. My work covers marketing, sales, financial administration and everyday operations, drawing on twenty years as a founder and operator.</p>
   <div class="hero-actions">
-    <a href="/yaroslav-korets-cv.pdf" class="btn-primary" download>
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-      Download Résumé (PDF)
-    </a>
+    <a href="https://growthcontrol.app/" class="btn-primary">Explore Growth Control</a>
     <a href="/#book" class="btn-ghost">Book a call</a>
   </div>
 </section>
@@ -204,14 +222,14 @@
 <!-- WHY DIFFERENT -->
 <section class="section">
   <div class="narrow">
-    <div class="section-label">Why I'm different</div>
-    <h2>I understand the business, not just the code</h2>
-    <p class="lead">Most developers need a detailed spec to move. I don't. Give me the goal and I take it from there &mdash; prototype, design, build, deploy, measure, analyze, improve.</p>
+    <div class="section-label">How I work</div>
+    <h2>Start with the business case</h2>
+    <p class="lead">I identify where a process affects margins, connect the tools and data, and implement a system the team can use.</p>
     <div class="thesis">
-      <h3>An abstract goal is enough</h3>
-      <p>Tell me &ldquo;homeowners should have a profitability calculator&rdquo; &mdash; I don't need a 20-page requirements doc. I already understand the customer, the economics, and what &ldquo;done&rdquo; looks like, so I design the logic, build it, and put it in production. When the person who models the economics is the same person who ships the code, nothing gets lost between them.</p>
-      <p class="pull">The gap between an idea and a working system is usually a person who understands both sides. That's the job I do.</p>
-      <p style="margin-top:1.25rem;">And when scope needs a team, I bring one: two AI-capable developers I've worked with and trust, running under my direction.</p>
+      <h3>Define a measurable result</h3>
+      <p>We establish the process's current cost and performance, then agree what should improve: conversion, operating costs or capacity. I develop and implement the solution, with clear responsibilities for the team.</p>
+      <p class="pull">The result is assessed against the business goal and the full cost of running the system.</p>
+      <p style="margin-top:1.25rem;">I work hands-on. When a project needs a team, I bring two developers I know and trust, under my direction.</p>
     </div>
   </div>
 </section>
@@ -221,9 +239,17 @@
   <div class="narrow">
     <div class="section-label">2026 · AI Experience</div>
     <h2>What I've been building</h2>
-    <p class="lead">Everything below runs in production. Most of it I architected and shipped myself; two products are built by developers under my direction.</p>
+    <p class="lead">Selected systems and products I've built or led, alongside the business work behind them.</p>
 
     <div class="ai-grid">
+      <div class="ai-card ai-full">
+        <h3>Growth Control</h3>
+        <div class="ai-sub">Founder &middot; marketing and sales automation</div>
+        <p>My product connects advertising, customer inquiries, CRM, calls, quotes and follow-up. I lead product development, integrations and implementation around each business's sales process and operating goals.</p>
+        <p class="ai-angle">Built and tested in our own Stretch Tent operation.</p>
+        <a class="ai-link" href="https://growthcontrol.app/" target="_blank" rel="noopener">Explore Growth Control</a>
+      </div>
+
       <div class="ai-card ai-full">
         <h3>Internal AI operating system</h3>
         <div class="ai-sub">Self-hosted &middot; replaced Basecamp as our project manager</div>
@@ -236,7 +262,7 @@
         <div class="ai-sub">Google Ads + Microsoft Ads · human-in-the-loop</div>
         <p>An always-on agent that operationalizes paid-search strategy: builds campaigns, monitors performance, defends against the platforms' auto-applied changes, and proposes fixes with one-tap approval over Telegram. CRM-grounded, governed by explicit written rules, with every action logged.</p>
         <p class="ai-angle">Replaces the day-to-day work of a PPC manager &mdash; with a human approval gate on every change.</p>
-        <a class="ai-link" href="https://www.kpicreatives.com/hunter" target="_blank" rel="noopener">kpicreatives.com/hunter</a>
+        <a class="ai-link" href="https://growthcontrol.app/" target="_blank" rel="noopener">Explore Growth Control</a>
       </div>
 
       <div class="ai-card">
@@ -244,7 +270,7 @@
         <div class="ai-sub">Self-hosted analytics + channel management</div>
         <p>A self-hosted agent exposing dozens of tools across analytics, discovery/SEO, channel management, captions, and bulk reporting &mdash; multi-channel, queryable in plain language through an AI client.</p>
         <p class="ai-angle">Replaces a stack of dashboards and manual reporting with one agent you can just ask.</p>
-        <a class="ai-link" href="https://www.kpicreatives.com/oscar" target="_blank" rel="noopener">kpicreatives.com/oscar</a>
+        <a class="ai-link" href="https://growthcontrol.app/" target="_blank" rel="noopener">Explore Growth Control</a>
       </div>
 
       <div class="ai-card">
@@ -256,9 +282,9 @@
 
       <div class="ai-card">
         <h3>ADUscale</h3>
-        <div class="ai-sub">Co-founder &amp; CEO &middot; Nov 2025 &ndash; Jul 2026 (paused) &middot; built the product solo</div>
-        <p>A marketplace for ADU (accessory dwelling unit) construction, built alone: the site on a complete information architecture I authored (category design, programmatic pages, structured data, AI-search readiness) &mdash; plus the full acquisition machine behind it: funnel, voice AI agent answering inbound calls, CRM integration, and analytics. Business thesis to production, no handoffs.</p>
-        <p class="ai-angle">Positioning, funnel, voice agent, CRM, code, deploy &mdash; one person, working in production.</p>
+        <div class="ai-sub">Co-Founder: Nov 2025 &ndash; Jul 2026 &middot; CEO: Jan &ndash; Jul 2026</div>
+        <p>Built a marketplace for ADU (accessory dwelling unit) construction, including the website, acquisition funnel, voice AI for inbound calls, CRM integration and analytics.</p>
+        <p class="ai-angle">Tested market demand and product&ndash;market fit, evaluated the business model, and decided not to pursue a full market launch.</p>
         <a class="ai-link" href="https://aduscale.com/" target="_blank" rel="noopener">aduscale.com</a>
       </div>
 
@@ -415,17 +441,31 @@
     <h2>Founder &amp; operator, twenty years</h2>
     <div class="exp">
       <div class="job">
-        <div class="when">Nov 2025 &ndash; Jul 2026</div>
+        <div class="when">Oct 2026 &ndash; Present</div>
         <div>
-          <h3>Co-founder &amp; CEO &mdash; ADUscale (paused)</h3>
-          <p>Co-founded and led a marketplace for ADU (accessory dwelling unit) construction; built the product solo &mdash; site, information architecture, and the full acquisition machine (funnel, voice AI agent on inbound calls, CRM, analytics). Paused Jul 2026.</p>
+          <h3>Founder &mdash; Growth Control</h3>
+          <p>Building and implementing a product that connects advertising, customer inquiries, CRM, calls, quotes and follow-up. Leading product development, integrations and implementation.</p>
         </div>
       </div>
       <div class="job">
-        <div class="when">2024&ndash;Now</div>
+        <div class="when">Jun 2018 &ndash; Present</div>
         <div>
-          <h3>Co-founder &mdash; KPI Creatives (Los Angeles)</h3>
-          <p>Build and run lean, systemized operations across several ventures. Design the financial and operational infrastructure, automate the repetitive work with AI, and keep headcount low by design &mdash; while directing a small dev team.</p>
+          <h3>CTO &amp; Co-Founder &mdash; Stretch Tent</h3>
+          <p>Leading technology and technical planning for our tent rental and sales business in Southern California. We built and tested Growth Control in our own operation, connecting customer acquisition with calls, quotes and follow-up.</p>
+        </div>
+      </div>
+      <div class="job">
+        <div class="when">Nov 2023 &ndash; Oct 2026</div>
+        <div>
+          <h3>Co-Founder &amp; CEO &mdash; KPI Creatives (Los Angeles)</h3>
+          <p>Co-founded and ran a small, profitable video production and content marketing business. Closed the business in October 2026 to focus on building Growth Control.</p>
+        </div>
+      </div>
+      <div class="job">
+        <div class="when">Nov 2025 &ndash; Jul 2026</div>
+        <div>
+          <h3>Co-Founder &mdash; ADUscale</h3>
+          <p>Served as CEO from January to July 2026. Built the product, tested market demand and product&ndash;market fit, and evaluated the business model. Based on the findings, we decided not to pursue a full market launch.</p>
         </div>
       </div>
       <div class="job">
@@ -483,7 +523,7 @@
   <div class="narrow">
     <div class="section-label">How I engage</div>
     <h2>Project-based or fixed-term</h2>
-    <p class="lead">I come in, map the financial and operational reality, find the leaks, install the system, and hand it back running.</p>
+    <p class="lead">We agree a business goal and a defined scope. I implement the system with your team, then assess its performance and operating cost.</p>
     <div class="engage-box">
       <h3>Working terms</h3>
       <ul class="engage-list">
@@ -494,7 +534,7 @@
       </ul>
       <div class="hero-actions" style="margin-top:1.75rem;">
         <a href="/#book" class="btn-primary">Book a call</a>
-        <a href="/yaroslav-korets-cv.pdf" class="btn-ghost" download>Download Résumé (PDF)</a>
+        <a href="https://growthcontrol.app/" class="btn-ghost">Explore Growth Control</a>
       </div>
     </div>
   </div>
@@ -502,7 +542,7 @@
 
 <!-- FOOTER -->
 <footer>
-  <p class="copy">&copy; 2026 Yaroslav Korets &middot; <a href="/">korets.net</a> &middot; Building Tomorrow Today.</p>
+  <p class="copy">&copy; 2026 Yaroslav Korets &middot; <a href="/">korets.net</a> &middot; AI for profitable growth.</p>
 </footer>
 
 </body>
