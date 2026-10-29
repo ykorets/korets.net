@@ -3,9 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AI Systems in Production — Yaroslav Korets</title>
-  <meta name="description" content="AI systems Yaroslav Korets designs, builds, and runs in production: autonomous agents, voice AI, self-hosted infrastructure, and data engines — plus productized offers built on these patterns.">
+  <title>AI for Profitable Growth — Yaroslav Korets</title>
+  <meta name="description" content="I help business owners improve margins with AI across marketing, sales, financial administration and operations. Explore Growth Control and my implementation work.">
   <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://korets.net/ai/">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://korets.net/ai/">
+  <meta property="og:title" content="AI for Profitable Growth — Yaroslav Korets">
+  <meta property="og:description" content="AI implementation across marketing, sales, financial administration and operations. Growth Control is the starting point.">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="AI for Profitable Growth — Yaroslav Korets">
+  <meta name="twitter:description" content="AI implementation across marketing, sales, financial administration and operations. Growth Control is the starting point.">
   <link rel="alternate" type="application/rss+xml" title="Yaroslav Korets — Writing" href="https://korets.net/writing/feed.xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -31,7 +39,7 @@
       --text-muted: #8888a0;
     }
 
-    html { scroll-behavior: smooth; }
+    html { scroll-behavior: smooth; scroll-padding-top: 6rem; }
     body {
       font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
       color: var(--text-primary); background: var(--bg);
@@ -133,14 +141,15 @@
 <nav>
   <div class="nav-inner">
     <a href="/" class="nav-logo">YK.</a>
-    <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Menu">
+    <button class="nav-toggle" onclick="this.setAttribute('aria-expanded', document.querySelector('.nav-links').classList.toggle('open'))" aria-label="Menu" aria-expanded="false" aria-controls="primary-navigation">
       <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
     </button>
-    <ul class="nav-links">
+    <ul class="nav-links" id="primary-navigation" onclick="if (event.target.closest('a')) { this.classList.remove('open'); document.querySelector('.nav-toggle').setAttribute('aria-expanded', 'false'); }">
       <li><a href="/">Home</a></li>
       <li><a href="/cv/">CV</a></li>
       <li><a href="/writing/">Writing</a></li>
-      <li><a href="#systems">Systems</a></li>
+      <li><a href="#growth-control">Growth Control</a></li>
+      <li><a href="#systems">Examples</a></li>
       <li><a href="#offers">Offers</a></li>
       <li><a href="/#book" class="nav-cta">Book a call</a></li>
     </ul>
@@ -149,49 +158,77 @@
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-badge">AI Systems in Production · Los Angeles</div>
-  <h1>Built. Shipped. <span class="accent">Running.</span></h1>
-  <p class="tagline">The models are built. The last mile isn't. I install AI into businesses that run on trucks, permits, and phone calls.</p>
-  <p class="intro">Everything on this page runs in production — agents doing real work with real money and real customers, not demos. I'm an operator, not a vendor: twenty years of P&amp;L ownership, and today I design, code, and self-host AI systems end to end. Most of it I architected and shipped myself; two products are built by developers under my direction.</p>
+  <div class="hero-badge">AI Implementation · Los Angeles</div>
+  <h1>AI for <span class="accent">profitable growth.</span></h1>
+  <p class="tagline">I help business owners improve margins through AI in marketing, sales, financial administration and everyday operations.</p>
+  <p class="intro">I connect the tools, data and workflows behind the business. We start with a specific problem and judge the work by its result: better conversion, lower operating costs or the capacity to handle more business.</p>
+  <p style="margin-top:1.5rem;"><a href="https://growthcontrol.app/" class="btn-primary">Explore Growth Control</a></p>
+</section>
+
+<!-- GROWTH CONTROL -->
+<section class="section section-alt" id="growth-control">
+  <div class="narrow">
+    <div class="section-label">The Starting Point</div>
+    <h2>Growth Control</h2>
+    <p class="lead">My product for connecting marketing and sales, built around how each business works.</p>
+
+    <div class="ai-grid">
+      <div class="ai-card">
+        <h3>From advertising to follow-up</h3>
+        <div class="ai-sub">Founder · Product development and implementation</div>
+        <p>Growth Control connects advertising, customer inquiries, CRM, calls, quotes and follow-up. AI agents and workflows carry out agreed tasks, with budgets and important decisions under the team's control.</p>
+        <p>It gives us a practical place to start before applying AI to more of the operation.</p>
+        <a class="ai-link" href="https://growthcontrol.app/">See how Growth Control works</a>
+      </div>
+      <div class="ai-card">
+        <h3>Stretch Tent</h3>
+        <div class="ai-sub">CTO &amp; Co-Founder · June 2018–present</div>
+        <p>We built and tested Growth Control in our own tent rental and sales business in Southern California. It connects advertising, customer records, calls, quotes and follow-up.</p>
+        <p>That experience informs how I develop the product and implement it for other businesses.</p>
+        <a class="ai-link" href="https://growthcontrol.app/case-studies/stretch-tent/">Read the implementation case</a>
+        <a class="ai-link" href="https://www.stretch-tent.net/">stretch-tent.net</a>
+      </div>
+    </div>
+  </div>
 </section>
 
 <!-- SYSTEMS -->
-<section class="section section-alt" id="systems">
+<section class="section" id="systems">
   <div class="narrow">
-    <div class="section-label">The Systems</div>
-    <h2>Nine systems, one operating principle</h2>
-    <p class="lead">AI does the persistence and the volume; humans approve what matters; everything is logged.</p>
+    <div class="section-label">Implementation Examples</div>
+    <h2>What this looks like in practice</h2>
+    <p class="lead">The work ranges from marketing and customer communication to internal workflows and operating costs. Capabilities depend on the connected tools, permissions and agreed scope.</p>
 
     <div class="ai-grid">
       <div class="ai-card ai-full">
-        <h3>Internal AI operating system</h3>
-        <div class="ai-sub">Self-hosted · replaced Basecamp as our project manager</div>
-        <p>A Markdown-native workspace with Git as the source of truth, an in-browser editor with an AI coding agent pre-installed for every teammate, and a live operations dashboard — all behind a single MCP gateway (one Cloudflare Worker handling sign-in and SSO, routing internal AI tools like memory, SEO, PPC, and analytics, and audit-logging every tool call for cost attribution). The team works inside it daily.</p>
-        <div class="ai-angle">I redesigned project management itself around AI hand-offs — and replaced our SaaS PM tool with what I built.</div>
+        <h3>Internal workflows</h3>
+        <div class="ai-sub">Project records, shared tools and operating data</div>
+        <p>I built a workspace that connects project records, AI tools and an operations dashboard. It brings work and its context together, with a record of actions and costs.</p>
+        <div class="ai-angle">Give the team a shared place to see progress, continue work and review decisions.</div>
       </div>
 
       <div class="ai-card">
-        <h3>Hunter — autonomous PPC agent</h3>
-        <div class="ai-sub">Google Ads + Microsoft Ads · human-in-the-loop</div>
-        <p>An always-on agent that builds campaigns, monitors performance, defends against the platforms' auto-applied changes, and proposes fixes with one-tap approval over Telegram. CRM-grounded, governed by explicit written rules, every action logged.</p>
-        <div class="ai-angle">Replaces the day-to-day work of a PPC manager — with a human approval gate on every change.</div>
-        <a class="ai-link" href="https://kpicreatives.com/hunter">kpicreatives.com/hunter</a>
+        <h3>Hunter — advertising and lead generation</h3>
+        <div class="ai-sub">Growth Control · Campaign research and management</div>
+        <p>Researches the market, prepares campaigns, monitors spending and results, and proposes improvements. Connected sales outcomes help guide decisions about which inquiries are worth pursuing.</p>
+        <div class="ai-angle">Manage advertising against the business's goals, budgets and approval rules.</div>
+        <a class="ai-link" href="https://growthcontrol.app/">Explore Growth Control</a>
       </div>
 
       <div class="ai-card">
-        <h3>Oscar — YouTube ops agent</h3>
-        <div class="ai-sub">Self-hosted analytics + channel management</div>
-        <p>A self-hosted agent exposing dozens of tools across analytics, discovery/SEO, channel management, captions, and bulk reporting — multi-channel, queryable in plain language through an AI client.</p>
-        <div class="ai-angle">Replaces a stack of dashboards and manual reporting with one agent you can just ask.</div>
-        <a class="ai-link" href="https://kpicreatives.com/oscar">kpicreatives.com/oscar</a>
+        <h3>Oscar — website and social insights</h3>
+        <div class="ai-sub">Growth Control · Connected channel data</div>
+        <p>Brings together analytics and reporting from connected website and social channels. The team can ask questions about performance and use the findings to guide content and marketing decisions.</p>
+        <div class="ai-angle">Understand which activity creates useful customer interest.</div>
+        <a class="ai-link" href="https://growthcontrol.app/">Explore Growth Control</a>
       </div>
 
       <div class="ai-card ai-full">
-        <h3>Marco — autonomous outbound agent</h3>
-        <div class="ai-sub">Infrastructure + signals + research + email/LinkedIn · human-in-the-loop</div>
-        <p>Marco builds the sending layer first: secondary domains, SPF/DKIM/DMARC, mailboxes, warm-up, placement tests, per-mailbox caps, and reputation monitoring. The same control plane is designed to scale from one mailbox to a thousand. No campaign launches until its senders clear the deliverability gates.</p>
-        <p>Then it finds the right moment, not just the right job title. Marco searches across commercial databases, LinkedIn, company sites, job boards, industry directories, and public or first-party data. It looks for signals such as leadership changes, hiring, funding, website intent, and new permits. It scores and deduplicates prospects, researches each company, then writes a short message in the sender's voice. Email and LinkedIn sequences run automatically; Marco triages replies every 15 minutes and flags positive intent in Telegram. Factual claims, pricing, and objections stay behind human approval.</p>
-        <div class="ai-angle">A human operator no longer has to choose between depth and volume. Signals decide who and when; research decides what to say; infrastructure makes sure it arrives. Every send and reply becomes data for the next campaign.</div>
+        <h3>Marco — prospecting and outreach</h3>
+        <div class="ai-sub">Growth Control · Research, email and follow-up</div>
+        <p>Researches potential customers, prepares relevant outreach and coordinates follow-up. Sender checks, pacing limits and human review govern sending.</p>
+        <div class="ai-angle">Keep prospect research, messages and replies connected to the sales process.</div>
+        <a class="ai-link" href="https://growthcontrol.app/">Explore Growth Control</a>
       </div>
 
       <div class="ai-card ai-full">
@@ -204,10 +241,10 @@
       </div>
 
       <div class="ai-card">
-        <h3>ADUscale — voice AI acquisition machine</h3>
-        <div class="ai-sub">Co-founder &amp; CEO · built the product solo</div>
-        <p>A marketplace for ADU construction: complete information architecture, programmatic pages, structured data — plus the full acquisition machine behind it: funnel, voice AI agent answering inbound calls (Vapi), CRM integration, and analytics. Business thesis to production, no handoffs.</p>
-        <div class="ai-angle">Positioning, funnel, voice agent, CRM, code, deploy — one person, working in production.</div>
+        <h3>ADUscale — product experiment</h3>
+        <div class="ai-sub">Co-Founder &amp; CEO · Concluded July 2026</div>
+        <p>Built a product for the ADU construction market, including a website, voice AI, CRM integration and analytics. We tested market demand and product–market fit, and evaluated the business model.</p>
+        <div class="ai-angle">Based on the findings, we decided not to pursue a full market launch.</div>
         <a class="ai-link" href="https://aduscale.com">aduscale.com</a>
       </div>
 
@@ -266,21 +303,21 @@
       <div class="offer offer-full">
         <div class="offer-tag">For mid-market operators · property management, construction, multi-entity groups</div>
         <h3>AI-First Twin</h3>
-        <p>Most established companies won't survive a frontal AI transformation — the org resists it, and it should. The move that works: build the AI-first twin of one core process as a sidecar. Small, separate, no threat to the team that runs today's business — until the twin proves out and grows into the main line. I design and build the twin, install the human approval gates, and hand your people the keys. Fixed scope, measured against the process it mirrors.</p>
+        <p>Build an AI-assisted version of one core process alongside the existing operation. I design and implement the workflow, define where people review decisions, and measure it against the current process before expanding the scope.</p>
         <a href="/#book">Start the conversation</a>
       </div>
     </div>
 
     <div class="cta-band">
-      <h3>Have a process that leaks time or margin?</h3>
-      <p>If it runs on phone calls, spreadsheets, and chasing people — it's a candidate for one of these patterns. Custom engagements start with a one-week audit of how the money actually flows.</p>
+      <h3>Start with one workflow.</h3>
+      <p>Choose a process with a clear cost or conversion problem. We agree the scope, connect the necessary tools and define how to judge the result.</p>
       <a href="/#book" class="btn-primary">Book a call</a>
     </div>
   </div>
 </section>
 
 <footer>
-  <p class="copy">&copy; 2026 Yaroslav Korets &middot; <a href="/">korets.net</a> &middot; AI systems in production.</p>
+  <p class="copy">&copy; 2026 Yaroslav Korets &middot; <a href="/">korets.net</a> &middot; AI implementation for profitable growth.</p>
 </footer>
 
 </body>
