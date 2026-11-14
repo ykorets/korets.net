@@ -3,7 +3,13 @@ import Base from '../../layouts/Base.astro';
 import Writing from '../../components/Writing.astro';
 import Stateful from '../../components/Stateful.astro';
 const filters = ['All', 'Agents', 'Data', 'Principles'];
+import articles from '../../data/articles.json';
+import { PERSON_ID, SITE, breadcrumbs } from '../../data/person';
+const graph = [
+  { '@type': 'Blog', '@id': `${SITE}/writing/#blog`, name: 'Writing — AI systems in production', url: `${SITE}/writing/`, author: { '@id': PERSON_ID }, blogPost: articles.map((a) => ({ '@type': 'BlogPosting', headline: a.title, url: `${SITE}/writing/${a.slug}/` })) },
+  breadcrumbs([['Home', '/'], ['Writing', '/writing/']]),
+];
 ---
-<Base title="Writing — AI systems in production · Yaro Korets" description="Field notes on AI systems after the demo: source data, operational workflows, approval gates, audit logs and the cost of delivery." path="/writing/" current="Writing">
+<Base title="AI Implementation Field Notes — Writing by Yaro Korets" description="Field notes on AI systems after the demo: source data, operational workflows, approval gates, audit logs and the cost of delivery." path="/writing/" current="Writing" graph={graph}>
   <Stateful component={Writing} states={filters.map((filter) => ({ filter }))} />
 </Base>

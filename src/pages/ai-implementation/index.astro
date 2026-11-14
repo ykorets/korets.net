@@ -1,0 +1,86 @@
+---
+import Base from '../../layouts/Base.astro';
+import ServicePage from '../../components/ServicePage.astro';
+import { PERSON_ID, SITE, breadcrumbs } from '../../data/person';
+
+const faqs = [
+  { q: 'What does an AI implementation engineer do?', a: 'I pick one business process that affects revenue or cost, measure where it stands, agree on the goal, then connect the tools, data and AI agents that run it, and verify the result against the starting point. The output is a working system your team uses, not a strategy deck.' },
+  { q: 'Which processes are the best place to start?', a: 'Processes with volume, repetition and money attached: answering inquiries and following up on leads, preparing quotes, call notes and CRM updates, invoicing and payment tracking, scheduling, paid search management and reporting.' },
+  { q: 'How long does a first implementation take?', a: 'A first system is scoped as a fixed project with a defined business goal. Most first projects focus on one process so the result can be measured within weeks, not quarters.' },
+  { q: 'How much does AI implementation cost?', a: 'Work is project-based or fixed-term, with a fixed fee scoped upfront after we map the process. Running costs of the AI tools are estimated before the build and logged after it.' },
+  { q: 'Do you work only in Los Angeles?', a: 'I am based in Los Angeles and work with businesses across the US remotely. Meeting in person is easy anywhere in Southern California.' },
+  { q: 'Will AI replace my team?', a: 'In my systems AI handles persistence and volume, while people approve what matters: money, promises, facts and anything hard to reverse. Every action is logged, so the team stays in control.' },
+];
+
+const graph = [
+  {
+    '@type': 'Service',
+    '@id': `${SITE}/ai-implementation/#service`,
+    name: 'AI implementation for small and mid-size businesses',
+    serviceType: 'AI implementation consulting',
+    description: 'Hands-on AI implementation across marketing, sales, finance and operations: one process at a time, measured against a baseline.',
+    provider: { '@id': PERSON_ID },
+    areaServed: [{ '@type': 'City', name: 'Los Angeles' }, { '@type': 'State', name: 'California' }, { '@type': 'Country', name: 'United States' }],
+    url: `${SITE}/ai-implementation/`,
+  },
+  { '@type': 'FAQPage', mainEntity: faqs.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) },
+  breadcrumbs([['Home', '/'], ['AI implementation', '/ai-implementation/']]),
+];
+---
+<Base title="AI Implementation Consultant in Los Angeles — Yaro Korets" description="Hands-on AI implementation for small and mid-size businesses in Los Angeles: lead follow-up, quotes, CRM, invoicing and operations, measured against a baseline." path="/ai-implementation/" current="Work with me" graph={graph}>
+<ServicePage eyebrow="AI implementation · Los Angeles · remote across the US" title="AI implementation that" titleAccent="improves margins." lead="I am Yaro (Yaroslav) Korets, an AI implementation engineer in Los Angeles. I connect your processes, tools and data into AI systems your team actually uses, starting with the one process that moves profit." faqs={faqs}>
+
+  <section class="sv-sec" aria-labelledby="what-h">
+    <h2 id="what-h">What I implement</h2>
+    <p class="sv-intro">The same systems run my own companies before they run anyone else's. Each one connects to the tools you already have: CRM, phone, email, ads accounts and accounting.</p>
+    <div class="sv-grid">
+      <article class="sv-card"><span class="sv-tag">MARKETING</span><h3>Ads and inquiries</h3><ul><li>Paid search managed by written rules, with approval on every change</li><li>Landing pages and inquiry intake</li><li>Reporting tied to booked revenue, not clicks</li></ul></article>
+      <article class="sv-card"><span class="sv-tag">SALES</span><h3>Lead response and follow-up</h3><ul><li>First response to website, Yelp, call and text inquiries in minutes</li><li>Call briefs and notes written into the CRM</li><li>Tailored quotes and follow-up that never stalls</li></ul></article>
+      <article class="sv-card"><span class="sv-tag">FINANCE</span><h3>Invoices and cash flow</h3><ul><li>Invoice preparation and payment tracking</li><li>One-click owner approval before anything is sent</li><li>Margin visibility by job and channel</li></ul></article>
+      <article class="sv-card"><span class="sv-tag">OPERATIONS</span><h3>Scheduling and delivery</h3><ul><li>Scheduling and handoffs to field crews</li><li>Contracts, documents and checklists</li><li>An audit log of every AI action</li></ul></article>
+    </div>
+  </section>
+
+  <section class="sv-sec" aria-labelledby="how-h">
+    <h2 id="how-h">How a project runs</h2>
+    <ol class="sv-steps">
+      <li><strong>1. Find the process that moves profit</strong><span>Chosen by revenue impact, available data and implementation effort.</span></li>
+      <li><strong>2. Measure where it stands</strong><span>Its current cost and performance become the baseline.</span></li>
+      <li><strong>3. Agree on the goal</strong><span>Success metrics are set before anything is built.</span></li>
+      <li><strong>4. Build and implement</strong><span>Tools, data and AI agents are connected into a system your team uses.</span></li>
+      <li><strong>5. Verify against the baseline</strong><span>Better conversion, lower operating cost or capacity for more business.</span></li>
+    </ol>
+  </section>
+
+  <section class="sv-sec" aria-labelledby="proof-h">
+    <h2 id="proof-h">Proof from a real company</h2>
+    <p class="sv-intro">At Stretch Tent, a Southern California event rental company where I am CTO & Co-Founder, marketing, sales, the front desk and the back office run on AI agents. Only the install crews are human.</p>
+    <div class="sv-stats">
+      <div class="sv-stat"><b>100</b><span>leads in the first two weeks of the implementation</span></div>
+      <div class="sv-stat"><b>20+</b><span>inquiries a day handled by one operator</span></div>
+      <div class="sv-stat"><b>0</b><span>office staff</span></div>
+    </div>
+    <span class="sv-note">Owner-reported results, first reported October 2026.</span>
+    <div class="sv-links"><a href="/case/stretch-tent/">Read the Stretch Tent case study →</a><a href="/writing/built-shipped-running/">8 field notes on AI in production →</a></div>
+  </section>
+
+  <section class="sv-sec" aria-labelledby="who-h">
+    <h2 id="who-h">Who it fits</h2>
+    <div class="sv-grid">
+      <article class="sv-card"><h3>Event rental companies</h3><p>Fast lead response, quotes and scheduling for tent, party and equipment rentals.</p><a href="/ai-for-event-rental-companies/">AI for event rental companies →</a></article>
+      <article class="sv-card"><h3>Contractors and home services</h3><p>Inquiry intake, estimates follow-up, subcontractor coordination and inspection records.</p></article>
+      <article class="sv-card"><h3>Tax and accounting firms</h3><p>Fewer manual handoffs between client messages, documents and tax software.</p></article>
+      <article class="sv-card"><h3>Owner-led companies</h3><p>Teams of 5 to 100 where the owner still approves what matters and wants it to stay that way.</p></article>
+    </div>
+  </section>
+
+  <section class="sv-sec" aria-labelledby="engage-h">
+    <h2 id="engage-h">How I engage</h2>
+    <div class="sv-grid">
+      <article class="sv-card"><h3>Project or fixed term</h3><p>Every engagement starts with a defined business goal.</p></article>
+      <article class="sv-card"><h3>Fixed fee</h3><p>Scoped upfront after the process is mapped. Through my LLC (1099) or W-2.</p></article>
+      <article class="sv-card"><h3>A real team</h3><p>A trusted team of software engineers and AI developers, assembled to fit the scope. Real engineers, not vibe coders.</p></article>
+    </div>
+  </section>
+</ServicePage>
+</Base>

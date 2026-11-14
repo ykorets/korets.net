@@ -20,12 +20,12 @@ class Component extends DCLogic {
   renderVals() {
     const s = this.state.s;
     const data = [
-      { when: 'Early', short: 'Journalism', title: 'Education & journalism', body: 'Completed two years of Computer Science at university, then switched to Public Relations and earned a bachelor’s degree. Worked as a journalist and political editor, then moved into marketing.', tags: ['Computer Science', 'B.A. Public Relations', 'Editorial'], photo: '', img: '/img/story-early.jpg', pos: '14% 55%' },
-      { when: '2008', short: 'Ebola Communications', title: 'Ebola Communications', body: 'Founded a viral marketing agency and grew it into one of the top 3 digital agencies in Ukraine. Sold it to an advertising holding: first exit, then stayed on under contract.', tags: ['Viral marketing', 'Top 3 in Ukraine', 'First exit'], photo: '', img: '/img/story-2008-stage.jpg', pos: 'center 40%' },
-      { when: '2013', short: 'Burning Man', title: 'Burning Man & community', body: 'Founded the Ukrainian Burners Community and an NGO in Ukraine. Now President of Ukrainian Burners Inc., a 501(c)(3). Runs Kurenivka Camp, founded the Blue Bull art car, and DJs.', tags: ['Kurenivka Camp', 'Blue Bull', '501(c)(3)'], photo: '', img: '/img/story-2013-playa.jpg', pos: 'center 45%' },
-      { when: '2015+', short: 'Reinvention', title: 'Exploration & reinvention', body: 'Startups, consulting and C-level IT roles. Real estate development as VP at a construction holding. Events.', tags: ['C-level IT', 'Construction', 'Events'], photo: '', img: '/img/story-2015-build.jpg', pos: '45% center' },
-      { when: '2023', short: 'KPI Creatives', title: 'KPI Creatives', body: 'Co-founded a video production and content marketing agency and grew it into a profitable business serving US clients.', tags: ['Video', 'Content', 'Profitable'], photo: '', img: '/img/story-2023-sf.jpg', pos: '60% 60%' },
-      { when: '2026', short: 'Going AI-native', title: 'Going AI-native', body: 'Closed KPI Creatives, a profitable agency, to focus fully on an AI-native business. Founded Growth Control, while staying CTO & Co-Founder of Stretch Tent.', tags: ['AI-native', 'Growth Control', 'Founder'], photo: '', img: '/img/yaro-portrait.jpg', pos: 'center 30%' }
+      { when: 'Early', short: 'Journalism', title: 'Education & journalism', body: 'Completed two years of Computer Science at university, then switched to Public Relations and earned a bachelor’s degree. Worked as a journalist and political editor, then moved into marketing.', tags: ['Computer Science', 'B.A. Public Relations', 'Editorial'], photo: '', img: '/img/story-early.webp', pos: '14% 55%' },
+      { when: '2008', short: 'Ebola Communications', title: 'Ebola Communications', body: 'Founded a viral marketing agency and grew it into one of the top 3 digital agencies in Ukraine. Sold it to an advertising holding: first exit, then stayed on under contract.', tags: ['Viral marketing', 'Top 3 in Ukraine', 'First exit'], photo: '', img: '/img/story-2008-stage.webp', pos: 'center 40%' },
+      { when: '2013', short: 'Burning Man', title: 'Burning Man & community', body: 'Founded the Ukrainian Burners Community and an NGO in Ukraine. Now President of Ukrainian Burners Inc., a 501(c)(3). Runs Kurenivka Camp, founded the Blue Bull art car, and DJs.', tags: ['Kurenivka Camp', 'Blue Bull', '501(c)(3)'], photo: '', img: '/img/story-2013-playa.webp', pos: 'center 45%' },
+      { when: '2015+', short: 'Reinvention', title: 'Exploration & reinvention', body: 'Startups, consulting and C-level IT roles. Real estate development as VP at a construction holding. Events.', tags: ['C-level IT', 'Construction', 'Events'], photo: '', img: '/img/story-2015-build.webp', pos: '45% center' },
+      { when: '2023', short: 'KPI Creatives', title: 'KPI Creatives', body: 'Co-founded a video production and content marketing agency and grew it into a profitable business serving US clients.', tags: ['Video', 'Content', 'Profitable'], photo: '', img: '/img/story-2023-sf.webp', pos: '60% 60%' },
+      { when: '2026', short: 'Going AI-native', title: 'Going AI-native', body: 'Closed KPI Creatives, a profitable agency, to focus fully on an AI-native business. Founded Growth Control, while staying CTO & Co-Founder of Stretch Tent.', tags: ['AI-native', 'Growth Control', 'Founder'], photo: '', img: '/img/yaro-portrait.webp', pos: 'center 30%' }
     ];
     const stops = data.map((d, i) => {
       const active = i === s;
@@ -53,6 +53,9 @@ class Component extends DCLogic {
 const c = new Component(p);
 Object.assign(c.state, state);
 const v = c.renderVals();
+const copy = !!state.__copy;
+const H2 = copy ? 'div' : 'h2';
+const H3 = copy ? 'div' : 'h3';
 ---
 <div class="st" style={`--accent: ${v.accent}; position: relative; min-height: 900px; background: #0B0A12; color: #F4F2FF; font-family: 'Geist Variable', Inter, system-ui, sans-serif; overflow: hidden; border-top: 1px solid rgba(255,255,255,.06)`}>
   <div style="width: 100%; max-width: 1280px; margin: 0 auto; padding: 96px 32px; display: flex; flex-direction: column; gap: 56px">
@@ -60,7 +63,7 @@ const v = c.renderVals();
     <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 24px">
       <div style="display: flex; flex-direction: column; gap: 20px">
         <span style="font-family: 'Geist Mono Variable', ui-monospace, monospace; font-size: 12px; letter-spacing: .12em; color: #A78BFA">STORY · HOW IT STARTED</span>
-        <h2 style="margin: 0; font-size: clamp(40px, 5vw, 64px); line-height: 1.02; letter-spacing: -0.04em; font-weight: 600">The foundation.</h2>
+        <H2 data-h={copy || undefined} style="margin: 0; font-size: clamp(40px, 5vw, 64px); line-height: 1.02; letter-spacing: -0.04em; font-weight: 600">The foundation.</H2>
       </div>
       <p style="margin: 0; font-size: 17px; line-height: 1.6; color: #A9A3C2; max-width: 420px">From journalism to agencies, construction and Burning Man: each chapter added a piece of how I build systems today.</p>
     </div>
@@ -94,7 +97,7 @@ const v = c.renderVals();
             <span style="font-size: 56px; line-height: 1; letter-spacing: -0.04em; font-weight: 600; background: linear-gradient(100deg, #C4B5FD, #F3E8FF 50%, #8B5CF6); -webkit-background-clip: text; background-clip: text; color: transparent">{c.when}</span>
           </div>
           <div class="st-in2" style="flex: 1 1 320px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
-            <h3 style="margin: 0; font-size: 32px; line-height: 1.1; letter-spacing: -0.02em; font-weight: 600">{c.title}</h3>
+            <H3 data-h={copy || undefined} style="margin: 0; font-size: 32px; line-height: 1.1; letter-spacing: -0.02em; font-weight: 600">{c.title}</H3>
             <p style="margin: 0; font-size: 17px; line-height: 1.65; color: #C9C3DE">{c.body}</p>
             <div style="display: flex; flex-wrap: wrap; gap: 8px">
               {(c.tags || []).map((t) => (<Fragment>
@@ -109,8 +112,7 @@ const v = c.renderVals();
       </Fragment>))}
     </div>
 
-    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 16px">
-      <span style="font-family: 'Geist Mono Variable', ui-monospace, monospace; font-size: 12px; letter-spacing: .08em; color: #8B84A8">NOTHING MEANINGFUL IS BUILT ALONE. <span style="color: #FCD34D">(UNDER REVIEW IN THE AGE OF AI)</span></span>
+    <div style="display: flex; flex-wrap: wrap; justify-content: flex-end; align-items: center; gap: 16px">
       <a href="/cv/" style="display: inline-flex; align-items: center; gap: 10px; font-size: 15px; font-weight: 500; color: #EDE9FE; text-decoration: none; min-height: 44px">
         Full CV
         <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m13 5 7 7-7 7"></path></svg>

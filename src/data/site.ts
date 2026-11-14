@@ -18,3 +18,6 @@ export const SOCIAL = {
   x: 'https://x.com/ykorets',
   email: 'mailto:yaroslav@korets.net',
 };
+
+// Google Analytics 4: property "www.korets.net - GA4" (392662768), same stream as the previous site.
+export const GA_ID = 'G-YMZ2F20D4V';

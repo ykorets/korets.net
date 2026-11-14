@@ -1,2 +1,5 @@
 /tax-operations /blackink/ 301
 /tax-operations/* /blackink/:splat 301
+/ai /ai-implementation/ 301
+/ai/ /ai-implementation/ 301
+/ai/* /ai-implementation/ 301

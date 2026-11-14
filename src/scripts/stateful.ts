@@ -1,7 +1,10 @@
 // Minimal DOM morph: keeps existing elements (and their CSS transitions)
 // and only patches attributes, text and structure that differ.
 function morph(from: Node, to: Node) {
-  if (from.nodeType !== to.nodeType || from.nodeName !== to.nodeName) {
+  // Headings in the hidden copies are rendered as <div data-h> so the page keeps one
+  // real heading per section; treat them as the same element when morphing.
+  const sameHeading = from instanceof Element && to instanceof Element && /^H[1-6]$/.test(from.nodeName) && to.hasAttribute('data-h');
+  if (!sameHeading && (from.nodeType !== to.nodeType || from.nodeName !== to.nodeName)) {
     from.parentNode?.replaceChild(to.cloneNode(true), from);
     return;
   }
@@ -11,7 +14,7 @@ function morph(from: Node, to: Node) {
   }
   if (from instanceof Element && to instanceof Element) {
     for (const a of Array.from(from.attributes)) if (!to.hasAttribute(a.name)) from.removeAttribute(a.name);
-    for (const a of Array.from(to.attributes)) if (from.getAttribute(a.name) !== a.value) from.setAttribute(a.name, a.value);
+    for (const a of Array.from(to.attributes)) if (a.name !== 'data-h' && from.getAttribute(a.name) !== a.value) from.setAttribute(a.name, a.value);
   }
   const f = Array.from(from.childNodes);
   const t = Array.from(to.childNodes);
@@ -29,7 +32,8 @@ export function initStateful() {
   document.querySelectorAll<HTMLElement>('[data-stateful]:not([data-ready])').forEach((root) => {
     root.dataset.ready = '1';
     const live = root.querySelector<HTMLElement>('[data-live]')!;
-    const tpls = Array.from(root.querySelectorAll<HTMLTemplateElement>('template[data-state]'));
+    // States wait either in <template> or, when they should be indexable, in hidden <div>s.
+    const tpls = Array.from(root.querySelectorAll<HTMLElement>(':scope > [data-state]')).map((el) => (el instanceof HTMLTemplateElement ? el.content : el));
     const named: Record<string, number> = JSON.parse(root.dataset.named || '{}');
     let cur = 0;
     let timer = 0;
@@ -39,7 +43,7 @@ export function initStateful() {
       const active = document.activeElement as HTMLElement | null;
       const focusKey = keepFocus && active && live.contains(active) ? active.getAttribute('data-on-click') : null;
       const focusIdx = focusKey ? Array.from(live.querySelectorAll(`[data-on-click="${focusKey}"]`)).indexOf(active!) : -1;
-      morph(live.firstElementChild!, tpls[i].content.firstElementChild!);
+      morph(live.firstElementChild!, tpls[i].firstElementChild!);
       cur = i;
       if (focusKey) (live.querySelectorAll<HTMLElement>(`[data-on-click="${focusKey}"]`)[focusIdx] as HTMLElement | undefined)?.focus();
       root.dispatchEvent(new CustomEvent('statechange', { detail: i }));

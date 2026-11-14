@@ -1,7 +1,12 @@
 ---
 import Base from '../../layouts/Base.astro';
 import CV from '../../components/CV.astro';
+import { PERSON_ID, SITE, breadcrumbs } from '../../data/person';
+const graph = [
+  { '@type': 'ProfilePage', '@id': `${SITE}/cv/#page`, url: `${SITE}/cv/`, name: 'CV — Yaro (Yaroslav) Korets', mainEntity: { '@id': PERSON_ID }, dateModified: '2026-11-14' },
+  breadcrumbs([['Home', '/'], ['CV', '/cv/']]),
+];
 ---
-<Base title="CV — Yaro Korets" description="Yaro Korets: AI Implementation Engineer, Founder of Growth Control, CTO & Co-Founder of Stretch Tent. Twenty years as a founder and operator." path="/cv/" current="CV">
+<Base title="Yaro Korets (Yaroslav Korets) — CV, AI Implementation Engineer" description="CV of Yaro (Yaroslav) Korets: AI implementation engineer, founder of Growth Control, CTO & Co-Founder of Stretch Tent. 20 years as founder and operator." path="/cv/" current="CV" type="profile" graph={graph}>
   <CV />
 </Base>

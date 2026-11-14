@@ -1,7 +1,12 @@
 ---
 import Base from '../../layouts/Base.astro';
 import Case from '../../components/Case.astro';
+import { PERSON_ID, SITE, breadcrumbs } from '../../data/person';
+const graph = [
+  { '@type': 'Article', '@id': `${SITE}/case/stretch-tent/#article`, headline: 'The office is AI. The crew is human: how Stretch Tent runs on AI agents', description: 'Case study: Stretch Tent runs marketing, sales, front desk and back office on Growth Control AI agents; only the install crews are human.', author: { '@id': PERSON_ID }, publisher: { '@id': PERSON_ID }, datePublished: '2026-11-14', image: `${SITE}/img/stretch-tent-night.jpg`, mainEntityOfPage: `${SITE}/case/stretch-tent/`, about: [{ '@type': 'Organization', name: 'Stretch Tent', url: 'https://www.stretch-tent.net/' }, { '@type': 'SoftwareApplication', name: 'Growth Control', url: 'https://growthcontrol.app/', applicationCategory: 'BusinessApplication' }] },
+  breadcrumbs([['Home', '/'], ['AI implementation', '/ai-implementation/'], ['Stretch Tent case study', '/case/stretch-tent/']]),
+];
 ---
-<Base title="Case study: Stretch Tent, an AI-run office — Yaro Korets" description="How Stretch Tent runs its office on AI agents: 100 leads in the first two weeks, with only the install crews human." path="/case/stretch-tent/">
+<Base title="AI-Run Office Case Study: Stretch Tent — Yaro Korets" description="How Stretch Tent, a Southern California event rental company, runs its office on AI agents: 100 leads in two weeks, only the install crews are human." path="/case/stretch-tent/" type="article" image="/img/stretch-tent-night.jpg" graph={graph}>
   <Case />
 </Base>

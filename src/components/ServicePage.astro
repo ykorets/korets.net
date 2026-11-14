@@ -1,0 +1,95 @@
+---
+// Shared layout for service and industry landing pages.
+interface Faq { q: string; a: string }
+interface Props {
+  eyebrow: string; title: string; titleAccent?: string; lead: string;
+  faqs: Faq[]; ctaTitle?: string; ctaText?: string;
+}
+const { eyebrow, title, titleAccent, lead, faqs, ctaTitle = 'Start with one process.', ctaText = 'Bring a workflow where money, data or deadlines are attached. We will look at its business impact, the tools you already use and a first step.' } = Astro.props;
+---
+<div class="sv">
+  <section class="sv-head">
+    <div aria-hidden="true" class="sv-glow"></div>
+    <div class="sv-head-inner">
+      <span class="sv-eyebrow">{eyebrow}</span>
+      <h1>{title}{titleAccent && <> <span class="sv-grad">{titleAccent}</span></>}</h1>
+      <p class="sv-lead">{lead}</p>
+      <div class="sv-ctas">
+        <a class="sv-cta" href="/#book">Book a call</a>
+        <a class="sv-ghost" href="/case/stretch-tent/">See the case study</a>
+      </div>
+    </div>
+  </section>
+
+  <slot />
+
+  <section class="sv-sec" aria-labelledby="faq-h">
+    <h2 id="faq-h">Questions owners ask</h2>
+    <div class="sv-faq">
+      {faqs.map((f) => (
+        <details>
+          <summary>{f.q}</summary>
+          <p>{f.a}</p>
+        </details>
+      ))}
+    </div>
+  </section>
+
+  <section class="sv-sec">
+    <div class="sv-final">
+      <span class="sv-final-title">{ctaTitle}</span>
+      <span class="sv-final-text">{ctaText}</span>
+      <a class="sv-cta" href="/#book">Discuss your operation</a>
+    </div>
+  </section>
+</div>
+
+<style is:global>
+.sv{--accent:#6D4AF6;background:#0B0A12;color:#F4F2FF;padding-bottom:96px}
+.sv *{box-sizing:border-box}
+.sv-head{position:relative;max-width:1280px;margin:0 auto;padding:72px 32px 48px}
+.sv-glow{position:absolute;right:-5%;top:-40%;width:50%;height:160%;border-radius:50%;background:radial-gradient(circle,color-mix(in srgb,var(--accent) 26%,transparent) 0%,transparent 62%);filter:blur(30px);pointer-events:none}
+.sv-head-inner{position:relative;max-width:880px;display:flex;flex-direction:column;gap:22px}
+.sv-eyebrow{font-family:'Geist Mono Variable',ui-monospace,monospace;font-size:12px;letter-spacing:.12em;color:#A78BFA;text-transform:uppercase}
+.sv h1{margin:0;font-size:clamp(42px,6vw,80px);line-height:1;letter-spacing:-.045em;font-weight:600}
+.sv-grad{background:linear-gradient(100deg,#A78BFA,#F3E8FF 45%,#8B5CF6);-webkit-background-clip:text;background-clip:text;color:transparent}
+.sv-lead{margin:0;font-size:19px;line-height:1.6;color:#A9A3C2;max-width:720px}
+.sv-ctas{display:flex;flex-wrap:wrap;gap:12px}
+.sv-cta{color:#fff;text-decoration:none;background:var(--accent);padding:0 24px;border-radius:999px;font-weight:500;min-height:52px;display:inline-flex;align-items:center;transition:transform .25s ease,box-shadow .25s ease}
+.sv .sv-cta:hover{color:#fff;transform:translateY(-2px);box-shadow:0 10px 30px color-mix(in srgb,var(--accent) 55%,transparent)}
+.sv-ghost{color:#E4E0F5;text-decoration:none;border:1px solid rgba(255,255,255,.18);padding:0 24px;border-radius:999px;font-weight:500;min-height:52px;display:inline-flex;align-items:center}
+.sv-ghost:hover{color:#fff;border-color:rgba(255,255,255,.4)}
+.sv-sec{max-width:1280px;margin:0 auto;padding:48px 32px;display:flex;flex-direction:column;gap:24px}
+.sv h2{margin:0;font-size:clamp(30px,3.6vw,48px);line-height:1.04;letter-spacing:-.035em;font-weight:600;max-width:900px}
+.sv-intro{margin:0;font-size:17px;line-height:1.65;color:#A9A3C2;max-width:760px}
+.sv-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+.sv-card{border-radius:22px;background:rgba(20,17,36,.85);border:1px solid rgba(255,255,255,.08);padding:24px;display:flex;flex-direction:column;gap:10px}
+.sv-card h3{margin:0;font-size:20px;letter-spacing:-.01em}
+.sv-card p{margin:0;font-size:15px;line-height:1.6;color:#A9A3C2}
+.sv-card ul{margin:0;padding-left:1.1em;font-size:15px;line-height:1.6;color:#C9C3DE;display:flex;flex-direction:column;gap:4px}
+.sv-tag{font-family:'Geist Mono Variable',ui-monospace,monospace;font-size:11px;letter-spacing:.1em;color:#A78BFA}
+.sv-steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px;counter-reset:s}
+.sv-steps li{border-radius:18px;border:1px solid rgba(167,139,250,.22);background:rgba(124,92,250,.06);padding:20px;display:flex;flex-direction:column;gap:8px}
+.sv-steps strong{font-size:17px}
+.sv-steps span{font-size:14px;line-height:1.55;color:#A9A3C2}
+.sv-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px}
+.sv-stat{border-radius:22px;background:rgba(20,17,36,.85);border:1px solid rgba(255,255,255,.08);padding:24px}
+.sv-stat b{display:block;font-size:48px;line-height:1;letter-spacing:-.04em;background:linear-gradient(100deg,#C4B5FD,#F3E8FF);-webkit-background-clip:text;background-clip:text;color:transparent}
+.sv-stat span{font-size:14px;color:#A9A3C2}
+.sv-note{font-size:13px;color:#8B84A8}
+.sv-links{display:flex;flex-wrap:wrap;gap:10px}
+.sv-links a{color:#E4E0F5;text-decoration:none;border:1px solid rgba(255,255,255,.14);border-radius:999px;padding:10px 16px;font-size:14px}
+.sv-links a:hover{border-color:rgba(167,139,250,.6);color:#fff}
+.sv-faq{display:flex;flex-direction:column;border-radius:24px;background:rgba(20,17,36,.85);border:1px solid rgba(255,255,255,.08);padding:8px 24px}
+.sv-faq details{border-bottom:1px solid rgba(255,255,255,.07);padding:16px 0}
+.sv-faq details:last-child{border-bottom:0}
+.sv-faq summary{cursor:pointer;font-size:18px;font-weight:600;list-style:none;display:flex;justify-content:space-between;gap:16px}
+.sv-faq summary::after{content:'+';color:#A78BFA;font-weight:400;transition:transform .25s ease}
+.sv-faq details[open] summary::after{transform:rotate(45deg)}
+.sv-faq summary::-webkit-details-marker{display:none}
+.sv-faq p{margin:10px 0 0;font-size:16px;line-height:1.65;color:#C9C3DE}
+.sv-final{border-radius:28px;background:linear-gradient(140deg,rgba(109,74,246,.3),rgba(20,17,36,.95) 60%);border:1px solid rgba(167,139,250,.3);padding:40px;display:flex;flex-direction:column;gap:14px;align-items:flex-start}
+.sv-final-title{font-size:clamp(26px,3vw,38px);font-weight:600;letter-spacing:-.02em;line-height:1.1}
+.sv-final-text{font-size:16px;line-height:1.6;color:#C9C3DE;max-width:640px}
+@media (max-width:640px){.sv-head,.sv-sec{padding-left:20px;padding-right:20px}.sv-final{padding:24px}.sv-faq{padding:4px 18px}}
+</style>

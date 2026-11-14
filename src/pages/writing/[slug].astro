@@ -13,8 +13,18 @@ const prev = articles[i - 1];
 const next = articles[i + 1];
 const url = new URL(`/writing/${a.slug}/`, Astro.site).href;
 const short = a.metaTitle.replace(/ \| Yaroslav Korets$/, '');
+const ogImage = `/img/og/${a.slug}.jpg`;
+const ld = JSON.parse(a.jsonld);
+for (const node of ld['@graph'] ?? []) {
+  if (node['@type'] === 'BlogPosting') {
+    node.author = { '@type': 'Person', '@id': 'https://korets.net/#person', name: 'Yaro Korets', alternateName: 'Yaroslav Korets', url: 'https://korets.net/' };
+    node.publisher = { '@id': 'https://korets.net/#person' };
+    node.image = new URL(ogImage, Astro.site).href;
+  }
+}
+const jsonld = JSON.stringify(ld);
 ---
-<Base title={`${short} — Yaro Korets`} description={a.description} path={`/writing/${a.slug}/`} type="article" image="/writing/built-shipped-running-social.png" current="Writing" jsonld={a.jsonld}>
+<Base title={`${short} — Yaro Korets`} description={a.description} path={`/writing/${a.slug}/`} type="article" image={ogImage} imageAlt={a.title} current="Writing" jsonld={jsonld}>
 <div class="ar">
   <div aria-hidden="true" class="ar-bar"><div class="ar-progress" data-progress></div></div>
 
@@ -26,7 +36,7 @@ const short = a.metaTitle.replace(/ \| Yaroslav Korets$/, '');
       <h1>{a.title}</h1>
       <p class="ar-lead">{a.lead}</p>
       <div class="ar-meta">
-        <span class="ar-author"><img src="/img/yaro-portrait.jpg" alt="" width="36" height="36"><span>Yaro Korets</span></span>
+        <span class="ar-author"><img src="/img/yaro-portrait.webp" alt="" width="36" height="36"><span>Yaro Korets</span></span>
         <span>{a.date}</span><span>{a.readTime}</span>
       </div>
       <div class="ar-receipt">RECEIPT · {a.receipt}</div>

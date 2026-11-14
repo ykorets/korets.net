@@ -1,11 +1,10 @@
 ---
-// Small cookie notice. The site itself sets no tracking or advertising cookies;
-// the only third-party cookies come from the embedded booking calendar
-// (self-hosted Cal.com on book.korets.net), which loads only after consent.
+// Small cookie notice. Analytics cookies (Google Analytics) and the embedded booking
+// calendar (self-hosted Cal.com on book.korets.net) wait for consent. No advertising.
 ---
 <div class="cc" data-cc hidden role="region" aria-label="Cookie notice">
   <p class="cc-text">
-    No tracking, no ads. Cookies are used only by the booking calendar from book.korets.net.
+    No ads. With your OK, cookies help me see which pages are useful (Google Analytics) and run the booking calendar.
     <a href="/privacy/">Privacy</a>
   </p>
   <div class="cc-actions">
@@ -29,6 +28,7 @@
     write(v);
     box.classList.remove('is-in');
     window.setTimeout(() => { box.hidden = true; }, 300);
+    (window as any).gtag?.('consent', 'update', { analytics_storage: v === 'yes' ? 'granted' : 'denied' });
     window.dispatchEvent(new CustomEvent('korets:consent', { detail: v }));
   });
   document.addEventListener('click', (e) => {
@@ -36,6 +36,7 @@
     if ((e.target as Element).closest('[data-cc-allow]')) {
       write('yes');
       box.hidden = true;
+      (window as any).gtag?.('consent', 'update', { analytics_storage: 'granted' });
       window.dispatchEvent(new CustomEvent('korets:consent', { detail: 'yes' }));
     }
   });

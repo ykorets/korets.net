@@ -1,20 +1,22 @@
-# Yaroslav Korets
+# Yaro Korets (Yaroslav Korets)
 
-> Yaroslav (Yaro) Korets helps business owners improve margins through AI implementation across marketing, sales, finance and operations. Founder of Growth Control and CTO & Co-Founder of Stretch Tent. Based in Los Angeles.
+> Yaro Korets (full name Yaroslav Korets; Ukrainian: Ярослав Корець) is an AI implementation engineer based in Los Angeles. He helps business owners improve margins by implementing AI systems across marketing, sales, finance and operations. Founder of Growth Control and CTO & Co-Founder of Stretch Tent. President of Ukrainian Burners Inc. (Kurenivka Camp, Blue Bull art car at Burning Man).
 
 ## Core pages
 
-- [Yaro Korets](https://korets.net/): AI implementation for profitable growth, business background and contact.
-- [Growth Control](https://growthcontrol.app/): Yaro’s product connecting advertising, inquiries, CRM, calls, quotes and sales follow-up. A starting point for AI implementation in marketing and sales.
-- [Stretch Tent](https://www.stretch-tent.net/): tent rental and sales business in Southern California; Yaro is CTO & Co-Founder since June 2018. Growth Control was built and tested in its operation.
+- [Yaro Korets — home](https://korets.net/): AI implementation for profitable growth, how projects run, businesses, story and booking.
+- [AI implementation services](https://korets.net/ai-implementation/): hands-on AI implementation for small and mid-size businesses in Los Angeles and across the US; process, proof, engagement terms and FAQ.
+- [AI for event rental companies](https://korets.net/ai-for-event-rental-companies/): AI agents for tent, party and equipment rental businesses: inquiries, call briefs, quotes, invoices.
+- [Case study: Stretch Tent](https://korets.net/case/stretch-tent/): an event rental company whose office runs on AI agents; 100 leads in two weeks, only install crews are human (owner-reported).
+- [CV](https://korets.net/cv/): twenty years as a founder and operator; experience, AI systems, stack and engagement terms.
+- [Growth Control](https://growthcontrol.app/): Yaro's product connecting advertising, inquiries, CRM, calls, quotes and follow-up, run by AI agents.
+- [Stretch Tent](https://www.stretch-tent.net/): tent rental and sales in Southern California; Yaro is CTO & Co-Founder since 2018.
+- [Book a call](https://book.korets.net/korets): business meeting (30 or 60 min) or feedback loop (15 min).
 
-- [AI Implementation & Projects](https://korets.net/ai/): Growth Control, practical implementations, product experiments and operating principles.
-- [Black Ink Tax Operations Pilot](https://korets.net/blackink/): paid 30-day pilot to reduce manual work around client communication, IRS transcripts, Canopy, and TaxSlayer.
-- [Writing](https://korets.net/writing/): field notes on AI operations.
-- [Built. Shipped. Running.](https://korets.net/writing/built-shipped-running/): complete eight-part series.
-- [CV](https://korets.net/cv/): operator background and project experience.
+## Writing
 
-## Series articles
+- [Writing](https://korets.net/writing/): field notes on AI systems in production.
+- [Built. Shipped. Running.](https://korets.net/writing/built-shipped-running/): eight-part series.
 
 - [The Operational Last Mile: Why AI Demos Die Before Production](https://korets.net/writing/ai-operational-last-mile/): A production AI system needs source data, validation, approval gates, and an audit trail built around how a product or service is delivered.
 - [Marco: Why an Outbound AI Agent Starts With Infrastructure](https://korets.net/writing/marco-infrastructure-before-ai-copy/): Marco is an outbound AI agent that begins with sender health, deliverability gates, and signals before it writes a message.
@@ -25,14 +27,8 @@
 - [Behind the Watt: How to Use AI Without Asking Anyone to Trust It](https://korets.net/writing/behind-the-watt-ai-with-receipts/): Behind the Watt is an open evidence database that uses AI to extract claims from public records while preserving source-level provenance and human approval.
 - [The Operating Principle: Persistence, Human Approval, Audit Logs](https://korets.net/writing/ai-operating-principle/): A production pattern for AI systems: let software handle persistence and volume, keep consequential decisions with people, and log every action.
 
-## Public data project
+## Other
 
+- [Black Ink Tax operations pilot](https://korets.net/blackink/)
 - [Behind the Watt](https://behindthewatt.com): open evidence database for behind-the-meter power at data centers.
-
-
-## Accounting Growth Partners — model and evidence
-
-- [Data & model](https://korets.net/cpa/data/): public research context, founder background and Black Inc Tax Services pilot status.
-- [Complete model bundle](https://korets.net/cpa/data/model-bundle.json): five scenarios, monthly cash flows, model source, market data and embedded research context.
-- [Research context](https://korets.net/cpa/data/research-context.json): reviewed investor theses and platform cases, archived implementation references, evidence-to-assumption map and founder context.
-- [Analysis guide](https://korets.net/cpa/data/agent-guide.md): units, evidence labels, version conflicts and suggested analysis prompt. Pilot outcomes remain unavailable; investment assumptions are not verified operating results.
+- [Privacy](https://korets.net/privacy/)

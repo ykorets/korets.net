@@ -71,6 +71,9 @@ class Component extends DCLogic {
 const c = new Component(p);
 Object.assign(c.state, state);
 const v = c.renderVals();
+const copy = !!state.__copy;
+const H2 = copy ? 'div' : 'h2';
+const H3 = copy ? 'div' : 'h3';
 ---
 <div class="pr" style={`--accent: ${v.accent}; position: relative; min-height: 900px; background: #0B0A12; color: #F4F2FF; font-family: 'Geist Variable', Inter, system-ui, sans-serif; overflow: hidden; border-top: 1px solid rgba(255,255,255,.06)`}>
   <div style="width: 100%; max-width: 1280px; margin: 0 auto; padding: 96px 32px; display: flex; flex-wrap: wrap; gap: 64px; align-items: flex-start">
@@ -78,8 +81,9 @@ const v = c.renderVals();
     <section style="flex: 1 1 460px; min-width: 0; display: flex; flex-direction: column; gap: 36px">
       <div style="display: flex; flex-direction: column; gap: 20px">
         <span style="font-family: 'Geist Mono Variable', ui-monospace, monospace; font-size: 12px; letter-spacing: .12em; color: #A78BFA">WORK WITH ME · MARKETING · SALES · FINANCE · OPERATIONS</span>
-        <h2 style="margin: 0; font-size: clamp(40px, 5vw, 64px); line-height: 1.02; letter-spacing: -0.04em; font-weight: 600">Start with the<br>business case.</h2>
+        <H2 data-h={copy || undefined} style="margin: 0; font-size: clamp(40px, 5vw, 64px); line-height: 1.02; letter-spacing: -0.04em; font-weight: 600">Start with the<br>business case.</H2>
         <p style="margin: 0; font-size: 17px; line-height: 1.6; color: #A9A3C2; max-width: 520px">Every project begins with one process that affects profit, and ends with a result measured against where it started.</p>
+        <a href="/ai-implementation/" style="align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; font-size: 15px; font-weight: 500; color: #EDE9FE; text-decoration: none; min-height: 44px">How AI implementation works <span aria-hidden="true">→</span></a>
       </div>
 
       <div style="position: relative; display: flex; gap: 20px">

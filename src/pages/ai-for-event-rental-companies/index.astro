@@ -1,0 +1,64 @@
+---
+import Base from '../../layouts/Base.astro';
+import ServicePage from '../../components/ServicePage.astro';
+import { PERSON_ID, SITE, breadcrumbs } from '../../data/person';
+
+const faqs = [
+  { q: 'Can AI answer event rental inquiries on Yelp and the website?', a: 'Yes. At Stretch Tent every inquiry from Yelp, the website, calls and texts gets a first response in minutes, including polite declines, and the event details go straight into the CRM.' },
+  { q: 'Does AI send quotes without my approval?', a: 'No. Agents prepare tailored quotes and invoices; the owner approves them with one click before anything reaches the customer.' },
+  { q: 'What stays human?', a: 'The crews who deliver, install and take down the equipment, and the owner decisions: pricing, commitments and anything hard to reverse.' },
+  { q: 'Which tools does it work with?', a: 'It connects to the CRM, phone and text system, email, Yelp, Google Ads and your calendar. The Stretch Tent setup runs on Growth Control.' },
+  { q: 'Is this only for tent rentals?', a: 'No. The same flow fits party, equipment, AV, furniture and other rental businesses where every inquiry has an event date, a location and a quote.' },
+];
+
+const graph = [
+  {
+    '@type': 'Service',
+    '@id': `${SITE}/ai-for-event-rental-companies/#service`,
+    name: 'AI for event rental companies',
+    serviceType: 'AI implementation for event and equipment rental businesses',
+    description: 'AI agents that answer inquiries, brief calls, prepare quotes and invoices for event rental companies, with owner approval on what matters.',
+    provider: { '@id': PERSON_ID },
+    audience: { '@type': 'BusinessAudience', name: 'Event, party and equipment rental companies' },
+    areaServed: { '@type': 'Country', name: 'United States' },
+    url: `${SITE}/ai-for-event-rental-companies/`,
+  },
+  { '@type': 'FAQPage', mainEntity: faqs.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) },
+  breadcrumbs([['Home', '/'], ['AI implementation', '/ai-implementation/'], ['Event rental companies', '/ai-for-event-rental-companies/']]),
+];
+---
+<Base title="AI for Event Rental Companies — Yaro Korets" description="AI agents for tent, party and equipment rental companies: inquiries answered in minutes, quotes and invoices with owner approval. Proven at Stretch Tent." path="/ai-for-event-rental-companies/" graph={graph} image="/img/stretch-tent-night.jpg">
+<ServicePage eyebrow="AI for event rental companies" title="Every inquiry answered." titleAccent="Every event on the calendar." lead="Event rental runs on speed: the first company to answer with a clear quote usually wins the date. I build AI systems that do the office work so the owner and crews can focus on the event. Built and proven at Stretch Tent." faqs={faqs} ctaTitle="Let's look at your inquiry flow." ctaText="Bring last month's inquiries. We'll map where leads wait, where quotes stall, and what an AI front desk would change.">
+
+  <section class="sv-sec" aria-labelledby="flow-h">
+    <h2 id="flow-h">One inquiry, end to end</h2>
+    <ol class="sv-steps">
+      <li><strong>Ad campaign</strong><span>Paid search managed by written rules.</span></li>
+      <li><strong>Inquiry answered</strong><span>Yelp, website, calls and texts get a first response in minutes.</span></li>
+      <li><strong>Call with a brief</strong><span>The owner or operator calls with every event detail in front of them.</span></li>
+      <li><strong>Tailored quote</strong><span>Prepared from the CRM, approved by the owner.</span></li>
+      <li><strong>Invoice and payment</strong><span>Prepared and tracked; the owner approves with one click.</span></li>
+      <li><strong>Event delivered</strong><span>Human crews install and take down the equipment.</span></li>
+    </ol>
+  </section>
+
+  <section class="sv-sec" aria-labelledby="results-h">
+    <h2 id="results-h">What it did at Stretch Tent</h2>
+    <div class="sv-stats">
+      <div class="sv-stat"><b>100</b><span>leads in the first two weeks</span></div>
+      <div class="sv-stat"><b>20+</b><span>inquiries a day, one operator</span></div>
+      <div class="sv-stat"><b>0</b><span>office staff</span></div>
+    </div>
+    <span class="sv-note">Owner-reported results, first reported October 2026.</span>
+    <div class="sv-links"><a href="/case/stretch-tent/">Full case study →</a><a href="/ai-implementation/">AI implementation services →</a><a href="https://www.stretch-tent.net/">stretch-tent.net ↗</a></div>
+  </section>
+
+  <section class="sv-sec" aria-labelledby="split-h">
+    <h2 id="split-h">Who does what</h2>
+    <div class="sv-grid">
+      <article class="sv-card"><span class="sv-tag">AGENTS HANDLE</span><ul><li>Campaigns, landing pages and inquiry intake</li><li>First response on Yelp, website forms, calls and texts</li><li>Call briefs, notes and follow-ups</li><li>Quote and invoice preparation, payment tracking</li></ul></article>
+      <article class="sv-card"><span class="sv-tag">PEOPLE HANDLE</span><ul><li>Installing and taking down every tent</li><li>Approving every invoice and proposal</li><li>Commercial decisions and deal stages</li><li>The relationship when it matters most</li></ul></article>
+    </div>
+  </section>
+</ServicePage>
+</Base>

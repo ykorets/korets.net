@@ -10,12 +10,16 @@ interface Props {
   /** auto-advance interval in ms; stops after the first manual choice */
   autoplay?: number;
   id?: string;
+  /** keep the other states in the DOM (hidden) so search engines can read them */
+  indexable?: boolean;
 }
-const { component: C, states, named = {}, autoplay = 0, id } = Astro.props;
+const { component: C, states, named = {}, autoplay = 0, id, indexable = false } = Astro.props;
 ---
 <div class="stateful" id={id} data-stateful data-named={JSON.stringify(named)} data-autoplay={autoplay} data-count={states.length}>
   <div data-live><C state={states[0]} /></div>
-  {states.map((s) => <template data-state><C state={s} /></template>)}
+  {states.map((s, i) => indexable
+    ? <div data-state hidden><C state={{ ...s, __copy: i !== 0 }} /></div>
+    : <template data-state><C state={s} /></template>)}
 </div>
 <script>
   import { initStateful } from '../scripts/stateful';
