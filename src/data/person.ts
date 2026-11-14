@@ -18,7 +18,6 @@ export const person = {
   image: `${SITE}/img/yaro-portrait.jpg`,
   jobTitle: 'AI Implementation Engineer',
   description: 'AI implementation engineer in Los Angeles. Helps business owners improve margins with AI across marketing, sales, finance and operations. Founder of Growth Control and CTO & Co-Founder of Stretch Tent.',
-  email: 'mailto:yaroslav@korets.net',
   address: { '@type': 'PostalAddress', addressLocality: 'Los Angeles', addressRegion: 'CA', addressCountry: 'US' },
   knowsAbout: ['AI implementation', 'AI agents', 'Business process automation', 'Marketing automation', 'Sales automation', 'CRM', 'Lead follow-up', 'Operations', 'Growth marketing'],
   worksFor: [
