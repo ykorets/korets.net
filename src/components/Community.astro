@@ -1,0 +1,123 @@
+---
+// Generated from the approved design canvas (Community.dc.html); edit freely.
+const { state = {}, props: p = {} } = Astro.props;
+class DCLogic { constructor(props) { this.props = props || {}; this.state = {}; } setState() {} componentDidMount() {} }
+class Component extends DCLogic {
+  renderVals() {
+    const motion = this.props.motion ?? true;
+    return {
+      accent: this.props.accent ?? '#6D4AF6',
+      rootClass: motion ? 'cm motion' : 'cm'
+    };
+  }
+}
+const c = new Component(p);
+Object.assign(c.state, state);
+const v = c.renderVals();
+---
+<div class={v.rootClass} style={`--accent: ${v.accent}; position: relative; min-height: 1300px; background: #0B0A12; color: #F4F2FF; font-family: 'Geist Variable', Inter, system-ui, sans-serif; overflow: hidden; border-top: 1px solid rgba(255,255,255,.06)`}>
+  <div class="cm-stars" aria-hidden="true" style="position: absolute; inset: 0; background-size: 420px 420px; pointer-events: none"></div>
+  <div class="cm-stars cm-stars2" aria-hidden="true" style="position: absolute; inset: 0; background-size: 610px 610px; background-position: 120px 80px; pointer-events: none"></div>
+
+  <div style="position: relative; width: 100%; max-width: 1280px; margin: 0 auto; padding: 96px 32px; display: flex; flex-direction: column; gap: 48px">
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 24px">
+      <div style="display: flex; flex-direction: column; gap: 20px; max-width: 680px">
+        <span style="font-family: 'Geist Mono Variable', ui-monospace, monospace; font-size: 12px; letter-spacing: .12em; color: #A78BFA">CULTURE &amp; COMMUNITY · BURNING MAN</span>
+        <h2 style="margin: 0; font-size: clamp(40px, 5vw, 64px); line-height: 1.02; letter-spacing: -0.04em; font-weight: 600">Testing systems<br>under pressure.</h2>
+      </div>
+      <p style="margin: 0; font-size: 17px; line-height: 1.6; color: #A9A3C2; max-width: 440px">Ten years of building a camp and an art car in the Nevada desert, through cancellations and a full-scale war. A live test of leadership, trust, logistics and teamwork.</p>
+    </div>
+
+    <div class="cm-cgrid" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); grid-auto-rows: minmax(240px, auto); gap: 20px">
+
+      <article class="cm-tile cm-kur" style="grid-column: span 2; grid-row: span 2; position: relative; overflow: hidden; border-radius: 28px; border: 1px solid rgba(255,255,255,.1); display: flex; flex-direction: column; justify-content: flex-end; min-height: 560px; background: repeating-linear-gradient(135deg, rgba(167,139,250,.06) 0 12px, rgba(167,139,250,.02) 12px 24px)">
+        <img src="/img/kurenivka-aerial.jpg" alt="Kurenivka camp from above: white hexayurts around a shared square in Black Rock City" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover">
+        <div aria-hidden="true" style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(109,74,246,.16), rgba(11,10,18,0) 40%)"></div>
+        <div style="position: relative; padding: 32px; background: linear-gradient(0deg, rgba(11,10,18,.96) 30%, rgba(11,10,18,0)); display: flex; flex-direction: column; gap: 14px">
+          <span style="align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; font-family: 'Geist Mono Variable', ui-monospace, monospace; font-size: 11px; letter-spacing: .1em; color: #FDE68A; padding: 6px 10px; border-radius: 999px; background: rgba(245,158,11,.18)">
+            <span class="cm-fire" style="width: 7px; height: 7px; border-radius: 50%; background: #F59E0B; display: inline-block; box-shadow: 0 0 10px #F59E0B"></span>
+            2017–2027 · ONE LAST BURN
+          </span>
+          <h3 style="margin: 0; font-size: 44px; line-height: 1; letter-spacing: -0.03em; font-weight: 600">Kurenivka Camp</h3>
+          <p style="margin: 0; font-size: 17px; line-height: 1.6; color: #C9C3DE; max-width: 600px">The first official Ukrainian camp at Burning Man. Founded in 2017 by eighty Ukrainians, most of them first-timers. A <em>kurin</em> was a Cossack encampment, a home you carried with you; our hexayurts stand around a shared square the same way.</p>
+          <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #A9A3C2; max-width: 600px">2027 is the tenth year and the final burn for now: one last camp of 60 people around Blue Bull.</p>
+          <div style="display: flex; flex-wrap: wrap; gap: 18px; align-items: center">
+            <a class="cm-cta" href="https://kurenivka.com" style="color: #1C1206; text-decoration: none; background: #F59E0B; padding: 12px 20px; border-radius: 999px; font-size: 15px; font-weight: 600; min-height: 44px; display: inline-flex; align-items: center">Apply for the final camp</a>
+            <a class="cm-link" href="https://kurenivka.com" style="display: inline-flex; align-items: center; gap: 10px; font-size: 15px; font-weight: 500; color: #EDE9FE; text-decoration: none; min-height: 44px">
+              The ten-year story
+              <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"></path><path d="M8 7h9v9"></path></svg>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <article class="cm-tile cm-neon" style="position: relative; overflow: hidden; border-radius: 28px; background: rgba(20,17,36,.9); border: 1px solid rgba(56,189,248,.35); display: flex; flex-direction: column">
+        <div style="min-height: 150px; flex: 1; position: relative; overflow: hidden">
+          <img src="/img/blue-bull-night.jpg" alt="Blue Bull art car on the playa under the night sky" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 60%">
+        </div>
+        <div class="cm-led" aria-hidden="true" style="height: 3px; background: linear-gradient(90deg, #38BDF8, #A78BFA, #38BDF8, #A78BFA); background-size: 200% 100%"></div>
+        <div style="padding: 24px; display: flex; flex-direction: column; gap: 8px">
+          <span style="font-family: 'Geist Mono Variable', ui-monospace, monospace; font-size: 11px; letter-spacing: .1em; color: #7DD3FC">ART CAR · 2025–2027</span>
+          <h3 style="margin: 0; font-size: 26px; line-height: 1.05; letter-spacing: -0.02em; font-weight: 600">Blue Bull</h3>
+          <p style="margin: 0; font-size: 14px; line-height: 1.55; color: #A9A3C2">Maria Prymachenko's bull, turned into a two-story art car and a moving stage. 20+ performances, Benny Benassi among them. Last ride in 2027.</p>
+        </div>
+      </article>
+
+      <article class="cm-tile" style="position: relative; overflow: hidden; border-radius: 28px; background: rgba(20,17,36,.9); border: 1px solid rgba(255,255,255,.08); padding: 26px; display: flex; flex-direction: column; justify-content: space-between; gap: 14px">
+        <span style="font-family: 'Geist Mono Variable', ui-monospace, monospace; font-size: 11px; letter-spacing: .1em; color: #8B84A8">2022 · WHEN IT MATTERED MOST</span>
+        <div style="display: flex; flex-direction: column; gap: 8px">
+          <h3 style="margin: 0; font-size: 24px; line-height: 1.1; letter-spacing: -0.02em; font-weight: 600">The pause we didn't choose</h3>
+          <p style="margin: 0; font-size: 14px; line-height: 1.55; color: #A9A3C2">No desert that year. The community ran the Ukrainian Refugee Support Initiative and a free Kurenivka Kids Camp in the Carpathians for 70 children affected by war.</p>
+        </div>
+      </article>
+    </div>
+
+    <div style="border-radius: 28px; background: rgba(20,17,36,.75); border: 1px solid rgba(255,255,255,.08); padding: 32px 36px; display: flex; flex-direction: column; gap: 22px">
+      <span style="font-family: 'Geist Mono Variable', ui-monospace, monospace; font-size: 12px; letter-spacing: .12em; color: #8B84A8">TEN YEARS, COUNTED</span>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 24px">
+        <div class="cm-stat" style="animation-delay: 0s; display: flex; flex-direction: column; gap: 6px"><span style="font-size: 52px; line-height: 1; letter-spacing: -0.04em; font-weight: 600; background: linear-gradient(100deg, #C4B5FD, #F3E8FF); -webkit-background-clip: text; background-clip: text; color: transparent">10</span><span style="font-size: 14px; color: #A9A3C2">years, 2017–2027</span></div>
+        <div class="cm-stat" style="animation-delay: .1s; display: flex; flex-direction: column; gap: 6px"><span style="font-size: 52px; line-height: 1; letter-spacing: -0.04em; font-weight: 600; background: linear-gradient(100deg, #C4B5FD, #F3E8FF); -webkit-background-clip: text; background-clip: text; color: transparent">500+</span><span style="font-size: 14px; color: #A9A3C2">people who called Kurenivka home</span></div>
+        <div class="cm-stat" style="animation-delay: .2s; display: flex; flex-direction: column; gap: 6px"><span style="font-size: 52px; line-height: 1; letter-spacing: -0.04em; font-weight: 600; background: linear-gradient(100deg, #C4B5FD, #F3E8FF); -webkit-background-clip: text; background-clip: text; color: transparent">7</span><span style="font-size: 14px; color: #A9A3C2">camps in Black Rock City</span></div>
+        <div class="cm-stat" style="animation-delay: .3s; display: flex; flex-direction: column; gap: 6px"><span style="font-size: 52px; line-height: 1; letter-spacing: -0.04em; font-weight: 600; background: linear-gradient(100deg, #C4B5FD, #F3E8FF); -webkit-background-clip: text; background-clip: text; color: transparent">7</span><span style="font-size: 14px; color: #A9A3C2">art projects on the playa</span></div>
+        <div class="cm-stat" style="animation-delay: .4s; display: flex; flex-direction: column; gap: 6px"><span style="font-size: 52px; line-height: 1; letter-spacing: -0.04em; font-weight: 600; background: linear-gradient(100deg, #FDE68A, #F59E0B); -webkit-background-clip: text; background-clip: text; color: transparent">70</span><span style="font-size: 14px; color: #A9A3C2">kids at Kurenivka Kids Camp</span></div>
+      </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px">
+      <article class="cm-tile" style="border-radius: 24px; background: linear-gradient(140deg, rgba(109,74,246,.2), rgba(20,17,36,.85) 60%); border: 1px solid rgba(167,139,250,.2); padding: 28px; display: flex; flex-direction: column; gap: 10px">
+        <span style="font-family: 'Geist Mono Variable', ui-monospace, monospace; font-size: 11px; letter-spacing: .1em; color: #C4B5FD">FEATURE DOCUMENTARY · IN THE EDIT</span>
+        <h3 style="margin: 0; font-size: 24px; line-height: 1.1; letter-spacing: -0.02em; font-weight: 600">Kurenivka: Ten Years Spellbound</h3>
+        <p style="margin: 0; font-size: 14px; line-height: 1.55; color: #A9A3C2">Filmed on the playa at Burning Man 2025: how a painting by Maria Prymachenko became a two-story art car, and the people who carried it there. Premiere to be announced.</p>
+      </article>
+      <article class="cm-tile" style="border-radius: 24px; background: rgba(20,17,36,.85); border: 1px solid rgba(255,255,255,.08); padding: 28px; display: flex; flex-direction: column; gap: 10px">
+        <span style="font-family: 'Geist Mono Variable', ui-monospace, monospace; font-size: 11px; letter-spacing: .1em; color: #8B84A8">NONPROFIT · PRESIDENT</span>
+        <h3 style="margin: 0; font-size: 24px; line-height: 1.1; letter-spacing: -0.02em; font-weight: 600">Ukrainian Burners Inc.</h3>
+        <p style="margin: 0; font-size: 14px; line-height: 1.55; color: #A9A3C2">The 501(c)(3) behind Kurenivka and Blue Bull. It grew out of the Ukrainian Burners Community, started in 2013, and stays when the camp pauses.</p>
+      </article>
+    </div>
+  </div>
+</div>
+
+<style is:global>
+.cm *{box-sizing:border-box}
+.cm-stars{background-image:radial-gradient(1px 1px at 10% 20%,#fff,transparent),radial-gradient(1px 1px at 30% 70%,#e9e3ff,transparent),radial-gradient(1.5px 1.5px at 55% 15%,#fff,transparent),radial-gradient(1px 1px at 75% 55%,#c4b5fd,transparent),radial-gradient(1px 1px at 90% 30%,#fff,transparent),radial-gradient(1.5px 1.5px at 20% 85%,#e9e3ff,transparent),radial-gradient(1px 1px at 65% 85%,#fff,transparent),radial-gradient(1px 1px at 45% 45%,#c4b5fd,transparent),radial-gradient(1px 1px at 85% 80%,#fff,transparent),radial-gradient(1px 1px at 5% 50%,#fff,transparent)}
+.cm-tile{transition:transform .4s cubic-bezier(.2,.7,.2,1),border-color .4s ease}
+.cm-tile:hover{transform:translateY(-4px);border-color:rgba(167,139,250,.45)}
+.cm-link{transition:gap .25s ease,color .25s ease}
+.cm-link:hover{gap:14px;color:#FFFFFF}
+.cm-cta{transition:transform .25s ease,box-shadow .25s ease}
+.cm-cta:hover{color:#1C1206;transform:translateY(-2px);box-shadow:0 10px 30px rgba(245,158,11,.4)}
+.motion .cm-stars{animation:cm-twinkle 5s ease-in-out infinite}
+.motion .cm-stars2{animation:cm-twinkle 7s ease-in-out 1.5s infinite}
+.motion .cm-neon{animation:cm-neon 3s ease-in-out infinite}
+.motion .cm-led{animation:cm-led 2.4s linear infinite}
+.motion .cm-fire{animation:cm-fire 2.2s ease-in-out infinite}
+.motion .cm-stat{opacity:0;animation:cm-up .8s cubic-bezier(.2,.7,.2,1) forwards}
+@keyframes cm-twinkle{0%,100%{opacity:.35}50%{opacity:.9}}
+@keyframes cm-neon{0%,100%{box-shadow:0 0 0 1px rgba(56,189,248,.35),0 0 30px rgba(56,189,248,.15)}50%{box-shadow:0 0 0 1px rgba(56,189,248,.7),0 0 60px rgba(56,189,248,.35)}}
+@keyframes cm-led{0%{background-position:0% 50%}100%{background-position:200% 50%}}
+@keyframes cm-fire{0%,100%{opacity:.7;transform:scale(1)}50%{opacity:1;transform:scale(1.25)}}
+@keyframes cm-up{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@media (max-width:900px){.cm-cgrid{grid-template-columns:minmax(0,1fr)!important}.cm-cgrid>*{grid-column:auto!important;grid-row:auto!important}}
+@media (prefers-reduced-motion:reduce){.motion *{animation:none!important;opacity:1!important}}
+</style>

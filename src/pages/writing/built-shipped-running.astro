@@ -1,0 +1,89 @@
+---
+import Base from '../../layouts/Base.astro';
+import series from '../../data/series.json';
+const proofs = [
+  ['AI does the persistent work', 'Monitoring, extraction, comparison, drafting, and follow-up at a volume people cannot sustain.'],
+  ['Humans approve what matters', 'Money, facts, promises, strategy, and actions that are difficult to reverse.'],
+  ['Everything is logged', 'Inputs, proposals, tool calls, approvals, final actions, outcomes, and operating cost.'],
+];
+---
+<Base title="Built. Shipped. Running. — 8 AI systems field notes · Yaro Korets" description={series.description} path="/writing/built-shipped-running/" current="Writing" image="/writing/built-shipped-running-social.png" jsonld={series.jsonld}>
+<div class="se">
+  <section class="se-head">
+    <div aria-hidden="true" class="se-glow"></div>
+    <div class="se-head-inner">
+      <nav aria-label="Breadcrumb" class="se-crumbs"><a href="/writing/">Writing</a><span>/</span><span>Series</span></nav>
+      <span class="se-eyebrow">EIGHT FIELD NOTES · ONE OPERATING PRINCIPLE</span>
+      <h1>Built. Shipped. <span class="se-grad">Running.</span></h1>
+      <p class="se-lead">The models are built. The last mile is not. This series breaks down the systems I have running in production, what they replace, where humans stay in control, and the receipts behind the claims.</p>
+      <div class="se-receipt">SERIES RECEIPT · 6 production systems · 1 public pet project · 8 field notes</div>
+    </div>
+  </section>
+
+  <section class="se-sec">
+    <span class="se-eyebrow">THE OPERATING PRINCIPLE</span>
+    <h2>Persistence and volume belong to software. Authority stays with people.</h2>
+    <div class="se-proofs">
+      {proofs.map(([t, d], i) => (
+        <div class="se-proof"><span class="se-num">0{i + 1}</span><strong>{t}</strong><p>{d}</p></div>
+      ))}
+    </div>
+  </section>
+
+  <section class="se-sec">
+    <h2>The complete series</h2>
+    <div class="se-grid">
+      {series.cards.map((c) => (
+        <a class="se-card" href={c.href}>
+          <span class="se-meta">{c.part.toUpperCase()}</span>
+          <h3>{c.title}</h3>
+          <p>{c.desc}</p>
+          <span class="se-rec">RECEIPT · {c.receipt}</span>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <section class="se-sec">
+    <div class="se-cta">
+      <span class="se-cta-title">Start with one process, not an AI transformation.</span>
+      <span class="se-cta-text">We map the inputs, rework, approval points and cost, then build a narrow system with a baseline your team can verify.</span>
+      <a href="/#book">Discuss your operation</a>
+    </div>
+  </section>
+</div>
+</Base>
+
+<style is:global>
+.se{--accent:#6D4AF6;background:#0B0A12;color:#F4F2FF;padding-bottom:96px}
+.se *{box-sizing:border-box}
+.se-head{position:relative;max-width:1280px;margin:0 auto;padding:64px 32px 56px}
+.se-glow{position:absolute;right:-5%;top:-40%;width:50%;height:160%;border-radius:50%;background:radial-gradient(circle,color-mix(in srgb,var(--accent) 26%,transparent) 0%,transparent 62%);filter:blur(30px);pointer-events:none}
+.se-head-inner{position:relative;max-width:860px;display:flex;flex-direction:column;gap:20px}
+.se-crumbs{display:flex;gap:10px;font-family:'Geist Mono Variable',ui-monospace,monospace;font-size:12px;letter-spacing:.08em;color:#8B84A8;text-transform:uppercase}
+.se-crumbs a{color:#A9A3C2;text-decoration:none}
+.se-eyebrow{font-family:'Geist Mono Variable',ui-monospace,monospace;font-size:12px;letter-spacing:.12em;color:#A78BFA}
+.se h1{margin:0;font-size:clamp(48px,7vw,96px);line-height:.98;letter-spacing:-.045em;font-weight:600}
+.se-grad{background:linear-gradient(100deg,#A78BFA,#F3E8FF 45%,#8B5CF6);-webkit-background-clip:text;background-clip:text;color:transparent}
+.se-lead{margin:0;font-size:19px;line-height:1.6;color:#A9A3C2;max-width:680px}
+.se-receipt{align-self:flex-start;font-family:'Geist Mono Variable',ui-monospace,monospace;font-size:12px;color:#C4B5FD;padding:10px 14px;border-radius:12px;background:rgba(124,92,250,.12);border:1px solid rgba(167,139,250,.3)}
+.se-sec{max-width:1280px;margin:0 auto;padding:40px 32px;display:flex;flex-direction:column;gap:22px}
+.se h2{margin:0;font-size:clamp(28px,3.4vw,44px);line-height:1.05;letter-spacing:-.035em;font-weight:600;max-width:880px}
+.se-proofs{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+.se-proof{border-radius:22px;background:rgba(20,17,36,.85);border:1px solid rgba(255,255,255,.08);padding:24px;display:flex;flex-direction:column;gap:10px}
+.se-proof strong{font-size:19px}
+.se-proof p{margin:0;font-size:15px;line-height:1.55;color:#A9A3C2}
+.se-num{font-family:'Geist Mono Variable',ui-monospace,monospace;font-size:12px;color:#A78BFA}
+.se-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:16px}
+.se-card{text-decoration:none;color:inherit;border-radius:22px;background:rgba(20,17,36,.85);border:1px solid rgba(255,255,255,.08);padding:26px;display:flex;flex-direction:column;gap:12px;transition:transform .4s cubic-bezier(.2,.7,.2,1),border-color .4s ease}
+.se-card:hover{transform:translateY(-4px);border-color:rgba(167,139,250,.45)}
+.se-meta{font-family:'Geist Mono Variable',ui-monospace,monospace;font-size:11px;letter-spacing:.08em;color:#8B84A8}
+.se-card h3{margin:0;font-size:22px;line-height:1.2;letter-spacing:-.02em;font-weight:600}
+.se-card p{margin:0;font-size:15px;line-height:1.55;color:#A9A3C2}
+.se-rec{margin-top:auto;padding-top:12px;border-top:1px solid rgba(255,255,255,.06);font-family:'Geist Mono Variable',ui-monospace,monospace;font-size:11px;line-height:1.5;color:#C4B5FD}
+.se-cta{border-radius:28px;background:linear-gradient(140deg,rgba(109,74,246,.3),rgba(20,17,36,.95) 60%);border:1px solid rgba(167,139,250,.3);padding:40px;display:flex;flex-direction:column;gap:14px;align-items:flex-start}
+.se-cta-title{font-size:clamp(24px,3vw,34px);font-weight:600;letter-spacing:-.02em;line-height:1.15}
+.se-cta-text{font-size:16px;line-height:1.6;color:#C9C3DE;max-width:620px}
+.se-cta a{color:#fff;text-decoration:none;background:var(--accent);padding:14px 24px;border-radius:999px;font-weight:500;min-height:48px;display:inline-flex;align-items:center}
+@media (max-width:640px){.se-head,.se-sec{padding-left:20px;padding-right:20px}.se-grid{grid-template-columns:minmax(0,1fr)}.se-cta{padding:24px}}
+</style>

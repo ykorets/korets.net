@@ -1,0 +1,155 @@
+---
+// Generated from the approved design canvas (Main.dc.html); edit freely.
+const { state = {}, props: p = {} } = Astro.props;
+class DCLogic { constructor(props) { this.props = props || {}; this.state = {}; } setState() {} componentDidMount() {} }
+class Component extends DCLogic {
+  renderVals() {
+    const motion = this.props.motion ?? true;
+    return {
+      accent: this.props.accent ?? '#6D4AF6',
+      motion: motion,
+      rootClass: motion ? 'hr motion' : 'hr'
+    };
+  }
+}
+const c = new Component(p);
+Object.assign(c.state, state);
+const v = c.renderVals();
+---
+<div class={v.rootClass} style={`--accent: ${v.accent}; position: relative; min-height: 900px; background: #0B0A12; color: #F4F2FF; font-family: 'Geist Variable', Inter, system-ui, sans-serif; overflow: hidden; display: flex; flex-direction: column`}>
+  <div class="hr-grid" aria-hidden="true" style="position: absolute; inset: 0; pointer-events: none"></div>
+
+  <main style="position: relative; z-index: 2; flex: 1; width: 100%; max-width: 1280px; margin: 0 auto; padding: 40px 32px 56px; display: flex; flex-wrap: wrap; align-items: center; gap: 48px">
+    <section style="flex: 1 1 480px; min-width: 0; display: flex; flex-direction: column; gap: 28px">
+      <div class="hr-up" style="animation-delay: .05s; align-self: flex-start; display: inline-flex; align-items: center; gap: 10px; padding: 8px 14px; border: 1px solid rgba(255,255,255,.1); border-radius: 999px; background: rgba(255,255,255,.03); font-family: 'Geist Mono Variable', ui-monospace, monospace; font-size: 12px; color: #8B84A8; letter-spacing: .04em">
+        <span class="hr-blink" style="width: 7px; height: 7px; border-radius: 50%; background: #34D399; display: inline-block"></span>
+        YARO KORETS · AI IMPLEMENTATION · LOS ANGELES
+      </div>
+      <h1 style="margin: 0; font-size: clamp(48px, 7vw, 96px); line-height: .98; letter-spacing: -0.045em; font-weight: 600">
+        <span class="hr-up" style="animation-delay: .15s; display: inline-block">AI for</span><br>
+        <span class="hr-up hr-grad" style="animation-delay: .3s; display: inline-block; padding-bottom: 6px">profitable growth.</span>
+      </h1>
+      <p class="hr-up" style="animation-delay: .45s; margin: 0; font-size: 22px; line-height: 1.4; color: #F4F2FF; font-weight: 500; max-width: 560px">I help business owners use AI to improve margins.</p>
+      <p class="hr-up" style="animation-delay: .55s; margin: 0; font-size: 17px; line-height: 1.6; color: #A9A3C2; max-width: 560px">My work covers marketing, sales, finance and operations. I connect the processes, tools and data, then implement a system your team can use.</p>
+      <div class="hr-up" style="animation-delay: .7s; display: flex; flex-wrap: wrap; align-items: center; gap: 14px">
+        <a class="hr-cta" href="https://growthcontrol.app" style="color: #FFFFFF; text-decoration: none; background: var(--accent); padding: 16px 26px; border-radius: 999px; font-size: 16px; font-weight: 500; min-height: 52px; display: inline-flex; align-items: center; gap: 10px">
+          Explore Growth Control
+          <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m13 5 7 7-7 7"></path></svg>
+        </a>
+        <a class="hr-ghost" href="/#book" style="color: #E4E0F5; text-decoration: none; border: 1px solid rgba(255,255,255,.18); padding: 16px 26px; border-radius: 999px; font-size: 16px; font-weight: 500; min-height: 52px; display: inline-flex; align-items: center">Discuss your operation</a>
+      </div>
+      <p class="hr-up" style="animation-delay: .85s; margin: 0; font-family: 'Geist Mono Variable', ui-monospace, monospace; font-size: 12px; letter-spacing: .04em; color: #8B84A8">AI IMPLEMENTATION ENGINEER · FOUNDER, GROWTH CONTROL · CTO &amp; CO-FOUNDER, STRETCH TENT</p>
+    </section>
+
+    <section aria-label="How the system connects your operation" style="flex: 1 1 480px; min-width: 0; display: flex; justify-content: center">
+      <div style="position: relative; width: 100%; max-width: 600px; aspect-ratio: 560 / 520">
+        <div class="hr-glow" aria-hidden="true" style="position: absolute; left: 20%; top: 20%; width: 60%; height: 60%; border-radius: 50%"></div>
+
+        <svg aria-hidden="true" viewBox="0 0 560 520" preserveAspectRatio="none" style="position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible">
+          <defs>
+            <linearGradient id="ykline" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#C4B5FD" stop-opacity=".9"></stop>
+              <stop offset="1" stop-color="#7C5CFA" stop-opacity=".9"></stop>
+            </linearGradient>
+          </defs>
+          <path d="M90 110 C 190 110, 190 260, 280 260" fill="none" stroke="rgba(167,139,250,.18)" stroke-width="1.5"></path>
+          <path d="M470 110 C 370 110, 370 260, 280 260" fill="none" stroke="rgba(167,139,250,.18)" stroke-width="1.5"></path>
+          <path d="M90 410 C 190 410, 190 260, 280 260" fill="none" stroke="rgba(167,139,250,.18)" stroke-width="1.5"></path>
+          <path d="M470 410 C 370 410, 370 260, 280 260" fill="none" stroke="rgba(167,139,250,.18)" stroke-width="1.5"></path>
+          <path d="M90 110 C 60 220, 60 300, 90 410" fill="none" stroke="rgba(167,139,250,.12)" stroke-width="1"></path>
+          <path d="M470 110 C 500 220, 500 300, 470 410" fill="none" stroke="rgba(167,139,250,.12)" stroke-width="1"></path>
+          <path class="hr-flow" d="M90 110 C 190 110, 190 260, 280 260" fill="none" stroke="url(#ykline)" stroke-width="1.5"></path>
+          <path class="hr-flow" d="M470 110 C 370 110, 370 260, 280 260" fill="none" stroke="url(#ykline)" stroke-width="1.5"></path>
+          <path class="hr-flow" d="M90 410 C 190 410, 190 260, 280 260" fill="none" stroke="url(#ykline)" stroke-width="1.5"></path>
+          <path class="hr-flow" d="M470 410 C 370 410, 370 260, 280 260" fill="none" stroke="url(#ykline)" stroke-width="1.5"></path>
+          {v.motion && (<Fragment>
+            <circle r="4" fill="#EDE9FE"><animateMotion dur="2.6s" repeatCount="indefinite" path="M90 110 C 190 110, 190 260, 280 260"></animateMotion></circle>
+            <circle r="4" fill="#EDE9FE"><animateMotion dur="3.1s" begin="0.7s" repeatCount="indefinite" path="M470 110 C 370 110, 370 260, 280 260"></animateMotion></circle>
+            <circle r="4" fill="#EDE9FE"><animateMotion dur="2.9s" begin="1.3s" repeatCount="indefinite" path="M280 260 C 190 260, 190 410, 90 410"></animateMotion></circle>
+            <circle r="4" fill="#EDE9FE"><animateMotion dur="3.4s" begin="0.4s" repeatCount="indefinite" path="M280 260 C 370 260, 370 410, 470 410"></animateMotion></circle>
+            <circle r="3" fill="#A78BFA"><animateMotion dur="4.2s" begin="1.9s" repeatCount="indefinite" path="M90 110 C 60 220, 60 300, 90 410"></animateMotion></circle>
+            <circle r="3" fill="#A78BFA"><animateMotion dur="4.6s" begin="0.9s" repeatCount="indefinite" path="M470 410 C 500 300, 500 220, 470 110"></animateMotion></circle>
+          </Fragment>)}
+        </svg>
+
+        <div class="hr-ring" aria-hidden="true" style="position: absolute; left: 50%; top: 50%; width: 132px; height: 132px; border-radius: 50%; border: 1px solid #A78BFA; transform: translate(-50%,-50%)"></div>
+        <div class="hr-ring2" aria-hidden="true" style="position: absolute; left: 50%; top: 50%; width: 132px; height: 132px; border-radius: 50%; border: 1px solid #A78BFA; transform: translate(-50%,-50%)"></div>
+        <div style="position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%); width: 132px; height: 132px; border-radius: 50%; background: radial-gradient(circle at 35% 30%, #8B6CFF 0%, var(--accent) 45%, #2A1D6B 100%); box-shadow: 0 0 60px color-mix(in srgb, var(--accent) 60%, transparent), inset 0 1px 0 rgba(255,255,255,.35); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; text-align: center">
+          <span style="font-family: 'Geist Mono Variable', ui-monospace, monospace; font-size: 10px; letter-spacing: .12em; color: #E9E3FF">ONE SYSTEM</span>
+          <span style="font-size: 17px; font-weight: 600; line-height: 1.1; color: #FFFFFF">Profit<br>engine</span>
+        </div>
+
+        <div class="hr-node hr-float1" style="position: absolute; left: 16%; top: 21%; transform: translate(-50%,-50%); padding: 14px 16px; min-width: 150px; border-radius: 16px; background: rgba(20,17,36,.78); border: 1px solid rgba(167,139,250,.28); backdrop-filter: blur(12px); display: flex; flex-direction: column; gap: 4px">
+          <span style="font-size: 15px; font-weight: 600; color: #F4F2FF">Marketing</span>
+          <span style="font-family: 'Geist Mono Variable', ui-monospace, monospace; font-size: 11px; color: #8B84A8">ads · inquiries</span>
+        </div>
+        <div class="hr-node hr-float2" style="position: absolute; left: 84%; top: 21%; transform: translate(-50%,-50%); padding: 14px 16px; min-width: 150px; border-radius: 16px; background: rgba(20,17,36,.78); border: 1px solid rgba(167,139,250,.28); backdrop-filter: blur(12px); display: flex; flex-direction: column; gap: 4px">
+          <span style="font-size: 15px; font-weight: 600; color: #F4F2FF">Sales</span>
+          <span style="font-family: 'Geist Mono Variable', ui-monospace, monospace; font-size: 11px; color: #8B84A8">CRM · calls · quotes</span>
+        </div>
+        <div class="hr-node hr-float3" style="position: absolute; left: 16%; top: 79%; transform: translate(-50%,-50%); padding: 14px 16px; min-width: 150px; border-radius: 16px; background: rgba(20,17,36,.78); border: 1px solid rgba(167,139,250,.28); backdrop-filter: blur(12px); display: flex; flex-direction: column; gap: 4px">
+          <span style="font-size: 15px; font-weight: 600; color: #F4F2FF">Finance</span>
+          <span style="font-family: 'Geist Mono Variable', ui-monospace, monospace; font-size: 11px; color: #8B84A8">margins · cash flow</span>
+        </div>
+        <div class="hr-node hr-float4" style="position: absolute; left: 84%; top: 79%; transform: translate(-50%,-50%); padding: 14px 16px; min-width: 150px; border-radius: 16px; background: rgba(20,17,36,.78); border: 1px solid rgba(167,139,250,.28); backdrop-filter: blur(12px); display: flex; flex-direction: column; gap: 4px">
+          <span style="font-size: 15px; font-weight: 600; color: #F4F2FF">Operations</span>
+          <span style="font-family: 'Geist Mono Variable', ui-monospace, monospace; font-size: 11px; color: #8B84A8">delivery · team</span>
+        </div>
+
+        <div class="hr-proc" style="position: absolute; left: 50%; top: 2%; transform: translateX(-50%); width: 230px; padding: 12px 14px; border-radius: 14px; background: rgba(20,17,36,.85); border: 1px solid rgba(255,255,255,.1); backdrop-filter: blur(12px); display: flex; flex-direction: column; gap: 8px">
+          <div style="display: flex; justify-content: space-between; align-items: center; font-family: 'Geist Mono Variable', ui-monospace, monospace; font-size: 10px; letter-spacing: .08em; color: #8B84A8">
+            <span>PROCESS · LEAD FOLLOW-UP</span>
+            <span class="hr-blink" style="color: #34D399">LIVE</span>
+          </div>
+          <div style="height: 6px; border-radius: 999px; background: rgba(255,255,255,.08); overflow: hidden">
+            <div class="hr-bar" style="height: 100%; width: 78%; border-radius: 999px; background: linear-gradient(90deg, var(--accent), #C4B5FD)"></div>
+          </div>
+          <div style="display: flex; justify-content: space-between; font-size: 11px; color: #A9A3C2">
+            <span>Baseline</span><span>Goal</span><span style="color: #F4F2FF">Result</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div aria-hidden="true" style="position: relative; z-index: 2; border-top: 1px solid rgba(255,255,255,.07); padding: 18px 0; overflow: hidden">
+    <div class="hr-marquee" style="display: flex; gap: 48px; width: max-content; font-family: 'Geist Mono Variable', ui-monospace, monospace; font-size: 13px; letter-spacing: .1em; color: #8B84A8; white-space: nowrap">
+      <span>MARKETING</span><span style="color: #A78BFA">✦</span><span>SALES</span><span style="color: #A78BFA">✦</span><span>FINANCE</span><span style="color: #A78BFA">✦</span><span>OPERATIONS</span><span style="color: #A78BFA">✦</span><span>MEASURE THE BASELINE</span><span style="color: #A78BFA">✦</span><span>BUILD THE SYSTEM</span><span style="color: #A78BFA">✦</span><span>VERIFY THE RESULT</span><span style="color: #A78BFA">✦</span>
+      <span>MARKETING</span><span style="color: #A78BFA">✦</span><span>SALES</span><span style="color: #A78BFA">✦</span><span>FINANCE</span><span style="color: #A78BFA">✦</span><span>OPERATIONS</span><span style="color: #A78BFA">✦</span><span>MEASURE THE BASELINE</span><span style="color: #A78BFA">✦</span><span>BUILD THE SYSTEM</span><span style="color: #A78BFA">✦</span><span>VERIFY THE RESULT</span><span style="color: #A78BFA">✦</span>
+    </div>
+  </div>
+</div>
+
+<style is:global>
+.hr *{box-sizing:border-box}
+.hr-grid{background-image:radial-gradient(rgba(167,139,250,.16) 1px,transparent 1px);background-size:28px 28px;-webkit-mask-image:radial-gradient(ellipse 70% 60% at 65% 45%,#000 30%,transparent 80%);mask-image:radial-gradient(ellipse 70% 60% at 65% 45%,#000 30%,transparent 80%)}
+.hr-glow{background:radial-gradient(circle at 50% 50%,color-mix(in srgb,var(--accent) 45%,transparent) 0%,transparent 62%);filter:blur(20px)}
+.hr-grad{background:linear-gradient(100deg,#A78BFA 0%,#F3E8FF 35%,#8B5CF6 60%,#C4B5FD 100%);background-size:220% 100%;-webkit-background-clip:text;background-clip:text;color:transparent}
+.hr-node{transition:transform .35s ease,border-color .35s ease,box-shadow .35s ease}
+.hr-node:hover{transform:translate(-50%,-50%) scale(1.06);border-color:color-mix(in srgb,var(--accent) 80%,white);box-shadow:0 0 0 1px color-mix(in srgb,var(--accent) 50%,transparent),0 12px 40px color-mix(in srgb,var(--accent) 35%,transparent)}
+.hr-cta{transition:transform .25s ease,box-shadow .25s ease}
+.hr-cta:hover{color:#fff;transform:translateY(-2px);box-shadow:0 10px 30px color-mix(in srgb,var(--accent) 55%,transparent)}
+.hr-ghost:hover{color:#fff;border-color:rgba(255,255,255,.4)}
+.hr-nav a:hover{color:#fff}
+.motion .hr-grad{animation:hr-shimmer 7s ease-in-out infinite}
+.motion .hr-flow{stroke-dasharray:4 10;animation:hr-flow 1.4s linear infinite}
+.motion .hr-ring{animation:hr-ring 3.2s ease-out infinite}
+.motion .hr-ring2{animation:hr-ring 3.2s ease-out 1.6s infinite}
+.motion .hr-float1{animation:hr-float 6s ease-in-out infinite}
+.motion .hr-float2{animation:hr-float 7s ease-in-out .8s infinite}
+.motion .hr-float3{animation:hr-float 6.5s ease-in-out 1.6s infinite}
+.motion .hr-float4{animation:hr-float 7.5s ease-in-out 2.2s infinite}
+.motion .hr-up{opacity:0;animation:hr-up .9s cubic-bezier(.2,.7,.2,1) forwards}
+.motion .hr-bar{animation:hr-bar 4.5s ease-in-out infinite}
+.motion .hr-marquee{animation:hr-marquee 28s linear infinite}
+.motion .hr-blink{animation:hr-blink 1.6s ease-in-out infinite}
+@keyframes hr-shimmer{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+@keyframes hr-flow{to{stroke-dashoffset:-28}}
+@keyframes hr-ring{0%{transform:translate(-50%,-50%) scale(.85);opacity:.7}100%{transform:translate(-50%,-50%) scale(1.9);opacity:0}}
+@keyframes hr-float{0%,100%{margin-top:0}50%{margin-top:-8px}}
+@keyframes hr-up{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+@keyframes hr-bar{0%{width:8%}55%{width:78%}85%,100%{width:78%}}
+@keyframes hr-marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes hr-blink{0%,100%{opacity:1}50%{opacity:.3}}
+@media (prefers-reduced-motion:reduce){.motion *{animation:none!important;opacity:1!important}}
+</style>

@@ -1,0 +1,215 @@
+---
+// Generated from the approved design canvas (Case.dc.html); edit freely.
+const { state = {}, props: p = {} } = Astro.props;
+class DCLogic { constructor(props) { this.props = props || {}; this.state = {}; } setState() {} componentDidMount() {} }
+class Component extends DCLogic {
+  renderVals() {
+    const motion = this.props.motion ?? true;
+    return {
+      accent: this.props.accent ?? '#6D4AF6',
+      rootClass: motion ? 'cs motion' : 'cs'
+    };
+  }
+}
+const c = new Component(p);
+Object.assign(c.state, state);
+const v = c.renderVals();
+---
+<div class={v.rootClass} style={`--accent: ${v.accent}; position: relative; background: #0B0A12; color: #F4F2FF; font-family: 'Geist Variable', Inter, system-ui, sans-serif; overflow: hidden`}>
+
+  <section style="position: relative; width: 100%; max-width: 1280px; margin: 0 auto; padding: 72px 32px 96px; display: flex; flex-direction: column; gap: 28px">
+    <div aria-hidden="true" style="position: absolute; right: -10%; top: -20%; width: 60%; height: 120%; border-radius: 50%; background: radial-gradient(circle, color-mix(in srgb, var(--accent) 30%, transparent) 0%, transparent 62%); filter: blur(30px); pointer-events: none"></div>
+    <span class="cs-up" style="position: relative; animation-delay: .05s; align-self: flex-start; display: inline-flex; align-items: center; gap: 10px; padding: 8px 14px; border: 1px solid rgba(255,255,255,.1); border-radius: 999px; background: rgba(255,255,255,.03); font-family: 'Geist Mono Variable', ui-monospace, monospace; font-size: 12px; color: #8B84A8; letter-spacing: .04em">
+      <span class="cs-blink" style="width: 7px; height: 7px; border-radius: 50%; background: #34D399; display: inline-block"></span>
+      CASE STUDY · STRETCH TENT · LOS ANGELES
+    </span>
+    <h1 style="position: relative; margin: 0; font-size: clamp(48px, 7.5vw, 104px); line-height: .96; letter-spacing: -0.05em; font-weight: 600; max-width: 1100px">
+      <span class="cs-up" style="animation-delay: .15s; display: inline-block">The office is AI.</span><br>
+      <span class="cs-up cs-grad" style="animation-delay: .3s; display: inline-block; padding-bottom: 8px; background: linear-gradient(100deg, #A78BFA 0%, #F3E8FF 35%, #8B5CF6 60%, #C4B5FD 100%); background-size: 220% 100%; -webkit-background-clip: text; background-clip: text; color: transparent">The crew is human.</span>
+    </h1>
+    <p class="cs-up" style="position: relative; animation-delay: .45s; margin: 0; font-size: 21px; line-height: 1.5; color: #C9C3DE; max-width: 720px">At Stretch Tent, marketing, sales, the front desk, the back office and day-to-day operations all run on Growth Control agents. The only people are the owner, who approves what matters, and the crews who install the tents.</p>
+    <div class="cs-up" style="position: relative; animation-delay: .6s; display: flex; flex-wrap: wrap; gap: 10px">
+      <span style="font-size: 13px; padding: 7px 12px; border-radius: 999px; border: 1px solid rgba(255,255,255,.14); color: #C9C3DE">Tent rentals &amp; sales</span>
+      <span style="font-size: 13px; padding: 7px 12px; border-radius: 999px; border: 1px solid rgba(255,255,255,.14); color: #C9C3DE">Southern California</span>
+      <span style="font-size: 13px; padding: 7px 12px; border-radius: 999px; border: 1px solid rgba(255,255,255,.14); color: #C9C3DE">Since 2018</span>
+      <span style="font-size: 13px; padding: 7px 12px; border-radius: 999px; border: 1px solid rgba(255,255,255,.14); color: #C9C3DE">First Growth Control installation</span>
+    </div>
+  </section>
+
+  <section style="width: 100%; max-width: 1280px; margin: 0 auto; padding: 0 32px 96px; display: flex; flex-direction: column; gap: 32px">
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 16px">
+      <div style="display: flex; flex-direction: column; gap: 14px">
+        <span style="font-family: 'Geist Mono Variable', ui-monospace, monospace; font-size: 12px; letter-spacing: .12em; color: #A78BFA">THE ORG CHART</span>
+        <h2 style="margin: 0; font-size: clamp(32px, 4vw, 52px); line-height: 1.04; letter-spacing: -0.04em; font-weight: 600">Who does what.</h2>
+      </div>
+      <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #A9A3C2; max-width: 420px">Every department is an agent with one job. Work moves left to right, from the first ad to the installed tent.</p>
+    </div>
+
+    <div style="position: relative">
+      <div aria-hidden="true" style="position: absolute; left: 2%; right: 2%; top: 34px; height: 2px; border-radius: 2px; background: rgba(167,139,250,.18)">
+        <span class="cs-flow" style="position: absolute; top: -4px; left: 0; width: 10px; height: 10px; margin-left: -5px; border-radius: 50%; background: #EDE9FE; box-shadow: 0 0 14px #A78BFA"></span>
+      </div>
+      <div class="cs-org" style="position: relative; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px">
+
+        <article class="cs-dept" style="border-radius: 24px; background: rgba(20,17,36,.88); border: 1px solid rgba(255,255,255,.08); padding: 24px; display: flex; flex-direction: column; gap: 16px">
+          <span style="width: 20px; height: 20px; border-radius: 50%; border: 2px solid #A78BFA; background: #0B0A12; box-shadow: 0 0 0 6px rgba(167,139,250,.14)"></span>
+          <div style="display: flex; flex-direction: column; gap: 6px">
+            <span style="font-family: 'Geist Mono Variable', ui-monospace, monospace; font-size: 11px; letter-spacing: .1em; color: #8B84A8">01 · AI</span>
+            <h3 style="margin: 0; font-size: 22px; font-weight: 600">Marketing</h3>
+            <p style="margin: 0; font-size: 14px; line-height: 1.5; color: #A9A3C2">Ads, landing pages, search and social bring in demand.</p>
+          </div>
+          <div style="display: flex; flex-wrap: wrap; gap: 6px">
+            <span class="cs-chip" style="animation-delay: 0s; font-size: 12px; padding: 5px 10px; border-radius: 999px; border: 1px solid rgba(255,255,255,.1); color: #C9C3DE">Hunter</span>
+            <span class="cs-chip" style="animation-delay: .3s; font-size: 12px; padding: 5px 10px; border-radius: 999px; border: 1px solid rgba(255,255,255,.1); color: #C9C3DE">Leo</span>
+            <span class="cs-chip" style="animation-delay: .6s; font-size: 12px; padding: 5px 10px; border-radius: 999px; border: 1px solid rgba(255,255,255,.1); color: #C9C3DE">Atlas</span>
+            <span class="cs-chip" style="animation-delay: .9s; font-size: 12px; padding: 5px 10px; border-radius: 999px; border: 1px solid rgba(255,255,255,.1); color: #C9C3DE">Oscar</span>
+          </div>
+        </article>
+
+        <article class="cs-dept" style="border-radius: 24px; background: rgba(20,17,36,.88); border: 1px solid rgba(255,255,255,.08); padding: 24px; display: flex; flex-direction: column; gap: 16px">
+          <span style="width: 20px; height: 20px; border-radius: 50%; border: 2px solid #A78BFA; background: #0B0A12; box-shadow: 0 0 0 6px rgba(167,139,250,.14)"></span>
+          <div style="display: flex; flex-direction: column; gap: 6px">
+            <span style="font-family: 'Geist Mono Variable', ui-monospace, monospace; font-size: 11px; letter-spacing: .1em; color: #8B84A8">02 · AI</span>
+            <h3 style="margin: 0; font-size: 22px; font-weight: 600">Front desk</h3>
+            <p style="margin: 0; font-size: 14px; line-height: 1.5; color: #A9A3C2">Every inquiry answered, every call briefed, every quote followed up.</p>
+          </div>
+          <div style="display: flex; flex-wrap: wrap; gap: 6px">
+            <span class="cs-chip" style="animation-delay: 1.5s; font-size: 12px; padding: 5px 10px; border-radius: 999px; border: 1px solid rgba(255,255,255,.1); color: #C9C3DE">Figaro</span>
+            <span class="cs-chip" style="animation-delay: 1.8s; font-size: 12px; padding: 5px 10px; border-radius: 999px; border: 1px solid rgba(255,255,255,.1); color: #C9C3DE">Cyrano</span>
+            <span class="cs-chip" style="animation-delay: 2.1s; font-size: 12px; padding: 5px 10px; border-radius: 999px; border: 1px solid rgba(255,255,255,.1); color: #C9C3DE">Marco</span>
+          </div>
+        </article>
+
+        <article class="cs-dept" style="border-radius: 24px; background: rgba(20,17,36,.88); border: 1px solid rgba(255,255,255,.08); padding: 24px; display: flex; flex-direction: column; gap: 16px">
+          <span style="width: 20px; height: 20px; border-radius: 50%; border: 2px solid #A78BFA; background: #0B0A12; box-shadow: 0 0 0 6px rgba(167,139,250,.14)"></span>
+          <div style="display: flex; flex-direction: column; gap: 6px">
+            <span style="font-family: 'Geist Mono Variable', ui-monospace, monospace; font-size: 11px; letter-spacing: .1em; color: #8B84A8">03 · AI</span>
+            <h3 style="margin: 0; font-size: 22px; font-weight: 600">Back office &amp; operations</h3>
+            <p style="margin: 0; font-size: 14px; line-height: 1.5; color: #A9A3C2">Invoices, payments, contracts and day-to-day operations, prepared for one-click owner approval.</p>
+          </div>
+          <div style="display: flex; flex-wrap: wrap; gap: 6px">
+            <span class="cs-chip" style="animation-delay: 3s; font-size: 12px; padding: 5px 10px; border-radius: 999px; border: 1px solid rgba(255,255,255,.1); color: #C9C3DE">Pacioli</span>
+            <span class="cs-chip" style="animation-delay: 3.3s; font-size: 12px; padding: 5px 10px; border-radius: 999px; border: 1px solid rgba(255,255,255,.1); color: #C9C3DE">Atticus · planned</span>
+          </div>
+        </article>
+
+        <article class="cs-dept" style="border-radius: 24px; background: linear-gradient(160deg, rgba(52,211,153,.14), rgba(20,17,36,.9) 60%); border: 1px solid rgba(52,211,153,.3); padding: 24px; display: flex; flex-direction: column; gap: 16px">
+          <span style="width: 20px; height: 20px; border-radius: 50%; border: 2px solid #34D399; background: #0B0A12; box-shadow: 0 0 0 6px rgba(52,211,153,.16)"></span>
+          <div style="display: flex; flex-direction: column; gap: 6px">
+            <span style="font-family: 'Geist Mono Variable', ui-monospace, monospace; font-size: 11px; letter-spacing: .1em; color: #6EE7B7">04 · HUMAN</span>
+            <h3 style="margin: 0; font-size: 22px; font-weight: 600">Install crews</h3>
+            <p style="margin: 0; font-size: 14px; line-height: 1.5; color: #A9A3C2">Real people deliver, raise and take down the tents. The part a customer can touch.</p>
+          </div>
+          <div style="display: flex; align-items: center; gap: 10px; color: #6EE7B7; font-size: 13px">
+            <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20h18"></path><path d="M5 20 12 5l7 15"></path><path d="M12 5v15"></path></svg>
+            On site, in the field
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section style="width: 100%; max-width: 1280px; margin: 0 auto; padding: 0 32px 96px">
+    <div style="border-radius: 28px; background: rgba(20,17,36,.88); border: 1px solid rgba(167,139,250,.2); padding: 40px; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 32px; align-items: end">
+      <div class="cs-count" style="display: flex; flex-direction: column; gap: 10px">
+        <span style="font-size: clamp(64px, 8vw, 112px); line-height: .9; letter-spacing: -0.05em; font-weight: 600; background: linear-gradient(100deg, #C4B5FD, #F3E8FF 50%, #8B5CF6); -webkit-background-clip: text; background-clip: text; color: transparent">100</span>
+        <span style="font-size: 17px; color: #F4F2FF">leads in the first two weeks</span>
+        <span style="font-size: 14px; color: #A9A3C2">of the Growth Control implementation.</span>
+      </div>
+      <div class="cs-count" style="animation-delay: .15s; display: flex; flex-direction: column; gap: 10px">
+        <span style="font-size: clamp(64px, 8vw, 112px); line-height: .9; letter-spacing: -0.05em; font-weight: 600; background: linear-gradient(100deg, #C4B5FD, #F3E8FF 50%, #8B5CF6); -webkit-background-clip: text; background-clip: text; color: transparent">20+</span>
+        <span style="font-size: 17px; color: #F4F2FF">inquiries a day, one operator</span>
+        <span style="font-size: 14px; color: #A9A3C2">including individually prepared quotes.</span>
+      </div>
+      <div class="cs-count" style="animation-delay: .3s; display: flex; flex-direction: column; gap: 10px">
+        <span style="font-size: clamp(64px, 8vw, 112px); line-height: .9; letter-spacing: -0.05em; font-weight: 600; background: linear-gradient(100deg, #6EE7B7, #ECFDF5 50%, #34D399); -webkit-background-clip: text; background-clip: text; color: transparent">0</span>
+        <span style="font-size: 17px; color: #F4F2FF">office staff</span>
+        <span style="font-size: 14px; color: #A9A3C2">Marketing, sales, front desk, back office and operations run on agents.</span>
+      </div>
+      <p style="grid-column: 1 / -1; margin: 0; padding-top: 20px; border-top: 1px solid rgba(255,255,255,.08); font-size: 13px; line-height: 1.6; color: #8B84A8">Owner-reported results, first reported October 2026. A first-party implementation, not an independent testimonial. No before-and-after conversion, revenue or ROI figure is claimed.</p>
+    </div>
+  </section>
+
+  <section style="width: 100%; max-width: 1280px; margin: 0 auto; padding: 0 32px 96px; display: flex; flex-direction: column; gap: 32px">
+    <div style="display: flex; flex-direction: column; gap: 14px">
+      <span style="font-family: 'Geist Mono Variable', ui-monospace, monospace; font-size: 12px; letter-spacing: .12em; color: #A78BFA">ONE INQUIRY, END TO END</span>
+      <h2 style="margin: 0; font-size: clamp(32px, 4vw, 52px); line-height: 1.04; letter-spacing: -0.04em; font-weight: 600">The event details travel with the customer.</h2>
+    </div>
+    <div style="position: relative">
+      <div aria-hidden="true" style="position: absolute; left: 0; right: 0; top: -14px; height: 2px; border-radius: 2px; background: rgba(167,139,250,.16)">
+        <span class="cs-dot" style="position: absolute; top: -4px; left: 0; width: 10px; height: 10px; margin-left: -5px; border-radius: 50%; background: #EDE9FE; box-shadow: 0 0 14px #A78BFA"></span>
+      </div>
+      <ol style="list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 10px">
+        <li class="cs-step" style="animation-delay: 0s; padding: 16px; border-radius: 16px; border: 1px solid rgba(255,255,255,.08); background: rgba(255,255,255,.02); color: #A9A3C2; display: flex; flex-direction: column; gap: 6px"><span style="font-family: 'Geist Mono Variable', ui-monospace, monospace; font-size: 11px">01</span><span style="font-size: 15px; font-weight: 500">Ad campaign</span><span style="font-size: 12px">Hunter</span></li>
+        <li class="cs-step" style="animation-delay: 1s; padding: 16px; border-radius: 16px; border: 1px solid rgba(255,255,255,.08); background: rgba(255,255,255,.02); color: #A9A3C2; display: flex; flex-direction: column; gap: 6px"><span style="font-family: 'Geist Mono Variable', ui-monospace, monospace; font-size: 11px">02</span><span style="font-size: 15px; font-weight: 500">Landing page</span><span style="font-size: 12px">Leo</span></li>
+        <li class="cs-step" style="animation-delay: 2s; padding: 16px; border-radius: 16px; border: 1px solid rgba(255,255,255,.08); background: rgba(255,255,255,.02); color: #A9A3C2; display: flex; flex-direction: column; gap: 6px"><span style="font-family: 'Geist Mono Variable', ui-monospace, monospace; font-size: 11px">03</span><span style="font-size: 15px; font-weight: 500">Inquiry answered</span><span style="font-size: 12px">Figaro</span></li>
+        <li class="cs-step" style="animation-delay: 3s; padding: 16px; border-radius: 16px; border: 1px solid rgba(255,255,255,.08); background: rgba(255,255,255,.02); color: #A9A3C2; display: flex; flex-direction: column; gap: 6px"><span style="font-family: 'Geist Mono Variable', ui-monospace, monospace; font-size: 11px">04</span><span style="font-size: 15px; font-weight: 500">Call with a brief</span><span style="font-size: 12px">Cyrano</span></li>
+        <li class="cs-step" style="animation-delay: 4s; padding: 16px; border-radius: 16px; border: 1px solid rgba(255,255,255,.08); background: rgba(255,255,255,.02); color: #A9A3C2; display: flex; flex-direction: column; gap: 6px"><span style="font-family: 'Geist Mono Variable', ui-monospace, monospace; font-size: 11px">05</span><span style="font-size: 15px; font-weight: 500">Tailored quote</span><span style="font-size: 12px">CRM + owner</span></li>
+        <li class="cs-step" style="animation-delay: 5s; padding: 16px; border-radius: 16px; border: 1px solid rgba(255,255,255,.08); background: rgba(255,255,255,.02); color: #A9A3C2; display: flex; flex-direction: column; gap: 6px"><span style="font-family: 'Geist Mono Variable', ui-monospace, monospace; font-size: 11px">06</span><span style="font-size: 15px; font-weight: 500">Invoice</span><span style="font-size: 12px">Pacioli</span></li>
+        <li class="cs-step" style="animation-delay: 6s; padding: 16px; border-radius: 16px; border: 1px solid rgba(52,211,153,.25); background: rgba(52,211,153,.06); color: #A9A3C2; display: flex; flex-direction: column; gap: 6px"><span style="font-family: 'Geist Mono Variable', ui-monospace, monospace; font-size: 11px; color: #6EE7B7">07</span><span style="font-size: 15px; font-weight: 500; color: #F4F2FF">Tent installed</span><span style="font-size: 12px; color: #6EE7B7">Human crew</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section style="width: 100%; max-width: 1280px; margin: 0 auto; padding: 0 32px 96px">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px">
+      <div style="border-radius: 24px; background: rgba(20,17,36,.88); border: 1px solid rgba(255,255,255,.08); padding: 32px; display: flex; flex-direction: column; gap: 14px">
+        <span style="font-family: 'Geist Mono Variable', ui-monospace, monospace; font-size: 12px; letter-spacing: .1em; color: #A78BFA">AGENTS HANDLE</span>
+        <ul style="margin: 0; padding: 0 0 0 18px; display: flex; flex-direction: column; gap: 10px; font-size: 16px; line-height: 1.5; color: #C9C3DE">
+          <li>Campaigns, landing pages and inquiry intake</li>
+          <li>First response on Yelp, website forms, calls and texts</li>
+          <li>Call briefs, notes and follow-ups</li>
+          <li>Invoice preparation and payment tracking</li>
+        </ul>
+      </div>
+      <div style="border-radius: 24px; background: rgba(20,17,36,.88); border: 1px solid rgba(52,211,153,.25); padding: 32px; display: flex; flex-direction: column; gap: 14px">
+        <span style="font-family: 'Geist Mono Variable', ui-monospace, monospace; font-size: 12px; letter-spacing: .1em; color: #6EE7B7">PEOPLE HANDLE</span>
+        <ul style="margin: 0; padding: 0 0 0 18px; display: flex; flex-direction: column; gap: 10px; font-size: 16px; line-height: 1.5; color: #C9C3DE">
+          <li>Installing and taking down every tent</li>
+          <li>Approving every invoice and proposal</li>
+          <li>Commercial decisions and deal stages</li>
+          <li>The relationship when it matters most</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section style="position: relative; width: 100%; max-width: 1280px; margin: 0 auto; padding: 24px 32px 120px">
+    <div style="position: relative; overflow: hidden; border-radius: 32px; background: linear-gradient(140deg, rgba(109,74,246,.35), rgba(20,17,36,.95) 60%); border: 1px solid rgba(167,139,250,.3); padding: 56px 40px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 28px">
+      <div style="display: flex; flex-direction: column; gap: 12px; max-width: 620px">
+        <h2 style="margin: 0; font-size: clamp(32px, 4vw, 52px); line-height: 1.04; letter-spacing: -0.04em; font-weight: 600">What would your business look like with AI operations?</h2>
+        <p style="margin: 0; font-size: 17px; line-height: 1.6; color: #C9C3DE">Start with one process. We measure it, build it and compare the result with where it started.</p>
+      </div>
+      <div style="display: flex; flex-wrap: wrap; gap: 12px">
+        <a class="cs-cta" href="/#book" style="color: #FFFFFF; text-decoration: none; background: var(--accent); padding: 16px 26px; border-radius: 999px; font-size: 16px; font-weight: 500; min-height: 52px; display: inline-flex; align-items: center">Discuss your operation</a>
+        <a class="cs-ghost" href="https://stretch-tent.net" style="color: #E4E0F5; text-decoration: none; border: 1px solid rgba(255,255,255,.18); padding: 16px 26px; border-radius: 999px; font-size: 16px; font-weight: 500; min-height: 52px; display: inline-flex; align-items: center">Visit Stretch Tent</a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<style is:global>
+.cs *{box-sizing:border-box}
+.cs-cta{transition:transform .25s ease,box-shadow .25s ease}
+.cs-cta:hover{color:#fff;transform:translateY(-2px);box-shadow:0 10px 30px color-mix(in srgb,var(--accent) 55%,transparent)}
+.cs-ghost:hover{color:#fff;border-color:rgba(255,255,255,.4)}
+.cs-dept{transition:transform .4s cubic-bezier(.2,.7,.2,1),border-color .4s ease}
+.cs-dept:hover{transform:translateY(-4px);border-color:rgba(167,139,250,.45)}
+.motion .cs-grad{animation:cs-shimmer 7s ease-in-out infinite}
+.motion .cs-up{opacity:0;animation:cs-up .9s cubic-bezier(.2,.7,.2,1) forwards}
+.motion .cs-flow{animation:cs-flow 6s linear infinite}
+.motion .cs-chip{animation:cs-chip 6s ease-in-out infinite}
+.motion .cs-step{animation:cs-step 8s ease-in-out infinite}
+.motion .cs-dot{animation:cs-dot 8s linear infinite}
+.motion .cs-blink{animation:cs-blink 1.6s ease-in-out infinite}
+.motion .cs-count{animation:cs-up 1s cubic-bezier(.2,.7,.2,1) both}
+@keyframes cs-shimmer{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+@keyframes cs-up{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+@keyframes cs-flow{0%{left:0%;opacity:0}5%{opacity:1}95%{opacity:1}100%{left:100%;opacity:0}}
+@keyframes cs-chip{0%,100%{border-color:rgba(255,255,255,.1);color:#C9C3DE}8%,22%{border-color:rgba(167,139,250,.8);color:#FFFFFF;background:rgba(124,92,250,.2)}32%{border-color:rgba(255,255,255,.1);color:#C9C3DE;background:transparent}}
+@keyframes cs-step{0%,100%{border-color:rgba(255,255,255,.08);background:rgba(255,255,255,.02);color:#A9A3C2}4%,12%{border-color:rgba(167,139,250,.75);background:rgba(124,92,250,.2);color:#FFFFFF}18%{border-color:rgba(255,255,255,.08);background:rgba(255,255,255,.02);color:#A9A3C2}}
+@keyframes cs-dot{0%{left:0%;opacity:0}3%{opacity:1}97%{opacity:1}100%{left:100%;opacity:0}}
+@keyframes cs-blink{0%,100%{opacity:1}50%{opacity:.3}}
+@media (max-width:900px){.cs-org{grid-template-columns:minmax(0,1fr)!important}}
+@media (prefers-reduced-motion:reduce){.motion *{animation:none!important;opacity:1!important}}
+</style>

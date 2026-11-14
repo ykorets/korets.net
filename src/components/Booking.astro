@@ -1,0 +1,170 @@
+---
+import { CAL_EVENTS, CAL_ORIGIN } from '../data/site';
+// Generated from the approved design canvas (Booking.dc.html); edit freely.
+const { state = {}, props: p = {} } = Astro.props;
+class DCLogic { constructor(props) { this.props = props || {}; this.state = {}; } setState() {} componentDidMount() {} }
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { type: 0, day: 17, slot: null, step: 'pick' };
+  }
+  renderVals() {
+    const st = this.state;
+    const typesData = [
+      { title: 'Business meeting', desc: 'Map one process, its business impact and a first step.', len: '45 min' },
+      { title: 'Feedback loop', desc: 'A quick check-in for existing clients and partners.', len: '15 min' }
+    ];
+    const types = typesData.map((t, i) => ({
+      title: t.title, desc: t.desc, len: t.len,
+      checked: i === st.type ? 'true' : 'false',
+      border: i === st.type ? 'rgba(167,139,250,.6)' : 'rgba(255,255,255,.1)',
+      bg: i === st.type ? 'rgba(124,92,250,.14)' : 'rgba(255,255,255,.02)',
+      pick: () => this.setState({ type: i })
+    }));
+    const days = [];
+    for (let i = 0; i < 35; i++) {
+      const n = i + 1;
+      if (n > 30) { days.push({ blank: true, real: false }); continue; }
+      const dow = i % 7;
+      const avail = n >= 16 && dow !== 0 && dow !== 6;
+      const sel = n === st.day;
+      days.push({
+        blank: false, real: true, n: n, today: n === 13,
+        disabled: !avail,
+        label: 'November ' + n + (avail ? ', available' : ', unavailable'),
+        pressed: sel ? 'true' : 'false',
+        weight: avail ? '600' : '400',
+        cursor: avail ? 'pointer' : 'default',
+        bg: sel ? 'var(--accent)' : (avail ? 'rgba(124,92,250,.14)' : 'transparent'),
+        color: sel ? '#FFFFFF' : (avail ? '#EDE9FE' : '#4B4563'),
+        pick: () => { if (avail) this.setState({ day: n }); }
+      });
+    }
+    const dowNames = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+    const dayDow = (st.day - 1) % 7;
+    const times = st.type === 0 ? ['9:00 am', '10:30 am', '12:00 pm', '2:00 pm', '3:30 pm'] : ['9:00 am', '9:30 am', '11:00 am', '1:30 pm', '4:00 pm', '4:30 pm'];
+    const slots = times.map((t) => ({ t: t, pick: () => this.setState({ slot: t, step: 'form' }) }));
+    return {
+      calLink: CAL_EVENTS[st.type || 0],
+      accent: this.props.accent ?? '#6D4AF6',
+      types: types,
+      days: days,
+      slots: slots,
+      dayTitle: dowNames[dayDow] + ', Nov ' + st.day,
+      stepPick: st.step === 'pick',
+      stepForm: st.step === 'form',
+      stepDone: st.step === 'done',
+      typeTitle: typesData[st.type].title + ' · ' + typesData[st.type].len,
+      whenText: dowNames[dayDow] + ', November ' + st.day + ' at ' + (st.slot || '') + ' PT',
+      back: () => this.setState({ step: 'pick' }),
+      confirm: (e) => { if (e && e.preventDefault) e.preventDefault(); this.setState({ step: 'done' }); },
+      reset: () => this.setState({ step: 'pick', slot: null })
+    };
+  }
+}
+const c = new Component(p);
+Object.assign(c.state, state);
+const v = c.renderVals();
+---
+<div class="bk" style={`--accent: ${v.accent}; position: relative; min-height: 900px; background: #0B0A12; color: #F4F2FF; font-family: 'Geist Variable', Inter, system-ui, sans-serif; overflow: hidden; border-top: 1px solid rgba(255,255,255,.06)`}>
+  <div aria-hidden="true" style="position: absolute; left: -10%; bottom: -30%; width: 60%; height: 90%; border-radius: 50%; background: radial-gradient(circle, color-mix(in srgb, var(--accent) 30%, transparent) 0%, transparent 62%); filter: blur(40px); pointer-events: none"></div>
+
+  <div style="position: relative; width: 100%; max-width: 1280px; margin: 0 auto; padding: 96px 32px; display: flex; flex-wrap: wrap; gap: 56px; align-items: flex-start">
+
+    <section style="flex: 1 1 380px; min-width: 0; display: flex; flex-direction: column; gap: 28px">
+      <div style="display: flex; flex-direction: column; gap: 18px">
+        <span style="font-family: 'Geist Mono Variable', ui-monospace, monospace; font-size: 12px; letter-spacing: .12em; color: #A78BFA">BOOK A CALL</span>
+        <h2 style="margin: 0; font-size: clamp(40px, 5vw, 60px); line-height: 1.02; letter-spacing: -0.04em; font-weight: 600">Pick a time<br>that works.</h2>
+        <p style="margin: 0; font-size: 17px; line-height: 1.6; color: #A9A3C2; max-width: 460px">Bring a process you want to improve. We'll discuss its business impact, the tools you already use and a useful first step.</p>
+      </div>
+
+      <div style="display: flex; align-items: center; gap: 14px">
+        <span style="position: relative; width: 52px; height: 52px; flex: 0 0 52px">
+          <img src="/img/yaro-portrait.jpg" alt="" width="52" height="52" style="position: absolute; inset: 0; width: 52px; height: 52px; border-radius: 50%; object-fit: cover; border: 1px solid rgba(167,139,250,.4)">
+          <span class="bk-avail" aria-hidden="true" style="position: absolute; right: 0; bottom: 2px; width: 12px; height: 12px; border-radius: 50%; background: #34D399; border: 2px solid #0B0A12"></span>
+        </span>
+        <span style="display: flex; flex-direction: column; gap: 2px">
+          <span style="font-size: 16px; font-weight: 600">Yaro Korets</span>
+          <span style="font-size: 13px; color: #A9A3C2">AI Implementation Engineer · Los Angeles</span>
+        </span>
+      </div>
+
+      <div role="radiogroup" aria-label="Meeting type" style="display: flex; flex-direction: column; gap: 10px">
+        {(v.types || []).map((t) => (<Fragment>
+          <button class="bk-type" type="button" role="radio" aria-checked={t.checked} data-on-click="t.pick" style={`text-align: left; cursor: pointer; font: inherit; color: inherit; padding: 16px 18px; border-radius: 16px; border: 1px solid ${t.border}; background: ${t.bg}; display: flex; justify-content: space-between; align-items: center; gap: 12px; min-height: 44px`}>
+            <span style="display: flex; flex-direction: column; gap: 4px">
+              <span style="font-size: 16px; font-weight: 600">{t.title}</span>
+              <span style="font-size: 13px; color: #A9A3C2">{t.desc}</span>
+            </span>
+            <span style="font-family: 'Geist Mono Variable', ui-monospace, monospace; font-size: 12px; color: #C4B5FD; white-space: nowrap">{t.len}</span>
+          </button>
+        </Fragment>))}
+      </div>
+
+      <ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 12px; font-size: 15px; color: #C9C3DE">
+        <li style="display: flex; gap: 12px; align-items: center"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#A78BFA" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="13" height="12" rx="2"></rect><path d="m16 10 5-3v10l-5-3"></path></svg>Video call, link in the calendar invite</li>
+        <li style="display: flex; gap: 12px; align-items: center"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#A78BFA" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18"></path><path d="M12 3a14 14 0 0 1 0 18"></path><path d="M12 3a14 14 0 0 0 0 18"></path></svg>Times shown in your time zone</li>
+        <li style="display: flex; gap: 12px; align-items: center"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#A78BFA" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"></path></svg>No pitch deck, no prep needed</li>
+      </ul>
+    </section>
+
+    <section aria-label="Pick a time" style="flex: 1.4 1 560px; min-width: 0; border-radius: 28px; background: rgba(20,17,36,.88); border: 1px solid rgba(167,139,250,.22); backdrop-filter: blur(14px); padding: 12px; box-shadow: 0 30px 80px rgba(0,0,0,.45); min-height: 640px; position: relative">
+      <div id="cal-inline" data-cal-root style="width: 100%; min-height: 620px; overflow: auto; border-radius: 20px"></div>
+      <noscript><p style="padding: 24px">Book at <a href="https://book.korets.net/korets">book.korets.net</a>.</p></noscript>
+      <a class="bk-fallback" href={`https://book.korets.net/${v.calLink}`} style="position: absolute; right: 22px; bottom: 16px; font-size: 13px; color: #8B84A8">Open booking page ↗</a>
+    </section>
+  </div>
+</div>
+
+<script define:vars={{ events: CAL_EVENTS, origin: CAL_ORIGIN }}>
+  (function () {
+    const root = document.getElementById('cal-inline');
+    if (!root) return;
+    const buttons = Array.from(document.querySelectorAll('.bk [data-on-click="t.pick"]'));
+    let loaded = false;
+    function loadCal(link) {
+      root.innerHTML = '';
+      (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement('script')).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if (typeof namespace === 'string') { cal.ns[namespace] = cal.ns[namespace] || api; p(cal.ns[namespace], ar); p(cal, ['initNamespace', namespace]); } else p(cal, ar); return; } p(cal, ar); }; })(window, origin + '/embed/embed.js', 'init');
+      const ns = 'k' + Date.now();
+      Cal('init', ns, { origin });
+      Cal.ns[ns]('inline', { elementOrSelector: '#cal-inline', calLink: link, config: { layout: 'month_view', theme: 'dark' } });
+      Cal.ns[ns]('ui', { theme: 'dark', hideEventTypeDetails: true, layout: 'month_view', cssVarsPerTheme: { dark: { 'cal-brand': '#6D4AF6' } } });
+    }
+    buttons.forEach((b, i) => b.addEventListener('click', () => {
+      buttons.forEach((o, j) => {
+        const on = i === j;
+        o.setAttribute('aria-checked', String(on));
+        o.style.borderColor = on ? 'rgba(167,139,250,.6)' : 'rgba(255,255,255,.1)';
+        o.style.background = on ? 'rgba(124,92,250,.14)' : 'rgba(255,255,255,.02)';
+      });
+      const fb = document.querySelector('.bk-fallback');
+      if (fb) fb.setAttribute('href', origin + '/' + events[i]);
+      loadCal(events[i]);
+    }));
+    new IntersectionObserver((entries, obs) => {
+      if (entries[0].isIntersecting && !loaded) { loaded = true; loadCal(events[0]); obs.disconnect(); }
+    }, { rootMargin: '600px' }).observe(root);
+  })();
+</script>
+
+<style is:global>
+.bk *{box-sizing:border-box}
+.bk-day{transition:background .2s ease,color .2s ease,transform .2s ease}
+.bk-day:hover{transform:scale(1.06)}
+.bk-day:focus-visible,.bk-slot:focus-visible,.bk-type:focus-visible{outline:2px solid #A78BFA;outline-offset:2px}
+.bk-slot{transition:background .2s ease,border-color .2s ease,color .2s ease}
+.bk-slot:hover{border-color:rgba(167,139,250,.7);color:#FFFFFF}
+.bk-type{transition:border-color .25s ease,background .25s ease}
+.bk-cta{transition:transform .25s ease,box-shadow .25s ease}
+.bk-cta:hover{transform:translateY(-2px);box-shadow:0 10px 30px color-mix(in srgb,var(--accent) 55%,transparent)}
+.bk-input:focus{outline:2px solid #A78BFA;outline-offset:1px}
+.bk-in{animation:bk-in .45s cubic-bezier(.2,.7,.2,1) both}
+.bk-pop{animation:bk-pop .6s cubic-bezier(.2,1.4,.4,1) both}
+.bk-ring{animation:bk-ring 2.4s ease-out infinite}
+.bk-avail{animation:bk-avail 2.4s ease-in-out infinite}
+@keyframes bk-in{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+@keyframes bk-pop{from{opacity:0;transform:scale(.6)}to{opacity:1;transform:none}}
+@keyframes bk-ring{0%{transform:scale(.8);opacity:.8}100%{transform:scale(1.8);opacity:0}}
+@keyframes bk-avail{0%,100%{opacity:.6}50%{opacity:1}}
+@media (prefers-reduced-motion:reduce){.bk *{animation:none!important;transition:none!important}}
+</style>

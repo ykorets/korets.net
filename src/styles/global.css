@@ -1,0 +1,27 @@
+:root { color-scheme: dark; --accent: #6D4AF6; }
+html { background: #0B0A12; scroll-behavior: auto; }
+body { margin: 0; background: #0B0A12; color: #F4F2FF; font-family: 'Geist Variable', Inter, system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+a { color: #C4B5FD; } a:hover { color: #EDE9FE; }
+img { max-width: 100%; }
+:focus-visible { outline: 2px solid #A78BFA; outline-offset: 3px; border-radius: 6px; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.skip-link { position: absolute; left: 16px; top: -60px; z-index: 100; background: var(--accent); color: #fff; padding: 10px 16px; border-radius: 999px; }
+.skip-link:focus { top: 16px; color: #fff; }
+/* Font family names from the mockups map to the self-hosted variable fonts */
+[hidden]{display:none!important}
+
+/* ---- Small screens: the approved mockups are desktop-first with inline styles ---- */
+@media (max-width: 640px) {
+  main div[style*="max-width: 1280px"], main section[style*="max-width: 1280px"], .ft div[style*="max-width: 1280px"] { padding-left: 20px !important; padding-right: 20px !important; }
+  main div[style*="padding: 96px 32px"], main div[style*="padding: 120px 32px"] { padding-top: 64px !important; padding-bottom: 64px !important; }
+  main [style*="min-width: 320px"], main [style*="minmax(320px"], main [style*="minmax(340px"], main [style*="minmax(300px"] { min-width: 0 !important; }
+  main [style*="grid-template-columns: repeat(auto-fit, minmax(320px"], main [style*="grid-template-columns: repeat(auto-fill, minmax(340px"], main [style*="grid-template-columns: repeat(auto-fit, minmax(300px"] { grid-template-columns: minmax(0, 1fr) !important; }
+  main [style*="padding: 44px"] { padding: 24px !important; }
+  main [style*="padding: 40px"] { padding: 24px !important; }
+  .hr-proc { display: none !important; }
+  .hr-node { min-width: 0 !important; padding: 10px 12px !important; }
+  .hr-node span:last-child { display: none; }
+  .cm-kur { min-height: 0 !important; }
+  .cm-kur > img { position: relative !important; height: 240px !important; inset: auto !important; }
+  .cm-kur > div:last-child { background: #0B0A12 !important; }
+}

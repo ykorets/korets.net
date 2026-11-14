@@ -3,3 +3,5 @@ node_modules/
 dist/
 .wrangler/
 __pycache__/
+.astro-dist/
+.astro/

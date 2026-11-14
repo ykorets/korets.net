@@ -1,0 +1,119 @@
+---
+// Generated from the approved design canvas (Writing.dc.html); edit freely.
+const { state = {}, props: p = {} } = Astro.props;
+const SLUGS = ['ai-operational-last-mile','marco-infrastructure-before-ai-copy','hunter-rules-before-autonomy','oscar-dashboard-wrong-interface','inspectpilot-reputation-vs-record','ai-build-vs-buy-line','behind-the-watt-ai-with-receipts','ai-operating-principle'];
+class DCLogic { constructor(props) { this.props = props || {}; this.state = {}; } setState() {} componentDidMount() {} }
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { filter: 'All' };
+  }
+  renderVals() {
+    const all = [
+      ['The Operational Last Mile', 'A production AI system needs source data, validation, approval gates, and an audit trail built around how a product or service is delivered.', '6 production systems · 1 public pet project · 8 field notes', 6, 'Principles'],
+      ['Marco: Infrastructure Before Copy', 'Marco is an outbound AI agent that begins with sender health, deliverability gates, and signals before it writes a message.', 'SPF/DKIM/DMARC · placement tests · 15-minute reply triage · approval gates', 6, 'Agents'],
+      ['Hunter: Rules Before Autonomy', 'Hunter runs persistent PPC operations across Google and Microsoft Ads, but meaningful changes stay governed by written rules and human approval.', 'Google Ads + Microsoft Ads · CRM-grounded rules · Telegram approval · action logs', 6, 'Agents'],
+      ['Oscar: The Dashboard Is the Wrong Interface', 'Oscar is a self-hosted YouTube operations agent that turns analytics, SEO, captions, and channel tools into a plain-language interface.', 'Self-hosted · multi-channel · dozens of tools · analytics, SEO, captions, reporting', 5, 'Agents'],
+      ['InspectPilot: Reputation vs. Record', 'InspectPilot pairs inspection scheduling with a compliance engine built on roughly 11 million Los Angeles inspection records over 13 years.', '~11M public records · 13 years · LADBS inspections · first-pass and violation history', 6, 'Data'],
+      ['AI Changed the Build-vs.-Buy Line', 'A field note on replacing selected SaaS tools with self-hosted systems, where ownership saves money, and where it creates new operating costs.', '4 named migration paths · Git source of truth · one MCP gateway · tool-level cost logs', 6, 'Principles'],
+      ['Behind the Watt: AI With Receipts', 'Behind the Watt is an open evidence database that uses AI to extract claims from public records while preserving source-level provenance and human approval.', '3 facilities · 1.03 verified operating GW · 143.3 reported GW separate · source provenance', 7, 'Data'],
+      ['The Operating Principle', 'A production pattern for AI systems: let software handle persistence and volume, keep consequential decisions with people, and log every action.', 'Explicit rules · human approval gates · audit logs · source evidence', 7, 'Principles']
+    ];
+    const f = this.state.filter;
+    const posts = all
+      .map((x, i) => ({ n: i + 1, slug: SLUGS[i], title: x[0], desc: x[1], receipt: x[2], min: x[3], tag: x[4].toUpperCase(), cat: x[4] }))
+      .filter((p) => f === 'All' || p.cat === f)
+      .map((p, i) => Object.assign(p, { delay: (i * 0.06) + 's' }));
+    const filters = ['All', 'Agents', 'Data', 'Principles'].map((l) => ({
+      label: l,
+      pressed: l === f ? 'true' : 'false',
+      border: l === f ? 'rgba(167,139,250,.6)' : 'rgba(255,255,255,.14)',
+      bg: l === f ? 'rgba(124,92,250,.2)' : 'transparent',
+      color: l === f ? '#FFFFFF' : '#A9A3C2',
+      pick: () => this.setState({ filter: l })
+    }));
+    return {
+      accent: this.props.accent ?? '#6D4AF6',
+      parts: ['01', '02', '03', '04', '05', '06', '07', '08'],
+      posts: posts,
+      filters: filters
+    };
+  }
+}
+const c = new Component(p);
+Object.assign(c.state, state);
+const v = c.renderVals();
+---
+<div class="wr" style={`--accent: ${v.accent}; position: relative; background: #0B0A12; color: #F4F2FF; font-family: 'Geist Variable', Inter, system-ui, sans-serif; overflow: hidden`}>
+
+  <section style="position: relative; width: 100%; max-width: 1280px; margin: 0 auto; padding: 64px 32px 48px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 32px">
+    <div aria-hidden="true" style="position: absolute; right: -5%; top: -40%; width: 50%; height: 160%; border-radius: 50%; background: radial-gradient(circle, color-mix(in srgb, var(--accent) 26%, transparent) 0%, transparent 62%); filter: blur(30px); pointer-events: none"></div>
+    <div style="position: relative; display: flex; flex-direction: column; gap: 20px; max-width: 760px">
+      <span style="font-family: 'Geist Mono Variable', ui-monospace, monospace; font-size: 12px; letter-spacing: .12em; color: #A78BFA">WRITING · AI SYSTEMS IN PRODUCTION</span>
+      <h1 style="margin: 0; font-size: clamp(44px, 6vw, 80px); line-height: .98; letter-spacing: -0.045em; font-weight: 600">AI systems that survive contact with <span style="background: linear-gradient(100deg, #A78BFA, #F3E8FF 45%, #8B5CF6); -webkit-background-clip: text; background-clip: text; color: transparent">real operations.</span></h1>
+      <p style="margin: 0; font-size: 18px; line-height: 1.6; color: #A9A3C2; max-width: 640px">Field notes on the part after the demo: source data, operational workflows, approval gates, audit logs, employee adoption, and the cost of delivering the product or service.</p>
+    </div>
+    <div style="position: relative; display: flex; flex-wrap: wrap; gap: 12px">
+      <a href="/writing/feed.xml" style="display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 18px; border-radius: 999px; border: 1px solid rgba(255,255,255,.16); color: #E4E0F5; text-decoration: none; font-size: 14px">
+        <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg>
+        RSS
+      </a>
+    </div>
+  </section>
+
+  <section style="width: 100%; max-width: 1280px; margin: 0 auto; padding: 0 32px 48px">
+    <a class="wr-card" href="/writing/built-shipped-running/" style="position: relative; overflow: hidden; display: flex; flex-wrap: wrap; gap: 32px; align-items: stretch; text-decoration: none; color: inherit; border-radius: 28px; background: linear-gradient(140deg, rgba(109,74,246,.24), rgba(20,17,36,.92) 55%); border: 1px solid rgba(167,139,250,.28); padding: 36px">
+      <span class="wr-feat-line" aria-hidden="true" style="position: absolute; top: 0; left: -30%; width: 30%; height: 2px; background: linear-gradient(90deg, transparent, #C4B5FD, transparent)"></span>
+      <div style="flex: 1 1 460px; min-width: 0; display: flex; flex-direction: column; gap: 14px">
+        <span style="font-family: 'Geist Mono Variable', ui-monospace, monospace; font-size: 11px; letter-spacing: .1em; color: #E9E3FF">FEATURED SERIES · 8 FIELD NOTES</span>
+        <h2 style="margin: 0; font-size: clamp(32px, 4vw, 52px); line-height: 1.02; letter-spacing: -0.04em; font-weight: 600">Built. Shipped. Running.</h2>
+        <p style="margin: 0; font-size: 17px; line-height: 1.6; color: #C9C3DE; max-width: 620px">Six production systems, one public pet project, and one operating principle: AI handles persistence and volume, humans approve what matters, and every action stays auditable.</p>
+        <span style="display: inline-flex; align-items: center; gap: 10px; font-size: 16px; font-weight: 500; color: #EDE9FE">Start with part 1 <span class="wr-arrow" aria-hidden="true">→</span></span>
+      </div>
+      <div aria-hidden="true" style="flex: 0 1 320px; min-width: 240px; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; align-content: center">
+        {(v.parts || []).map((p) => (<Fragment>
+          <span style="aspect-ratio: 1; border-radius: 14px; border: 1px solid rgba(167,139,250,.3); background: rgba(124,92,250,.1); display: flex; align-items: center; justify-content: center; font-family: 'Geist Mono Variable', ui-monospace, monospace; font-size: 14px; color: #C4B5FD">{p}</span>
+        </Fragment>))}
+      </div>
+    </a>
+  </section>
+
+  <section style="width: 100%; max-width: 1280px; margin: 0 auto; padding: 0 32px 120px; display: flex; flex-direction: column; gap: 24px">
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 16px">
+      <h2 style="margin: 0; font-size: 24px; letter-spacing: -0.02em; font-weight: 600">All field notes</h2>
+      <div role="group" aria-label="Filter by topic" style="display: flex; flex-wrap: wrap; gap: 8px">
+        {(v.filters || []).map((f) => (<Fragment>
+          <button class="wr-pill" type="button" aria-pressed={f.pressed} data-on-click="f.pick" style={`font: inherit; font-size: 13px; cursor: pointer; min-height: 40px; padding: 0 14px; border-radius: 999px; border: 1px solid ${f.border}; background: ${f.bg}; color: ${f.color}`}>{f.label}</button>
+        </Fragment>))}
+      </div>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 16px">
+      {(v.posts || []).map((a) => (<Fragment>
+        <a class="wr-card wr-in" href={`/writing/${a.slug}/`} style={`animation-delay: ${a.delay}; text-decoration: none; color: inherit; border-radius: 22px; background: rgba(20,17,36,.85); border: 1px solid rgba(255,255,255,.08); padding: 26px; display: flex; flex-direction: column; gap: 12px`}>
+          <span style="display: flex; justify-content: space-between; gap: 12px; font-family: 'Geist Mono Variable', ui-monospace, monospace; font-size: 11px; letter-spacing: .08em; color: #8B84A8">
+            <span>PART {a.n} OF 8 · {a.tag}</span><span>{a.min} MIN</span>
+          </span>
+          <h3 style="margin: 0; font-size: 22px; line-height: 1.2; letter-spacing: -0.02em; font-weight: 600; color: #F4F2FF">{a.title}</h3>
+          <p style="margin: 0; font-size: 15px; line-height: 1.55; color: #A9A3C2">{a.desc}</p>
+          <span style="margin-top: auto; padding-top: 12px; border-top: 1px solid rgba(255,255,255,.06); font-family: 'Geist Mono Variable', ui-monospace, monospace; font-size: 11px; line-height: 1.5; color: #C4B5FD">RECEIPT · {a.receipt}</span>
+        </a>
+      </Fragment>))}
+    </div>
+  </section>
+</div>
+
+<style is:global>
+.wr *{box-sizing:border-box}
+.wr-card{transition:transform .4s cubic-bezier(.2,.7,.2,1),border-color .4s ease,background .4s ease}
+.wr-card:hover{transform:translateY(-4px);border-color:rgba(167,139,250,.45);background:rgba(28,23,52,.9)}
+.wr-card:hover .wr-arrow{transform:translateX(4px);color:#FFFFFF}
+.wr-arrow{transition:transform .3s ease,color .3s ease}
+.wr-pill{transition:background .25s ease,color .25s ease,border-color .25s ease}
+.wr-pill:hover{color:#FFFFFF;border-color:rgba(167,139,250,.6)}
+.wr-pill:focus-visible{outline:2px solid #A78BFA;outline-offset:2px}
+.wr-in{opacity:0;animation:wr-in .6s cubic-bezier(.2,.7,.2,1) forwards}
+.wr-feat-line{animation:wr-scan 5s linear infinite}
+@keyframes wr-in{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+@keyframes wr-scan{0%{left:-30%}100%{left:100%}}
+@media (prefers-reduced-motion:reduce){.wr *{animation:none!important;transition:none!important;opacity:1!important}}
+</style>
