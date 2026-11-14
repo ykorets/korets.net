@@ -9,6 +9,8 @@ def normalize(data):
     s = data.decode('utf-8')
     s = re.sub(r'<script\b[^>]*\bsrc=["\']https://static\.cloudflareinsights\.com/beacon\.min\.js[^>]*>\s*</script>', '', s)
     s = re.sub(r'<!-- Cloudflare Web Analytics -->|<!-- End Cloudflare Web Analytics -->', '', s)
+    # Cloudflare honours and then removes these Scrape Shield markers (Base.astro wraps <body>).
+    s = s.replace('<!--email_off-->', '').replace('<!--/email_off-->', '')
     def email(m):
         raw = bytes.fromhex(m.group(1))
         return 'mailto:' + ''.join(chr(x ^ raw[0]) for x in raw[1:])
