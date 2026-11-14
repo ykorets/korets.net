@@ -9,11 +9,15 @@ def normalize(data):
     s = data.decode('utf-8')
     s = re.sub(r'<script\b[^>]*\bsrc=["\']https://static\.cloudflareinsights\.com/beacon\.min\.js[^>]*>\s*</script>', '', s)
     s = re.sub(r'<!-- Cloudflare Web Analytics -->|<!-- End Cloudflare Web Analytics -->', '', s)
-    # Cloudflare honours and then removes these Scrape Shield markers (Base.astro wraps <body>).
-    s = s.replace('<!--email_off-->', '').replace('<!--/email_off-->', '')
     def email(m):
         raw = bytes.fromhex(m.group(1))
         return 'mailto:' + ''.join(chr(x ^ raw[0]) for x in raw[1:])
+    # Cloudflare Email Address Obfuscation (kept on to hide addresses from scrapers) rewrites
+    # visible addresses too: <span|a class="__cf_email__" data-cfemail="HEX">[email&#160;protected]</…>.
+    def text(m):
+        raw = bytes.fromhex(m.group(1))
+        return ''.join(chr(x ^ raw[0]) for x in raw[1:])
+    s = re.sub(r'<(?:span|a)\b[^>]*\bclass="__cf_email__"[^>]*\bdata-cfemail="([a-fA-F0-9]+)"[^>]*>\[email(?:&#160;|\xa0| )protected\]</(?:span|a)>', text, s)
     s = re.sub(r'/cdn-cgi/l/email-protection#([a-fA-F0-9]+)', email, s)
     s = re.sub(r'<script data-cfasync="false" src="/cdn-cgi/scripts/[^" ]+/cloudflare-static/email-decode.min.js"></script>', '', s)
     return s.strip()

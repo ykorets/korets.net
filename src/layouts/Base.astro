@@ -56,12 +56,10 @@ const img = new URL(image, Astro.site).href;
   <slot name="head" />
 </head>
 <body>
-  <Fragment set:html={'<!--email_off-->'} />
   {!bare && <SiteHeader current={current} />}
   <main id="main"><slot /></main>
   {!bare && <SiteFooter />}
   <CookieConsent />
   <script>import '../scripts/motion';</script>
-  <Fragment set:html={'<!--/email_off-->'} />
 </body>
 </html>
