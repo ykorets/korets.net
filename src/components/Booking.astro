@@ -1,5 +1,5 @@
 ---
-import { CAL_EVENTS, CAL_ORIGIN } from '../data/site';
+import { CAL_EVENTS, CAL_ORIGIN, CAL_TYPES } from '../data/site';
 // Generated from the approved design canvas (Booking.dc.html); edit freely.
 const { state = {}, props: p = {} } = Astro.props;
 class DCLogic { constructor(props) { this.props = props || {}; this.state = {}; } setState() {} componentDidMount() {} }
@@ -11,7 +11,7 @@ class Component extends DCLogic {
   renderVals() {
     const st = this.state;
     const typesData = [
-      { title: 'Business meeting', desc: 'Map one process, its business impact and a first step.', len: '45 min' },
+      { title: 'Business meeting', desc: 'Map one process, its business impact and a first step.', len: '30 · 45 · 60 min' },
       { title: 'Feedback loop', desc: 'A quick check-in for existing clients and partners.', len: '15 min' }
     ];
     const types = typesData.map((t, i) => ({
@@ -101,6 +101,13 @@ const v = c.renderVals();
         </Fragment>))}
       </div>
 
+      <div class="bk-lengths" data-lengths role="radiogroup" aria-label="Business meeting length" style="display: flex; align-items: center; flex-wrap: wrap; gap: 8px; margin-top: -12px">
+        <span style="font-size: 13px; color: #8B84A8; margin-right: 4px">Length</span>
+        {CAL_TYPES[0].lengths.map((l, i) => (
+          <button class="bk-len" type="button" role="radio" aria-checked={i === CAL_TYPES[0].initial ? 'true' : 'false'} data-link={l.link}>{l.min} min</button>
+        ))}
+      </div>
+
       <ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 12px; font-size: 15px; color: #C9C3DE">
         <li style="display: flex; gap: 12px; align-items: center"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#A78BFA" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="13" height="12" rx="2"></rect><path d="m16 10 5-3v10l-5-3"></path></svg>Video call, link in the calendar invite</li>
         <li style="display: flex; gap: 12px; align-items: center"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#A78BFA" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18"></path><path d="M12 3a14 14 0 0 1 0 18"></path><path d="M12 3a14 14 0 0 0 0 18"></path></svg>Times shown in your time zone</li>
@@ -108,7 +115,7 @@ const v = c.renderVals();
       </ul>
     </section>
 
-    <section aria-label="Pick a time" style="flex: 1.4 1 560px; min-width: 0; border-radius: 28px; background: rgba(20,17,36,.88); border: 1px solid rgba(167,139,250,.22); backdrop-filter: blur(14px); padding: 12px; box-shadow: 0 30px 80px rgba(0,0,0,.45); min-height: 640px; position: relative">
+    <section aria-label="Pick a time" style="flex: 1.4 1 560px; min-width: 0; border-radius: 28px; background: #120F20; border: 1px solid rgba(167,139,250,.22); backdrop-filter: blur(14px); padding: 12px; box-shadow: 0 30px 80px rgba(0,0,0,.45); min-height: 640px; position: relative">
       <div id="cal-inline" data-cal-root style="width: 100%; min-height: 620px; overflow: auto; border-radius: 20px"></div>
       <noscript><p style="padding: 24px">Book at <a href="https://book.korets.net/korets">book.korets.net</a>.</p></noscript>
       <a class="bk-fallback" href={`https://book.korets.net/${v.calLink}`} style="position: absolute; right: 22px; bottom: 16px; font-size: 13px; color: #8B84A8">Open booking page ↗</a>
@@ -121,33 +128,56 @@ const v = c.renderVals();
     const root = document.getElementById('cal-inline');
     if (!root) return;
     const buttons = Array.from(document.querySelectorAll('.bk [data-on-click="t.pick"]'));
+    const lengthsBox = document.querySelector('.bk [data-lengths]');
+    const lengthBtns = Array.from(document.querySelectorAll('.bk .bk-len'));
+    const fallback = document.querySelector('.bk-fallback');
+    const current = events.slice();
+    let type = 0;
     let loaded = false;
+    // Cal.com colour tokens matched to the site palette.
+    const palette = {
+      'cal-bg': '#120F20', 'cal-bg-subtle': '#1A1630', 'cal-bg-muted': '#17132B', 'cal-bg-emphasis': '#2A2250',
+      'cal-border': 'rgba(167,139,250,.24)', 'cal-border-subtle': 'rgba(255,255,255,.08)', 'cal-border-emphasis': 'rgba(167,139,250,.45)',
+      'cal-text': '#F4F2FF', 'cal-text-emphasis': '#FFFFFF', 'cal-text-subtle': '#A9A3C2', 'cal-text-muted': '#8B84A8',
+      'cal-brand': '#6D4AF6', 'cal-brand-emphasis': '#7C5CFA', 'cal-brand-text': '#FFFFFF',
+    };
     function loadCal(link) {
       root.innerHTML = '';
+      if (fallback) fallback.setAttribute('href', origin + '/' + link);
       (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement('script')).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if (typeof namespace === 'string') { cal.ns[namespace] = cal.ns[namespace] || api; p(cal.ns[namespace], ar); p(cal, ['initNamespace', namespace]); } else p(cal, ar); return; } p(cal, ar); }; })(window, origin + '/embed/embed.js', 'init');
       const ns = 'k' + Date.now();
       Cal('init', ns, { origin });
       Cal.ns[ns]('inline', { elementOrSelector: '#cal-inline', calLink: link, config: { layout: 'month_view', theme: 'dark' } });
-      Cal.ns[ns]('ui', { theme: 'dark', hideEventTypeDetails: true, layout: 'month_view', cssVarsPerTheme: { dark: { 'cal-brand': '#6D4AF6' } } });
+      Cal.ns[ns]('ui', { theme: 'dark', hideEventTypeDetails: true, layout: 'month_view', cssVarsPerTheme: { dark: palette, light: palette } });
     }
-    buttons.forEach((b, i) => b.addEventListener('click', () => {
+    function selectType(i) {
+      type = i;
       buttons.forEach((o, j) => {
         const on = i === j;
         o.setAttribute('aria-checked', String(on));
         o.style.borderColor = on ? 'rgba(167,139,250,.6)' : 'rgba(255,255,255,.1)';
         o.style.background = on ? 'rgba(124,92,250,.14)' : 'rgba(255,255,255,.02)';
       });
-      const fb = document.querySelector('.bk-fallback');
-      if (fb) fb.setAttribute('href', origin + '/' + events[i]);
-      loadCal(events[i]);
+      if (lengthsBox) lengthsBox.style.visibility = i === 0 ? 'visible' : 'hidden';
+      loadCal(current[i]);
+    }
+    buttons.forEach((b, i) => b.addEventListener('click', () => selectType(i)));
+    lengthBtns.forEach((b) => b.addEventListener('click', () => {
+      lengthBtns.forEach((o) => o.setAttribute('aria-checked', String(o === b)));
+      current[0] = b.dataset.link;
+      selectType(0);
     }));
     new IntersectionObserver((entries, obs) => {
-      if (entries[0].isIntersecting && !loaded) { loaded = true; loadCal(events[0]); obs.disconnect(); }
+      if (entries[0].isIntersecting && !loaded) { loaded = true; loadCal(current[0]); obs.disconnect(); }
     }, { rootMargin: '600px' }).observe(root);
   })();
 </script>
 
 <style is:global>
+.bk-len{font:inherit;font-size:13px;cursor:pointer;min-height:36px;padding:0 14px;border-radius:999px;border:1px solid rgba(255,255,255,.14);background:transparent;color:#A9A3C2;transition:all .25s ease}
+.bk-len:hover{color:#fff;border-color:rgba(167,139,250,.6)}
+.bk-len[aria-checked=true]{color:#fff;border-color:rgba(167,139,250,.6);background:rgba(124,92,250,.2)}
+.bk-len:focus-visible{outline:2px solid #A78BFA;outline-offset:2px}
 .bk *{box-sizing:border-box}
 .bk-day{transition:background .2s ease,color .2s ease,transform .2s ease}
 .bk-day:hover{transform:scale(1.06)}
