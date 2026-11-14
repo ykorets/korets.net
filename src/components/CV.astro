@@ -168,7 +168,7 @@ const v = c.renderVals();
 .cv-dot{transition:background .3s ease,box-shadow .3s ease}
 .cv-sys{transition:transform .35s ease,border-color .35s ease}
 .cv-sys:hover{transform:translateY(-3px);border-color:rgba(167,139,250,.45)}
-.cv-in{opacity:0;animation:cv-in .6s cubic-bezier(.2,.7,.2,1) forwards}
+.cv-in{animation:cv-in .6s cubic-bezier(.2,.7,.2,1) both}
 .cv-draw{animation:cv-draw 2.4s cubic-bezier(.2,.7,.2,1) forwards}
 @keyframes cv-in{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
 @keyframes cv-draw{from{height:0%}to{height:100%}}
