@@ -4,6 +4,7 @@ import '@fontsource-variable/geist-mono';
 import '../styles/global.css';
 import SiteHeader from '../components/SiteHeader.astro';
 import SiteFooter from '../components/SiteFooter.astro';
+import CookieConsent from '../components/CookieConsent.astro';
 interface Props { current?: string; bare?: boolean; title: string; description: string; path: string; image?: string; noindex?: boolean; type?: string; jsonld?: string }
 const { current = '', bare = false, title, description, path, image = '/img/og-default.jpg', noindex = false, type = 'website', jsonld } = Astro.props;
 const canonical = new URL(path, Astro.site).href;
@@ -35,6 +36,7 @@ const img = new URL(image, Astro.site).href;
   {!bare && <SiteHeader current={current} />}
   <main id="main"><slot /></main>
   {!bare && <SiteFooter />}
+  <CookieConsent />
   <script>import '../scripts/motion';</script>
 </body>
 </html>

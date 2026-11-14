@@ -1,0 +1,49 @@
+---
+import Base from '../../layouts/Base.astro';
+const updated = 'November 14, 2026';
+---
+<Base title="Privacy & cookies — Yaro Korets" description="What korets.net collects, which cookies are used and how to reach me about your data." path="/privacy/">
+<div class="pv">
+  <section class="pv-head">
+    <span class="pv-eyebrow">PRIVACY & COOKIES</span>
+    <h1>Short and plain.</h1>
+    <p class="pv-lead">This is a personal site. It runs no analytics, no ads and no tracking pixels. Here is everything it does with data.</p>
+    <span class="pv-date">Last updated {updated}</span>
+  </section>
+
+  <article class="pv-body">
+    <h2>What is collected</h2>
+    <ul>
+      <li><strong>Newsletter.</strong> If you subscribe, your email address is stored to send updates, no more than quarterly. Every email has an unsubscribe link.</li>
+      <li><strong>Booking a call.</strong> The calendar comes from my own Cal.com at book.korets.net. When you book, it receives your name, email and any note you add, and creates a calendar invite with a video link.</li>
+      <li><strong>Hosting logs.</strong> The site is served by Cloudflare, which processes standard request data such as IP address and browser type to deliver and protect the site.</li>
+    </ul>
+
+    <h2>Cookies</h2>
+    <p>korets.net itself sets no cookies. Your cookie choice is remembered in your browser's local storage, not in a cookie.</p>
+    <p>The embedded booking calendar from book.korets.net uses cookies it needs to show available times and hold your booking. It loads only after you accept cookies or press “Allow calendar”. Without it you can still book on the booking page itself.</p>
+    <p><a href="#" data-cc-open>Change your cookie choice</a></p>
+
+    <h2>What is not done</h2>
+    <p>Your data is not sold, rented or used for advertising. It is shared only with the services named above, to do the job you asked for.</p>
+
+    <h2>Your choices</h2>
+    <p>You can ask to see, correct or delete what I hold about you, or unsubscribe at any time. Email <a href="mailto:yaroslav@korets.net">yaroslav@korets.net</a> and I will reply within 30 days.</p>
+  </article>
+</div>
+</Base>
+
+<style is:global>
+.pv{--accent:#6D4AF6;background:#0B0A12;color:#F4F2FF;padding-bottom:96px}
+.pv-head{max-width:820px;margin:0 auto;padding:72px 32px 32px;display:flex;flex-direction:column;gap:18px}
+.pv-eyebrow{font-family:'Geist Mono Variable',ui-monospace,monospace;font-size:12px;letter-spacing:.12em;color:#A78BFA}
+.pv h1{margin:0;font-size:clamp(44px,6vw,72px);line-height:1;letter-spacing:-.045em;font-weight:600}
+.pv-lead{margin:0;font-size:19px;line-height:1.6;color:#A9A3C2}
+.pv-date{font-size:13px;color:#8B84A8}
+.pv-body{max-width:820px;margin:0 auto;padding:16px 32px;font-size:17px;line-height:1.7;color:#C9C3DE}
+.pv-body h2{margin:36px 0 12px;font-size:24px;letter-spacing:-.02em;color:#F4F2FF}
+.pv-body p{margin:0 0 12px}
+.pv-body ul{margin:0;padding-left:1.2em;display:flex;flex-direction:column;gap:10px}
+.pv-body strong{color:#F4F2FF}
+@media (max-width:640px){.pv-head,.pv-body{padding-left:20px;padding-right:20px}}
+</style>

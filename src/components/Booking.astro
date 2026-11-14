@@ -117,6 +117,14 @@ const v = c.renderVals();
 
     <section aria-label="Pick a time" style="flex: 1.4 1 560px; min-width: 0; border-radius: 28px; background: #120F20; border: 1px solid rgba(167,139,250,.22); backdrop-filter: blur(14px); padding: 12px; box-shadow: 0 30px 80px rgba(0,0,0,.45); min-height: 640px; position: relative">
       <div id="cal-inline" data-cal-root style="width: 100%; min-height: 620px; overflow: auto; border-radius: 20px"></div>
+      <div class="bk-consent" data-cal-consent hidden style="position: absolute; inset: 12px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; text-align: center; padding: 24px; border-radius: 20px; background: #120F20">
+        <span style="font-size: 18px; font-weight: 600; color: #F4F2FF">The calendar is paused</span>
+        <span style="font-size: 14px; line-height: 1.55; color: #A9A3C2; max-width: 360px">It comes from book.korets.net and uses cookies to hold your booking. Allow it to pick a time here, or open the booking page.</span>
+        <span style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px">
+          <button type="button" data-cc-allow style="font: inherit; font-size: 15px; font-weight: 500; min-height: 46px; padding: 0 20px; border-radius: 999px; border: 0; background: var(--accent); color: #fff; cursor: pointer">Allow calendar</button>
+          <a class="bk-open" href="https://book.korets.net/korets" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; min-height: 46px; padding: 0 20px; border-radius: 999px; border: 1px solid rgba(255,255,255,.18); color: #E4E0F5; text-decoration: none; font-size: 15px">Open booking page ↗</a>
+        </span>
+      </div>
       <noscript><p style="padding: 24px">Book at <a href="https://book.korets.net/korets">book.korets.net</a>.</p></noscript>
       <a class="bk-fallback" href={`https://book.korets.net/${v.calLink}`} style="position: absolute; right: 22px; bottom: 16px; font-size: 13px; color: #8B84A8">Open booking page ↗</a>
     </section>
@@ -159,7 +167,7 @@ const v = c.renderVals();
         o.style.background = on ? 'rgba(124,92,250,.14)' : 'rgba(255,255,255,.02)';
       });
       if (lengthsBox) lengthsBox.style.visibility = i === 0 ? 'visible' : 'hidden';
-      loadCal(current[i]);
+      if (loaded) loadCal(current[i]);
     }
     buttons.forEach((b, i) => b.addEventListener('click', () => selectType(i)));
     lengthBtns.forEach((b) => b.addEventListener('click', () => {
@@ -167,8 +175,18 @@ const v = c.renderVals();
       current[0] = b.dataset.link;
       selectType(0);
     }));
+    const gate = document.querySelector('[data-cal-consent]');
+    const allowed = () => { try { return localStorage.getItem('korets-consent') === 'yes'; } catch { return false; } };
+    let near = false;
+    const start = () => {
+      if (loaded || !near) return;
+      if (!allowed()) { if (gate) gate.hidden = false; return; }
+      if (gate) gate.hidden = true;
+      loaded = true; loadCal(current[type]);
+    };
+    window.addEventListener('korets:consent', start);
     new IntersectionObserver((entries, obs) => {
-      if (entries[0].isIntersecting && !loaded) { loaded = true; loadCal(current[0]); obs.disconnect(); }
+      if (entries[0].isIntersecting) { near = true; start(); obs.disconnect(); }
     }, { rootMargin: '600px' }).observe(root);
   })();
 </script>

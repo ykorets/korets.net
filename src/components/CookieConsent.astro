@@ -1,0 +1,56 @@
+---
+// Small cookie notice. The site itself sets no tracking or advertising cookies;
+// the only third-party cookies come from the embedded booking calendar
+// (self-hosted Cal.com on book.korets.net), which loads only after consent.
+---
+<div class="cc" data-cc hidden role="region" aria-label="Cookie notice">
+  <p class="cc-text">
+    No tracking, no ads. Cookies are used only by the booking calendar from book.korets.net.
+    <a href="/privacy/">Privacy</a>
+  </p>
+  <div class="cc-actions">
+    <button type="button" class="cc-btn cc-ghost" data-cc-choice="no">Decline</button>
+    <button type="button" class="cc-btn cc-primary" data-cc-choice="yes">Accept</button>
+  </div>
+</div>
+
+<script>
+  const KEY = 'korets-consent';
+  const box = document.querySelector<HTMLElement>('[data-cc]')!;
+  const read = (): string | null => { try { return localStorage.getItem(KEY); } catch { return null; } };
+  const write = (v: string) => { try { localStorage.setItem(KEY, v); } catch {} };
+  (window as any).koretsConsent = () => read();
+  const show = () => { box.hidden = false; requestAnimationFrame(() => box.classList.add('is-in')); };
+  if (!read()) window.setTimeout(show, 900);
+  box.addEventListener('click', (e) => {
+    const b = (e.target as Element).closest<HTMLElement>('[data-cc-choice]');
+    if (!b) return;
+    const v = b.dataset.ccChoice!;
+    write(v);
+    box.classList.remove('is-in');
+    window.setTimeout(() => { box.hidden = true; }, 300);
+    window.dispatchEvent(new CustomEvent('korets:consent', { detail: v }));
+  });
+  document.addEventListener('click', (e) => {
+    if ((e.target as Element).closest('[data-cc-open]')) { e.preventDefault(); show(); }
+    if ((e.target as Element).closest('[data-cc-allow]')) {
+      write('yes');
+      box.hidden = true;
+      window.dispatchEvent(new CustomEvent('korets:consent', { detail: 'yes' }));
+    }
+  });
+</script>
+
+<style is:global>
+.cc{position:fixed;left:16px;right:16px;bottom:16px;z-index:70;max-width:720px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px 20px;padding:14px 16px 14px 20px;border-radius:18px;background:rgba(20,17,36,.94);border:1px solid rgba(167,139,250,.3);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 20px 60px rgba(0,0,0,.5);color:#C9C3DE;font-family:'Geist Variable',Inter,system-ui,sans-serif;font-size:14px;line-height:1.5;opacity:0;transform:translateY(16px);transition:opacity .3s ease,transform .4s cubic-bezier(.2,.7,.2,1)}
+.cc.is-in{opacity:1;transform:none}
+.cc-text{margin:0;flex:1 1 320px}
+.cc-text a{color:#C4B5FD;margin-left:4px}
+.cc-actions{display:flex;gap:8px}
+.cc-btn{font:inherit;font-size:14px;font-weight:500;min-height:40px;padding:0 16px;border-radius:999px;cursor:pointer}
+.cc-ghost{background:transparent;color:#E4E0F5;border:1px solid rgba(255,255,255,.18)}
+.cc-ghost:hover{border-color:rgba(255,255,255,.4);color:#fff}
+.cc-primary{background:var(--accent,#6D4AF6);color:#fff;border:0}
+.cc-primary:hover{box-shadow:0 8px 24px rgba(109,74,246,.5)}
+@media (prefers-reduced-motion:reduce){.cc{transition:none}}
+</style>
