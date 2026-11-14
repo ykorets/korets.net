@@ -192,15 +192,15 @@
           "year": 7,
           "firms": 9,
           "revenueEarned": 3966136.8191585303,
-          "platformEbitdaEarned": 927814.7516646767,
+          "platformEbitdaEarned": 927814.7516646769,
           "annualizedRevenue": 4662647.320915848,
           "annualizedPlatformEbitda": 1102908.7021407974,
-          "cashAfterDebt": 281377.1073322031,
-          "cash": 191004.42099968853,
+          "cashAfterDebt": 281377.1073322033,
+          "cash": 191004.42099968862,
           "debt": 1900644.7290552254,
           "acquisitions": 2,
           "capitalReceived": 0,
-          "distributions": 13815.180428437916
+          "distributions": 13815.180428437954
         },
         {
           "year": 8,
@@ -210,11 +210,11 @@
           "annualizedRevenue": 5115676.380944406,
           "annualizedPlatformEbitda": 1254803.0728997462,
           "cashAfterDebt": 311552.16747631074,
-          "cash": 308023.3819331996,
+          "cash": 308023.3819331997,
           "debt": 1681867.8529724996,
           "acquisitions": 1,
           "capitalReceived": 0,
-          "distributions": 57033.20654279981
+          "distributions": 57033.206542799846
         },
         {
           "year": 9,
@@ -224,11 +224,11 @@
           "annualizedRevenue": 6101539.804890857,
           "annualizedPlatformEbitda": 1529952.8482854017,
           "cashAfterDebt": 526140.278452451,
-          "cash": 450046.7092699553,
+          "cash": 450046.70926995535,
           "debt": 1878123.7628716424,
           "acquisitions": 2,
           "capitalReceived": 0,
-          "distributions": 109116.95111569508
+          "distributions": 109116.9511156951
         },
         {
           "year": 10,
@@ -2352,7 +2352,7 @@
           "firmRevenue": 302849.91486923565,
           "firmEbitda": 100895.13120860209,
           "firmOperatingCosts": 201954.78366063355,
-          "overhead": 25461.50000000001,
+          "overhead": 25461.500000000007,
           "cac": 6056.998297384711,
           "service": 47532.17973032896,
           "interestPaid": 13384.065132754553,
@@ -2381,12 +2381,12 @@
           "firmRevenue": 302345.1650111201,
           "firmEbitda": 101101.68953928164,
           "firmOperatingCosts": 201243.47547183844,
-          "overhead": 25461.50000000001,
+          "overhead": 25461.500000000007,
           "cac": 6046.903300222402,
           "service": 47532.17973032896,
           "interestPaid": 13092.341701106114,
           "principalPaid": 34439.83802922285,
-          "operatingSurplus": 69593.28623905922,
+          "operatingSurplus": 69593.28623905923,
           "ebitda": 835119.4348687106,
           "debt": 1428052.8390829707,
           "distribution": 0,
@@ -2410,12 +2410,12 @@
           "firmRevenue": 301841.25640276825,
           "firmEbitda": 101307.27907793892,
           "firmOperatingCosts": 200533.97732482932,
-          "overhead": 25461.50000000001,
+          "overhead": 25461.500000000007,
           "cac": 6036.825128055366,
           "service": 47532.17973032896,
           "interestPaid": 12797.34490941953,
           "principalPaid": 34734.834820909426,
-          "operatingSurplus": 69808.95394988354,
+          "operatingSurplus": 69808.95394988355,
           "ebitda": 837707.4473986025,
           "debt": 1393318.004262061,
           "distribution": 0,
@@ -2423,7 +2423,7 @@
         },
         {
           "month": 76,
-          "cash": 287116.28700203326,
+          "cash": 287116.2870020333,
           "openingCash": 264624.8280050967,
           "postAcquisitionCash": 264624.8280050967,
           "equityIn": 0,
@@ -2439,12 +2439,12 @@
           "firmRevenue": 301338.187642097,
           "firmEbitda": 101511.9024801075,
           "firmOperatingCosts": 199826.2851619895,
-          "overhead": 25461.50000000001,
+          "overhead": 25461.500000000007,
           "cac": 6026.76375284194,
           "service": 47532.17973032896,
           "interestPaid": 12499.0311697514,
           "principalPaid": 35033.14856057757,
-          "operatingSurplus": 70023.63872726554,
+          "operatingSurplus": 70023.63872726556,
           "ebitda": 840283.6647271866,
           "debt": 1358284.8557014838,
           "distribution": 0,
@@ -2452,9 +2452,9 @@
         },
         {
           "month": 77,
-          "cash": 309821.4505202774,
-          "openingCash": 287116.28700203326,
-          "postAcquisitionCash": 287116.28700203326,
+          "cash": 309821.45052027743,
+          "openingCash": 287116.2870020333,
+          "postAcquisitionCash": 287116.2870020333,
           "equityIn": 0,
           "seedIn": 0,
           "newFirms": 0,
@@ -2468,12 +2468,12 @@
           "firmRevenue": 300835.9573293601,
           "firmEbitda": 101715.56239516028,
           "firmOperatingCosts": 199120.39493419987,
-          "overhead": 25461.50000000001,
+          "overhead": 25461.500000000007,
           "cac": 6016.719146587203,
           "service": 47532.17973032896,
           "interestPaid": 12197.356267901478,
           "principalPaid": 35334.82346242749,
-          "operatingSurplus": 70237.34324857306,
+          "operatingSurplus": 70237.34324857307,
           "ebitda": 842848.1189828768,
           "debt": 1322950.032239056,
           "distribution": 0,
@@ -2481,9 +2481,9 @@
         },
         {
           "month": 78,
-          "cash": 195774.57169552907,
-          "openingCash": 309821.4505202774,
-          "postAcquisitionCash": 172321.45052027737,
+          "cash": 195774.57169552913,
+          "openingCash": 309821.45052027743,
+          "postAcquisitionCash": 172321.45052027743,
           "equityIn": 0,
           "seedIn": 0,
           "newFirms": 1,
@@ -2497,12 +2497,12 @@
           "firmRevenue": 346167.89740047784,
           "firmEbitda": 113376.59479965601,
           "firmOperatingCosts": 232791.30260082183,
-          "overhead": 25961.50000000001,
+          "overhead": 25961.500000000007,
           "cac": 6923.357948009558,
           "service": 57038.615676394744,
           "interestPaid": 15742.2753541566,
           "principalPaid": 41296.340322238146,
-          "operatingSurplus": 80491.73685164643,
+          "operatingSurplus": 80491.73685164645,
           "ebitda": 965900.8422197573,
           "debt": 1721653.6919168178,
           "distribution": 0,
@@ -2510,9 +2510,9 @@
         },
         {
           "month": 79,
-          "cash": 219612.5293780201,
-          "openingCash": 195774.57169552907,
-          "postAcquisitionCash": 195774.57169552907,
+          "cash": 219612.52937802015,
+          "openingCash": 195774.57169552913,
+          "postAcquisitionCash": 195774.57169552913,
           "equityIn": 0,
           "seedIn": 0,
           "newFirms": 0,
@@ -2526,12 +2526,12 @@
           "firmRevenue": 345590.9509048104,
           "firmEbitda": 113749.89237698198,
           "firmOperatingCosts": 231841.05852782843,
-          "overhead": 25961.50000000001,
+          "overhead": 25961.500000000007,
           "cac": 6911.819018096207,
           "service": 57038.615676394744,
           "interestPaid": 15388.31159891145,
           "principalPaid": 41650.3040774833,
-          "operatingSurplus": 80876.57335888575,
+          "operatingSurplus": 80876.57335888577,
           "ebitda": 970518.8803066293,
           "debt": 1680003.3878393346,
           "distribution": 0,
@@ -2539,9 +2539,9 @@
         },
         {
           "month": 80,
-          "cash": 243650.57290113225,
-          "openingCash": 219612.5293780201,
-          "postAcquisitionCash": 219612.5293780201,
+          "cash": 243650.5729011323,
+          "openingCash": 219612.52937802015,
+          "postAcquisitionCash": 219612.52937802015,
           "equityIn": 0,
           "seedIn": 0,
           "newFirms": 0,
@@ -2555,12 +2555,12 @@
           "firmRevenue": 345014.9659866357,
           "firmEbitda": 113938.45851923963,
           "firmOperatingCosts": 231076.5074673961,
-          "overhead": 25961.50000000001,
+          "overhead": 25961.500000000007,
           "cac": 6900.299319732714,
           "service": 57038.615676394744,
           "interestPaid": 15030.365794085565,
           "principalPaid": 42008.249882309196,
-          "operatingSurplus": 81076.6591995069,
+          "operatingSurplus": 81076.65919950692,
           "ebitda": 972919.9103940831,
           "debt": 1637995.1379570256,
           "distribution": 0,
@@ -2568,9 +2568,9 @@
         },
         {
           "month": 81,
-          "cash": 267887.73853963753,
-          "openingCash": 243650.57290113225,
-          "postAcquisitionCash": 243650.57290113225,
+          "cash": 267887.7385396376,
+          "openingCash": 243650.5729011323,
+          "postAcquisitionCash": 243650.5729011323,
           "equityIn": 0,
           "seedIn": 0,
           "newFirms": 0,
@@ -2584,7 +2584,7 @@
           "firmRevenue": 344439.9410433246,
           "firmEbitda": 114126.08013576653,
           "firmOperatingCosts": 230313.86090755806,
-          "overhead": 25961.50000000001,
+          "overhead": 25961.500000000007,
           "cac": 6888.798820866493,
           "service": 57038.615676394744,
           "interestPaid": 14668.38484596897,
@@ -2597,9 +2597,9 @@
         },
         {
           "month": 82,
-          "cash": 292323.0652249313,
-          "openingCash": 267887.73853963753,
-          "postAcquisitionCash": 267887.73853963753,
+          "cash": 292323.06522493134,
+          "openingCash": 267887.7385396376,
+          "postAcquisitionCash": 267887.7385396376,
           "equityIn": 0,
           "seedIn": 0,
           "newFirms": 0,
@@ -2613,12 +2613,12 @@
           "firmRevenue": 343865.8744749191,
           "firmEbitda": 114312.75985118689,
           "firmOperatingCosts": 229553.11462373222,
-          "overhead": 25961.50000000001,
+          "overhead": 25961.500000000007,
           "cac": 6877.317489498382,
           "service": 57038.615676394744,
           "interestPaid": 14302.314897631219,
           "principalPaid": 42736.300778763536,
-          "operatingSurplus": 81473.94236168849,
+          "operatingSurplus": 81473.9423616885,
           "ebitda": 977687.308340262,
           "debt": 1552888.6063478363,
           "distribution": 0,
@@ -2626,9 +2626,9 @@
         },
         {
           "month": 83,
-          "cash": 316955.59453885385,
-          "openingCash": 292323.0652249313,
-          "postAcquisitionCash": 292323.0652249313,
+          "cash": 316955.59453885397,
+          "openingCash": 292323.06522493134,
+          "postAcquisitionCash": 292323.06522493134,
           "equityIn": 0,
           "seedIn": 0,
           "newFirms": 0,
@@ -2642,12 +2642,12 @@
           "firmRevenue": 343292.7646841276,
           "firmEbitda": 114498.5002839999,
           "firmOperatingCosts": 228794.2644001277,
-          "overhead": 25961.50000000001,
+          "overhead": 25961.500000000007,
           "cac": 6865.855293682551,
           "service": 57038.615676394744,
           "interestPaid": 13932.101317638992,
           "principalPaid": 43106.51435875576,
-          "operatingSurplus": 81671.14499031733,
+          "operatingSurplus": 81671.14499031735,
           "ebitda": 980053.7398838083,
           "debt": 1509782.0919890804,
           "distribution": 0,
@@ -2655,9 +2655,9 @@
         },
         {
           "month": 84,
-          "cash": 191004.42099968853,
-          "openingCash": 316955.59453885385,
-          "postAcquisitionCash": 179455.59453885385,
+          "cash": 191004.42099968862,
+          "openingCash": 316955.59453885397,
+          "postAcquisitionCash": 179455.59453885397,
           "equityIn": 0,
           "seedIn": 0,
           "newFirms": 1,
@@ -2671,22 +2671,22 @@
           "firmRevenue": 388553.943409654,
           "firmEbitda": 126141.63737992621,
           "firmOperatingCosts": 262412.3060297278,
-          "overhead": 26461.50000000001,
+          "overhead": 26461.500000000007,
           "cac": 7771.078868193079,
           "service": 66545.05162246054,
           "interestPaid": 17407.68868860533,
           "principalPaid": 49137.36293385521,
-          "operatingSurplus": 91909.05851173312,
+          "operatingSurplus": 91909.05851173314,
           "ebitda": 1102908.7021407974,
           "debt": 1900644.7290552254,
-          "distribution": 13815.180428437916,
+          "distribution": 13815.180428437954,
           "reserve": 158769.00000000006
         },
         {
           "month": 85,
-          "cash": 214540.65609869896,
-          "openingCash": 191004.42099968853,
-          "postAcquisitionCash": 191004.42099968853,
+          "cash": 214540.65609869908,
+          "openingCash": 191004.42099968862,
+          "postAcquisitionCash": 191004.42099968862,
           "equityIn": 0,
           "seedIn": 0,
           "newFirms": 0,
@@ -2713,9 +2713,9 @@
         },
         {
           "month": 86,
-          "cash": 238443.71267297457,
-          "openingCash": 214540.65609869896,
-          "postAcquisitionCash": 214540.65609869896,
+          "cash": 238443.71267297468,
+          "openingCash": 214540.65609869908,
+          "postAcquisitionCash": 214540.65609869908,
           "equityIn": 0,
           "seedIn": 0,
           "newFirms": 0,
@@ -2742,9 +2742,9 @@
         },
         {
           "month": 87,
-          "cash": 262712.03815388464,
-          "openingCash": 238443.71267297457,
-          "postAcquisitionCash": 238443.71267297457,
+          "cash": 262712.03815388476,
+          "openingCash": 238443.71267297468,
+          "postAcquisitionCash": 238443.71267297468,
           "equityIn": 0,
           "seedIn": 0,
           "newFirms": 0,
@@ -2771,9 +2771,9 @@
         },
         {
           "month": 88,
-          "cash": 287344.0841290788,
-          "openingCash": 262712.03815388464,
-          "postAcquisitionCash": 262712.03815388464,
+          "cash": 287344.0841290789,
+          "openingCash": 262712.03815388476,
+          "postAcquisitionCash": 262712.03815388476,
           "equityIn": 0,
           "seedIn": 0,
           "newFirms": 0,
@@ -2800,9 +2800,9 @@
         },
         {
           "month": 89,
-          "cash": 312338.3063329451,
-          "openingCash": 287344.0841290788,
-          "postAcquisitionCash": 287344.0841290788,
+          "cash": 312338.30633294524,
+          "openingCash": 287344.0841290789,
+          "postAcquisitionCash": 287344.0841290789,
           "equityIn": 0,
           "seedIn": 0,
           "newFirms": 0,
@@ -2829,9 +2829,9 @@
         },
         {
           "month": 90,
-          "cash": 337693.1646370893,
-          "openingCash": 312338.3063329451,
-          "postAcquisitionCash": 312338.3063329451,
+          "cash": 337693.1646370894,
+          "openingCash": 312338.30633294524,
+          "postAcquisitionCash": 312338.30633294524,
           "equityIn": 0,
           "seedIn": 0,
           "newFirms": 0,
@@ -2858,9 +2858,9 @@
         },
         {
           "month": 91,
-          "cash": 226442.35376143391,
-          "openingCash": 337693.1646370893,
-          "postAcquisitionCash": 200193.1646370893,
+          "cash": 226442.35376143403,
+          "openingCash": 337693.1646370894,
+          "postAcquisitionCash": 200193.16463708942,
           "equityIn": 0,
           "seedIn": 0,
           "newFirms": 1,
@@ -2887,9 +2887,9 @@
         },
         {
           "month": 92,
-          "cash": 253222.1955936759,
-          "openingCash": 226442.35376143391,
-          "postAcquisitionCash": 226442.35376143391,
+          "cash": 253222.195593676,
+          "openingCash": 226442.35376143403,
+          "postAcquisitionCash": 226442.35376143403,
           "equityIn": 0,
           "seedIn": 0,
           "newFirms": 0,
@@ -2916,9 +2916,9 @@
         },
         {
           "month": 93,
-          "cash": 280530.556129437,
-          "openingCash": 253222.1955936759,
-          "postAcquisitionCash": 253222.1955936759,
+          "cash": 280530.5561294371,
+          "openingCash": 253222.195593676,
+          "postAcquisitionCash": 253222.195593676,
           "equityIn": 0,
           "seedIn": 0,
           "newFirms": 0,
@@ -2945,9 +2945,9 @@
         },
         {
           "month": 94,
-          "cash": 308365.3070036517,
-          "openingCash": 280530.556129437,
-          "postAcquisitionCash": 280530.556129437,
+          "cash": 308365.3070036518,
+          "openingCash": 280530.5561294371,
+          "postAcquisitionCash": 280530.5561294371,
           "equityIn": 0,
           "seedIn": 0,
           "newFirms": 0,
@@ -2974,9 +2974,9 @@
         },
         {
           "month": 95,
-          "cash": 336541.15330287203,
-          "openingCash": 308365.3070036517,
-          "postAcquisitionCash": 308365.3070036517,
+          "cash": 336541.15330287215,
+          "openingCash": 308365.3070036518,
+          "postAcquisitionCash": 308365.3070036518,
           "equityIn": 0,
           "seedIn": 0,
           "newFirms": 0,
@@ -3003,9 +3003,9 @@
         },
         {
           "month": 96,
-          "cash": 308023.3819331996,
-          "openingCash": 336541.15330287203,
-          "postAcquisitionCash": 336541.15330287203,
+          "cash": 308023.3819331997,
+          "openingCash": 336541.15330287215,
+          "postAcquisitionCash": 336541.15330287215,
           "equityIn": 0,
           "seedIn": 0,
           "newFirms": 0,
@@ -3027,14 +3027,14 @@
           "operatingSurplus": 104566.9227416455,
           "ebitda": 1254803.0728997462,
           "debt": 1681867.8529724996,
-          "distribution": 57033.20654279981,
+          "distribution": 57033.206542799846,
           "reserve": 174945.90000000005
         },
         {
           "month": 97,
-          "cash": 343967.5744495264,
-          "openingCash": 308023.3819331996,
-          "postAcquisitionCash": 308023.3819331996,
+          "cash": 343967.5744495265,
+          "openingCash": 308023.3819331997,
+          "postAcquisitionCash": 308023.3819331997,
           "equityIn": 0,
           "seedIn": 0,
           "newFirms": 0,
@@ -3061,9 +3061,9 @@
         },
         {
           "month": 98,
-          "cash": 243283.58567179213,
-          "openingCash": 343967.5744495264,
-          "postAcquisitionCash": 206467.57444952638,
+          "cash": 243283.58567179224,
+          "openingCash": 343967.5744495265,
+          "postAcquisitionCash": 206467.5744495265,
           "equityIn": 0,
           "seedIn": 0,
           "newFirms": 1,
@@ -3090,9 +3090,9 @@
         },
         {
           "month": 99,
-          "cash": 280607.77501391026,
-          "openingCash": 243283.58567179213,
-          "postAcquisitionCash": 243283.58567179213,
+          "cash": 280607.7750139104,
+          "openingCash": 243283.58567179224,
+          "postAcquisitionCash": 243283.58567179224,
           "equityIn": 0,
           "seedIn": 0,
           "newFirms": 0,
@@ -3119,9 +3119,9 @@
         },
         {
           "month": 100,
-          "cash": 318438.04593516514,
-          "openingCash": 280607.77501391026,
-          "postAcquisitionCash": 280607.77501391026,
+          "cash": 318438.04593516525,
+          "openingCash": 280607.7750139104,
+          "postAcquisitionCash": 280607.7750139104,
           "equityIn": 0,
           "seedIn": 0,
           "newFirms": 0,
@@ -3148,9 +3148,9 @@
         },
         {
           "month": 101,
-          "cash": 356772.3074717044,
-          "openingCash": 318438.04593516514,
-          "postAcquisitionCash": 318438.04593516514,
+          "cash": 356772.3074717045,
+          "openingCash": 318438.04593516525,
+          "postAcquisitionCash": 318438.04593516525,
           "equityIn": 0,
           "seedIn": 0,
           "newFirms": 0,
@@ -3177,9 +3177,9 @@
         },
         {
           "month": 102,
-          "cash": 395608.4742237811,
-          "openingCash": 356772.3074717044,
-          "postAcquisitionCash": 356772.3074717044,
+          "cash": 395608.4742237812,
+          "openingCash": 356772.3074717045,
+          "postAcquisitionCash": 356772.3074717045,
           "equityIn": 0,
           "seedIn": 0,
           "newFirms": 0,
@@ -3206,9 +3206,9 @@
         },
         {
           "month": 103,
-          "cash": 444267.7301142232,
-          "openingCash": 395608.4742237811,
-          "postAcquisitionCash": 395608.4742237811,
+          "cash": 444267.7301142233,
+          "openingCash": 395608.4742237812,
+          "postAcquisitionCash": 395608.4742237812,
           "equityIn": 0,
           "seedIn": 0,
           "newFirms": 0,
@@ -3235,9 +3235,9 @@
         },
         {
           "month": 104,
-          "cash": 356277.40618174034,
-          "openingCash": 444267.7301142232,
-          "postAcquisitionCash": 306767.7301142232,
+          "cash": 356277.40618174046,
+          "openingCash": 444267.7301142233,
+          "postAcquisitionCash": 306767.7301142233,
           "equityIn": 0,
           "seedIn": 0,
           "newFirms": 1,
@@ -3264,9 +3264,9 @@
         },
         {
           "month": 105,
-          "cash": 406273.8964601661,
-          "openingCash": 356277.40618174034,
-          "postAcquisitionCash": 356277.40618174034,
+          "cash": 406273.8964601662,
+          "openingCash": 356277.40618174046,
+          "postAcquisitionCash": 356277.40618174046,
           "equityIn": 0,
           "seedIn": 0,
           "newFirms": 0,
@@ -3293,9 +3293,9 @@
         },
         {
           "month": 106,
-          "cash": 456755.1389727456,
-          "openingCash": 406273.8964601661,
-          "postAcquisitionCash": 406273.8964601661,
+          "cash": 456755.13897274574,
+          "openingCash": 406273.8964601662,
+          "postAcquisitionCash": 406273.8964601662,
           "equityIn": 0,
           "seedIn": 0,
           "newFirms": 0,
@@ -3322,9 +3322,9 @@
         },
         {
           "month": 107,
-          "cash": 507719.07726371835,
-          "openingCash": 456755.1389727456,
-          "postAcquisitionCash": 456755.1389727456,
+          "cash": 507719.0772637185,
+          "openingCash": 456755.13897274574,
+          "postAcquisitionCash": 456755.13897274574,
           "equityIn": 0,
           "seedIn": 0,
           "newFirms": 0,
@@ -3351,9 +3351,9 @@
         },
         {
           "month": 108,
-          "cash": 450046.7092699553,
-          "openingCash": 507719.07726371835,
-          "postAcquisitionCash": 507719.07726371835,
+          "cash": 450046.70926995535,
+          "openingCash": 507719.0772637185,
+          "postAcquisitionCash": 507719.0772637185,
           "equityIn": 0,
           "seedIn": 0,
           "newFirms": 0,
@@ -3375,14 +3375,14 @@
           "operatingSurplus": 127496.07069045014,
           "ebitda": 1529952.8482854017,
           "debt": 1878123.7628716424,
-          "distribution": 109116.95111569508,
+          "distribution": 109116.9511156951,
           "reserve": 195440.49000000008
         },
         {
           "month": 109,
           "cash": 508635.8140422988,
-          "openingCash": 450046.7092699553,
-          "postAcquisitionCash": 450046.7092699553,
+          "openingCash": 450046.70926995535,
+          "postAcquisitionCash": 450046.70926995535,
           "equityIn": 0,
           "seedIn": 0,
           "newFirms": 0,
@@ -3812,7 +3812,7 @@
         0,
         0,
         0,
-        6907.590214218958,
+        6907.590214218977,
         0,
         0,
         0,
@@ -3824,7 +3824,7 @@
         0,
         0,
         0,
-        28516.603271399905,
+        28516.603271399923,
         0,
         0,
         0,
@@ -3836,7 +3836,7 @@
         0,
         0,
         0,
-        54558.47555784754,
+        54558.47555784755,
         0,
         0,
         0,
@@ -6178,7 +6178,7 @@
           "firmRevenue": 2930482.6495183837,
           "firmEbitda": 1113893.4653899707,
           "firmOperatingCosts": 1816589.184128413,
-          "overhead": 55602.500000000015,
+          "overhead": 55602.50000000001,
           "cac": 87914.47948555152,
           "service": 635443.2625689091,
           "interestPaid": 154870.29074173034,
@@ -6187,7 +6187,7 @@
           "ebitda": 11644517.83085303,
           "debt": 19109518.464332968,
           "distribution": 0,
-          "reserve": 333615.0000000001
+          "reserve": 333615.00000000006
         },
         {
           "month": 74,
@@ -6207,7 +6207,7 @@
           "firmRevenue": 3106917.591683445,
           "firmEbitda": 1169914.6360909587,
           "firmOperatingCosts": 1937002.9555924863,
-          "overhead": 56602.500000000015,
+          "overhead": 56602.50000000001,
           "cac": 93207.52775050333,
           "service": 677451.7120454635,
           "interestPaid": 166796.64845106952,
@@ -6216,7 +6216,7 @@
           "ebitda": 12241255.300085466,
           "debt": 20598863.40073857,
           "distribution": 0,
-          "reserve": 339615.0000000001
+          "reserve": 339615.00000000006
         },
         {
           "month": 75,
@@ -6236,7 +6236,7 @@
           "firmRevenue": 3117273.983655723,
           "firmEbitda": 1186581.6268914484,
           "firmOperatingCosts": 1930692.3567642744,
-          "overhead": 56602.500000000015,
+          "overhead": 56602.50000000001,
           "cac": 93518.2195096717,
           "service": 677451.7120454635,
           "interestPaid": 162867.89262694283,
@@ -6245,7 +6245,7 @@
           "ebitda": 12437530.888581319,
           "debt": 20084279.58132005,
           "distribution": 0,
-          "reserve": 339615.0000000001
+          "reserve": 339615.00000000006
         },
         {
           "month": 76,
@@ -6265,7 +6265,7 @@
           "firmRevenue": 3294331.5636012424,
           "firmEbitda": 1242837.9596595208,
           "firmOperatingCosts": 2051493.6039417216,
-          "overhead": 57602.500000000015,
+          "overhead": 57602.50000000001,
           "cac": 98829.94690803727,
           "service": 719460.161522011,
           "interestPaid": 174527.29951736855,
@@ -6274,7 +6274,7 @@
           "ebitda": 13036866.153017804,
           "debt": 21539346.71931541,
           "distribution": 0,
-          "reserve": 345615.0000000001
+          "reserve": 345615.00000000006
         },
         {
           "month": 77,
@@ -6294,7 +6294,7 @@
           "firmRevenue": 3305312.668813247,
           "firmEbitda": 1259740.872627971,
           "firmOperatingCosts": 2045571.7961852758,
-          "overhead": 57602.500000000015,
+          "overhead": 57602.50000000001,
           "cac": 99159.3800643974,
           "service": 714143.6411014252,
           "interestPaid": 170329.0469129719,
@@ -6303,7 +6303,7 @@
           "ebitda": 13235747.910762882,
           "debt": 20995532.125126954,
           "distribution": 0,
-          "reserve": 345615.0000000001
+          "reserve": 345615.00000000006
         },
         {
           "month": 78,
@@ -6323,7 +6323,7 @@
           "firmRevenue": 3482997.0443759575,
           "firmEbitda": 1316233.890119305,
           "firmOperatingCosts": 2166763.154256652,
-          "overhead": 58602.500000000015,
+          "overhead": 58602.50000000001,
           "cac": 104489.91133127874,
           "service": 756152.0905779796,
           "interestPaid": 181742.9657939765,
@@ -6332,7 +6332,7 @@
           "ebitda": 13837697.745456316,
           "debt": 22421123.00034295,
           "distribution": 0,
-          "reserve": 351615.0000000001
+          "reserve": 351615.00000000006
         },
         {
           "month": 79,
@@ -6352,7 +6352,7 @@
           "firmRevenue": 3494607.034523878,
           "firmEbitda": 1333374.2528286634,
           "firmOperatingCosts": 2161232.781695214,
-          "overhead": 58602.500000000015,
+          "overhead": 58602.50000000001,
           "cac": 104838.21103571633,
           "service": 756152.0905779796,
           "interestPaid": 177296.75606341695,
@@ -6361,7 +6361,7 @@
           "ebitda": 14039202.501515366,
           "debt": 21842267.66582839,
           "distribution": 0,
-          "reserve": 351615.0000000001
+          "reserve": 351615.00000000006
         },
         {
           "month": 80,
@@ -6381,7 +6381,7 @@
           "firmRevenue": 3672922.391305625,
           "firmEbitda": 1392280.9264684166,
           "firmOperatingCosts": 2280641.4648372084,
-          "overhead": 59602.500000000015,
+          "overhead": 59602.50000000001,
           "cac": 110187.67173916873,
           "service": 798160.540054534,
           "interestPaid": 188433.63823287157,
@@ -6390,7 +6390,7 @@
           "ebitda": 14669889.056750974,
           "debt": 23232540.76400673,
           "distribution": 0,
-          "reserve": 357615.0000000001
+          "reserve": 357615.00000000006
         },
         {
           "month": 81,
@@ -6410,7 +6410,7 @@
           "firmRevenue": 3685165.46594331,
           "firmEbitda": 1409674.7792989388,
           "firmOperatingCosts": 2275490.686644371,
-          "overhead": 59602.500000000015,
+          "overhead": 59602.50000000001,
           "cac": 110554.9639782993,
           "service": 798160.540054534,
           "interestPaid": 183707.7336945803,
@@ -6419,7 +6419,7 @@
           "ebitda": 14874207.783847675,
           "debt": 22618087.95764677,
           "distribution": 0,
-          "reserve": 357615.0000000001
+          "reserve": 357615.00000000006
         },
         {
           "month": 82,
@@ -6439,7 +6439,7 @@
           "firmRevenue": 3864116.017496455,
           "firmEbitda": 1468835.7880269259,
           "firmOperatingCosts": 2395280.2294695294,
-          "overhead": 60602.500000000015,
+          "overhead": 60602.50000000001,
           "cac": 115923.48052489363,
           "service": 840168.9895310884,
           "interestPaid": 194562.23375823276,
@@ -6448,7 +6448,7 @@
           "ebitda": 15507717.690024385,
           "debt": 23972481.201873917,
           "distribution": 0,
-          "reserve": 363615.0000000001
+          "reserve": 363615.00000000006
         },
         {
           "month": 83,
@@ -6468,7 +6468,7 @@
           "firmRevenue": 3876996.4042214416,
           "firmEbitda": 1486484.8237293102,
           "firmOperatingCosts": 2390511.5804921314,
-          "overhead": 60602.500000000015,
+          "overhead": 60602.50000000001,
           "cac": 116309.89212664329,
           "service": 840168.9895310884,
           "interestPaid": 189551.2302692781,
@@ -6477,7 +6477,7 @@
           "ebitda": 15714869.179232003,
           "debt": 23321863.442612104,
           "distribution": 0,
-          "reserve": 363615.0000000001
+          "reserve": 363615.00000000006
         },
         {
           "month": 84,
@@ -6497,7 +6497,7 @@
           "firmRevenue": 4056586.3922355156,
           "firmEbitda": 1545901.8659387315,
           "firmOperatingCosts": 2510684.526296784,
-          "overhead": 61602.500000000015,
+          "overhead": 61602.50000000001,
           "cac": 121697.59176706545,
           "service": 882177.4390076078,
           "interestPaid": 200117.88464150255,
@@ -6506,7 +6506,7 @@
           "ebitda": 16351221.290059993,
           "debt": 24639803.888246,
           "distribution": 0,
-          "reserve": 369615.0000000001
+          "reserve": 369615.00000000006
         },
         {
           "month": 85,
@@ -9882,7 +9882,7 @@
           "firmRevenue": 12893546.849035693,
           "firmEbitda": 4928219.012376563,
           "firmOperatingCosts": 7965327.836659131,
-          "overhead": 331410.00000000006,
+          "overhead": 331410,
           "cac": 386806.4054710709,
           "service": 2945907.9837794066,
           "interestPaid": 705873.9631776131,
@@ -9891,7 +9891,7 @@
           "ebitda": 50520031.2828659,
           "debt": 86852421.01288942,
           "distribution": 0,
-          "reserve": 1988460.0000000005
+          "reserve": 1988460
         },
         {
           "month": 74,
@@ -9911,7 +9911,7 @@
           "firmRevenue": 13269858.671865815,
           "firmEbitda": 5066323.511087426,
           "firmOperatingCosts": 8203535.160778389,
-          "overhead": 336410.00000000006,
+          "overhead": 336410,
           "cac": 398095.7601559745,
           "service": 3029924.8827325157,
           "interestPaid": 719811.6542032273,
@@ -9920,7 +9920,7 @@
           "ebitda": 51981813.01117742,
           "debt": 88542307.7843601,
           "distribution": 0,
-          "reserve": 2018460.0000000005
+          "reserve": 2018460
         },
         {
           "month": 75,
@@ -9940,7 +9940,7 @@
           "firmRevenue": 13480758.200772034,
           "firmEbitda": 5163179.181739298,
           "firmOperatingCosts": 8317579.019032736,
-          "overhead": 338910.00000000006,
+          "overhead": 338910,
           "cac": 404422.74602316116,
           "service": 3071933.33220907,
           "interestPaid": 717570.5357398402,
@@ -9949,7 +9949,7 @@
           "ebitda": 53038157.22859363,
           "debt": 88187944.9878909,
           "distribution": 0,
-          "reserve": 2033460.0000000005
+          "reserve": 2033460
         },
         {
           "month": 76,
@@ -9969,7 +9969,7 @@
           "firmRevenue": 13859027.394774608,
           "firmEbitda": 5302066.881014704,
           "firmOperatingCosts": 8556960.513759904,
-          "overhead": 343910.00000000006,
+          "overhead": 343910,
           "cac": 415770.8218432383,
           "service": 3155950.2311621723,
           "interestPaid": 730590.7191760086,
@@ -9978,7 +9978,7 @@
           "ebitda": 54508632.71005758,
           "debt": 89762585.47590473,
           "distribution": 0,
-          "reserve": 2063460.0000000005
+          "reserve": 2063460
         },
         {
           "month": 77,
@@ -9998,7 +9998,7 @@
           "firmRevenue": 14071890.81942386,
           "firmEbitda": 5399708.362899666,
           "firmOperatingCosts": 8672182.456524193,
-          "overhead": 346410.00000000006,
+          "overhead": 346410,
           "cac": 422156.72458271583,
           "service": 3192642.160218141,
           "interestPaid": 727423.1822888522,
@@ -10007,7 +10007,7 @@
           "ebitda": 55573699.6598034,
           "debt": 89297366.49797545,
           "distribution": 0,
-          "reserve": 2078460.0000000005
+          "reserve": 2078460
         },
         {
           "month": 78,
@@ -10027,7 +10027,7 @@
           "firmRevenue": 14452130.4554886,
           "firmEbitda": 5539384.492778939,
           "firmOperatingCosts": 8912745.962709662,
-          "overhead": 351410.00000000006,
+          "overhead": 351410,
           "cac": 433563.9136646582,
           "service": 3276659.05917125,
           "interestPaid": 739534.5204736538,
@@ -10036,7 +10036,7 @@
           "ebitda": 57052926.949371375,
           "debt": 90760241.95927785,
           "distribution": 0,
-          "reserve": 2108460.0000000005
+          "reserve": 2108460
         },
         {
           "month": 79,
@@ -10056,7 +10056,7 @@
           "firmRevenue": 14666970.890340233,
           "firmEbitda": 5637817.033369782,
           "firmOperatingCosts": 9029153.856970452,
-          "overhead": 353910.00000000006,
+          "overhead": 353910,
           "cac": 440009.1267102071,
           "service": 3318667.5086478046,
           "interestPaid": 735449.1620545733,
@@ -10065,7 +10065,7 @@
           "ebitda": 58126774.8799149,
           "debt": 90177023.61268464,
           "distribution": 0,
-          "reserve": 2123460.0000000005
+          "reserve": 2123460
         },
         {
           "month": 80,
@@ -10085,7 +10085,7 @@
           "firmRevenue": 15049194.126641363,
           "firmEbitda": 5778286.858817291,
           "firmOperatingCosts": 9270907.267824072,
-          "overhead": 358910.00000000006,
+          "overhead": 358910,
           "cac": 451475.8237992411,
           "service": 3402684.4076009137,
           "interestPaid": 746607.0195427086,
@@ -10094,7 +10094,7 @@
           "ebitda": 59614812.420216605,
           "debt": 91520946.22462642,
           "distribution": 0,
-          "reserve": 2153460.0000000005
+          "reserve": 2153460
         },
         {
           "month": 81,
@@ -10114,7 +10114,7 @@
           "firmRevenue": 15266024.773730174,
           "firmEbitda": 5877515.74062826,
           "firmOperatingCosts": 9388509.033101913,
-          "overhead": 361410.00000000006,
+          "overhead": 361410,
           "cac": 457980.7432119053,
           "service": 3444692.857077468,
           "interestPaid": 741558.8694753116,
@@ -10123,7 +10123,7 @@
           "ebitda": 60697499.96899626,
           "debt": 90817812.23702428,
           "distribution": 0,
-          "reserve": 2168460.0000000005
+          "reserve": 2168460
         },
         {
           "month": 82,
@@ -10143,7 +10143,7 @@
           "firmRevenue": 15650244.856309272,
           "firmEbitda": 6018784.561766631,
           "firmOperatingCosts": 9631460.29454264,
-          "overhead": 366410.00000000006,
+          "overhead": 366410,
           "cac": 469507.3456892783,
           "service": 3528709.7560305772,
           "interestPaid": 751744.52101437,
@@ -10152,7 +10152,7 @@
           "ebitda": 62194406.59292823,
           "debt": 92040847.00200807,
           "distribution": 0,
-          "reserve": 2198460.0000000005
+          "reserve": 2198460
         },
         {
           "month": 83,
@@ -10172,7 +10172,7 @@
           "firmRevenue": 15869079.00583031,
           "firmEbitda": 6118815.102587433,
           "firmOperatingCosts": 9750263.903242879,
-          "overhead": 368910.00000000006,
+          "overhead": 368910,
           "cac": 476072.3701749093,
           "service": 3570718.2055071318,
           "interestPaid": 745714.6461213501,
@@ -10181,7 +10181,7 @@
           "ebitda": 63285992.78895028,
           "debt": 91215843.4426223,
           "distribution": 0,
-          "reserve": 2213460.0000000005
+          "reserve": 2213460
         },
         {
           "month": 84,
@@ -10201,7 +10201,7 @@
           "firmRevenue": 16255309.269183075,
           "firmEbitda": 6260888.254932332,
           "firmOperatingCosts": 9994421.014250744,
-          "overhead": 373910.00000000006,
+          "overhead": 373910,
           "cac": 487659.27807549236,
           "service": 3654735.104460206,
           "interestPaid": 754908.9481407723,
@@ -10210,7 +10210,7 @@
           "ebitda": 64791827.72228207,
           "debt": 92316017.28630286,
           "distribution": 0,
-          "reserve": 2243460.0000000005
+          "reserve": 2243460
         },
         {
           "month": 85,
@@ -13586,7 +13586,7 @@
           "firmRevenue": 5382442.393307642,
           "firmEbitda": 2346236.202767294,
           "firmOperatingCosts": 3036206.190540348,
-          "overhead": 66602.50000000001,
+          "overhead": 66602.5,
           "cac": 201841.58974903665,
           "service": 1055527.7573344533,
           "interestPaid": 254416.50209367028,
@@ -13595,7 +13595,7 @@
           "ebitda": 24933505.356219087,
           "debt": 31332661.765205,
           "distribution": 0,
-          "reserve": 399615.0000000001
+          "reserve": 399615
         },
         {
           "month": 74,
@@ -13615,7 +13615,7 @@
           "firmRevenue": 5422810.71125745,
           "firmEbitda": 2383060.725667726,
           "firmOperatingCosts": 3039749.9855897245,
-          "overhead": 66602.50000000001,
+          "overhead": 66602.5,
           "cac": 203355.40167215434,
           "service": 1055527.7573344533,
           "interestPaid": 248237.33236146523,
@@ -13624,7 +13624,7 @@
           "ebitda": 25357233.887946855,
           "debt": 30525371.34023201,
           "distribution": 0,
-          "reserve": 399615.0000000001
+          "reserve": 399615
         },
         {
           "month": 75,
@@ -13644,7 +13644,7 @@
           "firmRevenue": 5630148.45825855,
           "firmEbitda": 2457981.2608272177,
           "firmOperatingCosts": 3172167.197431332,
-          "overhead": 67602.50000000001,
+          "overhead": 67602.5,
           "cac": 211130.56718469562,
           "service": 1097536.2068110078,
           "interestPaid": 257625.09661239907,
@@ -13653,7 +13653,7 @@
           "ebitda": 26150978.323710267,
           "debt": 31685460.2300334,
           "distribution": 0,
-          "reserve": 405615.0000000001
+          "reserve": 405615
         },
         {
           "month": 76,
@@ -13673,7 +13673,7 @@
           "firmRevenue": 5672374.571695488,
           "firmEbitda": 2495643.871663099,
           "firmOperatingCosts": 3176730.700032389,
-          "overhead": 67602.50000000001,
+          "overhead": 67602.5,
           "cac": 212714.04643858076,
           "service": 1097536.2068110078,
           "interestPaid": 251133.74178516655,
@@ -13682,7 +13682,7 @@
           "ebitda": 26583927.90269422,
           "debt": 30839057.76500756,
           "distribution": 0,
-          "reserve": 405615.0000000001
+          "reserve": 405615
         },
         {
           "month": 77,
@@ -13702,7 +13702,7 @@
           "firmRevenue": 5881584.047649872,
           "firmEbitda": 2571408.7804175564,
           "firmOperatingCosts": 3310175.267232315,
-          "overhead": 68602.50000000001,
+          "overhead": 68602.5,
           "cac": 220559.40178687018,
           "service": 1139544.6562875623,
           "interestPaid": 260206.28269284483,
@@ -13711,7 +13711,7 @@
           "ebitda": 27386962.54356824,
           "debt": 31959719.391412843,
           "distribution": 0,
-          "reserve": 411615.0000000001
+          "reserve": 411615
         },
         {
           "month": 78,
@@ -13731,7 +13731,7 @@
           "firmRevenue": 5925695.928007245,
           "firmEbitda": 2609922.0976503664,
           "firmOperatingCosts": 3315773.8303568787,
-          "overhead": 68602.50000000001,
+          "overhead": 68602.5,
           "cac": 222213.59730027168,
           "service": 1139544.6562875623,
           "interestPaid": 253396.63261635313,
@@ -13740,7 +13740,7 @@
           "ebitda": 27829272.004201137,
           "debt": 31073571.367741633,
           "distribution": 0,
-          "reserve": 411615.0000000001
+          "reserve": 411615
         },
         {
           "month": 79,
@@ -13760,7 +13760,7 @@
           "firmRevenue": 6136805.314133965,
           "firmEbitda": 2686544.0930997278,
           "firmOperatingCosts": 3450261.2210342376,
-          "overhead": 69602.50000000001,
+          "overhead": 69602.5,
           "cac": 230130.19928002378,
           "service": 1181553.1057641099,
           "interestPaid": 262147.77231187234,
@@ -13769,7 +13769,7 @@
           "ebitda": 28641736.725836445,
           "debt": 32154166.034289397,
           "distribution": 0,
-          "reserve": 417615.0000000001
+          "reserve": 417615
         },
         {
           "month": 80,
@@ -13789,7 +13789,7 @@
           "firmRevenue": 6182831.353989971,
           "firmEbitda": 2725920.925177654,
           "firmOperatingCosts": 3456910.428812317,
-          "overhead": 69602.50000000001,
+          "overhead": 69602.5,
           "cac": 231856.1757746239,
           "service": 1176236.585343524,
           "interestPaid": 255013.5805994243,
@@ -13798,7 +13798,7 @@
           "ebitda": 29093546.992836356,
           "debt": 31232943.029545296,
           "distribution": 0,
-          "reserve": 417615.0000000001
+          "reserve": 417615
         },
         {
           "month": 81,
@@ -13818,7 +13818,7 @@
           "firmRevenue": 6395869.255811564,
           "firmEbitda": 2803412.9118334693,
           "firmOperatingCosts": 3592456.3439780944,
-          "overhead": 70602.50000000001,
+          "overhead": 70602.5,
           "cac": 239845.09709293366,
           "service": 1218245.0348200786,
           "interestPaid": 263463.5859674519,
@@ -13827,7 +13827,7 @@
           "ebitda": 29915583.77688643,
           "debt": 32278161.58069267,
           "distribution": 0,
-          "reserve": 423615.0000000001
+          "reserve": 423615
         },
         {
           "month": 82,
@@ -13847,7 +13847,7 @@
           "firmRevenue": 6443838.27523015,
           "firmEbitda": 2843666.2600518987,
           "firmOperatingCosts": 3600172.015178251,
-          "overhead": 70602.50000000001,
+          "overhead": 70602.5,
           "cac": 241643.93532113062,
           "service": 1218245.0348200786,
           "interestPaid": 256025.1822630982,
@@ -13856,7 +13856,7 @@
           "ebitda": 30377037.89676922,
           "debt": 31315941.728135686,
           "distribution": 0,
-          "reserve": 423615.0000000001
+          "reserve": 423615
         },
         {
           "month": 83,
@@ -13876,7 +13876,7 @@
           "firmRevenue": 6658833.728961043,
           "firmEbitda": 2922041.336719272,
           "firmOperatingCosts": 3736792.392241771,
-          "overhead": 71602.50000000001,
+          "overhead": 71602.5,
           "cac": 249706.2648360392,
           "service": 1260253.4842966332,
           "interestPaid": 264141.2803344714,
@@ -13885,7 +13885,7 @@
           "ebitda": 31208790.862598795,
           "debt": 32319829.524173528,
           "distribution": 0,
-          "reserve": 429615.0000000001
+          "reserve": 429615
         },
         {
           "month": 84,
@@ -13905,7 +13905,7 @@
           "firmRevenue": 6708774.981928252,
           "firmEbitda": 2963184.3981243446,
           "firmOperatingCosts": 3745590.583803907,
-          "overhead": 71602.50000000001,
+          "overhead": 71602.5,
           "cac": 251579.06182230942,
           "service": 1260253.484296598,
           "interestPaid": 256365.68825876,
@@ -13914,7 +13914,7 @@
           "ebitda": 31680034.035624422,
           "debt": 31315941.728135686,
           "distribution": 0,
-          "reserve": 429615.0000000001
+          "reserve": 429615
         },
         {
           "month": 85,
@@ -17290,7 +17290,7 @@
           "firmRevenue": 8283768.546256475,
           "firmEbitda": 3502882.5004462632,
           "firmOperatingCosts": 4780886.045810211,
-          "overhead": 78602.50000000001,
+          "overhead": 78602.5,
           "cac": 372769.5845815415,
           "service": 1601637.600529662,
           "interestPaid": 408048.0252619764,
@@ -17299,7 +17299,7 @@
           "ebitda": 36618124.99037666,
           "debt": 50425801.955535844,
           "distribution": 0,
-          "reserve": 471615.0000000001
+          "reserve": 471615
         },
         {
           "month": 74,
@@ -17319,7 +17319,7 @@
           "firmRevenue": 8533272.898385707,
           "firmEbitda": 3615159.458904417,
           "firmOperatingCosts": 4918113.43948129,
-          "overhead": 79602.50000000001,
+          "overhead": 79602.5,
           "cac": 383997.2804273569,
           "service": 1643646.0500062166,
           "interestPaid": 414494.3681747783,
@@ -17328,7 +17328,7 @@
           "ebitda": 37818716.14172472,
           "debt": 51196650.27370441,
           "distribution": 0,
-          "reserve": 477615.0000000001
+          "reserve": 477615
         },
         {
           "month": 75,
@@ -17348,7 +17348,7 @@
           "firmRevenue": 8785272.29403623,
           "firmEbitda": 3728559.1869471525,
           "firmOperatingCosts": 5056713.107089078,
-          "overhead": 80602.50000000001,
+          "overhead": 80602.5,
           "cac": 395337.2532316305,
           "service": 1685654.4994827711,
           "interestPaid": 420659.2608328899,
@@ -17357,7 +17357,7 @@
           "ebitda": 39031433.20458627,
           "debt": 51931655.03505453,
           "distribution": 0,
-          "reserve": 483615.0000000001
+          "reserve": 483615
         },
         {
           "month": 76,
@@ -17377,7 +17377,7 @@
           "firmRevenue": 9039791.683643261,
           "firmEbitda": 3843092.9122703155,
           "firmOperatingCosts": 5196698.771372946,
-          "overhead": 81602.50000000001,
+          "overhead": 81602.5,
           "cac": 406790.62576394674,
           "service": 1727662.9489593187,
           "interestPaid": 426540.00048851426,
@@ -17386,7 +17386,7 @@
           "ebitda": 40256397.43807643,
           "debt": 52630532.08658372,
           "distribution": 0,
-          "reserve": 489615.0000000001
+          "reserve": 489615
         },
         {
           "month": 77,
@@ -17406,7 +17406,7 @@
           "firmRevenue": 9296856.267146358,
           "firmEbitda": 3958771.9748467114,
           "firmOperatingCosts": 5338084.292299647,
-          "overhead": 82602.50000000001,
+          "overhead": 82602.5,
           "cac": 418358.5320215862,
           "service": 1764354.8780152875,
           "interestPaid": 432133.8546864093,
@@ -17415,7 +17415,7 @@
           "ebitda": 41493731.3139015,
           "debt": 53298311.06325484,
           "distribution": 0,
-          "reserve": 495615.0000000001
+          "reserve": 495615
         },
         {
           "month": 78,
@@ -17435,7 +17435,7 @@
           "firmRevenue": 9556491.496484488,
           "firmEbitda": 4075607.8280488695,
           "firmOperatingCosts": 5480883.668435618,
-          "overhead": 83602.50000000001,
+          "overhead": 83602.5,
           "cac": 430042.11734180205,
           "service": 1806363.327491842,
           "interestPaid": 437464.6435150313,
@@ -17444,7 +17444,7 @@
           "ebitda": 42743558.52848481,
           "debt": 53929412.37927803,
           "distribution": 0,
-          "reserve": 501615.0000000001
+          "reserve": 501615
         },
         {
           "month": 79,
@@ -17464,7 +17464,7 @@
           "firmRevenue": 9818723.078115998,
           "firmEbitda": 4193612.03978305,
           "firmOperatingCosts": 5625111.038332948,
-          "overhead": 84602.50000000001,
+          "overhead": 84602.5,
           "cac": 441842.5385152201,
           "service": 1848371.7769683965,
           "interestPaid": 442503.1243579937,
@@ -17473,7 +17473,7 @@
           "ebitda": 44006004.01521396,
           "debt": 54523543.72666762,
           "distribution": 0,
-          "reserve": 507615.0000000001
+          "reserve": 507615
         },
         {
           "month": 80,
@@ -17493,7 +17493,7 @@
           "firmRevenue": 10083576.975563826,
           "firmEbitda": 4312796.293634572,
           "firmOperatingCosts": 5770780.681929254,
-          "overhead": 85602.50000000001,
+          "overhead": 85602.5,
           "cac": 453760.9639003723,
           "service": 1890380.226444951,
           "interestPaid": 447246.47417933797,
@@ -17502,7 +17502,7 @@
           "ebitda": 45281193.95681039,
           "debt": 55080409.97440201,
           "distribution": 0,
-          "reserve": 513615.0000000001
+          "reserve": 513615
         },
         {
           "month": 81,
@@ -17522,7 +17522,7 @@
           "firmRevenue": 10351079.41198613,
           "firmEbitda": 4433172.390024609,
           "firmOperatingCosts": 5917907.02196152,
-          "overhead": 86602.50000000001,
+          "overhead": 86602.5,
           "cac": 465798.57353937614,
           "service": 1932388.6759215055,
           "interestPaid": 451691.8388092253,
@@ -17531,7 +17531,7 @@
           "ebitda": 46569255.797822796,
           "debt": 55599713.13728973,
           "distribution": 0,
-          "reserve": 519615.0000000001
+          "reserve": 519615
         },
         {
           "month": 82,
@@ -17551,7 +17551,7 @@
           "firmRevenue": 10621256.872772658,
           "firmEbitda": 4554752.247378546,
           "firmOperatingCosts": 6066504.625394112,
-          "overhead": 87602.50000000001,
+          "overhead": 87602.5,
           "cac": 477956.55927476985,
           "service": 1974397.12539806,
           "interestPaid": 455836.3325755337,
@@ -17560,7 +17560,7 @@
           "ebitda": 47870318.25724532,
           "debt": 56081152.34446721,
           "distribution": 0,
-          "reserve": 525615.0000000001
+          "reserve": 525615
         },
         {
           "month": 83,
@@ -17580,7 +17580,7 @@
           "firmRevenue": 10894136.108167052,
           "firmEbitda": 4677547.903306024,
           "firmOperatingCosts": 6216588.204861028,
-          "overhead": 88602.50000000001,
+          "overhead": 88602.5,
           "cac": 490236.12486751756,
           "service": 2016405.5748746146,
           "interestPaid": 459677.03793095355,
@@ -17589,7 +17589,7 @@
           "ebitda": 49184511.34126208,
           "debt": 56524423.80752354,
           "distribution": 0,
-          "reserve": 531615.0000000001
+          "reserve": 531615
         },
         {
           "month": 84,
@@ -17609,7 +17609,7 @@
           "firmRevenue": 11169744.13591539,
           "firmEbitda": 4801571.515792775,
           "firmOperatingCosts": 6368172.620122614,
-          "overhead": 89602.50000000001,
+          "overhead": 89602.5,
           "cac": 502638.4861161928,
           "service": 2058414.024351134,
           "interestPaid": 463211.00507552613,
@@ -17618,7 +17618,7 @@
           "ebitda": 50511966.35611899,
           "debt": 56929220.788247935,
           "distribution": 0,
-          "reserve": 537615.0000000001
+          "reserve": 537615
         },
         {
           "month": 85,
