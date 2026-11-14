@@ -1,0 +1,143 @@
+---
+// Generated from the approved design canvas (Principles.dc.html); edit freely.
+const { state = {}, props: p = {} } = Astro.props;
+class DCLogic { constructor(props) { this.props = props || {}; this.state = {}; } setState() {} componentDidMount() {} }
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { tab: 'think' };
+  }
+  renderVals() {
+    const isThink = this.state.tab === 'think';
+    const notes = this.state.tab === 'think' ? { 4: 'Under review. In the age of AI, I am starting to question this one.' } : {};
+    const mk = (arr) => arr.map((t, i) => ({ num: '0' + (i + 1), text: t, delay: (i * 0.07) + 's', note: notes[i] || '', hasNote: !!notes[i] }));
+    const on = 'var(--accent)';
+    return {
+      accent: this.props.accent ?? '#6D4AF6',
+      isThink: isThink,
+      isWork: !isThink,
+      thinkSel: isThink ? 'true' : 'false',
+      workSel: isThink ? 'false' : 'true',
+      thinkBg: isThink ? on : 'transparent',
+      workBg: isThink ? 'transparent' : on,
+      thinkColor: isThink ? '#FFFFFF' : '#A9A3C2',
+      workColor: isThink ? '#A9A3C2' : '#FFFFFF',
+      showThink: () => this.setState({ tab: 'think' }),
+      showWork: () => this.setState({ tab: 'work' }),
+      note: isThink
+        ? 'The beliefs behind every system I build.'
+        : 'I build systems that can run without me,\nand keep bringing new methods into them.',
+      think: mk([
+        'Learning is lifelong.',
+        'Comfort with new things and fast adaptation.',
+        'Study how others solved similar problems, and combine ideas across fields.',
+        'Teams matter more than ideas. Community matters more than teams.',
+        'Nothing meaningful is built alone.'
+      ]),
+      work: mk([
+        'Clarity before action.',
+        'Learning before assumptions.',
+        'Systems over shortcuts.',
+        'Trust over speed.',
+        'Creativity and new approaches.'
+      ])
+    };
+  }
+}
+const c = new Component(p);
+Object.assign(c.state, state);
+const v = c.renderVals();
+---
+<div class="pp" style={`--accent: ${v.accent}; position: relative; min-height: 1000px; background: #0B0A12; color: #F4F2FF; font-family: 'Geist Variable', Inter, system-ui, sans-serif; overflow: hidden; border-top: 1px solid rgba(255,255,255,.06)`}>
+  <div style="width: 100%; max-width: 1280px; margin: 0 auto; padding: 96px 32px; display: flex; flex-direction: column; gap: 64px">
+
+    <div style="display: flex; flex-wrap: wrap; gap: 48px; align-items: flex-start">
+      <div style="flex: 1 1 340px; min-width: 0; display: flex; flex-direction: column; gap: 24px">
+        <span style="font-family: 'Geist Mono Variable', ui-monospace, monospace; font-size: 12px; letter-spacing: .12em; color: #A78BFA">PRINCIPLES</span>
+        <h2 style="margin: 0; font-size: clamp(40px, 5vw, 64px); line-height: 1.02; letter-spacing: -0.04em; font-weight: 600">How I think.<br><span style="color: #8B84A8">How I work.</span></h2>
+        <div role="tablist" aria-label="Principles" style="align-self: flex-start; display: inline-flex; padding: 4px; border-radius: 999px; background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.1)">
+          <button class="pp-tab" type="button" role="tab" aria-selected={v.thinkSel} data-on-click="showThink" style={`font: inherit; font-size: 14px; font-weight: 500; cursor: pointer; border: 0; border-radius: 999px; padding: 10px 18px; min-height: 44px; background: ${v.thinkBg}; color: ${v.thinkColor}`}>How I think</button>
+          <button class="pp-tab" type="button" role="tab" aria-selected={v.workSel} data-on-click="showWork" style={`font: inherit; font-size: 14px; font-weight: 500; cursor: pointer; border: 0; border-radius: 999px; padding: 10px 18px; min-height: 44px; background: ${v.workBg}; color: ${v.workColor}`}>How I work</button>
+        </div>
+        <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #A9A3C2; max-width: 380px; white-space: pre-line">{v.note}</p>
+      </div>
+
+      <div style="flex: 2 1 560px; min-width: 0">
+        {v.isThink && (<Fragment>
+          <ol style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column">
+            {(v.think || []).map((p) => (<Fragment>
+              <li class="pp-row pp-in" style={`animation-delay: ${p.delay}; display: flex; gap: 28px; align-items: baseline; padding: 26px 8px; border-bottom: 1px solid rgba(255,255,255,.08)`}>
+                <span class="pp-num" style="position: relative; font-family: 'Geist Mono Variable', ui-monospace, monospace; font-size: 13px; color: #8B84A8; transition: color .3s ease">{p.num}</span>
+                <span style="position: relative; display: flex; flex-direction: column; gap: 10px">
+                  <span style="font-size: clamp(22px, 2.4vw, 32px); line-height: 1.2; letter-spacing: -0.02em; font-weight: 500">{p.text}</span>
+                  {p.hasNote && (<Fragment>
+                    <span style="align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; padding: 6px 12px; border-radius: 999px; border: 1px dashed rgba(251,191,36,.5); background: rgba(251,191,36,.08); color: #FCD34D; font-size: 13px; line-height: 1.4">
+                      <span class="pp-pulse" style="width: 6px; height: 6px; border-radius: 50%; background: #FBBF24; display: inline-block"></span>
+                      {p.note}
+                    </span>
+                  </Fragment>)}
+                </span>
+              </li>
+            </Fragment>))}
+          </ol>
+        </Fragment>)}
+        {v.isWork && (<Fragment>
+          <ol style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column">
+            {(v.work || []).map((p) => (<Fragment>
+              <li class="pp-row pp-in" style={`animation-delay: ${p.delay}; display: flex; gap: 28px; align-items: baseline; padding: 26px 8px; border-bottom: 1px solid rgba(255,255,255,.08)`}>
+                <span class="pp-num" style="position: relative; font-family: 'Geist Mono Variable', ui-monospace, monospace; font-size: 13px; color: #8B84A8; transition: color .3s ease">{p.num}</span>
+                <span style="position: relative; font-size: clamp(22px, 2.4vw, 32px); line-height: 1.2; letter-spacing: -0.02em; font-weight: 500">{p.text}</span>
+              </li>
+            </Fragment>))}
+          </ol>
+        </Fragment>)}
+      </div>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 24px">
+      <span style="font-family: 'Geist Mono Variable', ui-monospace, monospace; font-size: 12px; letter-spacing: .12em; color: #8B84A8">WHO I WORK BEST WITH</span>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px">
+        <article class="pp-card" style="border-radius: 24px; background: rgba(20,17,36,.85); border: 1px solid rgba(255,255,255,.08); padding: 28px; display: flex; flex-direction: column; gap: 14px">
+          <span style="width: 44px; height: 44px; border-radius: 12px; background: rgba(124,92,250,.18); display: inline-flex; align-items: center; justify-content: center">
+            <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C4B5FD" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"></rect><rect x="14" y="3" width="7" height="7" rx="1.5"></rect><rect x="3" y="14" width="7" height="7" rx="1.5"></rect><path d="M17.5 14v7"></path><path d="M14 17.5h7"></path></svg>
+          </span>
+          <h3 style="margin: 0; font-size: 22px; font-weight: 600; letter-spacing: -0.01em">Build systems</h3>
+          <p style="margin: 0; font-size: 15px; line-height: 1.55; color: #A9A3C2">For people building complex or real-world systems.</p>
+        </article>
+        <article class="pp-card" style="border-radius: 24px; background: rgba(20,17,36,.85); border: 1px solid rgba(255,255,255,.08); padding: 28px; display: flex; flex-direction: column; gap: 14px">
+          <span style="width: 44px; height: 44px; border-radius: 12px; background: rgba(124,92,250,.18); display: inline-flex; align-items: center; justify-content: center">
+            <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C4B5FD" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"></path></svg>
+          </span>
+          <h3 style="margin: 0; font-size: 22px; font-weight: 600; letter-spacing: -0.01em">Value clarity</h3>
+          <p style="margin: 0; font-size: 15px; line-height: 1.55; color: #A9A3C2">For people who value understanding over hype.</p>
+        </article>
+        <article class="pp-card" style="border-radius: 24px; background: rgba(20,17,36,.85); border: 1px solid rgba(255,255,255,.08); padding: 28px; display: flex; flex-direction: column; gap: 14px">
+          <span style="width: 44px; height: 44px; border-radius: 12px; background: rgba(124,92,250,.18); display: inline-flex; align-items: center; justify-content: center">
+            <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C4B5FD" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"></path><path d="M14 7h7v7"></path></svg>
+          </span>
+          <h3 style="margin: 0; font-size: 22px; font-weight: 600; letter-spacing: -0.01em">Think long-term</h3>
+          <p style="margin: 0; font-size: 15px; line-height: 1.55; color: #A9A3C2">For people focused on lasting impact.</p>
+        </article>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style is:global>
+.pp *{box-sizing:border-box}
+.pp-tab{transition:background .3s ease,color .3s ease}
+.pp-tab:hover{color:#FFFFFF}
+.pp-tab:focus-visible{outline:2px solid #A78BFA;outline-offset:2px}
+.pp-row{position:relative;transition:padding-left .35s cubic-bezier(.2,.7,.2,1)}
+.pp-row::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(124,92,250,.16),transparent 70%);opacity:0;transition:opacity .35s ease;border-radius:12px}
+.pp-row:hover{padding-left:20px}
+.pp-row:hover::before{opacity:1}
+.pp-row:hover .pp-num{color:#C4B5FD}
+.pp-card{transition:transform .4s cubic-bezier(.2,.7,.2,1),border-color .4s ease}
+.pp-card:hover{transform:translateY(-4px);border-color:rgba(167,139,250,.45)}
+.pp-in{opacity:0;animation:pp-in .6s cubic-bezier(.2,.7,.2,1) forwards}
+.pp-pulse{animation:pp-pl 1.6s ease-in-out infinite}
+@keyframes pp-pl{0%,100%{opacity:1}50%{opacity:.3}}
+@keyframes pp-in{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.pp *{animation:none!important;transition:none!important;opacity:1!important}}
+</style>

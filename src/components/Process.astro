@@ -1,0 +1,179 @@
+---
+// Generated from the approved design canvas (Process.dc.html); edit freely.
+const { state = {}, props: p = {} } = Astro.props;
+class DCLogic { constructor(props) { this.props = props || {}; this.state = {}; } setState() {} componentDidMount() {} }
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { s: 0, manual: false };
+  }
+  componentDidMount() {
+    this.timer = setInterval(() => {
+      if ((this.props.autoplay ?? true) && !this.state.manual) {
+        this.setState({ s: (this.state.s + 1) % 5 });
+      }
+    }, 3400);
+  }
+  componentWillUnmount() {
+    clearInterval(this.timer);
+  }
+  renderVals() {
+    const s = this.state.s;
+    const data = [
+      ['Find the process that moves profit', 'We pick one process that affects revenue or cost, judged by impact, available data and implementation effort.'],
+      ['Measure where it stands', 'Its current cost and performance become the baseline everything is compared with.'],
+      ['Agree on the goal', 'Success metrics are agreed before anything is built.'],
+      ['Build and implement', 'Processes, tools and data are connected into a system your team actually uses.'],
+      ['Verify against the baseline', 'Results are compared with the starting point: better conversion, lower operating costs or capacity for more business.']
+    ];
+    const steps = data.map((d, i) => {
+      const active = i === s;
+      return {
+        num: '0' + (i + 1),
+        title: d[0],
+        body: d[1],
+        active: active,
+        current: active ? 'step' : 'false',
+        bg: active ? 'rgba(124,92,250,.10)' : 'transparent',
+        border: active ? 'rgba(167,139,250,.35)' : 'transparent',
+        numColor: active ? '#C4B5FD' : '#8B84A8',
+        opacity: i <= s ? '1' : '0.55',
+        pick: () => this.setState({ s: i, manual: true })
+      };
+    });
+    const chipNames = ['Lead follow-up', 'Quoting', 'Invoicing', 'Scheduling'];
+    const chips = chipNames.map((c, i) => {
+      const sel = i === 0;
+      return {
+        label: c,
+        border: sel ? 'rgba(167,139,250,.6)' : 'rgba(255,255,255,.1)',
+        bg: sel ? 'rgba(124,92,250,.18)' : 'transparent',
+        color: sel ? '#F4F2FF' : '#8B84A8'
+      };
+    });
+    const statuses = ['Selected by revenue impact, data and effort', 'Baseline measured', 'Goal agreed before the build', '', ''];
+    return {
+      accent: this.props.accent ?? '#6D4AF6',
+      steps: steps,
+      chips: chips,
+      stepNum: '0' + (s + 1),
+      railH: ((s + 1) / 5 * 100) + '%',
+      baseH: s >= 1 ? '42%' : '0%',
+      goalOn: s >= 2,
+      resH: s === 3 ? '30%' : (s === 4 ? '74%' : '0%'),
+      buildOn: s === 3,
+      verified: s === 4,
+      statusOn: s <= 2,
+      status: statuses[s]
+    };
+  }
+}
+const c = new Component(p);
+Object.assign(c.state, state);
+const v = c.renderVals();
+---
+<div class="pr" style={`--accent: ${v.accent}; position: relative; min-height: 900px; background: #0B0A12; color: #F4F2FF; font-family: 'Geist Variable', Inter, system-ui, sans-serif; overflow: hidden; border-top: 1px solid rgba(255,255,255,.06)`}>
+  <div style="width: 100%; max-width: 1280px; margin: 0 auto; padding: 96px 32px; display: flex; flex-wrap: wrap; gap: 64px; align-items: flex-start">
+
+    <section style="flex: 1 1 460px; min-width: 0; display: flex; flex-direction: column; gap: 36px">
+      <div style="display: flex; flex-direction: column; gap: 20px">
+        <span style="font-family: 'Geist Mono Variable', ui-monospace, monospace; font-size: 12px; letter-spacing: .12em; color: #A78BFA">WORK WITH ME · MARKETING · SALES · FINANCE · OPERATIONS</span>
+        <h2 style="margin: 0; font-size: clamp(40px, 5vw, 64px); line-height: 1.02; letter-spacing: -0.04em; font-weight: 600">Start with the<br>business case.</h2>
+        <p style="margin: 0; font-size: 17px; line-height: 1.6; color: #A9A3C2; max-width: 520px">Every project begins with one process that affects profit, and ends with a result measured against where it started.</p>
+      </div>
+
+      <div style="position: relative; display: flex; gap: 20px">
+        <div aria-hidden="true" style="position: relative; width: 2px; flex: 0 0 2px; border-radius: 2px; background: rgba(255,255,255,.08); margin: 14px 0">
+          <div class="pr-rail" style={`position: absolute; left: 0; top: 0; width: 2px; border-radius: 2px; height: ${v.railH}; background: linear-gradient(180deg, #C4B5FD, var(--accent)); box-shadow: 0 0 12px var(--accent)`}></div>
+        </div>
+        <ol style="list-style: none; margin: 0; padding: 0; flex: 1; display: flex; flex-direction: column; gap: 6px">
+          {(v.steps || []).map((step) => (<Fragment>
+            <li>
+              <button class="pr-step" type="button" data-on-click="step.pick" aria-current={step.current} style={`width: 100%; text-align: left; cursor: pointer; font: inherit; color: inherit; background: ${step.bg}; border: 1px solid ${step.border}; border-radius: 16px; padding: 16px 18px; display: flex; gap: 16px; align-items: flex-start; opacity: ${step.opacity}; min-height: 44px`}>
+                <span style={`font-family: 'Geist Mono Variable', ui-monospace, monospace; font-size: 13px; color: ${step.numColor}; padding-top: 3px`}>{step.num}</span>
+                <span style="display: flex; flex-direction: column; gap: 6px">
+                  <span style="font-size: 19px; font-weight: 600; letter-spacing: -0.01em; color: #F4F2FF">{step.title}</span>
+                  {step.active && (<Fragment>
+                    <span class="pr-fade" style="font-size: 15px; line-height: 1.55; color: #A9A3C2">{step.body}</span>
+                  </Fragment>)}
+                </span>
+              </button>
+            </li>
+          </Fragment>))}
+        </ol>
+      </div>
+    </section>
+
+    <section aria-label="Illustration of the current step" style="flex: 1 1 460px; min-width: 0; position: relative">
+      <div aria-hidden="true" style="position: absolute; left: 10%; top: 5%; width: 80%; height: 80%; border-radius: 50%; background: radial-gradient(circle, color-mix(in srgb, var(--accent) 30%, transparent) 0%, transparent 65%); filter: blur(30px)"></div>
+      <div style="position: relative; border-radius: 24px; background: rgba(20,17,36,.8); border: 1px solid rgba(167,139,250,.2); backdrop-filter: blur(14px); padding: 28px; display: flex; flex-direction: column; gap: 24px">
+        <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap">
+          <span style="font-family: 'Geist Mono Variable', ui-monospace, monospace; font-size: 11px; letter-spacing: .1em; color: #8B84A8">EXAMPLE PROCESS · LEAD FOLLOW-UP</span>
+          <span style="display: inline-flex; align-items: center; gap: 8px; font-family: 'Geist Mono Variable', ui-monospace, monospace; font-size: 11px; letter-spacing: .1em; color: #C4B5FD">
+            <span class="pr-blink" style="width: 6px; height: 6px; border-radius: 50%; background: #A78BFA; display: inline-block"></span>
+            STEP {v.stepNum} / 05
+          </span>
+        </div>
+
+        <div style="display: flex; flex-wrap: wrap; gap: 8px">
+          {(v.chips || []).map((chip) => (<Fragment>
+            <span style={`padding: 8px 12px; border-radius: 999px; font-size: 13px; border: 1px solid ${chip.border}; background: ${chip.bg}; color: ${chip.color}; transition: all .4s ease`}>{chip.label}</span>
+          </Fragment>))}
+        </div>
+
+        <div style="position: relative; height: 300px; border-radius: 16px; background: rgba(255,255,255,.02); border: 1px solid rgba(255,255,255,.06); padding: 24px 32px 44px; display: flex; align-items: flex-end; justify-content: center; gap: 72px">
+          <div aria-hidden="true" style="position: absolute; left: 32px; right: 32px; bottom: 44px; height: 1px; background: rgba(255,255,255,.1)"></div>
+          {v.goalOn && (<Fragment>
+            <div class="pr-fade" style="position: absolute; left: 24px; right: 24px; bottom: 188px; height: 0; border-top: 1.5px dashed #C4B5FD; display: flex; justify-content: flex-end">
+              <span style="margin-top: -22px; font-family: 'Geist Mono Variable', ui-monospace, monospace; font-size: 11px; letter-spacing: .08em; color: #C4B5FD">GOAL</span>
+            </div>
+          </Fragment>)}
+          <div style="position: relative; width: 96px; height: 100%; display: flex; flex-direction: column; justify-content: flex-end; align-items: center">
+            <div class="pr-bar" style={`width: 100%; height: ${v.baseH}; border-radius: 12px 12px 4px 4px; background: rgba(169,163,194,.28); border: 1px solid rgba(169,163,194,.35)`}></div>
+            <span style="position: absolute; bottom: -30px; font-family: 'Geist Mono Variable', ui-monospace, monospace; font-size: 11px; letter-spacing: .08em; color: #8B84A8">BASELINE</span>
+          </div>
+          <div style="position: relative; width: 96px; height: 100%; display: flex; flex-direction: column; justify-content: flex-end; align-items: center">
+            <div class="pr-bar" style={`width: 100%; height: ${v.resH}; border-radius: 12px 12px 4px 4px; background: linear-gradient(180deg, #C4B5FD, var(--accent)); box-shadow: 0 0 30px color-mix(in srgb, var(--accent) 50%, transparent)`}></div>
+            <span style="position: absolute; bottom: -30px; font-family: 'Geist Mono Variable', ui-monospace, monospace; font-size: 11px; letter-spacing: .08em; color: #C4B5FD">RESULT</span>
+          </div>
+        </div>
+
+        <div style="min-height: 56px; display: flex; align-items: center; gap: 14px; padding: 14px 16px; border-radius: 14px; background: rgba(255,255,255,.03); border: 1px solid rgba(255,255,255,.07)">
+          {v.buildOn && (<Fragment>
+            <div style="flex: 1; display: flex; flex-direction: column; gap: 8px">
+              <span style="font-size: 14px; color: #F4F2FF">Connecting ads, CRM, calls and quotes</span>
+              <div style="height: 6px; border-radius: 999px; background: rgba(255,255,255,.08); overflow: hidden">
+                <div class="pr-build" style="height: 100%; border-radius: 999px; background: linear-gradient(90deg, var(--accent), #C4B5FD)"></div>
+              </div>
+            </div>
+          </Fragment>)}
+          {v.verified && (<Fragment>
+            <span class="pr-fade" style="display: inline-flex; align-items: center; gap: 10px; font-size: 14px; color: #F4F2FF">
+              <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#34D399" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="m8 12 3 3 5-6"></path></svg>
+              Verified against the baseline
+            </span>
+          </Fragment>)}
+          {v.statusOn && (<Fragment>
+            <span class="pr-fade" style="font-size: 14px; color: #A9A3C2">{v.status}</span>
+          </Fragment>)}
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+
+<style is:global>
+.pr *{box-sizing:border-box}
+.pr-step{transition:background .4s ease,border-color .4s ease,opacity .4s ease}
+.pr-step:hover{background:rgba(255,255,255,.04)}
+.pr-step:focus-visible{outline:2px solid #A78BFA;outline-offset:2px}
+.pr-bar{transition:height 1s cubic-bezier(.2,.7,.2,1)}
+.pr-rail{transition:height .8s cubic-bezier(.2,.7,.2,1)}
+.pr-fade{animation:pr-in .6s ease both}
+.pr-build{animation:pr-build 2.8s ease-in-out infinite}
+.pr-blink{animation:pr-blink 1.6s ease-in-out infinite}
+@keyframes pr-in{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@keyframes pr-build{0%{width:6%}100%{width:96%}}
+@keyframes pr-blink{0%,100%{opacity:1}50%{opacity:.3}}
+@media (prefers-reduced-motion:reduce){.pr *{animation:none!important;transition:none!important}}
+</style>

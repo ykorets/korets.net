@@ -1,0 +1,23 @@
+---
+// Renders an interactive design section once per state. The live copy is shown;
+// the other states wait in <template> elements and are morphed in on click,
+// so CSS transitions still run and only one copy is ever in the accessibility tree.
+interface Props {
+  component: any;
+  states: Record<string, unknown>[];
+  /** click actions that jump to a fixed state index, e.g. { showWork: 1 } */
+  named?: Record<string, number>;
+  /** auto-advance interval in ms; stops after the first manual choice */
+  autoplay?: number;
+  id?: string;
+}
+const { component: C, states, named = {}, autoplay = 0, id } = Astro.props;
+---
+<div class="stateful" id={id} data-stateful data-named={JSON.stringify(named)} data-autoplay={autoplay} data-count={states.length}>
+  <div data-live><C state={states[0]} /></div>
+  {states.map((s) => <template data-state><C state={s} /></template>)}
+</div>
+<script>
+  import { initStateful } from '../scripts/stateful';
+  initStateful();
+</script>

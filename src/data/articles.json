@@ -1,0 +1,406 @@
+[
+ {
+  "slug": "ai-operational-last-mile",
+  "metaTitle": "AI's Operational Last Mile | Yaroslav Korets",
+  "description": "A production AI system needs source data, validation, approval gates, and an audit trail built around how a product or service is delivered.",
+  "jsonld": "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"BlogPosting\",\"@id\":\"https://korets.net/writing/ai-operational-last-mile/#article\",\"headline\":\"The Operational Last Mile: Why AI Demos Die Before Production\",\"description\":\"A production AI system needs source data, validation, approval gates, and an audit trail built around how a product or service is delivered.\",\"datePublished\":\"2026-07-13\",\"dateModified\":\"2026-07-14\",\"wordCount\":564,\"inLanguage\":\"en-US\",\"image\":\"https://korets.net/writing/built-shipped-running-social.png\",\"mainEntityOfPage\":\"https://korets.net/writing/ai-operational-last-mile/\",\"author\":{\"@type\":\"Person\",\"name\":\"Yaroslav Korets\",\"url\":\"https://korets.net/cv/\",\"jobTitle\":\"AI-native operator\"},\"isPartOf\":{\"@type\":\"CreativeWorkSeries\",\"name\":\"Built. Shipped. Running.\",\"url\":\"https://korets.net/writing/built-shipped-running/\"}},{\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https://korets.net\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Writing\",\"item\":\"https://korets.net/writing/\"},{\"@type\":\"ListItem\",\"position\":3,\"name\":\"Built. Shipped. Running.\",\"item\":\"https://korets.net/writing/built-shipped-running/\"},{\"@type\":\"ListItem\",\"position\":4,\"name\":\"The Operational Last Mile\",\"item\":\"https://korets.net/writing/ai-operational-last-mile/\"}]},{\"@type\":\"FAQPage\",\"mainEntity\":[{\"@type\":\"Question\",\"name\":\"What is the operational last mile in AI?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"It is the work required to move from a model output to a reliable business result: source access, validation, human approval, storage, handoff, and audit logs.\"}},{\"@type\":\"Question\",\"name\":\"Which workflows are good first candidates?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Start with a recurring, high-volume step or decision that has clear inputs and a checkable result. Estimates, reconciliations, bid comparisons, compliance packets, dispatch, and recurring reports are common examples.\"}},{\"@type\":\"Question\",\"name\":\"Why do AI pilots fail after a good demo?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"The demo tests the model, but the company needs the full workflow. Missing ownership, unclear approval rules, poor source data, and employee resistance usually appear only after the pilot touches real work.\"}},{\"@type\":\"Question\",\"name\":\"How should a company start?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Choose one workflow, capture the current time and error baseline, build a sidecar version, and keep the existing process running until the new one proves itself.\"}}]}]}",
+  "title": "The Operational Last Mile: Why AI Demos Die Before Production",
+  "eyebrow": "Field note 1 of 8 · Built. Shipped. Running.",
+  "lead": "The model is rarely the bottleneck. The hard part is installing it inside a workflow where money, data, deadlines, and human judgment are attached.",
+  "date": "July 13, 2026",
+  "readTime": "6 min read",
+  "receipt": "6 production systems · 1 public pet project · 8 field notes",
+  "body": "<section><h2 id=\"section-1\">A model output is not a production system</h2>\n                <p>A model can draft a financial memo, summarize a contract, compare bids, turn field notes into an estimate, triage a ticket, or prepare a quote. That is useful. But it is still only one step in producing or delivering something.</p>\n                <p>The operational last mile is everything around the model: where the source data comes from, which version is current, what must be checked, who approves the result, where the result goes next, and what happens when the answer is wrong.</p>\n                <p>The output may be a document. But that document is often only one artifact inside a larger product or service workflow.</p>\n                <p>That is where most AI pilots stop. The demo proves that generation is possible. It does not prove that the company can rely on the output.</p>\n                </section><section><h2 id=\"section-2\">Data- and process-heavy companies feel this gap first</h2>\n                <p>Accounting and finance teams prepare reports that must reconcile. Legal teams assemble packets where one missing clause matters. Construction companies produce estimates, bids, change orders, permits, and inspection records. Analysts combine data from systems that were never designed to agree.</p>\n                <p>In each case, the cost is not just the time spent writing. It is the cost of rework, delayed decisions, inconsistent versions, and errors that survive review.</p>\n                <p>The business outcome is a lower cost to produce and deliver the product or service, with fewer errors and less rework. A document may be one measurable artifact inside that workflow, not the product itself.</p>\n                <p>An AI system has to be designed around that full operating lifecycle, not around a blank chat window.</p>\n                </section><section><h2 id=\"section-3\">The last mile has four jobs</h2>\n                <ol>\n                  <li><strong>Collect the right inputs.</strong> The system needs named sources, access rules, and a way to detect stale or missing data.</li>\n                  <li><strong>Produce a checkable draft.</strong> Claims should point back to their source. Calculations should be reproducible.</li>\n                  <li><strong>Route judgment to a person.</strong> Money, facts, promises, and irreversible actions stay behind an approval gate.</li>\n                  <li><strong>Record what happened.</strong> The company needs to know which sources were used, what the AI proposed, who approved it, and what the final cost was.</li>\n                </ol>\n                <p>That pattern appears in every system in this series. The tools change. The operating logic does not.</p>\n                </section><section><h2 id=\"section-4\">Do not begin with a company-wide transformation</h2>\n                <p>Large transformation programs often create resistance before they create value. Employees hear that a new system will change their work, but they cannot see whether it will help or threaten them. The existing process still has to run, so the new one becomes extra work.</p>\n                <p>I prefer an AI-first twin of one workflow: a small sidecar that mirrors the existing process, produces the same deliverable, and measures itself against the current baseline. The team keeps control. The new system earns trust with receipts.</p>\n                <blockquote>The first useful question is not “Where can we use AI?” It is “Which recurring step in production or service delivery is expensive, slow, and easy to check?”</blockquote>\n                </section>",
+  "toc": [
+   {
+    "id": "section-1",
+    "label": "A model output is not a production system"
+   },
+   {
+    "id": "section-2",
+    "label": "Data- and process-heavy companies feel this gap first"
+   },
+   {
+    "id": "section-3",
+    "label": "The last mile has four jobs"
+   },
+   {
+    "id": "section-4",
+    "label": "Do not begin with a company-wide transformation"
+   }
+  ],
+  "faq": [
+   {
+    "q": "What is the operational last mile in AI?",
+    "a": "<p>It is the work required to move from a model output to a reliable business result: source access, validation, human approval, storage, handoff, and audit logs.</p>"
+   },
+   {
+    "q": "Which workflows are good first candidates?",
+    "a": "<p>Start with a recurring, high-volume step or decision that has clear inputs and a checkable result. Estimates, reconciliations, bid comparisons, compliance packets, dispatch, and recurring reports are common examples.</p>"
+   },
+   {
+    "q": "Why do AI pilots fail after a good demo?",
+    "a": "<p>The demo tests the model, but the company needs the full workflow. Missing ownership, unclear approval rules, poor source data, and employee resistance usually appear only after the pilot touches real work.</p>"
+   },
+   {
+    "q": "How should a company start?",
+    "a": "<p>Choose one workflow, capture the current time and error baseline, build a sidecar version, and keep the existing process running until the new one proves itself.</p>"
+   }
+  ],
+  "part": 1
+ },
+ {
+  "slug": "marco-infrastructure-before-ai-copy",
+  "metaTitle": "Marco: Infrastructure Before AI Copy",
+  "description": "Marco is an outbound AI agent that begins with sender health, deliverability gates, and signals before it writes a message.",
+  "jsonld": "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"BlogPosting\",\"@id\":\"https://korets.net/writing/marco-infrastructure-before-ai-copy/#article\",\"headline\":\"Marco: Why an Outbound AI Agent Starts With Infrastructure\",\"description\":\"Marco is an outbound AI agent that begins with sender health, deliverability gates, and signals before it writes a message.\",\"datePublished\":\"2026-07-13\",\"dateModified\":\"2026-07-14\",\"wordCount\":431,\"inLanguage\":\"en-US\",\"image\":\"https://korets.net/writing/built-shipped-running-social.png\",\"mainEntityOfPage\":\"https://korets.net/writing/marco-infrastructure-before-ai-copy/\",\"author\":{\"@type\":\"Person\",\"name\":\"Yaroslav Korets\",\"url\":\"https://korets.net/cv/\",\"jobTitle\":\"AI-native operator\"},\"isPartOf\":{\"@type\":\"CreativeWorkSeries\",\"name\":\"Built. Shipped. Running.\",\"url\":\"https://korets.net/writing/built-shipped-running/\"}},{\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https://korets.net\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Writing\",\"item\":\"https://korets.net/writing/\"},{\"@type\":\"ListItem\",\"position\":3,\"name\":\"Built. Shipped. Running.\",\"item\":\"https://korets.net/writing/built-shipped-running/\"},{\"@type\":\"ListItem\",\"position\":4,\"name\":\"Marco: Infrastructure Before Copy\",\"item\":\"https://korets.net/writing/marco-infrastructure-before-ai-copy/\"}]},{\"@type\":\"FAQPage\",\"mainEntity\":[{\"@type\":\"Question\",\"name\":\"What does Marco do?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Marco builds and monitors outbound infrastructure, finds prospects based on timing signals, researches each company, drafts outreach, runs sequences, and triages replies.\"}},{\"@type\":\"Question\",\"name\":\"Why does an AI outbound agent need deliverability infrastructure?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"The system cannot create a business outcome if messages do not reach the inbox. Sender authentication, warm-up, placement testing, caps, and reputation monitoring are operating requirements.\"}},{\"@type\":\"Question\",\"name\":\"What stays behind human approval?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Factual claims, pricing, objections, and other statements that can create a commitment stay behind a human gate.\"}},{\"@type\":\"Question\",\"name\":\"What can document teams learn from Marco?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Start with sources and controls, not generation. A reliable document pipeline needs the same sequence: valid inputs, explicit rules, a review gate, and a record of the final action.\"}}]}]}",
+  "title": "Marco: Why an Outbound AI Agent Starts With Infrastructure",
+  "eyebrow": "Field note 2 of 8 · Built. Shipped. Running.",
+  "lead": "Everyone builds the AI that writes the email. Marco starts with the layer that decides whether the message should exist and whether it can arrive.",
+  "date": "July 13, 2026",
+  "readTime": "6 min read",
+  "receipt": "SPF/DKIM/DMARC · placement tests · 15-minute reply triage · approval gates",
+  "body": "<section><h2 id=\"section-1\">Generation is the last step, not the first</h2>\n                <p>Marco is my autonomous outbound agent. The visible feature is personalized copy, but copy is one of the last things the system produces.</p>\n                <p>Marco first builds and monitors the sending layer: secondary domains, SPF, DKIM, DMARC, mailboxes, warm-up, placement tests, per-mailbox caps, and reputation checks. No campaign launches until the senders clear those gates.</p>\n                <p>A strong message that lands in spam is a failed system. An accurate document that reads the wrong source is the same kind of failure. In both cases, the generated text is not the product. The controlled pipeline around it is.</p>\n                </section><section><h2 id=\"section-2\">Signals decide who and when</h2>\n                <p>Most outbound systems start with a list of titles. Marco looks for a change in the company: leadership moves, hiring, funding, website intent, new permits, or another event that creates a reason to talk now.</p>\n                <p>It collects prospects from commercial databases, LinkedIn, company sites, job boards, industry directories, and public or first-party data. It scores and deduplicates them before research begins.</p>\n                <p>That sequencing matters. Research is expensive. Personalization is wasted when the target is wrong or the timing is weak. Marco spends depth only after a signal earns it.</p>\n                </section><section><h2 id=\"section-3\">Research decides what the system is allowed to say</h2>\n                <p>Marco researches the company, writes a short message in the sender's voice, and runs email and LinkedIn sequences. Every 15 minutes it triages replies and flags positive intent in Telegram.</p>\n                <p>But factual claims, pricing, and objections stay behind human approval. The system can do persistent work at volume. It does not get authority to invent facts or commit the business.</p>\n                <p>This is the same control pattern I use for document workflows. Separate extraction from interpretation. Separate a draft from an approved result. Make the boundary explicit.</p>\n                </section><section><h2 id=\"section-4\">The control plane is the real product</h2>\n                <p>The agent is the part people screenshot. The control plane is what makes it safe to operate: sender health, source provenance, written rules, approval states, and an event log.</p>\n                <p>Without that layer, autonomy becomes faster drift. With it, a human operator no longer has to choose between depth and volume.</p>\n                <blockquote>Signals decide who and when. Research decides what to say. Infrastructure decides whether any of it arrives.</blockquote>\n                </section>",
+  "toc": [
+   {
+    "id": "section-1",
+    "label": "Generation is the last step, not the first"
+   },
+   {
+    "id": "section-2",
+    "label": "Signals decide who and when"
+   },
+   {
+    "id": "section-3",
+    "label": "Research decides what the system is allowed to say"
+   },
+   {
+    "id": "section-4",
+    "label": "The control plane is the real product"
+   }
+  ],
+  "faq": [
+   {
+    "q": "What does Marco do?",
+    "a": "<p>Marco builds and monitors outbound infrastructure, finds prospects based on timing signals, researches each company, drafts outreach, runs sequences, and triages replies.</p>"
+   },
+   {
+    "q": "Why does an AI outbound agent need deliverability infrastructure?",
+    "a": "<p>The system cannot create a business outcome if messages do not reach the inbox. Sender authentication, warm-up, placement testing, caps, and reputation monitoring are operating requirements.</p>"
+   },
+   {
+    "q": "What stays behind human approval?",
+    "a": "<p>Factual claims, pricing, objections, and other statements that can create a commitment stay behind a human gate.</p>"
+   },
+   {
+    "q": "What can document teams learn from Marco?",
+    "a": "<p>Start with sources and controls, not generation. A reliable document pipeline needs the same sequence: valid inputs, explicit rules, a review gate, and a record of the final action.</p>"
+   }
+  ],
+  "part": 2
+ },
+ {
+  "slug": "hunter-rules-before-autonomy",
+  "metaTitle": "Hunter: Rules Before AI Autonomy",
+  "description": "Hunter runs persistent PPC operations across Google and Microsoft Ads, but meaningful changes stay governed by written rules and human approval.",
+  "jsonld": "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"BlogPosting\",\"@id\":\"https://korets.net/writing/hunter-rules-before-autonomy/#article\",\"headline\":\"Hunter: AI Needs Rules, Approval Gates, and Logs\",\"description\":\"Hunter runs persistent PPC operations across Google and Microsoft Ads, but meaningful changes stay governed by written rules and human approval.\",\"datePublished\":\"2026-07-13\",\"dateModified\":\"2026-07-14\",\"wordCount\":433,\"inLanguage\":\"en-US\",\"image\":\"https://korets.net/writing/built-shipped-running-social.png\",\"mainEntityOfPage\":\"https://korets.net/writing/hunter-rules-before-autonomy/\",\"author\":{\"@type\":\"Person\",\"name\":\"Yaroslav Korets\",\"url\":\"https://korets.net/cv/\",\"jobTitle\":\"AI-native operator\"},\"isPartOf\":{\"@type\":\"CreativeWorkSeries\",\"name\":\"Built. Shipped. Running.\",\"url\":\"https://korets.net/writing/built-shipped-running/\"}},{\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https://korets.net\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Writing\",\"item\":\"https://korets.net/writing/\"},{\"@type\":\"ListItem\",\"position\":3,\"name\":\"Built. Shipped. Running.\",\"item\":\"https://korets.net/writing/built-shipped-running/\"},{\"@type\":\"ListItem\",\"position\":4,\"name\":\"Hunter: Rules Before Autonomy\",\"item\":\"https://korets.net/writing/hunter-rules-before-autonomy/\"}]},{\"@type\":\"FAQPage\",\"mainEntity\":[{\"@type\":\"Question\",\"name\":\"What is Hunter?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Hunter is an AI PPC operations agent for Google Ads and Microsoft Ads. It monitors accounts, proposes changes, and routes meaningful actions to a person for approval.\"}},{\"@type\":\"Question\",\"name\":\"Why not let the agent make every change automatically?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Changes can affect spend, claims, and strategy. Human approval keeps accountability with the operator while the agent handles monitoring and analysis.\"}},{\"@type\":\"Question\",\"name\":\"What makes an approval gate useful?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"The reviewer needs the proposed action, the evidence behind it, the governing rule, and the expected effect. A bare approve button is not enough.\"}},{\"@type\":\"Question\",\"name\":\"Why are audit logs necessary?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Logs make errors traceable and rules improvable. They also show who approved an action and what the system costs to run.\"}}]}]}",
+  "title": "Hunter: AI Needs Rules, Approval Gates, and Logs",
+  "eyebrow": "Field note 3 of 8 · Built. Shipped. Running.",
+  "lead": "My PPC agent's hardest job is not building campaigns. It is defending the account from the platforms' own automated decisions.",
+  "date": "July 13, 2026",
+  "readTime": "6 min read",
+  "receipt": "Google Ads + Microsoft Ads · CRM-grounded rules · Telegram approval · action logs",
+  "body": "<section><h2 id=\"section-1\">AI can create drift as quickly as it creates work</h2>\n                <p>Hunter works across Google Ads and Microsoft Ads. It builds campaigns, monitors performance, finds problems, and proposes fixes. It also watches for the platforms' auto-applied recommendations.</p>\n                <p>The platforms optimize for their own definition of success. Hunter is grounded in CRM outcomes and explicit written rules. That distinction matters because the cheapest click, the highest reported conversion rate, and the best business result are not always the same thing.</p>\n                <p>Autonomy without a rules layer is faster drift. The system needs a definition of the outcome that belongs to the operator, not the software vendor.</p>\n                </section><section><h2 id=\"section-2\">A policy should be readable before it is executable</h2>\n                <p>Hunter's rules are written down. That makes them available to the agent, but it also makes them reviewable by a person.</p>\n                <p>The same principle applies to finance, legal, analytics, and estimating workflows. If nobody can state the rule for accepting a number, changing a clause, or approving an estimate, the AI cannot make the process reliable. It will only automate the ambiguity.</p>\n                <p>A written policy creates a boundary. The system can act inside it, escalate at its edge, and record which rule led to each proposal.</p>\n                </section><section><h2 id=\"section-3\">The approval gate is not a temporary limitation</h2>\n                <p>When Hunter identifies a meaningful change, it sends the proposal to Telegram for one-tap approval. A human stays on every action that affects money, claims, or strategy.</p>\n                <p>That gate is part of the product. It lets the agent do the persistent work while keeping accountability with the person who owns the outcome.</p>\n                <p>A good gate is specific. It shows the proposed change, the reason, the expected effect, and the rule that triggered it. Approve and reject are useful only when the reviewer has enough context to judge.</p>\n                </section><section><h2 id=\"section-4\">Logs turn automation into an operating system</h2>\n                <p>Every Hunter action is logged. That creates a record of what the agent saw, what it proposed, who approved it, and what happened next.</p>\n                <p>Logs are how you investigate errors, improve rules, attribute cost, and measure whether the system is helping. Without them, an AI workflow is a black box with a friendly interface.</p>\n                <blockquote>The unit of trust in an AI agent is not intelligence. It is the approval gate and the audit log.</blockquote>\n                </section>",
+  "toc": [
+   {
+    "id": "section-1",
+    "label": "AI can create drift as quickly as it creates work"
+   },
+   {
+    "id": "section-2",
+    "label": "A policy should be readable before it is executable"
+   },
+   {
+    "id": "section-3",
+    "label": "The approval gate is not a temporary limitation"
+   },
+   {
+    "id": "section-4",
+    "label": "Logs turn automation into an operating system"
+   }
+  ],
+  "faq": [
+   {
+    "q": "What is Hunter?",
+    "a": "<p>Hunter is an AI PPC operations agent for Google Ads and Microsoft Ads. It monitors accounts, proposes changes, and routes meaningful actions to a person for approval.</p>"
+   },
+   {
+    "q": "Why not let the agent make every change automatically?",
+    "a": "<p>Changes can affect spend, claims, and strategy. Human approval keeps accountability with the operator while the agent handles monitoring and analysis.</p>"
+   },
+   {
+    "q": "What makes an approval gate useful?",
+    "a": "<p>The reviewer needs the proposed action, the evidence behind it, the governing rule, and the expected effect. A bare approve button is not enough.</p>"
+   },
+   {
+    "q": "Why are audit logs necessary?",
+    "a": "<p>Logs make errors traceable and rules improvable. They also show who approved an action and what the system costs to run.</p>"
+   }
+  ],
+  "part": 3
+ },
+ {
+  "slug": "oscar-dashboard-wrong-interface",
+  "metaTitle": "Oscar: Why Dashboards Are the Wrong Interface",
+  "description": "Oscar is a self-hosted YouTube operations agent that turns analytics, SEO, captions, and channel tools into a plain-language interface.",
+  "jsonld": "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"BlogPosting\",\"@id\":\"https://korets.net/writing/oscar-dashboard-wrong-interface/#article\",\"headline\":\"Oscar: Why the Dashboard Is Becoming the Wrong Interface\",\"description\":\"Oscar is a self-hosted YouTube operations agent that turns analytics, SEO, captions, and channel tools into a plain-language interface.\",\"datePublished\":\"2026-07-13\",\"dateModified\":\"2026-07-14\",\"wordCount\":405,\"inLanguage\":\"en-US\",\"image\":\"https://korets.net/writing/built-shipped-running-social.png\",\"mainEntityOfPage\":\"https://korets.net/writing/oscar-dashboard-wrong-interface/\",\"author\":{\"@type\":\"Person\",\"name\":\"Yaroslav Korets\",\"url\":\"https://korets.net/cv/\",\"jobTitle\":\"AI-native operator\"},\"isPartOf\":{\"@type\":\"CreativeWorkSeries\",\"name\":\"Built. Shipped. Running.\",\"url\":\"https://korets.net/writing/built-shipped-running/\"}},{\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https://korets.net\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Writing\",\"item\":\"https://korets.net/writing/\"},{\"@type\":\"ListItem\",\"position\":3,\"name\":\"Built. Shipped. Running.\",\"item\":\"https://korets.net/writing/built-shipped-running/\"},{\"@type\":\"ListItem\",\"position\":4,\"name\":\"Oscar: The Dashboard Is the Wrong Interface\",\"item\":\"https://korets.net/writing/oscar-dashboard-wrong-interface/\"}]},{\"@type\":\"FAQPage\",\"mainEntity\":[{\"@type\":\"Question\",\"name\":\"What is Oscar?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Oscar is a self-hosted YouTube operations agent that provides plain-language access to analytics, SEO, channel management, captions, and bulk reporting tools.\"}},{\"@type\":\"Question\",\"name\":\"Does an AI agent replace every dashboard?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"No. Fixed dashboards remain useful for repeated controls and shared metrics. Agents are better for ad hoc questions, investigation, and follow-up.\"}},{\"@type\":\"Question\",\"name\":\"What must exist before a team can chat with its data?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"The team needs clear source ownership, metric definitions, permissions, and stable tools or APIs. Natural language cannot repair an undefined data model.\"}},{\"@type\":\"Question\",\"name\":\"How is this useful outside YouTube?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"The same interface pattern works for financial reporting, legal document review, estimating, and other workflows where people repeatedly combine data to answer new questions.\"}}]}]}",
+  "title": "Oscar: Why the Dashboard Is Becoming the Wrong Interface",
+  "eyebrow": "Field note 4 of 8 · Built. Shipped. Running.",
+  "lead": "A dashboard answers the question its designer predicted. An agent can answer the question the operator actually has.",
+  "date": "July 13, 2026",
+  "readTime": "5 min read",
+  "receipt": "Self-hosted · multi-channel · dozens of tools · analytics, SEO, captions, reporting",
+  "body": "<section><h2 id=\"section-1\">I stopped opening YouTube Studio</h2>\n                <p>Oscar is my self-hosted YouTube operations agent. It exposes dozens of tools across analytics, discovery and SEO, channel management, captions, and bulk reporting.</p>\n                <p>Instead of navigating a stack of reports, I can ask how a channel performed over the last 90 days, which uploads are missing captions, or which topics are gaining search visibility. I can then ask a follow-up without rebuilding the report.</p>\n                <p>The interface changed from navigation to intent.</p>\n                </section><section><h2 id=\"section-2\">Dashboards freeze yesterday&#x27;s questions</h2>\n                <p>A dashboard is a set of choices made in advance: which metrics matter, how they are grouped, and which filters the operator might need. That works for repeated monitoring. It breaks when the next question is not on the screen.</p>\n                <p>Data-heavy teams know this problem. They export data, combine spreadsheets, copy numbers into a report, and explain the exceptions in a separate memo. The dashboard did not remove the analysis. It only moved it downstream.</p>\n                <p>An agent can compose tools at the moment of the question. But that only works if the underlying tools and permissions are well defined.</p>\n                </section><section><h2 id=\"section-3\">Natural language does not remove the data model</h2>\n                <p>Oscar still needs named data sources, stable tool contracts, channel permissions, and clear definitions for each metric. Plain language is the interface, not the database.</p>\n                <p>This is an important distinction for teams considering “chat with your data.” If the source systems disagree, the agent will surface the disagreement faster. It will not resolve ownership by itself.</p>\n                <p>The work is to define what each tool can read or change, then let the agent combine those capabilities without giving it more authority than the question requires.</p>\n                </section><section><h2 id=\"section-4\">The next report can begin with a question</h2>\n                <p>For analytics companies, finance teams, and operators, the useful shift is not “replace every dashboard.” It is to stop treating every new question as a new reporting project.</p>\n                <p>Keep fixed dashboards for fixed controls. Use an agent for investigation, comparison, and follow-up. The two interfaces serve different jobs.</p>\n                <blockquote>A dashboard answers the question someone predicted. An agent answers the question you actually have.</blockquote>\n                </section>",
+  "toc": [
+   {
+    "id": "section-1",
+    "label": "I stopped opening YouTube Studio"
+   },
+   {
+    "id": "section-2",
+    "label": "Dashboards freeze yesterday's questions"
+   },
+   {
+    "id": "section-3",
+    "label": "Natural language does not remove the data model"
+   },
+   {
+    "id": "section-4",
+    "label": "The next report can begin with a question"
+   }
+  ],
+  "faq": [
+   {
+    "q": "What is Oscar?",
+    "a": "<p>Oscar is a self-hosted YouTube operations agent that provides plain-language access to analytics, SEO, channel management, captions, and bulk reporting tools.</p>"
+   },
+   {
+    "q": "Does an AI agent replace every dashboard?",
+    "a": "<p>No. Fixed dashboards remain useful for repeated controls and shared metrics. Agents are better for ad hoc questions, investigation, and follow-up.</p>"
+   },
+   {
+    "q": "What must exist before a team can chat with its data?",
+    "a": "<p>The team needs clear source ownership, metric definitions, permissions, and stable tools or APIs. Natural language cannot repair an undefined data model.</p>"
+   },
+   {
+    "q": "How is this useful outside YouTube?",
+    "a": "<p>The same interface pattern works for financial reporting, legal document review, estimating, and other workflows where people repeatedly combine data to answer new questions.</p>"
+   }
+  ],
+  "part": 4
+ },
+ {
+  "slug": "inspectpilot-reputation-vs-record",
+  "metaTitle": "InspectPilot: Reputation vs. Public Record",
+  "description": "InspectPilot pairs inspection scheduling with a compliance engine built on roughly 11 million Los Angeles inspection records over 13 years.",
+  "jsonld": "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"BlogPosting\",\"@id\":\"https://korets.net/writing/inspectpilot-reputation-vs-record/#article\",\"headline\":\"InspectPilot: Contractor Reputation vs. the Public Record\",\"description\":\"InspectPilot pairs inspection scheduling with a compliance engine built on roughly 11 million Los Angeles inspection records over 13 years.\",\"datePublished\":\"2026-07-13\",\"dateModified\":\"2026-07-14\",\"wordCount\":407,\"inLanguage\":\"en-US\",\"image\":\"https://korets.net/writing/built-shipped-running-social.png\",\"mainEntityOfPage\":\"https://korets.net/writing/inspectpilot-reputation-vs-record/\",\"author\":{\"@type\":\"Person\",\"name\":\"Yaroslav Korets\",\"url\":\"https://korets.net/cv/\",\"jobTitle\":\"AI-native operator\"},\"isPartOf\":{\"@type\":\"CreativeWorkSeries\",\"name\":\"Built. Shipped. Running.\",\"url\":\"https://korets.net/writing/built-shipped-running/\"}},{\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https://korets.net\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Writing\",\"item\":\"https://korets.net/writing/\"},{\"@type\":\"ListItem\",\"position\":3,\"name\":\"Built. Shipped. Running.\",\"item\":\"https://korets.net/writing/built-shipped-running/\"},{\"@type\":\"ListItem\",\"position\":4,\"name\":\"InspectPilot: Reputation vs. Record\",\"item\":\"https://korets.net/writing/inspectpilot-reputation-vs-record/\"}]},{\"@type\":\"FAQPage\",\"mainEntity\":[{\"@type\":\"Question\",\"name\":\"What does InspectPilot do?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"InspectPilot files and schedules LADBS inspections, helps manage corrections and compliance paperwork, and provides contractor performance signals from public records.\"}},{\"@type\":\"Question\",\"name\":\"How much data does the system use?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"The engine uses roughly 11 million Los Angeles inspection records covering 13 years.\"}},{\"@type\":\"Question\",\"name\":\"What contractor signals does it examine?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"The system looks at first-pass rates, violations, and permit history. These signals support review; they do not replace context or human judgment.\"}},{\"@type\":\"Question\",\"name\":\"Why is this relevant to other data- and process-heavy industries?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"The pattern is transferable: preserve the operational record, structure the outcomes, and use that history to improve the next decision.\"}}]}]}",
+  "title": "InspectPilot: Contractor Reputation vs. the Public Record",
+  "eyebrow": "Field note 5 of 8 · Built. Shipped. Running.",
+  "lead": "Scheduling solves today's task. A structured performance record improves tomorrow's contractor decision.",
+  "date": "July 13, 2026",
+  "readTime": "6 min read",
+  "receipt": "~11M public records · 13 years · LADBS inspections · first-pass and violation history",
+  "body": "<section><h2 id=\"section-1\">Two expensive problems share the same data</h2>\n                <p>General contractors lose time scheduling inspections, handling corrections, and keeping the paperwork trail complete. They also lose money when a subcontractor repeatedly fails work that has to be reopened.</p>\n                <p>InspectPilot handles both sides. On the surface, it is a concierge agent that files and schedules building inspections with the Los Angeles Department of Building and Safety. Underneath, it is a compliance engine that scores contractors on how they actually perform.</p>\n                <p>The same records used to move a permit forward can also improve the next hiring decision.</p>\n                </section><section><h2 id=\"section-2\">The evidence base is roughly 11 million records</h2>\n                <p>The engine runs on roughly 11 million public inspection records covering every Los Angeles inspection over 13 years. It looks at first-pass rates, violations, and permit history.</p>\n                <p>That does not make the score a verdict. Different project types and scopes need context. But it replaces an uncheckable reputation claim with a record that can be inspected.</p>\n                <p>The useful AI work begins after the records are collected: matching entities, normalizing inconsistent names, connecting permits to contractors, and turning a large public archive into a reviewable signal.</p>\n                </section><section><h2 id=\"section-3\">Document automation should improve the next decision</h2>\n                <p>Many AI projects stop after a document is created. InspectPilot uses the document trail as an operating dataset.</p>\n                <p>Inspection requests, corrections, permits, and outcomes are not just paperwork to finish. Together they form a history of who did what, where the process failed, and which contractor consistently got work through review.</p>\n                <p>Finance firms can use the same idea with reconciliations. Legal teams can use it with clause changes and review outcomes. Estimators can use it with bid revisions and change orders. The recurring document becomes evidence for the next decision.</p>\n                </section><section><h2 id=\"section-4\">A checkable signal is stronger than a confident answer</h2>\n                <p>InspectPilot does not ask the user to trust a generated paragraph. It exposes the record behind the signal.</p>\n                <p>That matters because AI can make weak evidence sound certain. A reliable system should do the opposite: make uncertainty visible, preserve the source, and let a person inspect the path from record to recommendation.</p>\n                <blockquote>Reputation is what a contractor says. First-pass rate is what the public record says. One of those is checkable.</blockquote>\n                </section>",
+  "toc": [
+   {
+    "id": "section-1",
+    "label": "Two expensive problems share the same data"
+   },
+   {
+    "id": "section-2",
+    "label": "The evidence base is roughly 11 million records"
+   },
+   {
+    "id": "section-3",
+    "label": "Document automation should improve the next decision"
+   },
+   {
+    "id": "section-4",
+    "label": "A checkable signal is stronger than a confident answer"
+   }
+  ],
+  "faq": [
+   {
+    "q": "What does InspectPilot do?",
+    "a": "<p>InspectPilot files and schedules LADBS inspections, helps manage corrections and compliance paperwork, and provides contractor performance signals from public records.</p>"
+   },
+   {
+    "q": "How much data does the system use?",
+    "a": "<p>The engine uses roughly 11 million Los Angeles inspection records covering 13 years.</p>"
+   },
+   {
+    "q": "What contractor signals does it examine?",
+    "a": "<p>The system looks at first-pass rates, violations, and permit history. These signals support review; they do not replace context or human judgment.</p>"
+   },
+   {
+    "q": "Why is this relevant to other data- and process-heavy industries?",
+    "a": "<p>The pattern is transferable: preserve the operational record, structure the outcomes, and use that history to improve the next decision.</p>"
+   }
+  ],
+  "part": 5
+ },
+ {
+  "slug": "ai-build-vs-buy-line",
+  "metaTitle": "AI Changed the Build-vs.-Buy Line",
+  "description": "A field note on replacing selected SaaS tools with self-hosted systems, where ownership saves money, and where it creates new operating costs.",
+  "jsonld": "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"BlogPosting\",\"@id\":\"https://korets.net/writing/ai-build-vs-buy-line/#article\",\"headline\":\"AI Changed the Build-vs.-Buy Line\",\"description\":\"A field note on replacing selected SaaS tools with self-hosted systems, where ownership saves money, and where it creates new operating costs.\",\"datePublished\":\"2026-07-13\",\"dateModified\":\"2026-07-14\",\"wordCount\":409,\"inLanguage\":\"en-US\",\"image\":\"https://korets.net/writing/built-shipped-running-social.png\",\"mainEntityOfPage\":\"https://korets.net/writing/ai-build-vs-buy-line/\",\"author\":{\"@type\":\"Person\",\"name\":\"Yaroslav Korets\",\"url\":\"https://korets.net/cv/\",\"jobTitle\":\"AI-native operator\"},\"isPartOf\":{\"@type\":\"CreativeWorkSeries\",\"name\":\"Built. Shipped. Running.\",\"url\":\"https://korets.net/writing/built-shipped-running/\"}},{\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https://korets.net\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Writing\",\"item\":\"https://korets.net/writing/\"},{\"@type\":\"ListItem\",\"position\":3,\"name\":\"Built. Shipped. Running.\",\"item\":\"https://korets.net/writing/built-shipped-running/\"},{\"@type\":\"ListItem\",\"position\":4,\"name\":\"AI Changed the Build-vs.-Buy Line\",\"item\":\"https://korets.net/writing/ai-build-vs-buy-line/\"}]},{\"@type\":\"FAQPage\",\"mainEntity\":[{\"@type\":\"Question\",\"name\":\"Does self-hosted software eliminate software cost?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"No. It replaces some license cost with infrastructure, maintenance, security, backup, and recovery work.\"}},{\"@type\":\"Question\",\"name\":\"When is self-hosting worth considering?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"It is most useful when per-seat costs are high, data custody matters, the workflow is a competitive advantage, or existing products force the wrong process.\"}},{\"@type\":\"Question\",\"name\":\"What should most companies continue to buy?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Buy stable commodity capabilities when the product fits and ownership would not create strategic value. Do not rebuild software only because AI makes coding faster.\"}},{\"@type\":\"Question\",\"name\":\"What changed because of AI?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"AI reduced the time needed to write integrations, internal interfaces, documentation, and custom glue. That makes ownership practical for a larger set of narrow workflows.\"}}]}]}",
+  "title": "AI Changed the Build-vs.-Buy Line",
+  "eyebrow": "Field note 6 of 8 · Built. Shipped. Running.",
+  "lead": "Ownership can buy back margin and keep data in-house. But self-hosted does not mean free.",
+  "date": "July 13, 2026",
+  "readTime": "6 min read",
+  "receipt": "4 named migration paths · Git source of truth · one MCP gateway · tool-level cost logs",
+  "body": "<section><h2 id=\"section-1\">I replaced six SaaS products with systems I run</h2>\n                <p>I replaced Basecamp, Frame.io, DocuSign, Attio, GoHighLevel, and Calendly with software I operate myself.</p>\n                <div class=\"comparison-table\" role=\"region\" aria-label=\"SaaS migration paths\" tabindex=\"0\">\n                  <table>\n                    <thead><tr><th>Previous tool</th><th>Current system</th><th>Primary reason</th></tr></thead>\n                    <tbody>\n                      <tr><td>Frame.io</td><td>FreeFrame</td><td>Own the workflow and storage layer</td></tr>\n                      <tr><td>DocuSign</td><td>Documenso</td><td>Control the signing infrastructure</td></tr>\n                      <tr><td>Attio / GoHighLevel</td><td>Twenty CRM</td><td>One self-hosted customer record</td></tr>\n                      <tr><td>Calendly</td><td>Cal.com</td><td>Control scheduling and integrations</td></tr>\n                    </tbody>\n                  </table>\n                </div>\n                <p>Basecamp was replaced by a Markdown-native AI workspace with Git as the source of truth, an in-browser editor, and an AI coding agent for every teammate.</p>\n                </section><section><h2 id=\"section-2\">AI reduced the cost of custom glue</h2>\n                <p>Companies historically bought SaaS because custom software required too much engineering time. AI has reduced the cost of writing integrations, adapting interfaces, documenting systems, and maintaining small internal tools.</p>\n                <p>That does not mean every product should be rebuilt. It means the old build-vs.-buy calculation is stale for workflows that are expensive per seat, hold sensitive data, or force the company into a process that does not fit.</p>\n                <p>The decision should be made workflow by workflow, with operating cost included.</p>\n                </section><section><h2 id=\"section-3\">The license fee is only one line in the model</h2>\n                <p>Self-hosting moves work back inside the company. Someone must run Docker, reverse proxies, TLS, backups, monitoring, updates, and recovery. Integrations still fail. Storage still grows. Security still needs ownership.</p>\n                <p>For my internal operating system, one MCP gateway handles access, routes internal AI tools, and audit-logs every tool call for cost attribution. That control is valuable, but it also creates a system I am responsible for operating.</p>\n                <p>The honest comparison is total cost and strategic control, not subscription price versus zero.</p>\n                </section><section><h2 id=\"section-4\">Own the workflows that make the business different</h2>\n                <p>Buy commodity capabilities when a reliable product fits. Own the layer that contains your operating logic, your sensitive data, or your margin advantage.</p>\n                <p>For a data- and process-heavy company, that may be the system that assembles estimates, reconciles accounts, manages precedent, prepares a lender package, or dispatches field work. The model is replaceable. The workflow and its history are the asset.</p>\n                <blockquote>AI moved the build-vs.-buy line. The useful question is not “Can we build it?” It is “Which layer is worth owning?”</blockquote>\n                </section>",
+  "toc": [
+   {
+    "id": "section-1",
+    "label": "I replaced six SaaS products with systems I run"
+   },
+   {
+    "id": "section-2",
+    "label": "AI reduced the cost of custom glue"
+   },
+   {
+    "id": "section-3",
+    "label": "The license fee is only one line in the model"
+   },
+   {
+    "id": "section-4",
+    "label": "Own the workflows that make the business different"
+   }
+  ],
+  "faq": [
+   {
+    "q": "Does self-hosted software eliminate software cost?",
+    "a": "<p>No. It replaces some license cost with infrastructure, maintenance, security, backup, and recovery work.</p>"
+   },
+   {
+    "q": "When is self-hosting worth considering?",
+    "a": "<p>It is most useful when per-seat costs are high, data custody matters, the workflow is a competitive advantage, or existing products force the wrong process.</p>"
+   },
+   {
+    "q": "What should most companies continue to buy?",
+    "a": "<p>Buy stable commodity capabilities when the product fits and ownership would not create strategic value. Do not rebuild software only because AI makes coding faster.</p>"
+   },
+   {
+    "q": "What changed because of AI?",
+    "a": "<p>AI reduced the time needed to write integrations, internal interfaces, documentation, and custom glue. That makes ownership practical for a larger set of narrow workflows.</p>"
+   }
+  ],
+  "part": 6
+ },
+ {
+  "slug": "behind-the-watt-ai-with-receipts",
+  "metaTitle": "Behind the Watt: AI With Receipts",
+  "description": "Behind the Watt is an open evidence database that uses AI to extract claims from public records while preserving source-level provenance and human approval.",
+  "jsonld": "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"BlogPosting\",\"@id\":\"https://korets.net/writing/behind-the-watt-ai-with-receipts/#article\",\"headline\":\"Behind the Watt: How to Use AI Without Asking Anyone to Trust It\",\"description\":\"Behind the Watt is an open evidence database that uses AI to extract claims from public records while preserving source-level provenance and human approval.\",\"datePublished\":\"2026-07-13\",\"dateModified\":\"2026-07-14\",\"wordCount\":420,\"inLanguage\":\"en-US\",\"image\":\"https://korets.net/writing/built-shipped-running-social.png\",\"mainEntityOfPage\":\"https://korets.net/writing/behind-the-watt-ai-with-receipts/\",\"author\":{\"@type\":\"Person\",\"name\":\"Yaroslav Korets\",\"url\":\"https://korets.net/cv/\",\"jobTitle\":\"AI-native operator\"},\"isPartOf\":{\"@type\":\"CreativeWorkSeries\",\"name\":\"Built. Shipped. Running.\",\"url\":\"https://korets.net/writing/built-shipped-running/\"}},{\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https://korets.net\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Writing\",\"item\":\"https://korets.net/writing/\"},{\"@type\":\"ListItem\",\"position\":3,\"name\":\"Built. Shipped. Running.\",\"item\":\"https://korets.net/writing/built-shipped-running/\"},{\"@type\":\"ListItem\",\"position\":4,\"name\":\"Behind the Watt: AI With Receipts\",\"item\":\"https://korets.net/writing/behind-the-watt-ai-with-receipts/\"}]},{\"@type\":\"FAQPage\",\"mainEntity\":[{\"@type\":\"Question\",\"name\":\"What is Behind the Watt?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Behind the Watt is an open evidence database for behind-the-meter power at data centers. It separates reported projects from facilities that can be verified as operating.\"}},{\"@type\":\"Question\",\"name\":\"How much operating capacity is in the genesis dataset?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"As of July 13, 2026, the genesis dataset contains three verified operating facilities totaling 1.03 GW.\"}},{\"@type\":\"Question\",\"name\":\"How is AI used without making the model the source?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"AI extracts and cross-checks claims, but every published quote is tied to an archived source document and approved by a person.\"}},{\"@type\":\"Question\",\"name\":\"How can the data be accessed?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Behind the Watt publishes data under CC BY 4.0 through CSV, JSON, OpenAPI, and a read-only MCP interface.\"}}]}]}",
+  "title": "Behind the Watt: How to Use AI Without Asking Anyone to Trust It",
+  "eyebrow": "Field note 7 of 8 · Built. Shipped. Running.",
+  "lead": "A public inventory reports 143.3 GW of behind-the-meter gas projects for data centers. I started with a stricter question: what can I prove is operating?",
+  "date": "July 13, 2026",
+  "readTime": "7 min read",
+  "receipt": "3 facilities · 1.03 verified operating GW · 143.3 reported GW separate · source provenance",
+  "body": "<section><h2 id=\"section-1\">Reported capacity and operating capacity are different facts</h2>\n                <p>Behind the Watt is the open evidence database I built to track behind-the-meter power at data centers. Its genesis dataset begins with three verified operating facilities totaling 1.03 GW.</p>\n                <p>That is not a market total. It is the first set of facilities for which I can publish the receipts. A separate public inventory lists 143.3 GW of reported gas projects. I keep those numbers separate because announced, permitted, under construction, and operating are different states.</p>\n                <p>The database is a pet project, but the method is meant for any workflow where a claim has to survive contact with a source document.</p>\n                </section><section><h2 id=\"section-2\">AI extracts the claim, then the system tries to disprove it</h2>\n                <p>The system watches public registries, archives original documents, and uses AI to extract claims. It does not publish the extraction as truth.</p>\n                <ol>\n                  <li>The quote must be found in the source document.</li>\n                  <li>The number must be relocated on the page where it appears.</li>\n                  <li>A second model cross-checks the claim.</li>\n                  <li>A human approves publication.</li>\n                </ol>\n                <p>This reverses the usual trust request. The reader does not have to believe the model. The reader can inspect the document and repeat the check.</p>\n                </section><section><h2 id=\"section-3\">The most useful result came from aligning dates</h2>\n                <p>The sharpest result so far is a time-to-power value of minus seven months: one facility was operating before its air-permit application was filed.</p>\n                <p>The value is not an AI opinion. It is a relationship between dated source records. AI helped find and structure the claims, but the conclusion remains inspectable.</p>\n                <p>This is where AI becomes useful for finance, legal, analytics, and construction teams. The system can read volume, but the deliverable should expose the exact evidence behind a decision.</p>\n                </section><section><h2 id=\"section-4\">Open formats make the method testable</h2>\n                <p>The data is available under CC BY 4.0 as CSV, JSON, OpenAPI, and read-only MCP. The point is not only to publish a number. It is to make the evidence usable by people and machines.</p>\n                <p>Behind the Watt has no funnel behind it. I built it to test the method in public and to keep my own AI claims honest.</p>\n                <blockquote>Use AI for the volume. Make the source do the persuading.</blockquote>\n                <p><a href=\"https://behindthewatt.com\">Explore the open database at behindthewatt.com</a>.</p>\n                </section>",
+  "toc": [
+   {
+    "id": "section-1",
+    "label": "Reported capacity and operating capacity are different facts"
+   },
+   {
+    "id": "section-2",
+    "label": "AI extracts the claim, then the system tries to disprove it"
+   },
+   {
+    "id": "section-3",
+    "label": "The most useful result came from aligning dates"
+   },
+   {
+    "id": "section-4",
+    "label": "Open formats make the method testable"
+   }
+  ],
+  "faq": [
+   {
+    "q": "What is Behind the Watt?",
+    "a": "<p>Behind the Watt is an open evidence database for behind-the-meter power at data centers. It separates reported projects from facilities that can be verified as operating.</p>"
+   },
+   {
+    "q": "How much operating capacity is in the genesis dataset?",
+    "a": "<p>As of July 13, 2026, the genesis dataset contains three verified operating facilities totaling 1.03 GW.</p>"
+   },
+   {
+    "q": "How is AI used without making the model the source?",
+    "a": "<p>AI extracts and cross-checks claims, but every published quote is tied to an archived source document and approved by a person.</p>"
+   },
+   {
+    "q": "How can the data be accessed?",
+    "a": "<p>Behind the Watt publishes data under CC BY 4.0 through CSV, JSON, OpenAPI, and a read-only MCP interface.</p>"
+   }
+  ],
+  "part": 7
+ },
+ {
+  "slug": "ai-operating-principle",
+  "metaTitle": "The Operating Principle for AI Agents",
+  "description": "A production pattern for AI systems: let software handle persistence and volume, keep consequential decisions with people, and log every action.",
+  "jsonld": "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"BlogPosting\",\"@id\":\"https://korets.net/writing/ai-operating-principle/#article\",\"headline\":\"The Operating Principle: Persistence, Human Approval, Audit Logs\",\"description\":\"A production pattern for AI systems: let software handle persistence and volume, keep consequential decisions with people, and log every action.\",\"datePublished\":\"2026-07-13\",\"dateModified\":\"2026-07-14\",\"wordCount\":508,\"inLanguage\":\"en-US\",\"image\":\"https://korets.net/writing/built-shipped-running-social.png\",\"mainEntityOfPage\":\"https://korets.net/writing/ai-operating-principle/\",\"author\":{\"@type\":\"Person\",\"name\":\"Yaroslav Korets\",\"url\":\"https://korets.net/cv/\",\"jobTitle\":\"AI-native operator\"},\"isPartOf\":{\"@type\":\"CreativeWorkSeries\",\"name\":\"Built. Shipped. Running.\",\"url\":\"https://korets.net/writing/built-shipped-running/\"}},{\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https://korets.net\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Writing\",\"item\":\"https://korets.net/writing/\"},{\"@type\":\"ListItem\",\"position\":3,\"name\":\"Built. Shipped. Running.\",\"item\":\"https://korets.net/writing/built-shipped-running/\"},{\"@type\":\"ListItem\",\"position\":4,\"name\":\"The Operating Principle\",\"item\":\"https://korets.net/writing/ai-operating-principle/\"}]},{\"@type\":\"FAQPage\",\"mainEntity\":[{\"@type\":\"Question\",\"name\":\"What work should an AI agent handle first?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Start with recurring, high-volume work that follows explicit rules and produces a checkable output. Monitoring, extraction, comparison, drafting, and follow-up are common candidates.\"}},{\"@type\":\"Question\",\"name\":\"What should stay with a person?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Keep money, factual claims, promises, and irreversible actions behind a human approval gate until the system has earned a narrower operating scope.\"}},{\"@type\":\"Question\",\"name\":\"Why do employees resist AI transformation?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"A replacement can threaten roles, add a second workflow, and arrive without proof. A sidecar twin reduces that risk by running beside the current process and measuring itself against it.\"}},{\"@type\":\"Question\",\"name\":\"What happens in a one-week workflow audit?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"The audit maps inputs, handoffs, rework, approvals, failure modes, and cost for one process. The output is a narrow pilot candidate with a measurable baseline.\"}}]}]}",
+  "title": "The Operating Principle: Persistence, Human Approval, Audit Logs",
+  "eyebrow": "Field note 8 of 8 · Built. Shipped. Running.",
+  "lead": "Six production systems and one public pet project use the same pattern: AI does the persistence and volume, humans approve what matters, and everything is logged.",
+  "date": "July 13, 2026",
+  "readTime": "7 min read",
+  "receipt": "Explicit rules · human approval gates · audit logs · source evidence",
+  "body": "<section><h2 id=\"section-1\">Give AI the work people fail because they get tired</h2>\n                <p>Persistence and volume are good machine jobs. Monitoring accounts, checking documents, following up, reconciling records, and relocating source quotes are not always hard. They are easy to do inconsistently when the queue never ends.</p>\n                <p>Marco monitors senders and replies. Hunter watches ad accounts. Oscar composes analytics tools. InspectPilot structures inspection records. Behind the Watt checks public documents.</p>\n                <p>The systems are different, but each begins by assigning repeatable work to software rather than assigning judgment to a model.</p>\n                </section><section><h2 id=\"section-2\">Humans approve money, facts, promises, and irreversible actions</h2>\n                <p>A useful approval policy names the categories that require a person. In my systems, the common set is money, factual claims, promises to another party, and actions that are hard to reverse.</p>\n                <p>The gate is not a sign that the agent is unfinished. It is how the organization keeps authority aligned with accountability.</p>\n                <p>Over time, some narrow decisions may move inside explicit rules. But the system should earn that scope from a record of correct behavior, not receive it because a demo looked confident.</p>\n                </section><section><h2 id=\"section-3\">Everything is logged because every system will be wrong</h2>\n                <p>The important question is not whether an AI system will make an error. It will. The question is whether the company can detect the error, reconstruct the decision, correct the rule, and measure the cost.</p>\n                <p>An audit log should preserve inputs, model output, tool calls, approval state, final action, and outcome. That record turns incidents into operating knowledge.</p>\n                <p>It also makes improvement possible. Without a log, the team debates anecdotes. With a log, it can see which rule failed and how often.</p>\n                </section><section><h2 id=\"section-4\">Adoption works better when the new process starts as a twin</h2>\n                <p>Employees resist transformation programs for rational reasons. They already own a working process. A replacement threatens their role, adds training, and often asks them to carry two systems at once.</p>\n                <p>Build an AI-first twin of one core workflow as a sidecar. Let it prepare the same report, estimate, packet, or decision in parallel. Measure time, errors, review effort, and cost against the existing process. Keep a person at the gate.</p>\n                <p>The twin earns trust before it asks for adoption. When it performs, the team can decide which parts become the main line.</p>\n                </section><section><h2 id=\"section-5\">Start with one week of workflow evidence</h2>\n                <p>If a process runs on spreadsheets, documents, phone calls, and chasing people, it may be a candidate. But the first step is not buying an agent.</p>\n                <p>Map one week of the real workflow: inputs, handoffs, rework, approval points, failure modes, and cost. Choose one measurable sidecar. Then build only enough system to prove whether the new path is better.</p>\n                <blockquote>AI does the persistence and the volume. Humans approve what matters. Everything is logged.</blockquote>\n                </section>",
+  "toc": [
+   {
+    "id": "section-1",
+    "label": "Give AI the work people fail because they get tired"
+   },
+   {
+    "id": "section-2",
+    "label": "Humans approve money, facts, promises, and irreversible actions"
+   },
+   {
+    "id": "section-3",
+    "label": "Everything is logged because every system will be wrong"
+   },
+   {
+    "id": "section-4",
+    "label": "Adoption works better when the new process starts as a twin"
+   },
+   {
+    "id": "section-5",
+    "label": "Start with one week of workflow evidence"
+   }
+  ],
+  "faq": [
+   {
+    "q": "What work should an AI agent handle first?",
+    "a": "<p>Start with recurring, high-volume work that follows explicit rules and produces a checkable output. Monitoring, extraction, comparison, drafting, and follow-up are common candidates.</p>"
+   },
+   {
+    "q": "What should stay with a person?",
+    "a": "<p>Keep money, factual claims, promises, and irreversible actions behind a human approval gate until the system has earned a narrower operating scope.</p>"
+   },
+   {
+    "q": "Why do employees resist AI transformation?",
+    "a": "<p>A replacement can threaten roles, add a second workflow, and arrive without proof. A sidecar twin reduces that risk by running beside the current process and measuring itself against it.</p>"
+   },
+   {
+    "q": "What happens in a one-week workflow audit?",
+    "a": "<p>The audit maps inputs, handoffs, rework, approvals, failure modes, and cost for one process. The output is a narrow pilot candidate with a measurable baseline.</p>"
+   }
+  ],
+  "part": 8
+ }
+]

@@ -1,0 +1,135 @@
+---
+// Generated from the approved design canvas (Story.dc.html); edit freely.
+const { state = {}, props: p = {} } = Astro.props;
+class DCLogic { constructor(props) { this.props = props || {}; this.state = {}; } setState() {} componentDidMount() {} }
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { s: 0, manual: false };
+  }
+  componentDidMount() {
+    this.timer = setInterval(() => {
+      if ((this.props.autoplay ?? true) && !this.state.manual) {
+        this.setState({ s: (this.state.s + 1) % 6 });
+      }
+    }, 4200);
+  }
+  componentWillUnmount() {
+    clearInterval(this.timer);
+  }
+  renderVals() {
+    const s = this.state.s;
+    const data = [
+      { when: 'Early', short: 'Journalism', title: 'Education & journalism', body: 'Completed two years of Computer Science at university, then switched to Public Relations and earned a bachelor’s degree. Worked as a journalist and political editor, then moved into marketing.', tags: ['Computer Science', 'B.A. Public Relations', 'Editorial'], photo: '', img: '/img/story-early.jpg', pos: 'center 40%' },
+      { when: '2008', short: 'Ebola Communications', title: 'Ebola Communications', body: 'Founded a viral marketing agency and grew it into one of the top 3 digital agencies in Ukraine. Sold it to an advertising holding: first exit, then stayed on under contract.', tags: ['Viral marketing', 'Top 3 in Ukraine', 'First exit'], photo: '', img: '/img/story-2008-stage.jpg', pos: 'center 40%' },
+      { when: '2013', short: 'Burning Man', title: 'Burning Man & community', body: 'Founded the Ukrainian Burners Community and an NGO in Ukraine. Now President of Ukrainian Burners Inc., a 501(c)(3). Runs Kurenivka Camp, founded the Blue Bull art car, and DJs.', tags: ['Kurenivka Camp', 'Blue Bull', '501(c)(3)'], photo: '', img: '/img/story-2013-playa.jpg', pos: 'center 45%' },
+      { when: '2015+', short: 'Reinvention', title: 'Exploration & reinvention', body: 'Startups, consulting and C-level IT roles. Real estate development as VP at a construction holding. Events.', tags: ['C-level IT', 'Construction', 'Events'], photo: '', img: '/img/story-2015-build.jpg', pos: '45% center' },
+      { when: '2023', short: 'KPI Creatives', title: 'KPI Creatives', body: 'Co-founded a video production and content marketing agency and grew it into a profitable business serving US clients.', tags: ['Video', 'Content', 'Profitable'], photo: '', img: '/img/story-2023-playa.jpg', pos: 'center 55%' },
+      { when: '2026', short: 'Going AI-native', title: 'Going AI-native', body: 'Closed KPI Creatives, a profitable agency, to focus fully on an AI-native business. Founded Growth Control, while staying CTO & Co-Founder of Stretch Tent.', tags: ['AI-native', 'Growth Control', 'Founder'], photo: '', img: '/img/yaro-portrait.jpg', pos: 'center 30%' }
+    ];
+    const stops = data.map((d, i) => {
+      const active = i === s;
+      const passed = i <= s;
+      return {
+        when: d.when,
+        short: d.short,
+        current: active ? 'step' : 'false',
+        color: active ? '#FFFFFF' : (passed ? '#C9C3DE' : '#8B84A8'),
+        ring: passed ? '#A78BFA' : 'rgba(255,255,255,.2)',
+        fill: active ? '#A78BFA' : (passed ? 'rgba(167,139,250,.35)' : '#0B0A12'),
+        glow: active ? '0 0 0 6px rgba(167,139,250,.18), 0 0 20px rgba(167,139,250,.6)' : 'none',
+        pick: () => this.setState({ s: i, manual: true })
+      };
+    });
+    const d = data[s];
+    return {
+      accent: this.props.accent ?? '#6D4AF6',
+      stops: stops,
+      fillW: 'calc((100% - 16px) * ' + (s / 5) + ')',
+      current: [{ num: '0' + (s + 1), when: d.when, title: d.title, body: d.body, tags: d.tags, photo: d.photo, bg: d.img ? 'url(' + d.img + ') ' + (d.pos || 'center') + ' / cover no-repeat' : 'repeating-linear-gradient(135deg, rgba(167,139,250,.06) 0 12px, rgba(167,139,250,.02) 12px 24px)' }]
+    };
+  }
+}
+const c = new Component(p);
+Object.assign(c.state, state);
+const v = c.renderVals();
+---
+<div class="st" style={`--accent: ${v.accent}; position: relative; min-height: 900px; background: #0B0A12; color: #F4F2FF; font-family: 'Geist Variable', Inter, system-ui, sans-serif; overflow: hidden; border-top: 1px solid rgba(255,255,255,.06)`}>
+  <div style="width: 100%; max-width: 1280px; margin: 0 auto; padding: 96px 32px; display: flex; flex-direction: column; gap: 56px">
+
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 24px">
+      <div style="display: flex; flex-direction: column; gap: 20px">
+        <span style="font-family: 'Geist Mono Variable', ui-monospace, monospace; font-size: 12px; letter-spacing: .12em; color: #A78BFA">STORY · HOW IT STARTED</span>
+        <h2 style="margin: 0; font-size: clamp(40px, 5vw, 64px); line-height: 1.02; letter-spacing: -0.04em; font-weight: 600">The foundation.</h2>
+      </div>
+      <p style="margin: 0; font-size: 17px; line-height: 1.6; color: #A9A3C2; max-width: 420px">From journalism to agencies, construction and Burning Man: each chapter added a piece of how I build systems today.</p>
+    </div>
+
+    <div style="overflow-x: auto; padding: 8px 4px 4px">
+      <div style="position: relative; min-width: 760px; padding-top: 4px">
+        <div aria-hidden="true" style="position: absolute; left: 8px; right: 8px; top: 13px; height: 2px; border-radius: 2px; background: rgba(255,255,255,.08)"></div>
+        <div aria-hidden="true" class="st-fill" style={`position: absolute; left: 8px; top: 13px; height: 2px; border-radius: 2px; width: ${v.fillW}; background: linear-gradient(90deg, #C4B5FD, var(--accent)); box-shadow: 0 0 12px var(--accent)`}></div>
+        <ol style="list-style: none; margin: 0; padding: 0; position: relative; display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 8px">
+          {(v.stops || []).map((stop) => (<Fragment>
+            <li>
+              <button class="st-stop" type="button" data-on-click="stop.pick" aria-current={stop.current} style={`width: 100%; background: transparent; border: 0; cursor: pointer; font: inherit; color: ${stop.color}; text-align: left; padding: 0 0 8px; display: flex; flex-direction: column; gap: 16px; min-height: 44px`}>
+                <span class="st-dot" style={`width: 20px; height: 20px; border-radius: 50%; border: 2px solid ${stop.ring}; background: ${stop.fill}; box-shadow: ${stop.glow}`}></span>
+                <span style="display: flex; flex-direction: column; gap: 4px">
+                  <span style="font-family: 'Geist Mono Variable', ui-monospace, monospace; font-size: 12px; letter-spacing: .08em">{stop.when}</span>
+                  <span style="font-size: 15px; font-weight: 500">{stop.short}</span>
+                </span>
+              </button>
+            </li>
+          </Fragment>))}
+        </ol>
+      </div>
+    </div>
+
+    <div style="position: relative; border-radius: 28px; background: rgba(20,17,36,.85); border: 1px solid rgba(167,139,250,.2); overflow: hidden; display: flex; flex-wrap: wrap; min-height: 380px">
+      <div aria-hidden="true" style="position: absolute; left: -10%; top: -40%; width: 60%; height: 140%; border-radius: 50%; background: radial-gradient(circle, color-mix(in srgb, var(--accent) 28%, transparent) 0%, transparent 65%); filter: blur(30px)"></div>
+      {(v.current || []).map((c) => (<Fragment>
+        <div style="position: relative; flex: 1 1 520px; min-width: 0; padding: 44px; display: flex; flex-wrap: wrap; gap: 40px; align-items: flex-start">
+          <div class="st-in" style="flex: 0 1 260px; min-width: 0; display: flex; flex-direction: column; gap: 10px">
+            <span style="font-family: 'Geist Mono Variable', ui-monospace, monospace; font-size: 12px; letter-spacing: .1em; color: #8B84A8">CHAPTER {c.num} / 06</span>
+            <span style="font-size: 56px; line-height: 1; letter-spacing: -0.04em; font-weight: 600; background: linear-gradient(100deg, #C4B5FD, #F3E8FF 50%, #8B5CF6); -webkit-background-clip: text; background-clip: text; color: transparent">{c.when}</span>
+          </div>
+          <div class="st-in2" style="flex: 1 1 320px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
+            <h3 style="margin: 0; font-size: 32px; line-height: 1.1; letter-spacing: -0.02em; font-weight: 600">{c.title}</h3>
+            <p style="margin: 0; font-size: 17px; line-height: 1.65; color: #C9C3DE">{c.body}</p>
+            <div style="display: flex; flex-wrap: wrap; gap: 8px">
+              {(c.tags || []).map((t) => (<Fragment>
+                <span style="font-size: 12px; padding: 6px 10px; border-radius: 999px; border: 1px solid rgba(255,255,255,.14); color: #C9C3DE">{t}</span>
+              </Fragment>))}
+            </div>
+          </div>
+        </div>
+        <div style={`position: relative; flex: 0 1 320px; min-height: 260px; background: ${c.bg}; border-left: 1px solid rgba(255,255,255,.06); display: flex; align-items: center; justify-content: center; padding: 24px`}>
+          <span class="st-in" style="font-family: 'Geist Mono Variable', ui-monospace, monospace; font-size: 12px; letter-spacing: .08em; color: #8B84A8; text-align: center; white-space: pre-line">{c.photo}</span>
+        </div>
+      </Fragment>))}
+    </div>
+
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 16px">
+      <span style="font-family: 'Geist Mono Variable', ui-monospace, monospace; font-size: 12px; letter-spacing: .08em; color: #8B84A8">NOTHING MEANINGFUL IS BUILT ALONE. <span style="color: #FCD34D">(UNDER REVIEW IN THE AGE OF AI)</span></span>
+      <a href="/cv/" style="display: inline-flex; align-items: center; gap: 10px; font-size: 15px; font-weight: 500; color: #EDE9FE; text-decoration: none; min-height: 44px">
+        Full CV
+        <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m13 5 7 7-7 7"></path></svg>
+      </a>
+    </div>
+  </div>
+</div>
+
+<style is:global>
+.st *{box-sizing:border-box}
+.st-stop{transition:color .3s ease}
+.st-stop:hover{color:#FFFFFF}
+.st-stop:focus-visible{outline:2px solid #A78BFA;outline-offset:4px;border-radius:8px}
+.st-dot{transition:all .4s ease}
+.st-fill{transition:width .9s cubic-bezier(.2,.7,.2,1)}
+.st-in{animation:st-in .7s cubic-bezier(.2,.7,.2,1) both}
+.st-in2{animation:st-in .7s cubic-bezier(.2,.7,.2,1) .12s both}
+.st-pulse{animation:st-pulse 2s ease-out infinite}
+@keyframes st-in{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@keyframes st-pulse{0%{box-shadow:0 0 0 0 rgba(167,139,250,.6)}100%{box-shadow:0 0 0 14px rgba(167,139,250,0)}}
+@media (prefers-reduced-motion:reduce){.st *{animation:none!important;transition:none!important}}
+</style>

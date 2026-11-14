@@ -1,0 +1,9 @@
+---
+import Base from '../../layouts/Base.astro';
+import Writing from '../../components/Writing.astro';
+import Stateful from '../../components/Stateful.astro';
+const filters = ['All', 'Agents', 'Data', 'Principles'];
+---
+<Base title="Writing — AI systems in production · Yaro Korets" description="Field notes on AI systems after the demo: source data, operational workflows, approval gates, audit logs and the cost of delivery." path="/writing/" current="Writing">
+  <Stateful component={Writing} states={filters.map((filter) => ({ filter }))} />
+</Base>

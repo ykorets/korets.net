@@ -1,0 +1,67 @@
+---
+// Generated from the approved design canvas (Contact.dc.html); edit freely.
+const { state = {}, props: p = {} } = Astro.props;
+class DCLogic { constructor(props) { this.props = props || {}; this.state = {}; } setState() {} componentDidMount() {} }
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { sent: false };
+  }
+  renderVals() {
+    const motion = this.props.motion ?? true;
+    return {
+      accent: this.props.accent ?? '#6D4AF6',
+      rootClass: motion ? 'ct motion' : 'ct',
+      sent: this.state.sent,
+      notSent: !this.state.sent,
+      subscribe: (e) => { if (e && e.preventDefault) e.preventDefault(); this.setState({ sent: true }); }
+    };
+  }
+}
+const c = new Component(p);
+Object.assign(c.state, state);
+const v = c.renderVals();
+---
+<div class={v.rootClass} style={`--accent: ${v.accent}; position: relative; background: #0B0A12; color: #F4F2FF; font-family: 'Geist Variable', Inter, system-ui, sans-serif; overflow: hidden; border-top: 1px solid rgba(255,255,255,.06); display: flex; flex-direction: column`}>
+
+  <section style="position: relative; flex: 1; display: flex; align-items: center; justify-content: center; padding: 120px 32px 96px; text-align: center">
+    <div class="ct-breathe" aria-hidden="true" style="position: absolute; left: 50%; top: 50%; width: 760px; height: 760px; max-width: 120vw; border-radius: 50%; transform: translate(-50%,-50%); background: radial-gradient(circle, color-mix(in srgb, var(--accent) 38%, transparent) 0%, transparent 62%); filter: blur(40px)"></div>
+    <div class="ct-orb" aria-hidden="true" style="position: absolute; left: 50%; top: 50%; width: 560px; height: 560px; border-radius: 50%; transform: translate(-50%,-50%); border: 1px dashed rgba(167,139,250,.22)">
+      <span style="position: absolute; left: 50%; top: -5px; width: 10px; height: 10px; margin-left: -5px; border-radius: 50%; background: #EDE9FE; box-shadow: 0 0 16px #A78BFA"></span>
+    </div>
+    <div class="ct-orb2" aria-hidden="true" style="position: absolute; left: 50%; top: 50%; width: 760px; height: 760px; border-radius: 50%; transform: translate(-50%,-50%); border: 1px solid rgba(167,139,250,.1)">
+      <span style="position: absolute; left: 50%; bottom: -4px; width: 8px; height: 8px; margin-left: -4px; border-radius: 50%; background: #A78BFA; box-shadow: 0 0 12px #A78BFA"></span>
+    </div>
+
+    <div style="position: relative; max-width: 760px; display: flex; flex-direction: column; align-items: center; gap: 28px">
+      <span style="font-family: 'Geist Mono Variable', ui-monospace, monospace; font-size: 12px; letter-spacing: .12em; color: #A78BFA">LET'S TALK</span>
+      <h2 style="margin: 0; font-size: clamp(44px, 6.5vw, 88px); line-height: .98; letter-spacing: -0.045em; font-weight: 600">Find the right<br><span style="background: linear-gradient(100deg, #A78BFA, #F3E8FF 45%, #8B5CF6); -webkit-background-clip: text; background-clip: text; color: transparent">starting point.</span></h2>
+      <p style="margin: 0; font-size: 18px; line-height: 1.6; color: #A9A3C2; max-width: 560px">Bring a process you want to improve. We'll cover the business impact, your existing tools and a first step.</p>
+      <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 14px">
+        <a class="ct-cta" href="#book" style="color: #FFFFFF; text-decoration: none; background: var(--accent); padding: 18px 30px; border-radius: 999px; font-size: 17px; font-weight: 500; min-height: 56px; display: inline-flex; align-items: center; gap: 10px">
+          Discuss your operation
+          <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m13 5 7 7-7 7"></path></svg>
+        </a>
+        <a class="ct-ghost" href="https://growthcontrol.app" style="color: #E4E0F5; text-decoration: none; border: 1px solid rgba(255,255,255,.18); padding: 18px 30px; border-radius: 999px; font-size: 17px; font-weight: 500; min-height: 56px; display: inline-flex; align-items: center">Explore Growth Control</a>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<style is:global>
+.ct *{box-sizing:border-box}
+.ct-cta{transition:transform .25s ease,box-shadow .25s ease}
+.ct-cta:hover{color:#fff;transform:translateY(-3px) scale(1.02);box-shadow:0 16px 50px color-mix(in srgb,var(--accent) 60%,transparent)}
+.ct-ghost:hover{color:#fff;border-color:rgba(255,255,255,.4)}
+.ct-soc{transition:color .25s ease,border-color .25s ease,background .25s ease}
+.ct-soc:hover{color:#FFFFFF;border-color:rgba(167,139,250,.6);background:rgba(124,92,250,.15)}
+.ct-foot a:hover{color:#FFFFFF}
+.ct-input:focus{outline:2px solid #A78BFA;outline-offset:2px}
+.motion .ct-orb{animation:ct-orb 14s linear infinite}
+.motion .ct-orb2{animation:ct-orb 20s linear reverse infinite}
+.motion .ct-breathe{animation:ct-breathe 6s ease-in-out infinite}
+@keyframes ct-orb{to{transform:translate(-50%,-50%) rotate(360deg)}}
+@keyframes ct-breathe{0%,100%{opacity:.55;transform:translate(-50%,-50%) scale(1)}50%{opacity:.85;transform:translate(-50%,-50%) scale(1.08)}}
+@media (prefers-reduced-motion:reduce){.motion *{animation:none!important}}
+</style>

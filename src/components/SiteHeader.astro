@@ -1,0 +1,88 @@
+---
+import { SOCIAL } from '../data/site';
+interface Props { current?: string }
+const { current = '' } = Astro.props;
+const links = [
+  { label: 'Work with me', href: '/#work' },
+  { label: 'Growth Control', href: '/#businesses' },
+  { label: 'AI Projects', href: '/#projects' },
+  { label: 'Writing', href: '/writing/' },
+  { label: 'Story', href: '/#story' },
+  { label: 'CV', href: '/cv/' },
+];
+---
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="sh" data-header>
+  <div class="sh-inner">
+    <a class="sh-logo" href="/" aria-label="Yaro Korets, home">YK<span>.</span></a>
+    <nav class="sh-nav" aria-label="Main">
+      {links.map((l) => <a href={l.href} aria-current={current === l.label ? 'page' : undefined}>{l.label}</a>)}
+      <a class="sh-cta" href="/#book">Book a Call</a>
+    </nav>
+    <button class="sh-burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="sh-menu" data-burger>
+      <span></span><span></span>
+    </button>
+  </div>
+  <div class="sh-menu" id="sh-menu" hidden data-menu>
+    <nav aria-label="Main mobile">
+      {links.map((l, i) => (
+        <a class="sh-item" href={l.href} style={`transition-delay: ${0.06 + i * 0.05}s`}>
+          <span>{l.label}</span><span class="sh-num">0{i + 1}</span>
+        </a>
+      ))}
+    </nav>
+    <a class="sh-menu-cta" href="/#book">Book a call</a>
+    <div class="sh-social">
+      <a href={SOCIAL.linkedin}>LinkedIn</a><a href={SOCIAL.instagram}>Instagram</a><a href={SOCIAL.facebook}>Facebook</a><a href={SOCIAL.x}>X</a><a href={SOCIAL.email}>Email</a>
+    </div>
+  </div>
+</header>
+
+<script>
+  const header = document.querySelector<HTMLElement>('[data-header]')!;
+  const burger = header.querySelector<HTMLButtonElement>('[data-burger]')!;
+  const menu = header.querySelector<HTMLElement>('[data-menu]')!;
+  const setOpen = (open: boolean) => {
+    burger.setAttribute('aria-expanded', String(open));
+    burger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    header.classList.toggle('is-open', open);
+    document.documentElement.style.overflow = open ? 'hidden' : '';
+    if (open) { menu.hidden = false; requestAnimationFrame(() => menu.classList.add('is-shown')); }
+    else { menu.classList.remove('is-shown'); window.setTimeout(() => { if (!header.classList.contains('is-open')) menu.hidden = true; }, 350); }
+  };
+  burger.addEventListener('click', () => setOpen(!header.classList.contains('is-open')));
+  menu.addEventListener('click', (e) => { if ((e.target as Element).closest('a')) setOpen(false); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && header.classList.contains('is-open')) { setOpen(false); burger.focus(); } });
+  const onScroll = () => header.classList.toggle('is-scrolled', window.scrollY > 24);
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+</script>
+
+<style is:global>
+.sh{position:sticky;top:0;z-index:50;transition:background .3s ease,border-color .3s ease,backdrop-filter .3s ease;border-bottom:1px solid transparent}
+.sh.is-scrolled{background:rgba(11,10,18,.72);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom-color:rgba(255,255,255,.06)}
+.sh-inner{max-width:1280px;margin:0 auto;padding:18px 32px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.sh-logo{font-size:22px;font-weight:700;letter-spacing:-.02em;color:#F4F2FF;text-decoration:none}
+.sh-logo span{color:#A78BFA}
+.sh-nav{display:flex;align-items:center;gap:28px;font-size:14px}
+.sh-nav a{color:#A9A3C2;text-decoration:none;transition:color .2s ease}
+.sh-nav a:hover,.sh-nav a[aria-current=page]{color:#fff}
+.sh-nav .sh-cta{color:#fff;background:var(--accent);padding:12px 18px;border-radius:999px;font-weight:500;min-height:44px;display:inline-flex;align-items:center;transition:transform .25s ease,box-shadow .25s ease}
+.sh-nav .sh-cta:hover{transform:translateY(-2px);box-shadow:0 10px 30px color-mix(in srgb,var(--accent) 55%,transparent)}
+.sh-burger{display:none;width:44px;height:44px;border-radius:999px;border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.04);cursor:pointer;flex-direction:column;align-items:center;justify-content:center;gap:5px;padding:0;position:relative;z-index:2}
+.sh-burger span{display:block;width:16px;height:1.5px;background:#F4F2FF;transition:transform .35s ease}
+.sh.is-open .sh-burger span:first-child{transform:translateY(3.25px) rotate(45deg)}
+.sh.is-open .sh-burger span:last-child{transform:translateY(-3.25px) rotate(-45deg)}
+.sh-menu{position:fixed;inset:0;z-index:1;background:rgba(11,10,18,.97);backdrop-filter:blur(16px);padding:110px 22px 34px;display:flex;flex-direction:column;opacity:0;transform:translateY(-12px);transition:opacity .35s ease,transform .45s cubic-bezier(.2,.7,.2,1)}
+.sh-menu[hidden]{display:none}
+.sh-menu.is-shown{opacity:1;transform:none}
+.sh-menu nav{display:flex;flex-direction:column}
+.sh-item{display:flex;justify-content:space-between;align-items:baseline;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.07);color:#F4F2FF;text-decoration:none;font-size:30px;font-weight:600;letter-spacing:-.03em;opacity:0;transform:translateY(14px);transition:opacity .5s ease,transform .5s cubic-bezier(.2,.7,.2,1)}
+.sh-menu.is-shown .sh-item{opacity:1;transform:none}
+.sh-num{font-family:'Geist Mono Variable',ui-monospace,monospace;font-size:11px;color:#8B84A8;font-weight:400;letter-spacing:0}
+.sh-menu-cta{margin-top:auto;min-height:54px;border-radius:999px;background:var(--accent);color:#fff;font-size:16px;font-weight:500;display:flex;align-items:center;justify-content:center;text-decoration:none}
+.sh-social{display:flex;justify-content:center;flex-wrap:wrap;gap:18px;margin-top:18px;font-size:13px}
+.sh-social a{color:#A9A3C2;text-decoration:none}
+@media (max-width:1023px){.sh-nav{display:none}.sh-burger{display:flex}.sh-inner{padding:14px 20px}}
+@media (prefers-reduced-motion:reduce){.sh *,.sh-menu{transition:none!important}}
+</style>

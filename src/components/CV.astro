@@ -1,0 +1,176 @@
+---
+// Generated from the approved design canvas (CV.dc.html); edit freely.
+const { state = {}, props: p = {} } = Astro.props;
+class DCLogic { constructor(props) { this.props = props || {}; this.state = {}; } setState() {} componentDidMount() {} }
+class Component extends DCLogic {
+  renderVals() {
+    const jobsData = [
+      ['Oct 2026 – Present', 'Founder — Growth Control', 'Building and implementing a product that connects advertising, customer inquiries, CRM, calls, quotes and follow-up, run by a team of AI agents.', true],
+      ['Jun 2018 – Present', 'CTO & Co-Founder — Stretch Tent', 'Tent rentals and sales in Southern California. The office runs on AI agents; Growth Control was built and tested here.', true],
+      ['Nov 2023 – Oct 2026', 'Co-Founder & CEO — KPI Creatives', 'Co-founded and ran a profitable video production and content marketing agency. Closed it to focus on an AI-native business.', false],
+      ['Nov 2025 – Jul 2026', 'Co-Founder — ADUscale', 'CEO from January to July 2026. Built the product, tested demand and product–market fit, and decided not to pursue a full launch.', false],
+      ['2023 – 2024', 'COO — Govital (IT holding)', 'Chief Operating Officer of a 400+ person IT holding with multi-million ARR; owned company-wide operations across the portfolio.', false],
+      ['2021 – 2023', 'VP, Real Estate Property Management', 'Ran the property-management company inside a real-estate developer holding: operations, budgets and capex decisions.', false],
+      ['2015 – 2021', 'Independent ventures & exploration', 'Startups, events and consulting across industries between the agency exit and the next operating roles.', false],
+      ['2008 – 2015', 'Founder & CEO — Ebola Communications', 'Built a viral marketing agency into one of the top 3 digital agencies in Ukraine and sold it to an advertising holding. Led the merged ~100-person company with full P&L.', false],
+      ['2004 – 2008', 'Early career — communications & editorial', 'Journalist and political editor; built a press office from scratch and ran editorial teams.', false]
+    ];
+    const jobs = jobsData.map((j, i) => ({
+      when: j[0], role: j[1], body: j[2],
+      ring: j[3] ? '#A78BFA' : 'rgba(255,255,255,.25)',
+      fill: j[3] ? 'rgba(167,139,250,.35)' : '#0B0A12',
+      delay: (i * 0.07) + 's'
+    }));
+    const systems = [
+      ['Growth Control', 'Marketing and sales system run by nine AI agents'],
+      ['Internal AI operating system', 'Self-hosted, Markdown-native workspace that replaced Basecamp'],
+      ['Hunter', 'Always-on PPC agent with human approval on every change'],
+      ['Oscar', 'Self-hosted YouTube operations agent'],
+      ['InspectPilot', 'Contractor compliance engine on ~11M LA inspection records'],
+      ['DirectorMode.AI', 'Pre-publish video review against brand and performance rules'],
+      ['SaaS → self-hosted', 'Frame.io, DocuSign, Calendly and CRM moved onto own infrastructure']
+    ].map((s) => ({ name: s[0], what: s[1] }));
+    return {
+      accent: this.props.accent ?? '#6D4AF6',
+      jobs: jobs,
+      systems: systems,
+      stackGroups: [
+        ['Websites & code', ['Astro', 'TypeScript', 'JavaScript', 'Node', 'Python · FastAPI · Celery', 'GitHub + Actions', 'Gitea', 'code-server']],
+        ['Cloud & edge', ['Cloudflare Workers', 'Cloudflare Pages', 'D1 · KV · R2 · Hyperdrive', 'Zero Trust Access + biometrics', 'Secrets Store', 'Google Cloud', 'Vultr']],
+        ['Own server', ['Coolify', 'Docker', 'Traefik', 'PostgreSQL', 'Redis']],
+        ['Self-hosted apps', ['Twenty CRM', 'Cal.com', 'Documenso', 'FreeFrame', 'n8n', 'Mail dispatcher']],
+        ['AI layer', ['Claude', 'Claude Code', 'Codex', 'OpenAI', 'Gemini', 'Grok', 'Groq', 'Perplexity', 'Browserbase', 'MCP gateway', 'Wispr Flow']],
+         ['AI media', ['ElevenLabs', 'Higgsfield', 'Kling']],
+        ['Voice & phone', ['Telnyx', 'Vapi', 'Quo']],
+        ['Marketing & data', ['Google Ads', 'Microsoft Ads', 'Meta', 'YouTube API', 'GA4', 'Search Console', 'Yelp', 'LinkedIn', 'Apify']],
+        ['3D design', ['Blender']],
+        ['Web motion', ['Anime.js', 'GSAP · ScrollTrigger', 'Lenis', 'View Transitions']],
+        ['Work & messaging', ['Google Workspace', 'Telegram bots', 'Figma']],
+        ['Payments & banking', ['Stripe', 'PayPal', 'Mercury']]
+      ].map((g) => ({ name: g[0], items: g[1] }))
+    };
+  }
+}
+const c = new Component(p);
+Object.assign(c.state, state);
+const v = c.renderVals();
+---
+<div class="cv" style={`--accent: ${v.accent}; position: relative; background: #0B0A12; color: #F4F2FF; font-family: 'Geist Variable', Inter, system-ui, sans-serif; overflow: hidden`}>
+
+  <section style="position: relative; width: 100%; max-width: 1280px; margin: 0 auto; padding: 48px 32px 56px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 32px">
+    <div aria-hidden="true" style="position: absolute; right: -8%; top: -50%; width: 55%; height: 170%; border-radius: 50%; background: radial-gradient(circle, color-mix(in srgb, var(--accent) 24%, transparent) 0%, transparent 62%); filter: blur(30px); pointer-events: none"></div>
+    <div style="position: relative; display: flex; flex-wrap: wrap; align-items: center; gap: 36px; max-width: 980px">
+    <img src="/img/yaro-portrait.jpg" alt="Yaro Korets" width="168" height="168" style="flex: 0 0 168px; width: 168px; height: 168px; border-radius: 32px; object-fit: cover; border: 1px solid rgba(167,139,250,.35); box-shadow: 0 20px 60px color-mix(in srgb, var(--accent) 35%, transparent)">
+    <div style="position: relative; flex: 1 1 480px; min-width: 0; display: flex; flex-direction: column; gap: 16px; max-width: 760px">
+      <span style="font-family: 'Geist Mono Variable', ui-monospace, monospace; font-size: 12px; letter-spacing: .12em; color: #A78BFA">CV · FOUNDER &amp; OPERATOR · LOS ANGELES</span>
+      <h1 style="margin: 0; font-size: clamp(48px, 7vw, 92px); line-height: .95; letter-spacing: -0.05em; font-weight: 600">Yaro Korets</h1>
+      <p style="margin: 0; font-size: 20px; line-height: 1.5; color: #C9C3DE">AI Implementation Engineer. Founder of Growth Control, CTO &amp; Co-Founder of Stretch Tent. Twenty years as a founder and operator across marketing, sales, finance and operations.</p>
+    </div>
+    </div>
+    <div style="position: relative; display: flex; flex-wrap: wrap; gap: 12px">
+      <a class="cv-ghost" href="/yaroslav-korets-cv.pdf" style="color: #E4E0F5; text-decoration: none; border: 1px solid rgba(255,255,255,.18); padding: 0 20px; border-radius: 999px; font-size: 15px; font-weight: 500; min-height: 48px; display: inline-flex; align-items: center; gap: 8px">
+        <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11"></path><path d="m7 10 5 5 5-5"></path><path d="M5 20h14"></path></svg>
+        Download PDF
+      </a>
+      <a class="cv-cta" href="/#book" style="color: #FFFFFF; text-decoration: none; background: var(--accent); padding: 0 22px; border-radius: 999px; font-size: 15px; font-weight: 500; min-height: 48px; display: inline-flex; align-items: center">Book a call</a>
+    </div>
+  </section>
+
+  <section style="width: 100%; max-width: 1280px; margin: 0 auto; padding: 0 32px 64px">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px">
+      <div class="cv-in" style="animation-delay: 0s; border-radius: 20px; background: rgba(20,17,36,.85); border: 1px solid rgba(255,255,255,.08); padding: 22px; display: flex; flex-direction: column; gap: 6px"><span style="font-size: 44px; line-height: 1; letter-spacing: -0.04em; font-weight: 600; background: linear-gradient(100deg, #C4B5FD, #F3E8FF); -webkit-background-clip: text; background-clip: text; color: transparent">20</span><span style="font-size: 14px; color: #A9A3C2">years as a founder and operator</span></div>
+      <div class="cv-in" style="animation-delay: .08s; border-radius: 20px; background: rgba(20,17,36,.85); border: 1px solid rgba(255,255,255,.08); padding: 22px; display: flex; flex-direction: column; gap: 6px"><span style="font-size: 44px; line-height: 1; letter-spacing: -0.04em; font-weight: 600; background: linear-gradient(100deg, #C4B5FD, #F3E8FF); -webkit-background-clip: text; background-clip: text; color: transparent">1</span><span style="font-size: 14px; color: #A9A3C2">agency built and sold</span></div>
+      <div class="cv-in" style="animation-delay: .16s; border-radius: 20px; background: rgba(20,17,36,.85); border: 1px solid rgba(255,255,255,.08); padding: 22px; display: flex; flex-direction: column; gap: 6px"><span style="font-size: 44px; line-height: 1; letter-spacing: -0.04em; font-weight: 600; background: linear-gradient(100deg, #C4B5FD, #F3E8FF); -webkit-background-clip: text; background-clip: text; color: transparent">400+</span><span style="font-size: 14px; color: #A9A3C2">person IT holding run as COO</span></div>
+      <div class="cv-in" style="animation-delay: .24s; border-radius: 20px; background: rgba(20,17,36,.85); border: 1px solid rgba(255,255,255,.08); padding: 22px; display: flex; flex-direction: column; gap: 6px"><span style="font-size: 44px; line-height: 1; letter-spacing: -0.04em; font-weight: 600; background: linear-gradient(100deg, #C4B5FD, #F3E8FF); -webkit-background-clip: text; background-clip: text; color: transparent">9</span><span style="font-size: 14px; color: #A9A3C2">AI agents in Growth Control</span></div>
+    </div>
+  </section>
+
+  <div style="width: 100%; max-width: 1280px; margin: 0 auto; padding: 0 32px 72px; display: flex; flex-wrap: wrap; gap: 48px; align-items: flex-start">
+
+    <section aria-labelledby="exp-h" style="flex: 1 1 600px; min-width: 0; display: flex; flex-direction: column; gap: 20px">
+      <h2 id="exp-h" style="margin: 0; font-size: 28px; letter-spacing: -0.02em; font-weight: 600">Experience</h2>
+      <div style="position: relative">
+        <div aria-hidden="true" style="position: absolute; left: 7px; top: 12px; bottom: 12px; width: 2px; background: rgba(255,255,255,.08); border-radius: 2px">
+          <div class="cv-draw" style="width: 2px; background: linear-gradient(180deg, #C4B5FD, var(--accent)); border-radius: 2px"></div>
+        </div>
+        <ol style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column">
+          {(v.jobs || []).map((j) => (<Fragment>
+            <li class="cv-row cv-in" style={`animation-delay: ${j.delay}; position: relative; display: flex; gap: 22px; padding: 16px 12px 16px 0; border-radius: 14px`}>
+              <span class="cv-dot" aria-hidden="true" style={`flex: 0 0 16px; height: 16px; margin-top: 4px; border-radius: 50%; border: 2px solid ${j.ring}; background: ${j.fill}`}></span>
+              <span style="display: flex; flex-direction: column; gap: 6px; min-width: 0">
+                <span style="font-family: 'Geist Mono Variable', ui-monospace, monospace; font-size: 12px; letter-spacing: .06em; color: #8B84A8">{j.when}</span>
+                <span style="font-size: 18px; font-weight: 600; color: #F4F2FF">{j.role}</span>
+                <span style="font-size: 15px; line-height: 1.55; color: #A9A3C2">{j.body}</span>
+              </span>
+            </li>
+          </Fragment>))}
+        </ol>
+      </div>
+    </section>
+
+    <aside style="flex: 0 1 470px; min-width: 0; display: flex; flex-direction: column; gap: 20px">
+      <div style="border-radius: 22px; background: rgba(20,17,36,.85); border: 1px solid rgba(255,255,255,.08); padding: 24px; display: flex; flex-direction: column; gap: 14px">
+        <span style="font-family: 'Geist Mono Variable', ui-monospace, monospace; font-size: 11px; letter-spacing: .12em; color: #A78BFA">SELECTED AI SYSTEMS · 2026</span>
+        {(v.systems || []).map((s) => (<Fragment>
+          <div class="cv-sys" style="padding: 12px 14px; border-radius: 14px; border: 1px solid rgba(255,255,255,.08); display: flex; flex-direction: column; gap: 4px">
+            <span style="font-size: 15px; font-weight: 600; color: #F4F2FF">{s.name}</span>
+            <span style="font-size: 13px; line-height: 1.45; color: #A9A3C2">{s.what}</span>
+          </div>
+        </Fragment>))}
+      </div>
+      <div style="border-radius: 22px; background: rgba(20,17,36,.85); border: 1px solid rgba(255,255,255,.08); padding: 24px; display: flex; flex-direction: column; gap: 10px">
+        <span style="font-family: 'Geist Mono Variable', ui-monospace, monospace; font-size: 11px; letter-spacing: .12em; color: #A78BFA">EDUCATION</span>
+        <span style="font-size: 15px; line-height: 1.55; color: #C9C3DE">Two years of Computer Science at university, then a B.A. in Public Relations.</span>
+        <span style="margin-top: 8px; font-family: 'Geist Mono Variable', ui-monospace, monospace; font-size: 11px; letter-spacing: .12em; color: #A78BFA">BEYOND WORK</span>
+        <span style="font-size: 15px; line-height: 1.55; color: #C9C3DE">President of Ukrainian Burners Inc., a 501(c)(3). Founder of Kurenivka, the first Ukrainian camp at Burning Man. Relocated my family across three countries through war.</span>
+      </div>
+      <div style="border-radius: 22px; background: linear-gradient(140deg, rgba(109,74,246,.28), rgba(20,17,36,.95) 60%); border: 1px solid rgba(167,139,250,.3); padding: 24px; display: flex; flex-direction: column; gap: 12px">
+        <span style="font-family: 'Geist Mono Variable', ui-monospace, monospace; font-size: 11px; letter-spacing: .12em; color: #E9E3FF">HOW I ENGAGE</span>
+        <ul style="margin: 0; padding: 0 0 0 18px; display: flex; flex-direction: column; gap: 8px; font-size: 14px; line-height: 1.5; color: #C9C3DE">
+          <li>Project-based or fixed-term, with a defined business goal</li>
+          <li>Fixed fee, scoped upfront</li>
+          <li>Through my LLC (1099) or W-2</li>
+          <li>A trusted team of software engineers and AI developers, assembled to fit the scope. Real engineers, not vibe coders.</li>
+        </ul>
+        <a class="cv-cta" href="/#book" style="align-self: flex-start; margin-top: 4px; color: #FFFFFF; text-decoration: none; background: var(--accent); padding: 0 20px; border-radius: 999px; font-size: 15px; font-weight: 500; min-height: 46px; display: inline-flex; align-items: center">Book a call</a>
+      </div>
+    </aside>
+  </div>
+
+  <section aria-labelledby="stack-h" style="width: 100%; max-width: 1280px; margin: 0 auto; padding: 0 32px 120px; display: flex; flex-direction: column; gap: 24px">
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 16px">
+      <h2 id="stack-h" style="margin: 0; font-size: 28px; letter-spacing: -0.02em; font-weight: 600">Stack</h2>
+      <span style="font-size: 14px; line-height: 1.5; color: #8B84A8; max-width: 620px">One server, one edge, one login: every app sits behind Cloudflare Access with a biometric second factor. I'm my own DevOps, from DNS and TLS to containers, databases and backups.</span>
+    </div>
+    <div style="columns: 4 260px; column-gap: 14px">
+      {(v.stackGroups || []).map((g) => (<Fragment>
+        <div style="break-inside: avoid; margin-bottom: 14px; border-radius: 18px; background: rgba(20,17,36,.85); border: 1px solid rgba(255,255,255,.08); padding: 18px 20px; display: flex; flex-direction: column; gap: 10px">
+          <span style="font-family: 'Geist Mono Variable', ui-monospace, monospace; font-size: 11px; letter-spacing: .1em; color: #A78BFA">{g.name}</span>
+          <div style="display: flex; flex-wrap: wrap; gap: 6px">
+            {(g.items || []).map((t) => (<Fragment>
+              <span style="font-size: 12px; padding: 5px 10px; border-radius: 999px; border: 1px solid rgba(255,255,255,.12); color: #C9C3DE">{t}</span>
+            </Fragment>))}
+          </div>
+        </div>
+      </Fragment>))}
+    </div>
+  </section>
+</div>
+
+<style is:global>
+.cv *{box-sizing:border-box}
+.cv-cta{transition:transform .25s ease,box-shadow .25s ease}
+.cv-cta:hover{color:#fff;transform:translateY(-2px);box-shadow:0 10px 30px color-mix(in srgb,var(--accent) 55%,transparent)}
+.cv-ghost:hover{color:#fff;border-color:rgba(255,255,255,.4)}
+.cv-row{transition:background .3s ease}
+.cv-row:hover{background:rgba(124,92,250,.07)}
+.cv-row:hover .cv-dot{background:#A78BFA;box-shadow:0 0 0 6px rgba(167,139,250,.18)}
+.cv-dot{transition:background .3s ease,box-shadow .3s ease}
+.cv-sys{transition:transform .35s ease,border-color .35s ease}
+.cv-sys:hover{transform:translateY(-3px);border-color:rgba(167,139,250,.45)}
+.cv-in{opacity:0;animation:cv-in .6s cubic-bezier(.2,.7,.2,1) forwards}
+.cv-draw{animation:cv-draw 2.4s cubic-bezier(.2,.7,.2,1) forwards}
+@keyframes cv-in{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+@keyframes cv-draw{from{height:0%}to{height:100%}}
+@media (prefers-reduced-motion:reduce){.cv *{animation:none!important;opacity:1!important}}
+</style>

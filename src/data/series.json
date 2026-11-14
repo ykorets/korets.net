@@ -1,0 +1,63 @@
+{
+ "metaTitle": "Built. Shipped. Running. — 8 AI Systems Field Notes",
+ "description": "An eight-part series by Yaroslav Korets on moving AI from demos into production systems with approval gates, audit logs, and source evidence.",
+ "jsonld": "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"CollectionPage\",\"name\":\"Built. Shipped. Running. — 8 AI Systems Field Notes\",\"description\":\"An eight-part series by Yaroslav Korets on moving AI from demos into production systems with approval gates, audit logs, and source evidence.\",\"url\":\"https://korets.net/writing/built-shipped-running/\",\"author\":{\"@type\":\"Person\",\"name\":\"Yaroslav Korets\",\"url\":\"https://korets.net/cv/\"},\"hasPart\":[{\"@type\":\"BlogPosting\",\"position\":1,\"headline\":\"The Operational Last Mile: Why AI Demos Die Before Production\",\"url\":\"https://korets.net/writing/ai-operational-last-mile/\"},{\"@type\":\"BlogPosting\",\"position\":2,\"headline\":\"Marco: Why an Outbound AI Agent Starts With Infrastructure\",\"url\":\"https://korets.net/writing/marco-infrastructure-before-ai-copy/\"},{\"@type\":\"BlogPosting\",\"position\":3,\"headline\":\"Hunter: AI Needs Rules, Approval Gates, and Logs\",\"url\":\"https://korets.net/writing/hunter-rules-before-autonomy/\"},{\"@type\":\"BlogPosting\",\"position\":4,\"headline\":\"Oscar: Why the Dashboard Is Becoming the Wrong Interface\",\"url\":\"https://korets.net/writing/oscar-dashboard-wrong-interface/\"},{\"@type\":\"BlogPosting\",\"position\":5,\"headline\":\"InspectPilot: Contractor Reputation vs. the Public Record\",\"url\":\"https://korets.net/writing/inspectpilot-reputation-vs-record/\"},{\"@type\":\"BlogPosting\",\"position\":6,\"headline\":\"AI Changed the Build-vs.-Buy Line\",\"url\":\"https://korets.net/writing/ai-build-vs-buy-line/\"},{\"@type\":\"BlogPosting\",\"position\":7,\"headline\":\"Behind the Watt: How to Use AI Without Asking Anyone to Trust It\",\"url\":\"https://korets.net/writing/behind-the-watt-ai-with-receipts/\"},{\"@type\":\"BlogPosting\",\"position\":8,\"headline\":\"The Operating Principle: Persistence, Human Approval, Audit Logs\",\"url\":\"https://korets.net/writing/ai-operating-principle/\"}]},{\"@type\":\"ItemList\",\"itemListOrder\":\"https://schema.org/ItemListOrderAscending\",\"numberOfItems\":8,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"url\":\"https://korets.net/writing/ai-operational-last-mile/\",\"name\":\"The Operational Last Mile: Why AI Demos Die Before Production\"},{\"@type\":\"ListItem\",\"position\":2,\"url\":\"https://korets.net/writing/marco-infrastructure-before-ai-copy/\",\"name\":\"Marco: Why an Outbound AI Agent Starts With Infrastructure\"},{\"@type\":\"ListItem\",\"position\":3,\"url\":\"https://korets.net/writing/hunter-rules-before-autonomy/\",\"name\":\"Hunter: AI Needs Rules, Approval Gates, and Logs\"},{\"@type\":\"ListItem\",\"position\":4,\"url\":\"https://korets.net/writing/oscar-dashboard-wrong-interface/\",\"name\":\"Oscar: Why the Dashboard Is Becoming the Wrong Interface\"},{\"@type\":\"ListItem\",\"position\":5,\"url\":\"https://korets.net/writing/inspectpilot-reputation-vs-record/\",\"name\":\"InspectPilot: Contractor Reputation vs. the Public Record\"},{\"@type\":\"ListItem\",\"position\":6,\"url\":\"https://korets.net/writing/ai-build-vs-buy-line/\",\"name\":\"AI Changed the Build-vs.-Buy Line\"},{\"@type\":\"ListItem\",\"position\":7,\"url\":\"https://korets.net/writing/behind-the-watt-ai-with-receipts/\",\"name\":\"Behind the Watt: How to Use AI Without Asking Anyone to Trust It\"},{\"@type\":\"ListItem\",\"position\":8,\"url\":\"https://korets.net/writing/ai-operating-principle/\",\"name\":\"The Operating Principle: Persistence, Human Approval, Audit Logs\"}]}]}",
+ "cards": [
+  {
+   "part": "Part 1 of 8 · 6 min",
+   "title": "The Operational Last Mile",
+   "desc": "A production AI system needs source data, validation, approval gates, and an audit trail built around how a product or service is delivered.",
+   "receipt": "6 production systems · 1 public pet project · 8 field notes",
+   "href": "/writing/ai-operational-last-mile/"
+  },
+  {
+   "part": "Part 2 of 8 · 6 min",
+   "title": "Marco: Infrastructure Before Copy",
+   "desc": "Marco is an outbound AI agent that begins with sender health, deliverability gates, and signals before it writes a message.",
+   "receipt": "SPF/DKIM/DMARC · placement tests · 15-minute reply triage · approval gates",
+   "href": "/writing/marco-infrastructure-before-ai-copy/"
+  },
+  {
+   "part": "Part 3 of 8 · 6 min",
+   "title": "Hunter: Rules Before Autonomy",
+   "desc": "Hunter runs persistent PPC operations across Google and Microsoft Ads, but meaningful changes stay governed by written rules and human approval.",
+   "receipt": "Google Ads + Microsoft Ads · CRM-grounded rules · Telegram approval · action logs",
+   "href": "/writing/hunter-rules-before-autonomy/"
+  },
+  {
+   "part": "Part 4 of 8 · 5 min",
+   "title": "Oscar: The Dashboard Is the Wrong Interface",
+   "desc": "Oscar is a self-hosted YouTube operations agent that turns analytics, SEO, captions, and channel tools into a plain-language interface.",
+   "receipt": "Self-hosted · multi-channel · dozens of tools · analytics, SEO, captions, reporting",
+   "href": "/writing/oscar-dashboard-wrong-interface/"
+  },
+  {
+   "part": "Part 5 of 8 · 6 min",
+   "title": "InspectPilot: Reputation vs. Record",
+   "desc": "InspectPilot pairs inspection scheduling with a compliance engine built on roughly 11 million Los Angeles inspection records over 13 years.",
+   "receipt": "~11M public records · 13 years · LADBS inspections · first-pass and violation history",
+   "href": "/writing/inspectpilot-reputation-vs-record/"
+  },
+  {
+   "part": "Part 6 of 8 · 6 min",
+   "title": "AI Changed the Build-vs.-Buy Line",
+   "desc": "A field note on replacing selected SaaS tools with self-hosted systems, where ownership saves money, and where it creates new operating costs.",
+   "receipt": "4 named migration paths · Git source of truth · one MCP gateway · tool-level cost logs",
+   "href": "/writing/ai-build-vs-buy-line/"
+  },
+  {
+   "part": "Part 7 of 8 · 7 min",
+   "title": "Behind the Watt: AI With Receipts",
+   "desc": "Behind the Watt is an open evidence database that uses AI to extract claims from public records while preserving source-level provenance and human approval.",
+   "receipt": "3 facilities · 1.03 verified operating GW · 143.3 reported GW separate · source provenance",
+   "href": "/writing/behind-the-watt-ai-with-receipts/"
+  },
+  {
+   "part": "Part 8 of 8 · 7 min",
+   "title": "The Operating Principle",
+   "desc": "A production pattern for AI systems: let software handle persistence and volume, keep consequential decisions with people, and log every action.",
+   "receipt": "Explicit rules · human approval gates · audit logs · source evidence",
+   "href": "/writing/ai-operating-principle/"
+  }
+ ]
+}
