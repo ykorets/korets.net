@@ -1,10 +1,10 @@
 ---
-// Small cookie notice. Analytics cookies (Google Analytics) and the embedded booking
-// calendar (self-hosted Cal.com on book.korets.net) wait for consent. No advertising.
+// Small cookie notice. Analytics cookies (Google Analytics) wait for consent. The embedded booking
+// calendar (self-hosted Cal.com on book.korets.net) is functional and loads without it. No advertising.
 ---
 <div class="cc" data-cc hidden role="region" aria-label="Cookie notice">
   <p class="cc-text">
-    No ads. With your OK, cookies help me see which pages are useful (Google Analytics) and run the booking calendar.
+    No ads. With your OK, cookies help me see which pages are useful (Google Analytics).
     <a href="/privacy/">Privacy</a>
   </p>
   <div class="cc-actions">
@@ -33,12 +33,6 @@
   });
   document.addEventListener('click', (e) => {
     if ((e.target as Element).closest('[data-cc-open]')) { e.preventDefault(); show(); }
-    if ((e.target as Element).closest('[data-cc-allow]')) {
-      write('yes');
-      box.hidden = true;
-      (window as any).gtag?.('consent', 'update', { analytics_storage: 'granted' });
-      window.dispatchEvent(new CustomEvent('korets:consent', { detail: 'yes' }));
-    }
   });
 </script>
 
