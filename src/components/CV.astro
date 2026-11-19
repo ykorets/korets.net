@@ -6,9 +6,9 @@ class Component extends DCLogic {
   renderVals() {
     const jobsData = [
       ['Oct 2026 – Present', 'Founder — Growth Control', 'Building and implementing a product that connects advertising, customer inquiries, CRM, calls, quotes and follow-up, run by a team of AI agents.', true],
-      ['Jun 2018 – Present', 'CTO & Co-Founder — Stretch Tent', 'Tent rentals and sales in Southern California. The office runs on AI agents; Growth Control was built and tested here.', true],
+      ['2017 – Present', 'CTO & Co-Founder — Stretch Tent', 'Stretch Tent started in Ukraine in 2017 and began operations in Southern California in May 2026. Growth Control was built and tested in the California business.', true],
       ['Nov 2023 – Oct 2026', 'Co-Founder & CEO — KPI Creatives', 'Co-founded and ran a profitable video production and content marketing agency. Closed it to focus on an AI-native business.', false],
-      ['Nov 2025 – Jul 2026', 'Co-Founder — ADUscale', 'CEO from January to July 2026. Built the product, tested demand and product–market fit, and decided not to pursue a full launch.', false],
+      ['Nov 2025 – Jun 2026', 'Co-Founder — ADUscale', 'Served as CEO from January 2026. Built the product and tested demand. ADUscale ceased operations in June 2026.', false],
       ['Sep 2022 – Jan 2023', 'COO — Govitall (IT holding)', 'Chief Operating Officer of a 400+ person IT holding with multi-million ARR; owned company-wide operations across the portfolio.', false],
       ['2021 – 2023', 'VP, Real Estate Property Management', 'Ran the property-management company inside a real-estate developer holding: operations, budgets and capex decisions.', false],
       ['2015 – 2021', 'Independent ventures & exploration', 'Startups, events and consulting across industries between the agency exit and the next operating roles.', false],
@@ -68,10 +68,6 @@ const v = c.renderVals();
     </div>
     </div>
     <div style="position: relative; display: flex; flex-wrap: wrap; gap: 12px">
-      <a class="cv-ghost" href="/yaroslav-korets-cv.pdf" style="color: #E4E0F5; text-decoration: none; border: 1px solid rgba(255,255,255,.18); padding: 0 20px; border-radius: 999px; font-size: 15px; font-weight: 500; min-height: 48px; display: inline-flex; align-items: center; gap: 8px">
-        <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11"></path><path d="m7 10 5 5 5-5"></path><path d="M5 20h14"></path></svg>
-        Download PDF
-      </a>
       <a class="cv-cta" href="/#book" style="color: #FFFFFF; text-decoration: none; background: var(--accent); padding: 0 22px; border-radius: 999px; font-size: 15px; font-weight: 500; min-height: 48px; display: inline-flex; align-items: center">Book a call</a>
     </div>
   </section>
@@ -161,7 +157,6 @@ const v = c.renderVals();
 .cv *{box-sizing:border-box}
 .cv-cta{transition:transform .25s ease,box-shadow .25s ease}
 .cv-cta:hover{color:#fff;transform:translateY(-2px);box-shadow:0 10px 30px color-mix(in srgb,var(--accent) 55%,transparent)}
-.cv-ghost:hover{color:#fff;border-color:rgba(255,255,255,.4)}
 .cv-row{transition:background .3s ease}
 .cv-row:hover{background:rgba(124,92,250,.07)}
 .cv-row:hover .cv-dot{background:#A78BFA;box-shadow:0 0 0 6px rgba(167,139,250,.18)}
