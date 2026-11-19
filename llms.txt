@@ -10,7 +10,7 @@
 - [Case study: Stretch Tent](https://korets.net/case/stretch-tent/): an event rental company whose office runs on AI agents; 100 leads in two weeks, only install crews are human (owner-reported).
 - [CV](https://korets.net/cv/): twenty years as a founder and operator; experience, AI systems, stack and engagement terms.
 - [Growth Control](https://growthcontrol.app/): Yaro's product connecting advertising, inquiries, CRM, calls, quotes and follow-up, run by AI agents.
-- [Stretch Tent](https://www.stretch-tent.net/): tent rental and sales in Southern California; Yaro is CTO & Co-Founder since 2018.
+- [Stretch Tent](https://www.stretch-tent.net/): Yaro is CTO & Co-Founder. Stretch Tent started in Ukraine in 2017 and began tent rental and sales operations in Southern California in May 2026.
 - [Book a call](https://book.korets.net/korets): business meeting (30 or 60 min) or feedback loop (15 min).
 
 ## Writing
