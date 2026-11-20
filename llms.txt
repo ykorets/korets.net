@@ -31,4 +31,5 @@
 
 - [Black Ink Tax operations pilot](https://korets.net/blackink/)
 - [Behind the Watt](https://behindthewatt.com): open evidence database for behind-the-meter power at data centers.
+- [Behind the Tax Data](https://behindthetaxdata.com): U.S. tax deadlines, disaster postponements, rates and IRS regulation for tax and accounting firms and their AI assistants, each line tied to its official source.
 - [Privacy](https://korets.net/privacy/)
