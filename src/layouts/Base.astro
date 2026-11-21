@@ -8,7 +8,7 @@ import CookieConsent from '../components/CookieConsent.astro';
 import { person, website } from '../data/person';
 import { GA_ID } from '../data/site';
 interface Props { current?: string; bare?: boolean; title: string; description: string; path: string; image?: string; imageAlt?: string; noindex?: boolean; type?: string; jsonld?: string; graph?: object[] }
-const { current = '', bare = false, title, description, path, image = '/img/og-default.jpg', imageAlt = 'Yaro Korets — AI implementation engineer, Los Angeles', noindex = false, type = 'website', jsonld, graph = [] } = Astro.props;
+const { current = '', bare = false, title, description, path, image = '/img/og-default.jpg', imageAlt = 'Yaro Korets — Forward Deployed Engineer, Los Angeles', noindex = false, type = 'website', jsonld, graph = [] } = Astro.props;
 // Every page carries the same Person and WebSite entities, plus anything page-specific.
 const siteGraph = JSON.stringify({ '@context': 'https://schema.org', '@graph': [person, website, ...graph] });
 const canonical = new URL(path, Astro.site).href;
