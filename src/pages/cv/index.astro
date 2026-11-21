@@ -3,10 +3,10 @@ import Base from '../../layouts/Base.astro';
 import CV from '../../components/CV.astro';
 import { PERSON_ID, SITE, breadcrumbs } from '../../data/person';
 const graph = [
-  { '@type': 'ProfilePage', '@id': `${SITE}/cv/#page`, url: `${SITE}/cv/`, name: 'CV — Yaro (Yaroslav) Korets', mainEntity: { '@id': PERSON_ID }, dateModified: '2026-11-14T12:00:00-08:00' },
+  { '@type': 'ProfilePage', '@id': `${SITE}/cv/#page`, url: `${SITE}/cv/`, name: 'CV — Yaro (Yaroslav) Korets', mainEntity: { '@id': PERSON_ID }, dateModified: '2026-11-21T14:30:00-08:00' },
   breadcrumbs([['Home', '/'], ['CV', '/cv/']]),
 ];
 ---
-<Base title="Yaro Korets (Yaroslav Korets) — CV, AI Implementation Engineer" description="CV of Yaro (Yaroslav) Korets: AI implementation engineer, founder of Growth Control, CTO & Co-Founder of Stretch Tent. 20 years as founder and operator." path="/cv/" current="CV" type="profile" graph={graph}>
+<Base title="Yaro Korets (Yaroslav Korets) — Forward Deployed Engineer CV" description="CV of Yaro (Yaroslav) Korets, Forward Deployed Engineer and founder of Growth Control. Hands-on AI deployment for tax and accounting firms." path="/cv/" current="CV" type="profile" graph={graph}>
   <CV />
 </Base>

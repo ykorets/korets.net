@@ -1,14 +1,14 @@
 # Yaro Korets (Yaroslav Korets)
 
-> Yaro Korets (full name Yaroslav Korets; Ukrainian: Ярослав Корець) is an AI implementation engineer based in Los Angeles. He helps business owners improve margins by implementing AI systems across marketing, sales, finance and operations. Founder of Growth Control and CTO & Co-Founder of Stretch Tent. President of Ukrainian Burners Inc. (Kurenivka Camp, Blue Bull art car at Burning Man).
+> Yaro Korets (full name Yaroslav Korets; Ukrainian: Ярослав Корець) is a Forward Deployed Engineer based in Los Angeles. He builds and deploys AI workflows for tax, CPA, and bookkeeping firms. Founder of Growth Control and CTO & Co-Founder of Stretch Tent. President of Ukrainian Burners Inc. (Kurenivka Camp, Blue Bull art car at Burning Man).
 
 ## Core pages
 
-- [Yaro Korets — home](https://korets.net/): AI implementation for profitable growth, how projects run, businesses, story and booking.
+- [Yaro Korets — home](https://korets.net/): Forward Deployed Engineer, AI deployment for tax and accounting firms, businesses, projects, and booking.
 - [AI implementation services](https://korets.net/ai-implementation/): hands-on AI implementation for small and mid-size businesses in Los Angeles and across the US; process, proof, engagement terms and FAQ.
 - [AI for event rental companies](https://korets.net/ai-for-event-rental-companies/): AI agents for tent, party and equipment rental businesses: inquiries, call briefs, quotes, invoices.
 - [Case study: Stretch Tent](https://korets.net/case/stretch-tent/): an event rental company whose office runs on AI agents; 100 leads in two weeks, only install crews are human (owner-reported).
-- [CV](https://korets.net/cv/): twenty years as a founder and operator; experience, AI systems, stack and engagement terms.
+- [CV](https://korets.net/cv/): deployment experience in tax and accounting, founder and operator background, technology stack, and downloadable CV.
 - [Growth Control](https://growthcontrol.app/): Yaro's product connecting advertising, inquiries, CRM, calls, quotes and follow-up, run by AI agents.
 - [Stretch Tent](https://www.stretch-tent.net/): Yaro is CTO & Co-Founder. Stretch Tent started in Ukraine in 2017 and began tent rental and sales operations in Southern California in May 2026.
 - [Book a call](https://book.korets.net/korets): business meeting (30 or 60 min) or feedback loop (15 min).
